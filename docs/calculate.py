@@ -48,7 +48,7 @@ def cycle(drive_kw, case, cfg, return_fraction=None):
     # Couple condenser airflow and fan demand to steam flow; do not hide fans
     # in a fixed accessory allowance. Fan coefficient is J/kg of circulating steam.
     air_per_steam = r*(h2-hc)/(1000*cfg['air_heat_capacity_kJ_kgK']*cfg['air_temperature_rise_K'])
-    fan_electric_per_steam = air_per_steam/1.18*cfg['fan_pressure_drop_Pa']/cfg['fan_efficiency']
+    fan_electric_per_steam = air_per_steam/cfg['cooling_air_density_kg_m3']*cfg['fan_pressure_drop_Pa']/cfg['fan_efficiency']
     fan_shaft_per_steam = fan_electric_per_steam/cfg['generator_efficiency']
     available_work = work-wp-fan_shaft_per_steam
     if available_work <= 0: raise ValueError('Cooling parasitics exceed cycle work')
@@ -64,7 +64,7 @@ def cycle(drive_kw, case, cfg, return_fraction=None):
     fuel_kg_h = burner*3.6/cfg['diesel_LHV_MJ_kg']
     fuel_L_h = fuel_kg_h/cfg['diesel_density_kg_L']
     air_kg_s = qcond/(cfg['air_heat_capacity_kJ_kgK']*cfg['air_temperature_rise_K'])
-    air_m3_s = air_kg_s/1.18  # screening density at warm ambient, assumed
+    air_m3_s = air_kg_s/cfg['cooling_air_density_kg_m3']  # screening density at warm ambient, assumed
     fan_kw = air_m3_s*cfg['fan_pressure_drop_Pa']/cfg['fan_efficiency']/1000
     q2 = PropsSI('Q','P',p2,'H',h2,FLUID)
     return {'drive_kW':drive_kw, 'steam_kg_h':mdot*3600, 'makeup_kg_h':(1-r)*mdot*3600,
@@ -76,7 +76,13 @@ def cycle(drive_kw, case, cfg, return_fraction=None):
             'total_aux_shaft_kW':case['aux_shaft_kW']+fan_kw/cfg['generator_efficiency'],
             'air_m3_s':air_m3_s,
             'exchange_area_m2':qcond*1000/(cfg['heat_exchanger_U_W_m2K']*cfg['heat_exchanger_LMTD_K']),
-            'shaft_torque_at_rpm_Nm':9550*gross/case['rpm'],
+            'shaft_torque_at_rpm_Nm':60000*gross/(2*math.pi*case['rpm']),
+            'condensate_h_kJ_kg':hc/1000, 'makeup_h_kJ_kg':hm/1000, 'feed_density_kg_m3':rho3,
+            'exhaust_liquid_h_kJ_kg':PropsSI('H','P',p2,'Q',0,FLUID)/1000,
+            'exhaust_vapor_h_kJ_kg':PropsSI('H','P',p2,'Q',1,FLUID)/1000,
+            'feed_temperature_C':PropsSI('T','P',p2,'H',h3,FLUID)-273.15,
+            'inlet_saturation_temperature_C':PropsSI('T','P',p1,'Q',1,FLUID)-273.15,
+            'return_fraction':r, 'pump_specific_work_kJ_kg':wp/1000,
             'h1_kJ_kg':h1/1000, 'h2s_kJ_kg':h2s/1000, 'h2_kJ_kg':h2/1000,
             'h3_kJ_kg':h3/1000, 'h4_kJ_kg':h4/1000, 's1_kJ_kgK':s1/1000,
             'inlet_density_kg_m3':PropsSI('D','P',p1,'T',t1,FLUID),
@@ -85,12 +91,12 @@ def cycle(drive_kw, case, cfg, return_fraction=None):
             'lost_steam_energy_kW':qloststeam, 'mechanical_loss_kW':qmech,
             'balance_residual_kW':residual}
 
-def mass_model(case, v):
+def mass_model(case, v, fuel_density=.835):
     # Curb mass includes old fuel: subtract removed mass incl. estimated old fuel.
     dry = case['dry_plant_kg']
     items = [(-v['removed_mass_kg'],v['removed_x_mm']),
              (dry*.64,3250),(dry*.20,420),(dry*.10,550),(dry*.06,1800),
-             (case['water_L'],600),(case['loop_water_kg'],3100),(case['fuel_L']*.835,2800),
+             (case['water_L']*v['cold_water_density_kg_L'],600),(case['loop_water_kg'],3100),(case['fuel_L']*fuel_density,2800),
              (v['driver_mass_kg'],v['driver_x_mm'])]
     base_rear = v['curb_mass_kg']*(1-v['curb_front_fraction'])
     rear = base_rear + sum(m*(x-v['front_axle_x_mm'])/v['wheelbase_mm'] for m,x in items)
@@ -106,12 +112,12 @@ def run():
     scenarios=[]
     sensitivity=[]
     for case in inp['scenarios']:
-        mass=mass_model(case,v)
+        mass=mass_model(case,v,c['diesel_density_kg_L'])
         result=cycle(case['net_drive_kW'],case,c)
         open_cycle=cycle(case['net_drive_kW'],case,c,0)
         target=road(case['target_kmh'],mass['running_mass_kg'],v)
         cruise=cycle(target['drive_kW'],case,c)
-        usable_water=case['water_L']*.80  # excludes 20% reserve; loop inventory separate
+        usable_water=case['water_L']*v['cold_water_density_kg_L']*v['usable_water_fraction']  # excludes 20% reserve; loop inventory separate
         water_hours=usable_water/result['makeup_kg_h']
         fuel_hours=case['fuel_L']/result['diesel_L_h']
         cruise_range=case['target_kmh']*min(usable_water/cruise['makeup_kg_h'],case['fuel_L']/cruise['diesel_L_h'])
@@ -134,7 +140,7 @@ def run():
     (ROOT/'results.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
     for name,rows in [('road_load',road_rows),('sensitivity',sensitivity),('scenario_summary',[{'case':s['case']['id'],**s['rated'],**s['mass'],'steady_cruise_range_km':s['steady_cruise_range_km']} for s in scenarios])]:
         with (ROOT/(name+'.csv')).open('w',newline='',encoding='utf-8-sig') as f:
-            w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+            w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
     for s in scenarios:
         r=s['rated'];m=s['mass']
         print(s['case']['id'], {k:round(r[k],2) for k in ['drive_kW','steam_kg_h','boiler_kW','burner_LHV_kW','condenser_kW','diesel_L_h','makeup_kg_h','fan_lower_estimate_kW']},'mass',round(m['running_mass_kg'],1),'payload',round(m['remaining_total_payload_kg'],1))

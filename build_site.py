@@ -21,7 +21,7 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     for name in ['models', 'vendor']:
         shutil.copytree(ROOT / name, OUT / name, dirs_exist_ok=True,
@@ -37,7 +37,7 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
-        'report.html': 'Полный отчёт в браузере', 'report.pdf': 'Расчётный отчёт · 11 страниц',
+        'report.html': 'Полный отчёт в браузере', 'report.pdf': 'Расчётный отчёт с формулами и подстановками',
         'index.html': '3D-компоновка и калькулятор', 'START.txt': 'Как использовать комплект',
         'assembly.scad': 'Основная компоновка · OpenSCAD', 'assembly-vw-inspired.scad': 'Компоновка по примеру VW · OpenSCAD',
         'assembly.obj': 'Габаритная 3D-модель · OBJ', 'assembly.mtl': 'Материалы модели · MTL',
@@ -53,8 +53,14 @@ def main():
         'build_viewer.py': 'Генерация интерактивной модели', 'build_site.py': 'Сборка этого сайта',
         'build_cad_assets.py': 'Преобразование заводского CAD в GLB',
         'convert_cad.js': 'Триангуляция заводского STEP',
+        'build_workbook.mjs': 'Сборка формул для PDF и отчёта',
+        'verify_calculations.mjs': 'Сверка формул с Python',
+        'calculation-workbook.html': 'Формулы A/B/C · автономная версия',
+        'calculation-workbook.json': 'Подстановки A/B/C · JSON',
+        'calculation-workbook.pdf': 'Формулы и подстановки A/B/C · PDF',
+        'calculation-checks.json': 'Сверка формул с Python',
     }
-    candidates = sorted(p for p in ROOT.iterdir() if p.is_file() and p.suffix in {'.html', '.pdf', '.json', '.csv', '.scad', '.obj', '.mtl', '.py', '.js', '.txt'})
+    candidates = sorted(p for p in ROOT.iterdir() if p.is_file() and p.suffix in {'.html', '.pdf', '.json', '.csv', '.scad', '.obj', '.mtl', '.py', '.js', '.mjs', '.txt'})
     candidates += sorted((ROOT / 'drawings').iterdir())
     for p in candidates:
         rel = p.relative_to(ROOT)
@@ -70,6 +76,7 @@ def main():
             target.write_text(s)
         if p.name == 'report.html':
             s = target.read_text().replace('<body>', '<body><nav style="display:flex;gap:20px;flex-wrap:wrap"><a href="index.html">← Проект</a><a href="library.html">Все материалы</a><a href="report.pdf">Скачать PDF</a></nav>')
+            s = s.replace('<body>', '<body><p><a href="calculations.html">Все формулы и подстановки →</a></p>')
             s = re.sub(r'<h2>(\d+)\.', lambda m: f'<h2 id="section-{m[1]}">{m[1]}.', s)
             target.write_text(s)
         if p.parent.name == 'drawings':
@@ -81,7 +88,7 @@ def main():
             title = titles.get(p.name, p.name)
         elif 'checks' in p.name or p.name == 'verification.json':
             category = 'Проверки'; title = titles.get(p.name, p.name)
-        elif p.suffix in {'.py', '.js'} or p.name == 'requirements.txt':
+        elif p.suffix in {'.py', '.js', '.mjs'} or p.name == 'requirements.txt':
             category = 'Исходники'; title = titles.get(p.name, p.name)
         elif p.suffix in {'.csv', '.json'}:
             category = 'Расчёты'; title = titles.get(p.name, p.name)
@@ -90,7 +97,7 @@ def main():
         records.append({'path': dest.as_posix(), 'title': title, 'category': category,
                         'format': p.suffix[1:].upper(), 'size': target.stat().st_size})
 
-    header = '''<a class="skip" href="#main">К содержимому</a><header class="site-header"><a class="brand" href="index.html" aria-label="ЗАЗ-968М: главная"><span class="brand-icon">S</span><span>ЗАЗ<span class="brand-light"> / STEAM</span></span></a><nav aria-label="Главная навигация"><a href="index.html#concept">Концепция</a><a href="index.html#scenarios">Расчёты</a><a href="assembly.html">3D-модель</a><a href="library.html">Материалы</a></nav><a class="header-link" href="''' + REPO + '''" target="_blank" rel="noopener">GitHub ↗</a></header>'''
+    header = '''<a class="skip" href="#main">К содержимому</a><header class="site-header"><a class="brand" href="index.html" aria-label="ЗАЗ-968М: главная"><span class="brand-icon">S</span><span>ЗАЗ<span class="brand-light"> / STEAM</span></span></a><nav aria-label="Главная навигация"><a href="index.html#concept">Концепция</a><a href="calculations.html">Расчёты</a><a href="assembly.html">3D-модель</a><a href="library.html">Материалы</a></nav><a class="header-link" href="''' + REPO + '''" target="_blank" rel="noopener">GitHub ↗</a></header>'''
     footer = '''<footer class="site-footer"><div><a class="brand" href="index.html">ЗАЗ / STEAM</a><p>Исследование парового привода для ЗАЗ-968М.</p></div><div><span>Версия 08.10.2026</span><a href="library.html">Библиотека материалов →</a><a href="''' + REPO + '''" target="_blank" rel="noopener">Исходники на GitHub ↗</a></div></footer>'''
     def page(template, title, desc, **values):
         text = (WEB / template).read_text()
@@ -99,9 +106,11 @@ def main():
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         return text
 
+    (OUT / 'calculations.html').write_text(page('calculations.html', 'Формулы и подстановки — ЗАЗ / STEAM', 'Формула, исходные данные, подстановка и результат для каждого расчёта.'))
     (OUT / 'assembly.html').write_text(page('assembly.html', 'CAD-сборка — ЗАЗ / STEAM',
         'Заводская модель насоса, импорт кузова и агрегатов, измерения и проверка пересечений поверхностей.'))
     for path, title, cat in [
+        ('calculations.html', 'Формулы, подстановки и сверка компонентов', 'Расчёты'),
         ('assembly.html', 'CAD-сборка: реальные файлы и проверка поверхностей', '3D'),
         ('models/cat-5cp2120w.glb', 'Cat Pumps 5CP2120W · заводской CAD в GLB', '3D'),
         ('models/cat-5cp2120w.step', 'Cat Pumps 5CP2120W · исходный заводской STEP', '3D'),
@@ -119,7 +128,7 @@ def main():
         scenario_cards.append(f'''<article class="scenario {'featured' if c['id']=='B' else ''}"><div class="scenario-top"><span class="letter">{c['id']}</span><span>{label}</span></div><div class="scenario-power">{fmt(c['net_drive_kW'],1).removesuffix(',0')}<span>кВт к КПП</span></div><p class="scenario-speed">{c['target_kmh']} км/ч · цель расчётного сценария</p><dl><div><dt>Режим пара</dt><dd>{c['p_bar_abs']} бар abs / {c['T_C']} °C</dd></div><div><dt>Масса с водителем</dt><dd>{fmt(m['running_mass_kg'])} кг</dd></div><div><dt>Теплоотвод на номинале</dt><dd>{fmt(r['condenser_kW'])} кВт</dd></div><div><dt>Топливо на номинале</dt><dd>{fmt(r['diesel_L_h'],1)} л/ч</dd></div></dl><div class="scenario-budget"><b>{rub} млн ₽</b><span>{eur} тыс. €</span></div><p class="scenario-note">{note}</p><a class="text-link" href="lab.html?scenario={c['id']}">Исследовать вариант →</a></article>''')
     sheet_cards = ''.join(f'''<a class="sheet" href="drawings/{k}.pdf"><div class="sheet-preview"><img src="drawings/{k}.svg" alt="{escape(v[0])}"></div><div class="sheet-description"><span class="eyebrow">ЛИСТ {k[:2]} / PDF</span><h3>{v[0]}</h3><p>{v[1]}</p></div><span class="sheet-arrow">↗</span></a>''' for k, v in drawings.items())
     source_items = ''.join(f'<li><a href="{escape(sources[k]["url"])}" target="_blank" rel="noopener">{escape(sources[k]["title"])} ↗</a></li>' for k in ['manual', 'iapws', 'fin', 'rus', 'vwvideo'] if k in sources)
-    (OUT / 'index.html').write_text(page('index.html', 'ЗАЗ / STEAM — проект парового автомобиля', 'Расчёты, 3D-компоновка и чертежи парового привода ЗАЗ-968М. Открытый предварительный инженерный проект.', SCENARIOS=''.join(scenario_cards), SHEETS=sheet_cards, SOURCES=source_items))
+    (OUT / 'index.html').write_text(page('index.html', 'ЗАЗ / STEAM — проект парового автомобиля', 'Расчёты, 3D-компоновка и чертежи парового привода ЗАЗ-968М. Открытый предварительный инженерный проект.', SCENARIOS=''.join(scenario_cards), SHEETS=sheet_cards, SOURCES=source_items, FORMULA_COUNT=sum(len(c['steps']) for c in json.loads((ROOT/'calculation-workbook.json').read_text()))))
 
     filters = ''.join(f'<button class="filter" data-category="{cat}" aria-pressed="false">{cat}</button>' for cat in ['Документы', 'Чертежи', '3D', 'Расчёты', 'Исходники', 'Проверки'])
     rows = []
@@ -139,7 +148,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 

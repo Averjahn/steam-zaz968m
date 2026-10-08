@@ -1,0 +1,120 @@
+// Formula workbook uses SI-derived kJ/kg, kW, kg/s; properties are precomputed by IF97.
+export const number = (v, digits=6) => Number.isFinite(v)?v.toLocaleString('ru-RU',{maximumFractionDigits:digits,useGrouping:false}):'—';
+const n=number;
+export function roadSteps(speed,mass,grade,v,acceleration=0){
+ const steps=[];const add=(key,title,formula,substitution,value,unit,terms)=>{steps.push({key,title,formula,substitution,value,unit,terms,group:'Дорожная нагрузка'});return value;};
+ const velocity=add('velocity','Скорость в СИ','v = V / 3,6',`${n(speed)} / 3,6`,speed/3.6,'м/с','V — скорость, км/ч; 1 км/ч = 1/3,6 м/с.');
+ const theta=add('theta','Угол подъёма','θ = arctan(i)',`arctan(${n(grade)})`,Math.atan(grade),'рад','i — уклон как доля: 5 % = 0,05.');
+ const roll=add('roll','Сопротивление качению','Fкач = m · g · Crr · cos(θ)',`${n(mass)} · 9,80665 · ${n(v.rolling_coefficient)} · cos(${n(theta)})`,mass*9.80665*v.rolling_coefficient*Math.cos(theta),'Н','m — масса автомобиля с загрузкой, кг; g — стандартное ускорение свободного падения, м/с²; Crr — принятое сопротивление качению.');
+ const aero=add('aero','Аэродинамическое сопротивление','Fвозд = ρвозд · CdA · v² / 2',`${n(v.air_density_kg_m3)} · ${n(v.CdA_m2)} · ${n(velocity)}² / 2`,.5*v.air_density_kg_m3*v.CdA_m2*velocity**2,'Н','ρвозд — плотность воздуха, кг/м³; CdA — коэффициент сопротивления × фронтальная площадь, м². Без ветра.');
+ const slope=add('slope','Сила на подъёме','Fуклон = m · g · sin(θ)',`${n(mass)} · 9,80665 · sin(${n(theta)})`,mass*9.80665*Math.sin(theta),'Н','Подъём положителен; отрицательная тяга на спуске не моделирует торможение.');
+ const inert=add('inert','Разгон','Fразгон = m · a',`${n(mass)} · ${n(acceleration)}`,mass*acceleration,'Н','a — ускорение, м/с². В таблицах установившееся движение: a = 0. Вращательная инерция здесь не учтена.');
+ const force=add('force_N','Суммарная сила','F = Fкач + Fвозд + Fуклон + Fразгон',`${n(roll)} + ${n(aero)} + ${n(slope)} + ${n(inert)}`,roll+aero+slope+inert,'Н','Сумма сил сопротивления и разгона.');
+ const wheel=add('wheel_kW','Мощность на колёсах','Pкол = F · v / 1000',`${n(force)} · ${n(velocity)} / 1000`,force*velocity/1000,'кВт','1000 Вт = 1 кВт.');
+ const drive=add('drive_kW','Мощность на входе КПП','Pприв = Pкол / ηтр',`${n(wheel)} / ${n(v.transmission_efficiency)}`,wheel/v.transmission_efficiency,'кВт','ηтр — принятый КПД трансмиссии; это не измеренная карта КПП ЗАЗ.');
+ add('wheel_torque_Nm','Момент на колёсах','Mкол = F · Rкол',`${n(force)} · ${n(v.wheel_rolling_radius_m)}`,force*v.wheel_rolling_radius_m,'Н·м','Rкол — принятый радиус качения, м; суммарный момент ведущих колёс.');
+ add('wheel_rpm','Обороты колёс','nкол = 60 · v / (2π · Rкол)',`60 · ${n(velocity)} / (2π · ${n(v.wheel_rolling_radius_m)})`,60*velocity/(2*Math.PI*v.wheel_rolling_radius_m),'об/мин','Без проскальзывания шин.');
+ const wheelRpm=60*velocity/(2*Math.PI*v.wheel_rolling_radius_m);
+ v.gears.forEach((gear,i)=>add('gear_'+i,`Обороты входа КПП, передача ${i+1}`,'nКПП = nкол · iглав · iперед',`${n(wheelRpm)} · ${n(v.final_drive)} · ${n(gear)}`,wheelRpm*v.final_drive*gear,'об/мин','Передаточные числа из исходного справочника; дополнительный адаптер паровой машины не определён.'));
+ return {steps,drive_kW:drive,force_N:force};
+}
+export function cycleSteps(drive,c,cfg,state,returnFraction=cfg.return_fraction){
+ const steps=[];const add=(key,title,formula,substitution,value,unit,terms,note='')=>{steps.push({key,title,formula,substitution,value,unit,terms,note,group:'Паровой цикл и тепло'});return value;};
+ const p1=add('p1','Давление на входе','p₁ = pбар · 10⁵',`${n(c.p_bar_abs)} · 10⁵`,c.p_bar_abs*1e5,'Па abs','Все давления абсолютные, не манометрические. Потери в трубах пока не учтены.');
+ const p2=add('p2','Давление выпуска','p₂ = pвып,бар · 10⁵',`${n(cfg.exhaust_pressure_bar_abs)} · 10⁵`,cfg.exhaust_pressure_bar_abs*1e5,'Па abs','Принятое противодавление; характеристики реального конденсатора отсутствуют.');
+ const T1=add('T1','Температура на входе','T₁ = t₁ + 273,15',`${n(c.T_C)} + 273,15`,c.T_C+273.15,'К','Разность температур в K численно равна разности в °C.');
+ add('tsat','Проверка перегрева','tнас = TIF97(p₁, x=1) − 273,15',`TIF97(${n(p1)} Па, x=1) − 273,15`,state.inlet_saturation_temperature_C,'°C','x=1 — насыщенный пар. t₁ должен превышать tнас.');
+ const h1=add('h1_kJ_kg','Энтальпия входного пара','h₁ = hIF97(p₁, T₁) / 1000',`hIF97(${n(p1)} Па, ${n(T1)} К) / 1000`,state.h1_kJ_kg,'кДж/кг','IF97 выдаёт h в Дж/кг. Это термодинамическое свойство, а не паспорт двигателя.');
+ const s1=add('s1_kJ_kgK','Энтропия входного пара','s₁ = sIF97(p₁, T₁) / 1000',`sIF97(${n(p1)} Па, ${n(T1)} К) / 1000`,state.s1_kJ_kgK,'кДж/(кг·К)','PropsSI("S","P",p₁,"T",T₁,"IF97::Water").');
+ const h2s=add('h2s_kJ_kg','Идеальное изоэнтропное расширение','h₂s = hIF97(p₂, s₁) / 1000',`hIF97(${n(p2)} Па, ${n(s1*1000)} Дж/(кг·К)) / 1000`,state.h2s_kJ_kg,'кДж/кг','s₂s=s₁. PropsSI("H","P",p₂,"S",s₁·1000,"IF97::Water").');
+ const h2=add('h2_kJ_kg','Действительная энтальпия выпуска','h₂ = h₁ − ηis · (h₁ − h₂s)',`${n(h1)} − ${n(c.eta_is)} · (${n(h1)} − ${n(h2s)})`,h1-c.eta_is*(h1-h2s),'кДж/кг','ηis — принятый изоэнтропный КПД; карта паровой машины не получена.');
+ add('inlet_density_kg_m3','Плотность входного пара','ρ₁ = ρIF97(p₁, T₁)',`ρIF97(${n(p1)} Па, ${n(T1)} К)`,state.inlet_density_kg_m3,'кг/м³','Для предварительной оценки прохода паровой трубы; расход и допустимая скорость ещё не задают толщину стенки.');
+ add('exhaust_temperature_C','Температура выпуска','t₂ = TIF97(p₂, h₂) − 273,15',`TIF97(${n(p2)} Па, ${n(h2*1000)} Дж/кг) − 273,15`,state.exhaust_temperature_C,'°C','Свойство выпуска, рассчитанное IF97 для выбранного ηis.');
+ const hf=state.exhaust_liquid_h_kJ_kg,hg=state.exhaust_vapor_h_kJ_kg,quality=(h2-hf)/(hg-hf);
+ add('exhaust_quality','Степень сухости выпуска','x₂ = (h₂ − hf) / (hg − hf), только при hf ≤ h₂ ≤ hg',`(${n(h2)} − ${n(hf)}) / (${n(hg)} − ${n(hf)})`,quality>=0&&quality<=1?quality:null,'доля','hf и hg — энтальпии насыщенной жидкости и пара при p₂. За пределами двухфазной области x не определён; x>1 не является физической степенью сухости.');
+ const hc=add('hc','Энтальпия возвратной воды','hк = hIF97(p₂, tк + 273,15) / 1000',`hIF97(${n(p2)} Па, ${n(cfg.condensate_temperature_C)} + 273,15 К) / 1000`,state.condensate_h_kJ_kg,'кДж/кг','tк — принятая температура конденсата, °C.');
+ const hm=add('hm','Энтальпия холодной подпитки','hпод = hIF97(p₂, tпод + 273,15) / 1000',`hIF97(${n(p2)} Па, ${n(cfg.makeup_temperature_C)} + 273,15 К) / 1000`,state.makeup_h_kJ_kg,'кДж/кг','tпод — принятая температура холодного запаса.');
+ const r=returnFraction;
+ const h3=add('h3_kJ_kg','Смешение воды','h₃ = r · hк + (1 − r) · hпод',`${n(r)} · ${n(hc)} + (1 − ${n(r)}) · ${n(hm)}`,r*hc+(1-r)*hm,'кДж/кг','r — доля возвращённого пара по массе; не подтверждённая герметичность установки.');
+ const rho=add('rho3','Плотность перед насосом','ρ₃ = ρIF97(p₂, h₃)',`ρIF97(${n(p2)} Па, ${n(h3*1000)} Дж/кг)`,state.feed_density_kg_m3,'кг/м³','PropsSI("D","P",p₂,"H",h₃·1000,"IF97::Water"). В браузере свойства берутся из пересчитанного results.json.');
+ add('feed_temperature_C','Температура смешанной воды перед насосом','t₃ = TIF97(p₂, h₃) − 273,15',`TIF97(${n(p2)} Па, ${n(h3*1000)} Дж/кг) − 273,15`,state.feed_temperature_C,'°C','В стационарном режиме смешанная вода холоднее конденсата; фактический максимум зависит от схемы и переходных процессов.');
+ const wp=add('wp','Удельная работа питания','wнас = (p₁ − p₂) / (1000 · ρ₃ · ηнас)',`(${n(p1)} − ${n(p2)}) / (1000 · ${n(rho)} · ${n(cfg.pump_efficiency)})`,(p1-p2)/(1000*rho*cfg.pump_efficiency),'кДж/кг','Модель несжимаемой жидкости. ηнас=0,55 — допущение, не КПД Cat Pumps. Не учтены потери и запас напора.');
+ const h4=add('h4_kJ_kg','Энтальпия после насоса','h₄ = h₃ + wнас',`${n(h3)} + ${n(wp)}`,h3+wp,'кДж/кг','Вся работа насоса в этой модели передана жидкости.');
+ const work=add('work','Удельная работа машины на валу','wвал = ηмех · (h₁ − h₂)',`${n(cfg.mechanical_efficiency)} · (${n(h1)} − ${n(h2)})`,cfg.mechanical_efficiency*(h1-h2),'кДж/кг','ηмех — принятый механический КПД машины.');
+ const air=add('air_per_steam','Воздух для конденсатора на 1 кг пара','bвозд = r · (h₂ − hк) / (cp,возд · ΔTвозд)',`${n(r)} · (${n(h2)} − ${n(hc)}) / (${n(cfg.air_heat_capacity_kJ_kgK)} · ${n(cfg.air_temperature_rise_K)})`,r*(h2-hc)/(cfg.air_heat_capacity_kJ_kgK*cfg.air_temperature_rise_K),'кг воздуха/кг пара','cp,возд — кДж/(кг·К); ΔTвозд — K. Только оценка теплового баланса воздуха.');
+ const fanSpec=add('fan_work','Удельная нагрузка обдува на вал','wобдув = bвозд · Δpвозд / (1000 · ρохл · ηвент · ηген)',`${n(air)} · ${n(cfg.fan_pressure_drop_Pa)} / (1000 · ${n(cfg.cooling_air_density_kg_m3)} · ${n(cfg.fan_efficiency)} · ${n(cfg.generator_efficiency)})`,air*cfg.fan_pressure_drop_Pa/(1000*cfg.cooling_air_density_kg_m3*cfg.fan_efficiency*cfg.generator_efficiency),'кДж/кг пара','Δpвозд — Па; ρохл — кг/м³. Плотность обдува 1,18 отделена от дорожной плотности 1,225. Все параметры обдува пока допущения.');
+ const available=add('available','Работа после насоса и обдува','wпол = wвал − wнас − wобдув',`${n(work)} − ${n(wp)} − ${n(fanSpec)}`,work-wp-fanSpec,'кДж/кг','Если wпол≤0, сценарий не имеет решения при этих допущениях.');
+ if(available<=0)throw Error('Удельная полезная работа неположительна.');
+ const mdot=add('mdot','Массовый расход пара','ṁ = (Pприв + Pпост) / wпол',`(${n(drive)} + ${n(c.aux_shaft_kW)}) / ${n(available)}`,(drive+c.aux_shaft_kW)/available,'кг/с','кВт / (кДж/кг) = кг/с. Pпост — постоянные вспомогательные нагрузки на валу, без питания воды и обдува.');
+ const steam=add('steam_kg_h','Паропроизводительность','Gпар = 3600 · ṁ',`3600 · ${n(mdot)}`,3600*mdot,'кг/ч','1 час = 3600 секунд.');
+ const makeup=add('makeup_kg_h','Расход подпиточной воды','Gпод = (1 − r) · Gпар',`(1 − ${n(r)}) · ${n(steam)}`,(1-r)*steam,'кг/ч','Продувка, дренажи, пусковые потери и дополнительные утечки отдельно не включены.');
+ const boiler=add('boiler_kW','Тепло в парогенератор','Qген = ṁ · (h₁ − h₄)',`${n(mdot)} · (${n(h1)} − ${n(h4)})`,mdot*(h1-h4),'кВт','Баланс стационарного потока, без кинетической/потенциальной энергии.');
+ const condenser=add('condenser_kW','Тепло в конденсатор','Qконд = r · ṁ · (h₂ − hк)',`${n(r)} · ${n(mdot)} · (${n(h2)} − ${n(hc)})`,r*mdot*(h2-hc),'кВт','Учитывает охлаждение возвращённой доли до tк.');
+ const burner=add('burner_LHV_kW','Мощность топлива по НТС','Qтопл = Qген / ηкот',`${n(boiler)} / ${n(cfg.boiler_efficiency_LHV)}`,boiler/cfg.boiler_efficiency_LHV,'кВт НТС','ηкот — принятый КПД по низшей теплоте сгорания. Карта горелки/генератора отсутствует.');
+ const fuel=add('fuel_kg_h','Массовый расход дизеля','Gтопл = 3,6 · Qтопл / HНТС',`3,6 · ${n(burner)} / ${n(cfg.diesel_LHV_MJ_kg)}`,3.6*burner/cfg.diesel_LHV_MJ_kg,'кг/ч','1 кВт = 3,6 МДж/ч; HНТС — МДж/кг. Свойства принятого топлива нужно сверить с поставкой.');
+ const liters=add('diesel_L_h','Объёмный расход дизеля','V̇топл = Gтопл / ρдиз',`${n(fuel)} / ${n(cfg.diesel_density_kg_L)}`,fuel/cfg.diesel_density_kg_L,'л/ч','ρдиз — кг/л, задано при условной температуре.');
+ const gross=add('gross_engine_kW','Валовая мощность машины','Pвал = ṁ · wвал',`${n(mdot)} · ${n(work)}`,mdot*work,'кВт','Мощность до отбора на насос, обдув и постоянные вспомогательные нагрузки.');
+ const pump=add('feed_pump_kW','Мощность питания воды','Pнас = ṁ · wнас',`${n(mdot)} · ${n(wp)}`,mdot*wp,'кВт','Не фактическая электрическая мощность выбранного насосного агрегата.');
+ const flowAir=add('air_m3_s','Объёмный расход воздуха','V̇возд = Qконд / (cp,возд · ΔTвозд · ρохл)',`${n(condenser)} / (${n(cfg.air_heat_capacity_kJ_kgK)} · ${n(cfg.air_temperature_rise_K)} · ${n(cfg.cooling_air_density_kg_m3)})`,condenser/(cfg.air_heat_capacity_kJ_kgK*cfg.air_temperature_rise_K*cfg.cooling_air_density_kg_m3),'м³/с','Предположение о равномерном прогреве воздуха; нет карты сопротивления теплообменника.');
+ const fan=add('fan_lower_estimate_kW','Электрическая мощность вентиляторов','Pвент = V̇возд · Δpвозд / (1000 · ηвент)',`${n(flowAir)} · ${n(cfg.fan_pressure_drop_Pa)} / (1000 · ${n(cfg.fan_efficiency)})`,flowAir*cfg.fan_pressure_drop_Pa/(1000*cfg.fan_efficiency),'кВт','Не подтверждённая рабочая точка вентиляторов.');
+ const fanShaft=add('fan_shaft_kW','Отбор на генератор для обдува','Pген = Pвент / ηген',`${n(fan)} / ${n(cfg.generator_efficiency)}`,fan/cfg.generator_efficiency,'кВт','Генератор электрический; ηген — допущение.');
+ add('total_aux_shaft_kW','Суммарная вспомогательная нагрузка','Pвсп = Pпост + Pген',`${n(c.aux_shaft_kW)} + ${n(fanShaft)}`,c.aux_shaft_kW+fanShaft,'кВт','Питательный насос показан отдельно.');
+ const lost=add('lost_steam_energy_kW','Энергия потерянного пара','Qпот,пар = (1 − r) · ṁ · (h₂ − hпод)',`(1 − ${n(r)}) · ${n(mdot)} · (${n(h2)} − ${n(hm)})`,(1-r)*mdot*(h2-hm),'кВт','Относительно входной холодной подпитки.');
+ const mech=add('mechanical_loss_kW','Механические потери','Qмех = ṁ · (h₁ − h₂) · (1 − ηмех)',`${n(mdot)} · (${n(h1)} − ${n(h2)}) · (1 − ${n(cfg.mechanical_efficiency)})`,mdot*(h1-h2)*(1-cfg.mechanical_efficiency),'кВт','Принятая модель потерь машины.');
+ add('balance_residual_kW','Проверка первого закона термодинамики','εQ = Qген + Pнас − Qконд − Qпот,пар − Pвал − Qмех',`${n(boiler)} + ${n(pump)} − ${n(condenser)} − ${n(lost)} − ${n(gross)} − ${n(mech)}`,boiler+pump-condenser-lost-gross-mech,'кВт','Должно быть ≈0. Нулевой остаток подтверждает арифметику модели, но не принятые КПД.');
+ add('shaft_residual','Баланс мощности вала','εP = Pвал − Pнас − Pген − Pпост − Pприв',`${n(gross)} − ${n(pump)} − ${n(fanShaft)} − ${n(c.aux_shaft_kW)} − ${n(drive)}`,gross-pump-fanShaft-c.aux_shaft_kW-drive,'кВт','Насос и вентиляторы входят в расход пара, а не добавлены после расчёта.');
+ const eta=add('net_efficiency_LHV','Полезный КПД по НТС','ηпол = Pприв / Qтопл',`${n(drive)} / ${n(burner)}`,drive/burner,'доля','Это расчётный КПД всей установки до входа КПП.');
+ add('specific_steam_kg_kWh_drive','Удельный расход пара','gпар = Gпар / Pприв',`${n(steam)} / ${n(drive)}`,drive>0?steam/drive:null,'кг/(кВт·ч)','При Pприв=0 удельный расход не определён.');
+ add('exchange_area_m2','Требуемая поверхность теплообмена','Aтепл = 1000 · Qконд / (U · ΔTlm)',`1000 · ${n(condenser)} / (${n(cfg.heat_exchanger_U_W_m2K)} · ${n(cfg.heat_exchanger_LMTD_K)})`,1000*condenser/(cfg.heat_exchanger_U_W_m2K*cfg.heat_exchanger_LMTD_K),'м²','U — Вт/(м²·К), ΔTlm — K. Это развитая поверхность, не фронтальная площадь. Реальные U и ΔTlm не получены; ΔTlm пока задана, а не выведена из температур.');
+ add('shaft_torque_at_rpm_Nm','Момент на валу машины','Mвал = 60000 · Pвал / (2π · n)',`60000 · ${n(gross)} / (2π · ${n(c.rpm)})`,60000*gross/(2*Math.PI*c.rpm),'Н·м','n — принятые обороты машины. Используется точное 60·1000/(2π), а не округление 9550.');
+ for(const volts of [14,48])add('current_'+volts,`Ток вентиляторов при ${volts} В`,'Iвент = 1000 · Pвент / Uэл',`1000 · ${n(fan)} / ${volts}`,1000*fan/volts,'А','Оценка постоянного тока; без прочих потребителей, пускового тока и потерь проводки.');
+ add('pump_flow','Объёмный расход воды в насос','V̇нас = 60000 · ṁ / ρ₃',`60000 · ${n(mdot)} / ${n(rho)}`,60000*mdot/rho,'л/мин','60 с/мин × 1000 л/м³. Применён расход всего пара, а не только подпитки.');
+ const pumpFlow=60000*mdot/rho;
+ add('pump_rpm','Оценка оборотов Cat Pumps по паспорту','nнас ≈ nпас · V̇нас / V̇пас',`950 · ${n(pumpFlow)} / 15`,950*pumpFlow/15,'об/мин','Паспорт: 15 л/мин при 950 об/мин; минимум 100 об/мин. Пропорциональность — предварительная оценка, не карта насоса. Требуются TB002, потери, регулирование и запас напора.');
+ add('water_temp_excess','Сверка обычных уплотнений насоса','ΔtNBR = t₃ − tNBR,max',`${n(state.feed_temperature_C)} − 71`,state.feed_temperature_C-71,'К','Паспорт Cat Pumps: NBR до 71 °C; HT .3000 до 82 °C. Для возвратной воды 80 °C обычное исполнение не подходит по этому критерию. Температура перед насосом после смешения ниже tк; горячая ветвь и переходные режимы требуют отдельной проверки.');
+ return {steps,values:Object.fromEntries(steps.map(s=>[s.key,s.value])),mdot,makeup,liters,burner,eta};
+}
+export function massSteps(c,v,cfg){
+ const steps=[],items=[['Снятые агрегаты и старое топливо',-v.removed_mass_kg,v.removed_x_mm],['64 % сухой установки',c.dry_plant_kg*.64,3250],['20 % сухой установки',c.dry_plant_kg*.20,420],['10 % сухой установки',c.dry_plant_kg*.10,550],['6 % сухой установки',c.dry_plant_kg*.06,1800],['Холодный запас воды',c.water_L*v.cold_water_density_kg_L,600],['Вода в контуре',c.loop_water_kg,3100],['Новое топливо',c.fuel_L*cfg.diesel_density_kg_L,2800],['Водитель',v.driver_mass_kg,v.driver_x_mm]];
+ const add=(key,title,formula,substitution,value,unit,terms)=>{steps.push({key,title,formula,substitution,value,unit,terms,group:'Масса и нагрузки'});return value;};
+ add('water_mass','Масса холодной воды','mвод = Vвод · ρвод',`${n(c.water_L)} · ${n(v.cold_water_density_kg_L)}`,c.water_L*v.cold_water_density_kg_L,'кг','ρвод=1 кг/л — приближение для холодного запаса. Плотность горячей воды перед насосом рассчитана IF97 отдельно.');
+ add('fuel_mass','Масса нового топлива','mтопл = Vтопл · ρдиз',`${n(c.fuel_L)} · ${n(cfg.diesel_density_kg_L)}`,c.fuel_L*cfg.diesel_density_kg_L,'кг','Старое топливо включено в снимаемую массу.');
+ const mass=add('running_mass_kg','Масса автомобиля с водителем','m = mисх + ΣΔmⱼ',`${n(v.curb_mass_kg)} + (${items.map(i=>n(i[1])).join(' + ')})`,v.curb_mass_kg+items.reduce((s,i)=>s+i[1],0),'кг','Сухая установка — заданная суммарная масса, не масса из CAD. Вода в контуре учтена отдельно.');
+ const rear0=add('base_rear','Исходная масса на задней оси','mзад,0 = mисх · (1 − fперед)',`${n(v.curb_mass_kg)} · (1 − ${n(v.curb_front_fraction)})`,v.curb_mass_kg*(1-v.curb_front_fraction),'кг','fперед=0,38 — допущение до взвешивания донора.');
+ for(let j=0;j<items.length;j++){const [name,m,x]=items[j];add('axle_delta_'+j,name+' · вклад в заднюю ось','Δmзад,j = Δmⱼ · (xⱼ − xперед) / Lбазы',`${n(m)} · (${n(x)} − ${n(v.front_axle_x_mm)}) / ${n(v.wheelbase_mm)}`,m*(x-v.front_axle_x_mm)/v.wheelbase_mm,'кг','Статическое равновесие моментов. Координаты и распределение сухой массы условные, не взяты из реальной сборки.');}
+ const delta=items.reduce((s,[,m,x])=>s+m*(x-v.front_axle_x_mm)/v.wheelbase_mm,0);
+ const rear=add('rear_kg_assumed','Прогноз нагрузки на заднюю ось','mзад = mзад,0 + ΣΔmзад,j',`${n(rear0)} + (${n(delta)})`,rear0+delta,'кг','Эквивалент массы нагрузки; допустимые нагрузки на оси не установлены.');
+ add('front_kg_assumed','Прогноз нагрузки на переднюю ось','mперед = m − mзад',`${n(mass)} − ${n(rear)}`,mass-rear,'кг','CAD-перемещения не пересчитывают этот прогноз автоматически.');
+ add('remaining_total_payload_kg','Остаток до справочной полной массы','Δmзапас = mполн,спр − m',`${n(v.reference_full_mass_kg)} − ${n(mass)}`,v.reference_full_mass_kg-mass,'кг','Справочная масса 1200 кг не является допуском переделки; отрицательный остаток означает превышение.');
+ return {steps,mass};
+}
+export function rangeSteps(c,v,cycle,speed){
+ const steps=[];const add=(key,title,formula,substitution,value,unit,terms)=>{steps.push({key,title,formula,substitution,value,unit,terms,group:'Запас воды и топлива'});return value;};
+ const water=add('usable_water','Используемый холодный запас','mвод,пол = Vвод · ρвод · fпол',`${n(c.water_L)} · ${n(v.cold_water_density_kg_L)} · ${n(v.usable_water_fraction)}`,c.water_L*v.cold_water_density_kg_L*v.usable_water_fraction,'кг','fпол=0,8 — 20 % запаса воды оставлено в резерве. Вода в контуре в запас подпитки не входит.');
+ const tw=add('water_duration_h','Время до расходования воды','tвод = mвод,пол / Gпод',`${n(water)} / ${n(cycle.makeup)}`,cycle.makeup>0?water/cycle.makeup:null,'ч','Для текущего постоянного режима. При нулевой подпитке ограничение по воде не определено.');
+ const tf=add('fuel_duration_h','Время до расходования топлива','tтопл = Vтопл / V̇топл',`${n(c.fuel_L)} / ${n(cycle.liters)}`,c.fuel_L/cycle.liters,'ч','Резерв топлива, прогрев и остановки отдельно не включены.');
+ add('range_km','Запас хода при постоянном режиме','S = V · min(tвод, tтопл)',`${n(speed)} · min(${n(tw)}, ${n(tf)})`,speed*Math.min(tw??Infinity,tf),'км','При номинальном режиме это условная дистанция: мощность и скорость могут не соответствовать дорожному сопротивлению. Для запаса хода на дороге выберите «По скорости, массе и уклону».');
+ return steps;
+}
+export function selectCalculation(data,{caseId='B',mode='rated',speed=80,mass,grade=0,eta}={}){
+ const s=data.scenarios.find(x=>x.case.id===caseId)||data.scenarios[1],v=data.inputs.vehicle,cfg=data.inputs.cycle;
+ let c={...s.case},state=s.rated,r=cfg.return_fraction;
+ if(mode==='open'){state=s.open_cycle;r=0;}
+ if(mode==='sensitivity'){const row=data.sensitivity.find(x=>x.case===c.id&&x.eta_is===Number(eta));if(row){state=row;c.eta_is=row.eta_is;}}
+ const m=massSteps(c,v,cfg),road=roadSteps(speed,mass??m.mass,grade,v),drive=mode==='road'?road.drive_kW:c.net_drive_kW;
+ if(drive<0)throw Error('Отрицательная тяга: торможение и рекуперация в модели не рассчитаны.');
+ const cycle=cycleSteps(drive,c,cfg,state,r);
+ let low=0,high=160;for(let j=0;j<60;j++){const mid=(low+high)/2;if((m.mass*9.80665*v.rolling_coefficient+.5*v.air_density_kg_m3*v.CdA_m2*(mid/3.6)**2)*(mid/3.6)/(1000*v.transmission_efficiency)<=c.net_drive_kW)low=mid;else high=mid;}
+ const bound={key:'flat_speed_power_bound_kmh',title:'Предел скорости по мощности на ровной дороге',formula:'m·g·Crr·(V/3,6) + ρвозд·CdA·(V/3,6)³/2 = 1000·ηтр·Pном',substitution:`${n(m.mass)} · 9,80665 · ${n(v.rolling_coefficient)} · (V/3,6) + ${n(v.air_density_kg_m3)} · ${n(v.CdA_m2)} · (V/3,6)³ / 2 = 1000 · ${n(v.transmission_efficiency)} · ${n(c.net_drive_kW)}; решение бисекцией 60 шагов на [0;160]`,value:low,unit:'км/ч',terms:'Только верхняя оценка по мощности: не учитывает обороты/передачи, охлаждение, ветер, разгон и дорожный допуск. Для расчёта использована масса сценария, а не изменённая дорожная масса.',group:'Дорожная нагрузка'};
+ const geometry=(data.target_layout?.parts||[]).filter(p=>['WTR','FUE','RCV'].includes(p.id)).map(p=>({key:'external_volume_'+p.id,title:p.name+' · внешний объём целевого габарита',formula:'Vвнеш = L · B · H / 10⁶',substitution:`${p.size.join(' · ')} / 10⁶`,value:p.size.reduce((a,b)=>a*b,1)/1e6,unit:'л',terms:'Размеры в мм, 10⁶ мм³ = 1 л. Это внешний параллелепипед, а не полезный объём бака; стенки, перегородки и газовый запас не вычтены.',group:'Запас воды и топлива'}));
+ return {case:c,mode,drive,road,cycle,mass:m,steps:[...road.steps,bound,...cycle.steps,...m.steps,...rangeSteps(c,v,cycle,speed),...geometry],exceeds:drive>c.net_drive_kW,return_fraction:r};
+}
+export const pendingCalculations=[
+ ['Паровые трубы','D = √(4ṁ / (πρпара · u))','Не заданы допустимая скорость, схема трассы, потери давления и выбранная арматура. Формула даёт только начальную оценку прохода; толщину стенки она не определяет.'],
+ ['Прогрев','t ≥ [mвод·cp,вод·ΔT + mмет·cp,мет·ΔT + Eпроч] / Qпрогрев','Нет реальных массы металла, стартового запаса воды, потерь и режима горелки. Время не вычислено.'],
+ ['Работа насоса по напору','pвыход ≥ pген + Δpтрасса + Δpрегулятор + запас','Потери, подпор и NPSH не рассчитаны. Проверка только по максимальному давлению насоса недостаточна.'],
+ ['Температурный напор конденсатора','ΔTlm = (ΔT₁ − ΔT₂) / ln(ΔT₁/ΔT₂)','Нужны температуры потоков, схема и зоны перегрева/конденсации/охлаждения. В основном расчёте принято 40 K, не подтверждено характеристикой изделия.'],
+ ['Рабочий объём бака','Vпол = Vвнеш − Vстенок − Vперегородок − Vсвободный','Нет выбранных стенок и перегородок. Внешний размер CAD не подтверждает рабочий объём.'],
+ ['Прочность, крепления и защиты','Расчёт по выбранным материалам, конструкциям и применимым нормам','Нет исходных данных для стенок котла, сварки, клапанов, рамы и креплений. Рабочие размеры не назначены.'],
+ ['Фактическая смета','Cитого = Σ(qⱼ · ценаⱼ) + работы + испытания + резерв','Пока нет артикулов и коммерческих предложений; бюджетные диапазоны — планы НИОКР.']
+];

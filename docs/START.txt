@@ -51,3 +51,7 @@ scenario_summary.csv, road_load.csv, sensitivity.csv — расчетные та
 Файл 01-layout-mm.dxf содержит контуры сверху 1:1 в мм.
 Файл 01-layout-sheet.dxf содержит графику листа в координатах листа.
 Чертежей котла, силовых креплений и адаптера для изготовления в комплекте нет.
+
+Формулы и подстановки: calculations.html на сайте; calculation-workbook.html и PDF — автономные номинальные A/B/C.
+После правки inputs.json: PYTHONPATH=.deps python3 calculate.py; node verify_calculations.mjs; node build_workbook.mjs; PYTHONPATH=.deps python3 build_viewer.py; PYTHONPATH=.deps python3 build_report.py; python3 build_site.py.
+PDF workbook печатается из calculation-workbook.html браузером. Срезы X/Y/Z и тонкие слои доступны в assembly.html. GLB экспортирует полную геометрию видимых объектов, без вырезания экранных срезов.

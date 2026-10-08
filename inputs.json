@@ -24,7 +24,9 @@
       2.118,
       1.489,
       0.964
-    ]
+    ],
+    "cold_water_density_kg_L": 1.0,
+    "usable_water_fraction": 0.8
   },
   "cycle": {
     "exhaust_pressure_bar_abs": 1.2,
@@ -42,7 +44,8 @@
     "fan_efficiency": 0.55,
     "generator_efficiency": 0.8,
     "heat_exchanger_U_W_m2K": 40,
-    "heat_exchanger_LMTD_K": 40
+    "heat_exchanger_LMTD_K": 40,
+    "cooling_air_density_kg_m3": 1.18
   },
   "scenarios": [
     {

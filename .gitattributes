@@ -5,3 +5,5 @@
 vendor/** linguist-vendored -diff
 docs/vendor/** linguist-vendored -diff
 docs/** linguist-generated
+
+*.pdf binary

@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 3578
+    "size": 4295
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -67,28 +67,63 @@
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 65840
+    "size": 68326
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 14947
+    "size": 16238
   },
   {
     "path": "build_viewer.py",
     "title": "Генерация интерактивной модели",
     "category": "Исходники",
     "format": "PY",
-    "size": 17116
+    "size": 17465
+  },
+  {
+    "path": "build_workbook.mjs",
+    "title": "Сборка формул для PDF и отчёта",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 3467
   },
   {
     "path": "calculate.py",
     "title": "Термодинамический и дорожный расчёт",
     "category": "Исходники",
     "format": "PY",
-    "size": 8698
+    "size": 9392
+  },
+  {
+    "path": "calculation-checks.json",
+    "title": "Сверка формул с Python",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 1906
+  },
+  {
+    "path": "calculation-workbook.html",
+    "title": "Формулы A/B/C · автономная версия",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 269862
+  },
+  {
+    "path": "calculation-workbook.json",
+    "title": "Подстановки A/B/C · JSON",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 143126
+  },
+  {
+    "path": "calculation-workbook.pdf",
+    "title": "Формулы и подстановки A/B/C · PDF",
+    "category": "Документы",
+    "format": "PDF",
+    "size": 887650
   },
   {
     "path": "convert_cad.js",
@@ -109,14 +144,14 @@
     "title": "3D-компоновка и калькулятор",
     "category": "Документы",
     "format": "HTML",
-    "size": 61197
+    "size": 70699
   },
   {
     "path": "inputs.json",
     "title": "Исходные допущения",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 3049
+    "size": 3159
   },
   {
     "path": "layout-vw-inspired.json",
@@ -144,14 +179,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 66287
+    "size": 170875
   },
   {
     "path": "report.pdf",
-    "title": "Расчётный отчёт · 11 страниц",
+    "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 132255
+    "size": 199191
   },
   {
     "path": "requirements.txt",
@@ -165,28 +200,28 @@
     "title": "Полные результаты расчёта",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 45344
+    "size": 55973
   },
   {
     "path": "road_load.csv",
     "title": "Дорожная мощность и скорость",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 1843
+    "size": 1821
   },
   {
     "path": "scenario_summary.csv",
     "title": "Сравнение сценариев",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 2770
+    "size": 3412
   },
   {
     "path": "sensitivity.csv",
     "title": "Чувствительность расчёта",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 8427
+    "size": 10889
   },
   {
     "path": "sources.csv",
@@ -208,6 +243,13 @@
     "category": "Исходники",
     "format": "PY",
     "size": 3469
+  },
+  {
+    "path": "verify_calculations.mjs",
+    "title": "Сверка формул с Python",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 4108
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -294,11 +336,18 @@
     "size": 4578
   },
   {
+    "path": "calculations.html",
+    "title": "Формулы, подстановки и сверка компонентов",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 7290
+  },
+  {
     "path": "assembly.html",
     "title": "CAD-сборка: реальные файлы и проверка поверхностей",
     "category": "3D",
     "format": "HTML",
-    "size": 13264
+    "size": 17287
   },
   {
     "path": "models/cat-5cp2120w.glb",
@@ -319,6 +368,6 @@
     "title": "Происхождение и точность моделей",
     "category": "Документы",
     "format": "JSON",
-    "size": 3266
+    "size": 3824
   }
 ]
