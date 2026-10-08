@@ -39,7 +39,7 @@
     "title": "Воспроизводимая проверка физических оценок по литературе",
     "category": "Исходники",
     "format": "PY",
-    "size": 40396
+    "size": 40458
   },
   {
     "path": "browser-checks.json",
@@ -382,7 +382,7 @@
     "title": "Проверка по книге Фр. Барта и источникам · полный отчёт",
     "category": "Документы",
     "format": "HTML",
-    "size": 62052
+    "size": 62114
   },
   {
     "path": "literature-audit.json",
@@ -396,7 +396,7 @@
     "title": "Проверка парового цикла по литературе · PDF",
     "category": "Документы",
     "format": "PDF",
-    "size": 336217
+    "size": 336003
   },
   {
     "path": "literature-checks.json",
@@ -907,7 +907,7 @@
     "title": "Проверка по литературе · формулы и ограничения цикла",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 37330
+    "size": 37392
   },
   {
     "path": "procurement.html",
