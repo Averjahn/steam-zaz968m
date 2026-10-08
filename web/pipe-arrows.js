@@ -2,7 +2,7 @@ import * as T from 'three';
 
 // An explanatory skin laid on the visible tube surface, never physical hardware.
 // +s follows the real route from its first connection to its last connection.
-const colors = {steam: '#fff8da', exhaust: '#eef0f3', water: '#9ef4e4', fuel: '#ffe184', flue: '#ebc7a2'};
+const colors = {steam: '#fff8da', exhaust: '#eef0f3', water: '#9ef4e4', fuel: '#ffe184', flue: '#ebc7a2', oil: '#cdaa67'};
 const segments = 18;
 
 export function visiblePipeRadius(route, insulation, jacket) {
@@ -82,7 +82,7 @@ export function pipeArrows(curve, route) {
     inverse.copy(group.matrixWorld).invert();
     cameraLocal.copy(camera.getWorldPosition(new T.Vector3())).applyMatrix4(inverse);
     const arrowLength = Math.min(length * .65, Math.max(50, Math.min(95, radius * 1.5)));
-    const width = Math.min(75, radius * 1.15);
+    const width = Math.min(75, radius * 1.15, arrowLength * .65);
     // Keep each whole glyph inside the route, including the end connections.
     const margin = arrowLength * .55;
     const span = Math.max(0, length - 2 * margin);

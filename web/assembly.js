@@ -1,3 +1,4 @@
+import {attachFullscreenViewer} from './viewer-fullscreen.js';
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -15,6 +16,7 @@ import { internalAssemblies, internalRoutes, internalBurner } from './internal-a
 
 const $ = id => document.getElementById(id), models = new Map();
 const viewport = $('cadViewport'), scene = new THREE.Scene();
+attachFullscreenViewer($('cadViewer'));
 scene.background = new THREE.Color('#0b1117');
 const camera = new THREE.PerspectiveCamera(42, 1, 1, 30000); camera.up.set(0, 0, 1);
 const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});

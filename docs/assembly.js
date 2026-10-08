@@ -1,3 +1,4 @@
+import {attachFullscreenViewer} from './viewer-fullscreen.js?v=69927ed516b4';
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -6,15 +7,16 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { auditPackaging } from './packaging-audit.js?v=f6b448b69aac';
-import { heatEquipment } from './heat-geometry.js?v=8ecf8aa9e7dd';
-import { attachSystems } from './assembly-systems.js?v=b673c23a5ad0';
+import { heatEquipment } from './heat-geometry.js?v=380f7163661d';
+import { attachSystems } from './assembly-systems.js?v=2a0ceb95adc9';
 import { acceleratedRaycast, computeBoundsTree } from './vendor/three-mesh-bvh/build/index.module.js';
 import { loadPurchases, purchaseRecord, renderPurchaseCard } from './component-purchases.js?v=0b8b45f53852';
 import {equipmentPorts} from './pipe-joints.js?v=ed575dd9cba4';
-import { internalAssemblies, internalRoutes, internalBurner } from './internal-assembly.js?v=083a062a5937';
+import { internalAssemblies, internalRoutes, internalBurner } from './internal-assembly.js?v=b4a5a4867bd4';
 
 const $ = id => document.getElementById(id), models = new Map();
 const viewport = $('cadViewport'), scene = new THREE.Scene();
+attachFullscreenViewer($('cadViewer'));
 scene.background = new THREE.Color('#0b1117');
 const camera = new THREE.PerspectiveCamera(42, 1, 1, 30000); camera.up.set(0, 0, 1);
 const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});

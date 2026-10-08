@@ -4,7 +4,7 @@
     "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
     "source_sha256": {
       "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-      "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+      "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
       "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
       "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
       "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -17,7 +17,15 @@
       "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
       "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
     },
-    "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved."
+    "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
+    "view_overlay_equivalence": {
+      "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
+      "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+      "export_byte_identical": true,
+      "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+      "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+      "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+    }
   },
   "variants": {
     "diesel": {
@@ -4095,7 +4103,7 @@
         "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -4108,7 +4116,15 @@
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
         },
-        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved."
+        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
+        "view_overlay_equivalence": {
+          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
+          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+          "export_byte_identical": true,
+          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        }
       }
     },
     "wood": {
@@ -7879,7 +7895,7 @@
         "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -7892,7 +7908,15 @@
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
         },
-        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved."
+        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
+        "view_overlay_equivalence": {
+          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
+          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+          "export_byte_identical": true,
+          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        }
       }
     },
     "pellets": {
@@ -11663,7 +11687,7 @@
         "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -11676,7 +11700,15 @@
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
         },
-        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved."
+        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
+        "view_overlay_equivalence": {
+          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
+          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+          "export_byte_identical": true,
+          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        }
       }
     },
     "lpg": {
@@ -15621,7 +15653,7 @@
         "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -15634,7 +15666,15 @@
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
         },
-        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved."
+        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
+        "view_overlay_equivalence": {
+          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
+          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+          "export_byte_identical": true,
+          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        }
       }
     },
     "electric": {
@@ -19103,7 +19143,7 @@
         "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -19116,7 +19156,15 @@
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
         },
-        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved."
+        "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
+        "view_overlay_equivalence": {
+          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
+          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+          "export_byte_identical": true,
+          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        }
       }
     }
   }

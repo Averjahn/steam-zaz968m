@@ -158,7 +158,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 36547
+    "size": 36833
   },
   {
     "path": "build_stock_suspension.py",
@@ -284,7 +284,7 @@
     "title": "Пересечения пяти вариантов источника",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 533360
+    "size": 537738
   },
   {
     "path": "heat-native-checks.json",
@@ -340,7 +340,7 @@
     "title": "Внутренняя сборка · пересечения показанной геометрии",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 96663
+    "size": 97366
   },
   {
     "path": "layout-internal.json",
@@ -525,6 +525,13 @@
     "size": 8474
   },
   {
+    "path": "viewer-checks.json",
+    "title": "Все стрелки, расчётный поток и полноэкранный просмотр · проверки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 98806
+  },
+  {
     "path": "drawings/01-layout-mm.dxf",
     "title": "Общая компоновка · DXF",
     "category": "Чертежи",
@@ -676,7 +683,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 34849
+    "size": 35617
   },
   {
     "path": "user-model.html",

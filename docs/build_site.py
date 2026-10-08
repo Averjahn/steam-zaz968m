@@ -22,7 +22,7 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'component-flow.js', 'viewer-fullscreen.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     purchase_digest=hashlib.sha256((ROOT/'component-purchases.json').read_bytes()).hexdigest()[:12]
     p=(OUT/'component-purchases.js').read_text().replace("'component-purchases.json'","'component-purchases.json?v="+purchase_digest+"'")
@@ -38,7 +38,7 @@ def main():
             version=hashlib.sha256((ROOT/asset).read_bytes()).hexdigest()[:12]
             p=p.replace("'"+asset+"'","'"+asset+"?v="+version+"'")
         (OUT/module).write_text(p)
-    for module,dependencies in [('pipe-joints.js',['connection-data.js','pipe-path.js']),('internal-assembly.js',['pipe-data.js','pipe-path.js','pipe-joints.js','connection-data.js']),('cycle-animation.js',[]),('heat-geometry.js',['pipe-path.js','pipe-joints.js','connection-data.js','internal-assembly.js']),('heat-page.js',['heat-comparison.js','steam-simulation.js']),('assembly-systems.js',['steam-simulation.js','pipe-path.js','pipe-joints.js','pipe-arrows.js','cycle-animation.js','heat-comparison.js']),('physics-page.js',['wheel-loads.js']),('assembly.js',['assembly-systems.js','heat-geometry.js','pipe-joints.js','internal-assembly.js','packaging-audit.js'])]:
+    for module,dependencies in [('pipe-joints.js',['connection-data.js','pipe-path.js']),('internal-assembly.js',['pipe-data.js','pipe-path.js','pipe-joints.js','connection-data.js']),('cycle-animation.js',[]),('heat-geometry.js',['pipe-path.js','pipe-joints.js','connection-data.js','internal-assembly.js']),('heat-page.js',['heat-comparison.js','steam-simulation.js']),('assembly-systems.js',['steam-simulation.js','pipe-path.js','pipe-joints.js','pipe-arrows.js','component-flow.js','cycle-animation.js','heat-comparison.js']),('physics-page.js',['wheel-loads.js']),('assembly.js',['assembly-systems.js','heat-geometry.js','pipe-joints.js','internal-assembly.js','packaging-audit.js','viewer-fullscreen.js'])]:
         p=(OUT/module).read_text()
         for asset in dependencies:
             version=hashlib.sha256((OUT/asset).read_bytes()).hexdigest()[:12]
@@ -78,6 +78,7 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
+        'viewer-checks.json': 'Все стрелки, расчётный поток и полноэкранный просмотр · проверки',
         'connection-specs.json': 'Патрубки, оси, проходные диаметры и варианты подключения',
         'connection-checks.json': 'Проверка геометрии стыков и переключения нагревателей',
         'build_connection_specs.py': 'Воспроизводимый реестр патрубков и трасс',
@@ -159,7 +160,7 @@ def main():
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'component-flow.js', 'viewer-fullscreen.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
