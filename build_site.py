@@ -22,10 +22,21 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     digest=hashlib.sha256((OUT/'packaging-audit.js').read_bytes()).hexdigest()[:12]
     s=(OUT/'assembly.js').read_text().replace("'./packaging-audit.js'","'./packaging-audit.js?v="+digest+"'")
+    internal_digest=hashlib.sha256((OUT/'internal-assembly.js').read_bytes()).hexdigest()[:12]
+    s=s.replace("'./internal-assembly.js'","'./internal-assembly.js?v="+internal_digest+"'")
+    for dependency in ['pipe-data.js','pipe-path.js']:
+        dep_digest=hashlib.sha256((OUT/dependency).read_bytes()).hexdigest()[:12]
+        module=(OUT/'internal-assembly.js').read_text().replace("'./"+dependency+"'","'./"+dependency+"?v="+dep_digest+"'")
+        (OUT/'internal-assembly.js').write_text(module)
+    internal_digest=hashlib.sha256((OUT/'internal-assembly.js').read_bytes()).hexdigest()[:12]
+    s=re.sub(r"'\./internal-assembly.js\?v=[^']+'","'./internal-assembly.js?v="+internal_digest+"'",s)
+    for path in ['layout-internal.json']:
+        version=hashlib.sha256((ROOT/path).read_bytes()).hexdigest()[:12]
+        s=s.replace("'"+path+"'","'"+path+"?v="+version+"'")
     registry_digest=hashlib.sha256((ROOT/'models/registry.json').read_bytes()).hexdigest()[:12]
     s=s.replace("'models/registry.json'","'models/registry.json?v="+registry_digest+"'")
     (OUT/'assembly.js').write_text(s)
@@ -48,6 +59,10 @@ def main():
         '02-process': ('Паровой контур', 'Генератор, машина, конденсатор и возврат воды.'),
         '03-controls': ('Управление и защита', 'Регулирование процесса и независимая защитная цепь.'),
         '04-dashboard': ('Приборная панель', 'Предложение органов управления и индикации.'),
+        '08-pipe-routing': ('Трубопроводы с изоляцией', 'Проекции и таблица ID/OD, полного диаметра, радиусов, скоростей и теплопотерь; концепт.'),
+        '08-section-pipe_steam': ('Поперечный разрез свежего пара', 'ID40 / OD48 + аэрогель30 + кожух0,6 мм.'),
+        '08-section-pipe_flue': ('Поперечный разрез дымового канала', 'ID160 / OD162 + аэрогель60 + кожух0,6 мм; резерв, расход газов неизвестен.'),
+        '07-internal-assembly': ('Внутренняя детальная сборка', 'Резервные габариты в трёх проекциях; не чертёж для изготовления.'),
         '06-revised-layout': ('Переработанная компоновка', 'Два места, отдельная горелка, наружный конденсатор и координаты.'),
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
@@ -57,7 +72,7 @@ def main():
         'assembly.scad': 'Основная компоновка · OpenSCAD', 'assembly-vw-inspired.scad': 'Компоновка по примеру VW · OpenSCAD',
         'assembly.obj': 'Габаритная 3D-модель · OBJ', 'assembly.mtl': 'Материалы модели · MTL',
         'inputs.json': 'Исходные допущения', 'results.json': 'Полные результаты расчёта',
-        'layout-revised.json': 'Переработанная компоновка · координаты', 'packaging-audit.json': 'Пересечения и зазоры · сравнение трёх компоновок', 'build_packaging_sheet.py': 'Компоновочный чертёж переработанного варианта',
+        'pipe-routes-input.json': 'Исходные точки трасс · мм', 'pipe-engineering.json': 'Трубопроводы · поток, изгибы и тепловой экран', 'build_pipe_engineering.py': 'Воспроизводимый расчёт труб и изоляции', 'build_pipe_materials.py': 'Формулы, сечения и трубопроводный чертёж', 'build_internal_assets.mjs': 'Экспорт полной детальной сборки GLB', 'build_internal_materials.py': 'Материалы внутренней компоновки', 'build_mount_register.py': 'Контакт опор с игровым полом', 'layout-internal.json': 'Внутренняя детальная сборка · координаты и допущения', 'internal-feasibility.json': 'Внутренняя сборка · тепловая проверка и формулы', 'internal-fit-audit.json': 'Внутренняя сборка · пересечения показанной геометрии', 'layout-revised.json': 'Переработанная компоновка · координаты', 'packaging-audit.json': 'Пересечения и зазоры · сравнение трёх компоновок', 'build_packaging_sheet.py': 'Компоновочный чертёж переработанного варианта',
         'layout.json': 'Основная компоновка · координаты', 'layout-vw-inspired.json': 'Компоновка по примеру VW · координаты',
         'measurements.csv': 'Ведомость необходимых обмеров', 'scenario_summary.csv': 'Сравнение сценариев',
         'road_load.csv': 'Дорожная мощность и скорость', 'sensitivity.csv': 'Чувствительность расчёта',
@@ -127,7 +142,7 @@ def main():
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
@@ -145,6 +160,8 @@ def main():
     user_model=json.loads((ROOT/'models/zaz-968m-yatloo.json').read_text())
     user_audit=json.loads((ROOT/'user-body-audit.json').read_text())
     user_conflicts=''.join('<tr><td>'+escape(p['id']+' · '+p['name'])+'</td><td>'+escape(', '.join(p['body_intersections']).replace('_',' '))+'</td></tr>' for p in user_audit.get('cases',{}).get('revised',{}).get('parts',[]) if p['body_intersections'])
+    (OUT/'piping.html').write_text(page('piping.html','Трубопроводы — ЗАЗ / STEAM','Диаметры, изоляция, отводы, скорости и условные потери.'))
+    (OUT/'internal.html').write_text(page('internal.html','Внутренняя паровая сборка — ЗАЗ / STEAM','Детальная внутренняя сборка: двигатель, конденсаторы, трубопроводы, опоры и проверка теплоотвода.'))
     (OUT/'user-model.html').write_text(page('user-model.html','Ваша модель ЗАЗ-968М — ЗАЗ / STEAM','Модель yatloo из предоставленного FBX, масштаб по базе, внутренние панели и проверка пересечений.',USER_SCALE=user_model['registration']['substitution'],USER_DIMENSIONS=' × '.join(fmt(v) for v in user_model['size_mm']),USER_CONFLICT_ROWS=user_conflicts))
     packing=json.loads((ROOT/'packaging-audit.json').read_text())
     revised=json.loads((ROOT/'layout-revised.json').read_text())
@@ -179,8 +196,20 @@ def main():
         ('models/user-model-browser-checks.json', 'Ваша модель · проверки интерфейса и экспорта', 'Проверки'),
         ('models/zaz-968m-yatloo.json', 'Ваша модель · привязка и ограничения', 'Документы'),
         ('user-body-audit.json', 'Ваша модель · проверка трёх компоновок', 'Проверки'),
+        ('piping.html', 'Трубопроводы · формулы, диаметры и изоляция', 'Документы'),
+        ('internal.html', 'Внутренняя сборка · детали, крепления и тепловые ограничения', '3D'),
+        ('models/steam-internal-assembly.glb', 'Полная внутренняя детальная сборка GLB', '3D'),
+        ('models/steam-internal-assembly.json', 'Внутренняя сборка · детали и габариты', 'Документы'),
+        ('models/pipe-engineering-checks.json', 'Проверки теплового баланса, расходов и диаметров', 'Проверки'),
+        ('models/internal-browser-checks.json', 'Внутренняя сборка · проверки интерфейса и геометрии', 'Проверки'),
+        ('models/internal-mounts.json', '56 контактов опор с игровым полом · координаты', 'Документы'),
+        ('models/internal-rear.png', 'Рендер заднего отсека · проект', 'Изображения'),
+        ('models/internal-boiler.png', 'Рендер генератора за сиденьями · проект', 'Изображения'),
+        ('models/internal-front.png', 'Рендер передних резервуаров · проект', 'Изображения'),
+        ('models/internal-routes.json', 'Пар, вода, топливо, дым и управление · трассы', 'Документы'),
         ('models/registry.json', 'Происхождение и точность моделей', 'Документы')]:
         p = OUT / path
+        if not p.exists(): continue
         records.append({'path': path, 'title': title, 'category': cat, 'format': p.suffix[1:].upper(), 'size': p.stat().st_size})
 
     scenario_cards = []
@@ -191,7 +220,7 @@ def main():
         eur = '–'.join(fmt(x / 1000) for x in c['budget_EUR'])
         note = {'A': 'Небольшая мощность сохраняет проблему теплоотвода.', 'B': 'Остаток до 1200 кг — около 55 кг с одним водителем.', 'C': 'Превышение условной полной массы — 18,4 кг.'}[c['id']]
         scenario_cards.append(f'''<article class="scenario {'featured' if c['id']=='B' else ''}"><div class="scenario-top"><span class="letter">{c['id']}</span><span>{label}</span></div><div class="scenario-power">{fmt(c['net_drive_kW'],1).removesuffix(',0')}<span>кВт к КПП</span></div><p class="scenario-speed">{c['target_kmh']} км/ч · цель расчётного сценария</p><dl><div><dt>Режим пара</dt><dd>{c['p_bar_abs']} бар abs / {c['T_C']} °C</dd></div><div><dt>Масса с водителем</dt><dd>{fmt(m['running_mass_kg'])} кг</dd></div><div><dt>Теплоотвод на номинале</dt><dd>{fmt(r['condenser_kW'])} кВт</dd></div><div><dt>Топливо на номинале</dt><dd>{fmt(r['diesel_L_h'],1)} л/ч</dd></div></dl><div class="scenario-budget"><b>{rub} млн ₽</b><span>{eur} тыс. €</span></div><p class="scenario-note">{note}</p><a class="text-link" href="lab.html?scenario={c['id']}">Исследовать вариант →</a></article>''')
-    sheet_cards = ''.join(f'''<a class="sheet" href="drawings/{k}.pdf"><div class="sheet-preview"><img src="drawings/{k}.svg" alt="{escape(v[0])}"></div><div class="sheet-description"><span class="eyebrow">ЛИСТ {k[:2]} / PDF</span><h3>{v[0]}</h3><p>{v[1]}</p></div><span class="sheet-arrow">↗</span></a>''' for k, v in drawings.items())
+    sheet_cards = ''.join(f'''<a class="sheet" href="drawings/{k}.pdf"><div class="sheet-preview"><img src="drawings/{k}.svg" alt="{escape(v[0])}"></div><div class="sheet-description"><span class="eyebrow">ЛИСТ {k[:2]} / PDF</span><h3>{v[0]}</h3><p>{v[1]}</p></div><span class="sheet-arrow">↗</span></a>''' for k, v in sorted(drawings.items()) if (ROOT/'drawings'/f'{k}.pdf').exists() and (ROOT/'drawings'/f'{k}.svg').exists())
     source_items = ''.join(f'<li><a href="{escape(sources[k]["url"])}" target="_blank" rel="noopener">{escape(sources[k]["title"])} ↗</a></li>' for k in ['manual', 'iapws', 'fin', 'rus', 'vwvideo'] if k in sources)
     (OUT / 'index.html').write_text(page('index.html', 'ЗАЗ / STEAM — проект парового автомобиля', 'Расчёты, 3D-компоновка и чертежи парового привода ЗАЗ-968М. Открытый предварительный инженерный проект.', SCENARIOS=''.join(scenario_cards), SHEETS=sheet_cards, SOURCES=source_items, FORMULA_COUNT=sum(len(c['steps']) for c in json.loads((ROOT/'calculation-workbook.json').read_text()))))
 
@@ -213,7 +242,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 

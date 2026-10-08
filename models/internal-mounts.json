@@ -1,0 +1,869 @@
+{
+  "status": "Graphical support contact with supplied game triangles; strength/real-car dimensions unverified",
+  "body_sha256": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+  "units": "mm",
+  "plates": [
+    {
+      "id": "ENG",
+      "xyz": [
+        2980,
+        -195,
+        439
+      ],
+      "size": [
+        460,
+        390,
+        6
+      ]
+    },
+    {
+      "id": "STM",
+      "xyz": [
+        2120,
+        75,
+        644
+      ],
+      "size": [
+        480,
+        440,
+        6
+      ]
+    },
+    {
+      "id": "BRN",
+      "xyz": [
+        2140,
+        -400,
+        644
+      ],
+      "size": [
+        440,
+        430,
+        6
+      ]
+    },
+    {
+      "id": "CND-R",
+      "xyz": [
+        3000,
+        -515,
+        559
+      ],
+      "size": [
+        500,
+        105,
+        6
+      ]
+    },
+    {
+      "id": "CND-L",
+      "xyz": [
+        3000,
+        410,
+        559
+      ],
+      "size": [
+        500,
+        105,
+        6
+      ]
+    },
+    {
+      "id": "PMP",
+      "xyz": [
+        2100,
+        -370,
+        464
+      ],
+      "size": [
+        280,
+        274,
+        6
+      ]
+    },
+    {
+      "id": "MOTOR",
+      "xyz": [
+        2080,
+        -570,
+        449
+      ],
+      "size": [
+        280,
+        165,
+        6
+      ]
+    },
+    {
+      "id": "WTR",
+      "xyz": [
+        400,
+        -430,
+        629
+      ],
+      "size": [
+        450,
+        400,
+        6
+      ]
+    },
+    {
+      "id": "RCV",
+      "xyz": [
+        250,
+        10,
+        629
+      ],
+      "size": [
+        620,
+        400,
+        6
+      ]
+    },
+    {
+      "id": "FUE",
+      "xyz": [
+        2050,
+        180,
+        469
+      ],
+      "size": [
+        450,
+        330,
+        6
+      ]
+    },
+    {
+      "id": "ELE",
+      "xyz": [
+        2050,
+        0,
+        354
+      ],
+      "size": [
+        100,
+        120,
+        6
+      ]
+    },
+    {
+      "id": "SEP",
+      "xyz": [
+        2440,
+        -580,
+        644
+      ],
+      "size": [
+        120,
+        120,
+        6
+      ]
+    },
+    {
+      "id": "BOOST",
+      "xyz": [
+        880,
+        160,
+        810
+      ],
+      "size": [
+        100,
+        60,
+        6
+      ]
+    },
+    {
+      "id": "BOOST-FILTER",
+      "xyz": [
+        895,
+        310,
+        824
+      ],
+      "size": [
+        60,
+        60,
+        6
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "id": "ENG",
+      "foot_xyz": [
+        3000,
+        -177,
+        286.5353698730469
+      ],
+      "tray_z": 439,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 152.46463012695312,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ENG",
+      "foot_xyz": [
+        3000,
+        177,
+        286.53509521484375
+      ],
+      "tray_z": 439,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 152.46490478515625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ENG",
+      "foot_xyz": [
+        3420,
+        -177,
+        366.4795227050781
+      ],
+      "tray_z": 439,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 72.52047729492188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ENG",
+      "foot_xyz": [
+        3420,
+        177,
+        366.4795227050781
+      ],
+      "tray_z": 439,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 72.52047729492188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "STM",
+      "foot_xyz": [
+        2140,
+        93,
+        292.89996337890625
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 351.10003662109375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "STM",
+      "foot_xyz": [
+        2140,
+        497,
+        292.8999938964844
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 351.1000061035156,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "STM",
+      "foot_xyz": [
+        2580,
+        93,
+        483.7098693847656
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 160.29013061523438,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "STM",
+      "foot_xyz": [
+        2580,
+        497,
+        483.70404052734375
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 160.29595947265625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BRN",
+      "foot_xyz": [
+        2160,
+        -382,
+        292.8999328613281
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 351.1000671386719,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BRN",
+      "foot_xyz": [
+        2160,
+        12,
+        305.8407897949219
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 338.1592102050781,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BRN",
+      "foot_xyz": [
+        2560,
+        -382,
+        452.3329162597656
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 191.66708374023438,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BRN",
+      "foot_xyz": [
+        2560,
+        12,
+        452.3328552246094
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 191.66714477539062,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-R",
+      "foot_xyz": [
+        3020,
+        -497,
+        539.7240600585938
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 19.27593994140625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-R",
+      "foot_xyz": [
+        3020,
+        -428,
+        539.7240600585938
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 19.27593994140625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-R",
+      "foot_xyz": [
+        3480,
+        -497,
+        403.2569274902344
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 155.74307250976562,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-R",
+      "foot_xyz": [
+        3480,
+        -428,
+        402.9119873046875
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 156.0880126953125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-L",
+      "foot_xyz": [
+        3020,
+        428,
+        539.7240600585938
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 19.27593994140625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-L",
+      "foot_xyz": [
+        3020,
+        497,
+        539.7239990234375
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 19.2760009765625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-L",
+      "foot_xyz": [
+        3480,
+        428,
+        402.9119873046875
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 156.0880126953125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "CND-L",
+      "foot_xyz": [
+        3480,
+        497,
+        403.2569580078125
+      ],
+      "tray_z": 559,
+      "body_node": "Пол заднего отсека и ниши · FBX Plane113",
+      "leg_length_mm": 155.7430419921875,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "PMP",
+      "foot_xyz": [
+        2120,
+        -352,
+        292.8999328613281
+      ],
+      "tray_z": 464,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 171.10006713867188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "PMP",
+      "foot_xyz": [
+        2120,
+        -114,
+        292.89996337890625
+      ],
+      "tray_z": 464,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 171.10003662109375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "PMP",
+      "foot_xyz": [
+        2360,
+        -352,
+        292.89990234375
+      ],
+      "tray_z": 464,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 171.10009765625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "PMP",
+      "foot_xyz": [
+        2360,
+        -114,
+        292.8999328613281
+      ],
+      "tray_z": 464,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 171.10006713867188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "MOTOR",
+      "foot_xyz": [
+        2100,
+        -552,
+        292.8999328613281
+      ],
+      "tray_z": 449,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 156.10006713867188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "MOTOR",
+      "foot_xyz": [
+        2100,
+        -423,
+        292.8999328613281
+      ],
+      "tray_z": 449,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 156.10006713867188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "MOTOR",
+      "foot_xyz": [
+        2340,
+        -552,
+        292.8998718261719
+      ],
+      "tray_z": 449,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 156.10012817382812,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "MOTOR",
+      "foot_xyz": [
+        2340,
+        -423,
+        292.89990234375
+      ],
+      "tray_z": 449,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 156.10009765625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "WTR",
+      "foot_xyz": [
+        420,
+        -412,
+        421.4333190917969
+      ],
+      "tray_z": 629,
+      "body_node": "Пол переднего отсека и ниши · FBX Plane158",
+      "leg_length_mm": 207.56668090820312,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "WTR",
+      "foot_xyz": [
+        420,
+        -48,
+        421.4333190917969
+      ],
+      "tray_z": 629,
+      "body_node": "Пол переднего отсека и ниши · FBX Plane158",
+      "leg_length_mm": 207.56668090820312,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "WTR",
+      "foot_xyz": [
+        830,
+        -412,
+        589.419921875
+      ],
+      "tray_z": 629,
+      "body_node": "Пол переднего отсека и ниши · FBX Plane158",
+      "leg_length_mm": 39.580078125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "WTR",
+      "foot_xyz": [
+        830,
+        -48,
+        548.0285034179688
+      ],
+      "tray_z": 629,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 80.97149658203125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "RCV",
+      "foot_xyz": [
+        300,
+        28,
+        326.3736572265625
+      ],
+      "tray_z": 629,
+      "body_node": "Пол переднего отсека и ниши · FBX Plane158",
+      "leg_length_mm": 302.6263427734375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "RCV",
+      "foot_xyz": [
+        300,
+        392,
+        325.5364074707031
+      ],
+      "tray_z": 629,
+      "body_node": "Пол переднего отсека и ниши · FBX Plane158",
+      "leg_length_mm": 303.4635925292969,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "RCV",
+      "foot_xyz": [
+        850,
+        28,
+        568.62255859375
+      ],
+      "tray_z": 629,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 60.37744140625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "RCV",
+      "foot_xyz": [
+        850,
+        392,
+        507.8408203125
+      ],
+      "tray_z": 629,
+      "body_node": "Пол переднего отсека и ниши · FBX Plane158",
+      "leg_length_mm": 121.1591796875,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "FUE",
+      "foot_xyz": [
+        2070,
+        198,
+        292.8999938964844
+      ],
+      "tray_z": 469,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 176.10000610351562,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "FUE",
+      "foot_xyz": [
+        2070,
+        492,
+        292.9000244140625
+      ],
+      "tray_z": 469,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 176.0999755859375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "FUE",
+      "foot_xyz": [
+        2480,
+        198,
+        292.8999328613281
+      ],
+      "tray_z": 469,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 176.10006713867188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "FUE",
+      "foot_xyz": [
+        2480,
+        492,
+        292.8999328613281
+      ],
+      "tray_z": 469,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 176.10006713867188,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ELE",
+      "foot_xyz": [
+        2070,
+        18,
+        305.8407897949219
+      ],
+      "tray_z": 354,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 48.159210205078125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ELE",
+      "foot_xyz": [
+        2070,
+        102,
+        292.8999938964844
+      ],
+      "tray_z": 354,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 61.100006103515625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ELE",
+      "foot_xyz": [
+        2130,
+        18,
+        305.8407897949219
+      ],
+      "tray_z": 354,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 48.159210205078125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "ELE",
+      "foot_xyz": [
+        2130,
+        102,
+        292.89996337890625
+      ],
+      "tray_z": 354,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 61.10003662109375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "SEP",
+      "foot_xyz": [
+        2460,
+        -562,
+        292.8998718261719
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 351.1001281738281,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "SEP",
+      "foot_xyz": [
+        2460,
+        -478,
+        292.89990234375
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 351.10009765625,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "SEP",
+      "foot_xyz": [
+        2540,
+        -562,
+        420.95465087890625
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 223.04534912109375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "SEP",
+      "foot_xyz": [
+        2540,
+        -478,
+        420.9553527832031
+      ],
+      "tray_z": 644,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 223.04464721679688,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST",
+      "foot_xyz": [
+        900,
+        178,
+        748.8985595703125
+      ],
+      "tray_z": 810,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 61.1014404296875,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST",
+      "foot_xyz": [
+        900,
+        202,
+        760.6834106445312
+      ],
+      "tray_z": 810,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 49.31658935546875,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST",
+      "foot_xyz": [
+        960,
+        178,
+        800.4345703125
+      ],
+      "tray_z": 810,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 9.5654296875,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST",
+      "foot_xyz": [
+        960,
+        202,
+        800.1640625
+      ],
+      "tray_z": 810,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 9.8359375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST-FILTER",
+      "foot_xyz": [
+        915,
+        328,
+        740.4244384765625
+      ],
+      "tray_z": 824,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 83.5755615234375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST-FILTER",
+      "foot_xyz": [
+        915,
+        352,
+        740.4244384765625
+      ],
+      "tray_z": 824,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 83.5755615234375,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST-FILTER",
+      "foot_xyz": [
+        935,
+        328,
+        770.7677612304688
+      ],
+      "tray_z": 824,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 53.23223876953125,
+      "confirmed_load_bearing": false
+    },
+    {
+      "id": "BOOST-FILTER",
+      "foot_xyz": [
+        935,
+        352,
+        765.316162109375
+      ],
+      "tray_z": 824,
+      "body_node": "Пол салона и центральный тоннель · FBX Plane136",
+      "leg_length_mm": 58.683837890625,
+      "confirmed_load_bearing": false
+    }
+  ],
+  "limitations": [
+    "Площадки касаются поверхностей игрового кузова, а не подтверждённых усиленных зон реального автомобиля.",
+    "Плоская площадка на наклонном полу — условная; нужны фасонные опоры по обмерам.",
+    "Сечения, материал, крепёж, усталость, вибрации и аварийные нагрузки не рассчитаны.",
+    "Случайные пересечения стоек и панелей остаются в аудите; контакт опоры с полом не исключает их автоматически."
+  ]
+}

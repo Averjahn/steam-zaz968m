@@ -1,0 +1,498 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "PIPE_STEAM layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_STEAM bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_STEAM curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_STEAM mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_STEAM positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_STEAM conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 38.30324248308082,
+        "external_W_m": 38.30324248308082
+      }
+    },
+    {
+      "name": "PIPE_STEAM target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_STEAM aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 36.73855634409524,
+        "external_W_m": 36.738556344095244
+      }
+    },
+    {
+      "name": "PIPE_EXHAUST_R target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 36.73855634409524,
+        "external_W_m": 36.738556344095244
+      }
+    },
+    {
+      "name": "PIPE_EXHAUST_L target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_L aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 10.627289838579134,
+        "external_W_m": 10.627289838579138
+      }
+    },
+    {
+      "name": "PIPE_RETURN target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 10.627289838579134,
+        "external_W_m": 10.627289838579138
+      }
+    },
+    {
+      "name": "PIPE_BALANCE target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_BALANCE aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_MAKEUP layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_MAKEUP bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_MAKEUP curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_MAKEUP mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_MAKEUP positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 11.329431724557649,
+        "external_W_m": 11.329431724557647
+      }
+    },
+    {
+      "name": "PIPE_SUCTION target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 9.217884860520302,
+        "external_W_m": 9.2178848605203
+      }
+    },
+    {
+      "name": "PIPE_FEED target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FEED aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FUEL layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FUEL bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FUEL curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FLUE layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FLUE bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FLUE curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FLUE conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 96.89203375325286,
+        "external_W_m": 96.89203375325289
+      }
+    },
+    {
+      "name": "PIPE_FLUE target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FLUE aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF mass conservation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF positive dissipative pressure loss",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF conduction/external heat balance",
+      "pass": true,
+      "detail": {
+        "conduction_W_m": 27.300494039462475,
+        "external_W_m": 27.30049403946248
+      }
+    },
+    {
+      "name": "PIPE_RELIEF target only at declared h=8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF aerogel/wool comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE_ENGINE layers sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE_ENGINE bends fit without radius shrink",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE_ENGINE curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Published mesh audit matches current pipe dimensions and vertices",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source layout-internal.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source web/internal-assembly.js",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source web/pipe-path.js",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source models/zaz-968m-yatloo.glb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source models/stock-suspension.glb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source models/cat-5cp2120w.glb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Supplied body GLB remains unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Cooling limitation is explicit",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "scope": "Arithmetic, heat balance and geometric routing invariants; real-car fit, gas duct, two-phase condensate, material/pressure ratings and mount strength unresolved"
+}

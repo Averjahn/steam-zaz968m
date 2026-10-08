@@ -1,0 +1,4114 @@
+{
+  "status": "Проверка гипотетической геометрии; не подтверждение реальной посадки",
+  "units": "mm",
+  "layout": "Внутри кузова · детальная проектная сборка",
+  "geometric_screen_mm": 30,
+  "removed_body_groups": [
+    "rear-seat"
+  ],
+  "body_surface_objects": 29,
+  "parts": [
+    {
+      "id": "BRN",
+      "name": "Riello RL 50 · полный габарит",
+      "kind": "Габарит по чертежу; форма условная",
+      "size_mm": [
+        476,
+        684,
+        474
+      ],
+      "min_xyz_mm": [
+        2122,
+        -418,
+        650
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "ENG",
+      "name": "Паровая машина · два цилиндра",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        545,
+        385,
+        461
+      ],
+      "min_xyz_mm": [
+        2915,
+        -190,
+        302
+      ],
+      "body_intersections": [],
+      "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+      "clearance_mm": 28.8,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        600,
+        500,
+        500
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "STM",
+      "name": "Парогенератор · кожух и змеевик",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        454,
+        482.3,
+        620
+      ],
+      "min_xyz_mm": [
+        2133,
+        44.7,
+        650
+      ],
+      "body_intersections": [],
+      "nearest_body_node": "Задние_боковые_стёкла_·_FBX_Plane155",
+      "clearance_mm": 15.7,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        500,
+        500,
+        650
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "GBX",
+      "name": "Штатная КПП · условная форма",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        425,
+        350,
+        350
+      ],
+      "min_xyz_mm": [
+        2525,
+        -175,
+        270
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Пол_заднего_отсека_и_ниши_·_FBX_Plane113"
+      ],
+      "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        500,
+        320,
+        350
+      ],
+      "fixed_proxy": true,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": [
+        "Полуось_и_кардан_·_правая",
+        "Пыльник_полуоси_·_правая",
+        "Полуось_и_кардан_·_левая",
+        "Пыльник_полуоси_·_левая"
+      ]
+    },
+    {
+      "id": "CND",
+      "name": "Два внутренних блока конденсации",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        500,
+        1030,
+        245
+      ],
+      "min_xyz_mm": [
+        3000,
+        -515,
+        565
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        500,
+        1030,
+        245
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "WTR",
+      "name": "Бак подпиточной воды",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        442,
+        400,
+        220
+      ],
+      "min_xyz_mm": [
+        404,
+        -430,
+        635
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        450,
+        400,
+        220
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "RCV",
+      "name": "Питательный резервуар с конденсатом",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        620,
+        470,
+        255
+      ],
+      "min_xyz_mm": [
+        250,
+        10,
+        635
+      ],
+      "body_intersections": [],
+      "nearest_body_node": "Передний_капот_·_FBX_Plane167",
+      "clearance_mm": 0.9,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        620,
+        470,
+        255
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": "Передняя_левая_·_пружина",
+      "stock_clearance_mm": 29.2,
+      "stock_clearance_is_lower_bound": false,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "FUE",
+      "name": "Топливный бак · изолируемая зона",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        442,
+        330,
+        150
+      ],
+      "min_xyz_mm": [
+        2054,
+        180,
+        475
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        450,
+        330,
+        150
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "ELE",
+      "name": "Шкаф управления",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        100,
+        120,
+        150
+      ],
+      "min_xyz_mm": [
+        2050,
+        0,
+        360
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "reserve_size_mm": [
+        100,
+        120,
+        150
+      ],
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "MOTOR",
+      "name": "Привод Cat Pumps · мотор / редуктор",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        265,
+        131,
+        165
+      ],
+      "min_xyz_mm": [
+        2090,
+        -551,
+        455
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "BOOST",
+      "name": "Подпорный насос, фильтр и арматура",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        92,
+        201,
+        79
+      ],
+      "min_xyz_mm": [
+        878,
+        163,
+        816
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "SEP",
+      "name": "Приёмник сброса · резерв",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        110,
+        110,
+        240
+      ],
+      "min_xyz_mm": [
+        2445,
+        -575,
+        650
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_STEAM",
+      "name": "Пар · генератор → машина",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        592.9,
+        424.7,
+        551.7
+      ],
+      "min_xyz_mm": [
+        2526,
+        -70.1,
+        682.9
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136"
+      ],
+      "nearest_body_node": "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_EXHAUST_R",
+      "name": "Отработанный пар → правый конденсатор",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        172.3,
+        276,
+        195.5
+      ],
+      "min_xyz_mm": [
+        3303.3,
+        -442.6,
+        630.4
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_EXHAUST_L",
+      "name": "Отработанный пар → левый конденсатор",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        172.3,
+        276,
+        195.5
+      ],
+      "min_xyz_mm": [
+        3303.3,
+        166.6,
+        630.4
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_RETURN",
+      "name": "Конденсат → питательный резервуар",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        2674.1,
+        912.8,
+        513.8
+      ],
+      "min_xyz_mm": [
+        779.9,
+        -642.6,
+        397.4
+      ],
+      "body_intersections": [
+        "Plane127_·_FBX_Plane127",
+        "Переднее_сиденье_·_правое_·_FBX_Cube026",
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Plane126_·_FBX_Plane126"
+      ],
+      "nearest_body_node": "Plane126_·_FBX_Plane126",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [
+        "Задняя_правая_·_амортизатор",
+        "Задняя_правая_·_пружина"
+      ],
+      "nearest_stock_node": "Задняя_правая_·_пружина",
+      "stock_clearance_mm": 0,
+      "stock_clearance_is_lower_bound": false,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_BALANCE",
+      "name": "Сбор конденсата из левого блока",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        96.6,
+        855.2,
+        45.2
+      ],
+      "min_xyz_mm": [
+        3446,
+        -427.6,
+        577.4
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_MAKEUP",
+      "name": "Холодная подпитка → приёмник",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        94,
+        140,
+        30
+      ],
+      "min_xyz_mm": [
+        816,
+        -115,
+        655
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136"
+      ],
+      "nearest_body_node": "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_SUCTION",
+      "name": "Приёмник → подпор → Cat Pumps",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        1368,
+        807.2,
+        582.6
+      ],
+      "min_xyz_mm": [
+        796,
+        -158.6,
+        396.4
+      ],
+      "body_intersections": [
+        "Передний_капот_·_FBX_Plane167",
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Plane013_·_FBX_Plane013",
+        "Крыша_и_рамки_стёкол_·_FBX_Plane116"
+      ],
+      "nearest_body_node": "Крыша_и_рамки_стёкол_·_FBX_Plane116",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_FEED",
+      "name": "Питательная вода → генератор",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        504.6,
+        581,
+        231.2
+      ],
+      "min_xyz_mm": [
+        2226,
+        -277,
+        539.4
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Пол_заднего_отсека_и_ниши_·_FBX_Plane113"
+      ],
+      "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_FUEL",
+      "name": "Топливо → фильтр → горелка",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        152.6,
+        667,
+        222.6
+      ],
+      "min_xyz_mm": [
+        2048.4,
+        -478.6,
+        508.4
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_FLUE",
+      "name": "Дымовой канал → задний выпуск",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        1268,
+        443.2,
+        1053.2
+      ],
+      "min_xyz_mm": [
+        2226,
+        158.4,
+        288.4
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+        "Задние_боковые_стёкла_·_FBX_Plane155",
+        "Рамки_задних_боковых_стёкол_·_FBX_Plane137",
+        "Левая_боковина_·_FBX_Plane118"
+      ],
+      "nearest_body_node": "Левая_боковина_·_FBX_Plane118",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [
+        "Задняя_левая_·_пружина",
+        "Задняя_левая_·_верхняя_опора"
+      ],
+      "nearest_stock_node": "Задняя_левая_·_верхняя_опора",
+      "stock_clearance_mm": 0,
+      "stock_clearance_is_lower_bound": false,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PIPE_RELIEF",
+      "name": "Сброс → условный приёмный сепаратор",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        183.6,
+        709.2,
+        403.6
+      ],
+      "min_xyz_mm": [
+        2366,
+        -564.6,
+        846
+      ],
+      "body_intersections": [],
+      "nearest_body_node": "Задние_боковые_стёкла_·_FBX_Plane155",
+      "clearance_mm": 7,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "WIRE",
+      "name": "Управление · шкаф → приборная панель",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        985.2,
+        894.3,
+        437.7
+      ],
+      "min_xyz_mm": [
+        1118.8,
+        -636,
+        489
+      ],
+      "body_intersections": [
+        "Plane127_·_FBX_Plane127"
+      ],
+      "nearest_body_node": "Plane127_·_FBX_Plane127",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "WIRE_ENGINE",
+      "name": "Управление · шкаф → датчики генератора",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        682,
+        747,
+        622
+      ],
+      "min_xyz_mm": [
+        1989,
+        -636,
+        489
+      ],
+      "body_intersections": [
+        "Задние_боковые_стёкла_·_FBX_Plane155",
+        "Правая_дверь_·_FBX_Plane117"
+      ],
+      "nearest_body_node": "Правая_дверь_·_FBX_Plane117",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": true,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "MOUNTS",
+      "name": "Рамы, опорные площадки и крепёж",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        3280,
+        1155,
+        543.5
+      ],
+      "min_xyz_mm": [
+        250,
+        -580,
+        286.5
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+        "Пол_переднего_отсека_и_ниши_·_FBX_Plane158"
+      ],
+      "nearest_body_node": "Пол_переднего_отсека_и_ниши_·_FBX_Plane158",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": false,
+      "support": true,
+      "fixed_proxy": false,
+      "stock_intersections": [
+        "Задний_кронштейн_2_·_правая",
+        "Задний_сварной_рычаг_·_левая"
+      ],
+      "nearest_stock_node": "Задний_сварной_рычаг_·_левая",
+      "stock_clearance_mm": 0,
+      "stock_clearance_is_lower_bound": false,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "SHIELD",
+      "name": "Защитные перегородки · требуется разработка",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        580,
+        1200,
+        987
+      ],
+      "min_xyz_mm": [
+        2020,
+        -600,
+        293
+      ],
+      "body_intersections": [
+        "Пол_салона_и_центральный_тоннель_·_FBX_Plane136",
+        "Правая_боковина_·_FBX_Plane165",
+        "Левая_боковина_·_FBX_Plane118"
+      ],
+      "nearest_body_node": "Левая_боковина_·_FBX_Plane118",
+      "clearance_mm": 0,
+      "clearance_is_lower_bound": false,
+      "intentionally_external": false,
+      "route": false,
+      "support": true,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "ADAPTER",
+      "name": "Муфта к штатной КПП · проект",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        30,
+        160,
+        160
+      ],
+      "min_xyz_mm": [
+        2930,
+        -80,
+        365
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "DUCTS",
+      "name": "Воздуховоды внутри задних боковин",
+      "kind": "Проектная детальная геометрия",
+      "size_mm": [
+        490,
+        1140,
+        170
+      ],
+      "min_xyz_mm": [
+        3000,
+        -570,
+        600
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": null,
+      "stock_clearance_mm": 30,
+      "stock_clearance_is_lower_bound": true,
+      "stock_mechanical_interfaces_excluded": []
+    },
+    {
+      "id": "PMP",
+      "name": "Cat Pumps 5CP2120W",
+      "kind": "Заводской STEP → GLB",
+      "size_mm": [
+        259.3,
+        254,
+        146.2
+      ],
+      "min_xyz_mm": [
+        2110,
+        -360,
+        470
+      ],
+      "body_intersections": [],
+      "nearest_body_node": null,
+      "clearance_mm": 30,
+      "clearance_is_lower_bound": true,
+      "intentionally_external": false,
+      "route": false,
+      "support": false,
+      "fixed_proxy": false,
+      "stock_intersections": [],
+      "nearest_stock_node": "Задний_кронштейн_1_·_правая",
+      "stock_clearance_mm": 29.7,
+      "stock_clearance_is_lower_bound": false,
+      "stock_mechanical_interfaces_excluded": []
+    }
+  ],
+  "component_pairs": [
+    {
+      "ids": [
+        "BRN",
+        "STM"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": true,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2403.2,
+        78.2,
+        939.6
+      ],
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "FUE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 25,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_STEAM"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_FEED"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2144,
+        -362.6,
+        720.2
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "PIPE_RELIEF"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "WIRE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 18,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BRN",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2140,
+        -158,
+        650
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "BRN",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "GBX"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2950,
+        -137.3,
+        417.7
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "CND"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ENG",
+        "PIPE_STEAM"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3022.3,
+        -1.2,
+        755
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "PIPE_EXHAUST_R"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "PIPE_EXHAUST_L"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ENG",
+        "PIPE_BALANCE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ENG",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3408.7,
+        169.5,
+        480
+      ],
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ENG",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2970,
+        -134.3,
+        407.8
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "ADAPTER"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2940,
+        -36.1,
+        391
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ENG",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "STM",
+        "FUE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 25,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_STEAM"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2585.2,
+        315.5,
+        1162
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_FEED"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2535.4,
+        157.5,
+        741.8
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2232.2,
+        486.3,
+        1124.2
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "STM",
+        "PIPE_RELIEF"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2438.1,
+        88.2,
+        1192.9
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "STM",
+        "WIRE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 29,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "STM",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "STM",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2142,
+        130,
+        650
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "STM",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "GBX",
+        "FUE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 29.4,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "GBX",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "GBX",
+        "PIPE_FEED"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "GBX",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "GBX",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "GBX",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2552,
+        11.6,
+        562.2
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "GBX",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "GBX",
+        "ADAPTER"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2950,
+        -63.8,
+        432.3
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "CND",
+        "PIPE_STEAM"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "CND",
+        "PIPE_EXHAUST_R"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3395.9,
+        -411,
+        742.1
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "CND",
+        "PIPE_EXHAUST_L"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3415.7,
+        419,
+        738.9
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "CND",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3089.7,
+        -421.8,
+        598.9
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "CND",
+        "PIPE_BALANCE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3467.8,
+        -410,
+        583
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "CND",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3000,
+        443,
+        580.2
+      ],
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "CND",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3000,
+        -515,
+        565
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "CND",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WTR",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WTR",
+        "PIPE_MAKEUP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        846,
+        -101.5,
+        655.1
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "WTR",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WTR",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        512.5,
+        -430,
+        635
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "RCV",
+        "BOOST"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 8,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "RCV",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        864.1,
+        10,
+        823.3
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "RCV",
+        "PIPE_MAKEUP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        828.9,
+        10,
+        660
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "RCV",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        812,
+        480,
+        662
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "RCV",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        250,
+        10,
+        635
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "FUE",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "FUE",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "FUE",
+        "PIPE_FEED"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "FUE",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2179.2,
+        184,
+        519.7
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "FUE",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "FUE",
+        "WIRE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "FUE",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2095.8,
+        506,
+        620
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "FUE",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2174.5,
+        180,
+        625
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ELE",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ELE",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ELE",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ELE",
+        "WIRE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2050,
+        59.8,
+        494
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ELE",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "ELE",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2150,
+        0,
+        360
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "ELE",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "MOTOR",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "MOTOR",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "MOTOR",
+        "WIRE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "MOTOR",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "MOTOR",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2184.5,
+        -550,
+        455
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "MOTOR",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "BOOST",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "BOOST",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        969.9,
+        185.5,
+        863.6
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "BOOST",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        885,
+        190,
+        816
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "SEP",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "SEP",
+        "PIPE_RELIEF"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2486.6,
+        -516.9,
+        890
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "SEP",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "SEP",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2500,
+        -520,
+        770
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "SEP",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "PIPE_FEED"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2550.8,
+        297,
+        1156.6
+      ],
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "PIPE_RELIEF"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_STEAM",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_R",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_R",
+        "PIPE_BALANCE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 7.8,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_R",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_R",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_L",
+        "PIPE_RETURN"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_L",
+        "PIPE_BALANCE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 7.8,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_L",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_L",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_EXHAUST_L",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_BALANCE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        0,
+        0,
+        0
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_MAKEUP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_FEED"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PIPE_RELIEF"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "WIRE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "ADAPTER"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RETURN",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_BALANCE",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_BALANCE",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_BALANCE",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_MAKEUP",
+        "PIPE_SUCTION"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_MAKEUP",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_SUCTION",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_SUCTION",
+        "WIRE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_SUCTION",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_SUCTION",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_SUCTION",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2020,
+        -134.1,
+        426.1
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "PIPE_SUCTION",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "PIPE_FEED",
+        "PIPE_FUEL"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 25,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FEED",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FEED",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FEED",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FEED",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FEED",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2358.6,
+        -250,
+        550
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "PIPE_FUEL",
+        "PIPE_FLUE"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 25,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FUEL",
+        "WIRE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FUEL",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FUEL",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FUEL",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FUEL",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FLUE",
+        "PIPE_RELIEF"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 13.8,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FLUE",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        3000,
+        408.1,
+        529.9
+      ],
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FLUE",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_FLUE",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RELIEF",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RELIEF",
+        "MOUNTS"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 16,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "PIPE_RELIEF",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WIRE",
+        "WIRE_ENGINE"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        1997.2,
+        -613.9,
+        500.4
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "WIRE",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WIRE",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2020,
+        54.6,
+        495
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "WIRE",
+        "PMP"
+      ],
+      "envelope_overlap": false,
+      "gap_mm": 6,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": null,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WIRE_ENGINE",
+        "MOUNTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "WIRE_ENGINE",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "WIRE_ENGINE",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": false
+    },
+    {
+      "ids": [
+        "MOUNTS",
+        "SHIELD"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2110,
+        540,
+        634.6
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "MOUNTS",
+        "ADAPTER"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2950,
+        60.9,
+        423
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "MOUNTS",
+        "DUCTS"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "MOUNTS",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": true,
+      "contact_witness_mm": [
+        2197.3,
+        -272,
+        470
+      ],
+      "schematic_interface": true
+    },
+    {
+      "ids": [
+        "SHIELD",
+        "PMP"
+      ],
+      "envelope_overlap": true,
+      "gap_mm": 0,
+      "planned_head_interface": false,
+      "housing_collision": false,
+      "mesh_intersection": false,
+      "contact_witness_mm": null,
+      "schematic_interface": true
+    }
+  ],
+  "limitations": [
+    "Проверяются только видимые узлы. Экранный срез не удаляет геометрию.",
+    "Расстояния измерены до сетки реконструкции, её реальная точность не установлена.",
+    "30 мм — правило геометрического просмотра, не тепловой или сервисный допуск.",
+    "Штатная КПП показана грубым габаритом; её пересечение с гипотетическим полом требует реального CAD.",
+    "Цель — оборудование внутри. Наружный габарит служит только первичным фильтром; принадлежность полости кузова и полное вложение в металл этим не доказываются.",
+    "Подвеска — статическая гипотеза по штатной схеме. Ход, поворот колёс, осадка под новой массой и огибающие движения не рассчитаны.",
+    "Подробные формы не заменяют резервные габариты двигателя и КПП; проверяйте их отдельно. Соединения трасс и проектных опор отмечены как схема сопряжения, прочность не доказана."
+  ],
+  "open_issues": [
+    "Система охлаждения на 358 кВт не подобрана. Внутреннее размещение уменьшает доступную фронтальную площадь; вид модели не доказывает мощность.",
+    "Заводской насос сохранён без изменения размеров; показанный мотор, редуктор и подпорный насос ещё требуют выбора реальных изделий.",
+    "Пол и кузов — игровые поверхности. Все пересечения и малые зазоры нужно устранить по обмерам и CAD реальных агрегатов.",
+    "Резерв 600×500×500 для двигателя и прежний резерв КПП нужно проверять вместе с подробной геометрией; художественная форма внутри резерва не уменьшает требуемое место.",
+    "Водяной бак меньше потребности B, полезная вместимость приёмника — лишь верхняя оценка. Массы, осевые нагрузки и запас хода прежних сценариев к этой расстановке не перенесены.",
+    "Топливная зона, горячая камера и пассажиры требуют рассчитанных герметичных перегородок, вентиляции и отвода продуктов сгорания.",
+    "Подвеска остаётся штатной, без переноса точек. Динамические огибающие, прочность кузова и опор, вибрации и сервисный доступ не проверены.",
+    "Сброс защиты направлен в условный приёмный сепаратор; его ёмкость, противодавление, температура и безопасный конечный выпуск требуют разработки. Контур ещё не эксплуатационный."
+  ],
+  "stock_surface_objects": 48,
+  "equipment_outside_body_aabb": [],
+  "assembly_size_mm": [
+    3640.7,
+    1493.9,
+    1420
+  ],
+  "summary": {
+    "unplanned_mesh_intersections": [
+      [
+        "ENG",
+        "PIPE_FLUE"
+      ],
+      [
+        "CND",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_STEAM",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_FLUE",
+        "MOUNTS"
+      ]
+    ],
+    "stock_conflicts": [
+      "PIPE_RETURN",
+      "PIPE_FLUE",
+      "MOUNTS"
+    ],
+    "stock_gaps_under_screen": [
+      {
+        "id": "RCV",
+        "gap_mm": 29.2,
+        "node": "Передняя_левая_·_пружина"
+      },
+      {
+        "id": "PIPE_RETURN",
+        "gap_mm": 0,
+        "node": "Задняя_правая_·_пружина"
+      },
+      {
+        "id": "PIPE_FLUE",
+        "gap_mm": 0,
+        "node": "Задняя_левая_·_верхняя_опора"
+      },
+      {
+        "id": "MOUNTS",
+        "gap_mm": 0,
+        "node": "Задний_сварной_рычаг_·_левая"
+      },
+      {
+        "id": "PMP",
+        "gap_mm": 29.7,
+        "node": "Задний_кронштейн_1_·_правая"
+      }
+    ],
+    "body_conflicts": [
+      "GBX",
+      "PIPE_STEAM",
+      "PIPE_RETURN",
+      "PIPE_MAKEUP",
+      "PIPE_SUCTION",
+      "PIPE_FEED",
+      "PIPE_FLUE",
+      "WIRE",
+      "WIRE_ENGINE",
+      "MOUNTS",
+      "SHIELD"
+    ],
+    "unplanned_envelope_overlaps": [
+      [
+        "BRN",
+        "PIPE_STEAM"
+      ],
+      [
+        "BRN",
+        "PIPE_RETURN"
+      ],
+      [
+        "BRN",
+        "PIPE_SUCTION"
+      ],
+      [
+        "BRN",
+        "PIPE_FEED"
+      ],
+      [
+        "BRN",
+        "PIPE_FUEL"
+      ],
+      [
+        "BRN",
+        "PIPE_FLUE"
+      ],
+      [
+        "BRN",
+        "PIPE_RELIEF"
+      ],
+      [
+        "BRN",
+        "WIRE_ENGINE"
+      ],
+      [
+        "BRN",
+        "MOUNTS"
+      ],
+      [
+        "BRN",
+        "SHIELD"
+      ],
+      [
+        "ENG",
+        "GBX"
+      ],
+      [
+        "ENG",
+        "CND"
+      ],
+      [
+        "ENG",
+        "PIPE_STEAM"
+      ],
+      [
+        "ENG",
+        "PIPE_EXHAUST_R"
+      ],
+      [
+        "ENG",
+        "PIPE_EXHAUST_L"
+      ],
+      [
+        "ENG",
+        "PIPE_RETURN"
+      ],
+      [
+        "ENG",
+        "PIPE_BALANCE"
+      ],
+      [
+        "ENG",
+        "PIPE_FLUE"
+      ],
+      [
+        "ENG",
+        "MOUNTS"
+      ],
+      [
+        "ENG",
+        "ADAPTER"
+      ],
+      [
+        "ENG",
+        "DUCTS"
+      ],
+      [
+        "STM",
+        "PIPE_STEAM"
+      ],
+      [
+        "STM",
+        "PIPE_RETURN"
+      ],
+      [
+        "STM",
+        "PIPE_SUCTION"
+      ],
+      [
+        "STM",
+        "PIPE_FEED"
+      ],
+      [
+        "STM",
+        "PIPE_FUEL"
+      ],
+      [
+        "STM",
+        "PIPE_FLUE"
+      ],
+      [
+        "STM",
+        "PIPE_RELIEF"
+      ],
+      [
+        "STM",
+        "WIRE_ENGINE"
+      ],
+      [
+        "STM",
+        "MOUNTS"
+      ],
+      [
+        "STM",
+        "SHIELD"
+      ],
+      [
+        "GBX",
+        "PIPE_RETURN"
+      ],
+      [
+        "GBX",
+        "PIPE_FEED"
+      ],
+      [
+        "GBX",
+        "PIPE_FLUE"
+      ],
+      [
+        "GBX",
+        "WIRE_ENGINE"
+      ],
+      [
+        "GBX",
+        "MOUNTS"
+      ],
+      [
+        "GBX",
+        "SHIELD"
+      ],
+      [
+        "GBX",
+        "ADAPTER"
+      ],
+      [
+        "CND",
+        "PIPE_STEAM"
+      ],
+      [
+        "CND",
+        "PIPE_EXHAUST_R"
+      ],
+      [
+        "CND",
+        "PIPE_EXHAUST_L"
+      ],
+      [
+        "CND",
+        "PIPE_RETURN"
+      ],
+      [
+        "CND",
+        "PIPE_BALANCE"
+      ],
+      [
+        "CND",
+        "PIPE_FLUE"
+      ],
+      [
+        "CND",
+        "MOUNTS"
+      ],
+      [
+        "CND",
+        "DUCTS"
+      ],
+      [
+        "WTR",
+        "PIPE_RETURN"
+      ],
+      [
+        "WTR",
+        "PIPE_MAKEUP"
+      ],
+      [
+        "WTR",
+        "PIPE_SUCTION"
+      ],
+      [
+        "WTR",
+        "MOUNTS"
+      ],
+      [
+        "RCV",
+        "PIPE_RETURN"
+      ],
+      [
+        "RCV",
+        "PIPE_MAKEUP"
+      ],
+      [
+        "RCV",
+        "PIPE_SUCTION"
+      ],
+      [
+        "RCV",
+        "MOUNTS"
+      ],
+      [
+        "FUE",
+        "PIPE_RETURN"
+      ],
+      [
+        "FUE",
+        "PIPE_SUCTION"
+      ],
+      [
+        "FUE",
+        "PIPE_FEED"
+      ],
+      [
+        "FUE",
+        "PIPE_FUEL"
+      ],
+      [
+        "FUE",
+        "PIPE_FLUE"
+      ],
+      [
+        "FUE",
+        "WIRE"
+      ],
+      [
+        "FUE",
+        "MOUNTS"
+      ],
+      [
+        "FUE",
+        "SHIELD"
+      ],
+      [
+        "ELE",
+        "PIPE_RETURN"
+      ],
+      [
+        "ELE",
+        "PIPE_SUCTION"
+      ],
+      [
+        "ELE",
+        "PIPE_FUEL"
+      ],
+      [
+        "ELE",
+        "WIRE"
+      ],
+      [
+        "ELE",
+        "WIRE_ENGINE"
+      ],
+      [
+        "ELE",
+        "MOUNTS"
+      ],
+      [
+        "ELE",
+        "SHIELD"
+      ],
+      [
+        "MOTOR",
+        "PIPE_RETURN"
+      ],
+      [
+        "MOTOR",
+        "PIPE_FUEL"
+      ],
+      [
+        "MOTOR",
+        "WIRE"
+      ],
+      [
+        "MOTOR",
+        "WIRE_ENGINE"
+      ],
+      [
+        "MOTOR",
+        "MOUNTS"
+      ],
+      [
+        "MOTOR",
+        "SHIELD"
+      ],
+      [
+        "BOOST",
+        "PIPE_RETURN"
+      ],
+      [
+        "BOOST",
+        "PIPE_SUCTION"
+      ],
+      [
+        "BOOST",
+        "MOUNTS"
+      ],
+      [
+        "SEP",
+        "PIPE_RETURN"
+      ],
+      [
+        "SEP",
+        "PIPE_RELIEF"
+      ],
+      [
+        "SEP",
+        "WIRE_ENGINE"
+      ],
+      [
+        "SEP",
+        "MOUNTS"
+      ],
+      [
+        "SEP",
+        "SHIELD"
+      ],
+      [
+        "PIPE_STEAM",
+        "PIPE_RETURN"
+      ],
+      [
+        "PIPE_STEAM",
+        "PIPE_FEED"
+      ],
+      [
+        "PIPE_STEAM",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_STEAM",
+        "PIPE_RELIEF"
+      ],
+      [
+        "PIPE_STEAM",
+        "WIRE_ENGINE"
+      ],
+      [
+        "PIPE_STEAM",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_STEAM",
+        "SHIELD"
+      ],
+      [
+        "PIPE_STEAM",
+        "DUCTS"
+      ],
+      [
+        "PIPE_EXHAUST_R",
+        "PIPE_RETURN"
+      ],
+      [
+        "PIPE_EXHAUST_R",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_EXHAUST_R",
+        "DUCTS"
+      ],
+      [
+        "PIPE_EXHAUST_L",
+        "PIPE_RETURN"
+      ],
+      [
+        "PIPE_EXHAUST_L",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_EXHAUST_L",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_EXHAUST_L",
+        "DUCTS"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_BALANCE"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_MAKEUP"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_SUCTION"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_FEED"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_FUEL"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_RETURN",
+        "PIPE_RELIEF"
+      ],
+      [
+        "PIPE_RETURN",
+        "WIRE"
+      ],
+      [
+        "PIPE_RETURN",
+        "WIRE_ENGINE"
+      ],
+      [
+        "PIPE_RETURN",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_RETURN",
+        "SHIELD"
+      ],
+      [
+        "PIPE_RETURN",
+        "ADAPTER"
+      ],
+      [
+        "PIPE_RETURN",
+        "DUCTS"
+      ],
+      [
+        "PIPE_RETURN",
+        "PMP"
+      ],
+      [
+        "PIPE_BALANCE",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_BALANCE",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_BALANCE",
+        "DUCTS"
+      ],
+      [
+        "PIPE_MAKEUP",
+        "PIPE_SUCTION"
+      ],
+      [
+        "PIPE_MAKEUP",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_SUCTION",
+        "PIPE_FUEL"
+      ],
+      [
+        "PIPE_SUCTION",
+        "WIRE"
+      ],
+      [
+        "PIPE_SUCTION",
+        "WIRE_ENGINE"
+      ],
+      [
+        "PIPE_SUCTION",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_SUCTION",
+        "SHIELD"
+      ],
+      [
+        "PIPE_SUCTION",
+        "PMP"
+      ],
+      [
+        "PIPE_FEED",
+        "PIPE_FLUE"
+      ],
+      [
+        "PIPE_FEED",
+        "WIRE_ENGINE"
+      ],
+      [
+        "PIPE_FEED",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_FEED",
+        "SHIELD"
+      ],
+      [
+        "PIPE_FEED",
+        "PMP"
+      ],
+      [
+        "PIPE_FUEL",
+        "WIRE"
+      ],
+      [
+        "PIPE_FUEL",
+        "WIRE_ENGINE"
+      ],
+      [
+        "PIPE_FUEL",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_FUEL",
+        "SHIELD"
+      ],
+      [
+        "PIPE_FUEL",
+        "PMP"
+      ],
+      [
+        "PIPE_FLUE",
+        "MOUNTS"
+      ],
+      [
+        "PIPE_FLUE",
+        "SHIELD"
+      ],
+      [
+        "PIPE_FLUE",
+        "DUCTS"
+      ],
+      [
+        "PIPE_RELIEF",
+        "WIRE_ENGINE"
+      ],
+      [
+        "PIPE_RELIEF",
+        "SHIELD"
+      ],
+      [
+        "WIRE",
+        "WIRE_ENGINE"
+      ],
+      [
+        "WIRE",
+        "MOUNTS"
+      ],
+      [
+        "WIRE",
+        "SHIELD"
+      ],
+      [
+        "WIRE_ENGINE",
+        "MOUNTS"
+      ],
+      [
+        "WIRE_ENGINE",
+        "SHIELD"
+      ],
+      [
+        "WIRE_ENGINE",
+        "PMP"
+      ],
+      [
+        "MOUNTS",
+        "SHIELD"
+      ],
+      [
+        "MOUNTS",
+        "ADAPTER"
+      ],
+      [
+        "MOUNTS",
+        "DUCTS"
+      ],
+      [
+        "MOUNTS",
+        "PMP"
+      ],
+      [
+        "SHIELD",
+        "PMP"
+      ]
+    ],
+    "body_gaps_under_screen": [
+      {
+        "id": "ENG",
+        "gap_mm": 28.8
+      },
+      {
+        "id": "STM",
+        "gap_mm": 15.7
+      },
+      {
+        "id": "RCV",
+        "gap_mm": 0.9
+      },
+      {
+        "id": "PIPE_STEAM",
+        "gap_mm": 0
+      },
+      {
+        "id": "PIPE_RETURN",
+        "gap_mm": 0
+      },
+      {
+        "id": "PIPE_MAKEUP",
+        "gap_mm": 0
+      },
+      {
+        "id": "PIPE_SUCTION",
+        "gap_mm": 0
+      },
+      {
+        "id": "PIPE_FEED",
+        "gap_mm": 0
+      },
+      {
+        "id": "PIPE_FLUE",
+        "gap_mm": 0
+      },
+      {
+        "id": "PIPE_RELIEF",
+        "gap_mm": 7
+      },
+      {
+        "id": "WIRE",
+        "gap_mm": 0
+      },
+      {
+        "id": "WIRE_ENGINE",
+        "gap_mm": 0
+      },
+      {
+        "id": "MOUNTS",
+        "gap_mm": 0
+      },
+      {
+        "id": "SHIELD",
+        "gap_mm": 0
+      }
+    ],
+    "component_gaps_under_screen": [
+      {
+        "ids": [
+          "BRN",
+          "FUE"
+        ],
+        "gap_mm": 25
+      },
+      {
+        "ids": [
+          "BRN",
+          "WIRE"
+        ],
+        "gap_mm": 18
+      },
+      {
+        "ids": [
+          "STM",
+          "FUE"
+        ],
+        "gap_mm": 25
+      },
+      {
+        "ids": [
+          "STM",
+          "WIRE"
+        ],
+        "gap_mm": 29
+      },
+      {
+        "ids": [
+          "GBX",
+          "FUE"
+        ],
+        "gap_mm": 29.4
+      },
+      {
+        "ids": [
+          "RCV",
+          "BOOST"
+        ],
+        "gap_mm": 8
+      },
+      {
+        "ids": [
+          "PIPE_EXHAUST_R",
+          "PIPE_BALANCE"
+        ],
+        "gap_mm": 7.8
+      },
+      {
+        "ids": [
+          "PIPE_EXHAUST_L",
+          "PIPE_BALANCE"
+        ],
+        "gap_mm": 7.8
+      },
+      {
+        "ids": [
+          "PIPE_FEED",
+          "PIPE_FUEL"
+        ],
+        "gap_mm": 25
+      },
+      {
+        "ids": [
+          "PIPE_FUEL",
+          "PIPE_FLUE"
+        ],
+        "gap_mm": 25
+      },
+      {
+        "ids": [
+          "PIPE_FLUE",
+          "PIPE_RELIEF"
+        ],
+        "gap_mm": 13.8
+      },
+      {
+        "ids": [
+          "PIPE_RELIEF",
+          "MOUNTS"
+        ],
+        "gap_mm": 16
+      },
+      {
+        "ids": [
+          "WIRE",
+          "PMP"
+        ],
+        "gap_mm": 6
+      }
+    ]
+  },
+  "body_file": "models/zaz-968m-yatloo.glb",
+  "body_source": "https://sketchfab.com/models/db1f3f41624245158f02f24e4108e633/embed",
+  "stock_registration": {
+    "front": 26.3748759990101,
+    "rear": 34.84459690922847,
+    "drive": 34.84459690922847
+  },
+  "provenance": {
+    "geometry_parameter_sha256": "d5eb67a8ab8926c87ee8d22fbee048e712358ad5ddaeceba13c455c21da1acca",
+    "source_sha256": {
+      "layout-internal.json": "1e61c396551393fdf3415327207d1461a065025585a768058f615c01bf22a499",
+      "web/internal-assembly.js": "df6cb8c89ddb8ad64f88d2c7513357bc2c352539795227d9cb6edc3907b5aa01",
+      "web/pipe-path.js": "a422d57ec42bd26ec6444124005b0993fd5eea6bdbe74db5899d225d3aff7e8f",
+      "models/zaz-968m-yatloo.glb": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+      "models/stock-suspension.glb": "e084e327c5ebcbb873bb6f76326ce3f094ac5b50957d9dc988e3cb3de565367d",
+      "models/cat-5cp2120w.glb": "0653fbe4185b2d2a04c0450b6ddc141f6fec61cabd8469f61ef412308a7eab01"
+    },
+    "view": "All calculated pipe insulation and jackets enabled; concept covers on; source rear seat and 4 source stock nodes hidden, floor/hood/roof/other panels restored before audit",
+    "scope": "Mesh and 30 mm nearest-surface screen; game surfaces, no real-car strength/fit certification"
+  }
+}

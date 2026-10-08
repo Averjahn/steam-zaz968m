@@ -826,5 +826,15 @@
       "name": "zaz-968-m-low-poly.zip",
       "sha256": "237a7f4e77ce4f3bea11a738f21da1477d03218bba6d52f0f58df3db5ab7a83a"
     }
+  },
+  "internal_assembly": {
+    "file": "models/steam-internal-assembly.glb",
+    "metadata": "models/steam-internal-assembly.json",
+    "layout": "layout-internal.json",
+    "routes": "pipe-engineering.json",
+    "mounts": "models/internal-mounts.json",
+    "accuracy": "Native concept with unchanged Cat factory CAD, Riello documentary profile/envelope and uniformly calibrated yatloo game body. Other equipment, ports and load-bearing points unmeasured.",
+    "thermal_status": "B cooling and physical fit unresolved; full insulated diameters and circular elbows used without scale reduction",
+    "licence_body": "CC BY 4.0, yatloo/master_usb"
   }
 }
