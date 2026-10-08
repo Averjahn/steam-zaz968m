@@ -7,3 +7,4 @@ site-*.png
 .viewer-check.js
 .env
 *.log
+models/*.mesh.json

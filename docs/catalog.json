@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 3114
+    "size": 3578
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -42,6 +42,13 @@
     "size": 978
   },
   {
+    "path": "build_cad_assets.py",
+    "title": "Преобразование заводского CAD в GLB",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 3616
+  },
+  {
     "path": "build_diagrams.py",
     "title": "Генерация схем и панели",
     "category": "Исходники",
@@ -67,7 +74,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 13258
+    "size": 14947
   },
   {
     "path": "build_viewer.py",
@@ -84,6 +91,13 @@
     "size": 8698
   },
   {
+    "path": "convert_cad.js",
+    "title": "Триангуляция заводского STEP",
+    "category": "Исходники",
+    "format": "JS",
+    "size": 744
+  },
+  {
     "path": "geometry-checks.json",
     "title": "Проверка габаритных пересечений",
     "category": "Проверки",
@@ -95,7 +109,7 @@
     "title": "3D-компоновка и калькулятор",
     "category": "Документы",
     "format": "HTML",
-    "size": 61135
+    "size": 61197
   },
   {
     "path": "inputs.json",
@@ -278,5 +292,33 @@
     "category": "Чертежи",
     "format": "SVG",
     "size": 4578
+  },
+  {
+    "path": "assembly.html",
+    "title": "CAD-сборка: реальные файлы и проверка поверхностей",
+    "category": "3D",
+    "format": "HTML",
+    "size": 13264
+  },
+  {
+    "path": "models/cat-5cp2120w.glb",
+    "title": "Cat Pumps 5CP2120W · заводской CAD в GLB",
+    "category": "3D",
+    "format": "GLB",
+    "size": 5678132
+  },
+  {
+    "path": "models/cat-5cp2120w.step",
+    "title": "Cat Pumps 5CP2120W · исходный заводской STEP",
+    "category": "3D",
+    "format": "STEP",
+    "size": 11028141
+  },
+  {
+    "path": "models/registry.json",
+    "title": "Происхождение и точность моделей",
+    "category": "Документы",
+    "format": "JSON",
+    "size": 3266
   }
 ]

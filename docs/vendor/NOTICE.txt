@@ -1,0 +1,13 @@
+three.js 0.180.0: MIT. See three/LICENSE.
+occt-import-js 0.0.23: LGPL-2.1. See occt-import-js/LICENSE.md.
+The unmodified importer and its WASM are distributed as separate libraries.
+Source, build instructions and the OpenCascade submodule are available at:
+https://github.com/kovacsv/occt-import-js/tree/c2148e54b456b571238d35cac037d304053d64b2
+Exact source commit of the pinned npm release is also in manifest.json.
+https://github.com/kovacsv/occt-import-js/tree/c2148e54b456b571238d35cac037d304053d64b2/occt-import-js
+three-mesh-bvh: MIT; pinned version and source in manifest.json.
+See three-mesh-bvh/LICENSE.
+Manufacturer geometry: Cat Pumps 5CP2120W_0.STEP, retrieved 2026-10-08.
+Manufacturer retains rights to its CAD; no separate open license is asserted.
+The GLB preserves geometry with 0.3 mm tessellation; coordinates were rotated,
+translated and converted from millimetres to metres. See models/registry.json.

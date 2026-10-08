@@ -4,6 +4,12 @@
 Сайт проекта: https://averjahn.github.io/steam-zaz968m/
 Репозиторий: https://github.com/Averjahn/steam-zaz968m
 Сборка сайта: python3 build_site.py (результат в docs/).
+CAD-сборка: https://averjahn.github.io/steam-zaz968m/assembly.html
+Для локального CAD-просмотра нужен HTTP-сервер:
+  python3 -m http.server 8000 --directory docs
+  открыть http://localhost:8000/assembly.html
+Вставлены заводской насос и размерный кандидат горелки; точного кузова еще нет.
+STEP → GLB: node convert_cad.js; python3 build_cad_assets.py
 Отчет: report.html или report.pdf.
 Чертежи: drawings/ (PDF, SVG, DXF).
 Вариант по примеру VW: drawings/05-vw-inspired.pdf, layout-vw-inspired.json.

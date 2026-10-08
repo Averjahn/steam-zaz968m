@@ -1,0 +1,39 @@
+{
+  "checked": "2026-10-08",
+  "body": {
+    "name": "Zaz 968M — Bydosia / Bidosia",
+    "source": "https://sketchfab.com/3d-models/zaz-968m-d5a9fb0bca914635b3d7eefb48aa27cd",
+    "embed": "https://sketchfab.com/models/d5a9fb0bca914635b3d7eefb48aa27cd/embed",
+    "license": "CC BY 4.0 — Creative Commons Attribution 4.0",
+    "status": "Визуализационная модель. Заявлений о сканировании и точности внутренних полостей не найдено. Файл не получен: официальный API скачивания требует авторизации (HTTP 401). В сборочную сцену кузов пока не вставлен.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "pump": {
+    "name": "Cat Pumps 5CP2120W",
+    "source": "https://www.catpumps.com/products/pumps/5cp-plunger-pump-high-temp-5cp2120w3000",
+    "cad_source": "https://www.catpumps.com/sites/default/files/2026-07/5CP2120W_0.STEP",
+    "datasheet": "https://www.catpumps.com/sites/default/files/2025-09/5CP2120W_L.pdf",
+    "file": "cat-5cp2120w.glb",
+    "kind": "Заводской STEP → триангуляция в GLB",
+    "size_mm": [
+      259.25,
+      254,
+      146.2
+    ],
+    "cad_tessellation_mm": 0.3,
+    "status": "Геометрический кандидат, не утвержденный питательный насос. STEP базового 5CP2120W связан производителем с исполнением .3000. Для воды 80 °C нужны соответствующие уплотнения и проверка подпора/оборотов по бюллетеню TB002; мотор, шланги, крепления и сервисные зазоры не включены."
+  },
+  "burner": {
+    "name": "Riello RL 50, короткая головка",
+    "source": "https://www.riello.com/international/products/commercial-boilers?action=download&id=3474633-be830acd70075689c19a0b24d7b1ef8c",
+    "kind": "Габарит по размерному рисунку изготовителя; не заводской CAD",
+    "size_mm": [
+      684,
+      476,
+      474
+    ],
+    "dimensions": "По инструкции 2916064 (9), стр. 3: корпус C=468, головка D=216, ширина A=476, высота B=474, диаметр головки E=152 мм. H=672 мм — размер в открытом положении без кожуха, а не общая длина закрытой горелки. Головка входит в камеру сгорания; не складывать весь габарит с котлом без учета сопряжения.",
+    "status": "Только размерный кандидат. Камера сгорания, противодавление, пламя, питание и дорожное применение не согласованы."
+  },
+  "remaining": "Паровая машина, генератор, конденсатор, баки и КПП остаются целевыми габаритами. Их реальные модели не выбраны и не подменяются художественными формами."
+}
