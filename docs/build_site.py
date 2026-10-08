@@ -26,6 +26,8 @@ def main():
         shutil.copy2(WEB / name, OUT / name)
     digest=hashlib.sha256((OUT/'packaging-audit.js').read_bytes()).hexdigest()[:12]
     s=(OUT/'assembly.js').read_text().replace("'./packaging-audit.js'","'./packaging-audit.js?v="+digest+"'")
+    registry_digest=hashlib.sha256((ROOT/'models/registry.json').read_bytes()).hexdigest()[:12]
+    s=s.replace("'models/registry.json'","'models/registry.json?v="+registry_digest+"'")
     (OUT/'assembly.js').write_text(s)
     # Version transitive imports as well as the entry script for existing visitors.
     for name in ['calculation-render.js','calculations.js']:

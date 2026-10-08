@@ -95,7 +95,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 26426
+    "size": 26611
   },
   {
     "path": "build_stock_suspension.py",
