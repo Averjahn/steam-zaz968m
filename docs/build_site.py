@@ -1,6 +1,7 @@
 """Build the public project website into docs/ using only the Python standard library."""
 from pathlib import Path
 import csv
+import hashlib
 import json
 import re
 import shutil
@@ -104,6 +105,10 @@ def main():
         vals = {'HEADER': header, 'FOOTER': footer, 'TITLE': title, 'DESCRIPTION': desc, **values}
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
+        # Existing visitors must receive JS matching the new controls after deployment.
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'calculations.css', 'calculations.js']:
+            digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
+            text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
 
     (OUT / 'calculations.html').write_text(page('calculations.html', 'Формулы и подстановки — ЗАЗ / STEAM', 'Формула, исходные данные, подстановка и результат для каждого расчёта.'))

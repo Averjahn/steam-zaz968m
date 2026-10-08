@@ -74,7 +74,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 16238
+    "size": 16683
   },
   {
     "path": "build_viewer.py",
@@ -340,14 +340,14 @@
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 7290
+    "size": 7335
   },
   {
     "path": "assembly.html",
     "title": "CAD-сборка: реальные файлы и проверка поверхностей",
     "category": "3D",
     "format": "HTML",
-    "size": 17287
+    "size": 17332
   },
   {
     "path": "models/cat-5cp2120w.glb",
