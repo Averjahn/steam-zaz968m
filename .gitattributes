@@ -1,0 +1,7 @@
+*.step -text -diff
+*.stp -text -diff
+*.glb binary
+*.wasm binary
+vendor/** linguist-vendored -diff
+docs/vendor/** linguist-vendored -diff
+docs/** linguist-generated
