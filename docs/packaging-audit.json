@@ -1,0 +1,862 @@
+{
+  "body_file": "models/zaz-968m-reconstructed.glb",
+  "body_version": 2,
+  "body_sha256": "165abc096d865c94dbc49a06fbd33b966b4ac108ecd934afc3c7d26bc2793c5a",
+  "status": "Comparative screening of visible geometry, not real fit certification",
+  "cases": {
+    "original": {
+      "status": "Проверка гипотетической геометрии; не подтверждение реальной посадки",
+      "units": "mm",
+      "layout": "Эскиз B; все внутренние размеры, формы и координаты агрегатов — целевые допущения, посадка не подтверждена",
+      "geometric_screen_mm": 30,
+      "removed_body_groups": [],
+      "body_surface_objects": 30,
+      "parts": [
+        {
+          "id": "PMP",
+          "name": "Cat Pumps 5CP2120W",
+          "kind": "Заводской STEP → GLB",
+          "size_mm": [
+            259.3,
+            254,
+            146.2
+          ],
+          "min_xyz_mm": [
+            400,
+            90,
+            350
+          ],
+          "body_intersections": [
+            "Дно_переднего_отсека_—_гипотеза"
+          ],
+          "nearest_body_node": "Дно_переднего_отсека_—_гипотеза",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "CND",
+          "name": "Конденсатор + обдув",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            160,
+            1000,
+            550
+          ],
+          "min_xyz_mm": [
+            80,
+            -500,
+            400
+          ],
+          "body_intersections": [
+            "Передний_капот",
+            "Передняя_панель"
+          ],
+          "nearest_body_node": "Передняя_панель",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": true,
+          "fixed_proxy": false
+        },
+        {
+          "id": "WTR",
+          "name": "Бак холодной воды",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            700,
+            450,
+            160
+          ],
+          "min_xyz_mm": [
+            320,
+            -480,
+            320
+          ],
+          "body_intersections": [
+            "Передняя_перегородка_и_наклонный_пол",
+            "Дно_переднего_отсека_—_гипотеза",
+            "Передняя_правая_внутренняя_колёсная_ниша"
+          ],
+          "nearest_body_node": "Передняя_правая_внутренняя_колёсная_ниша",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "GBX",
+          "name": "Штатная КПП",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            500,
+            320,
+            350
+          ],
+          "min_xyz_mm": [
+            2480,
+            -160,
+            280
+          ],
+          "body_intersections": [
+            "Подъём_пола_под_задним_сиденьем",
+            "Задняя_перегородка_и_полка",
+            "Заднее_сиденье_—_приблизительное"
+          ],
+          "nearest_body_node": "Заднее_сиденье_—_приблизительное",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": true
+        },
+        {
+          "id": "ENG",
+          "name": "Паровая машина",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            600,
+            500,
+            500
+          ],
+          "min_xyz_mm": [
+            3000,
+            40,
+            310
+          ],
+          "body_intersections": [
+            "Задняя_левая_внутренняя_колёсная_ниша"
+          ],
+          "nearest_body_node": "Задняя_левая_внутренняя_колёсная_ниша",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "STM",
+          "name": "Генератор + горелка",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            500,
+            500,
+            650
+          ],
+          "min_xyz_mm": [
+            3220,
+            -590,
+            310
+          ],
+          "body_intersections": [
+            "Крышка_моторного_отсека",
+            "Задняя_панель",
+            "Боковые_полки_моторного_отсека_—_гипотеза"
+          ],
+          "nearest_body_node": "Боковые_полки_моторного_отсека_—_гипотеза",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "FUE",
+          "name": "Топливный бак",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            560,
+            300,
+            300
+          ],
+          "min_xyz_mm": [
+            2600,
+            -590,
+            400
+          ],
+          "body_intersections": [
+            "Подъём_пола_под_задним_сиденьем",
+            "Задняя_перегородка_и_полка",
+            "Задняя_правая_внутренняя_колёсная_ниша",
+            "Боковые_полки_моторного_отсека_—_гипотеза",
+            "Заднее_сиденье_—_приблизительное"
+          ],
+          "nearest_body_node": "Заднее_сиденье_—_приблизительное",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "RCV",
+          "name": "Приемник конденсата",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            280,
+            350,
+            180
+          ],
+          "min_xyz_mm": [
+            2700,
+            -180,
+            740
+          ],
+          "body_intersections": [
+            "Задняя_перегородка_и_полка",
+            "Заднее_сиденье_—_приблизительное"
+          ],
+          "nearest_body_node": "Заднее_сиденье_—_приблизительное",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        }
+      ],
+      "component_pairs": [
+        {
+          "ids": [
+            "GBX",
+            "ENG"
+          ],
+          "envelope_overlap": false,
+          "gap_mm": 20,
+          "planned_head_interface": false,
+          "housing_collision": false
+        },
+        {
+          "ids": [
+            "ENG",
+            "RCV"
+          ],
+          "envelope_overlap": false,
+          "gap_mm": 20,
+          "planned_head_interface": false,
+          "housing_collision": false
+        }
+      ],
+      "limitations": [
+        "Проверяются только видимые узлы. Экранный срез не удаляет геометрию.",
+        "Расстояния измерены до сетки реконструкции, её реальная точность не установлена.",
+        "30 мм — правило геометрического просмотра, не тепловой или сервисный допуск.",
+        "Штатная КПП показана грубым габаритом; её пересечение с гипотетическим полом требует реального CAD.",
+        "Конденсатор расположен снаружи намеренно. Замкнутость корпуса и полное вложение в сплошной металл алгоритм не доказывает."
+      ],
+      "open_issues": [],
+      "assembly_size_mm": [
+        3765,
+        1490,
+        1400
+      ],
+      "summary": {
+        "body_conflicts": [
+          "PMP",
+          "CND",
+          "WTR",
+          "GBX",
+          "ENG",
+          "STM",
+          "FUE",
+          "RCV"
+        ],
+        "unplanned_envelope_overlaps": [],
+        "body_gaps_under_screen": [
+          {
+            "id": "PMP",
+            "gap_mm": 0
+          },
+          {
+            "id": "WTR",
+            "gap_mm": 0
+          },
+          {
+            "id": "ENG",
+            "gap_mm": 0
+          },
+          {
+            "id": "STM",
+            "gap_mm": 0
+          },
+          {
+            "id": "FUE",
+            "gap_mm": 0
+          },
+          {
+            "id": "RCV",
+            "gap_mm": 0
+          }
+        ],
+        "component_gaps_under_screen": [
+          {
+            "ids": [
+              "GBX",
+              "ENG"
+            ],
+            "gap_mm": 20
+          },
+          {
+            "ids": [
+              "ENG",
+              "RCV"
+            ],
+            "gap_mm": 20
+          }
+        ]
+      }
+    },
+    "vw": {
+      "status": "Проверка гипотетической геометрии; не подтверждение реальной посадки",
+      "units": "mm",
+      "layout": "Архитектура для ЗАЗ по примеру MSS VW: перенос генератора в зону заднего сиденья и наружный конденсатор. Это новый целевой эскиз, не размеры VW и не подтвержденная посадка.",
+      "geometric_screen_mm": 30,
+      "removed_body_groups": [],
+      "body_surface_objects": 30,
+      "parts": [
+        {
+          "id": "PMP",
+          "name": "Cat Pumps 5CP2120W",
+          "kind": "Заводской STEP → GLB",
+          "size_mm": [
+            259.3,
+            254,
+            146.2
+          ],
+          "min_xyz_mm": [
+            400,
+            90,
+            350
+          ],
+          "body_intersections": [
+            "Дно_переднего_отсека_—_гипотеза"
+          ],
+          "nearest_body_node": "Дно_переднего_отсека_—_гипотеза",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "CND",
+          "name": "Конденсатор + обдув",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            400,
+            1400,
+            160
+          ],
+          "min_xyz_mm": [
+            700,
+            -700,
+            1450
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": true,
+          "fixed_proxy": false
+        },
+        {
+          "id": "WTR",
+          "name": "Бак холодной воды",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            700,
+            450,
+            160
+          ],
+          "min_xyz_mm": [
+            320,
+            -480,
+            320
+          ],
+          "body_intersections": [
+            "Передняя_перегородка_и_наклонный_пол",
+            "Дно_переднего_отсека_—_гипотеза",
+            "Передняя_правая_внутренняя_колёсная_ниша"
+          ],
+          "nearest_body_node": "Передняя_правая_внутренняя_колёсная_ниша",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "GBX",
+          "name": "Штатная КПП",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            500,
+            320,
+            350
+          ],
+          "min_xyz_mm": [
+            2480,
+            -160,
+            280
+          ],
+          "body_intersections": [
+            "Подъём_пола_под_задним_сиденьем",
+            "Задняя_перегородка_и_полка",
+            "Заднее_сиденье_—_приблизительное"
+          ],
+          "nearest_body_node": "Заднее_сиденье_—_приблизительное",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": true
+        },
+        {
+          "id": "ENG",
+          "name": "Паровая машина",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            600,
+            500,
+            500
+          ],
+          "min_xyz_mm": [
+            3000,
+            40,
+            310
+          ],
+          "body_intersections": [
+            "Задняя_левая_внутренняя_колёсная_ниша"
+          ],
+          "nearest_body_node": "Задняя_левая_внутренняя_колёсная_ниша",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "STM",
+          "name": "Генератор + горелка",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            800,
+            1000,
+            650
+          ],
+          "min_xyz_mm": [
+            2080,
+            -520,
+            700
+          ],
+          "body_intersections": [
+            "Крыша",
+            "Заднее_стекло",
+            "Заднее_стекло_рамка",
+            "Задняя_перегородка_и_полка",
+            "Заднее_сиденье_—_приблизительное"
+          ],
+          "nearest_body_node": "Заднее_сиденье_—_приблизительное",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "FUE",
+          "name": "Топливный бак",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            560,
+            300,
+            300
+          ],
+          "min_xyz_mm": [
+            350,
+            90,
+            610
+          ],
+          "body_intersections": [
+            "Передний_капот"
+          ],
+          "nearest_body_node": "Передний_капот",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "RCV",
+          "name": "Приемник конденсата",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            280,
+            350,
+            180
+          ],
+          "min_xyz_mm": [
+            2900,
+            -580,
+            760
+          ],
+          "body_intersections": [
+            "Крышка_моторного_отсека",
+            "Заднее_стекло",
+            "Заднее_стекло_рамка",
+            "Задняя_перегородка_и_полка"
+          ],
+          "nearest_body_node": "Задняя_перегородка_и_полка",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        }
+      ],
+      "component_pairs": [
+        {
+          "ids": [
+            "GBX",
+            "ENG"
+          ],
+          "envelope_overlap": false,
+          "gap_mm": 20,
+          "planned_head_interface": false,
+          "housing_collision": false
+        },
+        {
+          "ids": [
+            "STM",
+            "RCV"
+          ],
+          "envelope_overlap": false,
+          "gap_mm": 20,
+          "planned_head_interface": false,
+          "housing_collision": false
+        }
+      ],
+      "limitations": [
+        "Проверяются только видимые узлы. Экранный срез не удаляет геометрию.",
+        "Расстояния измерены до сетки реконструкции, её реальная точность не установлена.",
+        "30 мм — правило геометрического просмотра, не тепловой или сервисный допуск.",
+        "Штатная КПП показана грубым габаритом; её пересечение с гипотетическим полом требует реального CAD.",
+        "Конденсатор расположен снаружи намеренно. Замкнутость корпуса и полное вложение в сплошной металл алгоритм не доказывает."
+      ],
+      "open_issues": [],
+      "assembly_size_mm": [
+        3765,
+        1490,
+        1610
+      ],
+      "summary": {
+        "body_conflicts": [
+          "PMP",
+          "WTR",
+          "GBX",
+          "ENG",
+          "STM",
+          "FUE",
+          "RCV"
+        ],
+        "unplanned_envelope_overlaps": [],
+        "body_gaps_under_screen": [
+          {
+            "id": "PMP",
+            "gap_mm": 0
+          },
+          {
+            "id": "WTR",
+            "gap_mm": 0
+          },
+          {
+            "id": "ENG",
+            "gap_mm": 0
+          },
+          {
+            "id": "STM",
+            "gap_mm": 0
+          },
+          {
+            "id": "FUE",
+            "gap_mm": 0
+          },
+          {
+            "id": "RCV",
+            "gap_mm": 0
+          }
+        ],
+        "component_gaps_under_screen": [
+          {
+            "ids": [
+              "GBX",
+              "ENG"
+            ],
+            "gap_mm": 20
+          },
+          {
+            "ids": [
+              "STM",
+              "RCV"
+            ],
+            "gap_mm": 20
+          }
+        ]
+      }
+    },
+    "revised": {
+      "status": "Проверка гипотетической геометрии; не подтверждение реальной посадки",
+      "units": "mm",
+      "layout": "Переработанная компоновка: два места",
+      "geometric_screen_mm": 30,
+      "removed_body_groups": [
+        "rear-seat"
+      ],
+      "body_surface_objects": 29,
+      "parts": [
+        {
+          "id": "PMP",
+          "name": "Cat Pumps 5CP2120W",
+          "kind": "Заводской STEP → GLB",
+          "size_mm": [
+            259.3,
+            254,
+            146.2
+          ],
+          "min_xyz_mm": [
+            410,
+            -385,
+            620
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "CND",
+          "name": "Конденсатор + обдув",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            550,
+            1000,
+            160
+          ],
+          "min_xyz_mm": [
+            1450,
+            -500,
+            1450
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": true,
+          "fixed_proxy": false
+        },
+        {
+          "id": "WTR",
+          "name": "Бак холодной воды",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            700,
+            450,
+            160
+          ],
+          "min_xyz_mm": [
+            200,
+            -420,
+            420
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "ELE",
+          "name": "Электрика и насосы",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            420,
+            350,
+            250
+          ],
+          "min_xyz_mm": [
+            1120,
+            -175,
+            430
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "GBX",
+          "name": "Штатная КПП",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            500,
+            320,
+            350
+          ],
+          "min_xyz_mm": [
+            2480,
+            -160,
+            280
+          ],
+          "body_intersections": [
+            "Подъём_пола_под_задним_сиденьем",
+            "Задняя_перегородка_и_полка"
+          ],
+          "nearest_body_node": "Задняя_перегородка_и_полка",
+          "clearance_mm": 0,
+          "clearance_is_lower_bound": false,
+          "intentionally_external": false,
+          "fixed_proxy": true
+        },
+        {
+          "id": "ENG",
+          "name": "Паровая машина",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            600,
+            500,
+            500
+          ],
+          "min_xyz_mm": [
+            3030,
+            -250,
+            300
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "STM",
+          "name": "Парогенератор · целевой габарит",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            500,
+            500,
+            650
+          ],
+          "min_xyz_mm": [
+            2100,
+            -130,
+            660
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "FUE",
+          "name": "Топливный бак",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            560,
+            300,
+            300
+          ],
+          "min_xyz_mm": [
+            230,
+            80,
+            420
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "RCV",
+          "name": "Приемник конденсата",
+          "kind": "Целевой габарит",
+          "size_mm": [
+            280,
+            350,
+            180
+          ],
+          "min_xyz_mm": [
+            3140,
+            -665,
+            635
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        },
+        {
+          "id": "BRN",
+          "name": "Riello RL 50 · размерный кандидат",
+          "kind": "Габарит по чертежу; форма условная",
+          "size_mm": [
+            476,
+            684,
+            474
+          ],
+          "min_xyz_mm": [
+            2112,
+            -598,
+            660
+          ],
+          "body_intersections": [],
+          "nearest_body_node": null,
+          "clearance_mm": 30,
+          "clearance_is_lower_bound": true,
+          "intentionally_external": false,
+          "fixed_proxy": false
+        }
+      ],
+      "component_pairs": [
+        {
+          "ids": [
+            "STM",
+            "BRN"
+          ],
+          "envelope_overlap": true,
+          "gap_mm": 0,
+          "planned_head_interface": true,
+          "housing_collision": false
+        }
+      ],
+      "limitations": [
+        "Проверяются только видимые узлы. Экранный срез не удаляет геометрию.",
+        "Расстояния измерены до сетки реконструкции, её реальная точность не установлена.",
+        "30 мм — правило геометрического просмотра, не тепловой или сервисный допуск.",
+        "Штатная КПП показана грубым габаритом; её пересечение с гипотетическим полом требует реального CAD.",
+        "Конденсатор расположен снаружи намеренно. Замкнутость корпуса и полное вложение в сплошной металл алгоритм не доказывает."
+      ],
+      "open_issues": [
+        "КПП: целевой короб пересекает условный подъём пола; не смещать штатный агрегат по художественной модели",
+        "Генератор и горелка: для ориентации, пламени, камеры и теплоизоляции нужны реальные изделия и расчёт",
+        "Зазоры — геометрические. Тепловые, вибрационные и сервисные расстояния не установлены",
+        "Приёмник 17,6 л недостаточен для рекомендации TB002 57–95 л; подбор большего бака изменит массу и компоновку",
+        "Насос показан без мотора, шлангов и подпора; они требуют собственного места",
+        "Конденсатор 0,55 м² не имеет подтверждённой характеристики на 358 кВт",
+        "Массы, центры тяжести, нагрузки на оси, крепления и аэродинамика для этой перестановки не пересчитаны"
+      ],
+      "assembly_size_mm": [
+        3765,
+        1490,
+        1610
+      ],
+      "summary": {
+        "body_conflicts": [
+          "GBX"
+        ],
+        "unplanned_envelope_overlaps": [],
+        "body_gaps_under_screen": [],
+        "component_gaps_under_screen": []
+      }
+    }
+  }
+}

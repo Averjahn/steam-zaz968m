@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 6695
+    "size": 8049
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -63,6 +63,13 @@
     "size": 8655
   },
   {
+    "path": "build_packaging_sheet.py",
+    "title": "Компоновочный чертёж переработанного варианта",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 5612
+  },
+  {
     "path": "build_physics_audit.mjs",
     "title": "Формирование физического аудита",
     "category": "Исходники",
@@ -74,21 +81,21 @@
     "title": "Генератор кузова по фотографиям",
     "category": "Исходники",
     "format": "PY",
-    "size": 18064
+    "size": 20979
   },
   {
     "path": "build_report.py",
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 77367
+    "size": 78474
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 20943
+    "size": 23692
   },
   {
     "path": "build_viewer.py",
@@ -168,6 +175,13 @@
     "size": 3159
   },
   {
+    "path": "layout-revised.json",
+    "title": "Переработанная компоновка · координаты",
+    "category": "3D",
+    "format": "JSON",
+    "size": 8069
+  },
+  {
     "path": "layout-vw-inspired.json",
     "title": "Компоновка по примеру VW · координаты",
     "category": "3D",
@@ -189,6 +203,13 @@
     "size": 2130
   },
   {
+    "path": "packaging-audit.json",
+    "title": "Пересечения и зазоры · сравнение трёх компоновок",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 27741
+  },
+  {
     "path": "physics-audit.json",
     "title": "Физический аудит: обороты и паспортные ограничения",
     "category": "Расчёты",
@@ -200,14 +221,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 201263
+    "size": 202367
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 220972
+    "size": 221830
   },
   {
     "path": "requirements.txt",
@@ -357,6 +378,20 @@
     "size": 4578
   },
   {
+    "path": "drawings/06-revised-layout.pdf",
+    "title": "Переработанная компоновка · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 47687
+  },
+  {
+    "path": "drawings/06-revised-layout.svg",
+    "title": "Переработанная компоновка · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 11894
+  },
+  {
     "path": "calculations.html",
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
@@ -368,28 +403,35 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 19211
+    "size": 19724
+  },
+  {
+    "path": "packaging.html",
+    "title": "Новая расстановка · зазоры и открытые вопросы",
+    "category": "3D",
+    "format": "HTML",
+    "size": 16321
   },
   {
     "path": "reconstruction.html",
     "title": "Кузов по фотографиям: источники и точность",
     "category": "Документы",
     "format": "HTML",
-    "size": 19946
+    "size": 20360
   },
   {
     "path": "models/zaz-968m-reconstructed.glb",
     "title": "ЗАЗ-968М · приближённая реконструкция GLB",
     "category": "3D",
     "format": "GLB",
-    "size": 769440
+    "size": 4374364
   },
   {
     "path": "models/zaz-968m-reconstructed.obj",
     "title": "ЗАЗ-968М · приближённая реконструкция OBJ",
     "category": "3D",
     "format": "OBJ",
-    "size": 886018
+    "size": 5713943
   },
   {
     "path": "models/zaz-968m-reconstructed.mtl",
@@ -403,7 +445,7 @@
     "title": "Реконструкция · параметры и источники",
     "category": "Документы",
     "format": "JSON",
-    "size": 14117
+    "size": 14623
   },
   {
     "path": "models/reconstruction-dimensions.csv",
@@ -417,14 +459,14 @@
     "title": "Реконструкция · проверка построенной сетки",
     "category": "Проверки",
     "format": "JSON",
-    "size": 499
+    "size": 542
   },
   {
     "path": "models/reconstruction-browser-checks.json",
-    "title": "Реконструкция · 17 проверок интерфейса и импорта",
+    "title": "Реконструкция · проверки интерфейса и импорта",
     "category": "Проверки",
     "format": "JSON",
-    "size": 3340
+    "size": 4139
   },
   {
     "path": "models/references/ATTRIBUTION.txt",
@@ -452,6 +494,6 @@
     "title": "Происхождение и точность моделей",
     "category": "Документы",
     "format": "JSON",
-    "size": 4477
+    "size": 4643
   }
 ]

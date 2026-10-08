@@ -61,6 +61,9 @@
     "accuracy": "Не установлена. Ни один внутренний размер не подтверждён измерением.",
     "license": "CC BY-SA 3.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
-    "parameters": "zaz-968m-reconstruction.json"
-  }
+    "parameters": "zaz-968m-reconstruction.json",
+    "version": 2,
+    "shape_revision": "Скруглённые обводы без увеличения кузова"
+  },
+  "layout_revised": "../layout-revised.json"
 }

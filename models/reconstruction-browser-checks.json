@@ -1,77 +1,177 @@
 {
   "checks": [
     {
-      "name": "Body auto-loaded",
+      "name": "Revised layout is default",
       "ok": true
     },
     {
-      "name": "Millimetre orientation and bounds",
+      "name": "Full electrical envelope and separate burner shown",
+      "ok": true
+    },
+    {
+      "name": "35 body meshes, only rear seat removed",
+      "ok": true
+    },
+    {
+      "name": "Rear seat removal is explicit",
+      "ok": true
+    },
+    {
+      "name": "Rounded body retains original bounds",
+      "ok": true
+    },
+    {
+      "name": "STM scale and dimensions preserved",
       "ok": true,
-      "value": "Габарит в текущих осях: 3 765 × 1 490 × 1 400 мм"
+      "value": "Габарит в текущих осях: 500 × 500 × 650 мм"
     },
     {
-      "name": "35 independently visible body meshes",
+      "name": "STM scale locked",
       "ok": true
     },
     {
-      "name": "Unmeasured quality displayed",
-      "ok": true
-    },
-    {
-      "name": "Open-bay preset hides covers and seats",
+      "name": "ENG scale and dimensions preserved",
       "ok": true,
-      "value": 15
+      "value": "Габарит в текущих осях: 600 × 500 × 500 мм"
     },
     {
-      "name": "Multiple body slab cuts",
+      "name": "ENG scale locked",
       "ok": true
     },
     {
-      "name": "Collision screening labels hypotheses",
+      "name": "WTR scale and dimensions preserved",
       "ok": true,
-      "value": "Обнаружены пересечения:\n\nWTR · Бак холодной воды — пересечение поверхностей (Целевой габарит)\n\nGBX · Штатная КПП — пересечение поверхностей (Целевой габарит)\n\nENG · Паровая машина — пересечение поверхностей (Целевой габарит)\n\nSTM · Генератор + горелка — пересечение поверхностей (Целевой габарит)\n\nFUE · Топливный бак — пересечение поверхностей (Целевой габарит)\n\nRCV · Приемник конденсата — пересечение поверхностей (Целевой габарит)\n\nPMP · Cat Pumps 5CP2120W — пересечение поверхностей (Заводской STEP → GLB)\n\nРезультат относится к гипотетическим поверхностям реконструкции. Статические колёса и декоративные узлы исключены; оболочки хода подвески отсутствуют. Проверены 13 видимых поверхностных объектов кузова. Скрытые узлы и срез экрана не создают подтверждённый свободный объём. На результат влияют точность модели и триангуляция."
+      "value": "Габарит в текущих осях: 700 × 450 × 160 мм"
     },
     {
-      "name": "Factory pump scale remains locked",
+      "name": "WTR scale locked",
+      "ok": true
+    },
+    {
+      "name": "FUE scale and dimensions preserved",
+      "ok": true,
+      "value": "Габарит в текущих осях: 560 × 300 × 300 мм"
+    },
+    {
+      "name": "FUE scale locked",
+      "ok": true
+    },
+    {
+      "name": "ELE scale and dimensions preserved",
+      "ok": true,
+      "value": "Габарит в текущих осях: 420 × 350 × 250 мм"
+    },
+    {
+      "name": "ELE scale locked",
+      "ok": true
+    },
+    {
+      "name": "CND scale and dimensions preserved",
+      "ok": true,
+      "value": "Габарит в текущих осях: 550 × 1 000 × 160 мм"
+    },
+    {
+      "name": "CND scale locked",
+      "ok": true
+    },
+    {
+      "name": "BRN scale and dimensions preserved",
+      "ok": true,
+      "value": "Габарит в текущих осях: 476 × 684 × 474 мм"
+    },
+    {
+      "name": "BRN scale locked",
+      "ok": true
+    },
+    {
+      "name": "PMP scale and dimensions preserved",
       "ok": true,
       "value": "Габарит в текущих осях: 259,25 × 254 × 146,2 мм"
     },
     {
-      "name": "Export retains reconstruction provenance",
+      "name": "PMP scale locked",
       "ok": true
     },
     {
-      "name": "Export GLB is in metres with standard Y up",
+      "name": "Only unresolved stock gearbox proxy conflicts with body",
+      "ok": true,
+      "value": {
+        "body_conflicts": [
+          "GBX"
+        ],
+        "unplanned_envelope_overlaps": [],
+        "body_gaps_under_screen": [],
+        "component_gaps_under_screen": []
+      }
+    },
+    {
+      "name": "No unplanned component overlap or gaps below screen",
+      "ok": true
+    },
+    {
+      "name": "Burner head interface permitted, housing outside boiler",
+      "ok": true
+    },
+    {
+      "name": "New overall height reflects external condenser",
+      "ok": true,
+      "value": [
+        3765,
+        1490,
+        1610
+      ]
+    },
+    {
+      "name": "Open bay preset retains actual walls",
+      "ok": true
+    },
+    {
+      "name": "Multi-axis sections work",
+      "ok": true
+    },
+    {
+      "name": "Legacy layout restores rear seat",
+      "ok": true
+    },
+    {
+      "name": "Legacy removes layout-owned burner",
+      "ok": true
+    },
+    {
+      "name": "Layout change rebuilds burner once",
+      "ok": true
+    },
+    {
+      "name": "GLB export metres and Y up with changed height",
       "ok": true,
       "value": [
         3.765000104904175,
-        1.399999976158142,
+        1.6099999999999999,
         1.4900000095367432
       ]
     },
     {
-      "name": "Downloaded body reimports with correct units and vertical axis",
-      "ok": true,
-      "value": "Габарит в текущих осях: 3 765 × 1 490 × 1 400 мм"
-    },
-    {
-      "name": "Generic imported body uses node controls",
+      "name": "Rounded GLB imports with correct size",
       "ok": true
     },
     {
-      "name": "Restore has one BODY",
+      "name": "Restore maintains proposed seat-removal policy",
       "ok": true
     },
     {
-      "name": "Six actual reference images",
+      "name": "packaging images load",
       "ok": true
     },
     {
-      "name": "Images resolve",
+      "name": "packaging template complete",
       "ok": true
     },
     {
-      "name": "No unfilled template fields",
+      "name": "reconstruction images load",
+      "ok": true
+    },
+    {
+      "name": "reconstruction template complete",
       "ok": true
     },
     {

@@ -22,8 +22,11 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
+    digest=hashlib.sha256((OUT/'packaging-audit.js').read_bytes()).hexdigest()[:12]
+    s=(OUT/'assembly.js').read_text().replace("'./packaging-audit.js'","'./packaging-audit.js?v="+digest+"'")
+    (OUT/'assembly.js').write_text(s)
     # Version transitive imports as well as the entry script for existing visitors.
     for name in ['calculation-render.js','calculations.js']:
         text=(OUT/name).read_text()
@@ -43,6 +46,7 @@ def main():
         '02-process': ('Паровой контур', 'Генератор, машина, конденсатор и возврат воды.'),
         '03-controls': ('Управление и защита', 'Регулирование процесса и независимая защитная цепь.'),
         '04-dashboard': ('Приборная панель', 'Предложение органов управления и индикации.'),
+        '06-revised-layout': ('Переработанная компоновка', 'Два места, отдельная горелка, наружный конденсатор и координаты.'),
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
@@ -51,6 +55,7 @@ def main():
         'assembly.scad': 'Основная компоновка · OpenSCAD', 'assembly-vw-inspired.scad': 'Компоновка по примеру VW · OpenSCAD',
         'assembly.obj': 'Габаритная 3D-модель · OBJ', 'assembly.mtl': 'Материалы модели · MTL',
         'inputs.json': 'Исходные допущения', 'results.json': 'Полные результаты расчёта',
+        'layout-revised.json': 'Переработанная компоновка · координаты', 'packaging-audit.json': 'Пересечения и зазоры · сравнение трёх компоновок', 'build_packaging_sheet.py': 'Компоновочный чертёж переработанного варианта',
         'layout.json': 'Основная компоновка · координаты', 'layout-vw-inspired.json': 'Компоновка по примеру VW · координаты',
         'measurements.csv': 'Ведомость необходимых обмеров', 'scenario_summary.csv': 'Сравнение сценариев',
         'road_load.csv': 'Дорожная мощность и скорость', 'sensitivity.csv': 'Чувствительность расчёта',
@@ -117,7 +122,7 @@ def main():
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'calculations.css', 'calculations.js']:
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
@@ -132,9 +137,17 @@ def main():
     photos=''.join('<figure><img loading="lazy" src="models/'+r['file']+'" alt="'+escape(r['notes'],quote=True)+'"><figcaption>'+escape(r['notes'])+'<br>'+escape(r['author'])+' · <a href="'+r['license_url']+'">'+escape(r['license'])+'</a><br><a href="'+r['source']+'" target="_blank" rel="noopener">Страница автора и оригинал ↗</a></figcaption></figure>' for r in reconstruction['references'])
     registration=reconstruction['photo_registration']
     (OUT/'reconstruction.html').write_text(page('reconstruction.html','Кузов по фотографиям — ЗАЗ / STEAM','Параметрическая реконструкция ЗАЗ-968М: модель, фотографии, происхождение размеров и ограничения точности.',PARAMETER_ROWS=dimension_rows,PHOTOS=photos,SIDE_SOURCE=reconstruction['references'][0]['source'],SCALE_SUBSTITUTION=registration['substitution'],OVERHANG=registration['projected_front_overhang_mm'],PHOTO_LENGTH=registration['projected_length_mm']))
+    packing=json.loads((ROOT/'packaging-audit.json').read_text())
+    revised=json.loads((ROOT/'layout-revised.json').read_text())
+    comparison_rows=''.join('<tr><td>'+label+'</td><td>'+(', '.join(packing['cases'][key]['summary']['body_conflicts']) or 'Нет')+'</td><td>'+(', '.join(' / '.join(pair) for pair in packing['cases'][key]['summary']['unplanned_envelope_overlaps']) or 'Нет')+'</td></tr>' for key,label in [('original','Исходный задний блок'),('vw','Прежний крупный блок по примеру VW'),('revised','Переработанный вариант')])
+    actual={p['id']:p for p in packing['cases']['revised']['parts']}
+    packing_parts=[*revised['parts'],{'id':'PMP','name':'Cat Pumps 5CP2120W','xyz':revised['pump_xyz'],'size':[259.25,254,146.2],'role':'Заводской CAD перенесён над водяным баком. Мотор, кронштейн и фитинги требуют места.'}]
+    placement_rows=''.join('<tr><td>'+p['id']+' · '+escape(p['name'])+'</td><td>'+' × '.join(fmt(v,2).removesuffix(',00') for v in p['size'])+'</td><td>'+' × '.join(fmt(v,1).removesuffix(',0') for v in actual[p['id']]['size_mm'])+'</td><td>'+' / '.join(fmt(v,0) for v in actual[p['id']]['min_xyz_mm'])+'</td><td>'+escape(p['role'])+'</td></tr>' for p in packing_parts)
+    (OUT/'packaging.html').write_text(page('packaging.html','Переработанная компоновка — ЗАЗ / STEAM','Округлый кузов, новая расстановка агрегатов, проверка пересечений и компоновочный чертёж.',COMPARISON_ROWS=comparison_rows,PLACEMENT_ROWS=placement_rows,OPEN_ISSUES=''.join('<li>'+escape(t)+'</li>' for t in revised['open_issues'])))
     for path, title, cat in [
         ('calculations.html', 'Формулы, подстановки и сверка компонентов', 'Расчёты'),
         ('assembly.html', '3D-сборка: реконструкция кузова и агрегаты', '3D'),
+        ('packaging.html', 'Новая расстановка · зазоры и открытые вопросы', '3D'),
         ('reconstruction.html', 'Кузов по фотографиям: источники и точность', 'Документы'),
         ('models/zaz-968m-reconstructed.glb', 'ЗАЗ-968М · приближённая реконструкция GLB', '3D'),
         ('models/zaz-968m-reconstructed.obj', 'ЗАЗ-968М · приближённая реконструкция OBJ', '3D'),
@@ -142,7 +155,7 @@ def main():
         ('models/zaz-968m-reconstruction.json', 'Реконструкция · параметры и источники', 'Документы'),
         ('models/reconstruction-dimensions.csv', 'Реконструкция · ведомость размеров', 'Документы'),
         ('models/reconstruction-checks.json', 'Реконструкция · проверка построенной сетки', 'Проверки'),
-        ('models/reconstruction-browser-checks.json', 'Реконструкция · 17 проверок интерфейса и импорта', 'Проверки'),
+        ('models/reconstruction-browser-checks.json', 'Реконструкция · проверки интерфейса и импорта', 'Проверки'),
         ('models/references/ATTRIBUTION.txt', 'Фотографии кузова · авторы и лицензии', 'Документы'),
         ('models/cat-5cp2120w.glb', 'Cat Pumps 5CP2120W · заводской CAD в GLB', '3D'),
         ('models/cat-5cp2120w.step', 'Cat Pumps 5CP2120W · исходный заводской STEP', '3D'),
@@ -180,7 +193,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 
