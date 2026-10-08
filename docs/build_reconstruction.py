@@ -49,10 +49,10 @@ def beam(m, a,b, width=15):
 def halfwidth(x,z=620):
     # Convex side panels and smooth nose/tail taper; radii are visual hypotheses.
     d=max(0,min(x-80,L-80-x))
-    return (W/2-50*(abs(z-620)/360)**1.65)*(1-.12*math.exp(-d/100))
+    return (W/2-64*(abs(z-620)/360)**2)*(1-.14*math.exp(-d/115))
 
 def rounded_x(x,v):
-    return x+45*abs(v)**4*math.exp(-((x-80)/110)**2)-45*abs(v)**4*math.exp(-((L-80-x)/110)**2)
+    return x+70*abs(v)**4*math.exp(-((x-80)/140)**2)-70*abs(v)**4*math.exp(-((L-80-x)/140)**2)
 
 def belt(x):
     return 855-25*max(0,1-min(x-80,L-80-x)/950)
@@ -80,7 +80,8 @@ def polygon_surface(m,points,mapping,subdivisions=1):
 for sign,name in [(-1,'Правая'),(1,'Левая')]:
     m=mesh(name+' боковина и арки')
     stations=sorted(set([80,L-80,1040,2020,3020]+[80+(L-160)*i/200 for i in range(201)]+[c-ARCH for c in [XF,XR]]+[c+ARCH for c in [XF,XR]]))
-    def lower(x):return max([260]+[R+math.sqrt(max(0,ARCH*ARCH-(x-c)**2)) for c in [XF,XR] if abs(x-c)<ARCH])
+    # Lower, flatter rear exterior opening; the internal niche stays unchanged.
+    def lower(x):return max([260]+[R+min(math.sqrt(max(0,ARCH*ARCH-(x-c)**2)),235 if c==XR else ARCH) for c in [XF,XR] if abs(x-c)<ARCH])
     for a,b in zip(stations,stations[1:]):
         za,zb=lower(a),lower(b)
         ts=sorted(set([i/20 for i in range(21)]+[(620-za)/(belt(a)-za)]))
@@ -93,7 +94,9 @@ for sign,name in [(-1,'Правая'),(1,'Левая')]:
 for start,end,name in [(80,1040,'Передний капот'),(3020,L-80,'Крышка моторного отсека')]:
     m=mesh(name,group='covers')
     def cap(x,v):
-        crown=32*(1-v*v);return(rounded_x(x,v),v*halfwidth(x,belt(x)),belt(x)+crown)
+        crown=42*math.sqrt(max(0,1-v*v))
+        roll=(1-v**4)*55*(math.exp(-((x-80)/75)**2)-math.exp(-((L-80-x)/75)**2))
+        return(rounded_x(x,v)+roll,v*halfwidth(x,belt(x)),belt(x)+crown)
     for i in range(40):
         a=start+(end-start)*i/40;b=start+(end-start)*(i+1)/40
         for j in range(40):
@@ -101,8 +104,11 @@ for start,end,name in [(80,1040,'Передний капот'),(3020,L-80,'Кр�
 for x,name in [(80,'Передняя панель'),(L-80,'Задняя панель')]:
     m=mesh(name)
     def face(v,t):
-        z=350+(belt(x)+32*(1-v*v)-350)*t
-        return(rounded_x(x,v),v*halfwidth(x,z),z)
+        top=belt(x)+42*math.sqrt(max(0,1-v*v));z=350+(top-350)*t
+        q=max(0,(z-(top-100))/100)
+        roll=(1 if x<L/2 else -1)*55*(1-v**4)*(1-math.sqrt(max(0,1-q*q)))
+        y=v*(halfwidth(x,z)*(1-t**12)+halfwidth(x,belt(x))*t**12)
+        return(rounded_x(x,v)+roll,y,z)
     for j in range(40):
         a=-1+2*j/40;b=-1+2*(j+1)/40
         for k in range(20):quad(m,face(a,k/20),face(b,k/20),face(b,(k+1)/20),face(a,(k+1)/20))
@@ -124,7 +130,7 @@ for sign in [-1,1]:
     for a,b in zip(points,points[1:]+points[:1]):beam(trim,(a[0],sign*(halfwidth(a[0],a[1])+2),a[1]),(b[0],sign*(halfwidth(b[0],b[1])+2),b[1]),3)
 
 def roofpoint(u,v):
-    return(2005+635*u*(1-.06*abs(v)**6),605*v*(1-.06*abs(u)**6),H-40*abs(v)**4-18*abs(u)**4-6*(u*v)**4)
+    return(2005+635*u*(1-.075*abs(v)**6),605*v*(1-.065*abs(u)**6),H-36*v*v-17*abs(v)**8-16*u*u-5*(u*v)**4)
 roof=mesh('Крыша',group='covers')
 for i in range(48):
     a=-1+2*i/48;b=-1+2*(i+1)/48
@@ -137,6 +143,13 @@ for sign,name in [(-1,'Правая'),(1,'Левая')]:
     path=rounded_polygon([(1040,855),(1420,1340),(2550,1340),(2910,855)],70)
     for a,b in zip(path,path[1:]+path[:1]):beam(pillars,sidepoint(a),sidepoint(b),48)
     beam(pillars,sidepoint((2020,865)),sidepoint((2020,1340)),45)
+    # Roof shoulder connects to the upper side-window frame.
+    for i in range(64):
+        a=-1+2*i/64;b=-1+2*(i+1)/64
+        def shoulder(u,t):
+            top=roofpoint(u,sign);edge=(1420+(u+1)*565,sign*610,1340-14*u*u)
+            return tuple(top[k]*(1-t)+edge[k]*t for k in range(3))
+        for j in range(6):quad(pillars,shoulder(a,j/6),shoulder(b,j/6),shoulder(b,(j+1)/6),shoulder(a,(j+1)/6))
     glass=mesh(name+' боковое стекло','glass','glass')
     for corners in [[(1110,900),(1430,1305),(1985,1305),(1985,900)],[(2060,900),(2060,1305),(2515,1305),(2830,900)]]:
         polygon_surface(glass,rounded_polygon(corners,45),sidepoint)
@@ -200,7 +213,14 @@ for x,t in [(XF,P['front_track']['value']),(XR,P['rear_track']['value'])]:
                 c=2*math.pi*j/24;d=2*math.pi*(j+1)/24
                 def tyre(t,p):return(x+(R-50+50*math.cos(p))*math.cos(t),y+77.5*math.sin(p),R+(R-50+50*math.cos(p))*math.sin(t))
                 quad(rubber,tyre(a,c),tyre(b,c),tyre(b,d),tyre(a,d))
-        tube_y(rims,x,y-79,R,180,158);tube_y(rims,x,y-82,R,90,164)
+        tube_y(rims,x,y-61,R,165,122,inner=125)
+        for side in [-1,1]:
+            for j in range(16):
+                a=125*j/16;b=125*(j+1)/16
+                def hub(r,t):return(x+r*math.cos(t),y+side*(63+19*math.sqrt(max(0,1-(r/125)**2))),R+r*math.sin(t))
+                for i in range(64):
+                    t=2*math.pi*i/64;u=2*math.pi*(i+1)/64
+                    quad(rims,hub(a,t),hub(b,t),hub(b,u),hub(a,u))
 # Headlamps are oriented along X.
 lamps=mesh('Фары и фонари — внешний референс','lamp','trim',False)
 for y in [-510,510]:
@@ -249,7 +269,7 @@ for m in meshes:
     pa=buffer(vv,'f','VEC3',5126,len(vv)//3,lo,hi);na=buffer(nn,'f','VEC3',5126,len(nn)//3)
     gmeshes.append({'name':m['name'],'primitives':[{'attributes':{'POSITION':pa,'NORMAL':na},'material':matindex[m['color']]}]})
     nodes.append({'name':m['name'],'mesh':mi,'extras':{'bodyGroup':m['group'],'collision':m['collision'],'geometryQuality':'photo-guided hypothesis; dimensional accuracy unknown'}})
-asset={'asset':{'version':'2.0','generator':'Steam ZAZ photo-guided parametric reconstruction v2','copyright':'Photo-derived reconstruction CC BY-SA 3.0; attribution in zaz-968m-reconstruction.json'},'scene':0,'scenes':[{'name':'ZAZ-968M approximate body — not measured CAD','nodes':list(range(len(nodes)))}],'nodes':nodes,'meshes':gmeshes,'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors,'extras':{'units':'metres','upAxis':'Y','projectAxes':'X rearward, Y left, Z up after rotate X +90deg','accuracy':'unknown; not a scan','engineeringUse':'preliminary layout screening only'}}
+asset={'asset':{'version':'2.0','generator':'Steam ZAZ photo-guided parametric reconstruction v3','copyright':'Photo-derived reconstruction CC BY-SA 3.0; attribution in zaz-968m-reconstruction.json'},'scene':0,'scenes':[{'name':'ZAZ-968M approximate body — not measured CAD','nodes':list(range(len(nodes)))}],'nodes':nodes,'meshes':gmeshes,'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors,'extras':{'units':'metres','upAxis':'Y','projectAxes':'X rearward, Y left, Z up after rotate X +90deg','accuracy':'unknown; not a scan','engineeringUse':'preliminary layout screening only'}}
 js=json.dumps(asset,ensure_ascii=False,separators=(',',':')).encode();js+=b' '*((-len(js))%4);binary.extend(b'\x00'*((-len(binary))%4))
 glb=struct.pack('<III',0x46546c67,2,12+8+len(js)+8+len(binary))+struct.pack('<II',len(js),0x4e4f534a)+js+struct.pack('<II',len(binary),0x004e4942)+binary
 (OUT/'zaz-968m-reconstructed.glb').write_bytes(glb)

@@ -65,6 +65,7 @@ def main():
         'verify.py': 'Проверки расчётной модели', 'build_geometry.py': 'Генерация 3D и компоновочных чертежей',
         'build_diagrams.py': 'Генерация схем и панели', 'build_report.py': 'Генерация отчёта',
         'build_viewer.py': 'Генерация интерактивной модели', 'build_site.py': 'Сборка этого сайта',
+        'build_stock_suspension.py': 'Генератор штатной подвески · предварительная геометрия',
         'build_reconstruction.py': 'Генератор кузова по фотографиям',
         'build_cad_assets.py': 'Преобразование заводского CAD в GLB',
         'convert_cad.js': 'Триангуляция заводского STEP',
@@ -139,7 +140,7 @@ def main():
     (OUT/'reconstruction.html').write_text(page('reconstruction.html','Кузов по фотографиям — ЗАЗ / STEAM','Параметрическая реконструкция ЗАЗ-968М: модель, фотографии, происхождение размеров и ограничения точности.',PARAMETER_ROWS=dimension_rows,PHOTOS=photos,SIDE_SOURCE=reconstruction['references'][0]['source'],SCALE_SUBSTITUTION=registration['substitution'],OVERHANG=registration['projected_front_overhang_mm'],PHOTO_LENGTH=registration['projected_length_mm']))
     packing=json.loads((ROOT/'packaging-audit.json').read_text())
     revised=json.loads((ROOT/'layout-revised.json').read_text())
-    comparison_rows=''.join('<tr><td>'+label+'</td><td>'+(', '.join(packing['cases'][key]['summary']['body_conflicts']) or 'Нет')+'</td><td>'+(', '.join(' / '.join(pair) for pair in packing['cases'][key]['summary']['unplanned_envelope_overlaps']) or 'Нет')+'</td></tr>' for key,label in [('original','Исходный задний блок'),('vw','Прежний крупный блок по примеру VW'),('revised','Переработанный вариант')])
+    comparison_rows=''.join('<tr><td>'+label+'</td><td>'+(', '.join(packing['cases'][key]['summary']['body_conflicts']) or 'Нет')+'</td><td>'+(', '.join(' / '.join(pair) for pair in packing['cases'][key]['summary']['unplanned_envelope_overlaps']) or 'Нет')+'</td><td>'+(', '.join(packing['cases'][key]['summary']['stock_conflicts']) or 'Нет')+'</td></tr>' for key,label in [('original','Исходный задний блок'),('vw','Прежний крупный блок по примеру VW'),('revised','Переработанный вариант')])
     actual={p['id']:p for p in packing['cases']['revised']['parts']}
     packing_parts=[*revised['parts'],{'id':'PMP','name':'Cat Pumps 5CP2120W','xyz':revised['pump_xyz'],'size':[259.25,254,146.2],'role':'Заводской CAD перенесён над водяным баком. Мотор, кронштейн и фитинги требуют места.'}]
     placement_rows=''.join('<tr><td>'+p['id']+' · '+escape(p['name'])+'</td><td>'+' × '.join(fmt(v,2).removesuffix(',00') for v in p['size'])+'</td><td>'+' × '.join(fmt(v,1).removesuffix(',0') for v in actual[p['id']]['size_mm'])+'</td><td>'+' / '.join(fmt(v,0) for v in actual[p['id']]['min_xyz_mm'])+'</td><td>'+escape(p['role'])+'</td></tr>' for p in packing_parts)
@@ -159,6 +160,11 @@ def main():
         ('models/references/ATTRIBUTION.txt', 'Фотографии кузова · авторы и лицензии', 'Документы'),
         ('models/cat-5cp2120w.glb', 'Cat Pumps 5CP2120W · заводской CAD в GLB', '3D'),
         ('models/cat-5cp2120w.step', 'Cat Pumps 5CP2120W · исходный заводской STEP', '3D'),
+        ('models/stock-suspension.glb', 'Штатная подвеска · гипотеза GLB', '3D'),
+        ('models/stock-suspension.obj', 'Штатная подвеска · гипотеза OBJ', '3D'),
+        ('models/stock-suspension.mtl', 'Материалы подвески', '3D'),
+        ('models/stock-suspension.json', 'Подвеска · источники и допущения', 'Документы'),
+        ('models/stock-suspension-checks.json', 'Подвеска · проверка сетки', 'Проверки'),
         ('models/registry.json', 'Происхождение и точность моделей', 'Документы')]:
         p = OUT / path
         records.append({'path': path, 'title': title, 'category': cat, 'format': p.suffix[1:].upper(), 'size': p.stat().st_size})

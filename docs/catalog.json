@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 8049
+    "size": 8715
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -81,21 +81,28 @@
     "title": "Генератор кузова по фотографиям",
     "category": "Исходники",
     "format": "PY",
-    "size": 20979
+    "size": 22149
   },
   {
     "path": "build_report.py",
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 78474
+    "size": 78998
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 23692
+    "size": 24471
+  },
+  {
+    "path": "build_stock_suspension.py",
+    "title": "Генератор штатной подвески · предварительная геометрия",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 12512
   },
   {
     "path": "build_viewer.py",
@@ -179,7 +186,7 @@
     "title": "Переработанная компоновка · координаты",
     "category": "3D",
     "format": "JSON",
-    "size": 8069
+    "size": 8641
   },
   {
     "path": "layout-vw-inspired.json",
@@ -207,7 +214,7 @@
     "title": "Пересечения и зазоры · сравнение трёх компоновок",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 27741
+    "size": 37867
   },
   {
     "path": "physics-audit.json",
@@ -221,14 +228,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 202367
+    "size": 202891
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 221830
+    "size": 222052
   },
   {
     "path": "requirements.txt",
@@ -382,14 +389,14 @@
     "title": "Переработанная компоновка · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 47687
+    "size": 47692
   },
   {
     "path": "drawings/06-revised-layout.svg",
     "title": "Переработанная компоновка · SVG",
     "category": "Чертежи",
     "format": "SVG",
-    "size": 11894
+    "size": 11870
   },
   {
     "path": "calculations.html",
@@ -403,35 +410,35 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 19724
+    "size": 21531
   },
   {
     "path": "packaging.html",
     "title": "Новая расстановка · зазоры и открытые вопросы",
     "category": "3D",
     "format": "HTML",
-    "size": 16321
+    "size": 17653
   },
   {
     "path": "reconstruction.html",
     "title": "Кузов по фотографиям: источники и точность",
     "category": "Документы",
     "format": "HTML",
-    "size": 20360
+    "size": 22527
   },
   {
     "path": "models/zaz-968m-reconstructed.glb",
     "title": "ЗАЗ-968М · приближённая реконструкция GLB",
     "category": "3D",
     "format": "GLB",
-    "size": 4374364
+    "size": 5627792
   },
   {
     "path": "models/zaz-968m-reconstructed.obj",
     "title": "ЗАЗ-968М · приближённая реконструкция OBJ",
     "category": "3D",
     "format": "OBJ",
-    "size": 5713943
+    "size": 7125871
   },
   {
     "path": "models/zaz-968m-reconstructed.mtl",
@@ -445,7 +452,7 @@
     "title": "Реконструкция · параметры и источники",
     "category": "Документы",
     "format": "JSON",
-    "size": 14623
+    "size": 15443
   },
   {
     "path": "models/reconstruction-dimensions.csv",
@@ -466,7 +473,7 @@
     "title": "Реконструкция · проверки интерфейса и импорта",
     "category": "Проверки",
     "format": "JSON",
-    "size": 4139
+    "size": 12896
   },
   {
     "path": "models/references/ATTRIBUTION.txt",
@@ -490,10 +497,45 @@
     "size": 11028141
   },
   {
+    "path": "models/stock-suspension.glb",
+    "title": "Штатная подвеска · гипотеза GLB",
+    "category": "3D",
+    "format": "GLB",
+    "size": 4082352
+  },
+  {
+    "path": "models/stock-suspension.obj",
+    "title": "Штатная подвеска · гипотеза OBJ",
+    "category": "3D",
+    "format": "OBJ",
+    "size": 6732932
+  },
+  {
+    "path": "models/stock-suspension.mtl",
+    "title": "Материалы подвески",
+    "category": "3D",
+    "format": "MTL",
+    "size": 157
+  },
+  {
+    "path": "models/stock-suspension.json",
+    "title": "Подвеска · источники и допущения",
+    "category": "Документы",
+    "format": "JSON",
+    "size": 4099
+  },
+  {
+    "path": "models/stock-suspension-checks.json",
+    "title": "Подвеска · проверка сетки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 395
+  },
+  {
     "path": "models/registry.json",
     "title": "Происхождение и точность моделей",
     "category": "Документы",
     "format": "JSON",
-    "size": 4643
+    "size": 5263
   }
 ]

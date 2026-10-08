@@ -1,0 +1,99 @@
+{
+  "name": "Штатная подвеска ЗАЗ-968М · статическая гипотеза",
+  "status": "Сохраняется в проекте, без переноса точек крепления для размещения агрегатов. Пригодность под новую массу ещё не рассчитана.",
+  "units": "mm; GLB metres Y-up, OBJ mm Z-up",
+  "accuracy": "Размеры деталей, точки крепления и положение под нагрузкой не измерены. Это не заводской CAD.",
+  "sources": [
+    {
+      "url": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "title": "ЗАЗ-968М, Шейнин / Стрюк, 1991",
+      "sections": "листы 44–50: полуоси, передняя и задняя подвески, амортизаторы"
+    },
+    {
+      "url": "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf",
+      "title": "Каталог деталей ЗАЗ-968М",
+      "sections": "рис.39–43; PDF стр.52–58"
+    }
+  ],
+  "documented": {
+    "wheelbase_mm": 2160,
+    "front_track_mm": 1228,
+    "rear_track_mm": 1212,
+    "front_architecture": "Две поперечные трубы, два торсиона из пяти пластин, четыре продольных рычага, поворотные кулаки, дополнительные пружины на амортизаторах.",
+    "rear_architecture": "Два штампованных сварных рычага на сайлент-блоках, пружины и телескопические амортизаторы.",
+    "front_total_wheel_travel_mm": 150,
+    "travel_note": "Альбом: общий ход при сбитом буфере. Нельзя автоматически делить на ±75 мм вокруг нашей статической позы."
+  },
+  "model_assumptions": {
+    "wheel_center_z_mm": 280,
+    "front_axle_x_mm": 675,
+    "rear_axle_x_mm": 2835,
+    "front_tube_x_mm": 485,
+    "front_tube_centers_z_mm": [
+      240,
+      385
+    ],
+    "front_tube_outer_radius_mm": 32,
+    "front_tube_span_mm": 950,
+    "front_shock_upper_xyz_mm": [
+      645,
+      500,
+      810
+    ],
+    "rear_arm_pivots_right_mm": [
+      [
+        2405,
+        -290,
+        350
+      ],
+      [
+        2515,
+        -545,
+        350
+      ]
+    ],
+    "rear_shock_upper_left_xyz_mm": [
+      2815,
+      500,
+      795
+    ],
+    "spring_radii_front_rear_mm": [
+      48,
+      62
+    ],
+    "spring_wire_radius_mm": 6,
+    "spring_visual_turns": 8,
+    "note": "Все параметры этого блока — геометрические допущения, не паспортные размеры и не параметры жёсткости. Координаты зеркалятся по Y."
+  },
+  "not_modelled": [
+    "Ход подвески, полный поворот колёс и огибающие движения",
+    "Жёсткость пружин/торсионов, осадка под новой массой, прочность креплений",
+    "Полные тормозные и рулевые механизмы, тормозные трубки и шланги"
+  ],
+  "mechanical_interfaces": {
+    "GBX": "Полуоси и их пыльники стыкуются с КПП. Эти узлы исключены только из проверки пересечения с габаритным прокси GBX; контакты рычагов и пружин не исключены."
+  },
+  "license": "CC BY-SA 3.0 project geometry",
+  "generated_checks": {
+    "meshes": 50,
+    "bounds_min_mm": [
+      452,
+      -614.0,
+      173.0
+    ],
+    "bounds_max_mm": [
+      2942.9,
+      614.0,
+      817.0
+    ],
+    "size_mm": [
+      2490.9,
+      1228.0,
+      644.0
+    ],
+    "sha256": "e084e327c5ebcbb873bb6f76326ce3f094ac5b50957d9dc988e3cb3de565367d",
+    "bytes": 4082352,
+    "all_vertices_finite": true,
+    "scope": "generated geometry only; not real-car dimensional validation"
+  }
+}

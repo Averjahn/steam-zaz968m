@@ -2,17 +2,17 @@
   "status": "Checks of generated geometry, not validation of real vehicle dimensions",
   "bounds_min_mm": [
     0.0,
-    -744.9999986720568,
+    -744.9999837373856,
     0.0
   ],
   "bounds_max_mm": [
     3765.0,
-    744.9999986720568,
+    744.9999837373856,
     1400.0
   ],
   "size_mm": [
     3765.0,
-    1489.9999973441136,
+    1489.9999674747712,
     1400.0
   ],
   "wheel_centres_x_mm": [
@@ -21,8 +21,8 @@
   ],
   "wheelbase_mm": 2160,
   "meshes": 35,
-  "triangles": 60408,
-  "glb_bytes": 4374364,
-  "sha256": "165abc096d865c94dbc49a06fbd33b966b4ac108ecd934afc3c7d26bc2793c5a",
+  "triangles": 77816,
+  "glb_bytes": 5627792,
+  "sha256": "b82d69d21395275974ff7bcf694b95d18450db463c344001ac6bc8a24b4ea681",
   "all_vertices_finite": true
 }

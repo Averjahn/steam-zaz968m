@@ -1,6 +1,273 @@
 {
   "checks": [
     {
+      "name": "50 separately visible stock nodes",
+      "ok": true
+    },
+    {
+      "name": "Stock transforms are locked",
+      "ok": true
+    },
+    {
+      "name": "Stock nodes persist when changing layout",
+      "ok": true
+    },
+    {
+      "name": "Placement exports stock provenance and 50 nodes",
+      "ok": true,
+      "value": {
+        "id": "SUSP",
+        "name": "Штатная подвеска ЗАЗ-968М",
+        "source": "альбом 1991, листы 44–50; каталог, рис.39–43",
+        "kind": "Схема штатных узлов; размеры и крепления предварительные",
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "baked_orientation_deg": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "visible": true,
+        "reconstruction": false,
+        "retained_stock": true,
+        "locked_transform": true,
+        "stock_nodes": [
+          {
+            "name": "Передняя_ось_·_нижняя_труба",
+            "group": "front"
+          },
+          {
+            "name": "Торсион_·_нижняя_пакет_пяти_пластин",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_ось_·_верхняя_труба",
+            "group": "front"
+          },
+          {
+            "name": "Торсион_·_верхняя_пакет_пяти_пластин",
+            "group": "front"
+          },
+          {
+            "name": "Передние_кронштейны_·_правая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_нижний_рычаг_·_правая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_шарнир_·_нижний_правая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_верхний_рычаг_·_правая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_шарнир_·_верхний_правая",
+            "group": "front"
+          },
+          {
+            "name": "Поворотный_кулак_·_правая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_барабан__ступица_·_правая",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_правая_·_амортизатор",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_правая_·_шток",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_правая_·_пружина",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_правая_·_верхняя_опора",
+            "group": "front"
+          },
+          {
+            "name": "Передние_кронштейны_·_левая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_нижний_рычаг_·_левая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_шарнир_·_нижний_левая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_верхний_рычаг_·_левая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_шарнир_·_верхний_левая",
+            "group": "front"
+          },
+          {
+            "name": "Поворотный_кулак_·_левая",
+            "group": "front"
+          },
+          {
+            "name": "Передний_барабан__ступица_·_левая",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_левая_·_амортизатор",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_левая_·_шток",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_левая_·_пружина",
+            "group": "front"
+          },
+          {
+            "name": "Передняя_левая_·_верхняя_опора",
+            "group": "front"
+          },
+          {
+            "name": "Задний_сварной_рычаг_·_правая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_сайлент-блок_1_·_правая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_кронштейн_1_·_правая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_сайлент-блок_2_·_правая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_кронштейн_2_·_правая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_барабан__ступица_·_правая",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_правая_·_амортизатор",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_правая_·_шток",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_правая_·_пружина",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_правая_·_верхняя_опора",
+            "group": "rear"
+          },
+          {
+            "name": "Полуось_и_кардан_·_правая",
+            "group": "drive"
+          },
+          {
+            "name": "Пыльник_полуоси_·_правая",
+            "group": "drive"
+          },
+          {
+            "name": "Задний_сварной_рычаг_·_левая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_сайлент-блок_1_·_левая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_кронштейн_1_·_левая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_сайлент-блок_2_·_левая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_кронштейн_2_·_левая",
+            "group": "rear"
+          },
+          {
+            "name": "Задний_барабан__ступица_·_левая",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_левая_·_амортизатор",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_левая_·_шток",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_левая_·_пружина",
+            "group": "rear"
+          },
+          {
+            "name": "Задняя_левая_·_верхняя_опора",
+            "group": "rear"
+          },
+          {
+            "name": "Полуось_и_кардан_·_левая",
+            "group": "drive"
+          },
+          {
+            "name": "Пыльник_полуоси_·_левая",
+            "group": "drive"
+          }
+        ],
+        "size_mm": [
+          2490.9,
+          1228,
+          644.0000000000002
+        ]
+      }
+    },
+    {
+      "name": "Dedicated stock-only layer",
+      "ok": true
+    },
+    {
+      "name": "Stock GLB contains all 50 geometries",
+      "ok": true,
+      "value": 50
+    },
+    {
+      "name": "Hidden stock node excluded from GLB",
+      "ok": true,
+      "value": 49
+    },
+    {
       "name": "Revised layout is default",
       "ok": true
     },
@@ -96,6 +363,8 @@
       "name": "Only unresolved stock gearbox proxy conflicts with body",
       "ok": true,
       "value": {
+        "stock_conflicts": [],
+        "stock_gaps_under_screen": [],
         "body_conflicts": [
           "GBX"
         ],
@@ -106,6 +375,24 @@
     },
     {
       "name": "No unplanned component overlap or gaps below screen",
+      "ok": true
+    },
+    {
+      "name": "No conflicts or insufficient static stock gaps",
+      "ok": true,
+      "value": {
+        "stock_conflicts": [],
+        "stock_gaps_under_screen": [],
+        "body_conflicts": [
+          "GBX"
+        ],
+        "unplanned_envelope_overlaps": [],
+        "body_gaps_under_screen": [],
+        "component_gaps_under_screen": []
+      }
+    },
+    {
+      "name": "Drive-shaft interface exceptions only for GBX",
       "ok": true
     },
     {
@@ -135,6 +422,10 @@
     },
     {
       "name": "Legacy removes layout-owned burner",
+      "ok": true
+    },
+    {
+      "name": "Stock persists with full nodes after layout changes",
       "ok": true
     },
     {
@@ -180,5 +471,6 @@
       "value": []
     }
   ],
-  "errors": []
+  "errors": [],
+  "scope": "48 browser regression checks including body bounds, stock layer, locked transforms, clipping controls, per-node export, all layouts, static collision checks and GLB units"
 }

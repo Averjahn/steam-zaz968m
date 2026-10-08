@@ -62,8 +62,19 @@
     "license": "CC BY-SA 3.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
     "parameters": "zaz-968m-reconstruction.json",
-    "version": 2,
-    "shape_revision": "Скруглённые обводы без увеличения кузова"
+    "version": 3,
+    "shape_revision": "Усилены скругления крыши, капотов и углов панелей; добавлен отдельный слой штатной подвески, размеры предварительные"
   },
-  "layout_revised": "../layout-revised.json"
+  "layout_revised": "../layout-revised.json",
+  "stock_suspension": {
+    "file": "stock-suspension.glb",
+    "parameters": "stock-suspension.json",
+    "status": "Retained stock architecture; static dimensional hypothesis, NOT measured factory CAD",
+    "nodes": 50,
+    "sources": [
+      "https://djvu.online/file/yS7dQhMxx1lMm",
+      "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf"
+    ],
+    "project_use": "Static collision screening only; moving envelopes and new load suitability unverified"
+  }
 }

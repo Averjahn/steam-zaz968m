@@ -1,0 +1,22 @@
+{
+  "meshes": 50,
+  "bounds_min_mm": [
+    452,
+    -614.0,
+    173.0
+  ],
+  "bounds_max_mm": [
+    2942.9,
+    614.0,
+    817.0
+  ],
+  "size_mm": [
+    2490.9,
+    1228.0,
+    644.0
+  ],
+  "sha256": "e084e327c5ebcbb873bb6f76326ce3f094ac5b50957d9dc988e3cb3de565367d",
+  "bytes": 4082352,
+  "all_vertices_finite": true,
+  "scope": "generated geometry only; not real-car dimensional validation"
+}
