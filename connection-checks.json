@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "created_utc": "2026-10-08T17:46:10.194852+00:00",
+  "created_utc": "2026-10-08T17:52:35.117750+00:00",
   "checks": [
     {
       "name": "Five heat choices",
@@ -3611,7 +3611,7 @@
     "web/systems.css": "9dacd36b3b186ea122ea5d9f8c49efe95bd1995ac290240eeed1375d797071a4",
     "models/steam-internal-assembly.glb": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
     "models/steam-internal-assembly.json": "1ce32b72419cab07f146159e47a8de8bf94d56d73682ea5747c2999d03c069f9",
-    "simulation-data.json": "8a9ce5c91c3a665949332cd72f9a0f9eda0795aefd5dc8b9c7165276c81e9552",
+    "simulation-data.json": "59ecd82a03d07aafb2047200d214f0436d657e43041f08fe428421b127a085f0",
     "heat-sources.json": "f9fbb71e166e429ebe7b476dd6fa4ff764fe353eda0f89512627bca4302d3b2b",
     "build_connection_specs.py": "faab18c7f010a0f2749a9eb67763623e4e8a92011bbad05fe5f15db4f9345016",
     "build_pipe_engineering.py": "516df1b8d2eb52531d4109ad91b9d38b836faef6481e4d94ea66b28e319e7977"

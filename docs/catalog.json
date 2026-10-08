@@ -151,7 +151,7 @@
     "title": "Генератор свойств IAPWS-95 и физических описаний",
     "category": "Исходники",
     "format": "PY",
-    "size": 25365
+    "size": 25878
   },
   {
     "path": "build_site.py",
@@ -466,14 +466,14 @@
     "title": "Проверка балансов, остановов и четырёх колёс",
     "category": "Проверки",
     "format": "JSON",
-    "size": 72334
+    "size": 72489
   },
   {
     "path": "simulation-data.json",
     "title": "Свойства воды, гипотезы симуляции и массы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 255563
+    "size": 256049
   },
   {
     "path": "sources.csv",

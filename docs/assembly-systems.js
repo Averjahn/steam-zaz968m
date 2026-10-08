@@ -11,7 +11,7 @@ const descriptions=['Начните исследовательский пуск.
 const fluidColor=r=>r.id==='PIPE_MAKEUP'?'#d8f4ff':r.id==='PIPE_FEED'?'#d5eeee':r.fluid==='steam'?'#f2f3ed':r.fluid==='exhaust'?'#d6d9dc':r.fluid==='fuel'?'#e1c66f':r.fluid==='flue'?'#8f8476':'#a9d4cc';
 export async function attachSystems(api){
  const read=async p=>{const r=await fetch(p);if(!r.ok)throw Error(p+': HTTP '+r.status);return r.json();};
- const [data,pipes,audit,heatFit]=await Promise.all([read('simulation-data.json?v=8a9ce5c91c3a'),read('pipe-engineering.json?v=64f5a6375a5d'),read('internal-fit-audit.json?v=02a6d217ae68'),read('heat-fit-audit.json?v=7877ee268c46')]);
+ const [data,pipes,audit,heatFit]=await Promise.all([read('simulation-data.json?v=59ecd82a03d0'),read('pipe-engineering.json?v=64f5a6375a5d'),read('internal-fit-audit.json?v=02a6d217ae68'),read('heat-fit-audit.json?v=7877ee268c46')]);
  let sim=new SteamSimulation(data);sim.auto=true;const animation=cycleAnimation(api),overlays=new T.Group(),envelopes=new T.Group();overlays.name='Flow arrows and phase explanation (view only)';envelopes.name='User-assumed suspension envelope (view only)';api.scene.add(overlays,envelopes);
  const tooltip=document.createElement('div');tooltip.className='component-tooltip';tooltip.hidden=true;tooltip.setAttribute('role','tooltip');const title=document.createElement('strong'),description=document.createElement('span'),values=document.createElement('span');values.dataset.values='';tooltip.append(title,description,values);document.body.append(tooltip);
  let originalColors=new Map(),paths=[],lastRevision=-1,lastUI=-1,accum=0,simState=sim.snapshot(),hoverAt=0,currentHover=null,travel=-1,motionWarnings=[],animationClock=0,activeSource=data.heat_sources[0];
