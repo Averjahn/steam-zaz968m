@@ -1,0 +1,301 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Surface arrows enabled by default",
+      "pass": true
+    },
+    {
+      "name": "All 11 fluid/gas pipes have surface arrows",
+      "pass": true,
+      "detail": [
+        {
+          "id": "PIPE_STEAM",
+          "visible": true,
+          "traceVisible": true,
+          "count": 3,
+          "phase": 0.22793196109951552,
+          "radius": 54.6
+        },
+        {
+          "id": "PIPE_EXHAUST_R",
+          "visible": true,
+          "traceVisible": true,
+          "count": 1,
+          "phase": 0.5172944287935485,
+          "radius": 55.6
+        },
+        {
+          "id": "PIPE_EXHAUST_L",
+          "visible": true,
+          "traceVisible": true,
+          "count": 4,
+          "phase": 0.18358193831485725,
+          "radius": 55.6
+        },
+        {
+          "id": "PIPE_RETURN",
+          "visible": true,
+          "traceVisible": true,
+          "count": 15,
+          "phase": 0.06705546221002974,
+          "radius": 17.6
+        },
+        {
+          "id": "PIPE_BALANCE",
+          "visible": true,
+          "traceVisible": true,
+          "count": 4,
+          "phase": 0.1735687285362364,
+          "radius": 17.6
+        },
+        {
+          "id": "PIPE_MAKEUP",
+          "visible": true,
+          "traceVisible": true,
+          "count": 1,
+          "phase": 0.5207734098932931,
+          "radius": 10
+        },
+        {
+          "id": "PIPE_SUCTION",
+          "visible": true,
+          "traceVisible": true,
+          "count": 12,
+          "phase": 0.07680855914423484,
+          "radius": 18.6
+        },
+        {
+          "id": "PIPE_FEED",
+          "visible": true,
+          "traceVisible": true,
+          "count": 5,
+          "phase": 0.14321979983002472,
+          "radius": 15.6
+        },
+        {
+          "id": "PIPE_FUEL",
+          "visible": true,
+          "traceVisible": true,
+          "count": 5,
+          "phase": 0.143574952102362,
+          "radius": 6
+        },
+        {
+          "id": "PIPE_FLUE",
+          "visible": true,
+          "traceVisible": true,
+          "count": 6,
+          "phase": 0.13767421711495648,
+          "radius": 76.6
+        },
+        {
+          "id": "PIPE_RELIEF",
+          "visible": true,
+          "traceVisible": true,
+          "count": 4,
+          "phase": 0.1504734649719727,
+          "radius": 44.6
+        }
+      ]
+    },
+    {
+      "name": "Long pipes have repeated arrows",
+      "pass": true
+    },
+    {
+      "name": "Arrows remain outside physical assembly/export",
+      "pass": true
+    },
+    {
+      "name": "Arrows remain visible with internal-fluid shading off",
+      "pass": true
+    },
+    {
+      "name": "No flow: direction arrows stay still",
+      "pass": true
+    },
+    {
+      "name": "Glyphs are on the outer surface, not the centreline",
+      "pass": true,
+      "detail": [
+        {
+          "id": "PIPE_STEAM",
+          "expected": 55.7,
+          "actual": 55.69998634079793
+        },
+        {
+          "id": "PIPE_EXHAUST_R",
+          "expected": 56.7,
+          "actual": 56.699896853909365
+        },
+        {
+          "id": "PIPE_EXHAUST_L",
+          "expected": 56.7,
+          "actual": 56.70000949452166
+        },
+        {
+          "id": "PIPE_RETURN",
+          "expected": 18.700000000000003,
+          "actual": 18.700084127412865
+        },
+        {
+          "id": "PIPE_BALANCE",
+          "expected": 18.700000000000003,
+          "actual": 18.700023851342245
+        },
+        {
+          "id": "PIPE_MAKEUP",
+          "expected": 11.1,
+          "actual": 11.100033715376524
+        },
+        {
+          "id": "PIPE_SUCTION",
+          "expected": 19.700000000000003,
+          "actual": 19.699997514130324
+        },
+        {
+          "id": "PIPE_FEED",
+          "expected": 16.7,
+          "actual": 16.70000093768061
+        },
+        {
+          "id": "PIPE_FUEL",
+          "expected": 7.1,
+          "actual": 7.099984664128269
+        },
+        {
+          "id": "PIPE_FLUE",
+          "expected": 77.69999999999999,
+          "actual": 77.69998581437828
+        },
+        {
+          "id": "PIPE_RELIEF",
+          "expected": 45.7,
+          "actual": 45.69999846171463
+        }
+      ]
+    },
+    {
+      "name": "Outlined coloured glyphs draw after translucent pipes",
+      "pass": true
+    },
+    {
+      "name": "Arrow toggle hides all glyphs",
+      "pass": true
+    },
+    {
+      "name": "Fluid shading remains independent from arrows",
+      "pass": true
+    },
+    {
+      "name": "Jacket radius is unchanged when only insulation is hidden",
+      "pass": true
+    },
+    {
+      "name": "Glyphs follow bare pipe diameter after removing insulation",
+      "pass": true
+    },
+    {
+      "name": "Explanatory arrows move on normal routes",
+      "pass": true
+    },
+    {
+      "name": "Closed emergency relief is never animated as active flow",
+      "pass": true
+    },
+    {
+      "name": "wood rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "pellets rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "lpg rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "electric rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "Electric has no phantom fuel/flue arrows",
+      "pass": true
+    },
+    {
+      "name": "diesel rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "Computed feed flow animates feed arrows",
+      "pass": true
+    },
+    {
+      "name": "Direction remains readable at 50x simulation speed",
+      "pass": true,
+      "detail": 0.0431183407707052
+    },
+    {
+      "name": "Pause freezes computed-flow arrows",
+      "pass": true
+    },
+    {
+      "name": "Arrow materials inherit section planes",
+      "pass": true
+    },
+    {
+      "name": "Hidden pipe layers also hide their arrows",
+      "pass": true
+    },
+    {
+      "name": "New control fits mobile",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Surface arrows make a visible difference in the rendered viewport",
+      "pass": true,
+      "detail": {
+        "pixels_with_RGB_change_over_35": 6429,
+        "viewport_pixels": 471528
+      }
+    },
+    {
+      "name": "Physical routes, dimensions, simulation equations and native models remain unchanged",
+      "pass": true,
+      "detail": {
+        "web/steam-simulation.js": true,
+        "web/internal-assembly.js": true,
+        "web/heat-geometry.js": true,
+        "pipe-engineering.json": true,
+        "simulation-data.json": true,
+        "models/zaz-968m-yatloo.glb": true,
+        "models/steam-internal-assembly.glb": true
+      }
+    }
+  ],
+  "browser_errors": [],
+  "created_utc": "2026-10-08T12:41:29.169043+00:00",
+  "scope": "Surface direction arrows only: browser rendering, stationary/computed/explanatory motion, five heat sources, visible pipe radius, sections and mobile controls. Historical physical audits retain their original source hashes.",
+  "source_sha256": {
+    "web/pipe-arrows.js": "083395d4ed61b3fc4ae3a9c925e4ae318638e69b836b9a50ee71bfc116d7a1a9",
+    "web/assembly-systems.js": "4a485016082fb1e643ba3c45608ac4823de5e8a679bc29384f3a23e72b9adcb2",
+    "web/assembly.html": "6997bc46f513ef84c6d71f7aa21a26f22068910eaee71d589ea90d9f7649a2b9",
+    "web/assembly.js": "2ecf9f00a382bffd8a7dd87ce1700c0ff79de2a93aae5f62a11c83ce0fce4488",
+    "build_site.py": "75d520c560ae8085c51c9f8472882bbf81098858f3f0849bc0c86def6d458e81",
+    "pipe-engineering.json": "e316c47154db9450bec191907dd471dd04dcb28badac62754ec17f07152bfae4"
+  },
+  "screenshots": [
+    "reports/steam-zaz968m-pipe-arrows-2026-10-08/rear-arrows.png",
+    "reports/steam-zaz968m-pipe-arrows-2026-10-08/front-arrows.png",
+    "reports/steam-zaz968m-pipe-arrows-2026-10-08/boiler-arrows.png",
+    "reports/steam-zaz968m-pipe-arrows-2026-10-08/boiler-no-arrows.png",
+    "reports/steam-zaz968m-pipe-arrows-2026-10-08/mobile.png"
+  ]
+}

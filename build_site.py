@@ -22,7 +22,7 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'pipe-arrows.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     purchase_digest=hashlib.sha256((ROOT/'component-purchases.json').read_bytes()).hexdigest()[:12]
     p=(OUT/'component-purchases.js').read_text().replace("'component-purchases.json'","'component-purchases.json?v="+purchase_digest+"'")
@@ -38,7 +38,7 @@ def main():
             version=hashlib.sha256((ROOT/asset).read_bytes()).hexdigest()[:12]
             p=p.replace("'"+asset+"'","'"+asset+"?v="+version+"'")
         (OUT/module).write_text(p)
-    for module,dependencies in [('cycle-animation.js',[]),('heat-geometry.js',['pipe-path.js']),('heat-page.js',['heat-comparison.js','steam-simulation.js']),('assembly-systems.js',['steam-simulation.js','pipe-path.js','cycle-animation.js','heat-comparison.js']),('physics-page.js',['wheel-loads.js']),('assembly.js',['assembly-systems.js','heat-geometry.js'])]:
+    for module,dependencies in [('cycle-animation.js',[]),('heat-geometry.js',['pipe-path.js']),('heat-page.js',['heat-comparison.js','steam-simulation.js']),('assembly-systems.js',['steam-simulation.js','pipe-path.js','pipe-arrows.js','cycle-animation.js','heat-comparison.js']),('physics-page.js',['wheel-loads.js']),('assembly.js',['assembly-systems.js','heat-geometry.js'])]:
         p=(OUT/module).read_text()
         for asset in dependencies:
             version=hashlib.sha256((OUT/asset).read_bytes()).hexdigest()[:12]
@@ -87,6 +87,7 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
+        'pipe-arrow-checks.json': 'Стрелки на трубах · видимость, анимация и срезы',
         'heat-sources.json':'Параметры пяти источников тепла и первичные документы','heat-fit-audit.json':'Пересечения пяти вариантов источника','heat-browser-checks.json':'Анимации, выбор источника и браузерные проверки','heat-comparison-results.json':'Сравнение расходов и общего КПД','build_heat_sources.py':'Генератор источников тепла и масс труб','simulation-checks.json': 'Проверка балансов, остановов и четырёх колёс', 'verify_simulation.mjs': 'Проверка физической исследовательской модели', 'simulation-data.json': 'Свойства воды, гипотезы симуляции и массы', 'build_simulation_data.py': 'Генератор свойств IAPWS-95 и физических описаний',
         'component-purchases.json': 'Комплектующие · ссылки на покупку и материалы', 'build_procurement.py': 'Генератор реестра комплектующих',
         'report.html': 'Полный отчёт в браузере', 'report.pdf': 'Расчётный отчёт с формулами и подстановками',
@@ -164,7 +165,7 @@ def main():
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'pipe-arrows.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text

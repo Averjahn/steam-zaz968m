@@ -151,7 +151,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 36461
+    "size": 36638
   },
   {
     "path": "build_stock_suspension.py",
@@ -369,6 +369,13 @@
     "category": "Расчёты",
     "format": "JSON",
     "size": 70223
+  },
+  {
+    "path": "pipe-arrow-checks.json",
+    "title": "Стрелки на трубах · видимость, анимация и срезы",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 8120
   },
   {
     "path": "pipe-engineering.json",
@@ -648,7 +655,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 33605
+    "size": 34278
   },
   {
     "path": "user-model.html",
