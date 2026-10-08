@@ -17,10 +17,13 @@ for s in sources:
  s['fuel_storage_L']=4.25 if s['id']=='lpg' else 22.3
  s['flue']=None if s['id']=='electric' else dict(inside_mm=80 if s['id'] in ['diesel','lpg'] else 100,wall_C=250 if s['id'] in ['diesel','lpg'] else 350,excess_air=1.4 if s['id'] in ['diesel','lpg'] else 1.8,stoich_air=14.5 if s['id']=='diesel' else 15.7 if s['id']=='lpg' else 6,cp_J_kgK=1100,gas_R_J_kgK=287,friction_factor=.035)
 # Mass of the displayed pipes; prototype blower/struts add an explicit 3 kg allowance.
+connections=json.loads((R/'connection-specs.json').read_text())
 pipes={r['id']:r for r in json.loads((R/'pipe-engineering.json').read_text())['routes']}
 def pipe_mass(r):
  L=r['centerline_length_m'];d=r['od']/1000;di=(r.get('inside_id_mm') or 0)/1000;ri=d/2;ro=ri+r['insulation_mm']/1000;j=r['jacket_mm']/1000
- return L*math.pi*((d*d-di*di)*7850/4+(ro*ro-ri*ri)*150+((ro+j)**2-ro**2)*8000)
+ inline=sum(math.dist(c['start_mm'],c['end_mm']) for c in r.get('inline_components',[]))/1000
+ bare=max(0,L-inline);ins=max(0,bare-2*r.get('exposed_end_mm',0)/1000)
+ return math.pi*(bare*(d*d-di*di)*7850/4+ins*((ro*ro-ri*ri)*150+((ro+j)**2-ro**2)*8000))
 def route_length(points,radius):
  total=sum(math.dist(a,b) for a,b in zip(points,points[1:]))
  for a,b,c in zip(points,points[1:],points[2:]):
@@ -36,7 +39,7 @@ for source in sources:
  source['flue_mass_kg']=pipe_mass(flue)+3 if source['flue'] else 0
  fuel=copy.deepcopy(pipes['PIPE_FUEL'])
  if source['id']=='lpg':
-  fuel['points'][0][1]=345;fuel['points'][1][1]=345;fuel['centerline_length_m']=route_length(fuel['points'],fuel['bend_radius_mm'])
+  fuel['points']=connections['variants']['lpg']['route_points']['PIPE_FUEL'];fuel['centerline_length_m']=route_length(fuel['points'],fuel['bend_radius_mm'])
  source['fuel_pipe_mass_kg']=pipe_mass(fuel) if source['id'] in ['diesel','lpg'] else 0
  source['hardware_mass_delta_kg']=source['dry_mass_kg']-13+source['flue_mass_kg']-base_flue+source['fuel_pipe_mass_kg']-base_fuel
  source['mass_basis']='Плотности трубы 7850, изоляции 150, кожуха 8000 кг/м³ — допущения. Масса показанных трасс плюс 3 кг дымосос/кронштейны; все прочие крепления и усиления пока не взвешены.'

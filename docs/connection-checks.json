@@ -1,0 +1,3626 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-08T17:46:10.194852+00:00",
+  "checks": [
+    {
+      "name": "Five heat choices",
+      "pass": true
+    },
+    {
+      "name": "Heat selector outside collapsed simulation",
+      "pass": true
+    },
+    {
+      "name": "diesel correct source",
+      "pass": true,
+      "detail": {
+        "source": "diesel",
+        "size": 32,
+        "flue": true,
+        "fuel": true,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "FUE.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BRN.fuelConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 247,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "diesel correct root count",
+      "pass": true,
+      "detail": 32
+    },
+    {
+      "name": "diesel aligned matching joints",
+      "pass": true,
+      "detail": [
+        {
+          "port": "STM.steam",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.returnPumpOut",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.return",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drainL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drain",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "WTR.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.makeup",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.inletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.outletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.feed",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.relief",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "SEP.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.flueOutlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 80,
+          "port_bore_mm": 80,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "BODY.flushRearExhaust",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 80,
+          "port_bore_mm": 80,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "FUE.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 8,
+          "port_bore_mm": 8,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "BRN.fuelConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 8,
+          "port_bore_mm": 8,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "name": "diesel open joint hardware",
+      "pass": true,
+      "detail": 247
+    },
+    {
+      "name": "diesel inline pump/filter replace tube",
+      "pass": true,
+      "detail": {
+        "source": "diesel",
+        "size": 32,
+        "flue": true,
+        "fuel": true,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "FUE.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BRN.fuelConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 247,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "diesel actual electric/combustion geometry",
+      "pass": true
+    },
+    {
+      "name": "diesel selected pipe diagnostics",
+      "pass": true
+    },
+    {
+      "name": "diesel camera focuses port 0",
+      "pass": true
+    },
+    {
+      "name": "diesel camera focuses port 1",
+      "pass": true
+    },
+    {
+      "name": "wood correct source",
+      "pass": true,
+      "detail": {
+        "source": "wood",
+        "size": 31,
+        "flue": true,
+        "fuel": false,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 223,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "wood correct root count",
+      "pass": true,
+      "detail": 31
+    },
+    {
+      "name": "wood aligned matching joints",
+      "pass": true,
+      "detail": [
+        {
+          "port": "STM.steam",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.returnPumpOut",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.return",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drainL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drain",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "WTR.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.makeup",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.inletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.outletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.feed",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.relief",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "SEP.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.flueOutlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 100,
+          "port_bore_mm": 100,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "BODY.flushRearExhaust",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 100,
+          "port_bore_mm": 100,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "name": "wood open joint hardware",
+      "pass": true,
+      "detail": 223
+    },
+    {
+      "name": "wood inline pump/filter replace tube",
+      "pass": true,
+      "detail": {
+        "source": "wood",
+        "size": 31,
+        "flue": true,
+        "fuel": false,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 223,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "wood actual electric/combustion geometry",
+      "pass": true
+    },
+    {
+      "name": "wood selected pipe diagnostics",
+      "pass": true
+    },
+    {
+      "name": "wood camera focuses port 0",
+      "pass": true
+    },
+    {
+      "name": "wood camera focuses port 1",
+      "pass": true
+    },
+    {
+      "name": "pellets correct source",
+      "pass": true,
+      "detail": {
+        "source": "pellets",
+        "size": 31,
+        "flue": true,
+        "fuel": false,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 223,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "pellets correct root count",
+      "pass": true,
+      "detail": 31
+    },
+    {
+      "name": "pellets aligned matching joints",
+      "pass": true,
+      "detail": [
+        {
+          "port": "STM.steam",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.returnPumpOut",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.return",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drainL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drain",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "WTR.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.makeup",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.inletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.outletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.feed",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.relief",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "SEP.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.flueOutlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 100,
+          "port_bore_mm": 100,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "BODY.flushRearExhaust",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 100,
+          "port_bore_mm": 100,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "name": "pellets open joint hardware",
+      "pass": true,
+      "detail": 223
+    },
+    {
+      "name": "pellets inline pump/filter replace tube",
+      "pass": true,
+      "detail": {
+        "source": "pellets",
+        "size": 31,
+        "flue": true,
+        "fuel": false,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 100,
+            "port_bore_mm": 100,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 223,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "pellets actual electric/combustion geometry",
+      "pass": true
+    },
+    {
+      "name": "pellets selected pipe diagnostics",
+      "pass": true
+    },
+    {
+      "name": "pellets camera focuses port 0",
+      "pass": true
+    },
+    {
+      "name": "pellets camera focuses port 1",
+      "pass": true
+    },
+    {
+      "name": "lpg correct source",
+      "pass": true,
+      "detail": {
+        "source": "lpg",
+        "size": 32,
+        "flue": true,
+        "fuel": true,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "FUE.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BRN.fuelConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 247,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "lpg correct root count",
+      "pass": true,
+      "detail": 32
+    },
+    {
+      "name": "lpg aligned matching joints",
+      "pass": true,
+      "detail": [
+        {
+          "port": "STM.steam",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.returnPumpOut",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.return",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drainL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drain",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "WTR.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.makeup",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.inletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.outletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.feed",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.relief",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "SEP.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.flueOutlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 80,
+          "port_bore_mm": 80,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "BODY.flushRearExhaust",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 80,
+          "port_bore_mm": 80,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "FUE.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 8,
+          "port_bore_mm": 8,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "BRN.fuelConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 8,
+          "port_bore_mm": 8,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "name": "lpg open joint hardware",
+      "pass": true,
+      "detail": 247
+    },
+    {
+      "name": "lpg inline pump/filter replace tube",
+      "pass": true,
+      "detail": {
+        "source": "lpg",
+        "size": 32,
+        "flue": true,
+        "fuel": true,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.flueOutlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BODY.flushRearExhaust",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 80,
+            "port_bore_mm": 80,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "FUE.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "BRN.fuelConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 8,
+            "port_bore_mm": 8,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 247,
+        "electric": false,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "lpg actual electric/combustion geometry",
+      "pass": true
+    },
+    {
+      "name": "lpg selected pipe diagnostics",
+      "pass": true
+    },
+    {
+      "name": "lpg camera focuses port 0",
+      "pass": true
+    },
+    {
+      "name": "lpg camera focuses port 1",
+      "pass": true
+    },
+    {
+      "name": "electric correct source",
+      "pass": true,
+      "detail": {
+        "source": "electric",
+        "size": 30,
+        "flue": false,
+        "fuel": false,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 214,
+        "electric": true,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "electric correct root count",
+      "pass": true,
+      "detail": 30
+    },
+    {
+      "name": "electric aligned matching joints",
+      "pass": true,
+      "detail": [
+        {
+          "port": "STM.steam",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.exhaustL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.inletL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 70,
+          "port_bore_mm": 70,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.returnPumpOut",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.return",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drainL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.drain",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 18,
+          "port_bore_mm": 18,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "WTR.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.makeup",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "RCV.out",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.inletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "PMP.outletConcept",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.feed",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 14,
+          "port_bore_mm": 14,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "STM.relief",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "SEP.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 20,
+          "port_bore_mm": 20,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "name": "electric open joint hardware",
+      "pass": true,
+      "detail": 214
+    },
+    {
+      "name": "electric inline pump/filter replace tube",
+      "pass": true,
+      "detail": {
+        "source": "electric",
+        "size": 30,
+        "flue": false,
+        "fuel": false,
+        "metrics": [
+          {
+            "port": "STM.steam",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 40,
+            "port_bore_mm": 40,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletR",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "ENG.exhaustL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.inletL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 70,
+            "port_bore_mm": 70,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.returnPumpOut",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.return",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drainL",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "CND.drain",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 18,
+            "port_bore_mm": 18,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "WTR.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.makeup",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "RCV.out",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.inletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "PMP.outletConcept",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.feed",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 14,
+            "port_bore_mm": 14,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "STM.relief",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          },
+          {
+            "port": "SEP.inlet",
+            "gap_mm": 0,
+            "axis_error_deg": 0,
+            "pipe_bore_mm": 20,
+            "port_bore_mm": 20,
+            "geometry_ok": true,
+            "pressure_verified": false
+          }
+        ],
+        "hardware": 214,
+        "electric": true,
+        "spanCount": 3,
+        "spanLength": 3377.8665003539227,
+        "fullLength": 3512.8665003539227
+      }
+    },
+    {
+      "name": "electric actual electric/combustion geometry",
+      "pass": true
+    },
+    {
+      "name": "electric selected pipe diagnostics",
+      "pass": true
+    },
+    {
+      "name": "electric camera focuses port 0",
+      "pass": true
+    },
+    {
+      "name": "electric camera focuses port 1",
+      "pass": true
+    },
+    {
+      "name": "Hardware visibility off",
+      "pass": true
+    },
+    {
+      "name": "Hardware visibility on",
+      "pass": true
+    },
+    {
+      "name": "Pump fitting selectable ownership",
+      "pass": true
+    },
+    {
+      "name": "Mobile heat selector visible",
+      "pass": true
+    },
+    {
+      "name": "Mobile no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Surface arrows enabled by default",
+      "pass": true
+    },
+    {
+      "name": "All 11 fluid/gas pipes have surface arrows",
+      "pass": true,
+      "detail": [
+        {
+          "id": "PIPE_STEAM",
+          "visible": true,
+          "traceVisible": true,
+          "count": 5,
+          "phase": 0.16513372794628906,
+          "radius": 54.6
+        },
+        {
+          "id": "PIPE_EXHAUST_R",
+          "visible": true,
+          "traceVisible": true,
+          "count": 1,
+          "phase": 0.5234139686160465,
+          "radius": 55.6
+        },
+        {
+          "id": "PIPE_EXHAUST_L",
+          "visible": true,
+          "traceVisible": true,
+          "count": 6,
+          "phase": 0.14578811543450604,
+          "radius": 55.6
+        },
+        {
+          "id": "PIPE_RETURN",
+          "visible": true,
+          "traceVisible": true,
+          "count": 15,
+          "phase": 0.07910720618179679,
+          "radius": 17.6
+        },
+        {
+          "id": "PIPE_BALANCE",
+          "visible": true,
+          "traceVisible": true,
+          "count": 6,
+          "phase": 0.13723120174421252,
+          "radius": 17.6
+        },
+        {
+          "id": "PIPE_MAKEUP",
+          "visible": true,
+          "traceVisible": true,
+          "count": 2,
+          "phase": 0.3199627606446539,
+          "radius": 10
+        },
+        {
+          "id": "PIPE_SUCTION",
+          "visible": true,
+          "traceVisible": true,
+          "count": 13,
+          "phase": 0.08495120561332478,
+          "radius": 18.6
+        },
+        {
+          "id": "PIPE_FEED",
+          "visible": true,
+          "traceVisible": true,
+          "count": 5,
+          "phase": 0.15739554946530881,
+          "radius": 15.6
+        },
+        {
+          "id": "PIPE_FUEL",
+          "visible": true,
+          "traceVisible": true,
+          "count": 5,
+          "phase": 0.1552493580897015,
+          "radius": 6
+        },
+        {
+          "id": "PIPE_FLUE",
+          "visible": true,
+          "traceVisible": true,
+          "count": 7,
+          "phase": 0.13399832040246415,
+          "radius": 76.6
+        },
+        {
+          "id": "PIPE_RELIEF",
+          "visible": true,
+          "traceVisible": true,
+          "count": 5,
+          "phase": 0.1259066681548688,
+          "radius": 44.6
+        }
+      ]
+    },
+    {
+      "name": "Long pipes have repeated arrows",
+      "pass": true
+    },
+    {
+      "name": "Arrows remain outside physical assembly/export",
+      "pass": true
+    },
+    {
+      "name": "Arrows remain visible with internal-fluid shading off",
+      "pass": true
+    },
+    {
+      "name": "No flow: direction arrows stay still",
+      "pass": true
+    },
+    {
+      "name": "Glyphs are on the outer surface, not the centreline",
+      "pass": true,
+      "detail": [
+        {
+          "id": "PIPE_STEAM",
+          "expected": 55.7,
+          "actual": 55.69997676570235
+        },
+        {
+          "id": "PIPE_EXHAUST_R",
+          "expected": 56.7,
+          "actual": 56.699986248130585
+        },
+        {
+          "id": "PIPE_EXHAUST_L",
+          "expected": 56.7,
+          "actual": 56.69999608881415
+        },
+        {
+          "id": "PIPE_RETURN",
+          "expected": 18.700000000000003,
+          "actual": 18.69990934402856
+        },
+        {
+          "id": "PIPE_BALANCE",
+          "expected": 18.700000000000003,
+          "actual": 18.699989598205807
+        },
+        {
+          "id": "PIPE_MAKEUP",
+          "expected": 11.1,
+          "actual": 11.100012070778337
+        },
+        {
+          "id": "PIPE_SUCTION",
+          "expected": 19.700000000000003,
+          "actual": 19.70000949542253
+        },
+        {
+          "id": "PIPE_FEED",
+          "expected": 16.7,
+          "actual": 16.699983570321937
+        },
+        {
+          "id": "PIPE_FUEL",
+          "expected": 7.1,
+          "actual": 7.099989622548696
+        },
+        {
+          "id": "PIPE_FLUE",
+          "expected": 77.69999999999999,
+          "actual": 77.69997429556862
+        },
+        {
+          "id": "PIPE_RELIEF",
+          "expected": 45.7,
+          "actual": 45.70002367783174
+        }
+      ]
+    },
+    {
+      "name": "Outlined coloured glyphs draw after translucent pipes",
+      "pass": true
+    },
+    {
+      "name": "Arrow toggle hides all glyphs",
+      "pass": true
+    },
+    {
+      "name": "Fluid shading remains independent from arrows",
+      "pass": true
+    },
+    {
+      "name": "Jacket radius is unchanged when only insulation is hidden",
+      "pass": true
+    },
+    {
+      "name": "Glyphs follow bare pipe diameter after removing insulation",
+      "pass": true
+    },
+    {
+      "name": "Explanatory arrows move on normal routes",
+      "pass": true
+    },
+    {
+      "name": "Closed emergency relief is never animated as active flow",
+      "pass": true
+    },
+    {
+      "name": "wood rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "pellets rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "lpg rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "electric rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "Electric has no phantom fuel/flue arrows",
+      "pass": true
+    },
+    {
+      "name": "diesel rebuilds arrows for actual source pipes",
+      "pass": true
+    },
+    {
+      "name": "Computed feed flow animates feed arrows",
+      "pass": true
+    },
+    {
+      "name": "Direction remains readable at 50x simulation speed",
+      "pass": true,
+      "detail": 0.041556411336883814
+    },
+    {
+      "name": "Pause freezes computed-flow arrows",
+      "pass": true
+    },
+    {
+      "name": "Arrow materials inherit section planes",
+      "pass": true
+    },
+    {
+      "name": "Hidden pipe layers also hide their arrows",
+      "pass": true
+    },
+    {
+      "name": "New control fits mobile",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "PIPE_STEAM registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_R registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_R registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_L registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_L registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RETURN registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RETURN registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_BALANCE registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_BALANCE registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_MAKEUP registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_MAKEUP registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_SUCTION registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_SUCTION registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FEED registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FEED registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FUEL registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FUEL registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FLUE registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FLUE registered end 1",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RELIEF registered end 0",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RELIEF registered end 1",
+      "pass": true
+    },
+    {
+      "name": "diesel current static surface audit",
+      "pass": true,
+      "detail": {
+        "body_conflicts": [
+          "GBX",
+          "WTR",
+          "RCV",
+          "BOOST",
+          "PIPE_STEAM",
+          "PIPE_EXHAUST_L",
+          "PIPE_RETURN",
+          "PIPE_BALANCE",
+          "PIPE_MAKEUP",
+          "PIPE_SUCTION",
+          "PIPE_FEED",
+          "WIRE",
+          "WIRE_ENGINE",
+          "MOUNTS",
+          "SHIELD",
+          "PIPE_FLUE"
+        ],
+        "static_only": true
+      }
+    },
+    {
+      "name": "wood current static surface audit",
+      "pass": true,
+      "detail": {
+        "body_conflicts": [
+          "GBX",
+          "WTR",
+          "RCV",
+          "BOOST",
+          "PIPE_STEAM",
+          "PIPE_EXHAUST_L",
+          "PIPE_RETURN",
+          "PIPE_BALANCE",
+          "PIPE_MAKEUP",
+          "PIPE_SUCTION",
+          "PIPE_FEED",
+          "WIRE",
+          "WIRE_ENGINE",
+          "MOUNTS",
+          "SHIELD",
+          "PIPE_FLUE"
+        ],
+        "static_only": true
+      }
+    },
+    {
+      "name": "pellets current static surface audit",
+      "pass": true,
+      "detail": {
+        "body_conflicts": [
+          "GBX",
+          "WTR",
+          "RCV",
+          "BOOST",
+          "PIPE_STEAM",
+          "PIPE_EXHAUST_L",
+          "PIPE_RETURN",
+          "PIPE_BALANCE",
+          "PIPE_MAKEUP",
+          "PIPE_SUCTION",
+          "PIPE_FEED",
+          "WIRE",
+          "WIRE_ENGINE",
+          "MOUNTS",
+          "SHIELD",
+          "PIPE_FLUE"
+        ],
+        "static_only": true
+      }
+    },
+    {
+      "name": "lpg current static surface audit",
+      "pass": true,
+      "detail": {
+        "body_conflicts": [
+          "GBX",
+          "WTR",
+          "RCV",
+          "BOOST",
+          "PIPE_STEAM",
+          "PIPE_EXHAUST_L",
+          "PIPE_RETURN",
+          "PIPE_BALANCE",
+          "PIPE_MAKEUP",
+          "PIPE_SUCTION",
+          "PIPE_FEED",
+          "WIRE",
+          "WIRE_ENGINE",
+          "MOUNTS",
+          "SHIELD",
+          "PIPE_FLUE",
+          "PIPE_FUEL"
+        ],
+        "static_only": true
+      }
+    },
+    {
+      "name": "electric current static surface audit",
+      "pass": true,
+      "detail": {
+        "body_conflicts": [
+          "GBX",
+          "WTR",
+          "RCV",
+          "BOOST",
+          "PIPE_STEAM",
+          "PIPE_EXHAUST_L",
+          "PIPE_RETURN",
+          "PIPE_BALANCE",
+          "PIPE_MAKEUP",
+          "PIPE_SUCTION",
+          "PIPE_FEED",
+          "WIRE",
+          "WIRE_ENGINE",
+          "MOUNTS",
+          "SHIELD"
+        ],
+        "static_only": true
+      }
+    }
+  ],
+  "source_sha256": {
+    "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
+    "web/internal-assembly.js": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
+    "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
+    "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
+    "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
+    "models/zaz-968m-yatloo.glb": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+    "models/stock-suspension.glb": "e084e327c5ebcbb873bb6f76326ce3f094ac5b50957d9dc988e3cb3de565367d",
+    "models/cat-5cp2120w.glb": "0653fbe4185b2d2a04c0450b6ddc141f6fec61cabd8469f61ef412308a7eab01",
+    "web/pipe-joints.js": "a0ef4926431b8d9d958bf96ee63b1b59df582f6908dc1e2857f7c37b8c760965",
+    "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
+    "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
+    "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
+    "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+    "web/assembly.js": "6e498eb51bd94d18221b8aee7f639c79c356ce0b034fcf740b8fa64c2631a0de",
+    "web/assembly-systems.js": "014c5b2e1e883b2268f00aca6210050e6eff50b1bcf811c01e0f3535837939eb",
+    "web/assembly.html": "20014ecc47aa0ded70f728c2f4fb4ecfb8e4a7b966a21eb86136f717b19b9f75",
+    "web/pipe-arrows.js": "948ff2dce94b3347744cd1ea2712f482c01644e8f9b273f02493690fbc93295c",
+    "web/systems.css": "9dacd36b3b186ea122ea5d9f8c49efe95bd1995ac290240eeed1375d797071a4",
+    "models/steam-internal-assembly.glb": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
+    "models/steam-internal-assembly.json": "1ce32b72419cab07f146159e47a8de8bf94d56d73682ea5747c2999d03c069f9",
+    "simulation-data.json": "8a9ce5c91c3a665949332cd72f9a0f9eda0795aefd5dc8b9c7165276c81e9552",
+    "heat-sources.json": "f9fbb71e166e429ebe7b476dd6fa4ff764fe353eda0f89512627bca4302d3b2b",
+    "build_connection_specs.py": "faab18c7f010a0f2749a9eb67763623e4e8a92011bbad05fe5f15db4f9345016",
+    "build_pipe_engineering.py": "516df1b8d2eb52531d4109ad91b9d38b836faef6481e4d94ea66b28e319e7977"
+  },
+  "scope": "Named port axes/bores, hollow mating geometry, cut-outs for inline pump/filter, five actual heat variants, endpoint camera, desktop/mobile UI and arrows. Static mesh audit only: body-panel conflicts and small clearances remain, pressure/seals/real thread profile/material ratings/strength and suspension travel unverified. New coupling mass not included.",
+  "browser_errors": [],
+  "evidence": [
+    "reports/steam-zaz968m-connections-2026-10-08/browser.cjs",
+    "reports/steam-zaz968m-connections-2026-10-08/arrows.cjs",
+    "reports/steam-zaz968m-connections-2026-10-08/audit.cjs"
+  ]
+}

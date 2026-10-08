@@ -14,24 +14,34 @@
       ],
       "points": [
         [
-          2530,
-          300,
+          2630,
+          335,
           1180
         ],
         [
-          2650,
-          300,
+          2780,
+          335,
           1180
         ],
         [
-          2770,
-          100,
-          900
+          2780,
+          -300,
+          850
         ],
         [
-          3080,
-          0,
-          745
+          2910,
+          -300,
+          715
+        ],
+        [
+          3110,
+          -300,
+          715
+        ],
+        [
+          3110,
+          -170,
+          715
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -96,7 +106,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 31.629372460119697
+        "route_heat_W": 49.22229087332217
       },
       "insulation_mm": 30,
       "jacket_mm": 0.6,
@@ -107,21 +117,85 @@
       "bends": [
         {
           "vertex": 1,
-          "angle_deg": 70.77414425455599,
+          "angle_deg": 90,
           "radius_mm": 90,
-          "tangent_mm": 63.92911277488222
+          "tangent_mm": 89.99999999999999
         },
         {
           "vertex": 2,
-          "angle_deg": 40.06837251511202,
+          "angle_deg": 70.59987262275467,
           "radius_mm": 90,
-          "tangent_mm": 32.81814777349117
+          "tangent_mm": 63.7234018468145
+        },
+        {
+          "vertex": 3,
+          "angle_deg": 46.08092418666069,
+          "radius_mm": 90,
+          "tangent_mm": 38.277765426608745
+        },
+        {
+          "vertex": 4,
+          "angle_deg": 90,
+          "radius_mm": 90,
+          "tangent_mm": 89.99999999999999
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 0.8257622699720767,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.2850685133266324,
+      "end_ports": [
+        {
+          "id": "STM.steam",
+          "owner": "STM",
+          "anchor_mm": [
+            2620,
+            335,
+            1180
+          ],
+          "face_mm": [
+            2630,
+            335,
+            1180
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 48,
+          "bore_mm": 40,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "ENG.inlet",
+          "owner": "ENG",
+          "anchor_mm": [
+            3110,
+            -120,
+            715
+          ],
+          "face_mm": [
+            3110,
+            -170,
+            715
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 48,
+          "bore_mm": 40,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 150,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.15326243166205816,
         "pressure_Pa": 1000000,
@@ -134,11 +208,11 @@
         "Darcy_f": 0.02111727042517317,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 1.4,
-        "friction_minor_Pa": 3178.083133937853,
+        "K_sum": 1.8,
+        "friction_minor_Pa": 4290.241219576482,
         "static_head_Pa": 0,
-        "total_estimated_Pa": 3178.083133937853,
-        "fraction_of_reference_pressure": 0.003178083133937853,
+        "total_estimated_Pa": 4290.241219576482,
+        "fraction_of_reference_pressure": 0.004290241219576482,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -155,19 +229,24 @@
       ],
       "points": [
         [
-          3370,
+          3330,
+          -155,
+          705
+        ],
+        [
+          3330,
           -200,
           705
         ],
         [
-          3420,
-          -300,
-          705
+          3330,
+          -320,
+          765
         ],
         [
-          3420,
-          -410,
-          780
+          3330,
+          -365,
+          765
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -232,7 +311,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 8.841711579815197
+        "route_heat_W": 8.160620735146171
       },
       "insulation_mm": 15,
       "jacket_mm": 0.6,
@@ -243,15 +322,73 @@
       "bends": [
         {
           "vertex": 1,
-          "angle_deg": 42.35368242928511,
+          "angle_deg": 26.565051177077994,
           "radius_mm": 120,
-          "tangent_mm": 46.48914040472597
+          "tangent_mm": 28.328157299974766
+        },
+        {
+          "vertex": 2,
+          "angle_deg": 26.565051177077994,
+          "radius_mm": 120,
+          "tangent_mm": 28.328157299974766
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 0.24066573267069247,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 0.2221268756102818,
+      "end_ports": [
+        {
+          "id": "ENG.exhaustR",
+          "owner": "ENG",
+          "anchor_mm": [
+            3330,
+            -120,
+            705
+          ],
+          "face_mm": [
+            3330,
+            -155,
+            705
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 80,
+          "bore_mm": 70,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "CND.inletR",
+          "owner": "CND",
+          "anchor_mm": [
+            3330,
+            -410,
+            765
+          ],
+          "face_mm": [
+            3330,
+            -365,
+            765
+          ],
+          "outward": [
+            0,
+            1,
+            0
+          ],
+          "od_mm": 80,
+          "bore_mm": 70,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 48.86791263426199,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.07663121583102908,
         "pressure_Pa": 120000,
@@ -264,11 +401,11 @@
         "Darcy_f": 0.020580174991701616,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 1.2,
-        "friction_minor_Pa": 389.789603881603,
+        "K_sum": 1.4,
+        "friction_minor_Pa": 449.46539104500505,
         "static_head_Pa": 0,
-        "total_estimated_Pa": 389.789603881603,
-        "fraction_of_reference_pressure": 0.0032482466990133583,
+        "total_estimated_Pa": 449.46539104500505,
+        "fraction_of_reference_pressure": 0.003745544925375042,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -285,29 +422,34 @@
       ],
       "points": [
         [
-          3370,
-          110,
-          730
+          3110,
+          -160,
+          625
         ],
         [
-          3370,
-          110,
+          3110,
+          -310,
+          625
+        ],
+        [
+          3670,
+          -310,
           520
         ],
         [
           3670,
-          110,
-          520
-        ],
-        [
-          3670,
-          440,
+          190,
           520
         ],
         [
           3430,
-          440,
-          780
+          190,
+          765
+        ],
+        [
+          3430,
+          365,
+          765
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -372,7 +514,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 38.18321917054456
+        "route_heat_W": 56.27266610045859
       },
       "insulation_mm": 15,
       "jacket_mm": 0.6,
@@ -398,12 +540,70 @@
           "angle_deg": 90,
           "radius_mm": 120,
           "tangent_mm": 119.99999999999999
+        },
+        {
+          "vertex": 4,
+          "angle_deg": 90,
+          "radius_mm": 120,
+          "tangent_mm": 119.99999999999999
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 1.0393227979052453,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.5317059705178904,
+      "end_ports": [
+        {
+          "id": "ENG.exhaustL",
+          "owner": "ENG",
+          "anchor_mm": [
+            3110,
+            -120,
+            625
+          ],
+          "face_mm": [
+            3110,
+            -160,
+            625
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 80,
+          "bore_mm": 70,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "CND.inletL",
+          "owner": "CND",
+          "anchor_mm": [
+            3430,
+            410,
+            765
+          ],
+          "face_mm": [
+            3430,
+            365,
+            765
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 80,
+          "bore_mm": 70,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.07663121583102908,
         "pressure_Pa": 120000,
@@ -416,11 +616,11 @@
         "Darcy_f": 0.020580174991701616,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 1.6,
-        "friction_minor_Pa": 584.5092613980077,
+        "K_sum": 1.8,
+        "friction_minor_Pa": 690.2609269226047,
         "static_head_Pa": 0,
-        "total_estimated_Pa": 584.5092613980077,
-        "fraction_of_reference_pressure": 0.0048709105116500635,
+        "total_estimated_Pa": 690.2609269226047,
+        "fraction_of_reference_pressure": 0.005752174391021705,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -432,42 +632,42 @@
       "od": 24,
       "inside_id_mm": 18,
       "ends": [
-        "CND.drain",
+        "CND.returnPumpOut",
         "RCV.return"
       ],
       "points": [
         [
-          3450,
-          -410,
+          3625,
+          -440,
           600
         ],
         [
-          3580,
-          -410,
+          3700,
+          -440,
           600
         ],
         [
-          3580,
-          -280,
+          3700,
+          -600,
           550
         ],
         [
           3100,
-          -280,
+          -600,
           550
         ],
         [
           3030,
-          -280,
+          -600,
           760
         ],
         [
           2650,
-          -280,
+          -600,
           760
         ],
         [
-          2650,
+          2550,
           -665,
           760
         ],
@@ -477,14 +677,19 @@
           760
         ],
         [
-          1020,
+          1010,
           -460,
           760
         ],
         [
-          800,
+          1010,
           260,
-          890
+          780
+        ],
+        [
+          905,
+          260,
+          780
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -549,7 +754,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 44.410417405310824
+        "route_heat_W": 42.38157002916628
       },
       "insulation_mm": 5,
       "jacket_mm": 0.6,
@@ -584,33 +789,91 @@
         },
         {
           "vertex": 5,
-          "angle_deg": 90,
+          "angle_deg": 33.02386755579664,
           "radius_mm": 40,
-          "tangent_mm": 39.99999999999999
+          "tangent_mm": 11.857602719240388
         },
         {
           "vertex": 6,
-          "angle_deg": 90,
+          "angle_deg": 33.02386755579664,
           "radius_mm": 40,
-          "tangent_mm": 39.99999999999999
+          "tangent_mm": 11.857602719240388
         },
         {
           "vertex": 7,
-          "angle_deg": 68.68208772453845,
+          "angle_deg": 66.29735404903377,
           "radius_mm": 40,
-          "tangent_mm": 27.328158213981236
+          "tangent_mm": 26.124123272659734
         },
         {
           "vertex": 8,
-          "angle_deg": 10.701420071654837,
+          "angle_deg": 23.752916549124436,
           "radius_mm": 40,
-          "tangent_mm": 3.7463976962936574
+          "tangent_mm": 8.412158500744361
+        },
+        {
+          "vertex": 9,
+          "angle_deg": 90,
+          "radius_mm": 40,
+          "tangent_mm": 39.99999999999999
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 4.178903377989404,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 3.987994180351881,
+      "end_ports": [
+        {
+          "id": "CND.returnPumpOut",
+          "owner": "CND",
+          "anchor_mm": [
+            3590,
+            -440,
+            600
+          ],
+          "face_mm": [
+            3625,
+            -440,
+            600
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 24,
+          "bore_mm": 18,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "RCV.return",
+          "owner": "RCV",
+          "anchor_mm": [
+            870,
+            260,
+            780
+          ],
+          "face_mm": [
+            905,
+            260,
+            780
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 24,
+          "bore_mm": 18,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "routing_note": "Return bypasses exhaust at rear, then uses Y-280/Z760 and side corridor Y-665; actual stock travel, body penetration and supports still require validation.",
       "hydraulics": {
         "mass_kg_s": 0.15326243166205816,
@@ -624,11 +887,11 @@
         "Darcy_f": 0.02880953166417436,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 2.6,
-        "friction_minor_Pa": 1731.516781660927,
-        "static_head_Pa": 2767.933042679791,
-        "total_estimated_Pa": 4499.449824340718,
-        "fraction_of_reference_pressure": 0.008657583908304636,
+        "K_sum": 2.8,
+        "friction_minor_Pa": 1711.839495054566,
+        "static_head_Pa": 1718.0274058012496,
+        "total_estimated_Pa": 3429.8669008558154,
+        "fraction_of_reference_pressure": 0.00855919747527283,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -646,22 +909,37 @@
       "points": [
         [
           3450,
-          410,
-          600
-        ],
-        [
-          3520,
-          410,
-          600
-        ],
-        [
-          3520,
-          -410,
+          365,
           600
         ],
         [
           3450,
-          -410,
+          285,
+          600
+        ],
+        [
+          3450,
+          285,
+          400
+        ],
+        [
+          3650,
+          285,
+          400
+        ],
+        [
+          3650,
+          -490,
+          400
+        ],
+        [
+          3650,
+          -490,
+          600
+        ],
+        [
+          3540,
+          -490,
           600
         ]
       ],
@@ -727,7 +1005,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 9.837296498241296
+        "route_heat_W": 15.719454230389662
       },
       "insulation_mm": 5,
       "jacket_mm": 0.6,
@@ -747,12 +1025,82 @@
           "angle_deg": 90,
           "radius_mm": 40,
           "tangent_mm": 39.99999999999999
+        },
+        {
+          "vertex": 3,
+          "angle_deg": 90,
+          "radius_mm": 40,
+          "tangent_mm": 39.99999999999999
+        },
+        {
+          "vertex": 4,
+          "angle_deg": 90,
+          "radius_mm": 40,
+          "tangent_mm": 39.99999999999999
+        },
+        {
+          "vertex": 5,
+          "angle_deg": 90,
+          "radius_mm": 40,
+          "tangent_mm": 39.99999999999999
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 0.9256637061435917,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.4791592653589793,
+      "end_ports": [
+        {
+          "id": "CND.drainL",
+          "owner": "CND",
+          "anchor_mm": [
+            3450,
+            410,
+            600
+          ],
+          "face_mm": [
+            3450,
+            365,
+            600
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 24,
+          "bore_mm": 18,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "CND.drain",
+          "owner": "CND",
+          "anchor_mm": [
+            3500,
+            -490,
+            600
+          ],
+          "face_mm": [
+            3540,
+            -490,
+            600
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 24,
+          "bore_mm": 18,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.07663121583102908,
         "pressure_Pa": 200000,
@@ -765,11 +1113,11 @@
         "Darcy_f": 0.03176608347725545,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 1.4,
-        "friction_minor_Pa": 141.37762538742416,
+        "K_sum": 2,
+        "friction_minor_Pa": 214.86275723454787,
         "static_head_Pa": 0,
-        "total_estimated_Pa": 141.37762538742416,
-        "fraction_of_reference_pressure": 0.0007068881269371208,
+        "total_estimated_Pa": 214.86275723454787,
+        "fraction_of_reference_pressure": 0.0010743137861727395,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -786,24 +1134,24 @@
       ],
       "points": [
         [
-          850,
-          -100,
-          670
+          885,
+          -170,
+          700
         ],
         [
-          900,
-          -100,
-          670
+          980,
+          -170,
+          700
         ],
         [
-          900,
-          10,
-          670
+          980,
+          70,
+          700
         ],
         [
-          820,
-          10,
-          670
+          905,
+          70,
+          700
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -831,8 +1179,60 @@
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 0.2142477796076938,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 0.3842477796076938,
+      "end_ports": [
+        {
+          "id": "WTR.out",
+          "owner": "WTR",
+          "anchor_mm": [
+            850,
+            -170,
+            700
+          ],
+          "face_mm": [
+            885,
+            -170,
+            700
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 20,
+          "bore_mm": 14,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "RCV.makeup",
+          "owner": "RCV",
+          "anchor_mm": [
+            870,
+            70,
+            700
+          ],
+          "face_mm": [
+            905,
+            70,
+            700
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 20,
+          "bore_mm": 14,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 0,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.15326243166205816,
         "pressure_Pa": 200000,
@@ -846,10 +1246,10 @@
         "K_per_bend": 0.2,
         "K_other": 1,
         "K_sum": 1.4,
-        "friction_minor_Pa": 944.1270415364366,
+        "friction_minor_Pa": 1141.0945113386404,
         "static_head_Pa": 0,
-        "total_estimated_Pa": 944.1270415364366,
-        "fraction_of_reference_pressure": 0.004720635207682183,
+        "total_estimated_Pa": 1141.0945113386404,
+        "fraction_of_reference_pressure": 0.005705472556693202,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -871,31 +1271,36 @@
       "points": [
         [
           800,
-          480,
+          520,
           675
         ],
         [
-          1000,
-          480,
+          800,
+          620,
           675
-        ],
-        [
-          1010,
-          340,
-          930
-        ],
-        [
-          925,
-          340,
-          930
-        ],
-        [
-          925,
-          190,
-          930
         ],
         [
           1020,
+          620,
+          675
+        ],
+        [
+          1020,
+          340,
+          930
+        ],
+        [
+          925,
+          340,
+          930
+        ],
+        [
+          925,
+          190,
+          930
+        ],
+        [
+          925,
           190,
           840
         ],
@@ -910,24 +1315,29 @@
           420
         ],
         [
-          2010,
+          1970,
           625,
           420
         ],
         [
-          2010,
-          -140,
+          1970,
+          -50,
           420
         ],
         [
-          2010,
-          -140,
-          500
+          1970,
+          -50,
+          504
         ],
         [
-          2160,
-          -140,
-          500
+          2179.5,
+          -50,
+          504
+        ],
+        [
+          2179.5,
+          -117,
+          504
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -992,7 +1402,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 37.27900709593203
+        "route_heat_W": 39.79878117324554
       },
       "insulation_mm": 5,
       "jacket_mm": 0.6,
@@ -1003,15 +1413,15 @@
       "bends": [
         {
           "vertex": 1,
-          "angle_deg": 88.03119677165247,
+          "angle_deg": 90,
           "radius_mm": 40,
-          "tangent_mm": 38.648601522535614
+          "tangent_mm": 39.99999999999999
         },
         {
           "vertex": 2,
-          "angle_deg": 91.96880322834753,
+          "angle_deg": 90,
           "radius_mm": 40,
-          "tangent_mm": 41.39865187792257
+          "tangent_mm": 39.99999999999999
         },
         {
           "vertex": 3,
@@ -1027,9 +1437,9 @@
         },
         {
           "vertex": 5,
-          "angle_deg": 43.45184230102204,
+          "angle_deg": 90,
           "radius_mm": 40,
-          "tangent_mm": 15.938899236899559
+          "tangent_mm": 39.99999999999999
         },
         {
           "vertex": 6,
@@ -1060,12 +1470,109 @@
           "angle_deg": 90,
           "radius_mm": 40,
           "tangent_mm": 39.99999999999999
+        },
+        {
+          "vertex": 11,
+          "angle_deg": 90,
+          "radius_mm": 40,
+          "tangent_mm": 39.99999999999999
+        },
+        {
+          "vertex": 12,
+          "angle_deg": 90,
+          "radius_mm": 40,
+          "tangent_mm": 39.99999999999999
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 3.290456926901828,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 3.5128665003539234,
+      "end_ports": [
+        {
+          "id": "RCV.out",
+          "owner": "RCV",
+          "anchor_mm": [
+            800,
+            480,
+            675
+          ],
+          "face_mm": [
+            800,
+            520,
+            675
+          ],
+          "outward": [
+            0,
+            1,
+            0
+          ],
+          "od_mm": 26,
+          "bore_mm": 20,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "PMP.inletConcept",
+          "owner": "PMP",
+          "anchor_mm": [
+            2179.5,
+            -167,
+            504
+          ],
+          "face_mm": [
+            2179.5,
+            -117,
+            504
+          ],
+          "outward": [
+            0,
+            1,
+            0
+          ],
+          "od_mm": 26,
+          "bore_mm": 20,
+          "kind": "thread-adapter",
+          "basis": "Ось бокового отверстия из заводского STEP; размер резьбы из паспорта. Геометрия переходника проектная.",
+          "thread": "1/2 NPT(M) → ID20",
+          "entry_od_mm": 21.34,
+          "entry_bore_mm": 16
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [
+        {
+          "id": "BOOST.filter",
+          "start_mm": [
+            925,
+            295,
+            930
+          ],
+          "end_mm": [
+            925,
+            245,
+            930
+          ],
+          "bore_mm": 20,
+          "od_mm": 48
+        },
+        {
+          "id": "BOOST.pump",
+          "start_mm": [
+            990,
+            190,
+            840
+          ],
+          "end_mm": [
+            1075,
+            190,
+            840
+          ],
+          "bore_mm": 20,
+          "od_mm": 48
+        }
+      ],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.15326243166205816,
         "pressure_Pa": 200000,
@@ -1078,11 +1585,11 @@
         "Darcy_f": 0.02869725052278413,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 3,
-        "friction_minor_Pa": 944.3794636145802,
-        "static_head_Pa": -1670.3044223067704,
-        "total_estimated_Pa": -725.9249586921902,
-        "fraction_of_reference_pressure": 0.004721897318072901,
+        "K_sum": 3.4000000000000004,
+        "friction_minor_Pa": 1032.3341127732272,
+        "static_head_Pa": -1632.1260355111874,
+        "total_estimated_Pa": -599.7919227379602,
+        "fraction_of_reference_pressure": 0.005161670563866136,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -1099,19 +1606,19 @@
       ],
       "points": [
         [
-          2230,
-          -250,
-          560
+          2152,
+          -117,
+          576
+        ],
+        [
+          2152,
+          -60,
+          576
         ],
         [
           2710,
-          -250,
-          560
-        ],
-        [
-          2710,
-          -250,
-          750
+          -60,
+          576
         ],
         [
           2710,
@@ -1125,7 +1632,7 @@
         ],
         [
           2530,
-          300,
+          260,
           750
         ]
       ],
@@ -1191,7 +1698,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 12.351149798944036
+        "route_heat_W": 10.428124322540546
       },
       "insulation_mm": 5,
       "jacket_mm": 0.6,
@@ -1227,8 +1734,62 @@
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 1.3399114857512855,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.131292534061001,
+      "end_ports": [
+        {
+          "id": "PMP.outletConcept",
+          "owner": "PMP",
+          "anchor_mm": [
+            2152,
+            -167,
+            576
+          ],
+          "face_mm": [
+            2152,
+            -117,
+            576
+          ],
+          "outward": [
+            0,
+            1,
+            0
+          ],
+          "od_mm": 20,
+          "bore_mm": 14,
+          "kind": "thread-adapter",
+          "basis": "Ось бокового отверстия из заводского STEP; размер резьбы из паспорта. Геометрия переходника проектная.",
+          "thread": "3/8 NPT(M) → ID14",
+          "entry_od_mm": 17.15,
+          "entry_bore_mm": 12
+        },
+        {
+          "id": "STM.feed",
+          "owner": "STM",
+          "anchor_mm": [
+            2530,
+            300,
+            750
+          ],
+          "face_mm": [
+            2530,
+            260,
+            750
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 20,
+          "bore_mm": 14,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.15326243166205816,
         "pressure_Pa": 1000000,
@@ -1242,10 +1803,10 @@
         "K_per_bend": 0.2,
         "K_other": 1,
         "K_sum": 1.8,
-        "friction_minor_Pa": 2352.1787121548573,
-        "static_head_Pa": 1814.139132061081,
-        "total_estimated_Pa": 4166.317844215939,
-        "fraction_of_reference_pressure": 0.002352178712154857,
+        "friction_minor_Pa": 2128.6628406851937,
+        "static_head_Pa": 1661.3695209401478,
+        "total_estimated_Pa": 3790.0323616253418,
+        "fraction_of_reference_pressure": 0.0021286628406851937,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -1263,32 +1824,37 @@
       "points": [
         [
           2190,
-          180,
+          140,
           540
         ],
         [
-          2075,
-          120,
+          2190,
+          60,
           540
         ],
         [
-          2075,
-          -470,
+          2055,
+          60,
           540
         ],
         [
-          2075,
-          -470,
+          2055,
+          -400,
+          540
+        ],
+        [
+          2055,
+          -400,
           720
         ],
         [
-          2300,
-          -470,
+          2470,
+          -400,
           720
         ],
         [
-          2300,
-          -250,
+          2470,
+          -327,
           720
         ]
       ],
@@ -1304,9 +1870,9 @@
       "bends": [
         {
           "vertex": 1,
-          "angle_deg": 62.447188423282206,
+          "angle_deg": 90,
           "radius_mm": 25,
-          "tangent_mm": 15.154612545810538
+          "tangent_mm": 24.999999999999996
         },
         {
           "vertex": 2,
@@ -1325,12 +1891,70 @@
           "angle_deg": 90,
           "radius_mm": 25,
           "tangent_mm": 24.999999999999996
+        },
+        {
+          "vertex": 5,
+          "angle_deg": 90,
+          "radius_mm": 25,
+          "tangent_mm": 24.999999999999996
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 1.3094594432937137,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.2893495408493623,
+      "end_ports": [
+        {
+          "id": "FUE.out",
+          "owner": "FUE",
+          "anchor_mm": [
+            2190,
+            180,
+            540
+          ],
+          "face_mm": [
+            2190,
+            140,
+            540
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 12,
+          "bore_mm": 8,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "BRN.fuelConcept",
+          "owner": "BRN",
+          "anchor_mm": [
+            2470,
+            -292,
+            720
+          ],
+          "face_mm": [
+            2470,
+            -327,
+            720
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 12,
+          "bore_mm": 8,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 0,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": null
     },
     {
@@ -1345,33 +1969,33 @@
       ],
       "points": [
         [
-          2480,
+          2660,
           460,
-          1190
+          1050
         ],
         [
-          2720,
+          3000,
           460,
-          1190
+          1050
         ],
         [
-          2850,
-          293,
-          920
+          3000,
+          -250,
+          950
         ],
         [
-          3010,
-          293,
-          700
+          3450,
+          -250,
+          950
         ],
         [
-          3200,
-          303,
+          3600,
+          -250,
           700
         ],
         [
           3725,
-          303,
+          -250,
           700
         ]
       ],
@@ -1437,7 +2061,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 77.70036418048291
+        "route_heat_W": 90.40532018513893
       },
       "insulation_mm": 35,
       "jacket_mm": 0.6,
@@ -1448,33 +2072,85 @@
       "bends": [
         {
           "vertex": 1,
-          "angle_deg": 67.73169250357496,
+          "angle_deg": 90,
           "radius_mm": 125,
-          "tangent_mm": 83.88839989267719
+          "tangent_mm": 124.99999999999999
         },
         {
           "vertex": 2,
-          "angle_deg": 30.751777783580774,
+          "angle_deg": 90,
           "radius_mm": 125,
-          "tangent_mm": 34.37414967644196
+          "tangent_mm": 124.99999999999999
         },
         {
           "vertex": 3,
-          "angle_deg": 54.03020016602649,
+          "angle_deg": 59.03624346792648,
           "radius_mm": 125,
-          "tangent_mm": 63.732182637688915
+          "tangent_mm": 70.77379737113252
         },
         {
           "vertex": 4,
-          "angle_deg": 3.012787504183286,
+          "angle_deg": 59.03624346792648,
           "radius_mm": 125,
-          "tangent_mm": 3.287198805055949
+          "tangent_mm": 70.77379737113252
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 1.5390929238030127,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.790753364397271,
+      "end_ports": [
+        {
+          "id": "STM.flueOutlet",
+          "owner": "STM",
+          "anchor_mm": [
+            2520,
+            460,
+            1050
+          ],
+          "face_mm": [
+            2660,
+            460,
+            1050
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "od_mm": 82,
+          "bore_mm": 80,
+          "kind": "duct",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "BODY.flushRearExhaust",
+          "owner": "BODY",
+          "anchor_mm": [
+            3729,
+            -250,
+            700
+          ],
+          "face_mm": [
+            3725,
+            -250,
+            700
+          ],
+          "outward": [
+            -1,
+            0,
+            0
+          ],
+          "od_mm": 82,
+          "bore_mm": 80,
+          "kind": "duct",
+          "basis": "Проектное выпускное окно и его крепление; кузов ещё требует обмера.",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "connected": true,
       "routing_note": "Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.",
       "hydraulics": null,
@@ -1492,24 +2168,34 @@
       ],
       "points": [
         [
-          2370,
-          100,
-          1200
+          2595,
+          270,
+          1180
         ],
         [
-          2500,
+          2595,
           100,
-          1200
+          1180
         ],
         [
-          2500,
+          2455,
+          100,
+          1180
+        ],
+        [
+          2455,
           -520,
-          1200
+          1180
         ],
         [
           2340,
           -520,
-          850
+          1035
+        ],
+        [
+          2340,
+          -520,
+          935
         ]
       ],
       "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
@@ -1574,7 +2260,7 @@
           }
         ],
         "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.",
-        "route_heat_W": 29.575531222997668
+        "route_heat_W": 31.019710359573555
       },
       "insulation_mm": 30,
       "jacket_mm": 0.6,
@@ -1594,12 +2280,76 @@
           "angle_deg": 90,
           "radius_mm": 60,
           "tangent_mm": 59.99999999999999
+        },
+        {
+          "vertex": 3,
+          "angle_deg": 90,
+          "radius_mm": 60,
+          "tangent_mm": 59.99999999999999
+        },
+        {
+          "vertex": 4,
+          "angle_deg": 38.41805534482199,
+          "radius_mm": 60,
+          "tangent_mm": 20.9048114260265
         }
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 1.0833331873132648,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 1.1362325646830789,
+      "end_ports": [
+        {
+          "id": "STM.relief",
+          "owner": "STM",
+          "anchor_mm": [
+            2595,
+            310,
+            1180
+          ],
+          "face_mm": [
+            2595,
+            270,
+            1180
+          ],
+          "outward": [
+            0,
+            -1,
+            0
+          ],
+          "od_mm": 28,
+          "bore_mm": 20,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        },
+        {
+          "id": "SEP.inlet",
+          "owner": "SEP",
+          "anchor_mm": [
+            2340,
+            -520,
+            890
+          ],
+          "face_mm": [
+            2340,
+            -520,
+            935
+          ],
+          "outward": [
+            0,
+            0,
+            1
+          ],
+          "od_mm": 28,
+          "bore_mm": 20,
+          "kind": "weld-neck",
+          "basis": "Проектный патрубок; изделие и прочность не подтверждены",
+          "thread": null
+        }
+      ],
+      "exposed_end_mm": 90,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": {
         "mass_kg_s": 0.15326243166205816,
         "pressure_Pa": 1000000,
@@ -1612,11 +2362,11 @@
         "Darcy_f": 0.024495239204815555,
         "K_per_bend": 0.2,
         "K_other": 1,
-        "K_sum": 1.4,
-        "friction_minor_Pa": 75523.5878733001,
+        "K_sum": 1.8,
+        "friction_minor_Pa": 88396.63262843307,
         "static_head_Pa": 0,
-        "total_estimated_Pa": 75523.5878733001,
-        "fraction_of_reference_pressure": 0.0755235878733001,
+        "total_estimated_Pa": 88396.63262843307,
+        "fraction_of_reference_pressure": 0.08839663262843307,
         "notes": "Single-phase constant-state screen; bend K=0.2 and other K=1 are assumptions, not selected valve/CAD data. Water total excludes generator pressure. Property reference P=2 bar abs for return/suction or 10 bar abs for feed is not a selected pump/booster setpoint; cold makeup is assumed 25 C. Condensate may flash/two-phase. Relief mass flow here only illustrates B; not sizing a safety discharge. Makeup shown at full B as conservative flow hypothesis."
       },
       "pressure_loss_screen_valid": true
@@ -1641,12 +2391,12 @@
           500
         ],
         [
-          2000,
+          1900,
           60,
           500
         ],
         [
-          2000,
+          1900,
           -625,
           505
         ],
@@ -1693,7 +2443,10 @@
       "bend_violations": [],
       "geometry_valid": true,
       "centerline_length_m": 2.5262950002747684,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "end_ports": [],
+      "exposed_end_mm": 0,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": null
     },
     {
@@ -1716,12 +2469,17 @@
           500
         ],
         [
-          2000,
+          1900,
+          60,
+          500
+        ],
+        [
+          1900,
           -625,
           500
         ],
         [
-          2000,
+          1900,
           -625,
           1000
         ],
@@ -1776,12 +2534,18 @@
         },
         {
           "vertex": 4,
+          "angle_deg": 90,
+          "radius_mm": 30,
+          "tangent_mm": 29.999999999999996
+        },
+        {
+          "vertex": 5,
           "angle_deg": 18.434948822922017,
           "radius_mm": 30,
           "tangent_mm": 4.868329805051381
         },
         {
-          "vertex": 5,
+          "vertex": 6,
           "angle_deg": 90,
           "radius_mm": 30,
           "tangent_mm": 29.999999999999996
@@ -1789,8 +2553,11 @@
       ],
       "bend_violations": [],
       "geometry_valid": true,
-      "centerline_length_m": 2.6746391822540216,
-      "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+      "centerline_length_m": 2.8617630720578684,
+      "end_ports": [],
+      "exposed_end_mm": 0,
+      "inline_components": [],
+      "endpoint_status": "Named coaxial port faces; concept hardware and seals, not pressure/leak certification",
       "hydraulics": null
     }
   ]

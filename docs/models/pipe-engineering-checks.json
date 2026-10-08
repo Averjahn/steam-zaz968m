@@ -559,6 +559,31 @@
       "detail": null
     },
     {
+      "name": "Mesh audit source web/pipe-joints.js",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source web/connection-data.js",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source connection-specs.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source web/pipe-data.js",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source models/internal-mounts.json",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "Supplied body GLB remains unchanged",
       "pass": true,
       "detail": null

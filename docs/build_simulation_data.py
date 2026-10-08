@@ -28,8 +28,8 @@ for e in entries:
   r=routeby[id];L=r['centerline_length_m'];od=r['od']/1000;di=(r.get('inside_id_mm') or 0)/1000
   if id.startswith('WIRE'):m=L*.25;reason='Условные 0,25 кг/м жгута; состав не выбран.'
   else:
-   ri=od/2;ro=ri+r['insulation_mm']/1000;t=r['jacket_mm']/1000;m=L*math.pi*((od**2-di**2)*7850/4+(ro**2-ri**2)*150+((ro+t)**2-ro**2)*8000)
-   reason='ρ трубы 7850, аэрогеля 150, кожуха 8000 кг/м³ — допущения; без массы клапанов, отводов и хомутов.'
+   ri=od/2;ro=ri+r['insulation_mm']/1000;t=r['jacket_mm']/1000;inline=sum(math.dist(c['start_mm'],c['end_mm']) for c in r.get('inline_components',[]))/1000;bare=max(0,L-inline);ins=max(0,bare-2*r.get('exposed_end_mm',0)/1000);m=math.pi*(bare*(od**2-di**2)*7850/4+ins*((ro**2-ri**2)*150+((ro+t)**2-ro**2)*8000))
+   reason='ρ трубы 7850, аэрогеля 150, кожуха 8000 кг/м³ — допущения; без массы клапанов, отводов, хомутов и новых соединительных муфт. Учитываются открытые окончания и разрывы под фильтр/насос; масса арматуры ещё неизвестна.'
  else:m=base[id];reason='Оценка для исследования, не паспорт и не взвешивание.'
  if id=='PIPE_FLUE':m+=3;reason+=' Плюс 3 кг дымосос/кронштейны — гипотеза.'
  if id=='PMP':reason='8,7 кг по паспорту Cat 5CP2120W; центр габарита CAD, дополнительные штуцеры и привод отдельно.'

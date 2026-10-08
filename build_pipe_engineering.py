@@ -47,13 +47,16 @@ updates={
  'PIPE_RETURN':[[3450,-410,600],[3580,-410,600],[3580,-280,550],[3100,-280,550],[3030,-280,760],[2650,-280,760],[2650,-665,760],[1100,-665,760],[1020,-460,760],[800,260,890]],
  'PIPE_MAKEUP':[[850,-100,670],[900,-100,670],[900,10,670],[820,10,670]],
  'PIPE_FUEL':[[2190,180,540],[2075,120,540],[2075,-470,540],[2075,-470,720],[2300,-470,720],[2300,-250,720]],
- 'WIRE_ENGINE':[[2000,60,500],[2000,-625,500],[2000,-625,1000],[2660,-625,1000],[2660,-200,1000],[2660,100,1100],[2520,100,1100]],
+ 'WIRE':[[2100,60,500],[1900,60,500],[1900,-625,505],[1190,-625,505],[1130,250,915]],
+ 'WIRE_ENGINE':[[2000,60,500],[1900,60,500],[1900,-625,500],[1900,-625,1000],[2660,-625,1000],[2660,-200,1000],[2660,100,1100],[2520,100,1100]],
  'PIPE_FEED':[[2230,-250,560],[2710,-250,560],[2710,-250,750],[2710,100,750],[2530,100,750],[2530,300,750]]
 }
+connection_specs=json.loads((ROOT/'connection-specs.json').read_text())
+updates.update(connection_specs['route_points'])
 rows=[]
 for original in old:
  s=dict(original);s.pop('insulation',None);id=s['id'];s['points']=updates.get(id,s['points']);s['wall_status']='Assumed geometric wall only; pressure strength, material grade and fittings not selected'
- if id=='PIPE_RELIEF':s['points'][-1]=[2340,-520,850]
+ if id=='PIPE_RETURN':s['ends'][0]='CND.returnPumpOut'
  if id=='PIPE_FLUE':s['od']=82;s['inside_id_mm']=80 # geometric single-wall duct candidate: 160 ID + 2 x 1 mm, not pressure equipment
  kind='steam' if id in ['PIPE_STEAM','PIPE_RELIEF'] else 'exhaust' if id.startswith('PIPE_EXHAUST') else 'flue' if id=='PIPE_FLUE' else 'fuel' if id=='PIPE_FUEL' else 'wire' if id.startswith('WIRE') else 'water'
  s['fluid']=kind;tw={'steam':250,'exhaust':r['exhaust_temperature_C'],'water':r['feed_temperature_C'] if 'feed_temperature_C' in r else 78.2041,'fuel':25,'flue':250,'wire':40}[kind];tw=25 if id=='PIPE_MAKEUP' else tw;s['wall_temperature_C']=tw
@@ -65,7 +68,11 @@ for original in old:
  if id=='PIPE_STEAM':radius=max(radius,90)
  s['bend_radius_mm']=radius;s['bend_radius_basis']='Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.'
  bends,violations,L=bend_geometry(s['points'],radius);s['bends']=bends;s['bend_violations']=violations;s['geometry_valid']=not violations;s['centerline_length_m']=L
- s['endpoint_status']='Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved'
+ if id=='PIPE_FLUE':s['ends']=['STM.flueOutlet','BODY.flushRearExhaust']
+ s['end_ports']=[connection_specs['ports'][key] for key in s['ends']] if kind!='wire' else []
+ s['exposed_end_mm']= min(150 if id=='PIPE_STEAM' else 90, s['centerline_length_m']*1000*.22) if s['insulation_mm'] else 0
+ s['inline_components']=connection_specs['inline_components'] if id=='PIPE_SUCTION' else []
+ s['endpoint_status']='Named coaxial port faces; concept hardware and seals, not pressure/leak certification'
  if id=='PIPE_FLUE':
   s['name']='Дымовой канал · генератор → задний выпуск'
   s['ends']=['STM.flueOutlet','BODY.flushRearExhaust'];s['connected']=True;s['routing_note']='Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.'

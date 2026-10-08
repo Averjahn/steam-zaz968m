@@ -167,7 +167,7 @@
         810
       ],
       "size": [
-        100,
+        220,
         60,
         6
       ]
@@ -175,13 +175,13 @@
     {
       "id": "BOOST-FILTER",
       "xyz": [
-        895,
-        310,
-        824
+        900,
+        235,
+        900
       ],
       "size": [
-        60,
-        60,
+        50,
+        135,
         6
       ]
     }
@@ -818,7 +818,7 @@
         328,
         740.4244384765625
       ],
-      "tray_z": 824,
+      "tray_z": 900,
       "body_node": "Пол салона и центральный тоннель · FBX Plane136",
       "leg_length_mm": 83.5755615234375,
       "confirmed_load_bearing": false
@@ -830,7 +830,7 @@
         352,
         740.4244384765625
       ],
-      "tray_z": 824,
+      "tray_z": 900,
       "body_node": "Пол салона и центральный тоннель · FBX Plane136",
       "leg_length_mm": 83.5755615234375,
       "confirmed_load_bearing": false
@@ -842,7 +842,7 @@
         328,
         770.7677612304688
       ],
-      "tray_z": 824,
+      "tray_z": 900,
       "body_node": "Пол салона и центральный тоннель · FBX Plane136",
       "leg_length_mm": 53.23223876953125,
       "confirmed_load_bearing": false
@@ -854,7 +854,7 @@
         352,
         765.316162109375
       ],
-      "tray_z": 824,
+      "tray_z": 900,
       "body_node": "Пол салона и центральный тоннель · FBX Plane136",
       "leg_length_mm": 58.683837890625,
       "confirmed_load_bearing": false
