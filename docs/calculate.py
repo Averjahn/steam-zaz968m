@@ -5,6 +5,7 @@ This model does not size pressure-containing parts or establish road approval.
 import csv
 import json
 import math
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from CoolProp.CoolProp import PropsSI
 
@@ -21,7 +22,19 @@ def road(v_kmh, mass, cfg, grade=0, acceleration=0):
     return {'speed_kmh': v_kmh, 'grade_fraction': grade, 'acceleration_m_s2': acceleration,
             'force_N': force, 'wheel_kW': force*v/1000,
             'drive_kW': force*v/1000/cfg['transmission_efficiency'],
-            'wheel_torque_Nm': force * cfg['wheel_rolling_radius_m']}
+            'wheel_torque_Nm': force * cfg['wheel_rolling_radius_m'],
+            'wheel_rpm': 60*v/(2*math.pi*cfg['wheel_rolling_radius_m'])}
+
+def transmission(speed, case, vehicle, gear=4, adapter=1):
+    """i_adapter = engine/input RPM; gear alternatives are not wheel RPM."""
+    if gear not in range(1,5) or adapter <= 0: raise ValueError('Invalid transmission')
+    circumference = 2*math.pi*vehicle['wheel_rolling_radius_m']
+    wheel = speed/3.6/circumference*60
+    ratio = vehicle['final_drive']*vehicle['gears'][gear-1]
+    input_rpm = wheel*ratio
+    return {'wheel_rpm':wheel, 'input_rpm':input_rpm, 'engine_rpm':input_rpm*adapter,
+            'match_ratio':case['rpm']/input_rpm if input_rpm else None,
+            'speed_at_target_rpm':case['rpm']/(adapter*ratio)*circumference/60*3.6}
 
 def cycle(drive_kw, case, cfg, return_fraction=None):
     p1, p2 = case['p_bar_abs'] * 1e5, cfg['exhaust_pressure_bar_abs'] * 1e5
@@ -105,6 +118,9 @@ def mass_model(case, v, fuel_density=.835):
             'remaining_total_payload_kg':v['reference_full_mass_kg']-mass,
             'mass_status':'Осевые результаты — прогноз; допустимые нагрузки на оси не установлены'}
 
+def readable_round(value, digits):
+    return float(Decimal(str(value)).quantize(Decimal(10)**-digits,rounding=ROUND_HALF_UP)) + 0.0
+
 def run():
     inp = json.loads((ROOT/'inputs.json').read_text())
     v,c = inp['vehicle'],inp['cycle']
@@ -128,6 +144,7 @@ def run():
             else: high=mid
         scenarios.append({'case':case,'rated':result,'open_cycle':open_cycle,'mass':mass,
                           'target_road':target,'cruise':cruise,'flat_speed_power_bound_kmh':low,
+                          'transmission':transmission(case['target_kmh'],case,v),
                           'rated_water_duration_h':water_hours,'rated_fuel_duration_h':fuel_hours,
                           'steady_cruise_range_km':cruise_range,
                           'open_water_duration_min':60*usable_water/open_cycle['makeup_kg_h'],
@@ -140,7 +157,10 @@ def run():
     (ROOT/'results.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
     for name,rows in [('road_load',road_rows),('sensitivity',sensitivity),('scenario_summary',[{'case':s['case']['id'],**s['rated'],**s['mass'],'steady_cruise_range_km':s['steady_cruise_range_km']} for s in scenarios])]:
         with (ROOT/(name+'.csv')).open('w',newline='',encoding='utf-8-sig') as f:
-            w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
+            w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader()
+            # Human-readable exports; JSON retains unrounded computational values.
+            for row in rows:
+                w.writerow({k:readable_round(val,0 if k.endswith('rpm') else 4 if k in ['eta_is','net_efficiency_LHV','grade_fraction','return_fraction','s1_kJ_kgK'] else 3 if 'density' in k else 1) if isinstance(val,float) else val for k,val in row.items()})
     for s in scenarios:
         r=s['rated'];m=s['mass']
         print(s['case']['id'], {k:round(r[k],2) for k in ['drive_kW','steam_kg_h','boiler_kW','burner_LHV_kW','condenser_kW','diesel_L_h','makeup_kg_h','fan_lower_estimate_kW']},'mass',round(m['running_mass_kg'],1),'payload',round(m['remaining_total_payload_kg'],1))

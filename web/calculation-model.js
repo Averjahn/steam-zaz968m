@@ -1,6 +1,9 @@
 // Formula workbook uses SI-derived kJ/kg, kW, kg/s; properties are precomputed by IF97.
-export const number = (v, digits=6) => Number.isFinite(v)?v.toLocaleString('ru-RU',{maximumFractionDigits:digits,useGrouping:false}):'—';
-const n=number;
+export const number = (v, digits=3) => Number.isFinite(v)?(v!==0&&Math.abs(v)<.5*10**(-digits)?v.toLocaleString('ru-RU',{maximumSignificantDigits:3,useGrouping:false}):v.toLocaleString('ru-RU',{maximumFractionDigits:digits,useGrouping:false})):'—';
+export const resultNumber = (value,unit) => value===null?'Не определено':Math.abs(value)<1e-8?'≈ 0':number(value,unit==='об/мин'||unit==='Па abs'||unit.startsWith('₽')||unit.startsWith('€')?0:unit==='доля'||unit==='рад'||unit==='кг/с'?4:1);
+// Preserve enough digits in intermediate mass flow and ratios for substitutions
+// to reproduce rounded outputs; do not round the actual computation.
+const n=v=>number(v,Math.abs(v)<1?6:3);
 export function roadSteps(speed,mass,grade,v,acceleration=0){
  const steps=[];const add=(key,title,formula,substitution,value,unit,terms)=>{steps.push({key,title,formula,substitution,value,unit,terms,group:'Дорожная нагрузка'});return value;};
  const velocity=add('velocity','Скорость в СИ','v = V / 3,6',`${n(speed)} / 3,6`,speed/3.6,'м/с','V — скорость, км/ч; 1 км/ч = 1/3,6 м/с.');
@@ -15,8 +18,19 @@ export function roadSteps(speed,mass,grade,v,acceleration=0){
  add('wheel_torque_Nm','Момент на колёсах','Mкол = F · Rкол',`${n(force)} · ${n(v.wheel_rolling_radius_m)}`,force*v.wheel_rolling_radius_m,'Н·м','Rкол — принятый радиус качения, м; суммарный момент ведущих колёс.');
  add('wheel_rpm','Обороты колёс','nкол = 60 · v / (2π · Rкол)',`60 · ${n(velocity)} / (2π · ${n(v.wheel_rolling_radius_m)})`,60*velocity/(2*Math.PI*v.wheel_rolling_radius_m),'об/мин','Без проскальзывания шин.');
  const wheelRpm=60*velocity/(2*Math.PI*v.wheel_rolling_radius_m);
- v.gears.forEach((gear,i)=>add('gear_'+i,`Обороты входа КПП, передача ${i+1}`,'nКПП = nкол · iглав · iперед',`${n(wheelRpm)} · ${n(v.final_drive)} · ${n(gear)}`,wheelRpm*v.final_drive*gear,'об/мин','Передаточные числа из исходного справочника; дополнительный адаптер паровой машины не определён.'));
- return {steps,drive_kW:drive,force_N:force};
+ v.gears.forEach((gear,i)=>add('gear_'+i,`Если включить передачу ${i+1}: обороты входа КПП`,'nКПП = nкол · iглав · iперед',`${n(wheelRpm)} · ${n(v.final_drive)} · ${n(gear)}`,wheelRpm*v.final_drive*gear,'об/мин','Это четыре альтернативы для одной скорости, а не одновременные обороты колёс. Большое число на низшей передаче не подтверждает допустимость такого режима. Руководство: III = 1,409; паспортные ограничения валов и состояние донора требуют проверки.'));
+ return {steps,drive_kW:drive,force_N:force,wheel_rpm:wheelRpm};
+}
+export function transmissionSteps(road,speed,c,v,gear=4,adapter=1){
+ if(!Number.isInteger(gear)||gear<1||gear>v.gears.length||!Number.isFinite(adapter)||adapter<=0)throw Error('Передача 1–4; отношение адаптера должно быть положительным.');
+ const steps=[];const add=(key,title,formula,substitution,value,unit,terms)=>{steps.push({key,title,formula,substitution,value,unit,terms,group:'Дорожная нагрузка'});return value;};
+ const circumference=add('wheel_circumference','Путь за оборот колеса','Lкол = 2π · Rкол',`2π · ${n(v.wheel_rolling_radius_m)}`,2*Math.PI*v.wheel_rolling_radius_m,'м','Радиус качения 0,28 м — допущение. Нужен измеренный путь за оборот под нагрузкой; внешний радиус шины и радиус качения отличаются.');
+ const input=add('selected_input_rpm','Вход КПП на выбранной передаче '+gear,'nКПП = nкол · iглав · iперед',`${n(road.wheel_rpm)} · ${n(v.final_drive)} · ${n(v.gears[gear-1])}`,road.wheel_rpm*v.final_drive*v.gears[gear-1],'об/мин','При замкнутом сцеплении. Это обороты входного вала, не колёс.');
+ const engine=add('required_engine_rpm','Обороты машины, требуемые кинематикой','nмаш = nКПП · iадап',`${n(input)} · ${n(adapter)}`,input*adapter,'об/мин','iадап = nмаш/nКПП: 1 — прямое соединение; меньше 1 — повышение оборотов к КПП. Паспортный диапазон машины отсутствует; сравнение с целевым номиналом не задаёт предельные обороты. При нулевой скорости работа машины требует размыкания привода.');
+ const match=add('adapter_match','Отношение адаптера для целевых оборотов машины','iадап,цель = nмаш,цель / nКПП',`${n(c.rpm)} / ${n(input)}`,input>0?c.rpm/input:null,'отношение','Это требуемое отношение для одной скорости и передачи, не выбранное изделие. Его КПД, прочность и рабочий диапазон не установлены; дополнительная потеря мощности ещё не внесена.');
+ const direct=add('speed_at_target_rpm','Скорость при целевых оборотах и текущем адаптере','V = 3,6 · Lкол · nмаш,цель / (60 · iадап · iглав · iперед)',`3,6 · ${n(circumference)} · ${n(c.rpm)} / (60 · ${n(adapter)} · ${n(v.final_drive)} · ${n(v.gears[gear-1])})`,3.6*circumference*c.rpm/(60*adapter*v.final_drive*v.gears[gear-1]),'км/ч','Кинематическая скорость; не максимальная скорость и не проверка наличия мощности.');
+ add('input_torque_required','Момент на входе КПП для дорожной нагрузки','MКПП = 60000 · Pприв,дор / (2π · nКПП)',`60000 · ${n(road.drive_kW)} / (2π · ${n(input)})`,input>0?60000*road.drive_kW/(2*Math.PI*input):null,'Н·м','При движении. На месте выражение P/ω не определено; пусковой момент нужно считать отдельно. Вспомогательные потребители машины сюда не входят.');
+ return {steps,gear,adapter,input_rpm:input,engine_rpm:engine,match_ratio:match,speed_at_target_rpm:direct};
 }
 export function cycleSteps(drive,c,cfg,state,returnFraction=cfg.return_fraction){
  const steps=[];const add=(key,title,formula,substitution,value,unit,terms,note='')=>{steps.push({key,title,formula,substitution,value,unit,terms,note,group:'Паровой цикл и тепло'});return value;};
@@ -66,7 +80,8 @@ export function cycleSteps(drive,c,cfg,state,returnFraction=cfg.return_fraction)
  const eta=add('net_efficiency_LHV','Полезный КПД по НТС','ηпол = Pприв / Qтопл',`${n(drive)} / ${n(burner)}`,drive/burner,'доля','Это расчётный КПД всей установки до входа КПП.');
  add('specific_steam_kg_kWh_drive','Удельный расход пара','gпар = Gпар / Pприв',`${n(steam)} / ${n(drive)}`,drive>0?steam/drive:null,'кг/(кВт·ч)','При Pприв=0 удельный расход не определён.');
  add('exchange_area_m2','Требуемая поверхность теплообмена','Aтепл = 1000 · Qконд / (U · ΔTlm)',`1000 · ${n(condenser)} / (${n(cfg.heat_exchanger_U_W_m2K)} · ${n(cfg.heat_exchanger_LMTD_K)})`,1000*condenser/(cfg.heat_exchanger_U_W_m2K*cfg.heat_exchanger_LMTD_K),'м²','U — Вт/(м²·К), ΔTlm — K. Это развитая поверхность, не фронтальная площадь. Реальные U и ΔTlm не получены; ΔTlm пока задана, а не выведена из температур.');
- add('shaft_torque_at_rpm_Nm','Момент на валу машины','Mвал = 60000 · Pвал / (2π · n)',`60000 · ${n(gross)} / (2π · ${n(c.rpm)})`,60000*gross/(2*Math.PI*c.rpm),'Н·м','n — принятые обороты машины. Используется точное 60·1000/(2π), а не округление 9550.');
+ add('shaft_torque_at_rpm_Nm','Валовой момент машины при целевых оборотах','Mвал = 60000 · Pвал / (2π · n)',`60000 · ${n(gross)} / (2π · ${n(c.rpm)})`,60000*gross/(2*Math.PI*c.rpm),'Н·м','n — целевые обороты машины, не обороты колёс и не паспортный предел. Момент включает вспомогательные отборы; не является моментом на входе КПП.');
+ add('net_torque_at_target_rpm','Момент для тяги до адаптера, при целевых оборотах','Mтяга = 60000 · Pприв / (2π · nмаш,цель)',`60000 · ${n(drive)} / (2π · ${n(c.rpm)})`,60000*drive/(2*Math.PI*c.rpm),'Н·м','После вспомогательных отборов. Если реальная частота отличается от целевой, изменится момент; КПД адаптера и рабочая карта машины отсутствуют.');
  for(const volts of [14,48])add('current_'+volts,`Ток вентиляторов при ${volts} В`,'Iвент = 1000 · Pвент / Uэл',`1000 · ${n(fan)} / ${volts}`,1000*fan/volts,'А','Оценка постоянного тока; без прочих потребителей, пускового тока и потерь проводки.');
  add('pump_flow','Объёмный расход воды в насос','V̇нас = 60000 · ṁ / ρ₃',`60000 · ${n(mdot)} / ${n(rho)}`,60000*mdot/rho,'л/мин','60 с/мин × 1000 л/м³. Применён расход всего пара, а не только подпитки.');
  const pumpFlow=60000*mdot/rho;
@@ -93,10 +108,10 @@ export function rangeSteps(c,v,cycle,speed){
  const water=add('usable_water','Используемый холодный запас','mвод,пол = Vвод · ρвод · fпол',`${n(c.water_L)} · ${n(v.cold_water_density_kg_L)} · ${n(v.usable_water_fraction)}`,c.water_L*v.cold_water_density_kg_L*v.usable_water_fraction,'кг','fпол=0,8 — 20 % запаса воды оставлено в резерве. Вода в контуре в запас подпитки не входит.');
  const tw=add('water_duration_h','Время до расходования воды','tвод = mвод,пол / Gпод',`${n(water)} / ${n(cycle.makeup)}`,cycle.makeup>0?water/cycle.makeup:null,'ч','Для текущего постоянного режима. При нулевой подпитке ограничение по воде не определено.');
  const tf=add('fuel_duration_h','Время до расходования топлива','tтопл = Vтопл / V̇топл',`${n(c.fuel_L)} / ${n(cycle.liters)}`,c.fuel_L/cycle.liters,'ч','Резерв топлива, прогрев и остановки отдельно не включены.');
- add('range_km','Запас хода при постоянном режиме','S = V · min(tвод, tтопл)',`${n(speed)} · min(${n(tw)}, ${n(tf)})`,speed*Math.min(tw??Infinity,tf),'км','При номинальном режиме это условная дистанция: мощность и скорость могут не соответствовать дорожному сопротивлению. Для запаса хода на дороге выберите «По скорости, массе и уклону».');
+ add('range_km','Условная дистанция по запасам','S = V · min(tвод, tтопл)',`${n(speed)} · min(${n(tw)}, ${n(tf)})`,speed*Math.min(tw??Infinity,tf),'км','Не подтверждённый дорожный запас хода. При номинальном режиме мощность и скорость могут не соответствовать дорожному сопротивлению; в дорожном режиме остаются неподтверждёнными КПД, кинематика, насос, горелка и охлаждение. Прогрев, продувка и резерв топлива не учтены.');
  return steps;
 }
-export function selectCalculation(data,{caseId='B',mode='rated',speed=80,mass,grade=0,eta}={}){
+export function selectCalculation(data,{caseId='B',mode='rated',speed=80,mass,grade=0,eta,gear=4,adapter=1}={}){
  const s=data.scenarios.find(x=>x.case.id===caseId)||data.scenarios[1],v=data.inputs.vehicle,cfg=data.inputs.cycle;
  let c={...s.case},state=s.rated,r=cfg.return_fraction;
  if(mode==='open'){state=s.open_cycle;r=0;}
@@ -104,10 +119,22 @@ export function selectCalculation(data,{caseId='B',mode='rated',speed=80,mass,gr
  const m=massSteps(c,v,cfg),road=roadSteps(speed,mass??m.mass,grade,v),drive=mode==='road'?road.drive_kW:c.net_drive_kW;
  if(drive<0)throw Error('Отрицательная тяга: торможение и рекуперация в модели не рассчитаны.');
  const cycle=cycleSteps(drive,c,cfg,state,r);
+ const transmission=transmissionSteps(road,speed,c,v,Number(gear),Number(adapter));
+ const extra=[];const add=(key,title,formula,substitution,value,unit,terms)=>extra.push({key,title,formula,substitution,value,unit,terms,group:'Паровой цикл и тепло'});
+ add('efficiency_percent','Полезный КПД в процентах','ηпол,% = 100 · Pприв / Qтопл',`100 · ${n(drive)} / ${n(cycle.burner)}`,100*cycle.eta,'%','Низкий полезный КПД объясняет большую горелку. Это следствие допущений ηis и потерь; паспортная карта машины отсутствует.');
+ const admission=cycle.mdot/state.inlet_density_kg_m3*60000/c.rpm;
+ add('steam_volume_per_rev','Объём впуска пара за оборот при целевых оборотах','Vвп,оборот = 60000 · ṁ / (ρ₁ · nмаш,цель)',`60000 · ${n(cycle.mdot)} / (${n(state.inlet_density_kg_m3)} · ${n(c.rpm)})`,admission,'л/об','Объём свежего пара при входных P/T. Не рабочий объём цилиндров: нужны число цилиндров, отсечка, кратность действия, мёртвый объём и утечки. Расход нельзя объявлять достижимым только по мощности.');
+ const condenserPart=data.target_layout?.parts.find(p=>p.id==='CND');
+ if(condenserPart){const face=condenserPart.size[1]*condenserPart.size[2]/1e6;
+ add('condenser_face','Фронт целевого конденсатора B, поток вдоль X','Aфронт = B · H / 10⁶',`${condenserPart.size[1]} · ${condenserPart.size[2]} / 10⁶`,face,'м²','Внешний габарит схемы B; оценка при использовании всего фронта, без перекрытия рамой. Это не площадь рёбер и не реальный теплообменник. Для A/C используется только как сравнение.');
+ add('condenser_face_velocity','Средняя скорость воздуха через целевой фронт','uвозд = V̇возд / Aфронт',`${n(cycle.values.air_m3_s)} / ${n(face)}`,cycle.values.air_m3_s/face,'м/с','Показывает интенсивность требуемого обдува. Перепад 250 Па и теплоотдача при этой скорости не подтверждены. Нужны характеристики теплообменника и вентилятора вместе; размерная коробка в CAD не доказывает отвод тепла.');
+ }
  let low=0,high=160;for(let j=0;j<60;j++){const mid=(low+high)/2;if((m.mass*9.80665*v.rolling_coefficient+.5*v.air_density_kg_m3*v.CdA_m2*(mid/3.6)**2)*(mid/3.6)/(1000*v.transmission_efficiency)<=c.net_drive_kW)low=mid;else high=mid;}
  const bound={key:'flat_speed_power_bound_kmh',title:'Предел скорости по мощности на ровной дороге',formula:'m·g·Crr·(V/3,6) + ρвозд·CdA·(V/3,6)³/2 = 1000·ηтр·Pном',substitution:`${n(m.mass)} · 9,80665 · ${n(v.rolling_coefficient)} · (V/3,6) + ${n(v.air_density_kg_m3)} · ${n(v.CdA_m2)} · (V/3,6)³ / 2 = 1000 · ${n(v.transmission_efficiency)} · ${n(c.net_drive_kW)}; решение бисекцией 60 шагов на [0;160]`,value:low,unit:'км/ч',terms:'Только верхняя оценка по мощности: не учитывает обороты/передачи, охлаждение, ветер, разгон и дорожный допуск. Для расчёта использована масса сценария, а не изменённая дорожная масса.',group:'Дорожная нагрузка'};
  const geometry=(data.target_layout?.parts||[]).filter(p=>['WTR','FUE','RCV'].includes(p.id)).map(p=>({key:'external_volume_'+p.id,title:p.name+' · внешний объём целевого габарита',formula:'Vвнеш = L · B · H / 10⁶',substitution:`${p.size.join(' · ')} / 10⁶`,value:p.size.reduce((a,b)=>a*b,1)/1e6,unit:'л',terms:'Размеры в мм, 10⁶ мм³ = 1 л. Это внешний параллелепипед, а не полезный объём бака; стенки, перегородки и газовый запас не вычтены.',group:'Запас воды и топлива'}));
- return {case:c,mode,drive,road,cycle,mass:m,steps:[...road.steps,bound,...cycle.steps,...m.steps,...rangeSteps(c,v,cycle,speed),...geometry],exceeds:drive>c.net_drive_kW,return_fraction:r};
+ const deltaP=c.p_bar_abs-cfg.exhaust_pressure_bar_abs,flow=cycle.values.pump_flow;
+ const checks={pump_delta_bar:deltaP,pump_discharge_bar_gauge:c.p_bar_abs-1.01325,pump_pressure_in_range:c.p_bar_abs-1.01325>=6.9&&c.p_bar_abs-1.01325<=172,pump_rpm_in_range:cycle.values.pump_rpm>=100&&cycle.values.pump_rpm<=950,pump_ht_temperature_ok:state.feed_temperature_C<=82,burner_in_range:cycle.burner>=148&&cycle.burner<=593,pump_inlet_bar_gauge:cfg.exhaust_pressure_bar_abs-1.01325,pump_hot_inlet_unverified:state.feed_temperature_C>54.4,pump_reservoir_recommendation_L:[6*flow,10*flow]};
+ return {case:c,mode,drive,road,cycle,mass:m,transmission,checks,steps:[...road.steps,...transmission.steps,bound,...cycle.steps,...extra,...m.steps,...rangeSteps(c,v,cycle,speed),...geometry],exceeds:drive>c.net_drive_kW,return_fraction:r};
 }
 export const pendingCalculations=[
  ['Паровые трубы','D = √(4ṁ / (πρпара · u))','Не заданы допустимая скорость, схема трассы, потери давления и выбранная арматура. Формула даёт только начальную оценку прохода; толщину стенки она не определяет.'],

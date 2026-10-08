@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 4295
+    "size": 5342
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -63,67 +63,74 @@
     "size": 8655
   },
   {
+    "path": "build_physics_audit.mjs",
+    "title": "Формирование физического аудита",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 3045
+  },
+  {
     "path": "build_report.py",
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 68326
+    "size": 76454
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 16683
+    "size": 17414
   },
   {
     "path": "build_viewer.py",
     "title": "Генерация интерактивной модели",
     "category": "Исходники",
     "format": "PY",
-    "size": 17465
+    "size": 17570
   },
   {
     "path": "build_workbook.mjs",
     "title": "Сборка формул для PDF и отчёта",
     "category": "Исходники",
     "format": "MJS",
-    "size": 3467
+    "size": 3914
   },
   {
     "path": "calculate.py",
     "title": "Термодинамический и дорожный расчёт",
     "category": "Исходники",
     "format": "PY",
-    "size": 9392
+    "size": 10736
   },
   {
     "path": "calculation-checks.json",
     "title": "Сверка формул с Python",
     "category": "Проверки",
     "format": "JSON",
-    "size": 1906
+    "size": 2605
   },
   {
     "path": "calculation-workbook.html",
     "title": "Формулы A/B/C · автономная версия",
     "category": "Документы",
     "format": "HTML",
-    "size": 269862
+    "size": 311285
   },
   {
     "path": "calculation-workbook.json",
     "title": "Подстановки A/B/C · JSON",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 143126
+    "size": 193867
   },
   {
     "path": "calculation-workbook.pdf",
     "title": "Формулы и подстановки A/B/C · PDF",
     "category": "Документы",
     "format": "PDF",
-    "size": 887650
+    "size": 1013974
   },
   {
     "path": "convert_cad.js",
@@ -144,7 +151,7 @@
     "title": "3D-компоновка и калькулятор",
     "category": "Документы",
     "format": "HTML",
-    "size": 70699
+    "size": 72150
   },
   {
     "path": "inputs.json",
@@ -175,18 +182,25 @@
     "size": 2130
   },
   {
+    "path": "physics-audit.json",
+    "title": "Физический аудит: обороты и паспортные ограничения",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 70223
+  },
+  {
     "path": "report.html",
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 170875
+    "size": 200313
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 199191
+    "size": 220098
   },
   {
     "path": "requirements.txt",
@@ -200,35 +214,35 @@
     "title": "Полные результаты расчёта",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 55973
+    "size": 57631
   },
   {
     "path": "road_load.csv",
     "title": "Дорожная мощность и скорость",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 1821
+    "size": 877
   },
   {
     "path": "scenario_summary.csv",
     "title": "Сравнение сценариев",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 3412
+    "size": 1871
   },
   {
     "path": "sensitivity.csv",
     "title": "Чувствительность расчёта",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 10889
+    "size": 3897
   },
   {
     "path": "sources.csv",
     "title": "Реестр источников",
     "category": "Расчёты",
     "format": "CSV",
-    "size": 2479
+    "size": 2939
   },
   {
     "path": "verification.json",
@@ -249,7 +263,7 @@
     "title": "Сверка формул с Python",
     "category": "Исходники",
     "format": "MJS",
-    "size": 4108
+    "size": 6775
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -340,7 +354,7 @@
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 7335
+    "size": 8207
   },
   {
     "path": "assembly.html",

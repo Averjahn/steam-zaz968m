@@ -24,6 +24,14 @@ def main():
     (OUT / '.nojekyll').write_text('')
     for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
+    # Version transitive imports as well as the entry script for existing visitors.
+    for name in ['calculation-render.js','calculations.js']:
+        text=(OUT/name).read_text()
+        for dependency in ['calculation-model.js','calculation-render.js']:
+            if dependency==name: continue
+            digest=hashlib.sha256((OUT/dependency).read_bytes()).hexdigest()[:12]
+            text=text.replace("'./"+dependency+"'", "'./"+dependency+'?v='+digest+"'")
+        (OUT/name).write_text(text)
     for name in ['models', 'vendor']:
         shutil.copytree(ROOT / name, OUT / name, dirs_exist_ok=True,
                         ignore=shutil.ignore_patterns('*.mesh.json', '__pycache__'))
@@ -60,6 +68,8 @@ def main():
         'calculation-workbook.json': 'Подстановки A/B/C · JSON',
         'calculation-workbook.pdf': 'Формулы и подстановки A/B/C · PDF',
         'calculation-checks.json': 'Сверка формул с Python',
+        'physics-audit.json': 'Физический аудит: обороты и паспортные ограничения',
+        'build_physics_audit.mjs': 'Формирование физического аудита',
     }
     candidates = sorted(p for p in ROOT.iterdir() if p.is_file() and p.suffix in {'.html', '.pdf', '.json', '.csv', '.scad', '.obj', '.mtl', '.py', '.js', '.mjs', '.txt'})
     candidates += sorted((ROOT / 'drawings').iterdir())

@@ -53,5 +53,22 @@ scenario_summary.csv, road_load.csv, sensitivity.csv — расчетные та
 Чертежей котла, силовых креплений и адаптера для изготовления в комплекте нет.
 
 Формулы и подстановки: calculations.html на сайте; calculation-workbook.html и PDF — автономные номинальные A/B/C.
-После правки inputs.json: PYTHONPATH=.deps python3 calculate.py; node verify_calculations.mjs; node build_workbook.mjs; PYTHONPATH=.deps python3 build_viewer.py; PYTHONPATH=.deps python3 build_report.py; python3 build_site.py.
+После правки inputs.json (порядок актуален для формульного отчёта):
+  PYTHONPATH=.deps python3 calculate.py
+  node verify_calculations.mjs
+  node build_physics_audit.mjs
+  node build_workbook.mjs
+  PYTHONPATH=.deps python3 build_report.py
+  PYTHONPATH=.deps python3 build_viewer.py
+  python3 build_site.py
+После новой печати calculation-workbook.pdf повторить build_site.py,
+чтобы PDF попал в библиотеку и архив.
 PDF workbook печатается из calculation-workbook.html браузером. Срезы X/Y/Z и тонкие слои доступны в assembly.html. GLB экспортирует полную геометрию видимых объектов, без вырезания экранных срезов.
+
+Физический аудит 08.10.2026: physics-audit.json и раздел 21 отчёта.
+III передача исправлена на 1,409. В интерактивных расчётах есть выбор
+передачи и iадап=nмаш/nКПП. Колёсные обороты отделены от оборотов валов.
+Проверены нижние пределы Riello RL 50 и Cat Pumps; горячая подача
+насоса и объём резервуара по TB002 пока не решены. Реальные паровая
+машина, парогенератор и конденсатор не выбраны.
+Числа на сайте, в PDF и CSV округлены; JSON сохраняет полную точность.
