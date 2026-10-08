@@ -1,10 +1,9 @@
 {
   "scope": "Five static concept assemblies; zero unplanned aggregate/pipe and stock intersections, remaining game-body panel intersections explicitly retained. Not a build/pressure approval.",
   "provenance": {
-    "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
     "source_sha256": {
       "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-      "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+      "web/internal-assembly.js": "98bc4584c5e8340d6801224985ee0edceb363794c96b4cf1b069b94839dc6e3c",
       "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
       "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
       "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -15,16 +14,25 @@
       "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
       "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
       "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
-      "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
+      "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+      "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+      "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+      "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+      "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
     },
     "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
-    "view_overlay_equivalence": {
-      "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
-      "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
-      "export_byte_identical": true,
-      "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
-      "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
-      "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+    "double_acting_recheck": {
+      "date": "2026-10-09",
+      "scope": "Changed ENG static surfaces rechecked against body and suspension; all equipment pairs rechecked in all five heat variants. Unchanged other equipment body/suspension results retained from the full five-variant audit performed on this date. Animation is outside the physical assembly. Checks do not establish sealing, pressure strength, dynamic suspension clearance, valve capacity or manufacturability. Internal mesh contacts within ENG are not exhaustively checked.",
+      "engine_fit_sha256": "12d11aaeb6431a06644a242e862675c3cf48b42e31662e8b8cc1fe3599458cac",
+      "baseline_sha256": {
+        "diesel": "340d2b3a6dbb4fdbb1acbc1eddd065c2e72a65f89a4218467b98209c607f9d77",
+        "wood": "6423c052cf7a91dd1525b0f40773afd0e44edb3eaf60e3fbe92763c65e8a9f5f",
+        "pellets": "456e8e33b75eeb0bdb444f114bc8b283be71c91469c9819c1a613ac3bd79739f",
+        "lpg": "f35025a2facea1ea4569cd20c10dd002b86a470e9fce9ebd3e3f4a9b286726fe",
+        "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
+      },
+      "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
     }
   },
   "variants": {
@@ -45,16 +53,16 @@
           "size_mm": [
             545,
             385,
-            461
+            501
           ],
           "min_xyz_mm": [
             2915,
             -190,
-            302
+            299
           ],
           "body_intersections": [],
           "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
-          "clearance_mm": 28.8,
+          "clearance_mm": 25.8,
           "clearance_is_lower_bound": false,
           "intentionally_external": false,
           "route": false,
@@ -983,8 +991,8 @@
           "mesh_intersection": true,
           "contact_witness_mm": [
             2950,
-            -137.3,
-            417.7
+            139,
+            431.8
           ],
           "schematic_interface": true
         },
@@ -1089,9 +1097,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2970,
-            -134.3,
-            407.8
+            3100.1,
+            0.9,
+            445
           ],
           "schematic_interface": true
         },
@@ -1106,9 +1114,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2940,
-            -36.1,
-            391
+            2960,
+            36.1,
+            499
           ],
           "schematic_interface": true
         },
@@ -3892,7 +3900,7 @@
         "body_gaps_under_screen": [
           {
             "id": "ENG",
-            "gap_mm": 28.8
+            "gap_mm": 25.8
           },
           {
             "id": "WTR",
@@ -4100,10 +4108,9 @@
         "drive": 34.84459690922847
       },
       "provenance": {
-        "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "web/internal-assembly.js": "98bc4584c5e8340d6801224985ee0edceb363794c96b4cf1b069b94839dc6e3c",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -4114,16 +4121,25 @@
           "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
           "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
-          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
+          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+          "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+          "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
-        "view_overlay_equivalence": {
-          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
-          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
-          "export_byte_identical": true,
-          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
-          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
-          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        "double_acting_recheck": {
+          "date": "2026-10-09",
+          "scope": "Changed ENG static surfaces rechecked against body and suspension; all equipment pairs rechecked in all five heat variants. Unchanged other equipment body/suspension results retained from the full five-variant audit performed on this date. Animation is outside the physical assembly. Checks do not establish sealing, pressure strength, dynamic suspension clearance, valve capacity or manufacturability. Internal mesh contacts within ENG are not exhaustively checked.",
+          "engine_fit_sha256": "12d11aaeb6431a06644a242e862675c3cf48b42e31662e8b8cc1fe3599458cac",
+          "baseline_sha256": {
+            "diesel": "340d2b3a6dbb4fdbb1acbc1eddd065c2e72a65f89a4218467b98209c607f9d77",
+            "wood": "6423c052cf7a91dd1525b0f40773afd0e44edb3eaf60e3fbe92763c65e8a9f5f",
+            "pellets": "456e8e33b75eeb0bdb444f114bc8b283be71c91469c9819c1a613ac3bd79739f",
+            "lpg": "f35025a2facea1ea4569cd20c10dd002b86a470e9fce9ebd3e3f4a9b286726fe",
+            "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
+          },
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         }
       }
     },
@@ -4144,16 +4160,16 @@
           "size_mm": [
             545,
             385,
-            461
+            501
           ],
           "min_xyz_mm": [
             2915,
             -190,
-            302
+            299
           ],
           "body_intersections": [],
           "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
-          "clearance_mm": 28.8,
+          "clearance_mm": 25.8,
           "clearance_is_lower_bound": false,
           "intentionally_external": false,
           "route": false,
@@ -5056,8 +5072,8 @@
           "mesh_intersection": true,
           "contact_witness_mm": [
             2950,
-            -137.3,
-            417.7
+            139,
+            431.8
           ],
           "schematic_interface": true
         },
@@ -5162,9 +5178,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2970,
-            -134.3,
-            407.8
+            3100.1,
+            0.9,
+            445
           ],
           "schematic_interface": true
         },
@@ -5179,9 +5195,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2940,
-            -36.1,
-            391
+            2960,
+            36.1,
+            499
           ],
           "schematic_interface": true
         },
@@ -7726,7 +7742,7 @@
         "body_gaps_under_screen": [
           {
             "id": "ENG",
-            "gap_mm": 28.8
+            "gap_mm": 25.8
           },
           {
             "id": "WTR",
@@ -7892,10 +7908,9 @@
         "drive": 34.84459690922847
       },
       "provenance": {
-        "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "web/internal-assembly.js": "98bc4584c5e8340d6801224985ee0edceb363794c96b4cf1b069b94839dc6e3c",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -7906,16 +7921,25 @@
           "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
           "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
-          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
+          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+          "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+          "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
-        "view_overlay_equivalence": {
-          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
-          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
-          "export_byte_identical": true,
-          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
-          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
-          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        "double_acting_recheck": {
+          "date": "2026-10-09",
+          "scope": "Changed ENG static surfaces rechecked against body and suspension; all equipment pairs rechecked in all five heat variants. Unchanged other equipment body/suspension results retained from the full five-variant audit performed on this date. Animation is outside the physical assembly. Checks do not establish sealing, pressure strength, dynamic suspension clearance, valve capacity or manufacturability. Internal mesh contacts within ENG are not exhaustively checked.",
+          "engine_fit_sha256": "12d11aaeb6431a06644a242e862675c3cf48b42e31662e8b8cc1fe3599458cac",
+          "baseline_sha256": {
+            "diesel": "340d2b3a6dbb4fdbb1acbc1eddd065c2e72a65f89a4218467b98209c607f9d77",
+            "wood": "6423c052cf7a91dd1525b0f40773afd0e44edb3eaf60e3fbe92763c65e8a9f5f",
+            "pellets": "456e8e33b75eeb0bdb444f114bc8b283be71c91469c9819c1a613ac3bd79739f",
+            "lpg": "f35025a2facea1ea4569cd20c10dd002b86a470e9fce9ebd3e3f4a9b286726fe",
+            "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
+          },
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         }
       }
     },
@@ -7936,16 +7960,16 @@
           "size_mm": [
             545,
             385,
-            461
+            501
           ],
           "min_xyz_mm": [
             2915,
             -190,
-            302
+            299
           ],
           "body_intersections": [],
           "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
-          "clearance_mm": 28.8,
+          "clearance_mm": 25.8,
           "clearance_is_lower_bound": false,
           "intentionally_external": false,
           "route": false,
@@ -8848,8 +8872,8 @@
           "mesh_intersection": true,
           "contact_witness_mm": [
             2950,
-            -137.3,
-            417.7
+            139,
+            431.8
           ],
           "schematic_interface": true
         },
@@ -8954,9 +8978,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2970,
-            -134.3,
-            407.8
+            3100.1,
+            0.9,
+            445
           ],
           "schematic_interface": true
         },
@@ -8971,9 +8995,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2940,
-            -36.1,
-            391
+            2960,
+            36.1,
+            499
           ],
           "schematic_interface": true
         },
@@ -11518,7 +11542,7 @@
         "body_gaps_under_screen": [
           {
             "id": "ENG",
-            "gap_mm": 28.8
+            "gap_mm": 25.8
           },
           {
             "id": "WTR",
@@ -11684,10 +11708,9 @@
         "drive": 34.84459690922847
       },
       "provenance": {
-        "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "web/internal-assembly.js": "98bc4584c5e8340d6801224985ee0edceb363794c96b4cf1b069b94839dc6e3c",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -11698,16 +11721,25 @@
           "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
           "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
-          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
+          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+          "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+          "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
-        "view_overlay_equivalence": {
-          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
-          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
-          "export_byte_identical": true,
-          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
-          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
-          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        "double_acting_recheck": {
+          "date": "2026-10-09",
+          "scope": "Changed ENG static surfaces rechecked against body and suspension; all equipment pairs rechecked in all five heat variants. Unchanged other equipment body/suspension results retained from the full five-variant audit performed on this date. Animation is outside the physical assembly. Checks do not establish sealing, pressure strength, dynamic suspension clearance, valve capacity or manufacturability. Internal mesh contacts within ENG are not exhaustively checked.",
+          "engine_fit_sha256": "12d11aaeb6431a06644a242e862675c3cf48b42e31662e8b8cc1fe3599458cac",
+          "baseline_sha256": {
+            "diesel": "340d2b3a6dbb4fdbb1acbc1eddd065c2e72a65f89a4218467b98209c607f9d77",
+            "wood": "6423c052cf7a91dd1525b0f40773afd0e44edb3eaf60e3fbe92763c65e8a9f5f",
+            "pellets": "456e8e33b75eeb0bdb444f114bc8b283be71c91469c9819c1a613ac3bd79739f",
+            "lpg": "f35025a2facea1ea4569cd20c10dd002b86a470e9fce9ebd3e3f4a9b286726fe",
+            "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
+          },
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         }
       }
     },
@@ -11728,16 +11760,16 @@
           "size_mm": [
             545,
             385,
-            461
+            501
           ],
           "min_xyz_mm": [
             2915,
             -190,
-            302
+            299
           ],
           "body_intersections": [],
           "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
-          "clearance_mm": 28.8,
+          "clearance_mm": 25.8,
           "clearance_is_lower_bound": false,
           "intentionally_external": false,
           "route": false,
@@ -12669,8 +12701,8 @@
           "mesh_intersection": true,
           "contact_witness_mm": [
             2950,
-            -137.3,
-            417.7
+            139,
+            431.8
           ],
           "schematic_interface": true
         },
@@ -12775,9 +12807,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2970,
-            -134.3,
-            407.8
+            3100.1,
+            0.9,
+            445
           ],
           "schematic_interface": true
         },
@@ -12792,9 +12824,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2940,
-            -36.1,
-            391
+            2960,
+            36.1,
+            499
           ],
           "schematic_interface": true
         },
@@ -15480,7 +15512,7 @@
         "body_gaps_under_screen": [
           {
             "id": "ENG",
-            "gap_mm": 28.8
+            "gap_mm": 25.8
           },
           {
             "id": "WTR",
@@ -15650,10 +15682,9 @@
         "drive": 34.84459690922847
       },
       "provenance": {
-        "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "web/internal-assembly.js": "98bc4584c5e8340d6801224985ee0edceb363794c96b4cf1b069b94839dc6e3c",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -15664,16 +15695,25 @@
           "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
           "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
-          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
+          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+          "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+          "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
-        "view_overlay_equivalence": {
-          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
-          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
-          "export_byte_identical": true,
-          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
-          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
-          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        "double_acting_recheck": {
+          "date": "2026-10-09",
+          "scope": "Changed ENG static surfaces rechecked against body and suspension; all equipment pairs rechecked in all five heat variants. Unchanged other equipment body/suspension results retained from the full five-variant audit performed on this date. Animation is outside the physical assembly. Checks do not establish sealing, pressure strength, dynamic suspension clearance, valve capacity or manufacturability. Internal mesh contacts within ENG are not exhaustively checked.",
+          "engine_fit_sha256": "12d11aaeb6431a06644a242e862675c3cf48b42e31662e8b8cc1fe3599458cac",
+          "baseline_sha256": {
+            "diesel": "340d2b3a6dbb4fdbb1acbc1eddd065c2e72a65f89a4218467b98209c607f9d77",
+            "wood": "6423c052cf7a91dd1525b0f40773afd0e44edb3eaf60e3fbe92763c65e8a9f5f",
+            "pellets": "456e8e33b75eeb0bdb444f114bc8b283be71c91469c9819c1a613ac3bd79739f",
+            "lpg": "f35025a2facea1ea4569cd20c10dd002b86a470e9fce9ebd3e3f4a9b286726fe",
+            "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
+          },
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         }
       }
     },
@@ -15694,16 +15734,16 @@
           "size_mm": [
             545,
             385,
-            461
+            501
           ],
           "min_xyz_mm": [
             2915,
             -190,
-            302
+            299
           ],
           "body_intersections": [],
           "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
-          "clearance_mm": 28.8,
+          "clearance_mm": 25.8,
           "clearance_is_lower_bound": false,
           "intentionally_external": false,
           "route": false,
@@ -16571,8 +16611,8 @@
           "mesh_intersection": true,
           "contact_witness_mm": [
             2950,
-            -137.3,
-            417.7
+            139,
+            431.8
           ],
           "schematic_interface": true
         },
@@ -16677,9 +16717,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2970,
-            -134.3,
-            407.8
+            3100.1,
+            0.9,
+            445
           ],
           "schematic_interface": true
         },
@@ -16694,9 +16734,9 @@
           "housing_collision": false,
           "mesh_intersection": true,
           "contact_witness_mm": [
-            2940,
-            -36.1,
-            391
+            2960,
+            36.1,
+            499
           ],
           "schematic_interface": true
         },
@@ -18985,7 +19025,7 @@
         "body_gaps_under_screen": [
           {
             "id": "ENG",
-            "gap_mm": 28.8
+            "gap_mm": 25.8
           },
           {
             "id": "WTR",
@@ -19140,10 +19180,9 @@
         "drive": 34.84459690922847
       },
       "provenance": {
-        "geometry_parameter_sha256": "3b1de2081556251a4e617e41d567e6fc6f25e154923c29048961ff39919d7fea",
         "source_sha256": {
           "layout-internal.json": "f7a6260a1295161b0f8929ae980552de8ada702aaf5bf6c4ef77ae831d4a82ce",
-          "web/internal-assembly.js": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
+          "web/internal-assembly.js": "98bc4584c5e8340d6801224985ee0edceb363794c96b4cf1b069b94839dc6e3c",
           "web/heat-geometry.js": "c51f4e6684b414b9ffb2d873516b058a94f6ad0f01c02d062756c8b6f5cac352",
           "web/pipe-path.js": "0b785b2d508ce0f5528d97ca115a9586b283060d0a274cb3acc66708c1ff6152",
           "web/packaging-audit.js": "f6b448b69aac10a83edb8efacee6c1fe1449adde86baa395e8f3530121eb1979",
@@ -19154,16 +19193,25 @@
           "web/connection-data.js": "f9e176aa78c58788e3d4744d506d070d9d2e3d9bfe8e68cdafece8d71c81b31d",
           "connection-specs.json": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
           "web/pipe-data.js": "140c14a4b3887b79cbf9c54b48d8351465300819b33544bc483d950b0a782d67",
-          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf"
+          "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
+          "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+          "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
-        "view_overlay_equivalence": {
-          "parent_commit": "fd3dce9560055b4ab5617e4d894edbf501d35658",
-          "native_glb_sha256": "77907b8034777951a0c523d85e5ab35cd0c14dba149d8a8579b39392943e81fb",
-          "export_byte_identical": true,
-          "old_constructor_sha256": "8180745435c7a8ee34ebc57ba2cc6b43e326ea7ee79f4d8d991444bc50467e9a",
-          "new_constructor_sha256": "add4b257321035af7157beabf8fb2913f12f82ce1065fb8f0eb1c918ea766acf",
-          "scope": "Only transient runtime curve references were added. They are not userData, do not enter GLB and change no triangles, dimensions, connections or masses. Re-exported physical GLB is byte-identical; previous static surface audit remains applicable."
+        "double_acting_recheck": {
+          "date": "2026-10-09",
+          "scope": "Changed ENG static surfaces rechecked against body and suspension; all equipment pairs rechecked in all five heat variants. Unchanged other equipment body/suspension results retained from the full five-variant audit performed on this date. Animation is outside the physical assembly. Checks do not establish sealing, pressure strength, dynamic suspension clearance, valve capacity or manufacturability. Internal mesh contacts within ENG are not exhaustively checked.",
+          "engine_fit_sha256": "12d11aaeb6431a06644a242e862675c3cf48b42e31662e8b8cc1fe3599458cac",
+          "baseline_sha256": {
+            "diesel": "340d2b3a6dbb4fdbb1acbc1eddd065c2e72a65f89a4218467b98209c607f9d77",
+            "wood": "6423c052cf7a91dd1525b0f40773afd0e44edb3eaf60e3fbe92763c65e8a9f5f",
+            "pellets": "456e8e33b75eeb0bdb444f114bc8b283be71c91469c9819c1a613ac3bd79739f",
+            "lpg": "f35025a2facea1ea4569cd20c10dd002b86a470e9fce9ebd3e3f4a9b286726fe",
+            "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
+          },
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         }
       }
     }

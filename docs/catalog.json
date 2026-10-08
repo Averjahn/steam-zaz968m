@@ -165,7 +165,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 38187
+    "size": 39092
   },
   {
     "path": "build_stock_suspension.py",
@@ -266,6 +266,20 @@
     "size": 744
   },
   {
+    "path": "double-acting-checks.json",
+    "title": "Двойное действие · камеры, переключение клапанов и обратимые стрелки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 1565
+  },
+  {
+    "path": "double-acting-view-checks.json",
+    "title": "Двойное действие · проверки 3D, стрелок и полноэкранного режима",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 17617
+  },
+  {
     "path": "geometry-checks.json",
     "title": "Проверка габаритных пересечений",
     "category": "Проверки",
@@ -291,7 +305,7 @@
     "title": "Пересечения пяти вариантов источника",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 537738
+    "size": 542813
   },
   {
     "path": "heat-native-checks.json",
@@ -347,7 +361,7 @@
     "title": "Внутренняя сборка · пересечения показанной геометрии",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 97366
+    "size": 98184
   },
   {
     "path": "layout-internal.json",
@@ -546,6 +560,13 @@
     "size": 6940
   },
   {
+    "path": "verify_double_acting.mjs",
+    "title": "Проверка геометрии и переключения рабочих камер",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 2310
+  },
+  {
     "path": "verify_literature.mjs",
     "title": "Сверка переходной модели с независимым расчётом",
     "category": "Исходники",
@@ -725,7 +746,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 35693
+    "size": 39138
   },
   {
     "path": "user-model.html",
@@ -935,7 +956,7 @@
     "title": "Полная внутренняя детальная сборка GLB",
     "category": "3D",
     "format": "GLB",
-    "size": 38182720
+    "size": 38555840
   },
   {
     "path": "models/steam-internal-assembly.json",

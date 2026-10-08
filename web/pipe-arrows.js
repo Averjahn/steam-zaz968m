@@ -46,15 +46,15 @@ export function pipeArrows(curve, route) {
   const fallback = new T.Vector3(), skin = new T.Vector3();
   const inverse = new T.Matrix4(), cameraLocal = new T.Vector3();
 
-  function draw(mesh, distance, radius, arrowLength, width, border, radiusAt) {
+  function draw(mesh, distance, radius, arrowLength, width, border, radiusAt, direction) {
     const position = mesh.geometry.attributes.position;
     for (let i = 0; i <= segments; i++) {
       const u = i / segments;
-      const along=distance + (u - .5) * arrowLength;
+      const along=distance + direction * (u - .5) * arrowLength;
       const s = along / length;
       const surfaceRadius = radiusAt ? radiusAt(along)+(border ? .7 : 1.1) : radius;
       point.copy(curve.getPointAt(T.MathUtils.clamp(s, 0, 1)));
-      tangent.copy(curve.getTangentAt(T.MathUtils.clamp(s, 0, 1))).normalize();
+      tangent.copy(curve.getTangentAt(T.MathUtils.clamp(s, 0, 1))).normalize().multiplyScalar(direction);
       normal.subVectors(cameraLocal, point).addScaledVector(tangent, -normal.dot(tangent));
       if (normal.lengthSq() < 1e-8) {
         fallback.set(Math.abs(tangent.z) < .9 ? 0 : 1, 0, Math.abs(tangent.z) < .9 ? 1 : 0);
@@ -75,7 +75,7 @@ export function pipeArrows(curve, route) {
     position.needsUpdate = true;
   }
 
-  return {group, markers, update({camera, radius, phase = 0, visible, clippingPlanes, radiusAt}) {
+  return {group, markers, update({camera, radius, phase = 0, visible, clippingPlanes, radiusAt, direction=1, color}) {
     group.visible = visible;
     if (!visible) return;
     group.updateWorldMatrix(true, false);
@@ -87,14 +87,15 @@ export function pipeArrows(curve, route) {
     const margin = arrowLength * .55;
     const span = Math.max(0, length - 2 * margin);
     markers.forEach(({marker, border, fill}, i) => {
-      const t = ((i + .5) / count + phase) % 1;
+      const t = (((i + .5) / count + direction * phase) % 1 + 1) % 1;
       const distance = margin + t * span;
       marker.userData.routeFraction = distance / length;
       marker.userData.surfaceRadius_mm = radiusAt ? radiusAt(distance) : radius;
-      marker.userData.direction = 'source-to-destination';
+      marker.userData.direction = direction<0?'destination-to-source':'source-to-destination';
+      if(color)fill.material.color.set(color);
       for (const mesh of [border, fill]) mesh.material.clippingPlanes = clippingPlanes;
-      draw(border, distance, radius + .7, arrowLength * 1.07, width, true, radiusAt);
-      draw(fill, distance, radius + 1.1, arrowLength, width, false, radiusAt);
+      draw(border, distance, radius + .7, arrowLength * 1.07, width, true, radiusAt,direction);
+      draw(fill, distance, radius + 1.1, arrowLength, width, false, radiusAt,direction);
     });
   }};
 }

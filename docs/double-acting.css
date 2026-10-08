@@ -1,0 +1,7 @@
+.double-acting-panel{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.double-acting-panel summary{font-weight:700;cursor:pointer}.double-acting-panel p{font-size:13px;line-height:1.6}
+.da-fresh{color:#fff0be}.da-spent{color:#b8d2dc}.da-status{font-variant-numeric:tabular-nums;color:var(--lime)}
+.da-chambers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.da-chambers p{margin:0;padding:10px;background:#0b1827;border-left:3px solid #71828d}
+.da-chambers [data-phase=admission]{border-color:#fff0be}.da-chambers [data-direction="-1"]{border-color:#b8d2dc}
+.da-hud{position:absolute;top:12px;left:12px;z-index:6;max-width:320px;padding:12px;border:1px solid #54717d;border-radius:6px;background:#09131eed;pointer-events:none;font-size:12px;line-height:1.6}.da-hud strong,.da-hud span{display:block}.da-hud #engineHudA{color:#fff0be}.da-hud #engineHudB{color:#b8d2dc}
+@media(max-width:600px){.da-chambers{grid-template-columns:1fr}.da-hud{font-size:10px;padding:8px;max-width:250px}.double-acting-panel{padding:12px}.double-acting-panel .cad-toolbar label{max-width:100%}}

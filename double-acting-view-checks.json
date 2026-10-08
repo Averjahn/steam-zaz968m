@@ -1,0 +1,690 @@
+{
+  "status": "passed",
+  "scope": "Browser rendering, reversible flow arrows, controls and prior arrow/fullscreen regression. No assertion of measured engine pressure or valve capacity.",
+  "date": "2026-10-09",
+  "double_acting": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "Systems initialize without hidden initialization error",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "Engine deep link isolates engine",
+        "pass": true
+      },
+      {
+        "name": "Both cylinders have two chamber tubes",
+        "pass": true
+      },
+      {
+        "name": "Upper tube points into chamber on admission",
+        "pass": true,
+        "detail": {
+          "id": "DA.0.A.branch",
+          "role": "chamber",
+          "cylinder": 0,
+          "chamber": "A",
+          "active": true,
+          "direction": "source-to-destination",
+          "fraction": 0.5
+        }
+      },
+      {
+        "name": "Closed second-cylinder admission blocks cross-header arrows",
+        "pass": true
+      },
+      {
+        "name": "Same upper tube points outward on opposite stroke",
+        "pass": true,
+        "detail": {
+          "id": "DA.0.A.branch",
+          "role": "chamber",
+          "cylinder": 0,
+          "chamber": "A",
+          "active": true,
+          "direction": "destination-to-source",
+          "fraction": 0.5
+        }
+      },
+      {
+        "name": "Lower tube reverses simultaneously",
+        "pass": true
+      },
+      {
+        "name": "Cutoff removes chamber arrows while opposite side exhausts",
+        "pass": true
+      },
+      {
+        "name": "No camera admits and exhausts at once",
+        "pass": true
+      },
+      {
+        "name": "Engine paths keep exact connection endpoints",
+        "pass": true,
+        "detail": 17
+      },
+      {
+        "name": "Slow playback advances angle and active arrow positions",
+        "pass": true
+      },
+      {
+        "name": "Pause freezes angle and pipe glyphs",
+        "pass": true
+      },
+      {
+        "name": "Stepping switches to manual mode",
+        "pass": true
+      },
+      {
+        "name": "Opaque cylinders restore original opacity",
+        "pass": true
+      },
+      {
+        "name": "Global arrow switch also hides chamber arrows",
+        "pass": true
+      },
+      {
+        "name": "Mechanism switch hides animation and restores physical pistons",
+        "pass": true
+      },
+      {
+        "name": "Return button restores car and original layer visibility",
+        "pass": true
+      },
+      {
+        "name": "wood keeps double-acting engine",
+        "pass": true
+      },
+      {
+        "name": "lpg keeps double-acting engine",
+        "pass": true
+      },
+      {
+        "name": "electric keeps double-acting engine",
+        "pass": true
+      },
+      {
+        "name": "diesel keeps double-acting engine",
+        "pass": true
+      },
+      {
+        "name": "Mobile has no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "Mobile camera frames the whole engine",
+        "pass": true
+      },
+      {
+        "name": "Engine HUD survives fullscreen",
+        "pass": true
+      },
+      {
+        "name": "No browser exceptions",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": []
+  },
+  "existing_viewer_regression": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "diesel all fluid mains covered",
+        "pass": true,
+        "detail": [
+          {
+            "id": "PIPE_STEAM",
+            "visible": true,
+            "phase": 0.40905257011222834,
+            "count": 5
+          },
+          {
+            "id": "PIPE_EXHAUST_R",
+            "visible": true,
+            "phase": 0.6773868747477707,
+            "count": 1
+          },
+          {
+            "id": "PIPE_EXHAUST_L",
+            "visible": true,
+            "phase": 0.39238543963761435,
+            "count": 6
+          },
+          {
+            "id": "PIPE_RETURN",
+            "visible": true,
+            "phase": 0.3377976131400953,
+            "count": 15
+          },
+          {
+            "id": "PIPE_BALANCE",
+            "visible": true,
+            "phase": 0.3897857287160867,
+            "count": 6
+          },
+          {
+            "id": "PIPE_MAKEUP",
+            "visible": true,
+            "phase": 0.5447248312589489,
+            "count": 2
+          },
+          {
+            "id": "PIPE_SUCTION",
+            "visible": true,
+            "phase": 0.34315232025458076,
+            "count": 13
+          },
+          {
+            "id": "PIPE_FEED",
+            "visible": true,
+            "phase": 0.4069509328211931,
+            "count": 5
+          },
+          {
+            "id": "PIPE_FUEL",
+            "visible": true,
+            "phase": 0.40636804166150214,
+            "count": 5
+          },
+          {
+            "id": "PIPE_FLUE",
+            "visible": true,
+            "phase": 0.3809992510182781,
+            "count": 7
+          },
+          {
+            "id": "PIPE_RELIEF",
+            "visible": true,
+            "phase": 0.4085304394310487,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "diesel all directions animate in explanation mode",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "diesel coil and ten condenser tubes covered",
+        "pass": true
+      },
+      {
+        "name": "diesel no electrical/suspension arrows",
+        "pass": true
+      },
+      {
+        "name": "diesel ports pump filter and lubrication covered",
+        "pass": true
+      },
+      {
+        "name": "diesel relief animates as explanatory direction",
+        "pass": true
+      },
+      {
+        "name": "wood all fluid mains covered",
+        "pass": true,
+        "detail": [
+          {
+            "id": "PIPE_STEAM",
+            "visible": true,
+            "phase": 0.5114674625311686,
+            "count": 5
+          },
+          {
+            "id": "PIPE_EXHAUST_R",
+            "visible": true,
+            "phase": 0.7420359132430595,
+            "count": 1
+          },
+          {
+            "id": "PIPE_EXHAUST_L",
+            "visible": true,
+            "phase": 0.4959249538661978,
+            "count": 6
+          },
+          {
+            "id": "PIPE_RETURN",
+            "visible": true,
+            "phase": 0.446414684142844,
+            "count": 15
+          },
+          {
+            "id": "PIPE_BALANCE",
+            "visible": true,
+            "phase": 0.4958265104780159,
+            "count": 6
+          },
+          {
+            "id": "PIPE_MAKEUP",
+            "visible": true,
+            "phase": 0.6390963159602467,
+            "count": 2
+          },
+          {
+            "id": "PIPE_SUCTION",
+            "visible": true,
+            "phase": 0.4515639507117511,
+            "count": 13
+          },
+          {
+            "id": "PIPE_FEED",
+            "visible": true,
+            "phase": 0.5117324556917097,
+            "count": 5
+          },
+          {
+            "id": "PIPE_FLUE",
+            "visible": true,
+            "phase": 0.4847254009847828,
+            "count": 7
+          },
+          {
+            "id": "PIPE_RELIEF",
+            "visible": true,
+            "phase": 0.5115332974209525,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "wood all directions animate in explanation mode",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "wood coil and ten condenser tubes covered",
+        "pass": true
+      },
+      {
+        "name": "wood no electrical/suspension arrows",
+        "pass": true
+      },
+      {
+        "name": "wood ports pump filter and lubrication covered",
+        "pass": true
+      },
+      {
+        "name": "wood relief animates as explanatory direction",
+        "pass": true
+      },
+      {
+        "name": "pellets all fluid mains covered",
+        "pass": true,
+        "detail": [
+          {
+            "id": "PIPE_STEAM",
+            "visible": true,
+            "phase": 0.6105012574996854,
+            "count": 5
+          },
+          {
+            "id": "PIPE_EXHAUST_R",
+            "visible": true,
+            "phase": 0.21755785070466852,
+            "count": 1
+          },
+          {
+            "id": "PIPE_EXHAUST_L",
+            "visible": true,
+            "phase": 0.5960462426852937,
+            "count": 6
+          },
+          {
+            "id": "PIPE_RETURN",
+            "visible": true,
+            "phase": 0.551445900655431,
+            "count": 15
+          },
+          {
+            "id": "PIPE_BALANCE",
+            "visible": true,
+            "phase": 0.598366490663261,
+            "count": 6
+          },
+          {
+            "id": "PIPE_MAKEUP",
+            "visible": true,
+            "phase": 0.7303522460895496,
+            "count": 2
+          },
+          {
+            "id": "PIPE_SUCTION",
+            "visible": true,
+            "phase": 0.5563965090371501,
+            "count": 13
+          },
+          {
+            "id": "PIPE_FEED",
+            "visible": true,
+            "phase": 0.6130547498166666,
+            "count": 5
+          },
+          {
+            "id": "PIPE_FLUE",
+            "visible": true,
+            "phase": 0.5848979401836449,
+            "count": 7
+          },
+          {
+            "id": "PIPE_RELIEF",
+            "visible": true,
+            "phase": 0.6111356470247188,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "pellets all directions animate in explanation mode",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "pellets coil and ten condenser tubes covered",
+        "pass": true
+      },
+      {
+        "name": "pellets no electrical/suspension arrows",
+        "pass": true
+      },
+      {
+        "name": "pellets ports pump filter and lubrication covered",
+        "pass": true
+      },
+      {
+        "name": "pellets relief animates as explanatory direction",
+        "pass": true
+      },
+      {
+        "name": "lpg all fluid mains covered",
+        "pass": true,
+        "detail": [
+          {
+            "id": "PIPE_STEAM",
+            "visible": true,
+            "phase": 0.7097470684789682,
+            "count": 5
+          },
+          {
+            "id": "PIPE_EXHAUST_R",
+            "visible": true,
+            "phase": 0.2802064177533924,
+            "count": 1
+          },
+          {
+            "id": "PIPE_EXHAUST_L",
+            "visible": true,
+            "phase": 0.6963818756709939,
+            "count": 6
+          },
+          {
+            "id": "PIPE_RETURN",
+            "visible": true,
+            "phase": 0.6567019727290713,
+            "count": 15
+          },
+          {
+            "id": "PIPE_BALANCE",
+            "visible": true,
+            "phase": 0.7011259930585739,
+            "count": 6
+          },
+          {
+            "id": "PIPE_MAKEUP",
+            "visible": true,
+            "phase": 0.821803541026097,
+            "count": 2
+          },
+          {
+            "id": "PIPE_SUCTION",
+            "visible": true,
+            "phase": 0.6614534976272035,
+            "count": 13
+          },
+          {
+            "id": "PIPE_FEED",
+            "visible": true,
+            "phase": 0.7145939592745043,
+            "count": 5
+          },
+          {
+            "id": "PIPE_FUEL",
+            "visible": true,
+            "phase": 0.701178870776383,
+            "count": 6
+          },
+          {
+            "id": "PIPE_FLUE",
+            "visible": true,
+            "phase": 0.6854932387238792,
+            "count": 7
+          },
+          {
+            "id": "PIPE_RELIEF",
+            "visible": true,
+            "phase": 0.7109512298266334,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "lpg all directions animate in explanation mode",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "lpg coil and ten condenser tubes covered",
+        "pass": true
+      },
+      {
+        "name": "lpg no electrical/suspension arrows",
+        "pass": true
+      },
+      {
+        "name": "lpg ports pump filter and lubrication covered",
+        "pass": true
+      },
+      {
+        "name": "lpg relief animates as explanatory direction",
+        "pass": true
+      },
+      {
+        "name": "LPG ramp and cylinder valve covered",
+        "pass": true
+      },
+      {
+        "name": "electric all fluid mains covered",
+        "pass": true,
+        "detail": [
+          {
+            "id": "PIPE_STEAM",
+            "visible": true,
+            "phase": 0.8117714050875965,
+            "count": 5
+          },
+          {
+            "id": "PIPE_EXHAUST_R",
+            "visible": true,
+            "phase": 0.3446089192752092,
+            "count": 1
+          },
+          {
+            "id": "PIPE_EXHAUST_L",
+            "visible": true,
+            "phase": 0.7995265453811313,
+            "count": 6
+          },
+          {
+            "id": "PIPE_RETURN",
+            "visible": true,
+            "phase": 0.7649048361182857,
+            "count": 15
+          },
+          {
+            "id": "PIPE_BALANCE",
+            "visible": true,
+            "phase": 0.8067623918009151,
+            "count": 6
+          },
+          {
+            "id": "PIPE_MAKEUP",
+            "visible": true,
+            "phase": 0.9158151431868059,
+            "count": 2
+          },
+          {
+            "id": "PIPE_SUCTION",
+            "visible": true,
+            "phase": 0.7694517039115764,
+            "count": 13
+          },
+          {
+            "id": "PIPE_FEED",
+            "visible": true,
+            "phase": 0.8189759012676322,
+            "count": 5
+          },
+          {
+            "id": "PIPE_RELIEF",
+            "visible": true,
+            "phase": 0.813561289818936,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "name": "electric all directions animate in explanation mode",
+        "pass": true,
+        "detail": []
+      },
+      {
+        "name": "electric coil and ten condenser tubes covered",
+        "pass": true
+      },
+      {
+        "name": "electric no electrical/suspension arrows",
+        "pass": true
+      },
+      {
+        "name": "electric ports pump filter and lubrication covered",
+        "pass": true
+      },
+      {
+        "name": "electric relief animates as explanatory direction",
+        "pass": true
+      },
+      {
+        "name": "Electric no fuel/flue ghost markers",
+        "pass": true
+      },
+      {
+        "name": "Computed mode at rest has no false flow",
+        "pass": true
+      },
+      {
+        "name": "Global arrows switch hides all local and main markers",
+        "pass": true
+      },
+      {
+        "name": "Hidden nozzles hide attached arrows",
+        "pass": true
+      },
+      {
+        "name": "Hidden owners hide their internal arrows",
+        "pass": true
+      },
+      {
+        "name": "Calculated feed animates main and pump inlet markers",
+        "pass": true
+      },
+      {
+        "name": "Closed relief static in calculated mode",
+        "pass": true
+      },
+      {
+        "name": "Pause freezes all calculated markers",
+        "pass": true
+      },
+      {
+        "name": "All local/main glyphs inherit clipping planes",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen button sits next to model",
+        "pass": true
+      },
+      {
+        "name": "Native fullscreen entered",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen canvas fills available view",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen renderer camera resized",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen controls accessible",
+        "pass": true
+      },
+      {
+        "name": "Controls collapse returns space to model",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen button restores page",
+        "pass": true
+      },
+      {
+        "name": "Native external exit restores controls",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen unavailable uses expanded viewport",
+        "pass": true
+      },
+      {
+        "name": "Keyboard focus stays in expanded viewer",
+        "pass": true
+      },
+      {
+        "name": "Escape exits fallback",
+        "pass": true
+      },
+      {
+        "name": "Mobile expanded canvas dominates screen",
+        "pass": true
+      },
+      {
+        "name": "Mobile source and layers remain accessible",
+        "pass": true
+      },
+      {
+        "name": "Mobile exit restores dimensions",
+        "pass": true
+      },
+      {
+        "name": "No browser exceptions",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": []
+  },
+  "source_sha256": {
+    "web/assembly.html": "649dad78c0ce2f001779ba1da208f837917f833137ea959f98f0a57029578341",
+    "web/assembly.js": "0ae14822a99038a3ce35aa210fae1096cd8c526704795ad533ced2ffbbf7e7de",
+    "web/assembly-systems.js": "80510d133b2911db4eb4c4c1e18960b2e56d29892f096be9b7d3c363329ad41b",
+    "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
+    "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
+    "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+    "web/pipe-arrows.js": "12617b60eac62ede37b30a62475a397ad10d9182e430033cf83ac1d260580cb5",
+    "web/cycle-animation.js": "f13dd549c24ef14b8015e4af49dc7bcef99583732f8aca0bb336b755d98cd9eb"
+  }
+}
