@@ -1,0 +1,2015 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-08",
+  "policy": "Ссылка на товар, каталог или изготовителя не подтверждает совместимость, наличие, доставку или возможность дорожной регистрации. Цены не фиксируются. Финляндия / ЕС и Россия — регионы поставщиков, не гарантия доставки.",
+  "components": {
+    "ENG": {
+      "id": "ENG",
+      "name": "Паровая машина · два цилиндра",
+      "status": "custom",
+      "description": "Готовая автомобильная паровая машина не выбрана. Модель показывает резерв компоновки.",
+      "requirements": [
+        "Для B: около 27,6 кВт на валу до вспомогательных нагрузок.",
+        "Подтвердить обороты, момент, расход пара, массу, смазку, крепления и сервисные зазоры."
+      ],
+      "links": [
+        {
+          "title": "Spilling · запрос паровой машины по ТЗ",
+          "url": "https://www.spilling.de/",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Промышленный изготовитель; компактный подходящий типоразмер не подтверждён."
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        }
+      ],
+      "concept_size_mm": [
+        545,
+        385,
+        461
+      ]
+    },
+    "STM": {
+      "id": "STM",
+      "name": "Парогенератор · кожух и змеевик",
+      "status": "custom",
+      "description": "Заказывать расчёт и изготовление у специалиста по парогенераторам; витки в 3D не задают производительность.",
+      "requirements": [
+        "Сценарий B: около 551,7 кг/ч пара; давление и перегрев по расчётному отчёту.",
+        "Нужны расчёт прочности, горение, теплопередача, защита, арматура и проверенная документация."
+      ],
+      "links": [
+        {
+          "title": "Clayton · запрос парогенератора",
+          "url": "https://www.claytonindustries.com/products/",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Промышленные агрегаты; размещение в ЗАЗ не подтверждено."
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        }
+      ],
+      "concept_size_mm": [
+        454,
+        482.3,
+        620
+      ]
+    },
+    "CND": {
+      "id": "CND",
+      "name": "Два внутренних блока конденсации",
+      "status": "custom",
+      "description": "Готовые блоки под показанный объём не найдены. Теплоотвод текущей внутренней компоновки не подтверждён.",
+      "requirements": [
+        "Сценарий B: около 358 кВт тепла к отводу.",
+        "Нужны геометрия, расход воздуха, кривые вентиляторов, противодавление и крепления."
+      ],
+      "links": [
+        {
+          "title": "Kelvion · воздушные паровые конденсаторы",
+          "url": "https://www.kelvion.com/products/heat-rejection-heat-recovery-solutions/air-cooled-condensers",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Промышленный каталог для запроса, не готовый автомобильный блок."
+        },
+        {
+          "title": "ebm-papst · подбор осевых вентиляторов",
+          "url": "https://www.ebmpapst.com/de/en/products/axial-fans.html",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Типоразмер и рабочая точка не выбраны."
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        }
+      ],
+      "concept_size_mm": [
+        500,
+        1030,
+        245
+      ]
+    },
+    "PMP": {
+      "id": "PMP",
+      "name": "Cat Pumps 5CP2120W.3000",
+      "status": "candidate",
+      "description": "Заводской CAD Cat 5CP2120W.3000; именно высокотемпературное исполнение нужно указать в заказе.",
+      "requirements": [
+        "Базовый 5CP2120W не равен исполнению .3000.",
+        "В проекте предел воды 82 °C по заводским данным; проверить горячий подпор, кавитацию, привод и резьбы."
+      ],
+      "links": [
+        {
+          "title": "Cat Pumps · 5CP2120W.3000, запрос предложения",
+          "url": "https://www.catpumps.com/products/pumps/5cp-plunger-pump-high-temp-5cp2120w3000",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Страница конкретного заводского исполнения."
+        },
+        {
+          "title": "Cat Pumps NL · поставщик серии 5CP2120W",
+          "url": "https://www.catpumps.nl/nl/catpumps-5cp2120w.html",
+          "kind": "catalogue",
+          "markets": [
+            "EU"
+          ],
+          "note": "Уточнить .3000; данные температуры сверить с заводом."
+        },
+        {
+          "title": "Cat Pumps · поиск дистрибьютора",
+          "url": "https://www.catpumps.com/find-distributor",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": ""
+        },
+        {
+          "title": "Cat Pumps TB002 · горячая подача",
+          "url": "https://www.catpumps.com/sites/default/files/2025-12/TB002_B.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": ""
+        }
+      ],
+      "concept_size_mm": [
+        259.25,
+        254,
+        146.2
+      ]
+    },
+    "BRN": {
+      "id": "BRN",
+      "name": "Riello RL 50 TC 3474632",
+      "status": "candidate",
+      "description": "Размерный кандидат Riello RL 50 TC, код 3474632, короткая голова 216 мм. Автомобильное применение не подтверждено.",
+      "requirements": [
+        "Не перепутать TC с TL (3474633) или RL 50/M.",
+        "Проверить питание, расход топлива, камеру горения и тепловой режим на всех нагрузках."
+      ],
+      "links": [
+        {
+          "title": "Riello24 · RL 50 TC 3474632, товар",
+          "url": "https://www.riello24.ru/catalog/dizelnye_gorelki/dizelnye_gorelki_riello_rl/dizelnaya_gorelka_riello_rl_50_tc_3474632/",
+          "kind": "product",
+          "markets": [
+            "RU"
+          ],
+          "note": ""
+        },
+        {
+          "title": "Wichtowski · RL 50 TC 3474632, товар",
+          "url": "https://wichtowski.pl/en/burner-oil/136-riello-gulliver-rl-50-tc-l216mm-two-step.html",
+          "kind": "product",
+          "markets": [
+            "EU"
+          ],
+          "note": "Польский магазин; доставку в Финляндию уточнить."
+        },
+        {
+          "title": "Riello · заводской каталог с кодами",
+          "url": "https://www.rielloburners.co.uk/contentfiles/download/riello_catalogue.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": ""
+        }
+      ],
+      "concept_size_mm": [
+        476,
+        684.0,
+        474
+      ]
+    },
+    "GBX": {
+      "id": "GBX",
+      "name": "Штатная КПП · условная форма",
+      "status": "retained",
+      "description": "Сохраняем штатную КПП. Покупка нужна только для ремонта; форма в 3D условная.",
+      "requirements": [
+        "Проверить допустимый момент, передаточные числа, состояние и сопряжение нового привода."
+      ],
+      "links": [
+        {
+          "title": "Автоопт · каталог ЗАЗ-968",
+          "url": "https://www.autoopt.ru/auto/catalog/car/zaz/zaz-968/8",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Сверить исполнение 968М и номер с установленной деталью."
+        },
+        {
+          "title": "Avtoall · кузов и детали ЗАЗ-968М",
+          "url": "https://www.avtoall.ru/catalog/zaz-6/legkovye_avtomobili-30/zaz_968m-107/kuzov_i_ego_detali-3/",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Возможна блокировка VPN; наличие проверяется в магазине."
+        },
+        {
+          "title": "Заводской каталог деталей ЗАЗ-968М",
+          "url": "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Для сверки номеров, не магазин."
+        }
+      ],
+      "concept_size_mm": [
+        425,
+        350,
+        350
+      ]
+    },
+    "BODY": {
+      "id": "BODY",
+      "name": "Кузов ЗАЗ-968М · узлы исходной модели",
+      "status": "retained",
+      "description": "Сохраняем исходный кузов. Игровая модель не подтверждает толщины, внутренние зазоры и точки крепления.",
+      "requirements": [
+        "Двойной клик выбирает конкретную видимую панель, колесо, стекло или предмет салона.",
+        "Купить замену можно после сверки заводского номера и обмеров."
+      ],
+      "links": [
+        {
+          "title": "Автоопт · каталог ЗАЗ-968",
+          "url": "https://www.autoopt.ru/auto/catalog/car/zaz/zaz-968/8",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Сверить исполнение 968М и номер с установленной деталью."
+        },
+        {
+          "title": "Avtoall · кузов и детали ЗАЗ-968М",
+          "url": "https://www.avtoall.ru/catalog/zaz-6/legkovye_avtomobili-30/zaz_968m-107/kuzov_i_ego_detali-3/",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Возможна блокировка VPN; наличие проверяется в магазине."
+        },
+        {
+          "title": "Заводской каталог деталей ЗАЗ-968М",
+          "url": "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Для сверки номеров, не магазин."
+        }
+      ],
+      "concept_size_mm": [
+        3640.73,
+        1493.94,
+        1420.01
+      ]
+    },
+    "SUSP": {
+      "id": "SUSP",
+      "name": "Штатная подвеска · 50 узлов",
+      "status": "retained",
+      "description": "Сохраняем штатную подвеску; показанные размеры предварительные.",
+      "requirements": [
+        "Для запасной детали сверить узел, сторону и заводской номер.",
+        "Допустимость новых осевых нагрузок и состояние подвески требуют проверки."
+      ],
+      "links": [
+        {
+          "title": "Автоопт · каталог ЗАЗ-968",
+          "url": "https://www.autoopt.ru/auto/catalog/car/zaz/zaz-968/8",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Сверить исполнение 968М и номер с установленной деталью."
+        },
+        {
+          "title": "Avtoall · кузов и детали ЗАЗ-968М",
+          "url": "https://www.avtoall.ru/catalog/zaz-6/legkovye_avtomobili-30/zaz_968m-107/kuzov_i_ego_detali-3/",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Возможна блокировка VPN; наличие проверяется в магазине."
+        },
+        {
+          "title": "Заводской каталог деталей ЗАЗ-968М",
+          "url": "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Для сверки номеров, не магазин."
+        }
+      ],
+      "concept_size_mm": [
+        2490.9,
+        1228,
+        644.0
+      ]
+    },
+    "WTR": {
+      "id": "WTR",
+      "name": "Бак подпиточной воды",
+      "status": "choice",
+      "description": "Холодная подпиточная вода. Можно подобрать готовый бак или заказать по проверенным обмерам.",
+      "requirements": [
+        "Проектный наружный объём около 39,6 л; полезный не более 31,7 л при допущении 0,8.",
+        "Каталожный бак не имеет автоматически форму и размеры показанной модели."
+      ],
+      "links": [
+        {
+          "title": "VETUS · готовые баки питьевой воды",
+          "url": "https://webshop.vetus.com/en/products/fresh-water-systems/tanks-for-drinking-water",
+          "kind": "catalogue",
+          "markets": [
+            "EU"
+          ],
+          "note": "Только для холодной подпитки после проверки исполнения."
+        },
+        {
+          "title": "VETUS · гибкие баки воды",
+          "url": "https://webshop.vetus.com/en/products/fresh-water-systems/flexible-drinking-water-tanks",
+          "kind": "catalogue",
+          "markets": [
+            "EU"
+          ],
+          "note": "Нужны опора, фиксация и защита от горячих поверхностей."
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        }
+      ],
+      "concept_size_mm": [
+        442,
+        400,
+        220
+      ]
+    },
+    "RCV": {
+      "id": "RCV",
+      "name": "Питательный резервуар с конденсатом",
+      "status": "custom",
+      "description": "Горячий питательный резервуар: обычный пластиковый бак холодной воды не выбран как замена.",
+      "requirements": [
+        "Конденсат в расчёте около 78 °C; насос допускает до 82 °C по использованным данным.",
+        "Проектный наружный объём около 56,9 л. Нужны полезный объём, подпор, деаэрация и опоры."
+      ],
+      "links": [
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        },
+        {
+          "title": "Cat TB002 · требования к горячей подаче",
+          "url": "https://www.catpumps.com/sites/default/files/2025-12/TB002_B.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": ""
+        }
+      ],
+      "concept_size_mm": [
+        620,
+        470,
+        255
+      ]
+    },
+    "FUE": {
+      "id": "FUE",
+      "name": "Топливный бак · изолируемая зона",
+      "status": "choice",
+      "description": "Выбрать готовый топливный бак с подтверждёнными параметрами либо заказать специальный.",
+      "requirements": [
+        "Проектный наружный объём около 22,3 л; бак VETUS 25 л не считается подходящим по размерам.",
+        "Проверить топливо, крепления, вентиляцию, герметичность и расположение относительно нагрева."
+      ],
+      "links": [
+        {
+          "title": "VETUS · готовые дизельные баки",
+          "url": "https://webshop.vetus.com/en/products/fuel-systems/tanks-for-diesel-fuel",
+          "kind": "catalogue",
+          "markets": [
+            "EU"
+          ],
+          "note": "Сначала выбрать изделие и перенести его реальные размеры."
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        }
+      ],
+      "concept_size_mm": [
+        442,
+        330,
+        150
+      ]
+    },
+    "ELE": {
+      "id": "ELE",
+      "name": "Шкаф управления",
+      "status": "custom",
+      "description": "Собирается из покупного корпуса, датчиков, автоматики и силовых устройств после разработки схемы.",
+      "requirements": [
+        "Корпус 100×120×150 мм — показанный резерв, достаточность не подтверждена.",
+        "Питание, токи, независимая защитная цепь, давление/температура/уровень и автозапуск ещё не специфицированы."
+      ],
+      "links": [
+        {
+          "title": "TME Finland · корпуса, автоматика, крепёж",
+          "url": "https://www.tme.eu/fi/katalog/",
+          "kind": "catalogue",
+          "markets": [
+            "FI",
+            "EU"
+          ],
+          "note": "Изделия выбираются после схемы управления."
+        },
+        {
+          "title": "ОВЕН · промышленная автоматика и датчики",
+          "url": "https://files.owen.ru/catalog/",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Диапазоны и независимая защита ещё не определены."
+        }
+      ],
+      "concept_size_mm": [
+        100,
+        120,
+        150
+      ]
+    },
+    "MOTOR": {
+      "id": "MOTOR",
+      "name": "Привод Cat Pumps · мотор / редуктор",
+      "status": "choice",
+      "description": "Готовый мотор и передача пока не выбраны; показанная форма условная.",
+      "requirements": [
+        "Подобрать по реальной мощности насоса, оборотам, напряжению, режиму работы и пусковым токам.",
+        "Заменить условный габарит CAD выбранного двигателя."
+      ],
+      "links": [
+        {
+          "title": "WEG · двигатели W22, каталог поставщика",
+          "url": "https://weg-russia.ru/catalog/w22",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": ""
+        },
+        {
+          "title": "WEG · W22, европейские исполнения",
+          "url": "https://static.weg.net/medias/downloadcenter/h6b/h66/WEG-w22-three-phase-induction-motors-european-market-50025712-brochure-english-web.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": ""
+        },
+        {
+          "title": "TME Finland · корпуса, автоматика, крепёж",
+          "url": "https://www.tme.eu/fi/katalog/",
+          "kind": "catalogue",
+          "markets": [
+            "FI",
+            "EU"
+          ],
+          "note": "Изделия выбираются после схемы управления."
+        }
+      ],
+      "concept_size_mm": [
+        265,
+        131,
+        165
+      ]
+    },
+    "BOOST": {
+      "id": "BOOST",
+      "name": "Подпорный насос, фильтр и арматура",
+      "status": "choice",
+      "description": "Готовый подпорный насос и фильтр подбираются по горячему входу Cat, не по внешнему сходству.",
+      "requirements": [
+        "Проверить температуру около 78 °C, расход, напор, кавитационный запас и потери фильтра.",
+        "Показанный небольшой резерв не означает, что насос Grundfos в него поместится."
+      ],
+      "links": [
+        {
+          "title": "Grundfos · CME, запрос исполнения",
+          "url": "https://www.grundfos.com/gb/en/products/products/cm-cme/cme",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Промышленная серия; размеры и рабочая точка ещё не выбраны."
+        },
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        92,
+        201,
+        79
+      ]
+    },
+    "SEP": {
+      "id": "SEP",
+      "name": "Приёмник сброса · резерв",
+      "status": "custom",
+      "description": "Условный приёмник аварийного сброса; сепаратор влаги в рабочем паропроводе не является заменой.",
+      "requirements": [
+        "Требуется расчёт двухфазного сброса, отвода тепла, безопасного выхода и полного расхода.",
+        "Предохранительный клапан выбирается по утверждённому парогенератору."
+      ],
+      "links": [
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        },
+        {
+          "title": "Spirax Sarco · предохранительные клапаны",
+          "url": "https://www.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/sb/safety-valves-overview-sb-s13-60-en.ashx?rev=c0693952348948d09c9afc4ff94e3a3e",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Каталог для подбора, не выбранный клапан."
+        }
+      ],
+      "concept_size_mm": [
+        110,
+        110,
+        240
+      ]
+    },
+    "MOUNTS": {
+      "id": "MOUNTS",
+      "name": "Рамы, опорные площадки и крепёж",
+      "status": "custom",
+      "description": "Рамы и крепления проектируются по нагрузкам и реальным силовым точкам кузова.",
+      "requirements": [
+        "Опоры в 3D касаются игрового пола; это не доказательство прочности крепления.",
+        "Сечения, марка, болты, изоляторы, усталость и сварка ещё не рассчитаны."
+      ],
+      "links": [
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        },
+        {
+          "title": "TME Finland · корпуса, автоматика, крепёж",
+          "url": "https://www.tme.eu/fi/katalog/",
+          "kind": "catalogue",
+          "markets": [
+            "FI",
+            "EU"
+          ],
+          "note": "Изделия выбираются после схемы управления."
+        }
+      ],
+      "concept_size_mm": [
+        3280,
+        1155,
+        543.46
+      ]
+    },
+    "SHIELD": {
+      "id": "SHIELD",
+      "name": "Защитные перегородки · требуется разработка",
+      "status": "custom",
+      "description": "Тепловые и пожарные перегородки из листа и специализированной изоляции по расчёту.",
+      "requirements": [
+        "Проверить температуры, зазоры, герметичность и прохождение труб.",
+        "Показанные плоскости не задают проверенную огнестойкость конструкции."
+      ],
+      "links": [
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        }
+      ],
+      "concept_size_mm": [
+        580,
+        1200,
+        987
+      ]
+    },
+    "ADAPTER": {
+      "id": "ADAPTER",
+      "name": "Муфта к штатной КПП · проект",
+      "status": "custom",
+      "description": "Сопряжение паровой машины со штатной КПП — отдельный проект муфты и адаптера.",
+      "requirements": [
+        "Нужны соосность, реальные валы, момент, вибрация, крепление и передаточное отношение.",
+        "Каталог муфт не заменяет расчёт автомобильного привода."
+      ],
+      "links": [
+        {
+          "title": "MISUMI · конфигуратор муфт",
+          "url": "https://de.misumi-ec.com/vona2/mech/M1000000000/M1001000000/M1001070000/",
+          "kind": "catalogue",
+          "markets": [
+            "EU"
+          ],
+          "note": "Тип, диаметр и допустимый момент не выбраны."
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        }
+      ],
+      "concept_size_mm": [
+        30,
+        160,
+        160
+      ]
+    },
+    "DUCTS": {
+      "id": "DUCTS",
+      "name": "Воздуховоды внутри задних боковин",
+      "status": "custom",
+      "description": "Воздуховоды изготавливаются после подтверждения схемы охлаждения.",
+      "requirements": [
+        "Свободное сечение текущего варианта недостаточно подтверждено для отвода 358 кВт.",
+        "Нужны аэродинамика, водоотвод, защита от горячих зон и доступ к ремонту."
+      ],
+      "links": [
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту."
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация."
+        },
+        {
+          "title": "ebm-papst · осевые вентиляторы",
+          "url": "https://www.ebmpapst.com/de/en/products/axial-fans.html",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": ""
+        }
+      ],
+      "concept_size_mm": [
+        490,
+        1140,
+        170
+      ]
+    },
+    "PIPE_STEAM": {
+      "id": "PIPE_STEAM",
+      "name": "Пар · генератор → машина",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 40 / OD 48 мм; стенка 4 мм.",
+        "Ось трассы 0,83 м; минимальный радиус 90 мм.",
+        "ArmaGel HT 30 мм + кожух 0,6 мм; полный Ø 109,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        }
+      ],
+      "concept_size_mm": [
+        592.91,
+        424.65,
+        551.66
+      ]
+    },
+    "PIPE_EXHAUST_R": {
+      "id": "PIPE_EXHAUST_R",
+      "name": "Отработанный пар → правый конденсатор",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 70 / OD 80 мм; стенка 5 мм.",
+        "Ось трассы 0,24 м; минимальный радиус 120 мм.",
+        "ArmaGel HT 15 мм + кожух 0,6 мм; полный Ø 111,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        }
+      ],
+      "concept_size_mm": [
+        172.32,
+        275.96,
+        195.53
+      ]
+    },
+    "PIPE_EXHAUST_L": {
+      "id": "PIPE_EXHAUST_L",
+      "name": "Отработанный пар → левый конденсатор",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 70 / OD 80 мм; стенка 5 мм.",
+        "Ось трассы 0,24 м; минимальный радиус 120 мм.",
+        "ArmaGel HT 15 мм + кожух 0,6 мм; полный Ø 111,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        }
+      ],
+      "concept_size_mm": [
+        172.32,
+        275.96,
+        195.53
+      ]
+    },
+    "PIPE_RETURN": {
+      "id": "PIPE_RETURN",
+      "name": "Конденсат → питательный резервуар",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 18 / OD 24 мм; стенка 3 мм.",
+        "Ось трассы 3,58 м; минимальный радиус 40 мм.",
+        "ArmaGel HT 5 мм + кожух 0,6 мм; полный Ø 35,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Swagelok · шланги и гибкие трубки",
+          "url": "https://products.swagelok.com/en/all-products/hoses-flexible-tubing/c/700?plp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Исполнение для конкретной среды, давления и температуры не выбрано.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        2674.14,
+        912.78,
+        513.84
+      ]
+    },
+    "PIPE_BALANCE": {
+      "id": "PIPE_BALANCE",
+      "name": "Сбор конденсата из левого блока",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 18 / OD 24 мм; стенка 3 мм.",
+        "Ось трассы 0,93 м; минимальный радиус 40 мм.",
+        "ArmaGel HT 5 мм + кожух 0,6 мм; полный Ø 35,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Swagelok · шланги и гибкие трубки",
+          "url": "https://products.swagelok.com/en/all-products/hoses-flexible-tubing/c/700?plp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Исполнение для конкретной среды, давления и температуры не выбрано.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        96.6,
+        855.2,
+        45.2
+      ]
+    },
+    "PIPE_MAKEUP": {
+      "id": "PIPE_MAKEUP",
+      "name": "Холодная подпитка → приёмник",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 14 / OD 20 мм; стенка 3 мм.",
+        "Ось трассы 0,21 м; минимальный радиус 30 мм.",
+        "ArmaGel HT 0 мм + кожух 0 мм; полный Ø 20 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Swagelok · шланги и гибкие трубки",
+          "url": "https://products.swagelok.com/en/all-products/hoses-flexible-tubing/c/700?plp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Исполнение для конкретной среды, давления и температуры не выбрано.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        94,
+        140,
+        30
+      ]
+    },
+    "PIPE_SUCTION": {
+      "id": "PIPE_SUCTION",
+      "name": "Приёмник → подпор → Cat Pumps",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 20 / OD 26 мм; стенка 3 мм.",
+        "Ось трассы 3,29 м; минимальный радиус 40 мм.",
+        "ArmaGel HT 5 мм + кожух 0,6 мм; полный Ø 37,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Swagelok · шланги и гибкие трубки",
+          "url": "https://products.swagelok.com/en/all-products/hoses-flexible-tubing/c/700?plp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Исполнение для конкретной среды, давления и температуры не выбрано.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        1368,
+        807.2,
+        582.6
+      ]
+    },
+    "PIPE_FEED": {
+      "id": "PIPE_FEED",
+      "name": "Питательная вода → генератор",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 14 / OD 20 мм; стенка 3 мм.",
+        "Ось трассы 1,34 м; минимальный радиус 35 мм.",
+        "ArmaGel HT 5 мм + кожух 0,6 мм; полный Ø 31,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Swagelok · шланги и гибкие трубки",
+          "url": "https://products.swagelok.com/en/all-products/hoses-flexible-tubing/c/700?plp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Исполнение для конкретной среды, давления и температуры не выбрано.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        504.6,
+        581,
+        231.2
+      ]
+    },
+    "PIPE_FUEL": {
+      "id": "PIPE_FUEL",
+      "name": "Топливо → фильтр → горелка",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 8 / OD 12 мм; стенка 2 мм.",
+        "Ось трассы 1,13 м; минимальный радиус 25 мм.",
+        "ArmaGel HT 0 мм + кожух 0 мм; полный Ø 12 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Swagelok · шланги и гибкие трубки",
+          "url": "https://products.swagelok.com/en/all-products/hoses-flexible-tubing/c/700?plp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Исполнение для конкретной среды, давления и температуры не выбрано.",
+          "layer": "pipe"
+        }
+      ],
+      "concept_size_mm": [
+        152.64,
+        667.05,
+        222.63
+      ]
+    },
+    "PIPE_FLUE": {
+      "id": "PIPE_FLUE",
+      "name": "Дымовой канал → задний выпуск",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 160 / OD 162 мм; стенка 1 мм.",
+        "Ось трассы 1,57 м; минимальный радиус 245 мм.",
+        "ArmaGel HT 60 мм + кожух 0,6 мм; полный Ø 283,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        }
+      ],
+      "concept_size_mm": [
+        1268,
+        443.2,
+        1053.2
+      ]
+    },
+    "PIPE_RELIEF": {
+      "id": "PIPE_RELIEF",
+      "name": "Сброс → условный приёмный сепаратор",
+      "status": "custom",
+      "description": "Трасса собирается из подобранных труб/отводов, арматуры, опор и изоляции.",
+      "requirements": [
+        "ID 20 / OD 28 мм; стенка 4 мм.",
+        "Ось трассы 1,05 м; минимальный радиус 60 мм.",
+        "ArmaGel HT 30 мм + кожух 0,6 мм; полный Ø 89,2 мм.",
+        "Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны."
+      ],
+      "links": [
+        {
+          "title": "Swagelok · трубки и принадлежности",
+          "url": "https://products.swagelok.com/en/all-products/tubing-tube-accessories/tubing/c/811?clp=true",
+          "kind": "catalogue",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Точные OD/ID проекта могут отсутствовать в каталоге.",
+          "layer": "pipe"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "Марка и сечение подбираются по расчёту.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Каталог, не выбранная спецификация.",
+          "layer": "pipe"
+        },
+        {
+          "title": "Изотех · ArmaGel HT, купить маты",
+          "url": "https://www.izoteh.pro/vspenennyy-kauchuk/armacell/armagel-ht",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "Подобрать толщины слоёв и количество.",
+          "layer": "insulation"
+        },
+        {
+          "title": "Armacell · ArmaGel HT и поставщики",
+          "url": "https://www.armacell.com/en-US/contact-sales-and-support-teams",
+          "kind": "inquiry",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Запросить поставщика для Финляндии / ЕС.",
+          "layer": "insulation"
+        },
+        {
+          "title": "ArmaGel HT · технические данные",
+          "url": "https://www.armacell.com/sites/default/files/2026/01/09/ArmaGel%20HT%20-%20Technical%20Datasheet%20-%20ru-RU.pdf",
+          "kind": "documentation",
+          "markets": [
+            "ALL"
+          ],
+          "note": "Используемый в проекте материал.",
+          "layer": "insulation"
+        },
+        {
+          "title": "BE Group · листы, трубы и профили · защитный лист",
+          "url": "https://www.begroup.fi/tuotteet",
+          "kind": "material",
+          "markets": [
+            "FI"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        },
+        {
+          "title": "Inoxpoint · металлопрокат и фитинги · защитный лист",
+          "url": "https://www.inoxpoint.ru/",
+          "kind": "material",
+          "markets": [
+            "RU"
+          ],
+          "note": "В модели кожух 0,6 мм; марка, швы и крепление не выбраны.",
+          "layer": "jacket"
+        }
+      ],
+      "concept_size_mm": [
+        183.6,
+        709.2,
+        403.6
+      ]
+    },
+    "WIRE": {
+      "id": "WIRE",
+      "name": "Управление · шкаф → приборная панель",
+      "status": "custom",
+      "description": "Показана трасса жгута, а не спецификация проводов.",
+      "requirements": [
+        "Наружный Ø оболочки 12 мм; ось 2,53 м; радиус 30 мм.",
+        "Диаметр оболочки не задаёт сечение проводников; питание и токи ещё не рассчитаны."
+      ],
+      "links": [
+        {
+          "title": "TME Finland · провода и кабели",
+          "url": "https://www.tme.eu/fi/katalog/johdot-ja-kaapelit_112533/",
+          "kind": "material",
+          "markets": [
+            "FI",
+            "EU"
+          ],
+          "note": "Сечение, ток, температура и разъёмы по электрической схеме."
+        },
+        {
+          "title": "OEM Finland · промышленные кабели",
+          "url": "https://www.oem.fi/tuotteet/kaapeli/kaapelit",
+          "kind": "catalogue",
+          "markets": [
+            "FI"
+          ],
+          "note": "Не считать любой кабель термостойким."
+        },
+        {
+          "title": "ОВЕН · промышленная автоматика и датчики",
+          "url": "https://files.owen.ru/catalog/",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Диапазоны и независимая защита ещё не определены."
+        }
+      ],
+      "concept_size_mm": [
+        985.23,
+        894.32,
+        437.66
+      ]
+    },
+    "WIRE_ENGINE": {
+      "id": "WIRE_ENGINE",
+      "name": "Управление · шкаф → датчики генератора",
+      "status": "custom",
+      "description": "Показана трасса жгута, а не спецификация проводов.",
+      "requirements": [
+        "Наружный Ø оболочки 12 мм; ось 2,67 м; радиус 30 мм.",
+        "Диаметр оболочки не задаёт сечение проводников; питание и токи ещё не рассчитаны."
+      ],
+      "links": [
+        {
+          "title": "TME Finland · провода и кабели",
+          "url": "https://www.tme.eu/fi/katalog/johdot-ja-kaapelit_112533/",
+          "kind": "material",
+          "markets": [
+            "FI",
+            "EU"
+          ],
+          "note": "Сечение, ток, температура и разъёмы по электрической схеме."
+        },
+        {
+          "title": "OEM Finland · промышленные кабели",
+          "url": "https://www.oem.fi/tuotteet/kaapeli/kaapelit",
+          "kind": "catalogue",
+          "markets": [
+            "FI"
+          ],
+          "note": "Не считать любой кабель термостойким."
+        },
+        {
+          "title": "ОВЕН · промышленная автоматика и датчики",
+          "url": "https://files.owen.ru/catalog/",
+          "kind": "catalogue",
+          "markets": [
+            "RU"
+          ],
+          "note": "Диапазоны и независимая защита ещё не определены."
+        }
+      ],
+      "concept_size_mm": [
+        682,
+        747,
+        622
+      ]
+    }
+  }
+}

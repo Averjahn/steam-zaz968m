@@ -1,0 +1,6 @@
+import { loadPurchases,renderPurchaseCard } from './component-purchases.js';
+const list=document.getElementById('procurementList'),search=document.getElementById('procurementSearch'),market=document.getElementById('procurementMarket'),result=document.getElementById('procurementCount');
+try{const data=await loadPurchases();document.getElementById('procurementPolicy').textContent=data.policy;
+ function render(){list.replaceChildren();const query=search.value.trim().toLocaleLowerCase('ru');let count=0;for(const record of Object.values(data.components)){if(query&&!JSON.stringify(record).toLocaleLowerCase('ru').includes(query))continue;const article=document.createElement('article');article.className='procurement-entry';article.id='part-'+record.id;const heading=document.createElement('h2');heading.textContent=record.id+' · '+record.name;const content=document.createElement('div');article.append(heading,content);renderPurchaseCard(content,record,{market:market.value,checked:data.checked_on});list.append(article);count++;}result.textContent='Показано '+count+' из '+Object.keys(data.components).length+' узлов.';}
+ search.addEventListener('input',render);market.addEventListener('change',render);render();if(location.hash)document.querySelector(location.hash)?.scrollIntoView();
+}catch(e){result.textContent='Не удалось загрузить реестр: '+e.message;}

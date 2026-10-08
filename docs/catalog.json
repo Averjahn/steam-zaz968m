@@ -112,6 +112,13 @@
     "size": 19978
   },
   {
+    "path": "build_procurement.py",
+    "title": "Генератор реестра комплектующих",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 21152
+  },
+  {
     "path": "build_reconstruction.py",
     "title": "Генератор кузова по фотографиям",
     "category": "Исходники",
@@ -130,7 +137,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 31738
+    "size": 33058
   },
   {
     "path": "build_stock_suspension.py",
@@ -201,6 +208,13 @@
     "category": "Документы",
     "format": "PDF",
     "size": 1014099
+  },
+  {
+    "path": "component-purchases.json",
+    "title": "Комплектующие · ссылки на покупку и материалы",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 82679
   },
   {
     "path": "convert_cad.js",
@@ -550,7 +564,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 25329
+    "size": 26753
   },
   {
     "path": "user-model.html",
@@ -712,6 +726,13 @@
     "category": "Проверки",
     "format": "JSON",
     "size": 41705
+  },
+  {
+    "path": "procurement.html",
+    "title": "Комплектующие · покупка и изготовление",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 3070
   },
   {
     "path": "piping.html",
