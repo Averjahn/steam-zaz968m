@@ -22,7 +22,7 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     digest=hashlib.sha256((OUT/'packaging-audit.js').read_bytes()).hexdigest()[:12]
     s=(OUT/'assembly.js').read_text().replace("'./packaging-audit.js'","'./packaging-audit.js?v="+digest+"'")
@@ -65,6 +65,8 @@ def main():
         'verify.py': 'Проверки расчётной модели', 'build_geometry.py': 'Генерация 3D и компоновочных чертежей',
         'build_diagrams.py': 'Генерация схем и панели', 'build_report.py': 'Генерация отчёта',
         'build_viewer.py': 'Генерация интерактивной модели', 'build_site.py': 'Сборка этого сайта',
+        'build_user_body.py': 'Преобразование пользовательского архива FBX/ZIP',
+        'build_user_body.mjs': 'Преобразование предоставленного FBX в GLB',
         'build_stock_suspension.py': 'Генератор штатной подвески · предварительная геометрия',
         'build_reconstruction.py': 'Генератор кузова по фотографиям',
         'build_cad_assets.py': 'Преобразование заводского CAD в GLB',
@@ -123,7 +125,7 @@ def main():
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
@@ -138,16 +140,21 @@ def main():
     photos=''.join('<figure><img loading="lazy" src="models/'+r['file']+'" alt="'+escape(r['notes'],quote=True)+'"><figcaption>'+escape(r['notes'])+'<br>'+escape(r['author'])+' · <a href="'+r['license_url']+'">'+escape(r['license'])+'</a><br><a href="'+r['source']+'" target="_blank" rel="noopener">Страница автора и оригинал ↗</a></figcaption></figure>' for r in reconstruction['references'])
     registration=reconstruction['photo_registration']
     (OUT/'reconstruction.html').write_text(page('reconstruction.html','Кузов по фотографиям — ЗАЗ / STEAM','Параметрическая реконструкция ЗАЗ-968М: модель, фотографии, происхождение размеров и ограничения точности.',PARAMETER_ROWS=dimension_rows,PHOTOS=photos,SIDE_SOURCE=reconstruction['references'][0]['source'],SCALE_SUBSTITUTION=registration['substitution'],OVERHANG=registration['projected_front_overhang_mm'],PHOTO_LENGTH=registration['projected_length_mm']))
+    user_model=json.loads((ROOT/'models/zaz-968m-yatloo.json').read_text())
+    user_audit=json.loads((ROOT/'user-body-audit.json').read_text())
+    user_conflicts=''.join('<tr><td>'+escape(p['id']+' · '+p['name'])+'</td><td>'+escape(', '.join(p['body_intersections']).replace('_',' '))+'</td></tr>' for p in user_audit.get('cases',{}).get('revised',{}).get('parts',[]) if p['body_intersections'])
+    (OUT/'user-model.html').write_text(page('user-model.html','Ваша модель ЗАЗ-968М — ЗАЗ / STEAM','Модель yatloo из предоставленного FBX, масштаб по базе, внутренние панели и проверка пересечений.',USER_SCALE=user_model['registration']['substitution'],USER_DIMENSIONS=' × '.join(fmt(v) for v in user_model['size_mm']),USER_CONFLICT_ROWS=user_conflicts))
     packing=json.loads((ROOT/'packaging-audit.json').read_text())
     revised=json.loads((ROOT/'layout-revised.json').read_text())
     comparison_rows=''.join('<tr><td>'+label+'</td><td>'+(', '.join(packing['cases'][key]['summary']['body_conflicts']) or 'Нет')+'</td><td>'+(', '.join(' / '.join(pair) for pair in packing['cases'][key]['summary']['unplanned_envelope_overlaps']) or 'Нет')+'</td><td>'+(', '.join(packing['cases'][key]['summary']['stock_conflicts']) or 'Нет')+'</td></tr>' for key,label in [('original','Исходный задний блок'),('vw','Прежний крупный блок по примеру VW'),('revised','Переработанный вариант')])
     actual={p['id']:p for p in packing['cases']['revised']['parts']}
     packing_parts=[*revised['parts'],{'id':'PMP','name':'Cat Pumps 5CP2120W','xyz':revised['pump_xyz'],'size':[259.25,254,146.2],'role':'Заводской CAD перенесён над водяным баком. Мотор, кронштейн и фитинги требуют места.'}]
     placement_rows=''.join('<tr><td>'+p['id']+' · '+escape(p['name'])+'</td><td>'+' × '.join(fmt(v,2).removesuffix(',00') for v in p['size'])+'</td><td>'+' × '.join(fmt(v,1).removesuffix(',0') for v in actual[p['id']]['size_mm'])+'</td><td>'+' / '.join(fmt(v,0) for v in actual[p['id']]['min_xyz_mm'])+'</td><td>'+escape(p['role'])+'</td></tr>' for p in packing_parts)
-    (OUT/'packaging.html').write_text(page('packaging.html','Переработанная компоновка — ЗАЗ / STEAM','Округлый кузов, новая расстановка агрегатов, проверка пересечений и компоновочный чертёж.',COMPARISON_ROWS=comparison_rows,PLACEMENT_ROWS=placement_rows,OPEN_ISSUES=''.join('<li>'+escape(t)+'</li>' for t in revised['open_issues'])))
+    (OUT/'packaging.html').write_text(page('packaging.html','Переработанная компоновка — ЗАЗ / STEAM','Округлый кузов, новая расстановка агрегатов, проверка пересечений и компоновочный чертёж.',USER_CONFLICT_ROWS=user_conflicts,COMPARISON_ROWS=comparison_rows,PLACEMENT_ROWS=placement_rows,OPEN_ISSUES=''.join('<li>'+escape(t)+'</li>' for t in revised['open_issues'])))
     for path, title, cat in [
         ('calculations.html', 'Формулы, подстановки и сверка компонентов', 'Расчёты'),
         ('assembly.html', '3D-сборка: реконструкция кузова и агрегаты', '3D'),
+        ('user-model.html', 'Ваша модель · масштаб, панели и конфликты', 'Документы'),
         ('packaging.html', 'Новая расстановка · зазоры и открытые вопросы', '3D'),
         ('reconstruction.html', 'Кузов по фотографиям: источники и точность', 'Документы'),
         ('models/zaz-968m-reconstructed.glb', 'ЗАЗ-968М · приближённая реконструкция GLB', '3D'),
@@ -165,6 +172,11 @@ def main():
         ('models/stock-suspension.mtl', 'Материалы подвески', '3D'),
         ('models/stock-suspension.json', 'Подвеска · источники и допущения', 'Документы'),
         ('models/stock-suspension-checks.json', 'Подвеска · проверка сетки', 'Проверки'),
+        ('models/zaz-968m-yatloo.glb', 'Ваша модель ЗАЗ-968М / yatloo · GLB', '3D'),
+        ('models/user-model-checks.json', 'Ваша модель · проверка геометрии и привязки', 'Проверки'),
+        ('models/user-model-browser-checks.json', 'Ваша модель · проверки интерфейса и экспорта', 'Проверки'),
+        ('models/zaz-968m-yatloo.json', 'Ваша модель · привязка и ограничения', 'Документы'),
+        ('user-body-audit.json', 'Ваша модель · проверка трёх компоновок', 'Проверки'),
         ('models/registry.json', 'Происхождение и точность моделей', 'Документы')]:
         p = OUT / path
         records.append({'path': path, 'title': title, 'category': cat, 'format': p.suffix[1:].upper(), 'size': p.stat().st_size})

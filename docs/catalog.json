@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 8715
+    "size": 9504
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -88,14 +88,14 @@
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 78998
+    "size": 80140
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 24471
+    "size": 26426
   },
   {
     "path": "build_stock_suspension.py",
@@ -103,6 +103,20 @@
     "category": "Исходники",
     "format": "PY",
     "size": 12512
+  },
+  {
+    "path": "build_user_body.mjs",
+    "title": "Преобразование предоставленного FBX в GLB",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 3055
+  },
+  {
+    "path": "build_user_body.py",
+    "title": "Преобразование пользовательского архива FBX/ZIP",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 1286
   },
   {
     "path": "build_viewer.py",
@@ -228,14 +242,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 202891
+    "size": 204030
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 222052
+    "size": 222667
   },
   {
     "path": "requirements.txt",
@@ -278,6 +292,13 @@
     "category": "Расчёты",
     "format": "CSV",
     "size": 2939
+  },
+  {
+    "path": "user-body-audit.json",
+    "title": "user-body-audit.json",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 41705
   },
   {
     "path": "verification.json",
@@ -410,21 +431,28 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 21531
+    "size": 23111
+  },
+  {
+    "path": "user-model.html",
+    "title": "Ваша модель · масштаб, панели и конфликты",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 9778
   },
   {
     "path": "packaging.html",
     "title": "Новая расстановка · зазоры и открытые вопросы",
     "category": "3D",
     "format": "HTML",
-    "size": 17653
+    "size": 20191
   },
   {
     "path": "reconstruction.html",
     "title": "Кузов по фотографиям: источники и точность",
     "category": "Документы",
     "format": "HTML",
-    "size": 22527
+    "size": 22899
   },
   {
     "path": "models/zaz-968m-reconstructed.glb",
@@ -532,10 +560,45 @@
     "size": 395
   },
   {
+    "path": "models/zaz-968m-yatloo.glb",
+    "title": "Ваша модель ЗАЗ-968М / yatloo · GLB",
+    "category": "3D",
+    "format": "GLB",
+    "size": 9868984
+  },
+  {
+    "path": "models/user-model-checks.json",
+    "title": "Ваша модель · проверка геометрии и привязки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 656
+  },
+  {
+    "path": "models/user-model-browser-checks.json",
+    "title": "Ваша модель · проверки интерфейса и экспорта",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 7187
+  },
+  {
+    "path": "models/zaz-968m-yatloo.json",
+    "title": "Ваша модель · привязка и ограничения",
+    "category": "Документы",
+    "format": "JSON",
+    "size": 19723
+  },
+  {
+    "path": "user-body-audit.json",
+    "title": "Ваша модель · проверка трёх компоновок",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 41705
+  },
+  {
     "path": "models/registry.json",
     "title": "Происхождение и точность моделей",
     "category": "Документы",
     "format": "JSON",
-    "size": 5263
+    "size": 26399
   }
 ]

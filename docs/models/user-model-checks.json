@@ -1,0 +1,25 @@
+{
+  "scope": "Generated asset checks, not validation of real-car dimensions",
+  "nodes": 106,
+  "triangles": 52947,
+  "glb_sha256": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+  "standard_glb_metres_y_up": true,
+  "wheelbase_mm": 2160,
+  "size_mm": [
+    3640.7313495874405,
+    1493.9361214637756,
+    1420.0059872846928
+  ],
+  "glass_materials_transparent": true,
+  "source_archive_sha256": "237a7f4e77ce4f3bea11a738f21da1477d03218bba6d52f0f58df3db5ab7a83a",
+  "audit_body_hash_matches": true,
+  "pages_and_local_links_valid": true,
+  "conflicts_reported": [
+    "WTR",
+    "ELE",
+    "GBX",
+    "ENG",
+    "FUE",
+    "BRN"
+  ]
+}

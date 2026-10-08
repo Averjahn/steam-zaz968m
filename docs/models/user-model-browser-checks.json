@@ -1,0 +1,335 @@
+{
+  "checks": [
+    {
+      "name": "Provided model opens by default",
+      "ok": true
+    },
+    {
+      "name": "106 meshes, rear seat and four redundant source chassis nodes hidden",
+      "ok": true
+    },
+    {
+      "name": "50 stock nodes retained",
+      "ok": true
+    },
+    {
+      "name": "Mouse control preference retained",
+      "ok": true
+    },
+    {
+      "name": "Uniform calibrated model dimensions",
+      "ok": true,
+      "value": "Габарит в текущих осях: 3 640,73 × 1 493,94 × 1 420,01 мм"
+    },
+    {
+      "name": "Provided body registration and scale locked",
+      "ok": true
+    },
+    {
+      "name": "Geometry retains triangles and UVs",
+      "ok": true,
+      "value": {
+        "centers": {
+          "front": [
+            674.9999821186066,
+            5.684341886080802e-14,
+            306.3748726258115
+          ],
+          "rear": [
+            2835.0000381469727,
+            5.684341886080802e-14,
+            314.84458362683654
+          ]
+        },
+        "glazing": {
+          "Plane164": true,
+          "Plane155": true,
+          "Plane150": true,
+          "Plane151": true,
+          "Plane137": true,
+          "Plane007": true
+        },
+        "triangles": 52947,
+        "meshes": 106,
+        "finite": true,
+        "allUV": true,
+        "materials": [
+          {
+            "name": "yatloo atlas · UVMap.001",
+            "metal": 0.15
+          },
+          {
+            "name": "glass · presentation opacity",
+            "mode": "BLEND",
+            "metal": 0.05
+          }
+        ],
+        "embedded_images": 2
+      }
+    },
+    {
+      "name": "Actual loaded tyre meshes align with both documented axles",
+      "ok": true,
+      "value": {
+        "front": [
+          674.9999821186066,
+          5.684341886080802e-14,
+          306.3748726258115
+        ],
+        "rear": [
+          2835.0000381469727,
+          5.684341886080802e-14,
+          314.84458362683654
+        ]
+      }
+    },
+    {
+      "name": "Every glass mesh, including rear quarter, is transparent",
+      "ok": true,
+      "value": {
+        "Plane164": true,
+        "Plane155": true,
+        "Plane150": true,
+        "Plane151": true,
+        "Plane137": true,
+        "Plane007": true
+      }
+    },
+    {
+      "name": "Textures embedded, glass transparent",
+      "ok": true,
+      "value": [
+        {
+          "name": "yatloo atlas · UVMap.001",
+          "metal": 0.15
+        },
+        {
+          "name": "glass · presentation opacity",
+          "mode": "BLEND",
+          "metal": 0.05
+        }
+      ]
+    },
+    {
+      "name": "STM component size retained",
+      "ok": true
+    },
+    {
+      "name": "ENG component size retained",
+      "ok": true
+    },
+    {
+      "name": "WTR component size retained",
+      "ok": true
+    },
+    {
+      "name": "FUE component size retained",
+      "ok": true
+    },
+    {
+      "name": "ELE component size retained",
+      "ok": true
+    },
+    {
+      "name": "CND component size retained",
+      "ok": true
+    },
+    {
+      "name": "BRN component size retained",
+      "ok": true
+    },
+    {
+      "name": "PMP component size retained",
+      "ok": true
+    },
+    {
+      "name": "Placement records supplied source and stock alignment",
+      "ok": true
+    },
+    {
+      "name": "All three stock geometry groups registered to tyre height",
+      "ok": true
+    },
+    {
+      "name": "Audit identifies current supplied mesh",
+      "ok": true
+    },
+    {
+      "name": "New body conflicts exposed instead of old clearance claim",
+      "ok": true,
+      "value": {
+        "stock_conflicts": [],
+        "stock_gaps_under_screen": [],
+        "body_conflicts": [
+          "WTR",
+          "ELE",
+          "GBX",
+          "ENG",
+          "FUE",
+          "BRN"
+        ],
+        "unplanned_envelope_overlaps": [],
+        "body_gaps_under_screen": [
+          {
+            "id": "WTR",
+            "gap_mm": 0
+          },
+          {
+            "id": "ELE",
+            "gap_mm": 0
+          },
+          {
+            "id": "ENG",
+            "gap_mm": 0
+          },
+          {
+            "id": "FUE",
+            "gap_mm": 0
+          },
+          {
+            "id": "RCV",
+            "gap_mm": 20.8
+          },
+          {
+            "id": "BRN",
+            "gap_mm": 0
+          }
+        ],
+        "component_gaps_under_screen": []
+      }
+    },
+    {
+      "name": "Stock checked separately with no static collision",
+      "ok": true
+    },
+    {
+      "name": "Receiver close gap reported",
+      "ok": true
+    },
+    {
+      "name": "Assembly GLB metres/Y up with supplied shape",
+      "ok": true,
+      "value": {
+        "size": [
+          3.6407313495874405,
+          1.6099999505262699,
+          1.4939361214637756
+        ],
+        "sourceMeshes": 101
+      }
+    },
+    {
+      "name": "Only currently visible source nodes exported",
+      "ok": true,
+      "value": 101
+    },
+    {
+      "name": "Source interior preset uses FBX surfaces",
+      "ok": true
+    },
+    {
+      "name": "Individual source node hides",
+      "ok": true
+    },
+    {
+      "name": "Multi-axis section UI works",
+      "ok": true
+    },
+    {
+      "name": "Legacy body remains selectable",
+      "ok": true
+    },
+    {
+      "name": "Switch resets stock registration, no accumulated shift",
+      "ok": true
+    },
+    {
+      "name": "Supplied body restores source nodes and seat policy",
+      "ok": true
+    },
+    {
+      "name": "Original layout restores source rear seat",
+      "ok": true
+    },
+    {
+      "name": "Manual GLB imports in correct units",
+      "ok": true
+    },
+    {
+      "name": "Restore selects supplied body after manual import",
+      "ok": true
+    },
+    {
+      "name": "user-model template complete",
+      "ok": true
+    },
+    {
+      "name": "user-model lists new body conflicts",
+      "ok": true
+    },
+    {
+      "name": "packaging template complete",
+      "ok": true
+    },
+    {
+      "name": "packaging lists new body conflicts",
+      "ok": true
+    },
+    {
+      "name": "reconstruction template complete",
+      "ok": true
+    },
+    {
+      "name": "Mobile body selector and canvas load",
+      "ok": true
+    },
+    {
+      "name": "Mobile page fits viewport",
+      "ok": true
+    },
+    {
+      "name": "No browser exceptions",
+      "ok": true,
+      "value": []
+    }
+  ],
+  "errors": [],
+  "source_geometry": {
+    "centers": {
+      "front": [
+        674.9999821186066,
+        5.684341886080802e-14,
+        306.3748726258115
+      ],
+      "rear": [
+        2835.0000381469727,
+        5.684341886080802e-14,
+        314.84458362683654
+      ]
+    },
+    "glazing": {
+      "Plane164": true,
+      "Plane155": true,
+      "Plane150": true,
+      "Plane151": true,
+      "Plane137": true,
+      "Plane007": true
+    },
+    "triangles": 52947,
+    "meshes": 106,
+    "finite": true,
+    "allUV": true,
+    "materials": [
+      {
+        "name": "yatloo atlas · UVMap.001",
+        "metal": 0.15
+      },
+      {
+        "name": "glass · presentation opacity",
+        "mode": "BLEND",
+        "metal": 0.05
+      }
+    ],
+    "embedded_images": 2
+  }
+}

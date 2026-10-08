@@ -5,7 +5,7 @@
     "source": "https://sketchfab.com/3d-models/zaz-968m-d5a9fb0bca914635b3d7eefb48aa27cd",
     "embed": "https://sketchfab.com/models/d5a9fb0bca914635b3d7eefb48aa27cd/embed",
     "license": "CC BY 4.0 — Creative Commons Attribution 4.0",
-    "status": "Авторская Sketchfab-модель не получена: API требует авторизации. В сборке автоматически открывается отдельная параметрическая реконструкция проекта по фотографиям; это другой файл, не модель Bydosia.",
+    "status": "Модель Bydosia остаётся отдельным кандидатом. По умолчанию используется предоставленный пользователем FBX автора yatloo, преобразованный в GLB.",
     "license_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "pump": {
@@ -76,5 +76,755 @@
       "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf"
     ],
     "project_use": "Static collision screening only; moving envelopes and new load suitability unverified"
+  },
+  "user_model": {
+    "title": "ЗАЗ-968М · модель пользователя / yatloo",
+    "file": "zaz-968m-yatloo.glb",
+    "author": "yatloo",
+    "source": "https://sketchfab.com/models/db1f3f41624245158f02f24e4108e633/embed",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "quality": "Игровая low-poly модель; внутренние панели присутствуют, точность реального кузова не подтверждена.",
+    "source_bounds": [
+      [
+        194.5207867026329,
+        -76.81736789007334,
+        -138.3014212346933
+      ],
+      [
+        319.8532519340515,
+        42.312813339462025,
+        167.13457375926188
+      ]
+    ],
+    "source_wheel_centers": {
+      "front": [
+        254.7938831038773,
+        -51.11431501496239,
+        118.51686489582062
+      ],
+      "rear": [
+        254.7938831038773,
+        -50.40375516999169,
+        -62.69445025920868
+      ]
+    },
+    "registration": {
+      "method": "Единый масштаб по колёсной базе; ориентация и перенос без деформации",
+      "source_wheelbase_units": 181.2113151550293,
+      "mm_per_source_unit": 11.919785462359698,
+      "project_matrix_mm": [
+        0,
+        11.919785462359698,
+        0,
+        0,
+        0,
+        0,
+        11.919785462359698,
+        0,
+        -11.919785462359698,
+        0,
+        0,
+        0,
+        2087.695603229651,
+        -3037.088423719773,
+        915.6465450328329,
+        1
+      ],
+      "front_axle_x_mm": 675,
+      "rear_axle_x_mm": 2835,
+      "source_ground_mm": 0,
+      "front_wheel_center_z_mm": 306.3748759990101,
+      "rear_wheel_center_z_mm": 314.84459690922847,
+      "stock_registration_z_offsets_mm": {
+        "front": 26.3748759990101,
+        "rear": 34.84459690922847,
+        "drive": 34.84459690922847
+      },
+      "formula": "s = B / (z_front − z_rear)",
+      "substitution": "s = 2160 / (118.516865 − (-62.694450)) = 11.919785 мм/ед."
+    },
+    "bounds_project_mm": [
+      [
+        95.48734128475189,
+        -718.4423804283142,
+        4.9473730001636795e-05
+      ],
+      [
+        3736.2186908721924,
+        775.4937410354614,
+        1420.0060367584229
+      ]
+    ],
+    "size_mm": [
+      3640.7313495874405,
+      1493.9361214637756,
+      1420.0059872846928
+    ],
+    "nodes": [
+      {
+        "name": "Plane161 · FBX Plane161",
+        "source_node": "Plane161",
+        "group": "interior",
+        "triangles": 120
+      },
+      {
+        "name": "Cylinder015 · FBX Cylinder015",
+        "source_node": "Cylinder015",
+        "group": "trim",
+        "triangles": 80
+      },
+      {
+        "name": "Circle031 · FBX Circle031",
+        "source_node": "Circle031",
+        "group": "trim",
+        "triangles": 151
+      },
+      {
+        "name": "Plane114 · FBX Plane114",
+        "source_node": "Plane114",
+        "group": "trim",
+        "triangles": 458
+      },
+      {
+        "name": "Circle052 · FBX Circle052",
+        "source_node": "Circle052",
+        "group": "trim",
+        "triangles": 120
+      },
+      {
+        "name": "Circle001 · FBX Circle001",
+        "source_node": "Circle001",
+        "group": "trim",
+        "triangles": 151
+      },
+      {
+        "name": "Plane166 · FBX Plane166",
+        "source_node": "Plane166",
+        "group": "trim",
+        "triangles": 240
+      },
+      {
+        "name": "Plane157 · FBX Plane157",
+        "source_node": "Plane157",
+        "group": "trim",
+        "triangles": 336
+      },
+      {
+        "name": "Plane152 · FBX Plane152",
+        "source_node": "Plane152",
+        "group": "exterior",
+        "triangles": 398
+      },
+      {
+        "name": "Plane112 · FBX Plane112",
+        "source_node": "Plane112",
+        "group": "interior",
+        "triangles": 40
+      },
+      {
+        "name": "Plane148 · FBX Plane148",
+        "source_node": "Plane148",
+        "group": "trim",
+        "triangles": 368
+      },
+      {
+        "name": "Circle058 · FBX Circle058",
+        "source_node": "Circle058",
+        "group": "trim",
+        "triangles": 356
+      },
+      {
+        "name": "Plane154 · FBX Plane154",
+        "source_node": "Plane154",
+        "group": "exterior",
+        "triangles": 514
+      },
+      {
+        "name": "Plane005 · FBX Plane005",
+        "source_node": "Plane005",
+        "group": "trim",
+        "triangles": 14
+      },
+      {
+        "name": "Cylinder014 · FBX Cylinder014",
+        "source_node": "Cylinder014",
+        "group": "trim",
+        "triangles": 80
+      },
+      {
+        "name": "Torus012 · FBX Torus012",
+        "source_node": "Torus012",
+        "group": "trim",
+        "triangles": 872
+      },
+      {
+        "name": "Plane134 · FBX Plane134",
+        "source_node": "Plane134",
+        "group": "trim",
+        "triangles": 32
+      },
+      {
+        "name": "Torus009 · FBX Torus009",
+        "source_node": "Torus009",
+        "group": "trim",
+        "triangles": 77
+      },
+      {
+        "name": "Circle055 · FBX Circle055",
+        "source_node": "Circle055",
+        "group": "trim",
+        "triangles": 146
+      },
+      {
+        "name": "Plane132 · FBX Plane132",
+        "source_node": "Plane132",
+        "group": "trim",
+        "triangles": 8
+      },
+      {
+        "name": "Передняя панель · FBX Plane119",
+        "source_node": "Plane119",
+        "group": "exterior",
+        "triangles": 1157
+      },
+      {
+        "name": "Передний капот · FBX Plane167",
+        "source_node": "Plane167",
+        "group": "covers",
+        "triangles": 468
+      },
+      {
+        "name": "Plane142 · FBX Plane142",
+        "source_node": "Plane142",
+        "group": "trim",
+        "triangles": 400
+      },
+      {
+        "name": "Крышка моторного отсека · FBX Plane123",
+        "source_node": "Plane123",
+        "group": "covers",
+        "triangles": 1026
+      },
+      {
+        "name": "Plane135 · FBX Plane135",
+        "source_node": "Plane135",
+        "group": "trim",
+        "triangles": 812
+      },
+      {
+        "name": "Circle029 · FBX Circle029",
+        "source_node": "Circle029",
+        "group": "wheels",
+        "triangles": 284
+      },
+      {
+        "name": "Plane122 · FBX Plane122",
+        "source_node": "Plane122",
+        "group": "trim",
+        "triangles": 32
+      },
+      {
+        "name": "Plane004 · FBX Plane004",
+        "source_node": "Plane004",
+        "group": "exterior",
+        "triangles": 406
+      },
+      {
+        "name": "Plane127 · FBX Plane127",
+        "source_node": "Plane127",
+        "group": "interior",
+        "triangles": 214
+      },
+      {
+        "name": "Переднее сиденье · правое · FBX Cube026",
+        "source_node": "Cube026",
+        "group": "seats",
+        "triangles": 784
+      },
+      {
+        "name": "Plane143 · FBX Plane143",
+        "source_node": "Plane143",
+        "group": "trim",
+        "triangles": 152
+      },
+      {
+        "name": "Пол салона и центральный тоннель · FBX Plane136",
+        "source_node": "Plane136",
+        "group": "interior",
+        "triangles": 1495
+      },
+      {
+        "name": "Cube028 · FBX Cube028",
+        "source_node": "Cube028",
+        "group": "trim",
+        "triangles": 448
+      },
+      {
+        "name": "Plane124 · FBX Plane124",
+        "source_node": "Plane124",
+        "group": "trim",
+        "triangles": 88
+      },
+      {
+        "name": "Передние шины · FBX Circle027",
+        "source_node": "Circle027",
+        "group": "wheels",
+        "triangles": 1052
+      },
+      {
+        "name": "Plane013 · FBX Plane013",
+        "source_node": "Plane013",
+        "group": "interior",
+        "triangles": 214
+      },
+      {
+        "name": "Plane003 · FBX Plane003",
+        "source_node": "Plane003",
+        "group": "trim",
+        "triangles": 60
+      },
+      {
+        "name": "Plane131 · FBX Plane131",
+        "source_node": "Plane131",
+        "group": "trim",
+        "triangles": 104
+      },
+      {
+        "name": "Torus011 · FBX Torus011",
+        "source_node": "Torus011",
+        "group": "trim",
+        "triangles": 512
+      },
+      {
+        "name": "Plane153 · FBX Plane153",
+        "source_node": "Plane153",
+        "group": "exterior",
+        "triangles": 408
+      },
+      {
+        "name": "Cube032 · FBX Cube032",
+        "source_node": "Cube032",
+        "group": "source-stock",
+        "triangles": 232
+      },
+      {
+        "name": "Cylinder018 · FBX Cylinder018",
+        "source_node": "Cylinder018",
+        "group": "source-stock",
+        "triangles": 408
+      },
+      {
+        "name": "Plane128 · FBX Plane128",
+        "source_node": "Plane128",
+        "group": "trim",
+        "triangles": 36
+      },
+      {
+        "name": "Пол заднего отсека и ниши · FBX Plane113",
+        "source_node": "Plane113",
+        "group": "interior",
+        "triangles": 508
+      },
+      {
+        "name": "Plane125 · FBX Plane125",
+        "source_node": "Plane125",
+        "group": "trim",
+        "triangles": 60
+      },
+      {
+        "name": "Левая дверь · FBX Plane115",
+        "source_node": "Plane115",
+        "group": "exterior",
+        "triangles": 342
+      },
+      {
+        "name": "Plane144 · FBX Plane144",
+        "source_node": "Plane144",
+        "group": "trim",
+        "triangles": 336
+      },
+      {
+        "name": "Circle060 · FBX Circle060",
+        "source_node": "Circle060",
+        "group": "wheels",
+        "triangles": 2748
+      },
+      {
+        "name": "Plane159 · FBX Plane159",
+        "source_node": "Plane159",
+        "group": "trim",
+        "triangles": 1746
+      },
+      {
+        "name": "Plane120 · FBX Plane120",
+        "source_node": "Plane120",
+        "group": "trim",
+        "triangles": 32
+      },
+      {
+        "name": "Circle035 · FBX Circle035",
+        "source_node": "Circle035",
+        "group": "trim",
+        "triangles": 63
+      },
+      {
+        "name": "Задняя панель · FBX Plane163",
+        "source_node": "Plane163",
+        "group": "exterior",
+        "triangles": 1328
+      },
+      {
+        "name": "BézierCurve013 · FBX BézierCurve013",
+        "source_node": "BézierCurve013",
+        "group": "trim",
+        "triangles": 112
+      },
+      {
+        "name": "Cube001 · FBX Cube001",
+        "source_node": "Cube001",
+        "group": "trim",
+        "triangles": 448
+      },
+      {
+        "name": "Левое боковое стекло · FBX Plane164",
+        "source_node": "Plane164",
+        "group": "glass",
+        "triangles": 164
+      },
+      {
+        "name": "Plane006 · FBX Plane006",
+        "source_node": "Plane006",
+        "group": "trim",
+        "triangles": 14
+      },
+      {
+        "name": "Torus010 · FBX Torus010",
+        "source_node": "Torus010",
+        "group": "trim",
+        "triangles": 90
+      },
+      {
+        "name": "Plane140 · FBX Plane140",
+        "source_node": "Plane140",
+        "group": "trim",
+        "triangles": 200
+      },
+      {
+        "name": "Plane129 · FBX Plane129",
+        "source_node": "Plane129",
+        "group": "trim",
+        "triangles": 36
+      },
+      {
+        "name": "Заднее сиденье · FBX Cube029",
+        "source_node": "Cube029",
+        "group": "rear-seat",
+        "triangles": 672
+      },
+      {
+        "name": "Правая боковина · FBX Plane165",
+        "source_node": "Plane165",
+        "group": "exterior",
+        "triangles": 1316
+      },
+      {
+        "name": "Cylinder017 · FBX Cylinder017",
+        "source_node": "Cylinder017",
+        "group": "source-stock",
+        "triangles": 128
+      },
+      {
+        "name": "Circle057 · FBX Circle057",
+        "source_node": "Circle057",
+        "group": "trim",
+        "triangles": 120
+      },
+      {
+        "name": "Задние боковые стёкла · FBX Plane155",
+        "source_node": "Plane155",
+        "group": "glass",
+        "triangles": 89
+      },
+      {
+        "name": "Cylinder013 · FBX Cylinder013",
+        "source_node": "Cylinder013",
+        "group": "trim",
+        "triangles": 80
+      },
+      {
+        "name": "Plane126 · FBX Plane126",
+        "source_node": "Plane126",
+        "group": "interior",
+        "triangles": 1204
+      },
+      {
+        "name": "Plane121 · FBX Plane121",
+        "source_node": "Plane121",
+        "group": "trim",
+        "triangles": 32
+      },
+      {
+        "name": "Circle002 · FBX Circle002",
+        "source_node": "Circle002",
+        "group": "trim",
+        "triangles": 79
+      },
+      {
+        "name": "BézierCurve015 · FBX BézierCurve015",
+        "source_node": "BézierCurve015",
+        "group": "trim",
+        "triangles": 112
+      },
+      {
+        "name": "Plane160 · FBX Plane160",
+        "source_node": "Plane160",
+        "group": "trim",
+        "triangles": 118
+      },
+      {
+        "name": "Plane147 · FBX Plane147",
+        "source_node": "Plane147",
+        "group": "trim",
+        "triangles": 124
+      },
+      {
+        "name": "Лобовое стекло · FBX Plane150",
+        "source_node": "Plane150",
+        "group": "glass",
+        "triangles": 335
+      },
+      {
+        "name": "Cube030 · FBX Cube030",
+        "source_node": "Cube030",
+        "group": "source-stock",
+        "triangles": 3040
+      },
+      {
+        "name": "Крыша и рамки стёкол · FBX Plane116",
+        "source_node": "Plane116",
+        "group": "covers",
+        "triangles": 4120
+      },
+      {
+        "name": "BézierCurve012 · FBX BézierCurve012",
+        "source_node": "BézierCurve012",
+        "group": "trim",
+        "triangles": 3136
+      },
+      {
+        "name": "Plane133 · FBX Plane133",
+        "source_node": "Plane133",
+        "group": "trim",
+        "triangles": 32
+      },
+      {
+        "name": "Заднее стекло · FBX Plane151",
+        "source_node": "Plane151",
+        "group": "glass",
+        "triangles": 192
+      },
+      {
+        "name": "Plane139 · FBX Plane139",
+        "source_node": "Plane139",
+        "group": "trim",
+        "triangles": 102
+      },
+      {
+        "name": "Plane145 · FBX Plane145",
+        "source_node": "Plane145",
+        "group": "trim",
+        "triangles": 64
+      },
+      {
+        "name": "Рамки задних боковых стёкол · FBX Plane137",
+        "source_node": "Plane137",
+        "group": "glass",
+        "triangles": 514
+      },
+      {
+        "name": "Левая боковина · FBX Plane118",
+        "source_node": "Plane118",
+        "group": "exterior",
+        "triangles": 1312
+      },
+      {
+        "name": "Правая дверь · FBX Plane117",
+        "source_node": "Plane117",
+        "group": "exterior",
+        "triangles": 342
+      },
+      {
+        "name": "Пол переднего отсека и ниши · FBX Plane158",
+        "source_node": "Plane158",
+        "group": "interior",
+        "triangles": 523
+      },
+      {
+        "name": "Правое боковое стекло · FBX Plane007",
+        "source_node": "Plane007",
+        "group": "glass",
+        "triangles": 164
+      },
+      {
+        "name": "BézierCurve011 · FBX BézierCurve011",
+        "source_node": "BézierCurve011",
+        "group": "trim",
+        "triangles": 3136
+      },
+      {
+        "name": "Circle028 · FBX Circle028",
+        "source_node": "Circle028",
+        "group": "wheels",
+        "triangles": 2748
+      },
+      {
+        "name": "Circle026 · FBX Circle026",
+        "source_node": "Circle026",
+        "group": "wheels",
+        "triangles": 284
+      },
+      {
+        "name": "Circle051 · FBX Circle051",
+        "source_node": "Circle051",
+        "group": "trim",
+        "triangles": 146
+      },
+      {
+        "name": "Переднее сиденье · левое · FBX Cube027",
+        "source_node": "Cube027",
+        "group": "seats",
+        "triangles": 784
+      },
+      {
+        "name": "Plane149 · FBX Plane149",
+        "source_node": "Plane149",
+        "group": "trim",
+        "triangles": 320
+      },
+      {
+        "name": "Circle059 · FBX Circle059",
+        "source_node": "Circle059",
+        "group": "trim",
+        "triangles": 320
+      },
+      {
+        "name": "Circle041 · FBX Circle041",
+        "source_node": "Circle041",
+        "group": "trim",
+        "triangles": 63
+      },
+      {
+        "name": "Задние шины · FBX Circle030",
+        "source_node": "Circle030",
+        "group": "wheels",
+        "triangles": 1052
+      },
+      {
+        "name": "Circle032 · FBX Circle032",
+        "source_node": "Circle032",
+        "group": "trim",
+        "triangles": 79
+      },
+      {
+        "name": "Plane162 · FBX Plane162",
+        "source_node": "Plane162",
+        "group": "trim",
+        "triangles": 612
+      },
+      {
+        "name": "Plane146 · FBX Plane146",
+        "source_node": "Plane146",
+        "group": "trim",
+        "triangles": 20
+      },
+      {
+        "name": "Circle054 · FBX Circle054",
+        "source_node": "Circle054",
+        "group": "trim",
+        "triangles": 120
+      },
+      {
+        "name": "Circle034 · FBX Circle034",
+        "source_node": "Circle034",
+        "group": "trim",
+        "triangles": 252
+      },
+      {
+        "name": "BézierCurve014 · FBX BézierCurve014",
+        "source_node": "BézierCurve014",
+        "group": "trim",
+        "triangles": 176
+      },
+      {
+        "name": "Circle033 · FBX Circle033",
+        "source_node": "Circle033",
+        "group": "trim",
+        "triangles": 73
+      },
+      {
+        "name": "Cube031 · FBX Cube031",
+        "source_node": "Cube031",
+        "group": "trim",
+        "triangles": 40
+      },
+      {
+        "name": "Circle056 · FBX Circle056",
+        "source_node": "Circle056",
+        "group": "trim",
+        "triangles": 146
+      },
+      {
+        "name": "Plane138 · FBX Plane138",
+        "source_node": "Plane138",
+        "group": "trim",
+        "triangles": 956
+      },
+      {
+        "name": "Plane156 · FBX Plane156",
+        "source_node": "Plane156",
+        "group": "trim",
+        "triangles": 14
+      },
+      {
+        "name": "Plane130 · FBX Plane130",
+        "source_node": "Plane130",
+        "group": "trim",
+        "triangles": 36
+      },
+      {
+        "name": "Cylinder016 · FBX Cylinder016",
+        "source_node": "Cylinder016",
+        "group": "trim",
+        "triangles": 40
+      }
+    ],
+    "triangles": 52947,
+    "removed_empty_nodes": [
+      "Plane002",
+      "Plane141"
+    ],
+    "adaptations": [
+      "Трансформации FBX запечены, GLB экспортирован в метрах с Y вверх.",
+      "Использована UVMap.001; карты уменьшены с 4096 до 2048 пикселей.",
+      "Металличность материала для показа назначена 0,15 с исходной картой; освещение сцены использует окружение.",
+      "Для стёкол назначена прозрачность 0,2 вместо непрозрачного материала FBX.",
+      "Заднее сиденье скрывается только в двухместной компоновке; пол и перегородки не удаляются.",
+      "Четыре упрощённых узла ходовой FBX скрываются в сборке, где показывается отдельная схема подвески проекта. Полный файл GLB сохраняет эти узлы."
+    ],
+    "limits": [
+      "Масштаб по базе не доказывает точность длины, ширины, высоты, ниш, пола и креплений.",
+      "Модель не используется для вычисления массы, прочности и паспортного радиуса качения шин.",
+      "Схема подвески проекта привязана по высоте к колёсам этой модели; её собственные размеры остаются гипотезой.",
+      "Дорожные расчёты и осевые нагрузки автоматически не меняются.",
+      "Неподвижная проверка не включает ход подвески, поворот колёс, теплоизоляцию и обслуживание."
+    ],
+    "glb_bytes": 9868984,
+    "glb_sha256": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+    "source_fbx_sha256": "40bb8053504317bcdd52f17c51c3695a0dfaa6fbb743b130188354c88acbc7cb",
+    "supplied_archive": {
+      "name": "zaz-968-m-low-poly.zip",
+      "sha256": "237a7f4e77ce4f3bea11a738f21da1477d03218bba6d52f0f58df3db5ab7a83a"
+    }
   }
 }
