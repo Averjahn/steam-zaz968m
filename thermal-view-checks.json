@@ -1,0 +1,267 @@
+{
+  "status": "passed",
+  "scope": "Independent CoolProp property references, phase behaviour, analytic pipe heat loss and integrator diagnostics. Quasi-steady pipe losses remain outside the global transient balance.",
+  "source_sha256": {
+    "web/thermal-model.js": "0d9441707c6d863beed1d42bbab467d69338b1152efc50bb38373459f756ccdf",
+    "web/steam-simulation.js": "baf4ce14d94c9b5be01ad7139de4586141d87c53fde7b88c1f5ee1b99ee13c46",
+    "simulation-data.json": "59ecd82a03d07aafb2047200d214f0436d657e43041f08fe428421b127a085f0",
+    "thermal-validation-data.json": "1e4bc5572fe592426f301a04f94a5668f697362438b10d4b3163a5777bd2b6d6",
+    "verify_thermal_view.mjs": "c3a220eda16be574875ed121ca53a6b1c152c3c52d2409c37347dcdcbfaaf329"
+  },
+  "reference_source": "CoolProp HEOS / IAPWS-95",
+  "reference_version": "7.2.0",
+  "checks": [
+    {
+      "name": "Property table supports reference 10000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 10000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 10000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 10000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 10000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 10000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 10000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 100000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 200000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 700000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 1000000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / liquid",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / vapour",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Property table supports reference 2000000 Pa / two-phase",
+      "pass": true
+    },
+    {
+      "name": "Inverse temperature agrees with independent CoolProp states within 1.5 K",
+      "pass": true,
+      "detail": 0.034257906172086905
+    },
+    {
+      "name": "Wet-steam quality agrees within 0.001",
+      "pass": true,
+      "detail": 0.0000021509109105338764
+    },
+    {
+      "name": "Interpolated density agrees within 3%",
+      "pass": true,
+      "detail": 0.0009082253688452724
+    },
+    {
+      "name": "Properties outside the pressure table stay unknown",
+      "pass": true
+    },
+    {
+      "name": "Subcooled enthalpy round-trip preserves temperature",
+      "pass": true
+    },
+    {
+      "name": "Pipe heat loss matches the constant-property analytic solution",
+      "pass": true,
+      "detail": {
+        "calculated": 239.95757914565849,
+        "analytic": 239.9575790958765
+      }
+    },
+    {
+      "name": "Pipe enthalpy loss equals heat transfer",
+      "pass": true,
+      "detail": 1.4210854715202004e-13
+    },
+    {
+      "name": "All hot profile points stay between inlet and ambient",
+      "pass": true
+    },
+    {
+      "name": "Insulation surface remains between fluid and ambient",
+      "pass": true
+    },
+    {
+      "name": "Less flow causes a greater temperature drop",
+      "pass": true
+    },
+    {
+      "name": "Very low flow never overshoots ambient",
+      "pass": true
+    },
+    {
+      "name": "Cold fluid gains heat with the correct sign",
+      "pass": true
+    },
+    {
+      "name": "Zero flow does not generate a false spatial profile",
+      "pass": true
+    },
+    {
+      "name": "Condensation changes quality while saturation temperature stays constant",
+      "pass": true
+    },
+    {
+      "name": "Sample interpolation preserves both endpoint states",
+      "pass": true
+    },
+    {
+      "name": "Blue and red refer to fixed temperature endpoints",
+      "pass": true
+    },
+    {
+      "name": "Unknown temperature has a separate neutral colour",
+      "pass": true
+    },
+    {
+      "name": "Displayed node terms match the actual integrator energy changes",
+      "pass": true,
+      "detail": 2.3283064365386963e-9
+    }
+  ],
+  "max_temperature_error_K": 0.034257906172086905,
+  "max_quality_error": 0.0000021509109105338764,
+  "max_density_relative_error": 0.0009082253688452724
+}

@@ -75,7 +75,7 @@ export function pipeArrows(curve, route) {
     position.needsUpdate = true;
   }
 
-  return {group, markers, update({camera, radius, phase = 0, visible, clippingPlanes, radiusAt, direction=1, color}) {
+  return {group, markers, update({camera, radius, phase = 0, visible, clippingPlanes, radiusAt, direction=1, color,colorAt}) {
     group.visible = visible;
     if (!visible) return;
     group.updateWorldMatrix(true, false);
@@ -92,7 +92,7 @@ export function pipeArrows(curve, route) {
       marker.userData.routeFraction = distance / length;
       marker.userData.surfaceRadius_mm = radiusAt ? radiusAt(distance) : radius;
       marker.userData.direction = direction<0?'destination-to-source':'source-to-destination';
-      if(color)fill.material.color.set(color);
+      if(colorAt)fill.material.color.copy(colorAt(distance/length));else fill.material.color.set(color||colors[route.fluid]||colors.water);
       for (const mesh of [border, fill]) mesh.material.clippingPlanes = clippingPlanes;
       draw(border, distance, radius + .7, arrowLength * 1.07, width, true, radiusAt,direction);
       draw(fill, distance, radius + 1.1, arrowLength, width, false, radiusAt,direction);

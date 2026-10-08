@@ -17,7 +17,7 @@
       "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
       "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
       "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
-      "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+      "web/double-acting-view.js": "a07c4dd373d2883e75809bca8bef5c78d9285efc2690a731ddec23300b18c166",
       "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
     },
     "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
@@ -33,6 +33,11 @@
         "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
       },
       "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
+    },
+    "view_only_update": {
+      "parent_commit": "99d3fa4c3611bba3ebaa8c66edefb48c5d831db4",
+      "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1",
+      "scope": "Separate component presentation, material visibility, runtime flow volumes, temperature vertex colours and labels only. Physical constructors, pipe points, body, suspension, factory pump and downloadable native GLB unchanged. Static mesh audit remains applicable. Additional thermal profiles are an independent side calculation, not CFD or pressure/strength validation."
     }
   },
   "variants": {
@@ -4124,7 +4129,7 @@
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
           "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
           "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
-          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "web/double-acting-view.js": "a07c4dd373d2883e75809bca8bef5c78d9285efc2690a731ddec23300b18c166",
           "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
@@ -4140,6 +4145,11 @@
             "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
           },
           "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
+        },
+        "view_only_update": {
+          "parent_commit": "99d3fa4c3611bba3ebaa8c66edefb48c5d831db4",
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1",
+          "scope": "Separate component presentation, material visibility, runtime flow volumes, temperature vertex colours and labels only. Physical constructors, pipe points, body, suspension, factory pump and downloadable native GLB unchanged. Static mesh audit remains applicable. Additional thermal profiles are an independent side calculation, not CFD or pressure/strength validation."
         }
       }
     },
@@ -7924,7 +7934,7 @@
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
           "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
           "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
-          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "web/double-acting-view.js": "a07c4dd373d2883e75809bca8bef5c78d9285efc2690a731ddec23300b18c166",
           "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
@@ -7940,6 +7950,11 @@
             "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
           },
           "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
+        },
+        "view_only_update": {
+          "parent_commit": "99d3fa4c3611bba3ebaa8c66edefb48c5d831db4",
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1",
+          "scope": "Separate component presentation, material visibility, runtime flow volumes, temperature vertex colours and labels only. Physical constructors, pipe points, body, suspension, factory pump and downloadable native GLB unchanged. Static mesh audit remains applicable. Additional thermal profiles are an independent side calculation, not CFD or pressure/strength validation."
         }
       }
     },
@@ -11724,7 +11739,7 @@
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
           "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
           "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
-          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "web/double-acting-view.js": "a07c4dd373d2883e75809bca8bef5c78d9285efc2690a731ddec23300b18c166",
           "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
@@ -11740,6 +11755,11 @@
             "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
           },
           "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
+        },
+        "view_only_update": {
+          "parent_commit": "99d3fa4c3611bba3ebaa8c66edefb48c5d831db4",
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1",
+          "scope": "Separate component presentation, material visibility, runtime flow volumes, temperature vertex colours and labels only. Physical constructors, pipe points, body, suspension, factory pump and downloadable native GLB unchanged. Static mesh audit remains applicable. Additional thermal profiles are an independent side calculation, not CFD or pressure/strength validation."
         }
       }
     },
@@ -15698,7 +15718,7 @@
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
           "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
           "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
-          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "web/double-acting-view.js": "a07c4dd373d2883e75809bca8bef5c78d9285efc2690a731ddec23300b18c166",
           "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
@@ -15714,6 +15734,11 @@
             "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
           },
           "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
+        },
+        "view_only_update": {
+          "parent_commit": "99d3fa4c3611bba3ebaa8c66edefb48c5d831db4",
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1",
+          "scope": "Separate component presentation, material visibility, runtime flow volumes, temperature vertex colours and labels only. Physical constructors, pipe points, body, suspension, factory pump and downloadable native GLB unchanged. Static mesh audit remains applicable. Additional thermal profiles are an independent side calculation, not CFD or pressure/strength validation."
         }
       }
     },
@@ -19196,7 +19221,7 @@
           "models/internal-mounts.json": "5c9eb6e5db8c5ec350c0b8854c28cad67404eba0cb805b8af14fc002309638cf",
           "web/double-acting-cycle.js": "6b548e33f0f207435c613b8f23e848b8fd6e6fa5a3a547ecff2d699f475d6cb8",
           "web/double-acting-hardware.js": "6e073299e85c7488bce40aa0a450ae7a72fc8641356f1c76b4bad8dcee8fbbb0",
-          "web/double-acting-view.js": "e230beffb8a12961255c3a52d71555b3a4f7678bdfc241565514e61fb772da5d",
+          "web/double-acting-view.js": "a07c4dd373d2883e75809bca8bef5c78d9285efc2690a731ddec23300b18c166",
           "models/steam-internal-assembly.glb": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
         },
         "scope": "Static physical surfaces including hollow nozzles and mating collars, five heat variants. Named port contacts and declared fan-support contacts are intentional. Body-panel intersections, full suspension travel, real fittings, pressure strength, sealing and mount strength remain unresolved.",
@@ -19212,6 +19237,11 @@
             "electric": "3d7dfd04b7a42f66930e75827478996bba68c076e68019d9d163747cc4f82487"
           },
           "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1"
+        },
+        "view_only_update": {
+          "parent_commit": "99d3fa4c3611bba3ebaa8c66edefb48c5d831db4",
+          "native_glb_sha256": "bc3c1f1237a5f0ecce4cf690a8baf68fa3e2c9c42ed65d3ec168f96d950437a1",
+          "scope": "Separate component presentation, material visibility, runtime flow volumes, temperature vertex colours and labels only. Physical constructors, pipe points, body, suspension, factory pump and downloadable native GLB unchanged. Static mesh audit remains applicable. Additional thermal profiles are an independent side calculation, not CFD or pressure/strength validation."
         }
       }
     }

@@ -67,6 +67,15 @@ export class SteamSimulation{
  this.battery_J-=dt*aux*(1-shaftShare)/.9;if(this.battery_J<0&&!this.trip)this.stop('Исчерпан условный запас электрической энергии пуска');
  this.flueT+=dt*((flue?chemical*(1-k.boiler_efficiency)*.8:0)-(gasMass*(flue?.cp_J_kgK||1100)+15)*(this.flueT-k.ambient_C))/12000;
  this.last={flue_mass_kg_s:gasMass,flue_speed_m_s:gasSpeed,flue_loss_Pa:gasDp,draft_fan_W:draftPower,fuel_input_W:fuelPower,return_pump_W:returnPower,vent_recovered_kg_s:capturedVent,vent_lost_kg_s:ventSteam-capturedVent,opening,rhoSteam:out.rho,dh_is_J_kg:out.dh,indicated_kW:pInd/1000,flow,feed,drain,makeup,burner:chemical,cooling,power:gross,pumpRPM:feed>0?Math.max(100,feed/(r.rho*(.015/950))*60):0,pumpDuty:feed>0?Math.min(1,feed/(r.rho*(.015/950)*100/60)):0,airflow,purge:ventMixed,outlet_C:outletT,air_fraction:this.b.air/Math.max(this.b.air+b.mv,1e-9),steam_speed_m_s:flow/(Math.max(out.rho,.01)*Math.PI*.04**2/4),feed_pressure_bar_abs:(b.p+1e5)/1e5,suction_pressure_bar_abs:2,aux_kW:aux/1000};
+ // Expose the same terms used by the integrator for formula/substitution views.
+ this.last.inlet_h_J_kg=hout;this.last.exhaust_h_J_kg=flow>0?hout-(pInd+engineHeat)/flow:null;this.last.feed_h_J_kg=r.h+pumpWork;
+ this.last.thermal_rates={
+  boiler:{heat_W:heatQ*(1-k.superheater_fraction),in_W:feed*(r.h+pumpWork),out_W:flow*b.hg+airFlow*airEnthalpy,loss_W:lossB,work_W:0},
+  superheater:{heat_W:heatQ*k.superheater_fraction,in_W:0,out_W:shQ,loss_W:lossSH,work_W:0},
+  engine:{heat_W:engineHeat+pInd*(1-k.mechanical_efficiency),in_W:0,out_W:0,loss_W:lossEngine,work_W:0},
+  condenser:{heat_W:-engineHeat-cooling,in_W:flow*hout+airFlow*airEnthalpy,out_W:drain*c.hf+ventEnergy,loss_W:0,work_W:pInd},
+  receiver:{heat_W:returnPower,in_W:drain*k.return_fraction*c.hf+capturedVent*recoveredVentH+makeup*this.liquid(20).h,out_W:feed*r.h,loss_W:lossR,work_W:0}
+ };
  if(this.auto&&this.phase>0&&this.phase<9&&this.phaseTime>1&&!this.ready())this.advance();
  const state=this.snapshot();if(this.history.length===0||this.time-this.history.at(-1).time>=.99){this.history.push(state);if(this.history.length>3600)this.history.shift();}return state;
  }

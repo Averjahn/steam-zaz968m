@@ -1,0 +1,36 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {temperatureRGB,waterStatePH,waterEnthalpyPT,pipeThermalProfile,cylindricalHeatLoss,profileAt} from './web/thermal-model.js';
+import {SteamSimulation} from './web/steam-simulation.js';
+const data=JSON.parse(fs.readFileSync('simulation-data.json')),references=JSON.parse(fs.readFileSync('thermal-validation-data.json')),checks=[];
+const test=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});assert.ok(ok,name+': '+JSON.stringify(detail));};
+let maxT=0,maxQ=0,maxRho=0;
+for(const r of references.rows){const v=waterStatePH(data,r.p,r.h);test('Property table supports reference '+r.p+' Pa / '+r.phase,!!v);maxT=Math.max(maxT,Math.abs(v.T-r.T));if(r.quality!==undefined)maxQ=Math.max(maxQ,Math.abs(v.quality-r.quality));if(r.rho)maxRho=Math.max(maxRho,Math.abs(v.rho/r.rho-1));}
+test('Inverse temperature agrees with independent CoolProp states within 1.5 K',maxT<1.5,maxT);
+test('Wet-steam quality agrees within 0.001',maxQ<.001,maxQ);
+test('Interpolated density agrees within 3%',maxRho<.03,maxRho);
+test('Properties outside the pressure table stay unknown',waterStatePH(data,5e6,3e6)===null);
+test('Subcooled enthalpy round-trip preserves temperature',Math.abs(waterStatePH(data,2e5,waterEnthalpyPT(data,2e5,40)).T-40)<.01);
+const material={temperature_C:[0,400],lambda_W_mK:[.03,.03]},route={od:48,insulation_mm:30,jacket_mm:.6,centerline_length_m:5,exposed_end_mm:0};
+const args={data,route,inlet:{T:250,p:1e6,rho:1},massFlow:.012,ambient:20,material,segments:256,cp:2000};
+const profile=pipeThermalProfile(args),R=cylindricalHeatLoss(route,250,20,material),analytic=20+230*Math.exp(-5/((R.R_cond_mK_W+R.R_external_mK_W)*.012*2000));
+test('Pipe heat loss matches the constant-property analytic solution',Math.abs(profile.samples.at(-1).T-analytic)<.003,{calculated:profile.samples.at(-1).T,analytic});
+test('Pipe enthalpy loss equals heat transfer',Math.abs(profile.residual_W)<1e-8,profile.residual_W);
+test('All hot profile points stay between inlet and ambient',profile.samples.every(v=>v.T>=20&&v.T<=250));
+test('Insulation surface remains between fluid and ambient',profile.samples.every(v=>v.surface_C>=20&&v.surface_C<=v.T));
+const lowerFlow=pipeThermalProfile({...args,massFlow:.006});test('Less flow causes a greater temperature drop',lowerFlow.samples.at(-1).T<profile.samples.at(-1).T);
+const veryLow=pipeThermalProfile({...args,massFlow:1e-7});test('Very low flow never overshoots ambient',veryLow.samples.every(v=>v.T>=20-1e-9));
+const cold=pipeThermalProfile({...args,inlet:{T:5,p:1e6},ambient:20});test('Cold fluid gains heat with the correct sign',cold.heat_W<0&&cold.samples.at(-1).T>5&&cold.samples.at(-1).T<=20);
+test('Zero flow does not generate a false spatial profile',pipeThermalProfile({...args,massFlow:0}).samples.length===0);
+const wet=pipeThermalProfile({...args,cp:null,inlet:{p:1e5,T:99.6,h:2.4e6},massFlow:.05,route:{...route,centerline_length_m:2}});
+test('Condensation changes quality while saturation temperature stays constant',wet.samples.length>1&&Math.abs(wet.samples[0].T-wet.samples.at(-1).T)<1e-8&&wet.samples.at(-1).quality<wet.samples[0].quality);
+test('Sample interpolation preserves both endpoint states',profileAt(profile,0).T===profile.samples[0].T&&Math.abs(profileAt(profile,1).T-profile.samples.at(-1).T)<1e-12);
+test('Blue and red refer to fixed temperature endpoints',temperatureRGB(0)[2]>temperatureRGB(0)[0]&&temperatureRGB(350)[0]>temperatureRGB(350)[2]);
+test('Unknown temperature has a separate neutral colour',JSON.stringify(temperatureRGB(null))!==JSON.stringify(temperatureRGB(0)));
+const sim=new SteamSimulation(data);sim.auto=true;sim.start();let maxBalanceError=0;
+for(let i=0;i<400;i++){const before={boiler:sim.b.E,condenser:sim.c.E,receiver:sim.r.E,engine:sim.engE,superheater:sim.shE},s=sim.step(.05),after={boiler:sim.b.E,condenser:sim.c.E,receiver:sim.r.E,engine:sim.engE,superheater:sim.shE};for(const [key,r]of Object.entries(s.thermal_rates)){const rate=r.heat_W-r.work_W+r.in_W-r.out_W-r.loss_W;maxBalanceError=Math.max(maxBalanceError,Math.abs((after[key]-before[key])/.05-rate));}}
+test('Displayed node terms match the actual integrator energy changes',maxBalanceError<1e-6,maxBalanceError);
+const source_sha256=Object.fromEntries(['web/thermal-model.js','web/steam-simulation.js','simulation-data.json','thermal-validation-data.json','verify_thermal_view.mjs'].map(name=>[name,createHash('sha256').update(fs.readFileSync(name)).digest('hex')]));
+const result={status:'passed',scope:'Independent CoolProp property references, phase behaviour, analytic pipe heat loss and integrator diagnostics. Quasi-steady pipe losses remain outside the global transient balance.',source_sha256,reference_source:references.source,reference_version:references.version,checks,max_temperature_error_K:maxT,max_quality_error:maxQ,max_density_relative_error:maxRho};
+fs.writeFileSync('thermal-view-checks.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({status:'passed',checks:checks.length,max_temperature_error_K:maxT,max_density_relative_error:maxRho}));

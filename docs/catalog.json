@@ -165,7 +165,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 39092
+    "size": 40105
   },
   {
     "path": "build_stock_suspension.py",
@@ -305,7 +305,7 @@
     "title": "Пересечения пяти вариантов источника",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 542813
+    "size": 546405
   },
   {
     "path": "heat-native-checks.json",
@@ -361,7 +361,7 @@
     "title": "Внутренняя сборка · пересечения показанной геометрии",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 98184
+    "size": 98766
   },
   {
     "path": "layout-internal.json",
@@ -515,7 +515,7 @@
     "title": "Проверка балансов, остановов и четырёх колёс",
     "category": "Проверки",
     "format": "JSON",
-    "size": 72371
+    "size": 81632
   },
   {
     "path": "simulation-data.json",
@@ -530,6 +530,34 @@
     "category": "Расчёты",
     "format": "CSV",
     "size": 2939
+  },
+  {
+    "path": "thermal-presentation-checks.json",
+    "title": "Отдельные компоненты, жидкости, тепловая карта и прежние режимы · проверки браузера",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 23239
+  },
+  {
+    "path": "thermal-reference.json",
+    "title": "Белов · изученные разделы и границы теплового расчёта",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 5011
+  },
+  {
+    "path": "thermal-validation-data.json",
+    "title": "Независимые контрольные состояния воды и пара · CoolProp",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 6218
+  },
+  {
+    "path": "thermal-view-checks.json",
+    "title": "Тепловые профили · проверки по балансу энтальпии и таблицам воды",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 7456
   },
   {
     "path": "user-body-audit.json",
@@ -586,6 +614,13 @@
     "category": "Исходники",
     "format": "MJS",
     "size": 8474
+  },
+  {
+    "path": "verify_thermal_view.mjs",
+    "title": "Проверки тепловых профилей и показанных энергетических балансов",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5156
   },
   {
     "path": "viewer-checks.json",
@@ -746,7 +781,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 39138
+    "size": 43632
   },
   {
     "path": "user-model.html",

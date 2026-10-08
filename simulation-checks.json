@@ -3,7 +3,7 @@
   "source_sha256": {
     "simulation-data.json": "59ecd82a03d07aafb2047200d214f0436d657e43041f08fe428421b127a085f0",
     "heat-sources.json": "f9fbb71e166e429ebe7b476dd6fa4ff764fe353eda0f89512627bca4302d3b2b",
-    "web/steam-simulation.js": "e64f4a5ca1c5ddfa15fb939e6823dc9db1e54edd876ada8d3c487835da3c94c5",
+    "web/steam-simulation.js": "baf4ce14d94c9b5be01ad7139de4586141d87c53fde7b88c1f5ee1b99ee13c46",
     "web/heat-comparison.js": "deef6854b02e6e9d0a03d4f7da1b59e7f12a5b09cc64d4c4fd83a3a1908f858f",
     "web/wheel-loads.js": "f4abb374e688e6e3fae5db29b68999f8978f3a7111b41660a6e4b556597e7615"
   },
@@ -1304,7 +1304,47 @@
         "steam_speed_m_s": 9.087516430482447,
         "feed_pressure_bar_abs": 9.036602219249165,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 1.226590872974025
+        "aux_kW": 1.226590872974025,
+        "inlet_h_J_kg": 3051567.4974782453,
+        "exhaust_h_J_kg": 2800168.422437037,
+        "feed_h_J_kg": 314633.79407052684,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 89760,
+            "in_W": 11214.104198122131,
+            "out_W": 98673.84404471447,
+            "loss_W": 2258.9320535303386,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 12240,
+            "in_W": 0,
+            "out_W": 10089.411934880352,
+            "loss_W": 2220.842644595401,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 2495.8478544958994,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2736.5488455964933,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -86045.48485375143,
+            "in_W": 108763.25597959483,
+            "out_W": 15410.115329507784,
+            "loss_W": 0,
+            "work_W": 7182.732508825059
+          },
+          "receiver": {
+            "heat_W": 7.250440201048818,
+            "in_W": 15397.910413077676,
+            "out_W": 11167.333830244848,
+            "loss_W": 273.97386755561456,
+            "work_W": 0
+          }
+        }
       }
     },
     "wood": {
@@ -1431,7 +1471,47 @@
         "steam_speed_m_s": 0,
         "feed_pressure_bar_abs": 24.195861690678363,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 0.939934186799356
+        "aux_kW": 0.939934186799356,
+        "inlet_h_J_kg": 2800947.0527651813,
+        "exhaust_h_J_kg": null,
+        "feed_h_J_kg": 150965.0127724142,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 16897.59945799552,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2999.9999996158467,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 2304.21810790848,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2234.602667962053,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2255.284987354467,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -90.2243439167203,
+            "in_W": 0,
+            "out_W": 8.983383814402372e-11,
+            "loss_W": 0,
+            "work_W": 0
+          },
+          "receiver": {
+            "heat_W": 3.441942385488385e-13,
+            "in_W": 8.97440043058797e-11,
+            "out_W": 0,
+            "loss_W": 75.10273173218593,
+            "work_W": 0
+          }
+        }
       }
     },
     "pellets": {
@@ -1553,7 +1633,47 @@
         "steam_speed_m_s": 9.734653333362354,
         "feed_pressure_bar_abs": 6.5759072946886645,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 1.1844672276380404
+        "aux_kW": 1.1844672276380404,
+        "inlet_h_J_kg": 3030311.413297618,
+        "exhaust_h_J_kg": 2770721.6209503585,
+        "feed_h_J_kg": 227762.90909309988,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 70399.99999925912,
+            "in_W": 6144.6720352036955,
+            "out_W": 74269.75438037275,
+            "loss_W": 2039.7434883760345,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 9599.99999989897,
+            "in_W": 0,
+            "out_W": 7483.108161601901,
+            "loss_W": 2113.8794773119353,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 2697.999645169136,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2593.0212730012818,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -67345.22617803577,
+            "in_W": 81752.86254197464,
+            "out_W": 9524.57358624638,
+            "loss_W": 0,
+            "work_W": 4783.677580677361
+          },
+          "receiver": {
+            "heat_W": 6.347504744360601,
+            "in_W": 9511.337254278604,
+            "out_W": 6121.910008022418,
+            "loss_W": 170.80403316067532,
+            "work_W": 0
+          }
+        }
       }
     },
     "lpg": {
@@ -1675,7 +1795,47 @@
         "steam_speed_m_s": 9.575125511671894,
         "feed_pressure_bar_abs": 6.625491386053692,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 1.1717803821738098
+        "aux_kW": 1.1717803821738098,
+        "inlet_h_J_kg": 3029297.606415238,
+        "exhaust_h_J_kg": 2771344.905604773,
+        "feed_h_J_kg": 237825.41575354093,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 69669.6,
+            "in_W": 6373.36228941051,
+            "out_W": 73784.96257502233,
+            "loss_W": 2044.8537157174492,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 9500.4,
+            "in_W": 0,
+            "out_W": 7395.642395037292,
+            "loss_W": 2110.5245626977367,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 2620.5893899219354,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2590.517709319672,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -66915.52056100272,
+            "in_W": 81180.60497005962,
+            "out_W": 9420.371598661737,
+            "loss_W": 0,
+            "work_W": 4769.059743468612
+          },
+          "receiver": {
+            "heat_W": 6.306082087419069,
+            "in_W": 9408.860307399154,
+            "out_W": 6350.4798938819495,
+            "loss_W": 182.8193081705831,
+            "work_W": 0
+          }
+        }
       }
     },
     "electric": {
@@ -1800,7 +1960,47 @@
         "steam_speed_m_s": 0,
         "feed_pressure_bar_abs": 2.618429827954355,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 0.9384891813818182
+        "aux_kW": 0.9384891813818182,
+        "inlet_h_J_kg": 2696555.730127208,
+        "exhaust_h_J_kg": null,
+        "feed_h_J_kg": 96544.03696510586,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 1404.6708980774447,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 780.0148878267315,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 1311.1748333702867,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -0.000009934714987872749,
+            "in_W": 0,
+            "out_W": 8.943687922934723e-11,
+            "loss_W": 0,
+            "work_W": 0
+          },
+          "receiver": {
+            "heat_W": 3.472088818937246e-13,
+            "in_W": 8.934744235011789e-11,
+            "out_W": 0,
+            "loss_W": 14.731870123650879,
+            "work_W": 0
+          }
+        }
       }
     },
     "no_fans": {
@@ -1925,7 +2125,47 @@
         "steam_speed_m_s": 0,
         "feed_pressure_bar_abs": 3.3706690787225497,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 0
+        "aux_kW": 0,
+        "inlet_h_J_kg": 2714043.0893588555,
+        "exhaust_h_J_kg": null,
+        "feed_h_J_kg": 100063.59500247943,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 3.7560025253523836e-141,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 1585.03985056057,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 5.121821625480523e-142,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 685.5836445228182,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 1196.3759916255412,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 5.98169701223252e-10,
+            "loss_W": 0,
+            "work_W": 0
+          },
+          "receiver": {
+            "heat_W": 0,
+            "in_W": 5.975715315220287e-10,
+            "out_W": 0,
+            "loss_W": 18.775820184964687,
+            "work_W": 0
+          }
+        }
       }
     },
     "small_cooling": {
@@ -2050,7 +2290,47 @@
         "steam_speed_m_s": 0,
         "feed_pressure_bar_abs": 3.3424840349453406,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 0.022771200053606225
+        "aux_kW": 0.022771200053606225,
+        "inlet_h_J_kg": 2713492.5597226094,
+        "exhaust_h_J_kg": null,
+        "feed_h_J_kg": 100814.51437117081,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 9.763155467257761e-141,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 1579.1929597105188,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 1.3313393818987854e-141,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 694.1622099628187,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 1204.4236458458556,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -1046.0724688295977,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 0,
+            "work_W": 0
+          },
+          "receiver": {
+            "heat_W": 0,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 19.679745703469962,
+            "work_W": 0
+          }
+        }
       }
     },
     "default": {
@@ -2172,7 +2452,47 @@
         "steam_speed_m_s": 9.087516430482447,
         "feed_pressure_bar_abs": 9.036602219249165,
         "suction_pressure_bar_abs": 2,
-        "aux_kW": 1.226590872974025
+        "aux_kW": 1.226590872974025,
+        "inlet_h_J_kg": 3051567.4974782453,
+        "exhaust_h_J_kg": 2800168.422437037,
+        "feed_h_J_kg": 314633.79407052684,
+        "thermal_rates": {
+          "boiler": {
+            "heat_W": 89760,
+            "in_W": 11214.104198122131,
+            "out_W": 98673.84404471447,
+            "loss_W": 2258.9320535303386,
+            "work_W": 0
+          },
+          "superheater": {
+            "heat_W": 12240,
+            "in_W": 0,
+            "out_W": 10089.411934880352,
+            "loss_W": 2220.842644595401,
+            "work_W": 0
+          },
+          "engine": {
+            "heat_W": 2495.8478544958994,
+            "in_W": 0,
+            "out_W": 0,
+            "loss_W": 2736.5488455964933,
+            "work_W": 0
+          },
+          "condenser": {
+            "heat_W": -86045.48485375143,
+            "in_W": 108763.25597959483,
+            "out_W": 15410.115329507784,
+            "loss_W": 0,
+            "work_W": 7182.732508825059
+          },
+          "receiver": {
+            "heat_W": 7.250440201048818,
+            "in_W": 15397.910413077676,
+            "out_W": 11167.333830244848,
+            "loss_W": 273.97386755561456,
+            "work_W": 0
+          }
+        }
       }
     }
   },

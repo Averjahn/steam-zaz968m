@@ -1,13 +1,14 @@
 import * as T from 'three';
 import {pipeArrows} from './pipe-arrows.js';
 import {engineGeometry as K,cylinderCycle} from './double-acting-cycle.js';
+import {temperatureRGB} from './thermal-model.js';
 const fresh='#fff0be',spent='#b8d2dc',closed='#71828d';
 const mat=(color,opacity=1)=>new T.MeshBasicMaterial({color,transparent:opacity<1,opacity,depthWrite:opacity===1});
 export function doubleActingView(api){
  const root=new T.Group();root.name='Double-acting cycle overlay (view only)';root.userData.viewOnly=true;api.scene.add(root);
  let bound=null,lines=[],shells=[],moving=[],wheels=[],lastState=null,demoAngle=0;
  const cylinders=[];
- function mesh(g,name,geometry,color,opacity=1){const o=new T.Mesh(geometry,mat(color,opacity));o.name=name;g.add(o);return o;}
+ function mesh(g,name,geometry,color,opacity=1){const o=new T.Mesh(geometry,mat(color,opacity));o.explanationBaseColor=o.material.color.clone();o.name=name;g.add(o);return o;}
  function label(g,p){const canvas=document.createElement('canvas');canvas.width=512;canvas.height=96;const texture=new T.CanvasTexture(canvas),m=new T.SpriteMaterial({map:texture,transparent:true,depthTest:false,depthWrite:false}),s=new T.Sprite(m);s.position.fromArray(p);s.scale.set(170,32,1);s.renderOrder=920;g.add(s);let previous='';return {sprite:s,write(text,color){if(text===previous)return;previous=text;const c=canvas.getContext('2d');c.clearRect(0,0,512,96);c.fillStyle='#0b1827';c.fillRect(0,0,512,96);c.strokeStyle=color;c.lineWidth=5;c.strokeRect(3,3,506,90);c.fillStyle=color;c.font='bold 38px sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillText(text,256,48);texture.needsUpdate=true;}};}
  for(const [i,x]of K.cylinderX.entries()){
   const g=new T.Group();root.add(g);
@@ -24,16 +25,16 @@ export function doubleActingView(api){
  }
  function bind(model){
   restore();
-  for(const line of lines){line.arrows.group.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});root.remove(line.arrows.group);}lines=[];shells=[];moving=[];wheels=[];bound=model;
+  for(const line of lines){for(const item of [line.arrows.group,line.fluid])item.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});root.remove(line.arrows.group,line.fluid);}lines=[];shells=[];moving=[];wheels=[];bound=model;
   model?.root.traverse(o=>{
    if(o.userData.doubleActingShell)shells.push({node:o,materials:[].concat(o.material).map(material=>({material,opacity:material.opacity,transparent:material.transparent,depthWrite:material.depthWrite}))});
    if(o.userData.doubleActingStaticMoving)moving.push(o);
    if(o.userData.doubleActingWheel)wheels.push(o);
-   for(const p of o.doubleActingPaths||[]){const arrows=pipeArrows(p.curve,{id:p.id,fluid:p.role==='exhaust'||p.role==='vent'?'exhaust':'steam'});root.add(arrows.group);lines.push({...p,arrows});}
+   for(const p of o.doubleActingPaths||[]){const arrows=pipeArrows(p.curve,{id:p.id,fluid:p.role==='exhaust'||p.role==='vent'?'exhaust':'steam'}),fluid=mesh(root,'Среда · '+p.id,new T.TubeGeometry(p.curve,Math.max(8,Math.ceil(p.curve.getLength()/12)),p.bore,10,false),fresh,.45);fluid.renderOrder=900;fluid.material.depthTest=false;root.add(arrows.group);lines.push({...p,arrows,fluid});}
   });
  }
  function restore(){for(const o of moving)o.visible=true;for(const wheel of wheels)wheel.rotation.x=0;for(const entry of shells)for(const m of entry.materials){m.material.opacity=m.opacity;m.material.transparent=m.transparent;m.material.depthWrite=m.depthWrite;}}
- return {hide(){root.visible=false;restore();},snapshot:()=>lastState,frame(dt,s,{mode='explain',angleDegrees=0,playing=true,speedDegrees=60,cutaway=true,labels=true,mechanism=true,clock=0,arrows=true}={}){
+ return {hide(){root.visible=false;restore();},snapshot:()=>lastState,frame(dt,s,{mode='explain',angleDegrees=0,playing=true,speedDegrees=60,cutaway=true,labels=true,mechanism=true,clock=0,arrows=true,fluidPaths=true,fluidOnly=false,thermal=null}={}){
   const model=api.models.get('ENG');if(model!==bound)bind(model);
   root.visible=mechanism&&!!model?.root.visible;
   if(!root.visible){restore();return;}
@@ -46,16 +47,18 @@ export function doubleActingView(api){
   const phase=mode==='simulation'?(s.crank_angle_rad||0)/(2*Math.PI):mode==='manual'?0:demoAngle/(2*Math.PI);
   const states=cylinders.map(c=>cylinderCycle(angle+c.i*K.phaseOffset));for(const wheel of wheels)wheel.rotation.x=angle;
   const planes=api.clipPlanes('ENG');root.traverse(o=>{if(o.material)for(const m of [].concat(o.material))m.clippingPlanes=planes;});
+  const temperatureColor=value=>new T.Color().setRGB(...temperatureRGB(value,thermal?.min,thermal?.max),T.SRGBColorSpace);
   for(const c of cylinders){const state=states[c.i],pin=new T.Vector3(c.x,250+60*Math.sin(state.angle_rad),K.crankZ+60*Math.cos(state.angle_rad)),end=new T.Vector3(c.x,250,state.pistonZ_mm-K.pistonRod);
    c.piston.position.set(c.x,250,state.pistonZ_mm);c.pin.position.copy(pin);
+   for(const o of [c.piston,c.pin,c.rod,c.conrod,c.crankArm,...c.gates]){o.visible=!fluidOnly;o.material.color.copy(thermal?temperatureColor(s.engine_C):o.explanationBaseColor);}
    const shaft=new T.Vector3(c.x,250,K.crankZ);c.crankArm.position.copy(shaft).add(pin).multiplyScalar(.5);c.crankArm.scale.y=K.crankRadius;c.crankArm.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),pin.clone().sub(shaft).normalize());
    c.rod.position.set(c.x,250,state.pistonZ_mm-K.pistonRod/2);c.rod.scale.y=K.pistonRod;
    c.conrod.position.copy(pin).add(end).multiplyScalar(.5);c.conrod.scale.y=pin.distanceTo(end);c.conrod.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),end.sub(pin).normalize());
    for(const ch of ['A','B']){const v=c.volumes[ch],value=state[ch],color=value.direction>0?fresh:value.direction<0?spent:closed;
-    v.fluid.position.set(c.x,250,ch==='A'?K.topFace-value.height_mm/2:K.bottomFace+value.height_mm/2);v.fluid.scale.y=Math.max(.01,value.height_mm);v.fluid.material.color.set(color);
+    v.fluid.visible=fluidPaths;v.fluid.position.set(c.x,250,ch==='A'?K.topFace-value.height_mm/2:K.bottomFace+value.height_mm/2);v.fluid.scale.y=Math.max(.01,value.height_mm);v.fluid.material.color.set(thermal?temperatureColor(value.direction>0?thermal.inlet:value.direction<0?thermal.exhaust:null):color);
     v.tag.sprite.visible=labels;v.tag.write((c.i+1)+ch+' · '+({admission:'Впуск',expansion:'Закрыта',exhaust:'Выпуск',release:'Сброс',compression:'Сжатие'}[value.phase]),color);
    }
-   for(const gate of c.gates){const v=state[gate.userData.chamber],open=gate.userData.circuit==='inlet'?v.inletOpen:v.exhaustOpen;gate.scale.setScalar(open?1.4:.8);gate.material.color.set(open?(gate.userData.circuit==='inlet'?fresh:spent):closed);gate.userData.open=open;}
+   for(const gate of c.gates){const v=state[gate.userData.chamber],open=gate.userData.circuit==='inlet'?v.inletOpen:v.exhaustOpen;gate.scale.setScalar(open?1.4:.8);gate.material.color.set(thermal?temperatureColor(s.engine_C):open?(gate.userData.circuit==='inlet'?fresh:spent):closed);gate.userData.open=open;}
   }
   for(const line of lines){const state=line.cylinder===null?null:states[line.cylinder],value=state?.[line.chamber];
    let direction=1,active=true,color=fresh;
@@ -66,6 +69,8 @@ export function doubleActingView(api){
    else if(line.role==='steam'&&state)active=state.A.inletOpen||state.B.inletOpen;
    else if(line.role==='steam')active=states[1].A.inletOpen||states[1].B.inletOpen;
    if(mode==='simulation'&&!(s.flow>0))active=false;
+   if(thermal)color=temperatureColor(line.role==='exhaust'||line.role==='vent'||line.role==='chamber'&&value.direction<0?thermal.exhaust:line.role==='chamber'&&!value.direction?null:thermal.inlet);
+   line.fluid.visible=fluidPaths;line.fluid.material.color.set(thermal?color:line.role==='chamber'&&!value.direction?closed:color);
    line.arrows.update({camera:api.camera,radius:line.radius,phase,visible:arrows&&active,clippingPlanes:planes,direction,color});
   }
   lastState={mode,angle_deg:states[0].angle_deg,cylinders:states,lines:lines.map(l=>({id:l.id,role:l.role,cylinder:l.cylinder,chamber:l.chamber,active:l.arrows.group.visible,direction:l.arrows.markers[0]?.marker.userData.direction,fraction:l.arrows.markers[0]?.marker.userData.routeFraction}))};
