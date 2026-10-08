@@ -78,6 +78,12 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
+        'literature-audit.html': 'Проверка по книге Фр. Барта и источникам · полный отчёт',
+        'literature-audit.pdf': 'Проверка парового цикла по литературе · PDF',
+        'literature-audit.json': 'Независимый расчёт и 10 выводов проверки по литературе',
+        'literature-checks.json': 'Проверки теплообмена и независимых физических оценок',
+        'audit_literature.py': 'Воспроизводимая проверка физических оценок по литературе',
+        'verify_literature.mjs': 'Сверка переходной модели с независимым расчётом',
         'viewer-checks.json': 'Все стрелки, расчётный поток и полноэкранный просмотр · проверки',
         'connection-specs.json': 'Патрубки, оси, проходные диаметры и варианты подключения',
         'connection-checks.json': 'Проверка геометрии стыков и переключения нагревателей',
@@ -153,7 +159,7 @@ def main():
                         'format': p.suffix[1:].upper(), 'size': target.stat().st_size})
 
     header = '''<a class="skip" href="#main">К содержимому</a><header class="site-header"><a class="brand" href="index.html" aria-label="ЗАЗ-968М: главная"><span class="brand-icon">S</span><span>ЗАЗ<span class="brand-light"> / STEAM</span></span></a><nav aria-label="Главная навигация"><a href="index.html#concept">Концепция</a><a href="calculations.html">Расчёты</a><a href="assembly.html">3D-модель</a><a href="heat.html">Источники тепла</a><a href="physics.html">Физика узлов</a><a href="library.html">Материалы</a></nav><a class="header-link" href="''' + REPO + '''" target="_blank" rel="noopener">GitHub ↗</a></header>'''
-    footer = '''<footer class="site-footer"><div><a class="brand" href="index.html">ЗАЗ / STEAM</a><p>Исследование парового привода для ЗАЗ-968М.</p></div><div><span>Версия 08.10.2026</span><a href="library.html">Библиотека материалов →</a><a href="''' + REPO + '''" target="_blank" rel="noopener">Исходники на GitHub ↗</a></div></footer>'''
+    footer = '''<footer class="site-footer"><div><a class="brand" href="index.html">ЗАЗ / STEAM</a><p>Исследование парового привода для ЗАЗ-968М.</p></div><div><span>Версия 09.10.2026</span><a href="literature.html">Проверка по литературе →</a><a href="library.html">Библиотека материалов →</a><a href="''' + REPO + '''" target="_blank" rel="noopener">Исходники на GitHub ↗</a></div></footer>'''
     def page(template, title, desc, **values):
         text = (WEB / template).read_text()
         vals = {'HEADER': header, 'FOOTER': footer, 'TITLE': title, 'DESCRIPTION': desc, **values}
@@ -167,6 +173,7 @@ def main():
 
     (OUT / 'heat.html').write_text(page('heat.html','Источники тепла и замкнутый цикл — ЗАЗ / STEAM','Дизель, дрова, пеллеты, газ и электричество: физические формулы и сравнительные симуляции.'))
     (OUT / 'physics.html').write_text(page('physics.html','Физика узлов и нагрузка на четыре колеса — ЗАЗ / STEAM','Законы узлов, переходные процессы, распределение веса и нагрузки рычагов.'))
+    (OUT / 'literature.html').write_text(page('literature.html','Проверка парового цикла по литературе — ЗАЗ / STEAM','Разбор книги Фр. Барта, независимые физические оценки и найденные ограничения проекта.'))
     (OUT / 'procurement.html').write_text(page('procurement.html','Комплектующие и материалы — ЗАЗ / STEAM','Товары, материалы, каталоги и изготовители для 32 узлов внутренней сборки.'))
     (OUT / 'calculations.html').write_text(page('calculations.html', 'Формулы и подстановки — ЗАЗ / STEAM', 'Формула, исходные данные, подстановка и результат для каждого расчёта.'))
     (OUT / 'assembly.html').write_text(page('assembly.html', 'CAD-сборка — ЗАЗ / STEAM',
@@ -219,6 +226,7 @@ def main():
         ('user-body-audit.json', 'Ваша модель · проверка трёх компоновок', 'Проверки'),
         ('heat.html', 'Источники тепла · пять вариантов, расход и КПД', 'Расчёты'),
         ('physics.html', 'Физика узлов · массы, рычаги и четыре колеса', 'Расчёты'),
+        ('literature.html', 'Проверка по литературе · формулы и ограничения цикла', 'Расчёты'),
         ('procurement.html', 'Комплектующие · покупка и изготовление', 'Документы'),
         ('piping.html', 'Трубопроводы · формулы, диаметры и изоляция', 'Документы'),
         ('internal.html', 'Внутренняя сборка · детали, крепления и тепловые ограничения', '3D'),
@@ -266,7 +274,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'heat.html', 'physics.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-09</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'heat.html', 'physics.html', 'literature.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 

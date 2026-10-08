@@ -2,6 +2,11 @@
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 function interval(xs,x){let i=0;while(i<xs.length-2&&xs[i+1]<x)i++;return [i,clamp((x-xs[i])/(xs[i+1]-xs[i]),0,1)];}
 function interpolate(rows,key,x){let i=0,j=rows.length-1;while(j-i>1){const m=(i+j)>>1;if(rows[m][key]<x)i=m;else j=m;}const a=rows[i],b=rows[i+1],t=clamp((x-a[key])/(b[key]-a[key]),0,1);return Object.fromEntries(Object.keys(a).map(k=>[k,typeof a[k]==='number'?a[k]+t*(b[k]-a[k]):a[k]]));}
+// Isothermal lumped hot side, finite air warming; UA remains an unmeasured input.
+export function condenserHeatRate(UA,airflow,hot_C,ambient_C){
+ const C=1.18*1005*airflow;
+ return C>0&&UA>0?C*(-Math.expm1(-UA/C))*(hot_C-ambient_C):0;
+}
 export class SteamSimulation{
  constructor(data,options={}){this.data=data;this.cfg={...data.defaults,...options};this.source=(data.heat_sources||[]).find(s=>s.id===(options.source_id||'diesel'));if(this.source){this.cfg.boiler_efficiency=this.source.efficiency;this.cfg.fuel_kg=this.source.stock;this.cfg.source_energy_J_per_unit=this.source.energy_per_unit_J;this.cfg.vehicle_mass_kg=(data.defaults.vehicle_mass_kg||1200)+(this.source.hardware_mass_delta_kg??this.source.dry_mass_kg-13)+(this.source.id==='electric'?this.source.battery_mass_kg:this.source.stock)-data.defaults.fuel_kg;}this.reset();}
  sat(T){return interpolate(this.data.water.saturation,'T',T);}
@@ -47,7 +52,7 @@ export class SteamSimulation{
  const makeup=this.phase>=3&&this.phase<10?Math.min(Math.max(0,k.receiver_charge_kg-this.r.M)*.08,this.water/dt,.05):0;
  const gasTotal=c.mv+this.c.air,ventMixed=this.phase>=4&&c.p>1e5&&this.c.air/Math.max(gasTotal,1e-6)>.01?Math.min(.01*(c.p/1e5-1),gasTotal*.4/dt):0,ventAir=ventMixed*this.c.air/Math.max(gasTotal,1e-6),ventSteam=ventMixed*c.mv/Math.max(gasTotal,1e-6),ventEnergy=ventAir*1005*(c.T+273.15)+ventSteam*c.hg;
  const flue=this.source?.flue,gasMass=flue?chemical/k.source_energy_J_per_unit*(1+flue.excess_air*flue.stoich_air):0,gasRho=flue?101325/(flue.gas_R_J_kgK*(this.flueT+273.15)):1,gasD=(flue?.inside_mm||80)/1000,gasSpeed=gasMass/(gasRho*Math.PI*gasD**2/4),gasDp=flue?(flue.friction_factor*this.data.comparison_flue_length_m/gasD+2.6)*gasRho*gasSpeed**2/2:0,draftPower=gasDp*gasMass/gasRho/.4;
- const airflow=this.phase>=2?k.airflow_m3_s*this.fan:0,cooling=Math.min(k.condenser_UA_W_K,1.18*1005*airflow)*(c.T-k.ambient_C),airSpeed=airflow/k.air_area_m2,fanPower=(250+.5*1.18*airSpeed**2)*airflow/.55,burnerMotor=fuelPower>0?(this.source?.aux_W||750):0,aux=fanPower+pumpPower+returnPower+burnerMotor+draftPower;
+ const airflow=this.phase>=2?k.airflow_m3_s*this.fan:0,cooling=condenserHeatRate(k.condenser_UA_W_K,airflow,c.T,k.ambient_C),airSpeed=airflow/k.air_area_m2,fanPower=(250+.5*1.18*airSpeed**2)*airflow/.55,burnerMotor=fuelPower>0?(this.source?.aux_W||750):0,aux=fanPower+pumpPower+returnPower+burnerMotor+draftPower;
  const lossB=k.boiler_loss_W_K*(b.T-k.ambient_C),lossSH=8*(shT-k.ambient_C),lossR=5*(r.T-k.ambient_C),lossEngine=10*(engT-k.ambient_C),heatQ=chemical*k.boiler_efficiency;
  this.b.E+=dt*(heatQ*(1-k.superheater_fraction)+feed*(r.h+pumpWork)-flow*b.hg-airFlow*airEnthalpy-lossB);this.b.M+=dt*(feed-flow);this.b.air-=dt*airFlow;
  this.shE+=dt*(heatQ*k.superheater_fraction-shQ-lossSH);

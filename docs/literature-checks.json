@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Air warming agrees with independent Python reference",
+      "pass": true,
+      "detail": 85940.25880629761
+    },
+    {
+      "name": "Condenser cannot reach both infinite-UA and infinite-air bounds",
+      "pass": true
+    },
+    {
+      "name": "Fans stopped have no forced cooling",
+      "pass": true
+    },
+    {
+      "name": "Zero conductance has no heat transfer",
+      "pass": true
+    },
+    {
+      "name": "Equal temperatures have no heat transfer",
+      "pass": true
+    },
+    {
+      "name": "Air can warm a colder lumped body",
+      "pass": true
+    },
+    {
+      "name": "Large airflow approaches UA deltaT bound",
+      "pass": true
+    },
+    {
+      "name": "Time integration uses finite-air-warming law",
+      "pass": true,
+      "detail": 85940.25878241658
+    },
+    {
+      "name": "Time integration keeps its thermal balance after correction",
+      "pass": true,
+      "detail": -4.956746124662459e-10
+    },
+    {
+      "name": "Audit reproduces current comparison steam flow",
+      "pass": true,
+      "detail": 66.86997957233791
+    },
+    {
+      "name": "Known missing subcooling is quantified, not concealed",
+      "pass": true,
+      "detail": 3492.6170970510057
+    },
+    {
+      "name": "Current comparison condenser duty is independently reproduced",
+      "pass": true,
+      "detail": 42.78909386804632
+    },
+    {
+      "name": "Finite stroke expansion ends above exhaust pressure",
+      "pass": true,
+      "detail": 223100.64365739972
+    },
+    {
+      "name": "Finite expansion work is below full-expansion work",
+      "pass": true
+    },
+    {
+      "name": "Wheel speed reference is physically consistent",
+      "pass": true,
+      "detail": 663.1455962162305
+    }
+  ],
+  "scope": "Independent reference values and condenser implementation. Open findings in literature-audit.json remain unresolved; this does not validate real components."
+}

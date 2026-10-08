@@ -35,6 +35,13 @@
     "size": 2027
   },
   {
+    "path": "audit_literature.py",
+    "title": "Воспроизводимая проверка физических оценок по литературе",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 40396
+  },
+  {
     "path": "browser-checks.json",
     "title": "Проверка исходного интерфейса",
     "category": "Проверки",
@@ -158,7 +165,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 36833
+    "size": 38187
   },
   {
     "path": "build_stock_suspension.py",
@@ -371,6 +378,34 @@
     "size": 5795
   },
   {
+    "path": "literature-audit.html",
+    "title": "Проверка по книге Фр. Барта и источникам · полный отчёт",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 62052
+  },
+  {
+    "path": "literature-audit.json",
+    "title": "Независимый расчёт и 10 выводов проверки по литературе",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 28852
+  },
+  {
+    "path": "literature-audit.pdf",
+    "title": "Проверка парового цикла по литературе · PDF",
+    "category": "Документы",
+    "format": "PDF",
+    "size": 336217
+  },
+  {
+    "path": "literature-checks.json",
+    "title": "Проверки теплообмена и независимых физических оценок",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 1961
+  },
+  {
     "path": "measurements.csv",
     "title": "Ведомость необходимых обмеров",
     "category": "Расчёты",
@@ -466,7 +501,7 @@
     "title": "Проверка балансов, остановов и четырёх колёс",
     "category": "Проверки",
     "format": "JSON",
-    "size": 72489
+    "size": 72371
   },
   {
     "path": "simulation-data.json",
@@ -509,6 +544,13 @@
     "category": "Исходники",
     "format": "MJS",
     "size": 6940
+  },
+  {
+    "path": "verify_literature.mjs",
+    "title": "Сверка переходной модели с независимым расчётом",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 2975
   },
   {
     "path": "verify_pipe_engineering.py",
@@ -676,35 +718,35 @@
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 8666
+    "size": 8742
   },
   {
     "path": "assembly.html",
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 35617
+    "size": 35693
   },
   {
     "path": "user-model.html",
     "title": "Ваша модель · масштаб, панели и конфликты",
     "category": "Документы",
     "format": "HTML",
-    "size": 10237
+    "size": 10313
   },
   {
     "path": "packaging.html",
     "title": "Новая расстановка · зазоры и открытые вопросы",
     "category": "3D",
     "format": "HTML",
-    "size": 20650
+    "size": 20726
   },
   {
     "path": "reconstruction.html",
     "title": "Кузов по фотографиям: источники и точность",
     "category": "Документы",
     "format": "HTML",
-    "size": 23002
+    "size": 23078
   },
   {
     "path": "models/zaz-968m-reconstructed.glb",
@@ -851,35 +893,42 @@
     "title": "Источники тепла · пять вариантов, расход и КПД",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 12206
+    "size": 12925
   },
   {
     "path": "physics.html",
     "title": "Физика узлов · массы, рычаги и четыре колеса",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 10031
+    "size": 10497
+  },
+  {
+    "path": "literature.html",
+    "title": "Проверка по литературе · формулы и ограничения цикла",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 37330
   },
   {
     "path": "procurement.html",
     "title": "Комплектующие · покупка и изготовление",
     "category": "Документы",
     "format": "HTML",
-    "size": 3173
+    "size": 3249
   },
   {
     "path": "piping.html",
     "title": "Трубопроводы · формулы, диаметры и изоляция",
     "category": "Документы",
     "format": "HTML",
-    "size": 56915
+    "size": 56991
   },
   {
     "path": "internal.html",
     "title": "Внутренняя сборка · детали, крепления и тепловые ограничения",
     "category": "3D",
     "format": "HTML",
-    "size": 29565
+    "size": 29641
   },
   {
     "path": "models/steam-internal-assembly.glb",
