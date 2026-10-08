@@ -1,6 +1,6 @@
 // Formula workbook uses SI-derived kJ/kg, kW, kg/s; properties are precomputed by IF97.
 export const number = (v, digits=3) => Number.isFinite(v)?(v!==0&&Math.abs(v)<.5*10**(-digits)?v.toLocaleString('ru-RU',{maximumSignificantDigits:3,useGrouping:false}):v.toLocaleString('ru-RU',{maximumFractionDigits:digits,useGrouping:false})):'—';
-export const resultNumber = (value,unit) => value===null?'Не определено':Math.abs(value)<1e-8?'≈ 0':number(value,unit==='об/мин'||unit==='Па abs'||unit.startsWith('₽')||unit.startsWith('€')?0:unit==='доля'||unit==='рад'||unit==='кг/с'?4:1);
+export const resultNumber = (value,unit) => value===null?'Не определено':Math.abs(value)<1e-8?'≈ 0':number(value,unit==='об/мин'||unit==='Па abs'||unit.startsWith('₽')||unit.startsWith('€')?0:unit==='доля'||unit==='рад'||unit==='кг/с'?4:unit==='отношение'||unit==='кг/м³'||unit==='кДж/(кг·К)'?3:unit==='м'||unit==='м²'||unit==='м³/с'?2:1);
 // Preserve enough digits in intermediate mass flow and ratios for substitutions
 // to reproduce rounded outputs; do not round the actual computation.
 const n=v=>number(v,Math.abs(v)<1?6:3);

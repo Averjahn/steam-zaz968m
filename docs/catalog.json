@@ -116,21 +116,21 @@
     "title": "Формулы A/B/C · автономная версия",
     "category": "Документы",
     "format": "HTML",
-    "size": 311285
+    "size": 311322
   },
   {
     "path": "calculation-workbook.json",
     "title": "Подстановки A/B/C · JSON",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 193867
+    "size": 193904
   },
   {
     "path": "calculation-workbook.pdf",
     "title": "Формулы и подстановки A/B/C · PDF",
     "category": "Документы",
     "format": "PDF",
-    "size": 1013974
+    "size": 1014099
   },
   {
     "path": "convert_cad.js",
@@ -193,14 +193,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 200313
+    "size": 200350
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 220098
+    "size": 220116
   },
   {
     "path": "requirements.txt",
@@ -263,7 +263,7 @@
     "title": "Сверка формул с Python",
     "category": "Исходники",
     "format": "MJS",
-    "size": 6775
+    "size": 6940
   },
   {
     "path": "drawings/01-layout-mm.dxf",

@@ -1,4 +1,4 @@
-import {number, resultNumber, pendingCalculations} from './calculation-model.js?v=99deef741ddd';
+import {number, resultNumber, pendingCalculations} from './calculation-model.js?v=803d4fdc3eff';
 export const escape = s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function card(step){const result=resultNumber(step.value,step.unit);return `<article class="formula-card" data-key="${escape(step.key)}"><h3>${escape(step.title)}</h3><span class="formula-label">Формула</span><div class="formula">${escape(step.formula)}</div><span class="formula-label">Подстановка наших данных</span><div class="substitution">${escape(step.substitution)}</div><span class="formula-label">Результат</span><div class="formula-result">${escape(result)} ${escape(step.unit)}</div><p>${escape(step.terms||'')}</p>${step.note?'<p>'+escape(step.note)+'</p>':''}</article>`;}
 const groups=[['Дорожная нагрузка','road-formulas'],['Паровой цикл и тепло','cycle-formulas'],['Масса и нагрузки','mass-formulas'],['Запас воды и топлива','range-formulas']];
