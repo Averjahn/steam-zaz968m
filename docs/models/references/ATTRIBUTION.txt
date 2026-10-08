@@ -1,0 +1,43 @@
+references/side2.jpg
+PaPaKo · CC BY-SA 3.0
+https://commons.wikimedia.org/wiki/File:ZAZ_968M-_widok_z_boku.JPG
+https://creativecommons.org/licenses/by-sa/3.0/
+Боковой вид; перспективное фото, багажник на крыше исключён из модели
+Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную.
+
+references/side.jpg
+PaPaKo · CC BY-SA 3.0
+https://commons.wikimedia.org/wiki/File:ZAZ_968M_-profil.JPG
+https://creativecommons.org/licenses/by-sa/3.0/
+Передняя часть и боковина
+Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную.
+
+references/cutaway.jpg
+Ralf Smallkaa · CC BY 2.0
+https://commons.wikimedia.org/wiki/File:Cut_open_ZAZ-968M_Zaporozhets_in_Arkhangel%27skoye%2C_Moskovskaya_Oblast%2C_Russia.jpg
+https://creativecommons.org/licenses/by/2.0/
+Музейный продольный разрез; панели изменены для экспозиции
+Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную.
+
+references/interior.jpg
+Aleksandr Markin · CC BY-SA 2.0
+https://commons.wikimedia.org/wiki/File:In_the_car.ZAZ-968M._%284551469854%29.jpg
+https://creativecommons.org/licenses/by-sa/2.0/
+Салон и подъёмы пола музейного разреза
+Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную.
+
+references/front.jpg
+Aleksandr Markin · CC BY-SA 2.0
+https://commons.wikimedia.org/wiki/File:Forward_part.ZAZ-968_%284551470324%29.jpg
+https://creativecommons.org/licenses/by-sa/2.0/
+Передний отсек и ниша; имя файла 968, тот же музейный разрез серии 968М
+Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную.
+
+references/rear.jpg
+Aleksandr Markin · CC BY-SA 2.0
+https://commons.wikimedia.org/wiki/File:Back_part.ZAZ_968M_%284550835007%29.jpg
+https://creativecommons.org/licenses/by-sa/2.0/
+Задняя перегородка и штатный силовой блок музейного разреза
+Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную.
+
+Photo-derived model: CC BY-SA 3.0. This is an approximate reconstruction, not a scan.

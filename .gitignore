@@ -1,6 +1,6 @@
 .deps/
 __pycache__/
-references/
+/references/
 .DS_Store
 preview.png
 site-*.png

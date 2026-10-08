@@ -1,0 +1,84 @@
+{
+  "checks": [
+    {
+      "name": "Body auto-loaded",
+      "ok": true
+    },
+    {
+      "name": "Millimetre orientation and bounds",
+      "ok": true,
+      "value": "Габарит в текущих осях: 3 765 × 1 490 × 1 400 мм"
+    },
+    {
+      "name": "35 independently visible body meshes",
+      "ok": true
+    },
+    {
+      "name": "Unmeasured quality displayed",
+      "ok": true
+    },
+    {
+      "name": "Open-bay preset hides covers and seats",
+      "ok": true,
+      "value": 15
+    },
+    {
+      "name": "Multiple body slab cuts",
+      "ok": true
+    },
+    {
+      "name": "Collision screening labels hypotheses",
+      "ok": true,
+      "value": "Обнаружены пересечения:\n\nWTR · Бак холодной воды — пересечение поверхностей (Целевой габарит)\n\nGBX · Штатная КПП — пересечение поверхностей (Целевой габарит)\n\nENG · Паровая машина — пересечение поверхностей (Целевой габарит)\n\nSTM · Генератор + горелка — пересечение поверхностей (Целевой габарит)\n\nFUE · Топливный бак — пересечение поверхностей (Целевой габарит)\n\nRCV · Приемник конденсата — пересечение поверхностей (Целевой габарит)\n\nPMP · Cat Pumps 5CP2120W — пересечение поверхностей (Заводской STEP → GLB)\n\nРезультат относится к гипотетическим поверхностям реконструкции. Статические колёса и декоративные узлы исключены; оболочки хода подвески отсутствуют. Проверены 13 видимых поверхностных объектов кузова. Скрытые узлы и срез экрана не создают подтверждённый свободный объём. На результат влияют точность модели и триангуляция."
+    },
+    {
+      "name": "Factory pump scale remains locked",
+      "ok": true,
+      "value": "Габарит в текущих осях: 259,25 × 254 × 146,2 мм"
+    },
+    {
+      "name": "Export retains reconstruction provenance",
+      "ok": true
+    },
+    {
+      "name": "Export GLB is in metres with standard Y up",
+      "ok": true,
+      "value": [
+        3.765000104904175,
+        1.399999976158142,
+        1.4900000095367432
+      ]
+    },
+    {
+      "name": "Downloaded body reimports with correct units and vertical axis",
+      "ok": true,
+      "value": "Габарит в текущих осях: 3 765 × 1 490 × 1 400 мм"
+    },
+    {
+      "name": "Generic imported body uses node controls",
+      "ok": true
+    },
+    {
+      "name": "Restore has one BODY",
+      "ok": true
+    },
+    {
+      "name": "Six actual reference images",
+      "ok": true
+    },
+    {
+      "name": "Images resolve",
+      "ok": true
+    },
+    {
+      "name": "No unfilled template fields",
+      "ok": true
+    },
+    {
+      "name": "No browser exceptions",
+      "ok": true,
+      "value": []
+    }
+  ],
+  "errors": []
+}

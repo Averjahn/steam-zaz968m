@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 5342
+    "size": 6695
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -70,18 +70,25 @@
     "size": 3045
   },
   {
+    "path": "build_reconstruction.py",
+    "title": "Генератор кузова по фотографиям",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 18064
+  },
+  {
     "path": "build_report.py",
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 76454
+    "size": 77367
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 17414
+    "size": 20943
   },
   {
     "path": "build_viewer.py",
@@ -193,14 +200,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 200350
+    "size": 201263
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 220116
+    "size": 220972
   },
   {
     "path": "requirements.txt",
@@ -358,10 +365,73 @@
   },
   {
     "path": "assembly.html",
-    "title": "CAD-сборка: реальные файлы и проверка поверхностей",
+    "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 17332
+    "size": 19211
+  },
+  {
+    "path": "reconstruction.html",
+    "title": "Кузов по фотографиям: источники и точность",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 19946
+  },
+  {
+    "path": "models/zaz-968m-reconstructed.glb",
+    "title": "ЗАЗ-968М · приближённая реконструкция GLB",
+    "category": "3D",
+    "format": "GLB",
+    "size": 769440
+  },
+  {
+    "path": "models/zaz-968m-reconstructed.obj",
+    "title": "ЗАЗ-968М · приближённая реконструкция OBJ",
+    "category": "3D",
+    "format": "OBJ",
+    "size": 886018
+  },
+  {
+    "path": "models/zaz-968m-reconstructed.mtl",
+    "title": "ЗАЗ-968М · материалы реконструкции",
+    "category": "3D",
+    "format": "MTL",
+    "size": 315
+  },
+  {
+    "path": "models/zaz-968m-reconstruction.json",
+    "title": "Реконструкция · параметры и источники",
+    "category": "Документы",
+    "format": "JSON",
+    "size": 14117
+  },
+  {
+    "path": "models/reconstruction-dimensions.csv",
+    "title": "Реконструкция · ведомость размеров",
+    "category": "Документы",
+    "format": "CSV",
+    "size": 2485
+  },
+  {
+    "path": "models/reconstruction-checks.json",
+    "title": "Реконструкция · проверка построенной сетки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 499
+  },
+  {
+    "path": "models/reconstruction-browser-checks.json",
+    "title": "Реконструкция · 17 проверок интерфейса и импорта",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 3340
+  },
+  {
+    "path": "models/references/ATTRIBUTION.txt",
+    "title": "Фотографии кузова · авторы и лицензии",
+    "category": "Документы",
+    "format": "TXT",
+    "size": 2784
   },
   {
     "path": "models/cat-5cp2120w.glb",
@@ -382,6 +452,6 @@
     "title": "Происхождение и точность моделей",
     "category": "Документы",
     "format": "JSON",
-    "size": 3824
+    "size": 4477
   }
 ]

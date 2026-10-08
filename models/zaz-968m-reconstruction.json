@@ -1,0 +1,260 @@
+{
+  "title": "ЗАЗ-968М: реконструкция по фотографиям и наружным размерам",
+  "version": 1,
+  "created": "2026-10-08",
+  "file": "zaz-968m-reconstructed.glb",
+  "obj_file": "zaz-968m-reconstructed.obj",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "author": "Steam ZAZ project; photo authors listed separately",
+  "quality": "Параметрическая визуальная реконструкция, не обмеренный кузов и не фотограмметрический скан",
+  "accuracy": "Не установлена. Ни один внутренний размер не подтверждён измерением.",
+  "axes": "X назад от переднего бампера, Y влево, Z от земли вверх. GLB — Y-up метры; OBJ — Z-up миллиметры.",
+  "parameters_mm": {
+    "length": {
+      "value": 3765,
+      "kind": "documented",
+      "note": "Наружная длина с бамперами; ограничение модели",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "width": {
+      "value": 1490,
+      "kind": "documented",
+      "note": "Наружная ширина; не внутренний просвет",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "height": {
+      "value": 1400,
+      "kind": "project_reference",
+      "note": "Справочный габарит проекта. Альбом 1991: 1370 мм с нагрузкой; высота по фото зависит от подвески. В модели приняты 1400 мм, не обмер.",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "loaded_height_documented": {
+      "value": 1370,
+      "kind": "documented",
+      "note": "Высота с нагрузкой в таблице альбома; не смешивать с ненагруженным состоянием",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "wheelbase": {
+      "value": 2160,
+      "kind": "documented",
+      "note": "Расстояние между осями; ограничение модели",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "front_track": {
+      "value": 1228,
+      "kind": "documented",
+      "note": "Колея передних колёс",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "rear_track": {
+      "value": 1212,
+      "kind": "documented",
+      "note": "Колея задних колёс",
+      "source": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "measured_on_project_car": false,
+      "accuracy_mm": null
+    },
+    "front_axle_x": {
+      "value": 675,
+      "kind": "photo_estimate",
+      "note": "Оценка переднего свеса округлена до 25 мм; в прежнем layout.json X=800 условно. Не заводской размер.",
+      "source": "side2",
+      "measured_on_project_car": false,
+      "accuracy_mm": null,
+      "exploratory_variation_mm": 75
+    },
+    "tyre_radius": {
+      "value": 280,
+      "kind": "project_assumption",
+      "note": "Статический радиус согласован с расчётным R=0,28 м; деформация, фактический размер шины и ход подвески не восстановлены.",
+      "source": "inputs.json",
+      "measured_on_project_car": false,
+      "accuracy_mm": null,
+      "exploratory_variation_mm": 20
+    },
+    "arch_radius": {
+      "value": 325,
+      "kind": "photo_estimate",
+      "note": "Упрощённый статический профиль арки; не оболочка движения колеса",
+      "source": "side2",
+      "measured_on_project_car": false,
+      "accuracy_mm": null,
+      "exploratory_variation_mm": 50
+    },
+    "cabin_floor_z": {
+      "value": 300,
+      "kind": "internal_hypothesis",
+      "note": "Уровень пола из анатомии разреза; без масштабной линейки и обмеров",
+      "source": "interior",
+      "measured_on_project_car": false,
+      "accuracy_mm": null,
+      "exploratory_variation_mm": 75
+    },
+    "rear_bulkhead_x": {
+      "value": 2780,
+      "kind": "internal_hypothesis",
+      "note": "Наклонная перегородка за задним сиденьем; координаты не измерены",
+      "source": "rear",
+      "measured_on_project_car": false,
+      "accuracy_mm": null,
+      "exploratory_variation_mm": 100
+    },
+    "wheelhouse_inner_y": {
+      "value": 465,
+      "kind": "internal_hypothesis",
+      "note": "Граница внутренней ниши по ширине; перспективный разрез не задаёт просвет",
+      "source": "front",
+      "measured_on_project_car": false,
+      "accuracy_mm": null,
+      "exploratory_variation_mm": 75
+    }
+  },
+  "photo_registration": {
+    "photo": "side2",
+    "image_size_px": [
+      1187,
+      735
+    ],
+    "manually_picked_points_px": {
+      "front_wheel_center": [
+        224,
+        454
+      ],
+      "rear_wheel_center": [
+        794,
+        463
+      ],
+      "front_bumper": [
+        49,
+        403
+      ],
+      "rear_bumper": [
+        1037,
+        408
+      ]
+    },
+    "method": "Одна проекция: линейный масштаб по базе. Не фотограмметрия; перспектива, наклон камеры и дисторсия не решены.",
+    "formula": "s = B / sqrt((u_r-u_f)^2 + (v_r-v_f)^2); a_f = -s*((u_b-u_f)*dx+(v_b-v_f)*dy)/sqrt(dx^2+dy^2)",
+    "substitution": "s = 2160 / sqrt(570² + 9²) = 3.789 мм/px",
+    "projected_front_overhang_mm": 666,
+    "chosen_front_axle_x_mm": 675,
+    "projected_length_mm": 3743,
+    "documented_length_mm": 3765,
+    "warning": "Разность длин — только диагностическая согласованность одной проекции. Она не задаёт погрешность 3D или внутренних размеров."
+  },
+  "references": [
+    {
+      "id": "side2",
+      "file": "references/side2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:ZAZ_968M-_widok_z_boku.JPG",
+      "author": "PaPaKo",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "notes": "Боковой вид; перспективное фото, багажник на крыше исключён из модели",
+      "changes": "Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную."
+    },
+    {
+      "id": "side",
+      "file": "references/side.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:ZAZ_968M_-profil.JPG",
+      "author": "PaPaKo",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "notes": "Передняя часть и боковина",
+      "changes": "Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную."
+    },
+    {
+      "id": "cutaway",
+      "file": "references/cutaway.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Cut_open_ZAZ-968M_Zaporozhets_in_Arkhangel%27skoye%2C_Moskovskaya_Oblast%2C_Russia.jpg",
+      "author": "Ralf Smallkaa",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "notes": "Музейный продольный разрез; панели изменены для экспозиции",
+      "changes": "Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную."
+    },
+    {
+      "id": "interior",
+      "file": "references/interior.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:In_the_car.ZAZ-968M._%284551469854%29.jpg",
+      "author": "Aleksandr Markin",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "notes": "Салон и подъёмы пола музейного разреза",
+      "changes": "Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную."
+    },
+    {
+      "id": "front",
+      "file": "references/front.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Forward_part.ZAZ-968_%284551470324%29.jpg",
+      "author": "Aleksandr Markin",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "notes": "Передний отсек и ниша; имя файла 968, тот же музейный разрез серии 968М",
+      "changes": "Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную."
+    },
+    {
+      "id": "rear",
+      "file": "references/rear.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Back_part.ZAZ_968M_%284550835007%29.jpg",
+      "author": "Aleksandr Markin",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "notes": "Задняя перегородка и штатный силовой блок музейного разреза",
+      "changes": "Фотография не изменена; ориентиры на отдельном SVG-слое. Геометрия реконструирована вручную."
+    }
+  ],
+  "technical_sources": [
+    {
+      "title": "Шейнин, Стрюк. ЗАЗ-968М «Запорожец». Альбом устройства и эксплуатации, 1991",
+      "url": "https://djvu.online/file/yS7dQhMxx1lMm",
+      "use": "Наружные размеры, база и колея; высота 1370 мм с нагрузкой"
+    },
+    {
+      "title": "Каталог деталей ЗАЗ-968М",
+      "url": "https://www.saporoshez-968.de/968M_ersatzteilkatalog_russisch.pdf",
+      "use": "Названия и состав панелей; не масштабный чертёж для обмеров"
+    }
+  ],
+  "model_scope": [
+    "Наружная оболочка с раздельными крышками, окнами и стойками",
+    "Пол, подъём под задним сиденьем, передняя и задняя перегородки — гипотезы",
+    "Упрощённые внутренние колёсные ниши",
+    "Отдельные сиденья как приблизительные препятствия; их можно скрыть",
+    "Штатный двигатель удалён; КПП и паровые агрегаты остаются целевыми габаритами кроме заводского насоса"
+  ],
+  "omitted": [
+    "Толщина и штамповка листа; силовая прочность, сварка и дефекты",
+    "Крепления двигателя и КПП, подвеска, рулевой привод и оболочки движения",
+    "Точные формы лонжеронов, ниш, кабельные и трубные трассы",
+    "Штатные агрегаты и бак, которые надо обмерить перед удалением/сохранением",
+    "Реальный технологический, тепловой и сервисный зазор"
+  ],
+  "engineering_limits": [
+    "Треугольные поверхности допустимы только для предварительного поиска конфликтов компоновки.",
+    "Массу, жёсткость и прочность нельзя вычислять по объёму этой сетки; панели не имеют измеренной толщины.",
+    "Неизвестные внутренние размеры не преобразуются в реальные при масштабе по наружной длине.",
+    "exploratory_variation_mm — назначенный диапазон исследования чувствительности, а не подтверждённая погрешность или доверительный интервал.",
+    "Не изменены обороты, мощности, массы и осевые нагрузки прежнего расчёта. Оси прежней компоновки на 125 мм дальше назад; нужно согласовать после обмеров."
+  ],
+  "validation_needed": [
+    "G01: передний свес и координаты осей относительно бамперов",
+    "G02/G03: поперечные сечения отсеков, перегородки и пол в общей системе XYZ",
+    "G04: крайние положения подвески и рулевого управления с реальными шинами",
+    "T01/T02: положение фланца КПП, отверстия и крепления",
+    "Контрольная линейка/мишени и серия перекрывающихся фотографий каждого отсека либо лазерный скан"
+  ]
+}

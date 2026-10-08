@@ -60,6 +60,7 @@ def main():
         'verify.py': 'Проверки расчётной модели', 'build_geometry.py': 'Генерация 3D и компоновочных чертежей',
         'build_diagrams.py': 'Генерация схем и панели', 'build_report.py': 'Генерация отчёта',
         'build_viewer.py': 'Генерация интерактивной модели', 'build_site.py': 'Сборка этого сайта',
+        'build_reconstruction.py': 'Генератор кузова по фотографиям',
         'build_cad_assets.py': 'Преобразование заводского CAD в GLB',
         'convert_cad.js': 'Триангуляция заводского STEP',
         'build_workbook.mjs': 'Сборка формул для PDF и отчёта',
@@ -124,9 +125,25 @@ def main():
     (OUT / 'calculations.html').write_text(page('calculations.html', 'Формулы и подстановки — ЗАЗ / STEAM', 'Формула, исходные данные, подстановка и результат для каждого расчёта.'))
     (OUT / 'assembly.html').write_text(page('assembly.html', 'CAD-сборка — ЗАЗ / STEAM',
         'Заводская модель насоса, импорт кузова и агрегатов, измерения и проверка пересечений поверхностей.'))
+    reconstruction=json.loads((ROOT/'models/zaz-968m-reconstruction.json').read_text())
+    names={'length':'Длина','width':'Ширина','height':'Высота сцены','loaded_height_documented':'Высота с нагрузкой','wheelbase':'Колёсная база','front_track':'Передняя колея','rear_track':'Задняя колея','front_axle_x':'Передняя ось X','tyre_radius':'Радиус колеса','arch_radius':'Радиус арки','cabin_floor_z':'Пол салона Z','rear_bulkhead_x':'Задняя перегородка X','wheelhouse_inner_y':'Внутренняя ниша |Y|'}
+    kinds={'documented':'Документация','project_reference':'Габарит проекта','photo_estimate':'Оценка по фото','project_assumption':'Допущение проекта','internal_hypothesis':'Внутренняя гипотеза'}
+    dimension_rows=''.join('<tr><td>'+names[k]+'</td><td>'+fmt(v['value'])+'</td><td>'+kinds[v['kind']]+'</td><td>'+escape(v['note'])+'</td></tr>' for k,v in reconstruction['parameters_mm'].items())
+    photos=''.join('<figure><img loading="lazy" src="models/'+r['file']+'" alt="'+escape(r['notes'],quote=True)+'"><figcaption>'+escape(r['notes'])+'<br>'+escape(r['author'])+' · <a href="'+r['license_url']+'">'+escape(r['license'])+'</a><br><a href="'+r['source']+'" target="_blank" rel="noopener">Страница автора и оригинал ↗</a></figcaption></figure>' for r in reconstruction['references'])
+    registration=reconstruction['photo_registration']
+    (OUT/'reconstruction.html').write_text(page('reconstruction.html','Кузов по фотографиям — ЗАЗ / STEAM','Параметрическая реконструкция ЗАЗ-968М: модель, фотографии, происхождение размеров и ограничения точности.',PARAMETER_ROWS=dimension_rows,PHOTOS=photos,SIDE_SOURCE=reconstruction['references'][0]['source'],SCALE_SUBSTITUTION=registration['substitution'],OVERHANG=registration['projected_front_overhang_mm'],PHOTO_LENGTH=registration['projected_length_mm']))
     for path, title, cat in [
         ('calculations.html', 'Формулы, подстановки и сверка компонентов', 'Расчёты'),
-        ('assembly.html', 'CAD-сборка: реальные файлы и проверка поверхностей', '3D'),
+        ('assembly.html', '3D-сборка: реконструкция кузова и агрегаты', '3D'),
+        ('reconstruction.html', 'Кузов по фотографиям: источники и точность', 'Документы'),
+        ('models/zaz-968m-reconstructed.glb', 'ЗАЗ-968М · приближённая реконструкция GLB', '3D'),
+        ('models/zaz-968m-reconstructed.obj', 'ЗАЗ-968М · приближённая реконструкция OBJ', '3D'),
+        ('models/zaz-968m-reconstructed.mtl', 'ЗАЗ-968М · материалы реконструкции', '3D'),
+        ('models/zaz-968m-reconstruction.json', 'Реконструкция · параметры и источники', 'Документы'),
+        ('models/reconstruction-dimensions.csv', 'Реконструкция · ведомость размеров', 'Документы'),
+        ('models/reconstruction-checks.json', 'Реконструкция · проверка построенной сетки', 'Проверки'),
+        ('models/reconstruction-browser-checks.json', 'Реконструкция · 17 проверок интерфейса и импорта', 'Проверки'),
+        ('models/references/ATTRIBUTION.txt', 'Фотографии кузова · авторы и лицензии', 'Документы'),
         ('models/cat-5cp2120w.glb', 'Cat Pumps 5CP2120W · заводской CAD в GLB', '3D'),
         ('models/cat-5cp2120w.step', 'Cat Pumps 5CP2120W · исходный заводской STEP', '3D'),
         ('models/registry.json', 'Происхождение и точность моделей', 'Документы')]:
@@ -163,7 +180,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 
