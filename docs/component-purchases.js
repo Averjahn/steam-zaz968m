@@ -3,7 +3,7 @@ const labels={product:'Товар',material:'Материалы',catalogue:'Ка
 const statuses={custom:'Проект / изготовление',candidate:'Конкретный размерный кандидат',retained:'Сохраняем штатное',choice:'Выбрать готовое изделие'};
 const markets={FI:'Финляндия',EU:'Европа',RU:'Россия',ALL:'Изготовитель / все регионы'};
 const element=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;};
-export async function loadPurchases(){const r=await fetch('component-purchases.json?v=466dba637c6b');if(!r.ok)throw Error('Каталог покупок: HTTP '+r.status);return r.json();}
+export async function loadPurchases(){const r=await fetch('component-purchases.json?v=d0a5e72512a8');if(!r.ok)throw Error('Каталог покупок: HTTP '+r.status);return r.json();}
 export function purchaseRecord(data,id){return data?.components?.[id]||{id,name:'Импортированная деталь',status:'choice',description:'Изделие не идентифицировано. Для ссылки на покупку нужны изготовитель, артикул и технические данные.',requirements:[],links:[]};}
 export function renderPurchaseCard(container,record,{market='all',node='',layer='',checked=''}={}){
  container.replaceChildren();container.dataset.selectionId=record.id;container.dataset.selectionNode=node;container.dataset.selectionLayer=layer;

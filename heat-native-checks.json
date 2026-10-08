@@ -1,0 +1,1668 @@
+{
+  "pipe_geometry": [
+    {
+      "id": "PIPE_STEAM",
+      "length_mm": 825.7622699720773,
+      "reference_mm": 825.7622699720766,
+      "join_error_mm": 5.684341886080802e-14,
+      "min_tangent_dot": 0.9999999999999999,
+      "start": [
+        2530,
+        300,
+        1180
+      ],
+      "end": [
+        3080,
+        0,
+        745
+      ],
+      "start_ref": [
+        2530,
+        300,
+        1180
+      ],
+      "end_ref": [
+        3080,
+        0,
+        745
+      ]
+    },
+    {
+      "id": "PIPE_EXHAUST_R",
+      "length_mm": 240.66573267069276,
+      "reference_mm": 240.66573267069248,
+      "join_error_mm": 0,
+      "min_tangent_dot": 0.9999999999999999,
+      "start": [
+        3370,
+        -200,
+        705
+      ],
+      "end": [
+        3420,
+        -410,
+        780
+      ],
+      "start_ref": [
+        3370,
+        -200,
+        705
+      ],
+      "end_ref": [
+        3420,
+        -410,
+        780
+      ]
+    },
+    {
+      "id": "PIPE_EXHAUST_L",
+      "length_mm": 1039.3227979052458,
+      "reference_mm": 1039.3227979052454,
+      "join_error_mm": 1.1368683772161603e-13,
+      "min_tangent_dot": 1,
+      "start": [
+        3370,
+        110,
+        730
+      ],
+      "end": [
+        3430,
+        440,
+        780
+      ],
+      "start_ref": [
+        3370,
+        110,
+        730
+      ],
+      "end_ref": [
+        3430,
+        440,
+        780
+      ]
+    },
+    {
+      "id": "PIPE_RETURN",
+      "length_mm": 4178.903377989406,
+      "reference_mm": 4178.903377989404,
+      "join_error_mm": 2.2737367544323206e-13,
+      "min_tangent_dot": 0.9999999999999999,
+      "start": [
+        3450,
+        -410,
+        600
+      ],
+      "end": [
+        800,
+        260,
+        890
+      ],
+      "start_ref": [
+        3450,
+        -410,
+        600
+      ],
+      "end_ref": [
+        800,
+        260,
+        890
+      ]
+    },
+    {
+      "id": "PIPE_BALANCE",
+      "length_mm": 925.6637061435918,
+      "reference_mm": 925.6637061435918,
+      "join_error_mm": 0,
+      "min_tangent_dot": 1,
+      "start": [
+        3450,
+        410,
+        600
+      ],
+      "end": [
+        3450,
+        -410,
+        600
+      ],
+      "start_ref": [
+        3450,
+        410,
+        600
+      ],
+      "end_ref": [
+        3450,
+        -410,
+        600
+      ]
+    },
+    {
+      "id": "PIPE_MAKEUP",
+      "length_mm": 214.2477796076938,
+      "reference_mm": 214.24777960769381,
+      "join_error_mm": 3.552713678800501e-15,
+      "min_tangent_dot": 1,
+      "start": [
+        850,
+        -100,
+        670
+      ],
+      "end": [
+        820,
+        10,
+        670
+      ],
+      "start_ref": [
+        850,
+        -100,
+        670
+      ],
+      "end_ref": [
+        820,
+        10,
+        670
+      ]
+    },
+    {
+      "id": "PIPE_SUCTION",
+      "length_mm": 3290.4569269018275,
+      "reference_mm": 3290.456926901828,
+      "join_error_mm": 0,
+      "min_tangent_dot": 0.9999999999999999,
+      "start": [
+        800,
+        480,
+        675
+      ],
+      "end": [
+        2160,
+        -140,
+        500
+      ],
+      "start_ref": [
+        800,
+        480,
+        675
+      ],
+      "end_ref": [
+        2160,
+        -140,
+        500
+      ]
+    },
+    {
+      "id": "PIPE_FEED",
+      "length_mm": 1339.9114857512857,
+      "reference_mm": 1339.9114857512855,
+      "join_error_mm": 0,
+      "min_tangent_dot": 1,
+      "start": [
+        2230,
+        -250,
+        560
+      ],
+      "end": [
+        2530,
+        300,
+        750
+      ],
+      "start_ref": [
+        2230,
+        -250,
+        560
+      ],
+      "end_ref": [
+        2530,
+        300,
+        750
+      ]
+    },
+    {
+      "id": "PIPE_FUEL",
+      "length_mm": 1309.4594432937138,
+      "reference_mm": 1309.4594432937138,
+      "join_error_mm": 1.1368683772161603e-13,
+      "min_tangent_dot": 1,
+      "start": [
+        2190,
+        180,
+        540
+      ],
+      "end": [
+        2300,
+        -250,
+        720
+      ],
+      "start_ref": [
+        2190,
+        180,
+        540
+      ],
+      "end_ref": [
+        2300,
+        -250,
+        720
+      ]
+    },
+    {
+      "id": "PIPE_FLUE",
+      "length_mm": 1539.0929238030121,
+      "reference_mm": 1539.0929238030126,
+      "join_error_mm": 1.1368683772161603e-13,
+      "min_tangent_dot": 0.9999999999999999,
+      "start": [
+        2480,
+        460,
+        1190
+      ],
+      "end": [
+        3725,
+        303,
+        700
+      ],
+      "start_ref": [
+        2480,
+        460,
+        1190
+      ],
+      "end_ref": [
+        3725,
+        303,
+        700
+      ]
+    },
+    {
+      "id": "PIPE_RELIEF",
+      "length_mm": 1083.3331873132652,
+      "reference_mm": 1083.3331873132647,
+      "join_error_mm": 7.105427357601002e-15,
+      "min_tangent_dot": 1,
+      "start": [
+        2370,
+        100,
+        1200
+      ],
+      "end": [
+        2340,
+        -520,
+        850
+      ],
+      "start_ref": [
+        2370,
+        100,
+        1200
+      ],
+      "end_ref": [
+        2340,
+        -520,
+        850
+      ]
+    },
+    {
+      "id": "WIRE",
+      "length_mm": 2526.295000274771,
+      "reference_mm": 2526.2950002747684,
+      "join_error_mm": 2.2737367544323206e-13,
+      "min_tangent_dot": 1,
+      "start": [
+        2100,
+        60,
+        500
+      ],
+      "end": [
+        1130,
+        250,
+        915
+      ],
+      "start_ref": [
+        2100,
+        60,
+        500
+      ],
+      "end_ref": [
+        1130,
+        250,
+        915
+      ]
+    },
+    {
+      "id": "WIRE_ENGINE",
+      "length_mm": 2674.6391822540227,
+      "reference_mm": 2674.6391822540218,
+      "join_error_mm": 0,
+      "min_tangent_dot": 1,
+      "start": [
+        2000,
+        60,
+        500
+      ],
+      "end": [
+        2520,
+        100,
+        1100
+      ],
+      "start_ref": [
+        2000,
+        60,
+        500
+      ],
+      "end_ref": [
+        2520,
+        100,
+        1100
+      ]
+    }
+  ],
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Default internal layout",
+      "pass": true
+    },
+    {
+      "name": "Provided body has 106 selectable nodes",
+      "pass": true
+    },
+    {
+      "name": "Stock suspension has 50 nodes",
+      "pass": true
+    },
+    {
+      "name": "Source floor/body preserved with only rear seat and source stock hidden",
+      "pass": true
+    },
+    {
+      "name": "All exported equipment inside body AABB",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Factory pump dimensions unchanged",
+      "pass": true,
+      "detail": [
+        259.2499852180481,
+        254.0000081062317,
+        146.2000012397766
+      ]
+    },
+    {
+      "name": "Compact G10 reference envelope agrees with catalogue guide",
+      "pass": true,
+      "detail": [
+        305,
+        369,
+        262
+      ]
+    },
+    {
+      "name": "Supplied car uniform calibration preserved",
+      "pass": true,
+      "detail": [
+        3640.7313495874405,
+        1493.9361214637756,
+        1420.0059872846932
+      ]
+    },
+    {
+      "name": "Support contacts actual exported ENG",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported STM",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported BRN",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported CND",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported WTR",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported RCV",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported FUE",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported ELE",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported PMP",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported MOTOR",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported BOOST",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Support contacts actual exported SEP",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "inspectRear changes selected view",
+      "pass": true
+    },
+    {
+      "name": "inspectFront changes selected view",
+      "pass": true
+    },
+    {
+      "name": "inspectBoiler changes selected view",
+      "pass": true
+    },
+    {
+      "name": "inspectMounts changes selected view",
+      "pass": true
+    },
+    {
+      "name": "pipeInsulation independent switch",
+      "pass": true
+    },
+    {
+      "name": "pipeJacket independent switch",
+      "pass": true
+    },
+    {
+      "name": "Generator casing toggle",
+      "pass": true
+    },
+    {
+      "name": "Piping layer exists and switches",
+      "pass": true
+    },
+    {
+      "name": "Mount layer exists and switches",
+      "pass": true
+    },
+    {
+      "name": "Section slab moves by selected step",
+      "pass": true
+    },
+    {
+      "name": "Section reset",
+      "pass": true
+    },
+    {
+      "name": "Old comparison layout retained",
+      "pass": true
+    },
+    {
+      "name": "Detailed groups removed when switching comparison",
+      "pass": true
+    },
+    {
+      "name": "Detailed layout restored",
+      "pass": true
+    },
+    {
+      "name": "Legacy body comparison retained",
+      "pass": true
+    },
+    {
+      "name": "Restore supplied body",
+      "pass": true
+    },
+    {
+      "name": "Formula cards with substitutions",
+      "pass": true
+    },
+    {
+      "name": "No template placeholders",
+      "pass": true
+    },
+    {
+      "name": "All project preview images load",
+      "pass": true
+    },
+    {
+      "name": "New material page fits mobile",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All pipe substitutions presented",
+      "pass": true
+    },
+    {
+      "name": "Pipe page fits mobile",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_STEAM",
+        "length_mm": 825.7622699720773,
+        "reference_mm": 825.7622699720766,
+        "join_error_mm": 5.684341886080802e-14,
+        "min_tangent_dot": 0.9999999999999999,
+        "start": [
+          2530,
+          300,
+          1180
+        ],
+        "end": [
+          3080,
+          0,
+          745
+        ],
+        "start_ref": [
+          2530,
+          300,
+          1180
+        ],
+        "end_ref": [
+          3080,
+          0,
+          745
+        ]
+      }
+    },
+    {
+      "name": "PIPE_STEAM specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_R analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_R joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_EXHAUST_R",
+        "length_mm": 240.66573267069276,
+        "reference_mm": 240.66573267069248,
+        "join_error_mm": 0,
+        "min_tangent_dot": 0.9999999999999999,
+        "start": [
+          3370,
+          -200,
+          705
+        ],
+        "end": [
+          3420,
+          -410,
+          780
+        ],
+        "start_ref": [
+          3370,
+          -200,
+          705
+        ],
+        "end_ref": [
+          3420,
+          -410,
+          780
+        ]
+      }
+    },
+    {
+      "name": "PIPE_EXHAUST_R specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_L analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_L joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_EXHAUST_L",
+        "length_mm": 1039.3227979052458,
+        "reference_mm": 1039.3227979052454,
+        "join_error_mm": 1.1368683772161603e-13,
+        "min_tangent_dot": 1,
+        "start": [
+          3370,
+          110,
+          730
+        ],
+        "end": [
+          3430,
+          440,
+          780
+        ],
+        "start_ref": [
+          3370,
+          110,
+          730
+        ],
+        "end_ref": [
+          3430,
+          440,
+          780
+        ]
+      }
+    },
+    {
+      "name": "PIPE_EXHAUST_L specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RETURN analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RETURN joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_RETURN",
+        "length_mm": 4178.903377989406,
+        "reference_mm": 4178.903377989404,
+        "join_error_mm": 2.2737367544323206e-13,
+        "min_tangent_dot": 0.9999999999999999,
+        "start": [
+          3450,
+          -410,
+          600
+        ],
+        "end": [
+          800,
+          260,
+          890
+        ],
+        "start_ref": [
+          3450,
+          -410,
+          600
+        ],
+        "end_ref": [
+          800,
+          260,
+          890
+        ]
+      }
+    },
+    {
+      "name": "PIPE_RETURN specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_BALANCE analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_BALANCE joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_BALANCE",
+        "length_mm": 925.6637061435918,
+        "reference_mm": 925.6637061435918,
+        "join_error_mm": 0,
+        "min_tangent_dot": 1,
+        "start": [
+          3450,
+          410,
+          600
+        ],
+        "end": [
+          3450,
+          -410,
+          600
+        ],
+        "start_ref": [
+          3450,
+          410,
+          600
+        ],
+        "end_ref": [
+          3450,
+          -410,
+          600
+        ]
+      }
+    },
+    {
+      "name": "PIPE_BALANCE specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_MAKEUP analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_MAKEUP joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_MAKEUP",
+        "length_mm": 214.2477796076938,
+        "reference_mm": 214.24777960769381,
+        "join_error_mm": 3.552713678800501e-15,
+        "min_tangent_dot": 1,
+        "start": [
+          850,
+          -100,
+          670
+        ],
+        "end": [
+          820,
+          10,
+          670
+        ],
+        "start_ref": [
+          850,
+          -100,
+          670
+        ],
+        "end_ref": [
+          820,
+          10,
+          670
+        ]
+      }
+    },
+    {
+      "name": "PIPE_MAKEUP specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_SUCTION analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_SUCTION joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_SUCTION",
+        "length_mm": 3290.4569269018275,
+        "reference_mm": 3290.456926901828,
+        "join_error_mm": 0,
+        "min_tangent_dot": 0.9999999999999999,
+        "start": [
+          800,
+          480,
+          675
+        ],
+        "end": [
+          2160,
+          -140,
+          500
+        ],
+        "start_ref": [
+          800,
+          480,
+          675
+        ],
+        "end_ref": [
+          2160,
+          -140,
+          500
+        ]
+      }
+    },
+    {
+      "name": "PIPE_SUCTION specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FEED analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FEED joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_FEED",
+        "length_mm": 1339.9114857512857,
+        "reference_mm": 1339.9114857512855,
+        "join_error_mm": 0,
+        "min_tangent_dot": 1,
+        "start": [
+          2230,
+          -250,
+          560
+        ],
+        "end": [
+          2530,
+          300,
+          750
+        ],
+        "start_ref": [
+          2230,
+          -250,
+          560
+        ],
+        "end_ref": [
+          2530,
+          300,
+          750
+        ]
+      }
+    },
+    {
+      "name": "PIPE_FEED specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FUEL analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FUEL joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_FUEL",
+        "length_mm": 1309.4594432937138,
+        "reference_mm": 1309.4594432937138,
+        "join_error_mm": 1.1368683772161603e-13,
+        "min_tangent_dot": 1,
+        "start": [
+          2190,
+          180,
+          540
+        ],
+        "end": [
+          2300,
+          -250,
+          720
+        ],
+        "start_ref": [
+          2190,
+          180,
+          540
+        ],
+        "end_ref": [
+          2300,
+          -250,
+          720
+        ]
+      }
+    },
+    {
+      "name": "PIPE_FUEL specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FLUE analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FLUE joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_FLUE",
+        "length_mm": 1539.0929238030121,
+        "reference_mm": 1539.0929238030126,
+        "join_error_mm": 1.1368683772161603e-13,
+        "min_tangent_dot": 0.9999999999999999,
+        "start": [
+          2480,
+          460,
+          1190
+        ],
+        "end": [
+          3725,
+          303,
+          700
+        ],
+        "start_ref": [
+          2480,
+          460,
+          1190
+        ],
+        "end_ref": [
+          3725,
+          303,
+          700
+        ]
+      }
+    },
+    {
+      "name": "PIPE_FLUE specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RELIEF analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RELIEF joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "PIPE_RELIEF",
+        "length_mm": 1083.3331873132652,
+        "reference_mm": 1083.3331873132647,
+        "join_error_mm": 7.105427357601002e-15,
+        "min_tangent_dot": 1,
+        "start": [
+          2370,
+          100,
+          1200
+        ],
+        "end": [
+          2340,
+          -520,
+          850
+        ],
+        "start_ref": [
+          2370,
+          100,
+          1200
+        ],
+        "end_ref": [
+          2340,
+          -520,
+          850
+        ]
+      }
+    },
+    {
+      "name": "PIPE_RELIEF specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "WIRE analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "WIRE joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "WIRE",
+        "length_mm": 2526.295000274771,
+        "reference_mm": 2526.2950002747684,
+        "join_error_mm": 2.2737367544323206e-13,
+        "min_tangent_dot": 1,
+        "start": [
+          2100,
+          60,
+          500
+        ],
+        "end": [
+          1130,
+          250,
+          915
+        ],
+        "start_ref": [
+          2100,
+          60,
+          500
+        ],
+        "end_ref": [
+          1130,
+          250,
+          915
+        ]
+      }
+    },
+    {
+      "name": "WIRE specified endpoints",
+      "pass": true
+    },
+    {
+      "name": "WIRE_ENGINE analytic circular length",
+      "pass": true
+    },
+    {
+      "name": "WIRE_ENGINE joined elbows without sharp edges",
+      "pass": true,
+      "detail": {
+        "id": "WIRE_ENGINE",
+        "length_mm": 2674.6391822540227,
+        "reference_mm": 2674.6391822540218,
+        "join_error_mm": 0,
+        "min_tangent_dot": 1,
+        "start": [
+          2000,
+          60,
+          500
+        ],
+        "end": [
+          2520,
+          100,
+          1100
+        ],
+        "start_ref": [
+          2000,
+          60,
+          500
+        ],
+        "end_ref": [
+          2520,
+          100,
+          1100
+        ]
+      }
+    },
+    {
+      "name": "WIRE_ENGINE specified endpoints",
+      "pass": true
+    }
+  ],
+  "native_geometry": {
+    "root_count": 32,
+    "boxes": {
+      "ENG": {
+        "min": [
+          2915,
+          -190,
+          302
+        ],
+        "max": [
+          3460,
+          195,
+          763
+        ],
+        "size": [
+          545,
+          385,
+          461
+        ]
+      },
+      "STM": {
+        "min": [
+          2133,
+          44.69999980926514,
+          650
+        ],
+        "max": [
+          2587,
+          527,
+          1270
+        ],
+        "size": [
+          454,
+          482.30000019073486,
+          620
+        ]
+      },
+      "GBX": {
+        "min": [
+          2525,
+          -175,
+          270
+        ],
+        "max": [
+          2950,
+          175,
+          620
+        ],
+        "size": [
+          425,
+          350,
+          350
+        ]
+      },
+      "CND": {
+        "min": [
+          3000,
+          -515,
+          559
+        ],
+        "max": [
+          3595,
+          515,
+          810
+        ],
+        "size": [
+          595,
+          1030,
+          251
+        ]
+      },
+      "WTR": {
+        "min": [
+          404,
+          -430,
+          635
+        ],
+        "max": [
+          846,
+          -30,
+          855
+        ],
+        "size": [
+          442,
+          400,
+          220
+        ]
+      },
+      "RCV": {
+        "min": [
+          250,
+          10,
+          635
+        ],
+        "max": [
+          870,
+          480,
+          890
+        ],
+        "size": [
+          620,
+          470,
+          255
+        ]
+      },
+      "ELE": {
+        "min": [
+          2050,
+          0,
+          360
+        ],
+        "max": [
+          2150,
+          120,
+          510
+        ],
+        "size": [
+          100,
+          120,
+          150
+        ]
+      },
+      "MOTOR": {
+        "min": [
+          2090,
+          -551,
+          455
+        ],
+        "max": [
+          2355,
+          -420,
+          620
+        ],
+        "size": [
+          265,
+          131,
+          165
+        ]
+      },
+      "BOOST": {
+        "min": [
+          878,
+          163,
+          816
+        ],
+        "max": [
+          970,
+          364,
+          895
+        ],
+        "size": [
+          92,
+          201,
+          79
+        ]
+      },
+      "SEP": {
+        "min": [
+          2285,
+          -575,
+          650
+        ],
+        "max": [
+          2395,
+          -465,
+          890
+        ],
+        "size": [
+          110,
+          110,
+          240
+        ]
+      },
+      "PIPE_STEAM": {
+        "min": [
+          2526,
+          -70.05031008103751,
+          682.9422370660359
+        ],
+        "max": [
+          3118.911173203895,
+          354.6000061035156,
+          1234.599998474121
+        ],
+        "size": [
+          592.911173203895,
+          424.65031618455316,
+          551.6577614080852
+        ]
+      },
+      "PIPE_EXHAUST_R": {
+        "min": [
+          3303.280001831043,
+          -442.5984191894531,
+          630.4047743178146
+        ],
+        "max": [
+          3475.599998474121,
+          -166.64000091560956,
+          825.9382389994157
+        ],
+        "size": [
+          172.31999664307796,
+          275.95841827384356,
+          195.53346468160112
+        ]
+      },
+      "PIPE_EXHAUST_L": {
+        "min": [
+          3314.39990234375,
+          49.928226470947266,
+          459.53277587890625
+        ],
+        "max": [
+          3725.60009765625,
+          495.5999984741211,
+          818.1815795898438
+        ],
+        "size": [
+          411.2001953125,
+          445.6717720031738,
+          358.6488037109375
+        ]
+      },
+      "PIPE_RETURN": {
+        "min": [
+          779.5655305292598,
+          -687.5999755859375,
+          527.4000244140625
+        ],
+        "max": [
+          3597.59423828125,
+          269.44696044921875,
+          911.654376533809
+        ],
+        "size": [
+          2818.02870775199,
+          957.0469360351562,
+          384.2543521197465
+        ]
+      },
+      "PIPE_BALANCE": {
+        "min": [
+          3446,
+          -427.6000061035156,
+          577.4000244140625
+        ],
+        "max": [
+          3542.60009765625,
+          427.6000061035156,
+          622.5999755859375
+        ],
+        "size": [
+          96.60009765625,
+          855.2000122070312,
+          45.199951171875
+        ]
+      },
+      "PIPE_MAKEUP": {
+        "min": [
+          816,
+          -115,
+          655
+        ],
+        "max": [
+          910,
+          25,
+          685
+        ],
+        "size": [
+          94,
+          140,
+          30
+        ]
+      },
+      "PIPE_SUCTION": {
+        "min": [
+          796,
+          -158.60000038146973,
+          396.3999938964844
+        ],
+        "max": [
+          2164,
+          648.5999755859375,
+          979
+        ],
+        "size": [
+          1368,
+          807.1999759674072,
+          582.6000061035156
+        ]
+      },
+      "PIPE_FEED": {
+        "min": [
+          2226,
+          -277,
+          539.4000244140625
+        ],
+        "max": [
+          2730.60009765625,
+          304,
+          770.597900390625
+        ],
+        "size": [
+          504.60009765625,
+          581,
+          231.1978759765625
+        ]
+      },
+      "PIPE_RELIEF": {
+        "min": [
+          2299.4374397766433,
+          -564.5999984741211,
+          831.4571153264068
+        ],
+        "max": [
+          2549.60009765625,
+          144.60000610351562,
+          1249.5999755859375
+        ],
+        "size": [
+          250.16265787960674,
+          709.2000045776367,
+          418.1428602595307
+        ]
+      },
+      "WIRE": {
+        "min": [
+          1118.7742919921875,
+          -636,
+          489
+        ],
+        "max": [
+          2104,
+          258.31695556640625,
+          926.65771484375
+        ],
+        "size": [
+          985.2257080078125,
+          894.3169555664062,
+          437.65771484375
+        ]
+      },
+      "WIRE_ENGINE": {
+        "min": [
+          1989,
+          -636,
+          489
+        ],
+        "max": [
+          2671,
+          111,
+          1111
+        ],
+        "size": [
+          682,
+          747,
+          622
+        ]
+      },
+      "MOUNTS": {
+        "min": [
+          250,
+          -580,
+          286.53509521484375
+        ],
+        "max": [
+          3530,
+          575,
+          830
+        ],
+        "size": [
+          3280,
+          1155,
+          543.4649047851562
+        ]
+      },
+      "SHIELD": {
+        "min": [
+          2020,
+          -600,
+          293
+        ],
+        "max": [
+          2600,
+          600,
+          1280
+        ],
+        "size": [
+          580,
+          1200,
+          987
+        ]
+      },
+      "ADAPTER": {
+        "min": [
+          2930,
+          -80,
+          365
+        ],
+        "max": [
+          2960,
+          80,
+          525
+        ],
+        "size": [
+          30,
+          160,
+          160
+        ]
+      },
+      "DUCTS": {
+        "min": [
+          3000,
+          -570,
+          600
+        ],
+        "max": [
+          3490,
+          570,
+          770
+        ],
+        "size": [
+          490,
+          1140,
+          170
+        ]
+      },
+      "BRN": {
+        "min": [
+          2220,
+          -317,
+          650
+        ],
+        "max": [
+          2525,
+          52,
+          912
+        ],
+        "size": [
+          305,
+          369,
+          262
+        ]
+      },
+      "FUE": {
+        "min": [
+          2050,
+          180,
+          475
+        ],
+        "max": [
+          2500,
+          510,
+          625
+        ],
+        "size": [
+          450,
+          330,
+          150
+        ]
+      },
+      "PIPE_FLUE": {
+        "min": [
+          2480,
+          190,
+          548.3044965526217
+        ],
+        "max": [
+          3725,
+          536.5999755859375,
+          1266.5999755859375
+        ],
+        "size": [
+          1245,
+          346.5999755859375,
+          718.2954790333158
+        ]
+      },
+      "PIPE_FUEL": {
+        "min": [
+          2069,
+          -476,
+          534
+        ],
+        "max": [
+          2306,
+          185.3195037841797,
+          726
+        ],
+        "size": [
+          237,
+          661.3195037841797,
+          192
+        ]
+      },
+      "PMP": {
+        "min": [
+          2110,
+          -360,
+          470
+        ],
+        "max": [
+          2369.249985218048,
+          -105.99999189376831,
+          616.2000012397766
+        ],
+        "size": [
+          259.2499852180481,
+          254.0000081062317,
+          146.2000012397766
+        ]
+      },
+      "BODY": {
+        "min": [
+          95.48734128475189,
+          -718.4423804283141,
+          0.00004947372985813786
+        ],
+        "max": [
+          3736.2186908721924,
+          775.4937410354617,
+          1420.006036758423
+        ],
+        "size": [
+          3640.7313495874405,
+          1493.9361214637756,
+          1420.0059872846932
+        ]
+      },
+      "SUSP": {
+        "min": [
+          451.9999921321869,
+          -614.0000224113464,
+          199.37486896566188
+        ],
+        "max": [
+          2942.8999423980713,
+          614.0000224113465,
+          843.3748478656179
+        ],
+        "size": [
+          2490.8999502658844,
+          1228.0000448226929,
+          643.999978899956
+        ]
+      }
+    },
+    "outside": [],
+    "contacts": [
+      {
+        "id": "ENG",
+        "distance_mm": 0
+      },
+      {
+        "id": "STM",
+        "distance_mm": 0
+      },
+      {
+        "id": "BRN",
+        "distance_mm": 0
+      },
+      {
+        "id": "CND",
+        "distance_mm": 0
+      },
+      {
+        "id": "WTR",
+        "distance_mm": 0
+      },
+      {
+        "id": "RCV",
+        "distance_mm": 0
+      },
+      {
+        "id": "FUE",
+        "distance_mm": 0
+      },
+      {
+        "id": "ELE",
+        "distance_mm": 0
+      },
+      {
+        "id": "PMP",
+        "distance_mm": 0
+      },
+      {
+        "id": "MOTOR",
+        "distance_mm": 0
+      },
+      {
+        "id": "BOOST",
+        "distance_mm": 0
+      },
+      {
+        "id": "SEP",
+        "distance_mm": 0
+      }
+    ]
+  },
+  "browser_errors": [],
+  "scope": "Generated concept/UI/export checks; not real-car dimensional, thermal or structural certification"
+}

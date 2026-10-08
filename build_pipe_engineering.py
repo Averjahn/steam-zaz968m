@@ -42,10 +42,11 @@ def bend_geometry(points,radius):
 updates={
  'PIPE_STEAM':[[2530,300,1180],[2650,300,1180],[2770,100,900],[3080,0,745]],
  'PIPE_SUCTION':[[800,480,675],[1000,480,675],[1010,340,930],[925,340,930],[925,190,930],[1020,190,840],[1130,190,840],[1130,625,420],[2010,625,420],[2010,-140,420],[2010,-140,500],[2160,-140,500]],
- 'PIPE_FLUE':[[2230,460,1200],[2260,460,1200]],
+ 'PIPE_FLUE':[[2480,460,1190],[2720,460,1190],[2850,293,920],[3010,293,700],[3200,303,700],[3725,303,700]],
+ 'PIPE_EXHAUST_L':[[3370,110,730],[3370,110,520],[3670,110,520],[3670,440,520],[3430,440,780]],
  'PIPE_RETURN':[[3450,-410,600],[3580,-410,600],[3580,-280,550],[3100,-280,550],[3030,-280,760],[2650,-280,760],[2650,-665,760],[1100,-665,760],[1020,-460,760],[800,260,890]],
  'PIPE_MAKEUP':[[850,-100,670],[900,-100,670],[900,10,670],[820,10,670]],
- 'PIPE_FUEL':[[2190,180,520],[2190,120,550],[2075,120,550],[2075,-470,550],[2075,-470,720],[2150,-470,720],[2150,-300,720]],
+ 'PIPE_FUEL':[[2190,180,540],[2075,120,540],[2075,-470,540],[2075,-470,720],[2300,-470,720],[2300,-250,720]],
  'WIRE_ENGINE':[[2000,60,500],[2000,-625,500],[2000,-625,1000],[2660,-625,1000],[2660,-200,1000],[2660,100,1100],[2520,100,1100]],
  'PIPE_FEED':[[2230,-250,560],[2710,-250,560],[2710,-250,750],[2710,100,750],[2530,100,750],[2530,300,750]]
 }
@@ -53,11 +54,11 @@ rows=[]
 for original in old:
  s=dict(original);s.pop('insulation',None);id=s['id'];s['points']=updates.get(id,s['points']);s['wall_status']='Assumed geometric wall only; pressure strength, material grade and fittings not selected'
  if id=='PIPE_RELIEF':s['points'][-1]=[2340,-520,850]
- if id=='PIPE_FLUE':s['od']=162 # geometric single-wall duct candidate: 160 ID + 2 x 1 mm, not pressure equipment
+ if id=='PIPE_FLUE':s['od']=82;s['inside_id_mm']=80 # geometric single-wall duct candidate: 160 ID + 2 x 1 mm, not pressure equipment
  kind='steam' if id in ['PIPE_STEAM','PIPE_RELIEF'] else 'exhaust' if id.startswith('PIPE_EXHAUST') else 'flue' if id=='PIPE_FLUE' else 'fuel' if id=='PIPE_FUEL' else 'wire' if id.startswith('WIRE') else 'water'
- s['fluid']=kind;tw={'steam':250,'exhaust':r['exhaust_temperature_C'],'water':r['feed_temperature_C'] if 'feed_temperature_C' in r else 78.2041,'fuel':25,'flue':350,'wire':40}[kind];tw=25 if id=='PIPE_MAKEUP' else tw;s['wall_temperature_C']=tw
+ s['fluid']=kind;tw={'steam':250,'exhaust':r['exhaust_temperature_C'],'water':r['feed_temperature_C'] if 'feed_temperature_C' in r else 78.2041,'fuel':25,'flue':250,'wire':40}[kind];tw=25 if id=='PIPE_MAKEUP' else tw;s['wall_temperature_C']=tw
  if kind in ['steam','exhaust','water','flue'] and id!='PIPE_MAKEUP':
-  chosen=thickness(s['od'],tw,'aerogel');comparison=thickness(s['od'],tw,'stone_wool');s['thermal']={**chosen,'material':'aerogel','target_surface_C':55,'stone_wool_comparison':comparison,'h_sensitivity':[thermal(s['od'],chosen['thickness_mm'],tw,'aerogel',h) for h in [5,8,15]],'notes':'Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Flue wall 350 C is an unmeasured hypothesis; below first table entry lambda is held at first source value.'};s['insulation_mm']=chosen['thickness_mm'];s['jacket_mm']=.6
+  chosen=thickness(s['od'],tw,'aerogel');comparison=thickness(s['od'],tw,'stone_wool');s['thermal']={**chosen,'material':'aerogel','target_surface_C':55,'stone_wool_comparison':comparison,'h_sensitivity':[thermal(s['od'],chosen['thickness_mm'],tw,'aerogel',h) for h in [5,8,15]],'notes':'Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Diesel flue wall 250 C is a design hypothesis; solid-fuel variant 350 C is calculated separately; below first table entry lambda is held at first source value.'};s['insulation_mm']=chosen['thickness_mm'];s['jacket_mm']=.6
  else:s['insulation_mm']=0;s['jacket_mm']=0
  s['outer_envelope_mm']=s['od']+2*s['insulation_mm']+2*s['jacket_mm'];s['inside_id_mm']=s.get('inside_id_mm');s['wall_mm']=(s['od']-s['inside_id_mm'])/2 if s['inside_id_mm'] else None
  radius=math.ceil(max(1.5*s['od'],s['outer_envelope_mm']/2+15,30 if kind=='wire' else 0)/5)*5
@@ -66,8 +67,8 @@ for original in old:
  bends,violations,L=bend_geometry(s['points'],radius);s['bends']=bends;s['bend_violations']=violations;s['geometry_valid']=not violations;s['centerline_length_m']=L
  s['endpoint_status']='Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved'
  if id=='PIPE_FLUE':
-  s['name']='Дымовой выход генератора · не соединён'
-  s['ends']=['STM.flue','FLUE.unconnectedOutlet'];s['connected']=False;s['routing_note']='Unconnected generator outlet, visibly marked. Full rear route rejected for suspension/equipment collisions; underfloor downpipe rejected for occupied cabin/body crossings. Gas flow, a rated duct and a protected feasible path must be designed before fabrication.';s['rejected_routes']=[dict(points=original['points'],reason='Rear suspension and engine/condenser collisions'),dict(points=[[2230,460,1200],[1930,460,1200],[1930,-460,1200],[1930,-460,250]],reason='Intrusion into occupied cabin, fuel/wiring/structure collisions; not an acceptable installation')]
+  s['name']='Дымовой канал · генератор → задний выпуск'
+  s['ends']=['STM.flueOutlet','BODY.flushRearExhaust'];s['connected']=True;s['routing_note']='Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.'
  if id=='PIPE_RETURN':s['routing_note']='Return bypasses exhaust at rear, then uses Y-280/Z760 and side corridor Y-665; actual stock travel, body penetration and supports still require validation.'
  if kind in ['steam','exhaust','water']:
   if kind=='steam':p,t,flow=1e6,523.15,mdot
@@ -79,7 +80,7 @@ for original in old:
  else:s['hydraulics']=None
  if s.get('thermal'):s['thermal']['route_heat_W']=s['thermal']['heat_W_m']*L
  rows.append(s)
-meta=dict(status='Conditional engineering candidate, geometric/thermal/hydraulic screening only',scenario='B, 551.74 kg/h nominal steam; baseline cycle unchanged',assumptions=dict(ambient_C=40,target_surface_C=55,h_W_m2K=8,jacket_mm=.6,pipe_roughness_mm=.045,K_per_bend=.2,K_other=1,flue_wall_C=350,flue_flow='Unknown flue gas state/flow. No hydraulic sizing claim.',fixed_supports='Not designed; symbols are not verified load paths'),materials=materials,sources=sources,routes=rows,invalid_bend_routes=[s['id'] for s in rows if not s['geometry_valid']],conclusion='Routing cannot by itself solve B cooling/volume. Full insulated envelopes are used without shrinking; unresolved intersections remain visible in the audit.')
+meta=dict(status='Conditional engineering candidate, geometric/thermal/hydraulic screening only',scenario='B, 551.74 kg/h nominal steam; baseline cycle unchanged',assumptions=dict(ambient_C=40,target_surface_C=55,h_W_m2K=8,jacket_mm=.6,pipe_roughness_mm=.045,K_per_bend=.2,K_other=1,flue_wall_C=250,flue_flow='Compact diesel 120 kW: stoichiometric air 14.5 kg/kg, excess 1.4, ideal gas at 250 C; source-specific pressure check in heat comparison.',fixed_supports='Not designed; symbols are not verified load paths'),materials=materials,sources=sources,routes=rows,invalid_bend_routes=[s['id'] for s in rows if not s['geometry_valid']],conclusion='Routing cannot by itself solve B cooling/volume. Full insulated envelopes are used without shrinking; unresolved intersections remain visible in the audit.')
 (ROOT/'pipe-engineering.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n')
 (ROOT/'web/pipe-data.js').write_text('// Generated by build_pipe_engineering.py; millimetres, no hidden scale reduction.\nexport const pipeEngineering='+json.dumps(meta,ensure_ascii=False,separators=(',',':'))+';\nexport const pipeRoutes=pipeEngineering.routes;\n')
 print(json.dumps({'routes':len(rows),'invalid_bends':meta['invalid_bend_routes'],'thermal':[{k:s.get(k) for k in ['id','od','insulation_mm','outer_envelope_mm','bend_radius_mm']} for s in rows if s.get('thermal')]},ensure_ascii=False))

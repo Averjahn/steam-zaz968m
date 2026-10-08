@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Five final comparison rows",
+      "pass": true
+    },
+    {
+      "name": "No undefined data displayed",
+      "pass": true
+    },
+    {
+      "name": "Geometry limitations visible",
+      "pass": true
+    },
+    {
+      "name": "diesel conserves mass/energy",
+      "pass": true
+    },
+    {
+      "name": "diesel reached calculated work phase",
+      "pass": true
+    },
+    {
+      "name": "wood conserves mass/energy",
+      "pass": true
+    },
+    {
+      "name": "wood reached calculated work phase",
+      "pass": true
+    },
+    {
+      "name": "pellets conserves mass/energy",
+      "pass": true
+    },
+    {
+      "name": "pellets reached calculated work phase",
+      "pass": true
+    },
+    {
+      "name": "lpg conserves mass/energy",
+      "pass": true
+    },
+    {
+      "name": "lpg reached calculated work phase",
+      "pass": true
+    },
+    {
+      "name": "electric conserves mass/energy",
+      "pass": true
+    },
+    {
+      "name": "electric reached calculated work phase",
+      "pass": true
+    },
+    {
+      "name": "Wood pressure excursion after fuel stops is reported",
+      "pass": true
+    },
+    {
+      "name": "Wood out-of-table state is not silently treated as valid",
+      "pass": true
+    },
+    {
+      "name": "Electric consumption in kWh",
+      "pass": true
+    },
+    {
+      "name": "Final comparison fits mobile",
+      "pass": true
+    },
+    {
+      "name": "Wood model visibly reports collisions",
+      "pass": true
+    },
+    {
+      "name": "Electric instrument omits combustion exit",
+      "pass": true
+    },
+    {
+      "name": "Final assembly fits mobile",
+      "pass": true
+    },
+    {
+      "name": "Historical layout disables heat-source simulation",
+      "pass": true
+    },
+    {
+      "name": "Restored detailed layout retains electric geometry",
+      "pass": true
+    },
+    {
+      "name": "No final page errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "source_sha256": {
+    "web/assembly.js": "2ecf9f00a382bffd8a7dd87ce1700c0ff79de2a93aae5f62a11c83ce0fce4488",
+    "web/assembly-systems.js": "78e57e9ddc41dbe3142611b076f97d58112e2f3961bc159a48c6a2bc37a665b5",
+    "web/heat-page.js": "2d1cfb0571cb0045074c38fd4284b3481e7b75872325212ac3c00f3968caf909",
+    "web/heat-comparison.js": "deef6854b02e6e9d0a03d4f7da1b59e7f12a5b09cc64d4c4fd83a3a1908f858f",
+    "web/steam-simulation.js": "00628bf6639039a13c8303d4f3f58706791633e0392b70318a3ac5d47c139828",
+    "simulation-data.json": "36bc88400bef6b019e2d1dccfac7a025cbd820d3cee831a5f73567412da78862",
+    "heat-sources.json": "c757b3e661d3a233773b73fe438462a61d825a8134e2eae78210df9bd73750a1",
+    "heat-fit-audit.json": "2d3ac6fc1e44fac33ce8f7daa465ec9e04a5494da0cd77e6eea362af07eb6346"
+  },
+  "scope": "Final UI, automatic transients and limitations; not real equipment validation"
+}

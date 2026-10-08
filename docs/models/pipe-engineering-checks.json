@@ -411,8 +411,8 @@
       "name": "PIPE_FLUE conduction/external heat balance",
       "pass": true,
       "detail": {
-        "conduction_W_m": 96.89203375325286,
-        "external_W_m": 96.89203375325289
+        "conduction_W_m": 50.48451784736275,
+        "external_W_m": 50.48451784736274
       }
     },
     {
@@ -529,7 +529,17 @@
       "detail": null
     },
     {
+      "name": "Mesh audit source web/heat-geometry.js",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "Mesh audit source web/pipe-path.js",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mesh audit source web/packaging-audit.js",
       "pass": true,
       "detail": null
     },

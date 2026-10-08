@@ -63,18 +63,25 @@
     "size": 8655
   },
   {
+    "path": "build_heat_sources.py",
+    "title": "Генератор источников тепла и масс труб",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 10039
+  },
+  {
     "path": "build_internal_assets.mjs",
     "title": "Экспорт полной детальной сборки GLB",
     "category": "Исходники",
     "format": "MJS",
-    "size": 5726
+    "size": 5854
   },
   {
     "path": "build_internal_materials.py",
     "title": "Материалы внутренней компоновки",
     "category": "Исходники",
     "format": "PY",
-    "size": 25649
+    "size": 26145
   },
   {
     "path": "build_mount_register.py",
@@ -102,21 +109,21 @@
     "title": "Воспроизводимый расчёт труб и изоляции",
     "category": "Исходники",
     "format": "PY",
-    "size": 10931
+    "size": 10921
   },
   {
     "path": "build_pipe_materials.py",
     "title": "Формулы, сечения и трубопроводный чертёж",
     "category": "Исходники",
     "format": "PY",
-    "size": 19978
+    "size": 20397
   },
   {
     "path": "build_procurement.py",
     "title": "Генератор реестра комплектующих",
     "category": "Исходники",
     "format": "PY",
-    "size": 21427
+    "size": 21290
   },
   {
     "path": "build_reconstruction.py",
@@ -130,21 +137,21 @@
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 97321
+    "size": 102834
   },
   {
     "path": "build_simulation_data.py",
     "title": "Генератор свойств IAPWS-95 и физических описаний",
     "category": "Исходники",
     "format": "PY",
-    "size": 23576
+    "size": 24977
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 35082
+    "size": 36461
   },
   {
     "path": "build_stock_suspension.py",
@@ -221,7 +228,7 @@
     "title": "Комплектующие · ссылки на покупку и материалы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 82920
+    "size": 82395
   },
   {
     "path": "convert_cad.js",
@@ -236,6 +243,55 @@
     "category": "Проверки",
     "format": "JSON",
     "size": 750
+  },
+  {
+    "path": "heat-browser-checks.json",
+    "title": "Анимации, выбор источника и браузерные проверки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 43252
+  },
+  {
+    "path": "heat-comparison-results.json",
+    "title": "Сравнение расходов и общего КПД",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 8398
+  },
+  {
+    "path": "heat-fit-audit.json",
+    "title": "Пересечения пяти вариантов источника",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 488039
+  },
+  {
+    "path": "heat-native-checks.json",
+    "title": "heat-native-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 30627
+  },
+  {
+    "path": "heat-selection-checks.json",
+    "title": "heat-selection-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 10536
+  },
+  {
+    "path": "heat-sources.json",
+    "title": "Параметры пяти источников тепла и первичные документы",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 14491
+  },
+  {
+    "path": "heat-ui-checks.json",
+    "title": "heat-ui-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 2871
   },
   {
     "path": "lab.html",
@@ -256,21 +312,21 @@
     "title": "Внутренняя сборка · тепловая проверка и формулы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 15804
+    "size": 15885
   },
   {
     "path": "internal-fit-audit.json",
     "title": "Внутренняя сборка · пересечения показанной геометрии",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 89330
+    "size": 93086
   },
   {
     "path": "layout-internal.json",
     "title": "Внутренняя детальная сборка · координаты и допущения",
     "category": "3D",
     "format": "JSON",
-    "size": 33150
+    "size": 33241
   },
   {
     "path": "layout-revised.json",
@@ -319,7 +375,7 @@
     "title": "Трубопроводы · поток, изгибы и тепловой экран",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 61624
+    "size": 62242
   },
   {
     "path": "pipe-routes-input.json",
@@ -333,14 +389,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 221788
+    "size": 227389
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 237205
+    "size": 241376
   },
   {
     "path": "requirements.txt",
@@ -382,14 +438,14 @@
     "title": "Проверка балансов, остановов и четырёх колёс",
     "category": "Проверки",
     "format": "JSON",
-    "size": 24508
+    "size": 72274
   },
   {
     "path": "simulation-data.json",
     "title": "Свойства воды, гипотезы симуляции и массы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 241126
+    "size": 253157
   },
   {
     "path": "sources.csv",
@@ -438,7 +494,7 @@
     "title": "Проверка физической исследовательской модели",
     "category": "Исходники",
     "format": "MJS",
-    "size": 6244
+    "size": 8474
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -543,7 +599,7 @@
     "title": "Внутренняя детальная сборка · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 46758
+    "size": 46753
   },
   {
     "path": "drawings/07-internal-assembly.svg",
@@ -557,21 +613,21 @@
     "title": "Трубопроводы с изоляцией · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 75647
+    "size": 80079
   },
   {
     "path": "drawings/08-pipe-routing.svg",
     "title": "Трубопроводы с изоляцией · SVG",
     "category": "Чертежи",
     "format": "SVG",
-    "size": 64234
+    "size": 70794
   },
   {
     "path": "drawings/08-section-pipe_flue.svg",
     "title": "Поперечный разрез дымового канала · SVG",
     "category": "Чертежи",
     "format": "SVG",
-    "size": 665
+    "size": 669
   },
   {
     "path": "drawings/08-section-pipe_steam.svg",
@@ -585,35 +641,35 @@
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 8613
+    "size": 8666
   },
   {
     "path": "assembly.html",
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 32040
+    "size": 33605
   },
   {
     "path": "user-model.html",
     "title": "Ваша модель · масштаб, панели и конфликты",
     "category": "Документы",
     "format": "HTML",
-    "size": 10184
+    "size": 10237
   },
   {
     "path": "packaging.html",
     "title": "Новая расстановка · зазоры и открытые вопросы",
     "category": "3D",
     "format": "HTML",
-    "size": 20597
+    "size": 20650
   },
   {
     "path": "reconstruction.html",
     "title": "Кузов по фотографиям: источники и точность",
     "category": "Документы",
     "format": "HTML",
-    "size": 22949
+    "size": 23002
   },
   {
     "path": "models/zaz-968m-reconstructed.glb",
@@ -756,53 +812,60 @@
     "size": 41705
   },
   {
+    "path": "heat.html",
+    "title": "Источники тепла · пять вариантов, расход и КПД",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 12206
+  },
+  {
     "path": "physics.html",
     "title": "Физика узлов · массы, рычаги и четыре колеса",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 9875
+    "size": 10031
   },
   {
     "path": "procurement.html",
     "title": "Комплектующие · покупка и изготовление",
     "category": "Документы",
     "format": "HTML",
-    "size": 3120
+    "size": 3173
   },
   {
     "path": "piping.html",
     "title": "Трубопроводы · формулы, диаметры и изоляция",
     "category": "Документы",
     "format": "HTML",
-    "size": 55264
+    "size": 56062
   },
   {
     "path": "internal.html",
     "title": "Внутренняя сборка · детали, крепления и тепловые ограничения",
     "category": "3D",
     "format": "HTML",
-    "size": 27468
+    "size": 28335
   },
   {
     "path": "models/steam-internal-assembly.glb",
     "title": "Полная внутренняя детальная сборка GLB",
     "category": "3D",
     "format": "GLB",
-    "size": 35338424
+    "size": 34524924
   },
   {
     "path": "models/steam-internal-assembly.json",
     "title": "Внутренняя сборка · детали и габариты",
     "category": "Документы",
     "format": "JSON",
-    "size": 81178
+    "size": 89017
   },
   {
     "path": "models/pipe-engineering-checks.json",
     "title": "Проверки теплового баланса, расходов и диаметров",
     "category": "Проверки",
     "format": "JSON",
-    "size": 13144
+    "size": 13366
   },
   {
     "path": "models/internal-browser-checks.json",
@@ -823,28 +886,28 @@
     "title": "Рендер заднего отсека · проект",
     "category": "Изображения",
     "format": "PNG",
-    "size": 363460
+    "size": 325799
   },
   {
     "path": "models/internal-boiler.png",
     "title": "Рендер генератора за сиденьями · проект",
     "category": "Изображения",
     "format": "PNG",
-    "size": 294660
+    "size": 239125
   },
   {
     "path": "models/internal-front.png",
     "title": "Рендер передних резервуаров · проект",
     "category": "Изображения",
     "format": "PNG",
-    "size": 288091
+    "size": 220892
   },
   {
     "path": "models/internal-routes.json",
     "title": "Пар, вода, топливо, дым и управление · трассы",
     "category": "Документы",
     "format": "JSON",
-    "size": 59213
+    "size": 59778
   },
   {
     "path": "models/registry.json",

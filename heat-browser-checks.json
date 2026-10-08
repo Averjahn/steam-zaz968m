@@ -1,0 +1,1338 @@
+{
+  "checks": [
+    {
+      "name": "Automatic physical sequence enabled by default",
+      "pass": true
+    },
+    {
+      "name": "Five heat choices",
+      "pass": true
+    },
+    {
+      "name": "diesel selected geometry changes source",
+      "pass": true
+    },
+    {
+      "name": "diesel component inventory",
+      "pass": true
+    },
+    {
+      "name": "diesel valid unshrunk bends",
+      "pass": true
+    },
+    {
+      "name": "diesel correct full flue diameter",
+      "pass": true
+    },
+    {
+      "name": "diesel fuel/electric geometry is full scale",
+      "pass": true
+    },
+    {
+      "name": "diesel source specific selection record",
+      "pass": true
+    },
+    {
+      "name": "diesel selected source description appears",
+      "pass": true
+    },
+    {
+      "name": "wood selected geometry changes source",
+      "pass": true
+    },
+    {
+      "name": "wood component inventory",
+      "pass": true
+    },
+    {
+      "name": "wood valid unshrunk bends",
+      "pass": true
+    },
+    {
+      "name": "wood correct full flue diameter",
+      "pass": true
+    },
+    {
+      "name": "wood fuel/electric geometry is full scale",
+      "pass": true
+    },
+    {
+      "name": "wood source specific selection record",
+      "pass": true
+    },
+    {
+      "name": "wood selected source description appears",
+      "pass": true
+    },
+    {
+      "name": "pellets selected geometry changes source",
+      "pass": true
+    },
+    {
+      "name": "pellets component inventory",
+      "pass": true
+    },
+    {
+      "name": "pellets valid unshrunk bends",
+      "pass": true
+    },
+    {
+      "name": "pellets correct full flue diameter",
+      "pass": true
+    },
+    {
+      "name": "pellets fuel/electric geometry is full scale",
+      "pass": true
+    },
+    {
+      "name": "pellets source specific selection record",
+      "pass": true
+    },
+    {
+      "name": "pellets selected source description appears",
+      "pass": true
+    },
+    {
+      "name": "lpg selected geometry changes source",
+      "pass": true
+    },
+    {
+      "name": "lpg component inventory",
+      "pass": true
+    },
+    {
+      "name": "lpg valid unshrunk bends",
+      "pass": true
+    },
+    {
+      "name": "lpg correct full flue diameter",
+      "pass": true
+    },
+    {
+      "name": "lpg fuel/electric geometry is full scale",
+      "pass": true
+    },
+    {
+      "name": "lpg source specific selection record",
+      "pass": true
+    },
+    {
+      "name": "lpg selected source description appears",
+      "pass": true
+    },
+    {
+      "name": "electric selected geometry changes source",
+      "pass": true
+    },
+    {
+      "name": "electric component inventory",
+      "pass": true
+    },
+    {
+      "name": "electric valid unshrunk bends",
+      "pass": true
+    },
+    {
+      "name": "electric correct full flue diameter",
+      "pass": true
+    },
+    {
+      "name": "electric fuel/electric geometry is full scale",
+      "pass": true
+    },
+    {
+      "name": "electric source specific selection record",
+      "pass": true
+    },
+    {
+      "name": "electric selected source description appears",
+      "pass": true
+    },
+    {
+      "name": "Source dimensions differ",
+      "pass": true
+    },
+    {
+      "name": "UI starts and advances by physical criteria",
+      "pass": true
+    },
+    {
+      "name": "UI returns condensate with small modeled loss",
+      "pass": true
+    },
+    {
+      "name": "UI conserved water/energy",
+      "pass": true
+    },
+    {
+      "name": "Flue instrument shows complete route",
+      "pass": true
+    },
+    {
+      "name": "Paused physical flow arrows freeze",
+      "pass": true
+    },
+    {
+      "name": "Demonstration arrows move",
+      "pass": true
+    },
+    {
+      "name": "Visible arrow heads exist",
+      "pass": true
+    },
+    {
+      "name": "Idle physical arrows hidden",
+      "pass": true
+    },
+    {
+      "name": "diesel audit uses current geometry",
+      "pass": true
+    },
+    {
+      "name": "diesel no static suspension intersections",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "wood audit uses current geometry",
+      "pass": true
+    },
+    {
+      "name": "pellets audit uses current geometry",
+      "pass": true
+    },
+    {
+      "name": "lpg audit uses current geometry",
+      "pass": true
+    },
+    {
+      "name": "lpg no static suspension intersections",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "electric audit uses current geometry",
+      "pass": true
+    },
+    {
+      "name": "electric no static suspension intersections",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Comparison contains five sources",
+      "pass": true
+    },
+    {
+      "name": "Reference documents visible",
+      "pass": true
+    },
+    {
+      "name": "Humidity changes consumption",
+      "pass": true
+    },
+    {
+      "name": "Five browser transient simulations complete",
+      "pass": true
+    },
+    {
+      "name": "Comparison mobile no page overflow",
+      "pass": true
+    },
+    {
+      "name": "Deep link chooses electric assembly",
+      "pass": true
+    },
+    {
+      "name": "3D mobile no page overflow",
+      "pass": true
+    },
+    {
+      "name": "No uncaught browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "bounds": {
+    "diesel": {
+      "count": 32,
+      "id": "diesel",
+      "source": {
+        "id": "diesel",
+        "name": "Дизель · компактная горелка",
+        "fuel": "Дизель",
+        "unit": "кг",
+        "LHV_MJ_kg": 42.6,
+        "density_kg_L": 0.835,
+        "efficiency": 0.85,
+        "efficiency_range": [
+          0.8,
+          0.88
+        ],
+        "max_input_kW": 120,
+        "min_input_kW": 54,
+        "aux_W": 170,
+        "tau_s": 2,
+        "stock": 14.863,
+        "geometry": "oil",
+        "size_mm": [
+          305,
+          369,
+          262
+        ],
+        "xyz_mm": [
+          2220,
+          -317,
+          650
+        ],
+        "dry_mass_kg": 13,
+        "geometry_basis": "Размерный ориентир Riello G10: A305/D262/E261/F108 мм; глубина 261+108=369 мм; масса 13 кг. Форма приближённая, камера и автомобильное применение не подтверждены.",
+        "reference": "Riello G10 24V, 54–120 кВт; 4,5–10 кг/ч. Это не прежняя RL50 148–593 кВт.",
+        "links": [
+          {
+            "title": "Riello: G7/G10, размеры и мощность",
+            "url": "https://www.riello.com/international/files/catalogo-pdf/riello_products_catalogue_international-markets_process_burners_eng.pdf"
+          }
+        ],
+        "control_basis": "Одноступенчатый ориентир: в переходном опыте фиксированный максимум при включении, отключение по модельному регулятору. Диапазон каталога означает подбор/настройку, не плавное регулирование.",
+        "energy_per_unit_J": 42600000,
+        "efficiency_basis": "Расчётная оценка переноса энергии топлива в воду/пар на базе LHV, не измеренный КПД этого прототипа; диапазон показывает неопределённость.",
+        "fuel_storage_L": 22.3,
+        "flue": {
+          "inside_mm": 80,
+          "wall_C": 250,
+          "excess_air": 1.4,
+          "stoich_air": 14.5,
+          "cp_J_kgK": 1100,
+          "gas_R_J_kgK": 287,
+          "friction_factor": 0.035
+        }
+      },
+      "heater": [
+        305.0000305175781,
+        369.0000228881836,
+        262.0000305175781
+      ],
+      "storage": [
+        450.00006103515625,
+        330.0000305175781,
+        150.00001525878906
+      ],
+      "flue": {
+        "id": "PIPE_FLUE",
+        "name": "Дымовой канал · генератор → задний выпуск",
+        "color": "dark",
+        "od": 82,
+        "inside_id_mm": 80,
+        "ends": [
+          "STM.flueOutlet",
+          "BODY.flushRearExhaust"
+        ],
+        "points": [
+          [
+            2480,
+            460,
+            1190
+          ],
+          [
+            2720,
+            460,
+            1190
+          ],
+          [
+            2850,
+            293,
+            920
+          ],
+          [
+            3010,
+            293,
+            700
+          ],
+          [
+            3200,
+            303,
+            700
+          ],
+          [
+            3725,
+            303,
+            700
+          ]
+        ],
+        "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
+        "fluid": "flue",
+        "wall_temperature_C": 250,
+        "thermal": {
+          "thickness_mm": 35,
+          "lambda_W_mK": 0.02518588064117437,
+          "heat_W_m": 50.48451784736275,
+          "surface_C": 53.11171763221082,
+          "R_cond_mK_W": 3.8999735119402428,
+          "R_external_mK_W": 0.25971759642933306,
+          "external_jacket_radius_m": 0.07660000000000002,
+          "h_W_m2K": 8,
+          "ambient_C": 40,
+          "material": "aerogel",
+          "target_surface_C": 55,
+          "stone_wool_comparison": {
+            "thickness_mm": 60,
+            "lambda_W_mK": 0.05445256429199148,
+            "heat_W_m": 74.18206645610832,
+            "surface_C": 54.525642919858655,
+            "R_cond_mK_W": 2.635062170933168,
+            "R_external_mK_W": 0.19581070754416255,
+            "external_jacket_radius_m": 0.10160000000000001,
+            "h_W_m2K": 8,
+            "ambient_C": 40
+          },
+          "h_sensitivity": [
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02545140661157989,
+              "heat_W_m": 49.12470819036706,
+              "surface_C": 60.41368181839121,
+              "R_cond_mK_W": 3.8592863991563626,
+              "R_external_mK_W": 0.4155481542869329,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 5,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02518588064117437,
+              "heat_W_m": 50.48451784736275,
+              "surface_C": 53.11171763221082,
+              "R_cond_mK_W": 3.8999735119402428,
+              "R_external_mK_W": 0.25971759642933306,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 8,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02498477192980727,
+              "heat_W_m": 51.59855479143289,
+              "surface_C": 47.14722806915104,
+              "R_cond_mK_W": 3.9313653793367367,
+              "R_external_mK_W": 0.13851605142897763,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 15,
+              "ambient_C": 40
+            }
+          ],
+          "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Flue wall 350 C is an unmeasured hypothesis; below first table entry lambda is held at first source value.",
+          "route_heat_W": 77.70036418048291
+        },
+        "insulation_mm": 35,
+        "jacket_mm": 0.6,
+        "outer_envelope_mm": 153.2,
+        "wall_mm": 1,
+        "bend_radius_mm": 125,
+        "bend_radius_basis": "Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.",
+        "bends": [
+          {
+            "vertex": 1,
+            "angle_deg": 67.73169250357496,
+            "radius_mm": 125,
+            "tangent_mm": 83.88839989267719
+          },
+          {
+            "vertex": 2,
+            "angle_deg": 30.751777783580774,
+            "radius_mm": 125,
+            "tangent_mm": 34.37414967644196
+          },
+          {
+            "vertex": 3,
+            "angle_deg": 54.03020016602649,
+            "radius_mm": 125,
+            "tangent_mm": 63.732182637688915
+          },
+          {
+            "vertex": 4,
+            "angle_deg": 3.012787504183286,
+            "radius_mm": 125,
+            "tangent_mm": 3.287198805055949
+          }
+        ],
+        "bend_violations": [],
+        "geometry_valid": true,
+        "centerline_length_m": 1.5390929238030127,
+        "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+        "connected": true,
+        "routing_note": "Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.",
+        "hydraulics": null,
+        "source_id": "diesel"
+      },
+      "fuel": {
+        "id": "PIPE_FUEL",
+        "name": "Топливо → фильтр → горелка",
+        "color": "fuel",
+        "od": 12,
+        "inside_id_mm": 8,
+        "ends": [
+          "FUE.out",
+          "BRN.fuelConcept"
+        ],
+        "points": [
+          [
+            2190,
+            180,
+            540
+          ],
+          [
+            2075,
+            120,
+            540
+          ],
+          [
+            2075,
+            -470,
+            540
+          ],
+          [
+            2075,
+            -470,
+            720
+          ],
+          [
+            2300,
+            -470,
+            720
+          ],
+          [
+            2300,
+            -250,
+            720
+          ]
+        ],
+        "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
+        "fluid": "fuel",
+        "wall_temperature_C": 25,
+        "insulation_mm": 0,
+        "jacket_mm": 0,
+        "outer_envelope_mm": 12,
+        "wall_mm": 2,
+        "bend_radius_mm": 25,
+        "bend_radius_basis": "Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.",
+        "bends": [
+          {
+            "vertex": 1,
+            "angle_deg": 62.447188423282206,
+            "radius_mm": 25,
+            "tangent_mm": 15.154612545810538
+          },
+          {
+            "vertex": 2,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          },
+          {
+            "vertex": 3,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          },
+          {
+            "vertex": 4,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          }
+        ],
+        "bend_violations": [],
+        "geometry_valid": true,
+        "centerline_length_m": 1.3094594432937137,
+        "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+        "hydraulics": null
+      }
+    },
+    "wood": {
+      "count": 31,
+      "id": "wood",
+      "source": {
+        "id": "wood",
+        "name": "Дрова · прототип газифицирующей топки",
+        "fuel": "Дрова",
+        "unit": "кг",
+        "dry_LHV_MJ_kg": 19,
+        "moisture_percent": 20,
+        "bulk_kg_L": 0.18,
+        "efficiency": 0.7,
+        "efficiency_range": [
+          0.55,
+          0.8
+        ],
+        "max_input_kW": 90,
+        "min_input_kW": 25,
+        "aux_W": 150,
+        "tau_s": 90,
+        "stock": 4.014,
+        "geometry": "logs",
+        "size_mm": [
+          380,
+          350,
+          460
+        ],
+        "xyz_mm": [
+          2180,
+          -340,
+          650
+        ],
+        "dry_mass_kg": 75,
+        "geometry_basis": "380×350×460 мм и 75 кг — резерв прототипа, не уменьшенный заводской котёл. Загрузка, огнеупор и теплообмен должны быть разработаны.",
+        "reference": "Fröling S4 22: около 90,7% при номинале, но стационарный агрегат порядка 645 кг не подходит этому кузову. Компактной топке его КПД не присвоен.",
+        "links": [
+          {
+            "title": "Fröling: испытания S4 Turbo, стр. 86",
+            "url": "https://www.froeling-tsd.be/files/97346.pdf"
+          },
+          {
+            "title": "Forest Research: влажность и теплота сгорания",
+            "url": "https://cdn.forestresearch.gov.uk/2022/02/fr_bec_wood_as_fuel_technical_supplement_2010-1.pdf"
+          }
+        ],
+        "LHV_MJ_kg": 14.7118,
+        "control_basis": "Регулирование мощности и инерция прототипа заданы гипотезами.",
+        "energy_per_unit_J": 14711800,
+        "efficiency_basis": "Расчётная оценка переноса энергии топлива в воду/пар на базе LHV, не измеренный КПД этого прототипа; диапазон показывает неопределённость.",
+        "fuel_storage_L": 22.3,
+        "flue": {
+          "inside_mm": 100,
+          "wall_C": 350,
+          "excess_air": 1.8,
+          "stoich_air": 6,
+          "cp_J_kgK": 1100,
+          "gas_R_J_kgK": 287,
+          "friction_factor": 0.035
+        }
+      },
+      "heater": [
+        380.0000305175781,
+        437.0000047683716,
+        460.00006103515625
+      ],
+      "storage": [
+        450.00006103515625,
+        330.0000305175781,
+        150.00001525878906
+      ],
+      "flue": {
+        "id": "PIPE_FLUE",
+        "name": "Дымовой канал · генератор → задний выпуск",
+        "color": "dark",
+        "od": 102,
+        "inside_id_mm": 100,
+        "ends": [
+          "STM.flueOutlet",
+          "BODY.flushRearExhaust"
+        ],
+        "points": [
+          [
+            2480,
+            460,
+            1190
+          ],
+          [
+            2720,
+            460,
+            1190
+          ],
+          [
+            2850,
+            293,
+            920
+          ],
+          [
+            3010,
+            293,
+            700
+          ],
+          [
+            3200,
+            303,
+            700
+          ],
+          [
+            3725,
+            303,
+            700
+          ]
+        ],
+        "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
+        "fluid": "flue",
+        "wall_temperature_C": 350,
+        "thermal": {
+          "thickness_mm": 35,
+          "lambda_W_mK": 0.02518588064117437,
+          "heat_W_m": 50.48451784736275,
+          "surface_C": 53.11171763221082,
+          "R_cond_mK_W": 3.8999735119402428,
+          "R_external_mK_W": 0.25971759642933306,
+          "external_jacket_radius_m": 0.07660000000000002,
+          "h_W_m2K": 8,
+          "ambient_C": 40,
+          "material": "aerogel",
+          "target_surface_C": 55,
+          "stone_wool_comparison": {
+            "thickness_mm": 60,
+            "lambda_W_mK": 0.05445256429199148,
+            "heat_W_m": 74.18206645610832,
+            "surface_C": 54.525642919858655,
+            "R_cond_mK_W": 2.635062170933168,
+            "R_external_mK_W": 0.19581070754416255,
+            "external_jacket_radius_m": 0.10160000000000001,
+            "h_W_m2K": 8,
+            "ambient_C": 40
+          },
+          "h_sensitivity": [
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02545140661157989,
+              "heat_W_m": 49.12470819036706,
+              "surface_C": 60.41368181839121,
+              "R_cond_mK_W": 3.8592863991563626,
+              "R_external_mK_W": 0.4155481542869329,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 5,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02518588064117437,
+              "heat_W_m": 50.48451784736275,
+              "surface_C": 53.11171763221082,
+              "R_cond_mK_W": 3.8999735119402428,
+              "R_external_mK_W": 0.25971759642933306,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 8,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02498477192980727,
+              "heat_W_m": 51.59855479143289,
+              "surface_C": 47.14722806915104,
+              "R_cond_mK_W": 3.9313653793367367,
+              "R_external_mK_W": 0.13851605142897763,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 15,
+              "ambient_C": 40
+            }
+          ],
+          "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Flue wall 350 C is an unmeasured hypothesis; below first table entry lambda is held at first source value.",
+          "route_heat_W": 77.70036418048291
+        },
+        "insulation_mm": 55,
+        "jacket_mm": 0.6,
+        "outer_envelope_mm": 213.2,
+        "wall_mm": 1,
+        "bend_radius_mm": 155,
+        "bend_radius_basis": "Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.",
+        "bends": [
+          {
+            "vertex": 1,
+            "angle_deg": 67.73169250357496,
+            "radius_mm": 155,
+            "tangent_mm": 104.0216158669197
+          },
+          {
+            "vertex": 2,
+            "angle_deg": 30.751777783580774,
+            "radius_mm": 155,
+            "tangent_mm": 42.623945598788026
+          },
+          {
+            "vertex": 3,
+            "angle_deg": 54.03020016602649,
+            "radius_mm": 155,
+            "tangent_mm": 79.02790647073425
+          },
+          {
+            "vertex": 4,
+            "angle_deg": 3.012787504183286,
+            "radius_mm": 155,
+            "tangent_mm": 4.076126518269377
+          }
+        ],
+        "bend_violations": [],
+        "geometry_valid": true,
+        "centerline_length_m": 1.5315910598769347,
+        "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+        "connected": true,
+        "routing_note": "Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.",
+        "hydraulics": null,
+        "source_id": "wood"
+      }
+    },
+    "pellets": {
+      "count": 31,
+      "id": "pellets",
+      "source": {
+        "id": "pellets",
+        "name": "Пеллеты · шнек и топочная реторта",
+        "fuel": "Пеллеты",
+        "unit": "кг",
+        "dry_LHV_MJ_kg": 19,
+        "moisture_percent": 8,
+        "bulk_kg_L": 0.65,
+        "efficiency": 0.8,
+        "efficiency_range": [
+          0.72,
+          0.87
+        ],
+        "max_input_kW": 100,
+        "min_input_kW": 20,
+        "aux_W": 180,
+        "tau_s": 25,
+        "stock": 14.495000000000001,
+        "geometry": "pellets",
+        "size_mm": [
+          360,
+          330,
+          400
+        ],
+        "xyz_mm": [
+          2180,
+          -330,
+          650
+        ],
+        "dry_mass_kg": 60,
+        "geometry_basis": "Топка, шнек и огнеупор — отдельный резерв прототипа. Паспортный комплект не выбран.",
+        "reference": "Влажность 8%, насыпная плотность и КПД — гипотезы. LHV пересчитывается по той же формуле влажности.",
+        "links": [
+          {
+            "title": "Forest Research: расчёт LHV влажной древесины",
+            "url": "https://cdn.forestresearch.gov.uk/2022/02/fr_bec_wood_as_fuel_technical_supplement_2010-1.pdf"
+          }
+        ],
+        "LHV_MJ_kg": 17.28472,
+        "control_basis": "Регулирование мощности и инерция прототипа заданы гипотезами.",
+        "energy_per_unit_J": 17284720,
+        "efficiency_basis": "Расчётная оценка переноса энергии топлива в воду/пар на базе LHV, не измеренный КПД этого прототипа; диапазон показывает неопределённость.",
+        "fuel_storage_L": 22.3,
+        "flue": {
+          "inside_mm": 100,
+          "wall_C": 350,
+          "excess_air": 1.8,
+          "stoich_air": 6,
+          "cp_J_kgK": 1100,
+          "gas_R_J_kgK": 287,
+          "friction_factor": 0.035
+        }
+      },
+      "heater": [
+        360.0000305175781,
+        445.0000190734863,
+        400.00006103515625
+      ],
+      "storage": [
+        450.00006103515625,
+        330.0000305175781,
+        150.00001525878906
+      ],
+      "flue": {
+        "id": "PIPE_FLUE",
+        "name": "Дымовой канал · генератор → задний выпуск",
+        "color": "dark",
+        "od": 102,
+        "inside_id_mm": 100,
+        "ends": [
+          "STM.flueOutlet",
+          "BODY.flushRearExhaust"
+        ],
+        "points": [
+          [
+            2480,
+            460,
+            1190
+          ],
+          [
+            2720,
+            460,
+            1190
+          ],
+          [
+            2850,
+            293,
+            920
+          ],
+          [
+            3010,
+            293,
+            700
+          ],
+          [
+            3200,
+            303,
+            700
+          ],
+          [
+            3725,
+            303,
+            700
+          ]
+        ],
+        "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
+        "fluid": "flue",
+        "wall_temperature_C": 350,
+        "thermal": {
+          "thickness_mm": 35,
+          "lambda_W_mK": 0.02518588064117437,
+          "heat_W_m": 50.48451784736275,
+          "surface_C": 53.11171763221082,
+          "R_cond_mK_W": 3.8999735119402428,
+          "R_external_mK_W": 0.25971759642933306,
+          "external_jacket_radius_m": 0.07660000000000002,
+          "h_W_m2K": 8,
+          "ambient_C": 40,
+          "material": "aerogel",
+          "target_surface_C": 55,
+          "stone_wool_comparison": {
+            "thickness_mm": 60,
+            "lambda_W_mK": 0.05445256429199148,
+            "heat_W_m": 74.18206645610832,
+            "surface_C": 54.525642919858655,
+            "R_cond_mK_W": 2.635062170933168,
+            "R_external_mK_W": 0.19581070754416255,
+            "external_jacket_radius_m": 0.10160000000000001,
+            "h_W_m2K": 8,
+            "ambient_C": 40
+          },
+          "h_sensitivity": [
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02545140661157989,
+              "heat_W_m": 49.12470819036706,
+              "surface_C": 60.41368181839121,
+              "R_cond_mK_W": 3.8592863991563626,
+              "R_external_mK_W": 0.4155481542869329,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 5,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02518588064117437,
+              "heat_W_m": 50.48451784736275,
+              "surface_C": 53.11171763221082,
+              "R_cond_mK_W": 3.8999735119402428,
+              "R_external_mK_W": 0.25971759642933306,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 8,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02498477192980727,
+              "heat_W_m": 51.59855479143289,
+              "surface_C": 47.14722806915104,
+              "R_cond_mK_W": 3.9313653793367367,
+              "R_external_mK_W": 0.13851605142897763,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 15,
+              "ambient_C": 40
+            }
+          ],
+          "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Flue wall 350 C is an unmeasured hypothesis; below first table entry lambda is held at first source value.",
+          "route_heat_W": 77.70036418048291
+        },
+        "insulation_mm": 55,
+        "jacket_mm": 0.6,
+        "outer_envelope_mm": 213.2,
+        "wall_mm": 1,
+        "bend_radius_mm": 155,
+        "bend_radius_basis": "Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.",
+        "bends": [
+          {
+            "vertex": 1,
+            "angle_deg": 67.73169250357496,
+            "radius_mm": 155,
+            "tangent_mm": 104.0216158669197
+          },
+          {
+            "vertex": 2,
+            "angle_deg": 30.751777783580774,
+            "radius_mm": 155,
+            "tangent_mm": 42.623945598788026
+          },
+          {
+            "vertex": 3,
+            "angle_deg": 54.03020016602649,
+            "radius_mm": 155,
+            "tangent_mm": 79.02790647073425
+          },
+          {
+            "vertex": 4,
+            "angle_deg": 3.012787504183286,
+            "radius_mm": 155,
+            "tangent_mm": 4.076126518269377
+          }
+        ],
+        "bend_violations": [],
+        "geometry_valid": true,
+        "centerline_length_m": 1.5315910598769347,
+        "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+        "connected": true,
+        "routing_note": "Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.",
+        "hydraulics": null,
+        "source_id": "pellets"
+      }
+    },
+    "lpg": {
+      "count": 32,
+      "id": "lpg",
+      "source": {
+        "id": "lpg",
+        "name": "LPG · газовая горелка и арматура",
+        "fuel": "LPG",
+        "unit": "кг",
+        "LHV_MJ_kg": 45.98019801980198,
+        "density_kg_L": 0.54,
+        "efficiency": 0.87,
+        "efficiency_range": [
+          0.82,
+          0.9
+        ],
+        "max_input_kW": 91,
+        "min_input_kW": 35,
+        "aux_W": 180,
+        "tau_s": 1,
+        "stock": 2.295,
+        "geometry": "gas",
+        "size_mm": [
+          350,
+          410,
+          300
+        ],
+        "xyz_mm": [
+          2180,
+          -330,
+          650
+        ],
+        "dry_mass_kg": 18,
+        "geometry_basis": "Форма горелки/газовой рампы и малый баллон Ø130×400 мм — размерные резервы, не сертифицированные изделия.",
+        "reference": "Riello BS2: 35–91 кВт, 180 Вт; LPG 25,8 кВт·ч/Нм³ и 2,02 кг/Нм³. КПД газового парогенератора задан отдельно.",
+        "links": [
+          {
+            "title": "Riello BS: топливо и мощности, стр. 3",
+            "url": "https://www.riello.com/international/products/burners?action=download&id=11ACGABWRF-d1c2d497ef53d36810df9e8cc867411d"
+          }
+        ],
+        "control_basis": "Одноступенчатый ориентир: в переходном опыте фиксированный максимум при включении, отключение по модельному регулятору. Диапазон каталога означает подбор/настройку, не плавное регулирование.",
+        "energy_per_unit_J": 45980198.01980198,
+        "efficiency_basis": "Расчётная оценка переноса энергии топлива в воду/пар на базе LHV, не измеренный КПД этого прототипа; диапазон показывает неопределённость.",
+        "fuel_storage_L": 4.25,
+        "flue": {
+          "inside_mm": 80,
+          "wall_C": 250,
+          "excess_air": 1.4,
+          "stoich_air": 15.7,
+          "cp_J_kgK": 1100,
+          "gas_R_J_kgK": 287,
+          "friction_factor": 0.035
+        }
+      },
+      "heater": [
+        325.0000190734863,
+        410.0000305175781,
+        300.0000305175781
+      ],
+      "storage": [
+        415.00003147125244,
+        130.00000762939453,
+        130.00000762939453
+      ],
+      "flue": {
+        "id": "PIPE_FLUE",
+        "name": "Дымовой канал · генератор → задний выпуск",
+        "color": "dark",
+        "od": 82,
+        "inside_id_mm": 80,
+        "ends": [
+          "STM.flueOutlet",
+          "BODY.flushRearExhaust"
+        ],
+        "points": [
+          [
+            2480,
+            460,
+            1190
+          ],
+          [
+            2720,
+            460,
+            1190
+          ],
+          [
+            2850,
+            293,
+            920
+          ],
+          [
+            3010,
+            293,
+            700
+          ],
+          [
+            3200,
+            303,
+            700
+          ],
+          [
+            3725,
+            303,
+            700
+          ]
+        ],
+        "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
+        "fluid": "flue",
+        "wall_temperature_C": 250,
+        "thermal": {
+          "thickness_mm": 35,
+          "lambda_W_mK": 0.02518588064117437,
+          "heat_W_m": 50.48451784736275,
+          "surface_C": 53.11171763221082,
+          "R_cond_mK_W": 3.8999735119402428,
+          "R_external_mK_W": 0.25971759642933306,
+          "external_jacket_radius_m": 0.07660000000000002,
+          "h_W_m2K": 8,
+          "ambient_C": 40,
+          "material": "aerogel",
+          "target_surface_C": 55,
+          "stone_wool_comparison": {
+            "thickness_mm": 60,
+            "lambda_W_mK": 0.05445256429199148,
+            "heat_W_m": 74.18206645610832,
+            "surface_C": 54.525642919858655,
+            "R_cond_mK_W": 2.635062170933168,
+            "R_external_mK_W": 0.19581070754416255,
+            "external_jacket_radius_m": 0.10160000000000001,
+            "h_W_m2K": 8,
+            "ambient_C": 40
+          },
+          "h_sensitivity": [
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02545140661157989,
+              "heat_W_m": 49.12470819036706,
+              "surface_C": 60.41368181839121,
+              "R_cond_mK_W": 3.8592863991563626,
+              "R_external_mK_W": 0.4155481542869329,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 5,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02518588064117437,
+              "heat_W_m": 50.48451784736275,
+              "surface_C": 53.11171763221082,
+              "R_cond_mK_W": 3.8999735119402428,
+              "R_external_mK_W": 0.25971759642933306,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 8,
+              "ambient_C": 40
+            },
+            {
+              "thickness_mm": 35,
+              "lambda_W_mK": 0.02498477192980727,
+              "heat_W_m": 51.59855479143289,
+              "surface_C": 47.14722806915104,
+              "R_cond_mK_W": 3.9313653793367367,
+              "R_external_mK_W": 0.13851605142897763,
+              "external_jacket_radius_m": 0.07660000000000002,
+              "h_W_m2K": 15,
+              "ambient_C": 40
+            }
+          ],
+          "notes": "Steady cylindrical screen, h=8 includes assumed net external exchange; radiation not resolved separately. No supports/valves bridges, transient soak, moisture or contact-temperature certification. Flue wall 350 C is an unmeasured hypothesis; below first table entry lambda is held at first source value.",
+          "route_heat_W": 77.70036418048291
+        },
+        "insulation_mm": 35,
+        "jacket_mm": 0.6,
+        "outer_envelope_mm": 153.2,
+        "wall_mm": 1,
+        "bend_radius_mm": 125,
+        "bend_radius_basis": "Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.",
+        "bends": [
+          {
+            "vertex": 1,
+            "angle_deg": 67.73169250357496,
+            "radius_mm": 125,
+            "tangent_mm": 83.88839989267719
+          },
+          {
+            "vertex": 2,
+            "angle_deg": 30.751777783580774,
+            "radius_mm": 125,
+            "tangent_mm": 34.37414967644196
+          },
+          {
+            "vertex": 3,
+            "angle_deg": 54.03020016602649,
+            "radius_mm": 125,
+            "tangent_mm": 63.732182637688915
+          },
+          {
+            "vertex": 4,
+            "angle_deg": 3.012787504183286,
+            "radius_mm": 125,
+            "tangent_mm": 3.287198805055949
+          }
+        ],
+        "bend_violations": [],
+        "geometry_valid": true,
+        "centerline_length_m": 1.5390929238030127,
+        "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+        "connected": true,
+        "routing_note": "Complete concept route for compact 120 kW heat source, not RL50 at 471 kW. ID80 sized against gas flow/pressure; wall 250 C and passive insulation declared. Rear outlet needs a sealed body aperture and heat shield; real fit remains unverified.",
+        "hydraulics": null,
+        "source_id": "lpg"
+      },
+      "fuel": {
+        "id": "PIPE_FUEL",
+        "name": "Топливо → фильтр → горелка",
+        "color": "fuel",
+        "od": 12,
+        "inside_id_mm": 8,
+        "ends": [
+          "FUE.out",
+          "BRN.fuelConcept"
+        ],
+        "points": [
+          [
+            2190,
+            345,
+            540
+          ],
+          [
+            2075,
+            345,
+            540
+          ],
+          [
+            2075,
+            -470,
+            540
+          ],
+          [
+            2075,
+            -470,
+            720
+          ],
+          [
+            2300,
+            -470,
+            720
+          ],
+          [
+            2300,
+            -250,
+            720
+          ]
+        ],
+        "wall_status": "Assumed geometric wall only; pressure strength, material grade and fittings not selected",
+        "fluid": "fuel",
+        "wall_temperature_C": 25,
+        "insulation_mm": 0,
+        "jacket_mm": 0,
+        "outer_envelope_mm": 12,
+        "wall_mm": 2,
+        "bend_radius_mm": 25,
+        "bend_radius_basis": "Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.",
+        "bends": [
+          {
+            "vertex": 1,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          },
+          {
+            "vertex": 2,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          },
+          {
+            "vertex": 3,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          },
+          {
+            "vertex": 4,
+            "angle_deg": 90,
+            "radius_mm": 25,
+            "tangent_mm": 24.999999999999996
+          }
+        ],
+        "bend_violations": [],
+        "geometry_valid": true,
+        "centerline_length_m": 1.5120796326794899,
+        "endpoint_status": "Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved",
+        "hydraulics": null
+      }
+    },
+    "electric": {
+      "count": 30,
+      "id": "electric",
+      "source": {
+        "id": "electric",
+        "name": "Электричество · ТЭНы и аккумулятор",
+        "fuel": "Электроэнергия",
+        "unit": "кВт·ч",
+        "LHV_MJ_kg": 3.6,
+        "efficiency": 0.97,
+        "efficiency_range": [
+          0.94,
+          0.99
+        ],
+        "max_input_kW": 60,
+        "min_input_kW": 0,
+        "aux_W": 30,
+        "tau_s": 0.2,
+        "stock": 4,
+        "geometry": "electric",
+        "size_mm": [
+          300,
+          400,
+          260
+        ],
+        "xyz_mm": [
+          2180,
+          -280,
+          650
+        ],
+        "dry_mass_kg": 12,
+        "battery_mass_kg": 26.666666666666668,
+        "geometry_basis": "ТЭНы, силовой шкаф и батарея 4 кВт·ч: расчётные резервы; 150 Вт·ч/кг батареи — гипотеза, не паспорт.",
+        "reference": "Электрический нагрев почти полностью даёт тепло; потери корпуса, преобразователя и парового цикла остаются. Дымоход не нужен.",
+        "links": [
+          {
+            "title": "Chromalox: фланцевые нагреватели",
+            "url": "https://www.chromalox.com/en/products-and-technologies/industrial-heaters-and-systems/immersion-heaters/flanged-heaters/process-water-and-corrosive-solution-flanged-heaters"
+          }
+        ],
+        "control_basis": "Регулирование мощности и инерция прототипа заданы гипотезами.",
+        "energy_per_unit_J": 3600000,
+        "efficiency_basis": "Расчётная оценка переноса энергии топлива в воду/пар на базе LHV, не измеренный КПД этого прототипа; диапазон показывает неопределённость.",
+        "fuel_storage_L": 22.3,
+        "flue": null
+      },
+      "heater": [
+        300.0000305175781,
+        418.00000858306885,
+        260.0000305175781
+      ],
+      "storage": [
+        450.00006103515625,
+        330.0000305175781,
+        150.00001525878906
+      ]
+    }
+  },
+  "errors": []
+}

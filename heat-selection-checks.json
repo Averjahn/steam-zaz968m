@@ -1,0 +1,483 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "32 components loaded",
+      "pass": true
+    },
+    {
+      "name": "32 purchasing records",
+      "pass": true
+    },
+    {
+      "name": "Every component has a purchasing/material/catalogue/inquiry link",
+      "pass": true
+    },
+    {
+      "name": "ENG dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "STM dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "CND dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PMP dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "BRN dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "GBX dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "BODY dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "SUSP dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "WTR dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "RCV dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "FUE dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "ELE dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "MOTOR dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "BOOST dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "SEP dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "MOUNTS dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "SHIELD dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "ADAPTER dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "DUCTS dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_R dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_EXHAUST_L dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RETURN dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_BALANCE dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_MAKEUP dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_SUCTION dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FEED dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FUEL dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_FLUE dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "PIPE_RELIEF dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "WIRE dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "WIRE_ENGINE dropdown shows own purchasing record",
+      "pass": true
+    },
+    {
+      "name": "Closed simulation assembly distinguishes construction readiness",
+      "pass": true
+    },
+    {
+      "name": "32 root node law records",
+      "pass": true
+    },
+    {
+      "name": "Temperature changes actual component material",
+      "pass": true
+    },
+    {
+      "name": "Absolute pressure legend",
+      "pass": true
+    },
+    {
+      "name": "Restoring material restores base color",
+      "pass": true
+    },
+    {
+      "name": "Flow helper outside export and audit",
+      "pass": true
+    },
+    {
+      "name": "Flow traces toggle",
+      "pass": true
+    },
+    {
+      "name": "Motion corridor is explicitly a hypothesis",
+      "pass": true
+    },
+    {
+      "name": "Startup begins at checking stage",
+      "pass": true
+    },
+    {
+      "name": "Sequential purge stage",
+      "pass": true
+    },
+    {
+      "name": "Early next is guarded",
+      "pass": true
+    },
+    {
+      "name": "Auto simulation advances guarded startup",
+      "pass": true
+    },
+    {
+      "name": "Simulation pause label",
+      "pass": true
+    },
+    {
+      "name": "Export contains sensors and history",
+      "pass": true
+    },
+    {
+      "name": "Browser simulation mass and energy conserved",
+      "pass": true,
+      "detail": -2.7474015951156616e-8
+    },
+    {
+      "name": "Controlled stop stage",
+      "pass": true
+    },
+    {
+      "name": "Reset cold state",
+      "pass": true
+    },
+    {
+      "name": "Actual component hover tooltip",
+      "pass": true
+    },
+    {
+      "name": "Hover name and function",
+      "pass": true
+    },
+    {
+      "name": "Hover includes modeled pressure",
+      "pass": true
+    },
+    {
+      "name": "Selected node law is available",
+      "pass": true
+    },
+    {
+      "name": "ENG has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "ENG actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "ENG purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "ENG selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "PMP has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "PMP actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "PMP purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "PMP selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "BRN has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "BRN actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "BRN purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "BRN selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "CND has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "CND actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "CND purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "CND selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "WTR has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "WTR actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "WTR purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "WTR selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "PIPE_STEAM selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "Pipe layer is identified",
+      "pass": true,
+      "detail": "jacket"
+    },
+    {
+      "name": "MOUNTS has visible actual surface",
+      "pass": true
+    },
+    {
+      "name": "MOUNTS actual canvas double-click selects component",
+      "pass": true
+    },
+    {
+      "name": "MOUNTS purchasing card synchronized",
+      "pass": true
+    },
+    {
+      "name": "MOUNTS selection outline visible",
+      "pass": true
+    },
+    {
+      "name": "Engine can be reached through transparent body in automatic mode",
+      "pass": true
+    },
+    {
+      "name": "Automatic pick through body selects ENG",
+      "pass": true
+    },
+    {
+      "name": "body actual node visible",
+      "pass": true
+    },
+    {
+      "name": "body picks exact leaf node",
+      "pass": true,
+      "detail": "Крыша_и_рамки_стёкол_·_FBX_Plane116"
+    },
+    {
+      "name": "body retains group selector",
+      "pass": true
+    },
+    {
+      "name": "suspension actual node visible",
+      "pass": true
+    },
+    {
+      "name": "suspension picks exact leaf node",
+      "pass": true,
+      "detail": "Задняя_левая_·_пружина"
+    },
+    {
+      "name": "suspension retains group selector",
+      "pass": true
+    },
+    {
+      "name": "Hidden body layer is excluded",
+      "pass": true
+    },
+    {
+      "name": "Measurement mode does not change selected component",
+      "pass": true
+    },
+    {
+      "name": "Clipped engine has no selectable rendered surface",
+      "pass": true
+    },
+    {
+      "name": "Double-click does not pick clipped engine",
+      "pass": true
+    },
+    {
+      "name": "ru shows current manufacturer selection catalogue",
+      "pass": true
+    },
+    {
+      "name": "ru excludes previous RL50 products",
+      "pass": true
+    },
+    {
+      "name": "eu shows current manufacturer selection catalogue",
+      "pass": true
+    },
+    {
+      "name": "eu excludes previous RL50 products",
+      "pass": true
+    },
+    {
+      "name": "Old layout keeps cards working",
+      "pass": true
+    },
+    {
+      "name": "Restoring internal layout resets stale node",
+      "pass": true
+    },
+    {
+      "name": "Highlight is not part of exportable assembly",
+      "pass": true
+    },
+    {
+      "name": "Assembly fits mobile",
+      "pass": true
+    },
+    {
+      "name": "Double touch picks component",
+      "pass": true
+    },
+    {
+      "name": "Register page has every component",
+      "pass": true
+    },
+    {
+      "name": "Register search narrows to exact component",
+      "pass": true
+    },
+    {
+      "name": "Register fits mobile",
+      "pass": true
+    },
+    {
+      "name": "External links use noopener noreferrer",
+      "pass": true
+    },
+    {
+      "name": "Physics page fits mobile",
+      "pass": true
+    },
+    {
+      "name": "32 separate node laws and 156 source-node laws",
+      "pass": true
+    },
+    {
+      "name": "Eight formula-substitution-result cards",
+      "pass": true
+    },
+    {
+      "name": "Calculated full mass",
+      "pass": true
+    },
+    {
+      "name": "Braking transfers load to front wheels",
+      "pass": true
+    },
+    {
+      "name": "Hypothetical travel limit warning",
+      "pass": true
+    },
+    {
+      "name": "Wheel export equilibrium",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_errors": []
+}
