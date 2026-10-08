@@ -1,0 +1,342 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Sidebar and task dashboard initialize",
+      "pass": true
+    },
+    {
+      "name": "No vectors downloaded until a query is made",
+      "pass": true
+    },
+    {
+      "name": "light theme activates",
+      "pass": true
+    },
+    {
+      "name": "dark theme activates",
+      "pass": true
+    },
+    {
+      "name": "blueprint theme activates",
+      "pass": true
+    },
+    {
+      "name": "system theme activates",
+      "pass": true
+    },
+    {
+      "name": "Theme persists across pages",
+      "pass": true
+    },
+    {
+      "name": "Library initially displays only 24 rows",
+      "pass": true
+    },
+    {
+      "name": "Pagination changes the displayed files",
+      "pass": true
+    },
+    {
+      "name": "File filtering finds a dashboard drawing",
+      "pass": true
+    },
+    {
+      "name": "Empty file search has a visible empty state",
+      "pass": true
+    },
+    {
+      "name": "File sizes sort in descending order",
+      "pass": true
+    },
+    {
+      "name": "Command shortcut opens a native dialog",
+      "pass": true
+    },
+    {
+      "name": "Global search returns cited project passages",
+      "pass": true
+    },
+    {
+      "name": "Result keyboard navigation works",
+      "pass": true
+    },
+    {
+      "name": "Escape closes search",
+      "pass": true
+    },
+    {
+      "name": "Calculation links retain their source fragment",
+      "pass": true
+    },
+    {
+      "name": "Deep link expands the formula section",
+      "pass": true
+    },
+    {
+      "name": "Expanded formulas remain expanded after recalculation",
+      "pass": true
+    },
+    {
+      "name": "A search link opens the exact formula card",
+      "pass": true
+    },
+    {
+      "name": "Calculation scenario controls still work",
+      "pass": true
+    },
+    {
+      "name": "Outline lists page sections",
+      "pass": true
+    },
+    {
+      "name": "Bookmark is stored",
+      "pass": true
+    },
+    {
+      "name": "Density preference persists",
+      "pass": true
+    },
+    {
+      "name": "Bookmark persists after reload",
+      "pass": true
+    },
+    {
+      "name": "Source link expands the exact purchase component",
+      "pass": true
+    },
+    {
+      "name": "Other purchase cards stay compact",
+      "pass": true
+    },
+    {
+      "name": "Dynamic physics source link expands its parent section",
+      "pass": true
+    },
+    {
+      "name": "3D initializes inside the redesigned workspace",
+      "pass": true
+    },
+    {
+      "name": "scene tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "layers tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "cuts tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "flows tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "simulation tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "engine tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "temperature tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "component tab reveals exactly its panel",
+      "pass": true
+    },
+    {
+      "name": "Engine task isolates the engine in one click",
+      "pass": true
+    },
+    {
+      "name": "Pistons continue to animate in the isolated component",
+      "pass": true,
+      "detail": {
+        "a": [
+          312.77035844868044,
+          366.7933136014889
+        ],
+        "b": [
+          318.98404472537413,
+          408.29709734816424
+        ]
+      }
+    },
+    {
+      "name": "Flow task activates fluid-only mode",
+      "pass": true
+    },
+    {
+      "name": "Fluid-only view hides physical materials",
+      "pass": true
+    },
+    {
+      "name": "Temperature task activates the thermal map",
+      "pass": true
+    },
+    {
+      "name": "Thermal map labels all visible nodes",
+      "pass": true
+    },
+    {
+      "name": "Simulation controls and instruments still work",
+      "pass": true
+    },
+    {
+      "name": "Actual thermal formulas show integrator terms",
+      "pass": true
+    },
+    {
+      "name": "diesel heat source changes the physical assembly",
+      "pass": true
+    },
+    {
+      "name": "wood heat source changes the physical assembly",
+      "pass": true
+    },
+    {
+      "name": "pellets heat source changes the physical assembly",
+      "pass": true
+    },
+    {
+      "name": "lpg heat source changes the physical assembly",
+      "pass": true
+    },
+    {
+      "name": "electric heat source changes the physical assembly",
+      "pass": true
+    },
+    {
+      "name": "Fullscreen still gives most space to the model",
+      "pass": true
+    },
+    {
+      "name": "Fullscreen controls include task navigation",
+      "pass": true
+    },
+    {
+      "name": "Fullscreen layer panel is accessible",
+      "pass": true
+    },
+    {
+      "name": "Mobile model page fits the screen",
+      "pass": true
+    },
+    {
+      "name": "Closed mobile navigation is inert",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation opens in one click",
+      "pass": true
+    },
+    {
+      "name": "Backdrop closes mobile navigation",
+      "pass": true
+    },
+    {
+      "name": "index shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "library shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "knowledge shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "calculations shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "heat shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "physics shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "procurement shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "literature shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "internal shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "piping shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "packaging shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "user-model shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "reconstruction shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "report shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "calculation-workbook shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "literature-audit shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "404 shares navigation and fits on mobile",
+      "pass": true
+    },
+    {
+      "name": "Dedicated knowledge page searches and cites the book summary",
+      "pass": true
+    },
+    {
+      "name": "Queries stay on the same origin",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "date": "2026-10-09",
+  "scope": "Workspace navigation, themes, source links, desktop and mobile rendering, and preservation of 3D/simulation interactions. No new geometry or thermodynamic validation.",
+  "source_sha256": {
+    "build_site.py": "83b8f45c266886ef12a2b80809b4e5379665d6d8ad03a5ba5fb10ad7ee2bdef8",
+    "workspace_ui.py": "5d08f82aafde32881b66faf2be24a0e01fa33c052ca44da4496fd42671e07aa4",
+    "web/workspace.css": "a557060bfbdbb40755f5015dfe0d261b15b4ac58fb45218fd87738ed59ff2190",
+    "web/workspace.js": "6aed8b007b3bb0e93b97e65c51ea8bd7bcc915a6e90fc311dc5849f95c26e000",
+    "web/index.html": "b9a8961b6b4c3b3439c4287ae7d4716c11f7dd672681eaf879e9d360086953fa",
+    "web/library.html": "6371b5c608ead50a781aeb42c8f2415982e3fbffbb22f0d8ebee71a58b04e8cb",
+    "web/site.js": "5ee89afe73a0ebbf22c21fa4f58e528358540f80537e7c52a1399c474265cf68",
+    "web/knowledge.html": "0c9c2d16e3c0014f773100bb6648f07c8d250d4e43cd6c17d11cc04dcf75a106",
+    "web/knowledge.js": "ca9bd6a37701d9fed96e96b14dd62cf08acafb9a0bcd9cacd57fb8069afc707a",
+    "web/calculations.js": "d256a8fd551078ee88026d6cbcfcf62b31c81de121a28c429a840a1cf16a3246",
+    "web/calculation-render.js": "7c3089f1271408b6f615d02215244d333d978c85b1d34fab61121dfa159403ac"
+  },
+  "test_harness_sha256": "1c3e0674a1b8ff9b7648c963eb3fdfec26df96a4ba13a9ac74ca6bb2efdea77c",
+  "minor_post_suite_change": "Set light text on the dark 3D temperature legend; covered by final published smoke check."
+}

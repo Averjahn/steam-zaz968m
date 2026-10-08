@@ -98,6 +98,13 @@
     "size": 26238
   },
   {
+    "path": "build_knowledge.py",
+    "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 13893
+  },
+  {
     "path": "build_mount_register.py",
     "title": "Контакт опор с игровым полом",
     "category": "Исходники",
@@ -165,7 +172,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 40105
+    "size": 41790
   },
   {
     "path": "build_stock_suspension.py",
@@ -362,6 +369,13 @@
     "category": "Расчёты",
     "format": "JSON",
     "size": 98766
+  },
+  {
+    "path": "knowledge-checks.json",
+    "title": "База знаний · релевантность, контрольные суммы и границы поиска",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 17574
   },
   {
     "path": "layout-internal.json",
@@ -595,6 +609,13 @@
     "size": 2310
   },
   {
+    "path": "verify_knowledge.mjs",
+    "title": "Проверка векторного поиска, источников и типовых вопросов",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 4730
+  },
+  {
     "path": "verify_literature.mjs",
     "title": "Сверка переходной модели с независимым расчётом",
     "category": "Исходники",
@@ -628,6 +649,20 @@
     "category": "Проверки",
     "format": "JSON",
     "size": 98806
+  },
+  {
+    "path": "workspace-checks.json",
+    "title": "Редизайн · темы, мобильная навигация, панели и регрессия 3D",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 8643
+  },
+  {
+    "path": "workspace_ui.py",
+    "title": "Генератор общего интерфейса, тем и навигации",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 10102
   },
   {
     "path": "drawings/01-layout-mm.dxf",

@@ -1,0 +1,519 @@
+{
+  "status": "passed",
+  "scope": "Project-source retrieval and relevance of representative engineering questions, not a neural LLM or new physics computation.",
+  "checks": [
+    {
+      "name": "passages matches byte count and SHA-256",
+      "pass": true
+    },
+    {
+      "name": "model matches byte count and SHA-256",
+      "pass": true
+    },
+    {
+      "name": "basis matches byte count and SHA-256",
+      "pass": true
+    },
+    {
+      "name": "vectors matches byte count and SHA-256",
+      "pass": true
+    },
+    {
+      "name": "Corpus covers at least 20 project sources",
+      "pass": true
+    },
+    {
+      "name": "Corpus has at least 500 actual passages",
+      "pass": true
+    },
+    {
+      "name": "Index contains actual 96-dimensional floating-point document vectors",
+      "pass": true
+    },
+    {
+      "name": "Cosine vectors are normalized",
+      "pass": true,
+      "detail": 2.1630070479172758e-7
+    },
+    {
+      "name": "Relevant source retrieved: Как рассчитаны обороты колёс",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Привод и обороты колёс",
+          "url": "physics.html#topic-4"
+        },
+        {
+          "title": "Сценарий A · Обороты колёс",
+          "url": "calculations.html?scenario=A#formula-wheel_rpm"
+        },
+        {
+          "title": "Сценарий C · Обороты колёс",
+          "url": "calculations.html?scenario=C#formula-wheel_rpm"
+        },
+        {
+          "title": "Сценарий B · Обороты колёс",
+          "url": "calculations.html?scenario=B#formula-wheel_rpm"
+        },
+        {
+          "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
+          "url": "literature-audit.html#topic-11"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Как работает двигатель двойного действия",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Температуры, теплопотери и физические расчёты",
+          "url": "assembly.html#thermalPanel"
+        },
+        {
+          "title": "Двойное действие: камеры, клапаны и направление пара",
+          "url": "assembly.html#doubleActingPanel"
+        },
+        {
+          "title": "Как работает выбранный узел",
+          "url": "assembly.html#nodeExplanation"
+        },
+        {
+          "title": "Как физически работает замкнутый контур",
+          "url": "literature-audit.html#topic-13"
+        },
+        {
+          "title": "Как работает каждый узел.",
+          "url": "physics.html"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: steam engine double acting",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Двойное действие: камеры, клапаны и направление пара",
+          "url": "assembly.html#doubleActingPanel"
+        },
+        {
+          "title": "Температуры, теплопотери и физические расчёты",
+          "url": "assembly.html#thermalPanel"
+        },
+        {
+          "title": "Сценарий A · Объём впуска пара за оборот при целевых оборотах",
+          "url": "calculations.html?scenario=A#formula-steam_volume_per_rev"
+        },
+        {
+          "title": "Сценарий B · Объём впуска пара за оборот при целевых оборотах",
+          "url": "calculations.html?scenario=B#formula-steam_volume_per_rev"
+        },
+        {
+          "title": "Сценарий C · Объём впуска пара за оборот при целевых оборотах",
+          "url": "calculations.html?scenario=C#formula-steam_volume_per_rev"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Масса нагрузка на каждое колесо",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Нагрузка на каждое колесо",
+          "url": "physics.html#topic-5"
+        },
+        {
+          "title": "24. Нагрузки на четыре колеса и рычаги подвески",
+          "url": "report.html#section-24"
+        },
+        {
+          "title": "Физика узлов и нагрузка на четыре колеса",
+          "url": "physics.html"
+        },
+        {
+          "title": "Проверяем каждое число.",
+          "url": "calculations.html"
+        },
+        {
+          "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
+          "url": "literature-audit.html#topic-11"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Теплопотери изоляции трубы",
+      "pass": true,
+      "detail": [
+        {
+          "title": "PIPE_STEAM · Пар · генератор → машина · Теплопотери цилиндрического участка",
+          "url": "piping.html#topic-16"
+        },
+        {
+          "title": "PIPE_FEED · Питательная вода → генератор · Теплопотери цилиндрического участка",
+          "url": "piping.html#topic-121"
+        },
+        {
+          "title": "PIPE_EXHAUST_L · Отработанный пар → левый конденсатор · Теплопотери цилиндрического участка",
+          "url": "piping.html#topic-46"
+        },
+        {
+          "title": "Температуры, теплопотери и физические расчёты",
+          "url": "assembly.html#thermalPanel"
+        },
+        {
+          "title": "Детальные агрегаты, трубы и крепления",
+          "url": "assembly.html#topic-10"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Белов баланс энергии фазовый переход",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Белов · Баланс массы и энергии",
+          "url": "thermal-reference.json"
+        },
+        {
+          "title": "Белов · Теплоёмкость и теплообменники",
+          "url": "thermal-reference.json"
+        },
+        {
+          "title": "Белов · Циклы и изоэнтропная эффективность",
+          "url": "thermal-reference.json"
+        },
+        {
+          "title": "Сценарий B · Тепло в парогенератор",
+          "url": "calculations.html?scenario=B#formula-boiler_kW"
+        },
+        {
+          "title": "Сценарий A · Тепло в парогенератор",
+          "url": "calculations.html?scenario=A#formula-boiler_kW"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Белов энтропия необратимость",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Белов · Необратимость и эксергия",
+          "url": "thermal-reference.json"
+        },
+        {
+          "title": "Сценарий A · Энтропия входного пара",
+          "url": "calculations.html?scenario=A#formula-s1_kJ_kgK"
+        },
+        {
+          "title": "Сценарий C · Энтропия входного пара",
+          "url": "calculations.html?scenario=C#formula-s1_kJ_kgK"
+        },
+        {
+          "title": "Сценарий B · Энтропия входного пара",
+          "url": "calculations.html?scenario=B#formula-s1_kJ_kgK"
+        },
+        {
+          "title": "Белов · Теплоёмкость и теплообменники",
+          "url": "thermal-reference.json"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Дрова расход влажность",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Одинаковые условия для сравнения",
+          "url": "heat.html#topic-1"
+        },
+        {
+          "title": "Симуляция: пуск, температура и давление",
+          "url": "assembly.html#simPanel"
+        },
+        {
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
+        },
+        {
+          "title": "Дрова · прототип газифицирующей топки",
+          "url": "heat.html"
+        },
+        {
+          "title": "Чем нагревать воду.",
+          "url": "heat.html"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Где купить насос",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Материалы и покупка",
+          "url": "assembly.html#purchaseTitle"
+        },
+        {
+          "title": "BOOST · Подпорный насос, фильтр и арматура",
+          "url": "procurement.html#part-BOOST"
+        },
+        {
+          "title": "MOTOR · Привод Cat Pumps · мотор / редуктор",
+          "url": "procurement.html#part-MOTOR"
+        },
+        {
+          "title": "RCV · Питательный резервуар с конденсатом",
+          "url": "procurement.html#part-RCV"
+        },
+        {
+          "title": "Где купить детали.",
+          "url": "procurement.html"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Конденсатор теплоотвод ограничения",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Главное ограничение — отвод теплоты",
+          "url": "literature.html#topic-1"
+        },
+        {
+          "title": "Теплоотвод конденсатора завышался",
+          "url": "literature.html#topic-3"
+        },
+        {
+          "title": "Теплоотвод конденсатора завышался",
+          "url": "literature.html"
+        },
+        {
+          "title": "Вывод формулы ε–NTU",
+          "url": "literature.html#topic-2"
+        },
+        {
+          "title": "Внутренний конденсатор не подтверждён для прежних 18 кВт",
+          "url": "literature-audit.html#topic-7"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Дизель расход топлива",
+      "pass": true,
+      "detail": [
+        {
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
+        },
+        {
+          "title": "BRN · Дизель · компактная горелка",
+          "url": "physics.html#node-BRN"
+        },
+        {
+          "title": "FUE · Дизель · запас",
+          "url": "physics.html#node-FUE"
+        },
+        {
+          "title": "Дизель · компактная горелка",
+          "url": "heat.html"
+        },
+        {
+          "title": "FUE · Дизель · запас",
+          "url": "procurement.html#part-FUE"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Как изменяется температура при конденсации",
+      "pass": true,
+      "detail": [
+        {
+          "title": "CND · Два внутренних блока конденсации",
+          "url": "physics.html#node-CND"
+        },
+        {
+          "title": "Как физически работает замкнутый контур",
+          "url": "literature.html#topic-13"
+        },
+        {
+          "title": "Сценарий C · Температура на входе",
+          "url": "calculations.html?scenario=C#formula-T1"
+        },
+        {
+          "title": "Сценарий A · Температура на входе",
+          "url": "calculations.html?scenario=A#formula-T1"
+        },
+        {
+          "title": "Сценарий B · Температура на входе",
+          "url": "calculations.html?scenario=B#formula-T1"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Где хранить воду",
+      "pass": true,
+      "detail": [
+        {
+          "title": "WTR · Бак подпиточной воды",
+          "url": "physics.html#node-WTR"
+        },
+        {
+          "title": "3. Архитектура установки и выбор топлива",
+          "url": "report.html#section-3"
+        },
+        {
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
+        },
+        {
+          "title": "Сценарий B · Масса холодной воды",
+          "url": "calculations.html?scenario=B#formula-water_mass"
+        },
+        {
+          "title": "Сценарий A · Масса холодной воды",
+          "url": "calculations.html?scenario=A#formula-water_mass"
+        }
+      ]
+    },
+    {
+      "name": "Relevant source retrieved: Стыки труб герметичность",
+      "pass": true,
+      "detail": [
+        {
+          "title": "Стыки труб: патрубки, муфты и герметичность",
+          "url": "connection-specs.json"
+        },
+        {
+          "title": "Стык STM.steam · патрубок трубы",
+          "url": "connection-specs.json"
+        },
+        {
+          "title": "Стык RCV.return · патрубок трубы",
+          "url": "connection-specs.json"
+        },
+        {
+          "title": "Незапланированные пересечения агрегатов и трасс",
+          "url": "internal.html#topic-5"
+        },
+        {
+          "title": "Температуры, теплопотери и физические расчёты",
+          "url": "assembly.html#thermalPanel"
+        }
+      ]
+    },
+    {
+      "name": "No invented answer for an unsupported topic",
+      "pass": true
+    },
+    {
+      "name": "Empty and stopword-only queries return no passages",
+      "pass": true
+    },
+    {
+      "name": "Retrieved text is exactly an indexed source passage",
+      "pass": true
+    },
+    {
+      "name": "Search links remain inside project sources",
+      "pass": true
+    },
+    {
+      "name": "Full external books are not in the public corpus",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: assembly.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: heat.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: physics.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: piping.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: procurement.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: literature.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: report.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: internal.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: packaging.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: reconstruction.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: user-model.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: calculations.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: lab.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: literature-audit.html",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: calculation-workbook.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: simulation-data.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: component-purchases.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: pipe-engineering.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: heat-sources.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: thermal-reference.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: literature-audit.json",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: connection-specs.json",
+      "pass": true
+    }
+  ],
+  "max_vector_norm_error": 2.1630070479172758e-7,
+  "manifest_sha256": "02ee8da95cd6aae5c9f0edcfdd8e1c85b65f0f93004872e9aac1c4f0b53b3de7",
+  "source_sha256": {
+    "build_knowledge.py": "2b7bae83fda83675ef6db91c646e9894021e368f8e585b2a4aee6e3fbd37e312",
+    "web/search-core.js": "bdc30ddf76fc3cb3ab1efbff1d3839d5865a8078586231ee973d8f596d87ecb4",
+    "web/search-worker.js": "929817d8b34f9ea21913019ce7a04748c30912b1a68ee2080e3aeba3c33e7c45",
+    "verify_knowledge.mjs": "1052f5154fc3aae68861d42c91cc8f7a924ccea63c7b9008ef0bae1be4d5d7d2"
+  }
+}

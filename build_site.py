@@ -1,4 +1,4 @@
-"""Build the public project website into docs/ using only the Python standard library."""
+"""Build the public workspace; NumPy fits its local document-search vectors."""
 from pathlib import Path
 import csv
 import hashlib
@@ -78,6 +78,11 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
+        'workspace_ui.py': 'Генератор общего интерфейса, тем и навигации',
+        'build_knowledge.py': 'Воспроизводимый векторный индекс материалов · TF-IDF / LSA',
+        'verify_knowledge.mjs': 'Проверка векторного поиска, источников и типовых вопросов',
+        'knowledge-checks.json': 'База знаний · релевантность, контрольные суммы и границы поиска',
+        'workspace-checks.json': 'Редизайн · темы, мобильная навигация, панели и регрессия 3D',
         'double-acting-checks.json': 'Двойное действие · камеры, переключение клапанов и обратимые стрелки',
         'thermal-reference.json': 'Белов · изученные разделы и границы теплового расчёта',
         'thermal-validation-data.json': 'Независимые контрольные состояния воды и пара · CoolProp',
@@ -269,7 +274,7 @@ def main():
     for r in records:
         size = fmt(r['size'] / 1024, 1) + ' КБ'
         download = r['format'] not in {'HTML', 'PDF', 'SVG'}
-        rows.append(f'''<article class="file-row" data-category="{r['category']}" data-search="{escape(r['title']+' '+r['path']+' '+r['category'],quote=True)}"><span class="file-format">{r['format']}</span><div class="file-description"><a href="{r['path']}" {'download' if download else ''}>{escape(r['title'])}</a><span>{r['path']}</span></div><span class="file-category">{r['category']}</span><span class="file-size">{size}</span><a class="file-action" href="{r['path']}" download aria-label="Скачать {escape(r['title'],quote=True)}">↓</a></article>''')
+        rows.append(f'''<article class="file-row" data-bytes="{r['size']}" data-category="{r['category']}" data-search="{escape(r['title']+' '+r['path']+' '+r['category'],quote=True)}"><span class="file-format">{r['format']}</span><div class="file-description"><a href="{r['path']}" {'download' if download else ''}>{escape(r['title'])}</a><span>{r['path']}</span></div><span class="file-category">{r['category']}</span><span class="file-size">{size}</span><a class="file-action" href="{r['path']}" download aria-label="Скачать {escape(r['title'],quote=True)}">↓</a></article>''')
     (OUT / 'library.html').write_text(page('library.html', 'Материалы — ЗАЗ / STEAM', 'Полная библиотека расчётов, чертежей, моделей и исходников проекта.', FILTERS=filters, FILES=''.join(rows), COUNT=len(records)))
     # Download bundle intentionally excludes dependency caches and research transcripts.
     with zipfile.ZipFile(OUT / 'project-materials.zip', 'w', zipfile.ZIP_DEFLATED) as z:
@@ -282,8 +287,18 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-09</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'heat.html', 'physics.html', 'literature.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-09</lastmod></url>' for p in ['', 'library.html', 'knowledge.html', 'lab.html', 'assembly.html', 'heat.html', 'physics.html', 'literature.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
+    (OUT / 'knowledge.html').write_text(page('knowledge.html', 'Поиск по знаниям — ЗАЗ / STEAM', 'Векторный поиск по документам проекта, формулам и разборам литературы с точными ссылками на источники.'))
+    from workspace_ui import prepare_workspace
+    from build_knowledge import build_knowledge
+    prepare_workspace(OUT, WEB)
+    manifest = build_knowledge(ROOT, OUT)
+    p=OUT/'knowledge.html';text=p.read_text();digest=hashlib.sha256((OUT/'knowledge.js').read_bytes()).hexdigest()[:12]
+    p.write_text(text.replace('src="knowledge.js"','src="knowledge.js?v='+digest+'"'))
+    with zipfile.ZipFile(OUT/'project-materials.zip','a',zipfile.ZIP_DEFLATED) as z:
+        z.write(OUT/'knowledge-manifest.json','steam-zaz968m/docs/knowledge-manifest.json')
+        for p in sorted((OUT/'knowledge').iterdir()):z.write(p,'steam-zaz968m/docs/knowledge/'+p.name)
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 
 

@@ -1,21 +1,5 @@
-document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('.filter').forEach(item => {
-    const selected = item === button;
-    item.classList.toggle('active', selected);
-    item.setAttribute('aria-pressed', String(selected));
-  });
-  filterFiles();
-}));
-document.querySelector('#fileSearch')?.addEventListener('input', filterFiles);
-function filterFiles() {
-  const category = document.querySelector('.filter.active')?.dataset.category || 'all';
-  const query = (document.querySelector('#fileSearch')?.value || '').trim().toLocaleLowerCase('ru');
-  let count = 0;
-  document.querySelectorAll('.file-row').forEach(row => {
-    const visible = (category === 'all' || row.dataset.category === category) && row.dataset.search.toLocaleLowerCase('ru').includes(query);
-    row.hidden = !visible;
-    if (visible) count++;
-  });
-  if (document.querySelector('#fileCount')) document.querySelector('#fileCount').textContent = count;
-  if (document.querySelector('#noResults')) document.querySelector('#noResults').hidden = count > 0;
-}
+const fileRows=[...document.querySelectorAll('.file-row')];let currentPage=0;
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{for(const item of document.querySelectorAll('.filter')){const selected=item===button;item.classList.toggle('active',selected);item.setAttribute('aria-pressed',String(selected));}currentPage=0;filterFiles();}));
+document.querySelector('#fileSearch')?.addEventListener('input',()=>{currentPage=0;filterFiles();});for(const id of ['fileSort','filePageSize'])document.getElementById(id)?.addEventListener('change',()=>{currentPage=0;filterFiles();});document.getElementById('filePrev')?.addEventListener('click',()=>{currentPage--;filterFiles();});document.getElementById('fileNext')?.addEventListener('click',()=>{currentPage++;filterFiles();});
+function filterFiles(){if(!fileRows.length)return;const category=document.querySelector('.filter.active')?.dataset.category||'all',query=(document.querySelector('#fileSearch')?.value||'').trim().toLocaleLowerCase('ru'),sort=document.querySelector('#fileSort')?.value||'original',pageSize=Number(document.querySelector('#filePageSize')?.value)||fileRows.length;let rows=fileRows.filter(row=>(category==='all'||row.dataset.category===category)&&row.dataset.search.toLocaleLowerCase('ru').includes(query));if(sort==='name')rows.sort((a,b)=>a.querySelector('.file-description>a').textContent.localeCompare(b.querySelector('.file-description>a').textContent,'ru'));else if(sort==='format')rows.sort((a,b)=>a.querySelector('.file-format').textContent.localeCompare(b.querySelector('.file-format').textContent));else if(sort==='size')rows.sort((a,b)=>Number(b.dataset.bytes)-Number(a.dataset.bytes));const pages=Math.max(1,Math.ceil(rows.length/pageSize));currentPage=Math.max(0,Math.min(pages-1,currentPage));for(const row of fileRows)row.hidden=true;const host=document.querySelector('.file-list');for(const row of rows.slice(currentPage*pageSize,(currentPage+1)*pageSize)){row.hidden=false;host.append(row);}document.querySelector('#fileCount').textContent=rows.length;document.querySelector('#noResults').hidden=rows.length>0;document.getElementById('filePageStatus').textContent=rows.length?'Страница '+(currentPage+1)+' из '+pages+' · '+(currentPage*pageSize+1)+'–'+Math.min(rows.length,(currentPage+1)*pageSize)+' из '+rows.length:'Нет материалов';document.getElementById('filePrev').disabled=currentPage===0;document.getElementById('fileNext').disabled=currentPage>=pages-1;}
+filterFiles();

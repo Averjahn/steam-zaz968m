@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "method": "TF-IDF + randomized truncated SVD / LSA; normalized cosine vectors + lexical reranking",
+  "dimension": 96,
+  "passage_count": 850,
+  "source_count": 22,
+  "vocabulary_size": 3545,
+  "assets": {
+    "passages": {
+      "path": "knowledge/passages-7fcbcb03f7f8.json",
+      "sha256": "7fcbcb03f7f8fdb1ee3354fcff63d8d19e752d50840a7077fc40b519633eb0f2",
+      "bytes": 1446510
+    },
+    "model": {
+      "path": "knowledge/model-93d4bb9d82a8.json",
+      "sha256": "93d4bb9d82a89bda021c76eecc9a976694112eef8059f32c9c5f15b37f4132dc",
+      "bytes": 120323
+    },
+    "basis": {
+      "path": "knowledge/basis-72c8747a2d52.bin",
+      "sha256": "72c8747a2d5256b3ad5fd90a488ead89b28679273998ece4772e0fed8eb90cf3",
+      "bytes": 1361280
+    },
+    "vectors": {
+      "path": "knowledge/vectors-e5852fad0624.bin",
+      "sha256": "e5852fad06242cb5bf51698fee10ad6bda05e92a5dec347c5cc2ce9dd27d1a92",
+      "bytes": 326400
+    }
+  },
+  "sources": {
+    "assembly.html": {
+      "sha256": "b29fe7b785babac328ca7d20efd02c9f035451b3079bfe64f76454e1421ca4dd",
+      "kind": "HTML",
+      "title": "CAD-сборка"
+    },
+    "heat.html": {
+      "sha256": "9ce330e5acf6956cf4fc7a0cc53476efee962b57d4b68152945dd76a5e3fdb47",
+      "kind": "HTML",
+      "title": "Источники тепла и замкнутый цикл"
+    },
+    "physics.html": {
+      "sha256": "b0eb4ad214df2007254e780a16c5e059a882deac9c1eef413298d5d2491101ef",
+      "kind": "HTML",
+      "title": "Физика узлов и нагрузка на четыре колеса"
+    },
+    "piping.html": {
+      "sha256": "f743f19d37603beb38aa57b90b790c8adb1c868c0e5d653057789780e283d557",
+      "kind": "HTML",
+      "title": "Трубопроводы"
+    },
+    "procurement.html": {
+      "sha256": "a663beb70f98497d3370fbbcdbcffef334ed14801c8c397593f0915bd88c2bdc",
+      "kind": "HTML",
+      "title": "Комплектующие и материалы"
+    },
+    "literature.html": {
+      "sha256": "c19a4f8b9ba1c75c480d2d34850794aaee5eae40f6994d4cd2305cd10f3458b5",
+      "kind": "HTML",
+      "title": "Проверка парового цикла по литературе"
+    },
+    "report.html": {
+      "sha256": "37f583cedd5b5f4e95cce987725b0061b087fe28c84103957cc286f22669c9c6",
+      "kind": "HTML",
+      "title": "ЗАЗ-968М с паровым приводом"
+    },
+    "internal.html": {
+      "sha256": "d223d1519a7308958bf2db87baff9d944ec2f581922bd7eacd0b14093d41527b",
+      "kind": "HTML",
+      "title": "Внутренняя паровая сборка"
+    },
+    "packaging.html": {
+      "sha256": "f6f1b6223228a403b6e0b1460e272cee1ce709c99b9ac5639905e041a0c05706",
+      "kind": "HTML",
+      "title": "Переработанная компоновка"
+    },
+    "reconstruction.html": {
+      "sha256": "2553dd39ce9ec497c03522c07145eb3f7c178a27ad7cf5218039703c8c4e447d",
+      "kind": "HTML",
+      "title": "Кузов по фотографиям"
+    },
+    "user-model.html": {
+      "sha256": "10fd9cfc7bc3b5b3620f30bd617a4d59c1f0d846878c1a05a9d2d9ab399d3357",
+      "kind": "HTML",
+      "title": "Ваша модель ЗАЗ-968М"
+    },
+    "calculations.html": {
+      "sha256": "194539f911aec45110775d9e572aa77f127b86936a2d0ef149ff81b3ba5e3b88",
+      "kind": "HTML",
+      "title": "Формулы и подстановки"
+    },
+    "lab.html": {
+      "sha256": "4f8197305251d501b1f0ccdde5095843ee4d43ddd1576ef91dc76d2cef0af304",
+      "kind": "HTML",
+      "title": "ЗАЗ-968М • Паровой привод"
+    },
+    "literature-audit.html": {
+      "sha256": "60b643bfde3d91a8cc395c5ff008a8e421bbeb72ffcac832f3aea7497999fc02",
+      "kind": "HTML",
+      "title": "Проверка парового ЗАЗ по литературе"
+    },
+    "calculation-workbook.json": {
+      "sha256": "5c0761cd48e16bc8a97ae0855fef173822dfc5952ad105885c0528c4af3b465b",
+      "kind": "JSON",
+      "title": "calculation-workbook.json"
+    },
+    "simulation-data.json": {
+      "sha256": "59ecd82a03d07aafb2047200d214f0436d657e43041f08fe428421b127a085f0",
+      "kind": "JSON",
+      "title": "simulation-data.json"
+    },
+    "component-purchases.json": {
+      "sha256": "d0a5e72512a8539402e8e82e45fc45d5ed0242f988f1eeb5f81bce5d290e10b9",
+      "kind": "JSON",
+      "title": "component-purchases.json"
+    },
+    "pipe-engineering.json": {
+      "sha256": "64f5a6375a5d242e73b4c205462cbb02478916f40da05f0dea9114da79731f09",
+      "kind": "JSON",
+      "title": "pipe-engineering.json"
+    },
+    "heat-sources.json": {
+      "sha256": "f9fbb71e166e429ebe7b476dd6fa4ff764fe353eda0f89512627bca4302d3b2b",
+      "kind": "JSON",
+      "title": "heat-sources.json"
+    },
+    "thermal-reference.json": {
+      "sha256": "3786f9d8debb7a909fc05e29ef1f87e0cd92961c9f1fd76844fb6af484f33182",
+      "kind": "JSON",
+      "title": "thermal-reference.json"
+    },
+    "literature-audit.json": {
+      "sha256": "904984481d0c5e66c664f413de1a3cf9a7e973e45b44a8c1bf9df99f4ef7248c",
+      "kind": "JSON",
+      "title": "literature-audit.json"
+    },
+    "connection-specs.json": {
+      "sha256": "a793dd52edbec789189cc586891b504c4ac14a99313c5a679b8b817a59f9eee7",
+      "kind": "JSON",
+      "title": "connection-specs.json"
+    }
+  },
+  "total_bytes": 3254513,
+  "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
+  "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
+  "training_seed": 968,
+  "references": [
+    "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html"
+  ]
+}
