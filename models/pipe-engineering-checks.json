@@ -17,6 +17,11 @@
       "detail": null
     },
     {
+      "name": "PIPE_STEAM length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "PIPE_STEAM mass conservation",
       "pass": true,
       "detail": null
@@ -56,6 +61,11 @@
     },
     {
       "name": "PIPE_EXHAUST_R curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_EXHAUST_R length matches actual endpoints and circular arcs",
       "pass": true,
       "detail": null
     },
@@ -103,6 +113,11 @@
       "detail": null
     },
     {
+      "name": "PIPE_EXHAUST_L length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "PIPE_EXHAUST_L mass conservation",
       "pass": true,
       "detail": null
@@ -142,6 +157,11 @@
     },
     {
       "name": "PIPE_RETURN curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RETURN length matches actual endpoints and circular arcs",
       "pass": true,
       "detail": null
     },
@@ -189,6 +209,11 @@
       "detail": null
     },
     {
+      "name": "PIPE_BALANCE length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "PIPE_BALANCE mass conservation",
       "pass": true,
       "detail": null
@@ -232,6 +257,11 @@
       "detail": null
     },
     {
+      "name": "PIPE_MAKEUP length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "PIPE_MAKEUP mass conservation",
       "pass": true,
       "detail": null
@@ -253,6 +283,11 @@
     },
     {
       "name": "PIPE_SUCTION curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_SUCTION length matches actual endpoints and circular arcs",
       "pass": true,
       "detail": null
     },
@@ -300,6 +335,11 @@
       "detail": null
     },
     {
+      "name": "PIPE_FEED length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "PIPE_FEED mass conservation",
       "pass": true,
       "detail": null
@@ -343,6 +383,11 @@
       "detail": null
     },
     {
+      "name": "PIPE_FUEL length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "PIPE_FLUE layers sum",
       "pass": true,
       "detail": null
@@ -354,6 +399,11 @@
     },
     {
       "name": "PIPE_FLUE curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_FLUE length matches actual endpoints and circular arcs",
       "pass": true,
       "detail": null
     },
@@ -387,6 +437,11 @@
     },
     {
       "name": "PIPE_RELIEF curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PIPE_RELIEF length matches actual endpoints and circular arcs",
       "pass": true,
       "detail": null
     },
@@ -434,6 +489,11 @@
       "detail": null
     },
     {
+      "name": "WIRE length matches actual endpoints and circular arcs",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "WIRE_ENGINE layers sum",
       "pass": true,
       "detail": null
@@ -445,6 +505,11 @@
     },
     {
       "name": "WIRE_ENGINE curve radius clears insulated cross section",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "WIRE_ENGINE length matches actual endpoints and circular arcs",
       "pass": true,
       "detail": null
     },

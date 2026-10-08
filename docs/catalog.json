@@ -4,7 +4,7 @@
     "title": "Как использовать комплект",
     "category": "Документы",
     "format": "TXT",
-    "size": 9504
+    "size": 10376
   },
   {
     "path": "assembly-vw-inspired.scad",
@@ -81,7 +81,7 @@
     "title": "Контакт опор с игровым полом",
     "category": "Исходники",
     "format": "PY",
-    "size": 3871
+    "size": 3895
   },
   {
     "path": "build_packaging_sheet.py",
@@ -102,7 +102,7 @@
     "title": "Воспроизводимый расчёт труб и изоляции",
     "category": "Исходники",
     "format": "PY",
-    "size": 9791
+    "size": 10931
   },
   {
     "path": "build_pipe_materials.py",
@@ -116,7 +116,7 @@
     "title": "Генератор реестра комплектующих",
     "category": "Исходники",
     "format": "PY",
-    "size": 21152
+    "size": 21427
   },
   {
     "path": "build_reconstruction.py",
@@ -130,14 +130,21 @@
     "title": "Генерация отчёта",
     "category": "Исходники",
     "format": "PY",
-    "size": 88367
+    "size": 97321
+  },
+  {
+    "path": "build_simulation_data.py",
+    "title": "Генератор свойств IAPWS-95 и физических описаний",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 23576
   },
   {
     "path": "build_site.py",
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 33058
+    "size": 35082
   },
   {
     "path": "build_stock_suspension.py",
@@ -214,7 +221,7 @@
     "title": "Комплектующие · ссылки на покупку и материалы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 82679
+    "size": 82920
   },
   {
     "path": "convert_cad.js",
@@ -249,21 +256,21 @@
     "title": "Внутренняя сборка · тепловая проверка и формулы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 15399
+    "size": 15804
   },
   {
     "path": "internal-fit-audit.json",
     "title": "Внутренняя сборка · пересечения показанной геометрии",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 95689
+    "size": 89330
   },
   {
     "path": "layout-internal.json",
     "title": "Внутренняя детальная сборка · координаты и допущения",
     "category": "3D",
     "format": "JSON",
-    "size": 32754
+    "size": 33150
   },
   {
     "path": "layout-revised.json",
@@ -312,7 +319,7 @@
     "title": "Трубопроводы · поток, изгибы и тепловой экран",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 60071
+    "size": 61624
   },
   {
     "path": "pipe-routes-input.json",
@@ -326,14 +333,14 @@
     "title": "Полный отчёт в браузере",
     "category": "Документы",
     "format": "HTML",
-    "size": 212966
+    "size": 221788
   },
   {
     "path": "report.pdf",
     "title": "Расчётный отчёт с формулами и подстановками",
     "category": "Документы",
     "format": "PDF",
-    "size": 230523
+    "size": 237205
   },
   {
     "path": "requirements.txt",
@@ -369,6 +376,20 @@
     "category": "Расчёты",
     "format": "CSV",
     "size": 3897
+  },
+  {
+    "path": "simulation-checks.json",
+    "title": "Проверка балансов, остановов и четырёх колёс",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 24508
+  },
+  {
+    "path": "simulation-data.json",
+    "title": "Свойства воды, гипотезы симуляции и массы",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 241126
   },
   {
     "path": "sources.csv",
@@ -410,7 +431,14 @@
     "title": "verify_pipe_engineering.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 2974
+    "size": 3496
+  },
+  {
+    "path": "verify_simulation.mjs",
+    "title": "Проверка физической исследовательской модели",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 6244
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -515,7 +543,7 @@
     "title": "Внутренняя детальная сборка · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 46773
+    "size": 46758
   },
   {
     "path": "drawings/07-internal-assembly.svg",
@@ -529,7 +557,7 @@
     "title": "Трубопроводы с изоляцией · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 76377
+    "size": 75647
   },
   {
     "path": "drawings/08-pipe-routing.svg",
@@ -543,7 +571,7 @@
     "title": "Поперечный разрез дымового канала · SVG",
     "category": "Чертежи",
     "format": "SVG",
-    "size": 649
+    "size": 665
   },
   {
     "path": "drawings/08-section-pipe_steam.svg",
@@ -557,35 +585,35 @@
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 8563
+    "size": 8613
   },
   {
     "path": "assembly.html",
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 26753
+    "size": 32040
   },
   {
     "path": "user-model.html",
     "title": "Ваша модель · масштаб, панели и конфликты",
     "category": "Документы",
     "format": "HTML",
-    "size": 10134
+    "size": 10184
   },
   {
     "path": "packaging.html",
     "title": "Новая расстановка · зазоры и открытые вопросы",
     "category": "3D",
     "format": "HTML",
-    "size": 20547
+    "size": 20597
   },
   {
     "path": "reconstruction.html",
     "title": "Кузов по фотографиям: источники и точность",
     "category": "Документы",
     "format": "HTML",
-    "size": 22899
+    "size": 22949
   },
   {
     "path": "models/zaz-968m-reconstructed.glb",
@@ -728,94 +756,101 @@
     "size": 41705
   },
   {
+    "path": "physics.html",
+    "title": "Физика узлов · массы, рычаги и четыре колеса",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 9875
+  },
+  {
     "path": "procurement.html",
     "title": "Комплектующие · покупка и изготовление",
     "category": "Документы",
     "format": "HTML",
-    "size": 3070
+    "size": 3120
   },
   {
     "path": "piping.html",
     "title": "Трубопроводы · формулы, диаметры и изоляция",
     "category": "Документы",
     "format": "HTML",
-    "size": 55175
+    "size": 55264
   },
   {
     "path": "internal.html",
     "title": "Внутренняя сборка · детали, крепления и тепловые ограничения",
     "category": "3D",
     "format": "HTML",
-    "size": 27217
+    "size": 27468
   },
   {
     "path": "models/steam-internal-assembly.glb",
     "title": "Полная внутренняя детальная сборка GLB",
     "category": "3D",
     "format": "GLB",
-    "size": 35642996
+    "size": 35338424
   },
   {
     "path": "models/steam-internal-assembly.json",
     "title": "Внутренняя сборка · детали и габариты",
     "category": "Документы",
     "format": "JSON",
-    "size": 79570
+    "size": 81178
   },
   {
     "path": "models/pipe-engineering-checks.json",
     "title": "Проверки теплового баланса, расходов и диаметров",
     "category": "Проверки",
     "format": "JSON",
-    "size": 11421
+    "size": 13144
   },
   {
     "path": "models/internal-browser-checks.json",
     "title": "Внутренняя сборка · проверки интерфейса и геометрии",
     "category": "Проверки",
     "format": "JSON",
-    "size": 30670
+    "size": 30677
   },
   {
     "path": "models/internal-mounts.json",
     "title": "56 контактов опор с игровым полом · координаты",
     "category": "Документы",
     "format": "JSON",
-    "size": 20572
+    "size": 20563
   },
   {
     "path": "models/internal-rear.png",
     "title": "Рендер заднего отсека · проект",
     "category": "Изображения",
     "format": "PNG",
-    "size": 353945
+    "size": 363460
   },
   {
     "path": "models/internal-boiler.png",
     "title": "Рендер генератора за сиденьями · проект",
     "category": "Изображения",
     "format": "PNG",
-    "size": 295604
+    "size": 294660
   },
   {
     "path": "models/internal-front.png",
     "title": "Рендер передних резервуаров · проект",
     "category": "Изображения",
     "format": "PNG",
-    "size": 286614
+    "size": 288091
   },
   {
     "path": "models/internal-routes.json",
     "title": "Пар, вода, топливо, дым и управление · трассы",
     "category": "Документы",
     "format": "JSON",
-    "size": 57666
+    "size": 59213
   },
   {
     "path": "models/registry.json",
     "title": "Происхождение и точность моделей",
     "category": "Документы",
     "format": "JSON",
-    "size": 27049
+    "size": 27110
   }
 ]

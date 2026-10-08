@@ -22,7 +22,7 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css',  'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     purchase_digest=hashlib.sha256((ROOT/'component-purchases.json').read_bytes()).hexdigest()[:12]
     p=(OUT/'component-purchases.js').read_text().replace("'component-purchases.json'","'component-purchases.json?v="+purchase_digest+"'")
@@ -30,6 +30,19 @@ def main():
     component_digest=hashlib.sha256((OUT/'component-purchases.js').read_bytes()).hexdigest()[:12]
     for module in ['assembly.js','procurement.js']:
         p=(OUT/module).read_text().replace("'./component-purchases.js'","'./component-purchases.js?v="+component_digest+"'")
+        (OUT/module).write_text(p)
+    # Version system data and transitive modules together for existing visitors.
+    for module in ['assembly-systems.js','physics-page.js']:
+        p=(OUT/module).read_text()
+        for asset in ['simulation-data.json','pipe-engineering.json','internal-fit-audit.json']:
+            version=hashlib.sha256((ROOT/asset).read_bytes()).hexdigest()[:12]
+            p=p.replace("'"+asset+"'","'"+asset+"?v="+version+"'")
+        (OUT/module).write_text(p)
+    for module,dependencies in [('assembly-systems.js',['steam-simulation.js','pipe-path.js']),('physics-page.js',['wheel-loads.js']),('assembly.js',['assembly-systems.js'])]:
+        p=(OUT/module).read_text()
+        for asset in dependencies:
+            version=hashlib.sha256((OUT/asset).read_bytes()).hexdigest()[:12]
+            p=p.replace("'./"+asset+"'","'./"+asset+"?v="+version+"'")
         (OUT/module).write_text(p)
     digest=hashlib.sha256((OUT/'packaging-audit.js').read_bytes()).hexdigest()[:12]
     s=(OUT/'assembly.js').read_text().replace("'./packaging-audit.js'","'./packaging-audit.js?v="+digest+"'")
@@ -74,6 +87,7 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
+        'simulation-checks.json': 'Проверка балансов, остановов и четырёх колёс', 'verify_simulation.mjs': 'Проверка физической исследовательской модели', 'simulation-data.json': 'Свойства воды, гипотезы симуляции и массы', 'build_simulation_data.py': 'Генератор свойств IAPWS-95 и физических описаний',
         'component-purchases.json': 'Комплектующие · ссылки на покупку и материалы', 'build_procurement.py': 'Генератор реестра комплектующих',
         'report.html': 'Полный отчёт в браузере', 'report.pdf': 'Расчётный отчёт с формулами и подстановками',
         'index.html': '3D-компоновка и калькулятор', 'START.txt': 'Как использовать комплект',
@@ -142,7 +156,7 @@ def main():
         records.append({'path': dest.as_posix(), 'title': title, 'category': category,
                         'format': p.suffix[1:].upper(), 'size': target.stat().st_size})
 
-    header = '''<a class="skip" href="#main">К содержимому</a><header class="site-header"><a class="brand" href="index.html" aria-label="ЗАЗ-968М: главная"><span class="brand-icon">S</span><span>ЗАЗ<span class="brand-light"> / STEAM</span></span></a><nav aria-label="Главная навигация"><a href="index.html#concept">Концепция</a><a href="calculations.html">Расчёты</a><a href="assembly.html">3D-модель</a><a href="library.html">Материалы</a></nav><a class="header-link" href="''' + REPO + '''" target="_blank" rel="noopener">GitHub ↗</a></header>'''
+    header = '''<a class="skip" href="#main">К содержимому</a><header class="site-header"><a class="brand" href="index.html" aria-label="ЗАЗ-968М: главная"><span class="brand-icon">S</span><span>ЗАЗ<span class="brand-light"> / STEAM</span></span></a><nav aria-label="Главная навигация"><a href="index.html#concept">Концепция</a><a href="calculations.html">Расчёты</a><a href="assembly.html">3D-модель</a><a href="physics.html">Физика узлов</a><a href="library.html">Материалы</a></nav><a class="header-link" href="''' + REPO + '''" target="_blank" rel="noopener">GitHub ↗</a></header>'''
     footer = '''<footer class="site-footer"><div><a class="brand" href="index.html">ЗАЗ / STEAM</a><p>Исследование парового привода для ЗАЗ-968М.</p></div><div><span>Версия 08.10.2026</span><a href="library.html">Библиотека материалов →</a><a href="''' + REPO + '''" target="_blank" rel="noopener">Исходники на GitHub ↗</a></div></footer>'''
     def page(template, title, desc, **values):
         text = (WEB / template).read_text()
@@ -150,11 +164,12 @@ def main():
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
+        for asset in ['style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css',  'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
 
+    (OUT / 'physics.html').write_text(page('physics.html','Физика узлов и нагрузка на четыре колеса — ЗАЗ / STEAM','Законы узлов, переходные процессы, распределение веса и нагрузки рычагов.'))
     (OUT / 'procurement.html').write_text(page('procurement.html','Комплектующие и материалы — ЗАЗ / STEAM','Товары, материалы, каталоги и изготовители для 32 узлов внутренней сборки.'))
     (OUT / 'calculations.html').write_text(page('calculations.html', 'Формулы и подстановки — ЗАЗ / STEAM', 'Формула, исходные данные, подстановка и результат для каждого расчёта.'))
     (OUT / 'assembly.html').write_text(page('assembly.html', 'CAD-сборка — ЗАЗ / STEAM',
@@ -205,6 +220,7 @@ def main():
         ('models/user-model-browser-checks.json', 'Ваша модель · проверки интерфейса и экспорта', 'Проверки'),
         ('models/zaz-968m-yatloo.json', 'Ваша модель · привязка и ограничения', 'Документы'),
         ('user-body-audit.json', 'Ваша модель · проверка трёх компоновок', 'Проверки'),
+        ('physics.html', 'Физика узлов · массы, рычаги и четыре колеса', 'Расчёты'),
         ('procurement.html', 'Комплектующие · покупка и изготовление', 'Документы'),
         ('piping.html', 'Трубопроводы · формулы, диаметры и изоляция', 'Документы'),
         ('internal.html', 'Внутренняя сборка · детали, крепления и тепловые ограничения', '3D'),
@@ -252,7 +268,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-08</lastmod></url>' for p in ['', 'library.html', 'lab.html', 'assembly.html', 'physics.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     print(f'Built {OUT}: {len(records)} catalog entries and a downloadable bundle.')
 

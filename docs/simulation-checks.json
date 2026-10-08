@@ -1,0 +1,835 @@
+{
+  "status": "passed",
+  "source_sha256": {
+    "simulation-data.json": "34c07ae326c7efb35174253ac38094ee160a8076c4161709807361e7a8782e5e",
+    "web/steam-simulation.js": "974a8e531e44121ab744bb938c0495736db29b10f99bfc964852468b7c7f0359",
+    "web/wheel-loads.js": "f4abb374e688e6e3fae5db29b68999f8978f3a7111b41660a6e4b556597e7615"
+  },
+  "checks": [
+    {
+      "name": "Initial total pressure includes air, 1 bar absolute",
+      "pass": true,
+      "detail": 100000.00000474398
+    },
+    {
+      "name": "Initial equilibrium temperature 20 C",
+      "pass": true
+    },
+    {
+      "name": "Table 10 bar / 250 C agrees with baseline h and density",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 0",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 1000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 2000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 3000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 4000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 5000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 6000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 7000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 8000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 9000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 10000",
+      "pass": true
+    },
+    {
+      "name": "default finite nonnegative inventories at 11000",
+      "pass": true
+    },
+    {
+      "name": "default conserves water including measured model losses",
+      "pass": true,
+      "detail": 1.5631940186722204e-13
+    },
+    {
+      "name": "default control-volume energy balance",
+      "pass": true,
+      "detail": 8.568167686462402e-8
+    },
+    {
+      "name": "default stops on calculated condenser backpressure",
+      "pass": true,
+      "detail": "Противодавление конденсатора выше исследовательских 3 бар abs"
+    },
+    {
+      "name": "default burner cuts off on latch",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 0",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 1000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 2000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 3000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 4000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 5000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 6000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 7000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 8000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 9000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 10000",
+      "pass": true
+    },
+    {
+      "name": "no_fans finite nonnegative inventories at 11000",
+      "pass": true
+    },
+    {
+      "name": "no_fans conserves water including measured model losses",
+      "pass": true,
+      "detail": 7.815970093361102e-14
+    },
+    {
+      "name": "no_fans control-volume energy balance",
+      "pass": true,
+      "detail": 0.0000010207295417785645
+    },
+    {
+      "name": "no_fans stops on calculated condenser backpressure",
+      "pass": true,
+      "detail": "Противодавление конденсатора выше исследовательских 3 бар abs"
+    },
+    {
+      "name": "no_fans burner cuts off on latch",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 0",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 1000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 2000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 3000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 4000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 5000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 6000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 7000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 8000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 9000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 10000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling finite nonnegative inventories at 11000",
+      "pass": true
+    },
+    {
+      "name": "small_cooling conserves water including measured model losses",
+      "pass": true,
+      "detail": 9.237055564881302e-14
+    },
+    {
+      "name": "small_cooling control-volume energy balance",
+      "pass": true,
+      "detail": 7.450580596923828e-8
+    },
+    {
+      "name": "small_cooling stops on calculated condenser backpressure",
+      "pass": true,
+      "detail": "Противодавление конденсатора выше исследовательских 3 бар abs"
+    },
+    {
+      "name": "small_cooling burner cuts off on latch",
+      "pass": true
+    },
+    {
+      "name": "No sequence advance before start",
+      "pass": true
+    },
+    {
+      "name": "First check advances to purge",
+      "pass": true
+    },
+    {
+      "name": "Purge timer blocks immediate advance",
+      "pass": true
+    },
+    {
+      "name": "Purge completes after model timer",
+      "pass": true
+    },
+    {
+      "name": "Emergency stop remains latched",
+      "pass": true
+    },
+    {
+      "name": "Reset clears latch and time",
+      "pass": true
+    },
+    {
+      "name": "Boiler pressure research limit",
+      "pass": true,
+      "detail": "Превышен исследовательский предел генератора 12 бар abs"
+    },
+    {
+      "name": "Real candidate Cat water temperature",
+      "pass": true,
+      "detail": "Вода на входе Cat горячее паспортного кандидата 82 °C"
+    },
+    {
+      "name": "Condenser backpressure limit",
+      "pass": true,
+      "detail": "Противодавление конденсатора выше исследовательских 3 бар abs"
+    },
+    {
+      "name": "Engine overspeed research limit",
+      "pass": true,
+      "detail": "Превышен исследовательский предел оборотов"
+    },
+    {
+      "name": "Receiver dry protection",
+      "pass": true,
+      "detail": "Вода на входе Cat горячее паспортного кандидата 82 °C; Недостаточно воды в приёмнике"
+    },
+    {
+      "name": "Halved step changes warmup temperature under 0.2 C",
+      "pass": true,
+      "detail": {
+        "a": 81.28374389167058,
+        "b": 81.28334667736547
+      }
+    },
+    {
+      "name": "Halved step changes warmup pressure under 0.02 bar",
+      "pass": true
+    },
+    {
+      "name": "static exact force and moment equilibrium",
+      "pass": true,
+      "detail": [
+        0,
+        3.637978807091713e-12,
+        5.115907697472721e-13
+      ]
+    },
+    {
+      "name": "brake exact force and moment equilibrium",
+      "pass": true,
+      "detail": [
+        0,
+        -3.637978807091713e-12,
+        -3.979039320256561e-13
+      ]
+    },
+    {
+      "name": "turn exact force and moment equilibrium",
+      "pass": true,
+      "detail": [
+        0,
+        3.637978807091713e-12,
+        0
+      ]
+    },
+    {
+      "name": "Braking transfer follows m a h / L",
+      "pass": true
+    },
+    {
+      "name": "Left turn transfers load to right wheels",
+      "pass": true
+    },
+    {
+      "name": "Unmeasured travel is flagged instead of certified",
+      "pass": true
+    },
+    {
+      "name": "Reference corner loads and zero incremental deflection",
+      "pass": true
+    },
+    {
+      "name": "Wheel lift invalidates linear support solution",
+      "pass": true
+    },
+    {
+      "name": "Current mass includes missing full flue allowance",
+      "pass": true
+    },
+    {
+      "name": "Top-level and source-node explanations complete",
+      "pass": true
+    },
+    {
+      "name": "Pump follows 15 lpm at 950 rpm candidate bound",
+      "pass": true
+    },
+    {
+      "name": "Model includes documented pump dry mass",
+      "pass": true
+    }
+  ],
+  "simulations": {
+    "default": {
+      "trip": "Противодавление конденсатора выше исследовательских 3 бар abs",
+      "phases": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "peak_condenser_bar_abs": 3.002332866255338,
+      "max_mass_residual_kg": 1.5631940186722204e-13,
+      "max_energy_residual_J": 8.568167686462402e-8,
+      "last": {
+        "time": 600.000000000002,
+        "phase": 10,
+        "trip": "Противодавление конденсатора выше исследовательских 3 бар abs",
+        "boiler": {
+          "T": 172.9210287139227,
+          "p": 849703.6060549618,
+          "uf": 730938.3138706961,
+          "ug": 2577890.587916251,
+          "hf": 731888.292936226,
+          "hg": 2770744.7689364892,
+          "vf": 0.0011180112589378533,
+          "vg": 0.22697048926887606,
+          "x": 0.02161582987301704,
+          "mv": 0.04323165974603408,
+          "ml": 1.956768340253966,
+          "gasV": 0.00981231096446293,
+          "pWater": 849703.6060549618,
+          "pAir": 2.5815059663358925e-196,
+          "E": 4638374.271477029
+        },
+        "condenser": {
+          "T": 20.036772322576724,
+          "p": 2775.8200432475865,
+          "uf": 84065.66326806601,
+          "ug": 2402372.238934202,
+          "hf": 84068.01232440458,
+          "hg": 2537500.2219888526,
+          "vf": 0.0010018492925354685,
+          "vg": 57.6343133727634,
+          "x": 0.0006697618351365574,
+          "mv": 0.0003382426966489421,
+          "ml": 0.5046811222541443,
+          "gasV": 0.01949438557471368,
+          "pWater": 2344.7197151119467,
+          "pAir": 431.1003281356398,
+          "E": 43811.5440532848
+        },
+        "receiver": {
+          "T": 74.8292177519761,
+          "u": 313260.84176409396,
+          "h": 313363.4117760526,
+          "rho": 974.9438785588485,
+          "p": 100000
+        },
+        "superheater_C": 279.73793137350526,
+        "engine_C": 297.24468268618403,
+        "flue_C": 46.13772019260549,
+        "rpm": 0,
+        "speed_kmh": 0,
+        "water_kg": 26.482130417300628,
+        "fuel_kg": 12.88255099476965,
+        "gear": 4,
+        "battery_kWh": 0.5433669709728016,
+        "mass_residual_kg": -7.815970093361102e-14,
+        "energy_residual_J": -4.470348358154297e-8,
+        "opening": 0,
+        "rhoSteam": 4.403641145533667,
+        "dh_is_J_kg": 745825.3747533864,
+        "indicated_kW": 0,
+        "flow": 0,
+        "feed": 0,
+        "drain": 0,
+        "makeup": 0,
+        "burner": 0,
+        "cooling": 47.400827984361825,
+        "power": 0,
+        "pumpRPM": 0,
+        "pumpDuty": 0,
+        "airflow": 1.0829,
+        "purge": 0,
+        "outlet_C": 172.9247735920001,
+        "air_fraction": 4.575559498281364e-202,
+        "steam_speed_m_s": 0,
+        "feed_pressure_bar_abs": 9.497791503824795,
+        "suction_pressure_bar_abs": 2,
+        "aux_kW": 0.608392909090909
+      }
+    },
+    "no_fans": {
+      "trip": "Противодавление конденсатора выше исследовательских 3 бар abs",
+      "phases": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "peak_condenser_bar_abs": 3.0020384287402493,
+      "max_mass_residual_kg": 7.815970093361102e-14,
+      "max_energy_residual_J": 0.0000010207295417785645,
+      "last": {
+        "time": 600.000000000002,
+        "phase": 10,
+        "trip": "Противодавление конденсатора выше исследовательских 3 бар abs",
+        "boiler": {
+          "T": 145.23757006684903,
+          "p": 418418.8441916128,
+          "uf": 611206.3738114006,
+          "ug": 2554643.8700373457,
+          "hf": 611660.482932076,
+          "hg": 2740095.637744655,
+          "vf": 0.0010852961206629622,
+          "vg": 0.4432400481995502,
+          "x": 0.011115347864586964,
+          "mv": 0.022230695729173928,
+          "ml": 1.977769304270826,
+          "gasV": 0.009853534646508587,
+          "pWater": 418418.8441916128,
+          "pAir": 1.643240030733897e-17,
+          "E": 3801677.5091237603
+        },
+        "condenser": {
+          "T": 132.72046539939586,
+          "p": 294887.44963201217,
+          "uf": 557685.3228859514,
+          "ug": 2542336.487017204,
+          "hf": 557999.5484551815,
+          "hg": 2723798.0559823746,
+          "vf": 0.0010723753404769344,
+          "vg": 0.6193162272370542,
+          "x": 0.06296483910047022,
+          "mv": 0.03148241955023522,
+          "ml": 0.46851758044976655,
+          "gasV": 0.019497573300145753,
+          "pWater": 293017.78086168796,
+          "pAir": 1869.6687703241823,
+          "E": 2032222.44567694
+        },
+        "receiver": {
+          "T": 26.446155735757202,
+          "u": 110864.94864127564,
+          "h": 110965.283254748,
+          "rho": 996.6650381341559,
+          "p": 100000
+        },
+        "superheater_C": 133.18938429506818,
+        "engine_C": 133.57370730511724,
+        "flue_C": 20.046641843501348,
+        "rpm": 0,
+        "speed_kmh": 0,
+        "water_kg": 30.628496069168325,
+        "fuel_kg": 14.512896306593882,
+        "gear": 2,
+        "battery_kWh": 0.5844443391198169,
+        "mass_residual_kg": -7.815970093361102e-14,
+        "energy_residual_J": 0.0000010207295417785645,
+        "opening": 0,
+        "rhoSteam": 2.255232745888866,
+        "dh_is_J_kg": 63344.78019790357,
+        "indicated_kW": 0,
+        "flow": 0,
+        "feed": 0,
+        "drain": 1.0658141036401502e-15,
+        "makeup": 0,
+        "burner": 0,
+        "cooling": 0,
+        "power": 0,
+        "pumpRPM": 0,
+        "pumpDuty": 0,
+        "airflow": 0,
+        "purge": 0,
+        "outlet_C": 145.24071525632755,
+        "air_fraction": 6.064131003229223e-23,
+        "steam_speed_m_s": 0,
+        "feed_pressure_bar_abs": 5.184550423114216,
+        "suction_pressure_bar_abs": 2,
+        "aux_kW": 0
+      }
+    },
+    "small_cooling": {
+      "trip": "Противодавление конденсатора выше исследовательских 3 бар abs",
+      "phases": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "peak_condenser_bar_abs": 3.015911615491556,
+      "max_mass_residual_kg": 9.237055564881302e-14,
+      "max_energy_residual_J": 7.450580596923828e-8,
+      "last": {
+        "time": 600.000000000002,
+        "phase": 10,
+        "trip": "Противодавление конденсатора выше исследовательских 3 бар abs",
+        "boiler": {
+          "T": 146.78491913514566,
+          "p": 436529.3786439403,
+          "uf": 617846.1613257496,
+          "ug": 2556093.747667859,
+          "hf": 618320.6564420059,
+          "hg": 2742013.155060228,
+          "vf": 0.0010869699659427758,
+          "vg": 0.4259218055082378,
+          "x": 0.01156456491564732,
+          "mv": 0.02312912983129464,
+          "ml": 1.9768708701687054,
+          "gasV": 0.009851200737579457,
+          "pWater": 436529.3786439403,
+          "pAir": 4.1844548676022395e-18,
+          "E": 3847916.915207899
+        },
+        "condenser": {
+          "T": 47.806427549490465,
+          "p": 11617.570955046802,
+          "uf": 200157.5837926468,
+          "ug": 2439820.1858968665,
+          "hf": 200168.7765726594,
+          "hg": 2587407.1846664357,
+          "vf": 0.0010111513307493566,
+          "vg": 13.334859617847066,
+          "x": 0.003025974221200786,
+          "mv": 0.0014632712601495058,
+          "ml": 0.48210702814869394,
+          "gasV": 0.01951251683692383,
+          "pWater": 11069.32753463184,
+          "pAir": 548.2434204149607,
+          "E": 517190.66788171494
+        },
+        "receiver": {
+          "T": 26.728097343351692,
+          "u": 112043.67053760162,
+          "h": 112144.01283248317,
+          "rho": 996.5887398570301,
+          "p": 100000
+        },
+        "superheater_C": 135.29867043470793,
+        "engine_C": 134.18737671122307,
+        "flue_C": 20.048927387049815,
+        "rpm": 0,
+        "speed_kmh": 0,
+        "water_kg": 30.5596232804471,
+        "fuel_kg": 14.50553071133039,
+        "gear": 2,
+        "battery_kWh": 0.5802951595114342,
+        "mass_residual_kg": 2.842170943040401e-14,
+        "energy_residual_J": 2.1420419216156006e-8,
+        "opening": 0,
+        "rhoSteam": 2.3463405125426346,
+        "dh_is_J_kg": 552308.6832569181,
+        "indicated_kW": 0,
+        "flow": 0,
+        "feed": 0,
+        "drain": 0,
+        "makeup": 0,
+        "burner": 0,
+        "cooling": 1390.523800547875,
+        "power": 0,
+        "pumpRPM": 0,
+        "pumpDuty": 0,
+        "airflow": 0.05,
+        "purge": 0,
+        "outlet_C": 146.78809915450515,
+        "air_fraction": 1.4784068390225548e-23,
+        "steam_speed_m_s": 0,
+        "feed_pressure_bar_abs": 5.365672054262883,
+        "suction_pressure_bar_abs": 2,
+        "aux_kW": 0.0227387073707373
+      }
+    }
+  },
+  "loads": {
+    "mass_kg": 1211.479,
+    "cg_m": [
+      1.9634433074188355,
+      0.036977661111164295,
+      0.5834155430991838
+    ],
+    "wheels": [
+      {
+        "id": "FL",
+        "name": "Переднее левое",
+        "x": 0.675,
+        "y": 0.614,
+        "N": 2605.0944095421864,
+        "kg_equivalent": 265.5549856821801,
+        "wheel_rate_N_m": 27127.231084078405,
+        "delta_mm": 38.31642110175574,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 721.6203028739154,
+        "front_torsion_moment_Nm": 361.7144375307847
+      },
+      {
+        "id": "FR",
+        "name": "Переднее правое",
+        "x": 0.675,
+        "y": -0.614,
+        "N": 2190.3271200618756,
+        "kg_equivalent": 223.2749357861239,
+        "wheel_rate_N_m": 27127.231084078405,
+        "delta_mm": 23.026718728713064,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 597.3705657864944,
+        "front_torsion_moment_Nm": 299.4338675621526
+      },
+      {
+        "id": "RL",
+        "name": "Заднее левое",
+        "x": 2.835,
+        "y": 0.606,
+        "N": 3697.0672680940143,
+        "kg_equivalent": 376.86720367930826,
+        "wheel_rate_N_m": 20207.90020790021,
+        "delta_mm": 56.53943538613382,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 3868.05252010446,
+        "front_torsion_moment_Nm": null
+      },
+      {
+        "id": "RR",
+        "name": "Заднее правое",
+        "x": 2.835,
+        "y": -0.606,
+        "N": 3392.1201923019253,
+        "kg_equivalent": 345.7818748523879,
+        "wheel_rate_N_m": 20207.90020790021,
+        "delta_mm": 41.44894737625782,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 3529.222435891028,
+        "front_torsion_moment_Nm": null
+      }
+    ],
+    "residuals": [
+      0,
+      3.637978807091713e-12,
+      5.115907697472721e-13
+    ],
+    "target": [
+      11884.60899,
+      23334.75598270523,
+      439.4650436709166
+    ],
+    "displacements": [
+      0.024945750707121465,
+      0.008482695123130282,
+      0.012450897697917492
+    ],
+    "options": {
+      "brake": 0,
+      "lateral": 0,
+      "vertical": 0,
+      "frontTorsion": 1000,
+      "frontArm": 0.19,
+      "frontCoil": 15000,
+      "frontMotion": 0.7,
+      "rearSpring": 30000,
+      "rearMotion": 0.9,
+      "tire": 120000,
+      "reserve_mm": 60
+    },
+    "front_rate_before_tire": 35050.83102493075,
+    "rear_rate_before_tire": 24300,
+    "valid": true,
+    "note": "Квазистатика линейных упругих опор относительно предполагаемого снаряжённого состояния. Отрыв не решается отрицательным колесом: такие режимы помечаются вне области применимости. Жёсткости/преднатяги/массы не измерены."
+  },
+  "brake": {
+    "mass_kg": 1211.479,
+    "cg_m": [
+      1.9634433074188355,
+      0.036977661111164295,
+      0.5834155430991838
+    ],
+    "wheels": [
+      {
+        "id": "FL",
+        "name": "Переднее левое",
+        "x": 0.675,
+        "y": 0.614,
+        "N": 3423.1449636373895,
+        "kg_equivalent": 348.9444407377563,
+        "wheel_rate_N_m": 27127.231084078405,
+        "delta_mm": 68.47248647974179,
+        "lift": false,
+        "travelExceeded": true,
+        "spring_force_N": 966.6795658594384,
+        "front_torsion_moment_Nm": 484.55116083179877
+      },
+      {
+        "id": "FR",
+        "name": "Переднее правое",
+        "x": 0.675,
+        "y": -0.614,
+        "N": 3008.377674157079,
+        "kg_equivalent": 306.6643908417002,
+        "wheel_rate_N_m": 27127.231084078405,
+        "delta_mm": 53.18278410669911,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 842.4298287720175,
+        "front_torsion_moment_Nm": 422.2705908631668
+      },
+      {
+        "id": "RL",
+        "name": "Заднее левое",
+        "x": 2.835,
+        "y": 0.606,
+        "N": 2879.01671399881,
+        "kg_equivalent": 293.4777486237319,
+        "wheel_rate_N_m": 20207.90020790021,
+        "delta_mm": 16.05771557957074,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 2959.1074599986773,
+        "front_torsion_moment_Nm": null
+      },
+      {
+        "id": "RR",
+        "name": "Заднее правое",
+        "x": 2.835,
+        "y": -0.606,
+        "N": 2574.069638206721,
+        "kg_equivalent": 262.3924197968115,
+        "wheel_rate_N_m": 20207.90020790021,
+        "delta_mm": 0.9672275696947378,
+        "lift": false,
+        "travelExceeded": false,
+        "spring_force_N": 2620.277375785245,
+        "front_torsion_moment_Nm": null
+      }
+    ],
+    "residuals": [
+      0,
+      -3.637978807091713e-12,
+      -3.979039320256561e-13
+    ],
+    "target": [
+      11884.60899,
+      19800.77758901395,
+      439.4650436709166
+    ],
+    "displacements": [
+      0.07717612395527912,
+      -0.02421998320304987,
+      0.012450897697917492
+    ],
+    "options": {
+      "brake": 5,
+      "lateral": 0,
+      "vertical": 0,
+      "frontTorsion": 1000,
+      "frontArm": 0.19,
+      "frontCoil": 15000,
+      "frontMotion": 0.7,
+      "rearSpring": 30000,
+      "rearMotion": 0.9,
+      "tire": 120000,
+      "reserve_mm": 60
+    },
+    "front_rate_before_tire": 35050.83102493075,
+    "rear_rate_before_tire": 24300,
+    "valid": false,
+    "note": "Квазистатика линейных упругих опор относительно предполагаемого снаряжённого состояния. Отрыв не решается отрицательным колесом: такие режимы помечаются вне области применимости. Жёсткости/преднатяги/массы не измерены."
+  },
+  "scope": "Numerical mass/energy/equilibrium, assumed component responses and quasi-static wheel loads; not real equipment or safety verification"
+}

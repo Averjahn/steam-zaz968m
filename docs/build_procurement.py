@@ -48,6 +48,7 @@ def main():
         if r['id'].startswith('WIRE'):
             specs[r['id']]=('custom','Показана трасса жгута, а не спецификация проводов.',[f"Наружный Ø оболочки {number(r['od'])} мм; ось {number(r['centerline_length_m'])} м; радиус {number(r['bend_radius_mm'])} мм."]+['Диаметр оболочки не задаёт сечение проводников; питание и токи ещё не рассчитаны.'],wires)
         else:
+            if r.get('connected') is False:params.append('В 3D показан только неподключённый выход. Длина короткого участка не является спецификацией полного дымового канала.')
             params += [f"ArmaGel HT {number(r['insulation_mm'])} мм + кожух {number(r['jacket_mm'])} мм; полный Ø {number(r['outer_envelope_mm'])} мм.", 'Это геометрические кандидаты: марка, прочность при давлении/температуре, фасонные части, опоры и компенсация расширения не подобраны.']
             ls = [*tube]
             if r['insulation_mm']>0: ls += insulation

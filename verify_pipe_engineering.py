@@ -8,6 +8,10 @@ for s in m['routes']:
  id=s['id'];check(id+' layers sum',abs(s['outer_envelope_mm']-(s['od']+2*s['insulation_mm']+2*s['jacket_mm']))<1e-10)
  check(id+' bends fit without radius shrink',s['geometry_valid'] and not s['bend_violations'])
  check(id+' curve radius clears insulated cross section',s['bend_radius_mm']>s['outer_envelope_mm']/2)
+ actual_length=sum(math.dist(a,b) for a,b in zip(s['points'],s['points'][1:]))
+ for b in s['bends']:
+  i=b['vertex'];u=[y-x for x,y in zip(s['points'][i-1],s['points'][i])];v=[y-x for x,y in zip(s['points'][i],s['points'][i+1])];theta=math.acos(max(-1,min(1,sum(x*y for x,y in zip(u,v))/math.sqrt(sum(x*x for x in u)*sum(y*y for y in v)))));actual_length+=s['bend_radius_mm']*(theta-2*math.tan(theta/2))
+ check(id+' length matches actual endpoints and circular arcs',abs(actual_length/1000-s['centerline_length_m'])<1e-8)
  if s.get('hydraulics'):
   h=s['hydraulics'];A=math.pi*(s['inside_id_mm']/1000)**2/4
   check(id+' mass conservation',abs(h['density_kg_m3']*A*h['speed_m_s']-h['mass_kg_s'])<1e-10)

@@ -42,7 +42,8 @@ def bend_geometry(points,radius):
 updates={
  'PIPE_STEAM':[[2530,300,1180],[2650,300,1180],[2770,100,900],[3080,0,745]],
  'PIPE_SUCTION':[[800,480,675],[1000,480,675],[1010,340,930],[925,340,930],[925,190,930],[1020,190,840],[1130,190,840],[1130,625,420],[2010,625,420],[2010,-140,420],[2010,-140,500],[2160,-140,500]],
- 'PIPE_FLUE':[[2230,460,1200],[2510,460,1200],[2700,350,900],[3300,300,430],[3490,300,430]],
+ 'PIPE_FLUE':[[2230,460,1200],[2260,460,1200]],
+ 'PIPE_RETURN':[[3450,-410,600],[3580,-410,600],[3580,-280,550],[3100,-280,550],[3030,-280,760],[2650,-280,760],[2650,-665,760],[1100,-665,760],[1020,-460,760],[800,260,890]],
  'PIPE_MAKEUP':[[850,-100,670],[900,-100,670],[900,10,670],[820,10,670]],
  'PIPE_FUEL':[[2190,180,520],[2190,120,550],[2075,120,550],[2075,-470,550],[2075,-470,720],[2150,-470,720],[2150,-300,720]],
  'WIRE_ENGINE':[[2000,60,500],[2000,-625,500],[2000,-625,1000],[2660,-625,1000],[2660,-200,1000],[2660,100,1100],[2520,100,1100]],
@@ -51,6 +52,7 @@ updates={
 rows=[]
 for original in old:
  s=dict(original);s.pop('insulation',None);id=s['id'];s['points']=updates.get(id,s['points']);s['wall_status']='Assumed geometric wall only; pressure strength, material grade and fittings not selected'
+ if id=='PIPE_RELIEF':s['points'][-1]=[2340,-520,850]
  if id=='PIPE_FLUE':s['od']=162 # geometric single-wall duct candidate: 160 ID + 2 x 1 mm, not pressure equipment
  kind='steam' if id in ['PIPE_STEAM','PIPE_RELIEF'] else 'exhaust' if id.startswith('PIPE_EXHAUST') else 'flue' if id=='PIPE_FLUE' else 'fuel' if id=='PIPE_FUEL' else 'wire' if id.startswith('WIRE') else 'water'
  s['fluid']=kind;tw={'steam':250,'exhaust':r['exhaust_temperature_C'],'water':r['feed_temperature_C'] if 'feed_temperature_C' in r else 78.2041,'fuel':25,'flue':350,'wire':40}[kind];tw=25 if id=='PIPE_MAKEUP' else tw;s['wall_temperature_C']=tw
@@ -63,6 +65,10 @@ for original in old:
  s['bend_radius_mm']=radius;s['bend_radius_basis']='Chosen geometric screening radius max(1.5 x bare OD, insulated outer radius + 15 mm), rounded up to 5 mm. Not a catalog bend specification or material forming limit.'
  bends,violations,L=bend_geometry(s['points'],radius);s['bends']=bends;s['bend_violations']=violations;s['geometry_valid']=not violations;s['centerline_length_m']=L
  s['endpoint_status']='Ports on concept parts only; pump thread axes, tees, feedthroughs, clamps and expansion supports unresolved'
+ if id=='PIPE_FLUE':
+  s['name']='Дымовой выход генератора · не соединён'
+  s['ends']=['STM.flue','FLUE.unconnectedOutlet'];s['connected']=False;s['routing_note']='Unconnected generator outlet, visibly marked. Full rear route rejected for suspension/equipment collisions; underfloor downpipe rejected for occupied cabin/body crossings. Gas flow, a rated duct and a protected feasible path must be designed before fabrication.';s['rejected_routes']=[dict(points=original['points'],reason='Rear suspension and engine/condenser collisions'),dict(points=[[2230,460,1200],[1930,460,1200],[1930,-460,1200],[1930,-460,250]],reason='Intrusion into occupied cabin, fuel/wiring/structure collisions; not an acceptable installation')]
+ if id=='PIPE_RETURN':s['routing_note']='Return bypasses exhaust at rear, then uses Y-280/Z760 and side corridor Y-665; actual stock travel, body penetration and supports still require validation.'
  if kind in ['steam','exhaust','water']:
   if kind=='steam':p,t,flow=1e6,523.15,mdot
   elif kind=='exhaust':p,t,flow=1.2e5,r['exhaust_temperature_C']+273.15,mdot/2
