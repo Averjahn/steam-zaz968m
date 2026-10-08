@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://averjahn.github.io/steam-zaz968m/sitemap.xml

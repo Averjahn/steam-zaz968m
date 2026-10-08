@@ -1,0 +1,282 @@
+[
+  {
+    "path": "START.txt",
+    "title": "Как использовать комплект",
+    "category": "Документы",
+    "format": "TXT",
+    "size": 3114
+  },
+  {
+    "path": "assembly-vw-inspired.scad",
+    "title": "Компоновка по примеру VW · OpenSCAD",
+    "category": "3D",
+    "format": "SCAD",
+    "size": 1027
+  },
+  {
+    "path": "assembly.mtl",
+    "title": "Материалы модели · MTL",
+    "category": "3D",
+    "format": "MTL",
+    "size": 571
+  },
+  {
+    "path": "assembly.obj",
+    "title": "Габаритная 3D-модель · OBJ",
+    "category": "3D",
+    "format": "OBJ",
+    "size": 1784
+  },
+  {
+    "path": "assembly.scad",
+    "title": "Основная компоновка · OpenSCAD",
+    "category": "3D",
+    "format": "SCAD",
+    "size": 2027
+  },
+  {
+    "path": "browser-checks.json",
+    "title": "Проверка исходного интерфейса",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 978
+  },
+  {
+    "path": "build_diagrams.py",
+    "title": "Генерация схем и панели",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 11508
+  },
+  {
+    "path": "build_geometry.py",
+    "title": "Генерация 3D и компоновочных чертежей",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 8655
+  },
+  {
+    "path": "build_report.py",
+    "title": "Генерация отчёта",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 65840
+  },
+  {
+    "path": "build_site.py",
+    "title": "Сборка этого сайта",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 13258
+  },
+  {
+    "path": "build_viewer.py",
+    "title": "Генерация интерактивной модели",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 17116
+  },
+  {
+    "path": "calculate.py",
+    "title": "Термодинамический и дорожный расчёт",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 8698
+  },
+  {
+    "path": "geometry-checks.json",
+    "title": "Проверка габаритных пересечений",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 750
+  },
+  {
+    "path": "lab.html",
+    "title": "3D-компоновка и калькулятор",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 61135
+  },
+  {
+    "path": "inputs.json",
+    "title": "Исходные допущения",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 3049
+  },
+  {
+    "path": "layout-vw-inspired.json",
+    "title": "Компоновка по примеру VW · координаты",
+    "category": "3D",
+    "format": "JSON",
+    "size": 4095
+  },
+  {
+    "path": "layout.json",
+    "title": "Основная компоновка · координаты",
+    "category": "3D",
+    "format": "JSON",
+    "size": 5795
+  },
+  {
+    "path": "measurements.csv",
+    "title": "Ведомость необходимых обмеров",
+    "category": "Расчёты",
+    "format": "CSV",
+    "size": 2130
+  },
+  {
+    "path": "report.html",
+    "title": "Полный отчёт в браузере",
+    "category": "Документы",
+    "format": "HTML",
+    "size": 66287
+  },
+  {
+    "path": "report.pdf",
+    "title": "Расчётный отчёт · 11 страниц",
+    "category": "Документы",
+    "format": "PDF",
+    "size": 132255
+  },
+  {
+    "path": "requirements.txt",
+    "title": "Зависимости расчётных скриптов",
+    "category": "Исходники",
+    "format": "TXT",
+    "size": 55
+  },
+  {
+    "path": "results.json",
+    "title": "Полные результаты расчёта",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 45344
+  },
+  {
+    "path": "road_load.csv",
+    "title": "Дорожная мощность и скорость",
+    "category": "Расчёты",
+    "format": "CSV",
+    "size": 1843
+  },
+  {
+    "path": "scenario_summary.csv",
+    "title": "Сравнение сценариев",
+    "category": "Расчёты",
+    "format": "CSV",
+    "size": 2770
+  },
+  {
+    "path": "sensitivity.csv",
+    "title": "Чувствительность расчёта",
+    "category": "Расчёты",
+    "format": "CSV",
+    "size": 8427
+  },
+  {
+    "path": "sources.csv",
+    "title": "Реестр источников",
+    "category": "Расчёты",
+    "format": "CSV",
+    "size": 2479
+  },
+  {
+    "path": "verification.json",
+    "title": "Проверка расчётных балансов",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 1240
+  },
+  {
+    "path": "verify.py",
+    "title": "Проверки расчётной модели",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 3469
+  },
+  {
+    "path": "drawings/01-layout-mm.dxf",
+    "title": "Общая компоновка · DXF",
+    "category": "Чертежи",
+    "format": "DXF",
+    "size": 1620
+  },
+  {
+    "path": "drawings/01-layout-sheet.dxf",
+    "title": "Общая компоновка · DXF",
+    "category": "Чертежи",
+    "format": "DXF",
+    "size": 5332
+  },
+  {
+    "path": "drawings/01-layout.pdf",
+    "title": "Общая компоновка · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 45828
+  },
+  {
+    "path": "drawings/01-layout.svg",
+    "title": "Общая компоновка · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 14397
+  },
+  {
+    "path": "drawings/02-process.pdf",
+    "title": "Паровой контур · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 43992
+  },
+  {
+    "path": "drawings/02-process.svg",
+    "title": "Паровой контур · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 7813
+  },
+  {
+    "path": "drawings/03-controls.pdf",
+    "title": "Управление и защита · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 45031
+  },
+  {
+    "path": "drawings/03-controls.svg",
+    "title": "Управление и защита · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 6610
+  },
+  {
+    "path": "drawings/04-dashboard.pdf",
+    "title": "Приборная панель · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 43425
+  },
+  {
+    "path": "drawings/04-dashboard.svg",
+    "title": "Приборная панель · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 3469
+  },
+  {
+    "path": "drawings/05-vw-inspired.pdf",
+    "title": "Архитектура по примеру VW · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 42950
+  },
+  {
+    "path": "drawings/05-vw-inspired.svg",
+    "title": "Архитектура по примеру VW · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 4578
+  }
+]

@@ -1,0 +1,47 @@
+ЗАЗ-968М: паровой привод — предварительное исследование, 08.10.2026
+
+Начать: открыть index.html в браузере. Интернет не нужен.
+Сайт проекта: https://averjahn.github.io/steam-zaz968m/
+Репозиторий: https://github.com/Averjahn/steam-zaz968m
+Сборка сайта: python3 build_site.py (результат в docs/).
+Отчет: report.html или report.pdf.
+Чертежи: drawings/ (PDF, SVG, DXF).
+Вариант по примеру VW: drawings/05-vw-inspired.pdf, layout-vw-inspired.json.
+3D: assembly.scad и assembly-vw-inspired.scad для OpenSCAD; assembly.obj + assembly.mtl для CAD/3D.
+Единицы OBJ — миллиметры; проверить настройки импорта.
+
+Это эскиз с расчетными допущениями. Дорожный допуск, посадка реальных
+агрегатов, тепловая способность и прочность не подтверждены.
+Все бюджеты — авторские диапазоны планирования НИОКР, не цены поставщиков.
+
+Пересчет (Python 3.13 использован при подготовке):
+  python3 -m pip install -r requirements.txt
+  python3 calculate.py
+  python3 build_geometry.py
+  python3 build_diagrams.py
+  python3 build_report.py
+  python3 build_viewer.py
+  python3 verify.py
+
+В исходном рабочем каталоге зависимости установлены локально в .deps:
+  PYTHONPATH=.deps python3 calculate.py
+  PYTHONPATH=.deps python3 build_geometry.py
+  PYTHONPATH=.deps python3 build_diagrams.py
+  PYTHONPATH=.deps python3 build_report.py
+  python3 build_viewer.py
+  PYTHONPATH=.deps python3 verify.py
+
+Для генерации PDF используются Arial.ttf и Arial Bold.ttf из шрифтов macOS.
+На другой системе изменить пути шрифтов в build_*.py либо использовать
+имеющиеся готовые PDF/HTML/SVG без запуска генераторов.
+
+inputs.json — параметры расчетов; results.json — результаты.
+layout.json — внешние целевые габариты агрегатов и координаты.
+geometry-checks.json — ограниченная проверка пересечений.
+measurements.csv — ведомость фактических данных, которые еще нужны.
+scenario_summary.csv, road_load.csv, sensitivity.csv — расчетные таблицы.
+
+Редактирование 3D не обновляет массу, центры масс и тепловой расчет.
+Файл 01-layout-mm.dxf содержит контуры сверху 1:1 в мм.
+Файл 01-layout-sheet.dxf содержит графику листа в координатах листа.
+Чертежей котла, силовых креплений и адаптера для изготовления в комплекте нет.

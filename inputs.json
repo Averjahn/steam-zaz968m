@@ -1,0 +1,119 @@
+{
+  "status": "Предварительные допущения; не параметры разрешенного к эксплуатации оборудования",
+  "vehicle": {
+    "length_mm": 3765,
+    "width_mm": 1490,
+    "height_mm": 1400,
+    "wheelbase_mm": 2160,
+    "front_axle_x_mm": 800,
+    "curb_mass_kg": 840,
+    "reference_full_mass_kg": 1200,
+    "curb_front_fraction": 0.38,
+    "removed_mass_kg": 120,
+    "removed_x_mm": 3230,
+    "driver_mass_kg": 90,
+    "driver_x_mm": 1650,
+    "rolling_coefficient": 0.015,
+    "CdA_m2": 0.9,
+    "air_density_kg_m3": 1.225,
+    "transmission_efficiency": 0.85,
+    "wheel_rolling_radius_m": 0.28,
+    "final_drive": 4.125,
+    "gears": [
+      3.8,
+      2.118,
+      1.489,
+      0.964
+    ]
+  },
+  "cycle": {
+    "exhaust_pressure_bar_abs": 1.2,
+    "condensate_temperature_C": 80,
+    "makeup_temperature_C": 20,
+    "mechanical_efficiency": 0.9,
+    "pump_efficiency": 0.55,
+    "boiler_efficiency_LHV": 0.85,
+    "return_fraction": 0.97,
+    "diesel_LHV_MJ_kg": 42.6,
+    "diesel_density_kg_L": 0.835,
+    "air_temperature_rise_K": 25,
+    "air_heat_capacity_kJ_kgK": 1.005,
+    "fan_pressure_drop_Pa": 250,
+    "fan_efficiency": 0.55,
+    "generator_efficiency": 0.8,
+    "heat_exchanger_U_W_m2K": 40,
+    "heat_exchanger_LMTD_K": 40
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "name": "Малая мощность",
+      "net_drive_kW": 8,
+      "p_bar_abs": 6,
+      "T_C": 200,
+      "eta_is": 0.4,
+      "aux_shaft_kW": 1.5,
+      "water_L": 30,
+      "fuel_L": 20,
+      "target_kmh": 50,
+      "rpm": 1600,
+      "dry_plant_kg": 200,
+      "budget_RUB": [
+        800000,
+        1500000
+      ],
+      "budget_EUR": [
+        12000,
+        25000
+      ],
+      "loop_water_kg": 15
+    },
+    {
+      "id": "B",
+      "name": "Умеренная мощность",
+      "net_drive_kW": 18,
+      "p_bar_abs": 10,
+      "T_C": 250,
+      "eta_is": 0.5,
+      "aux_shaft_kW": 2.5,
+      "water_L": 40,
+      "fuel_L": 30,
+      "target_kmh": 80,
+      "rpm": 2200,
+      "dry_plant_kg": 250,
+      "budget_RUB": [
+        2000000,
+        4000000
+      ],
+      "budget_EUR": [
+        30000,
+        60000
+      ],
+      "loop_water_kg": 20
+    },
+    {
+      "id": "C",
+      "name": "Эквивалент 40 л.с. на привод",
+      "net_drive_kW": 29.41995,
+      "p_bar_abs": 20,
+      "T_C": 300,
+      "eta_is": 0.6,
+      "aux_shaft_kW": 3.5,
+      "water_L": 50,
+      "fuel_L": 40,
+      "target_kmh": 100,
+      "rpm": 3000,
+      "dry_plant_kg": 300,
+      "budget_RUB": [
+        4500000,
+        9000000
+      ],
+      "budget_EUR": [
+        65000,
+        120000
+      ],
+      "loop_water_kg": 25
+    }
+  ],
+  "budget_note": "Авторские диапазоны планирования НИОКР, не рыночные цены, не коммерческое предложение; RUB и EUR независимы и не связаны валютным курсом. Допуск на дороги не гарантирован."
+}
