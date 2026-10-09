@@ -4,10 +4,12 @@ import {engineGeometry as K,cylinderCycle} from './double-acting-cycle.js?v=02f1
 import {temperatureRGB} from './thermal-model.js?v=0d9441707c6d';
 import {chamberSteam} from './steam-cloud.js?v=0fad4ab985c0';
 import {rodMechanism} from './crank-mechanism.js?v=aa455a093a2a';
+import {pistonForceView} from './piston-force-view.js?v=a9ff866abab4';
 const fresh='#fff0be',spent='#b8d2dc',closed='#71828d';
 const mat=(color,opacity=1)=>new T.MeshBasicMaterial({color,transparent:opacity<1,opacity,depthWrite:opacity===1});
 export function doubleActingView(api){
  const root=new T.Group();root.name='Double-acting cycle overlay (view only)';root.userData.viewOnly=true;api.scene.add(root);
+ const forceView=pistonForceView(root);
  let bound=null,lines=[],shells=[],moving=[],wheels=[],cranks=[],gears=[],lastState=null,demoAngle=0,steamClock=0;
  const cylinders=[];
  function mesh(g,name,geometry,color,opacity=1){const o=new T.Mesh(geometry,mat(color,opacity));o.explanationBaseColor=o.material.color.clone();o.name=name;g.add(o);return o;}
@@ -41,7 +43,7 @@ export function doubleActingView(api){
   const result=new T.Group();result.name='Поршни, штоки и крейцкопфы · текущая поза';result.userData={angle_deg:lastState?.angle_deg};
   for(const c of cylinders)for(const node of [c.piston,c.rod,c.linkage.group])result.add(node.clone(true));
   return result;
- },frame(dt,s,{mode='explain',angleDegrees=0,playing=true,speedDegrees=60,cutaway=true,labels=true,mechanism=true,clock=0,arrows=true,fluidPaths=true,fluidOnly=false,thermal=null,steamRender='cloud',steamOpacity=.75}={}){
+ },frame(dt,s,{mode='explain',angleDegrees=0,playing=true,speedDegrees=60,cutaway=true,labels=true,mechanism=true,clock=0,arrows=true,fluidPaths=true,fluidOnly=false,thermal=null,steamRender='cloud',steamOpacity=.75,forces=null}={}){
   const model=api.models.get('ENG');if(model!==bound)bind(model);
   root.visible=mechanism&&!!model?.root.visible;
   if(!root.visible){restore();return;}
@@ -58,6 +60,7 @@ export function doubleActingView(api){
   const steamTime=mode==='manual'?angleDegrees/60:mode==='simulation'?(s.time||0):steamClock;
   const steamPresent=mode!=='simulation'||s.flow>1e-9;
   const planes=api.clipPlanes('ENG');root.traverse(o=>{if(o.material)for(const m of [].concat(o.material))m.clippingPlanes=planes;});
+  const forceState=forceView.update(angle,{...forces,visible:!!forces?.visible&&!fluidOnly},planes,api.camera,api.renderer.domElement.clientHeight);
   const temperatureColor=value=>new T.Color().setRGB(...temperatureRGB(value,thermal?.min,thermal?.max),T.SRGBColorSpace);
   for(const c of cylinders){const state=states[c.i];
    c.piston.position.set(c.x,250,state.pistonZ_mm);c.linkage.pose(state);c.linkage.group.visible=!fluidOnly;
@@ -84,6 +87,6 @@ export function doubleActingView(api){
    line.fluid.visible=fluidPaths;line.fluid.material.color.set(thermal?color:line.role==='chamber'&&!value.direction?closed:color);
    line.arrows.update({camera:api.camera,radius:line.radius,phase,visible:arrows&&active,clippingPlanes:planes,direction,color});
   }
-  lastState={mode,angle_deg:states[0].angle_deg,cylinders:states,steam:{render:steamRender,time:steamTime,present:steamPresent,clouds:cylinders.flatMap(c=>Object.entries(c.volumes).map(([ch,v])=>({cylinder:c.i,chamber:ch,visible:v.steam.mesh.visible,count:v.steam.state.count,bounds:v.steam.state.bounds})))},lines:lines.map(l=>({id:l.id,role:l.role,cylinder:l.cylinder,chamber:l.chamber,active:l.arrows.group.visible,direction:l.arrows.markers[0]?.marker.userData.direction,fraction:l.arrows.markers[0]?.marker.userData.routeFraction}))};
+  lastState={mode,angle_deg:states[0].angle_deg,cylinders:states,forces:forceState,steam:{render:steamRender,time:steamTime,present:steamPresent,clouds:cylinders.flatMap(c=>Object.entries(c.volumes).map(([ch,v])=>({cylinder:c.i,chamber:ch,visible:v.steam.mesh.visible,count:v.steam.state.count,bounds:v.steam.state.bounds})))},lines:lines.map(l=>({id:l.id,role:l.role,cylinder:l.cylinder,chamber:l.chamber,active:l.arrows.group.visible,direction:l.arrows.markers[0]?.marker.userData.direction,fraction:l.arrows.markers[0]?.marker.userData.routeFraction}))};
  }};
 }

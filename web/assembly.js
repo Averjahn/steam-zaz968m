@@ -174,6 +174,15 @@ $('inspectCrankshaft').onclick=()=>{
  controls.target.copy(target);camera.position.copy(target).add(offset);controls.update();
 };
 function inspectEngine(){setComponentView(isolatedId==='ENG'?'all':'ENG');}
+$('inspectPistonForces').onclick=()=>{
+ if($('sceneViewMode').value==='flow'){$('sceneViewMode').value='assembly';$('sceneViewMode').dispatchEvent(new Event('change'));}
+ if(isolatedId!=='ENG')setComponentView('ENG');
+ $('engineCutaway').checked=true;$('showMechanism').checked=true;$('engineShowForces').checked=true;
+ $('engineForcePanel').open=true;
+ const model=models.get('ENG');if(!model)return;model.root.updateWorldMatrix(true,false);
+ const target=new THREE.Vector3(310,250,360).applyMatrix4(model.root.matrixWorld),offset=new THREE.Vector3(-80,-800,160).transformDirection(model.root.matrixWorld).multiplyScalar(650);
+ controls.target.copy(target);camera.position.copy(target).add(offset);controls.update();
+};
 $('componentView').onchange=()=>setComponentView($('componentView').value);
 $('isolateSelected').onclick=()=>setComponentView(selected()?.id||'all');$('returnAssembly').onclick=()=>setComponentView('all');
 $('sceneViewMode').onchange=()=>{const mode=$('sceneViewMode').value;if(mode!=='assembly'&&!activeLayout()?.detailed){$('cadLayout').value='3';targets();}if(mode==='flow'){$('showFluidPaths').checked=true;$('showPipeArrows').checked=true;}$('physicalField').value=mode==='ultra'?'temperature':'material';if(mode==='ultra')$('thermalPanel').open=true;applyVisibility();presentationStatus();if(!isolatedId&&mode!=='assembly')focusVisibleScene(true);};

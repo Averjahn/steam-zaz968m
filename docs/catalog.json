@@ -172,7 +172,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 42572
+    "size": 43027
   },
   {
     "path": "build_stock_suspension.py",
@@ -382,7 +382,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17466
+    "size": 17562
   },
   {
     "path": "layout-internal.json",
@@ -481,6 +481,13 @@
     "category": "Расчёты",
     "format": "JSON",
     "size": 8627
+  },
+  {
+    "path": "piston-force-checks.json",
+    "title": "Силы на поршнях · давления, ускорения, баланс и стрелки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 15682
   },
   {
     "path": "report.html",
@@ -649,6 +656,13 @@
     "category": "Исходники",
     "format": "PY",
     "size": 3496
+  },
+  {
+    "path": "verify_piston_forces.mjs",
+    "title": "verify_piston_forces.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5803
   },
   {
     "path": "verify_simulation.mjs",
@@ -844,7 +858,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 47265
+    "size": 53715
   },
   {
     "path": "user-model.html",

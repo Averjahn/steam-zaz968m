@@ -8,7 +8,7 @@ import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { auditPackaging } from './packaging-audit.js?v=f6b448b69aac';
 import { heatEquipment } from './heat-geometry.js?v=5d9d63718d50';
-import { attachSystems } from './assembly-systems.js?v=afde38095d46';
+import { attachSystems } from './assembly-systems.js?v=febcb8db7449';
 import { acceleratedRaycast, computeBoundsTree } from './vendor/three-mesh-bvh/build/index.module.js';
 import { loadPurchases, purchaseRecord, renderPurchaseCard } from './component-purchases.js?v=0b8b45f53852';
 import {equipmentPorts} from './pipe-joints.js?v=ed575dd9cba4';
@@ -174,6 +174,15 @@ $('inspectCrankshaft').onclick=()=>{
  controls.target.copy(target);camera.position.copy(target).add(offset);controls.update();
 };
 function inspectEngine(){setComponentView(isolatedId==='ENG'?'all':'ENG');}
+$('inspectPistonForces').onclick=()=>{
+ if($('sceneViewMode').value==='flow'){$('sceneViewMode').value='assembly';$('sceneViewMode').dispatchEvent(new Event('change'));}
+ if(isolatedId!=='ENG')setComponentView('ENG');
+ $('engineCutaway').checked=true;$('showMechanism').checked=true;$('engineShowForces').checked=true;
+ $('engineForcePanel').open=true;
+ const model=models.get('ENG');if(!model)return;model.root.updateWorldMatrix(true,false);
+ const target=new THREE.Vector3(310,250,360).applyMatrix4(model.root.matrixWorld),offset=new THREE.Vector3(-80,-800,160).transformDirection(model.root.matrixWorld).multiplyScalar(650);
+ controls.target.copy(target);camera.position.copy(target).add(offset);controls.update();
+};
 $('componentView').onchange=()=>setComponentView($('componentView').value);
 $('isolateSelected').onclick=()=>setComponentView(selected()?.id||'all');$('returnAssembly').onclick=()=>setComponentView('all');
 $('sceneViewMode').onchange=()=>{const mode=$('sceneViewMode').value;if(mode!=='assembly'&&!activeLayout()?.detailed){$('cadLayout').value='3';targets();}if(mode==='flow'){$('showFluidPaths').checked=true;$('showPipeArrows').checked=true;}$('physicalField').value=mode==='ultra'?'temperature':'material';if(mode==='ultra')$('thermalPanel').open=true;applyVisibility();presentationStatus();if(!isolatedId&&mode!=='assembly')focusVisibleScene(true);};

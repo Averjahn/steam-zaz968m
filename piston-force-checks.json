@@ -1,0 +1,618 @@
+{
+  "status": "passed",
+  "scope": "Approximate per-cylinder pressure cycle and lumped piston/rod/crosshead forces; not a measured indicator diagram, strength calculation or feedback into engine power",
+  "defaults": {
+    "inlet_bar": 10,
+    "exhaust_bar": 1,
+    "ambient_bar": 1,
+    "rpm": 300,
+    "mass_kg": 3,
+    "friction_N": 80,
+    "polytropic": 1.2,
+    "alpha_rad_s2": 0
+  },
+  "checks": [
+    {
+      "name": "Admission pressure acts downward on the top face",
+      "pass": true
+    },
+    {
+      "name": "Rod-side admission acts upward on the reduced annular area",
+      "pass": true
+    },
+    {
+      "name": "All areas convert millimetres to metres before pressure multiplication",
+      "pass": true
+    },
+    {
+      "name": "Subambient gauge loading reverses the equivalent arrow",
+      "pass": true
+    },
+    {
+      "name": "Equal absolute pressures account for ambient force on exposed rod end",
+      "pass": true
+    },
+    {
+      "name": "Exact velocity agrees with independently differentiated piston position",
+      "pass": true
+    },
+    {
+      "name": "Exact acceleration agrees with independent second difference",
+      "pass": true
+    },
+    {
+      "name": "Newton force balance closes in Z and transverse Y through a full turn",
+      "pass": true
+    },
+    {
+      "name": "Rod reaction remains collinear with the actual rod",
+      "pass": true
+    },
+    {
+      "name": "All phases yield finite forces and positive absolute pressures",
+      "pass": true
+    },
+    {
+      "name": "Top dead centre acceleration equals −rω²(1+r/L)",
+      "pass": true
+    },
+    {
+      "name": "Bottom dead centre acceleration equals rω²(1−r/L)",
+      "pass": true
+    },
+    {
+      "name": "Inertia scales with physical RPM squared",
+      "pass": true
+    },
+    {
+      "name": "Mass changes inertia linearly",
+      "pass": true
+    },
+    {
+      "name": "Zero RPM removes inertia and moving friction",
+      "pass": true
+    },
+    {
+      "name": "Friction opposes velocity in both strokes",
+      "pass": true
+    },
+    {
+      "name": "Closed expansion obeys chosen pV^k law",
+      "pass": true
+    },
+    {
+      "name": "Trapped compression rises from exhaust pressure without an arbitrary cap",
+      "pass": true
+    },
+    {
+      "name": "Pressure is continuous at the admission cutoff volume",
+      "pass": true
+    },
+    {
+      "name": "Moving force calculation is periodic across signed full turns",
+      "pass": true
+    },
+    {
+      "name": "General kinematics also accounts for angular acceleration",
+      "pass": true
+    },
+    {
+      "name": "Dominant inertia can reverse the rod reaction",
+      "pass": true
+    },
+    {
+      "name": "Invalid nonfinite and nonphysical inputs are rejected",
+      "pass": true
+    }
+  ],
+  "numerical": {
+    "sampled_angles": 720,
+    "max_first_derivative_error": 2.0715833215501078e-10,
+    "max_second_derivative_error": 2.2371119633851633e-08,
+    "max_force_balance_residual_N": 4.547473508864641e-13
+  },
+  "source_sha256": {
+    "web/piston-force-model.js": "962a53183f02a8ecc2cda8a53bf09bb886ea42bb0c1352e549e2769d74c3cc15",
+    "web/piston-force-view.js": "dbe2edec494fb0e9c96330fa7fec7ce92fed9fb708e61502f1fde030a66fec2d",
+    "web/piston-force-ui.js": "14e6a2712040b0365b160ddeacdb3f84e1700cf5d04f7d30c20ddb0295adabf2",
+    "web/double-acting-cycle.js": "02f171f7ae23267bfc40809918deccce1572ebd618aa491a0a5f575f60202ebe",
+    "web/double-acting-view.js": "16f9a4e4b8a80797e69ec00f5da2617170d3fefc3336d303caac1ed2553343bc",
+    "web/assembly-systems.js": "b87c2d310c83a6fb38d9ae499c2ced4e70ca000f70538d387b5acf5d2f107689",
+    "web/assembly.js": "ca4fd00685104ae2099d25c87d06980d1f9bfc2304d666298af993dc27f7dcba",
+    "web/assembly.html": "c6010a07d5fc6e1290b96a1f896b35bc6dd4841d0d8291a03a94ee25ba2e22f3",
+    "web/double-acting.css": "58fb20b32938d73ad6be47e96a32f4a879874dad8bd7e9459ff601cc8ef1821d",
+    "build_site.py": "b55f654c83814be7682475e172b15cbed76faf546b9a92339e0d847e4020d36a",
+    "verify_piston_forces.mjs": "16ec63eebd6d8bbce735ab0e25dd5d7eed6902ed9f2edec22d90137e403d2a0d"
+  },
+  "browser_checks": [
+    {
+      "name": "Both cylinders expose force states and a 90 degree phase offset",
+      "pass": true
+    },
+    {
+      "name": "Top chamber pressure arrow points down on the admission stroke",
+      "pass": true
+    },
+    {
+      "name": "Zero exhaust gauge force is hidden instead of enlarged",
+      "pass": true
+    },
+    {
+      "name": "Rendered ArrowHelper length matches the force scale",
+      "pass": true,
+      "detail": [
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "A",
+            "force_N": 7068.583470577035,
+            "vector_N": [
+              0,
+              0,
+              -7068.583470577035
+            ],
+            "length_mm": 70.68583470577035,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": true,
+          "quaternion": [
+            -0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 70.68583470577035
+        },
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "B",
+            "force_N": 0,
+            "vector_N": [
+              0,
+              0,
+              0
+            ],
+            "length_mm": 0,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 1
+        },
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "gravity",
+            "force_N": 29.43,
+            "vector_N": [
+              0,
+              0,
+              -29.43
+            ],
+            "length_mm": 0.2943,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            -0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 0.2943
+        },
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "friction",
+            "force_N": 80,
+            "vector_N": [
+              0,
+              0,
+              80
+            ],
+            "length_mm": 0.8,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 0.8
+        },
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "rod",
+            "force_N": 6893.395251489808,
+            "vector_N": [
+              0,
+              -1286.0072901354683,
+              6772.376491526491
+            ],
+            "length_mm": 68.93395251489808,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.7702455588362717,
+            0,
+            0,
+            0.6377474257831226
+          ],
+          "tip": 68.93395251489808
+        },
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "guide",
+            "force_N": 1286.0072901354683,
+            "vector_N": [
+              0,
+              1286.0072901354683,
+              0
+            ],
+            "length_mm": 12.860072901354684,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "tip": 12.860072901354684
+        },
+        {
+          "data": {
+            "cylinder": 0,
+            "kind": "net",
+            "force_N": 245.63697905054414,
+            "vector_N": [
+              0,
+              0,
+              -245.63697905054414
+            ],
+            "length_mm": 2.4563697905054416,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            -0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 2.4563697905054416
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "A",
+            "force_N": 1732.2167132577088,
+            "vector_N": [
+              0,
+              0,
+              -1732.2167132577088
+            ],
+            "length_mm": 17.32216713257709,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": true,
+          "quaternion": [
+            -0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 17.32216713257709
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "B",
+            "force_N": 0,
+            "vector_N": [
+              0,
+              0,
+              0
+            ],
+            "length_mm": 0,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 1
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "gravity",
+            "force_N": 29.43,
+            "vector_N": [
+              0,
+              0,
+              -29.43
+            ],
+            "length_mm": 0.2943,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            -0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 0.2943
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "friction",
+            "force_N": 80,
+            "vector_N": [
+              0,
+              0,
+              80
+            ],
+            "length_mm": 0.8,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 0.8
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "rod",
+            "force_N": 2124.440212212831,
+            "vector_N": [
+              0,
+              -1088.9022494821347,
+              1824.154079659842
+            ],
+            "length_mm": 21.24440212212831,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.8696434934321559,
+            0,
+            0,
+            0.49368025515622543
+          ],
+          "tip": 21.24440212212831
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "guide",
+            "force_N": 1088.9022494821347,
+            "vector_N": [
+              0,
+              1088.9022494821347,
+              0
+            ],
+            "length_mm": 10.889022494821347,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "tip": 10.889022494821347
+        },
+        {
+          "data": {
+            "cylinder": 1,
+            "kind": "net",
+            "force_N": 142.50736640213313,
+            "vector_N": [
+              0,
+              0,
+              142.50736640213313
+            ],
+            "length_mm": 1.4250736640213313,
+            "scale_N": 10000,
+            "viewOnly": true
+          },
+          "visible": false,
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ],
+          "tip": 1.4250736640213313
+        }
+      ]
+    },
+    {
+      "name": "Rendered down arrow actually reverses its orientation",
+      "pass": true
+    },
+    {
+      "name": "The other chamber drives upwards on the return stroke",
+      "pass": true
+    },
+    {
+      "name": "Changing inlet pressure recalculates arrow length linearly",
+      "pass": true
+    },
+    {
+      "name": "Changing visual scale does not alter the physical force",
+      "pass": true
+    },
+    {
+      "name": "All-force view includes rod and crosshead guide reactions without double counting the sum",
+      "pass": true
+    },
+    {
+      "name": "Lateral arrows are attached to the crosshead instead of the piston",
+      "pass": true
+    },
+    {
+      "name": "Sum view displays only ma and equals the force balance",
+      "pass": true
+    },
+    {
+      "name": "Working RPM affects inertia quadratically",
+      "pass": true
+    },
+    {
+      "name": "Slowed explanation speed does not change the working RPM or inertia",
+      "pass": true
+    },
+    {
+      "name": "Reciprocating mass affects inertia linearly",
+      "pass": true
+    },
+    {
+      "name": "Zero physical speed removes inertia and moving friction",
+      "pass": true
+    },
+    {
+      "name": "Simulation mode uses live pressure boundaries and RPM",
+      "pass": true
+    },
+    {
+      "name": "Calculation presents laws before current SI substitutions",
+      "pass": true
+    },
+    {
+      "name": "Both cylinders have independently selectable formula substitution",
+      "pass": true
+    },
+    {
+      "name": "Labels can be hidden while the arrows remain",
+      "pass": true
+    },
+    {
+      "name": "Force overlay can be hidden",
+      "pass": true
+    },
+    {
+      "name": "Fluid-only mode excludes the force overlay",
+      "pass": true
+    },
+    {
+      "name": "Dedicated force close-up isolates the engine and enables arrows",
+      "pass": true
+    },
+    {
+      "name": "Playback updates angles and forces",
+      "pass": true
+    },
+    {
+      "name": "Pausing freezes the angle and force arrows",
+      "pass": true
+    },
+    {
+      "name": "Fullscreen preserves the force overlay",
+      "pass": true
+    },
+    {
+      "name": "Force controls and formulas fit a mobile panel",
+      "pass": true,
+      "detail": {
+        "width": 308,
+        "scroll": 308,
+        "controls": [
+          {
+            "id": "engineShowForces",
+            "width": 13
+          },
+          {
+            "id": "engineForceLayer",
+            "width": 142
+          },
+          {
+            "id": "engineForceLabels",
+            "width": 13
+          },
+          {
+            "id": "engineForceScale",
+            "width": 142
+          },
+          {
+            "id": "engineForceInlet",
+            "width": 140
+          },
+          {
+            "id": "engineForceExhaust",
+            "width": 140
+          },
+          {
+            "id": "engineForceAmbient",
+            "width": 140
+          },
+          {
+            "id": "engineForceRPM",
+            "width": 140
+          },
+          {
+            "id": "engineForceMass",
+            "width": 140
+          },
+          {
+            "id": "engineForceFriction",
+            "width": 140
+          },
+          {
+            "id": "engineForceExponent",
+            "width": 140
+          },
+          {
+            "id": "engineForceCylinder",
+            "width": 176
+          }
+        ]
+      }
+    },
+    {
+      "name": "No browser or shader errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_errors": [],
+  "browser_harness_sha256": "7a01957e193b3d9ed57d79c5d3d95adeb41508dc16d1fb16487a66850036a96a"
+}

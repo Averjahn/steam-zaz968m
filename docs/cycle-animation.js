@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {doubleActingView} from './double-acting-view.js?v=3109dd38d718';
+import {doubleActingView} from './double-acting-view.js?v=653c3a5dc54f';
 import {temperatureRGB} from './thermal-model.js?v=0d9441707c6d';
 const material=(color,opacity=1)=>new T.MeshBasicMaterial({color,transparent:opacity<1,opacity,depthTest:false,depthWrite:false});
 export function cycleAnimation(api){const group=new T.Group();group.name='Cycle explanation and kinematic animation (view only)';api.scene.add(group);const engine=doubleActingView(api),cond=new T.Group(),boil=new T.Group();group.add(cond,boil);

@@ -5,5 +5,11 @@
 .da-chambers [data-phase=admission]{border-color:#fff0be}.da-chambers [data-direction="-1"]{border-color:#b8d2dc}
 .da-chambers p{background:var(--panel2);color:var(--text)}
 .da-hud{color:#e6edf4}
+.piston-force-panel{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:6px}
+.force-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:12px 0}
+.force-inputs label{display:flex;flex-direction:column;gap:6px;font-size:12px}.force-inputs input{width:100%;min-width:0;box-sizing:border-box}
+.force-tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.force-card{padding:12px;background:var(--panel2);border-radius:6px}.force-card h4{margin:0 0 10px}.force-card dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;font-size:12px;font-variant-numeric:tabular-nums}.force-card dt,.force-card dd{margin:0}.force-card dd{text-align:right}
+.force-formula{margin:14px 0;padding:12px;background:var(--panel2);border-left:3px solid #6ee3ab;overflow-wrap:anywhere}.force-formula code{white-space:normal;font-size:12px}.force-formula p{margin:8px 0 0;font-variant-numeric:tabular-nums}.force-hud{margin-top:6px;padding-top:6px;border-top:1px solid #54717d;color:#6ee3ab}
+@media(max-width:600px){.force-tables{grid-template-columns:1fr}.force-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.force-card dl{font-size:11px}.piston-force-panel{padding:8px}}
 .da-hud{position:absolute;top:12px;left:12px;z-index:6;max-width:320px;padding:12px;border:1px solid #54717d;border-radius:6px;background:#09131eed;pointer-events:none;font-size:12px;line-height:1.6}.da-hud strong,.da-hud span{display:block}.da-hud #engineHudA{color:#fff0be}.da-hud #engineHudB{color:#b8d2dc}
 @media(max-width:600px){.da-chambers{grid-template-columns:1fr}.da-hud{font-size:10px;padding:8px;max-width:250px}.double-acting-panel{padding:12px}.double-acting-panel .cad-toolbar label{max-width:100%}}
