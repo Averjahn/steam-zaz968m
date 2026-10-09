@@ -33,7 +33,7 @@
     {
       "name": "Cosine vectors are normalized",
       "pass": true,
-      "detail": 1.8926784284278853e-7
+      "detail": 2.3426797557402068e-7
     },
     {
       "name": "Relevant source retrieved: Как рассчитаны обороты колёс",
@@ -44,10 +44,6 @@
           "url": "physics.html#topic-4"
         },
         {
-          "title": "Сценарий B · Обороты колёс",
-          "url": "calculations.html?scenario=B#formula-wheel_rpm"
-        },
-        {
           "title": "Сценарий A · Обороты колёс",
           "url": "calculations.html?scenario=A#formula-wheel_rpm"
         },
@@ -56,8 +52,12 @@
           "url": "calculations.html?scenario=C#formula-wheel_rpm"
         },
         {
+          "title": "Сценарий B · Обороты колёс",
+          "url": "calculations.html?scenario=B#formula-wheel_rpm"
+        },
+        {
           "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
-          "url": "literature.html#topic-11"
+          "url": "literature-audit.html#topic-11"
         }
       ]
     },
@@ -74,16 +74,16 @@
           "url": "assembly.html#thermalPanel"
         },
         {
-          "title": "Как физически работает замкнутый контур",
-          "url": "literature.html#topic-13"
+          "title": "Семь цилиндров внутри ЗАЗ.",
+          "url": "compact-radial.html"
         },
         {
-          "title": "Горизонтальная паровая звезда.",
-          "url": "radial-engine.html"
+          "title": "Как усилие передаётся на общий вал",
+          "url": "radial-engine.html#topic-1"
         },
         {
-          "title": "Как работает выбранный узел",
-          "url": "assembly.html#nodeExplanation"
+          "title": "Объём: формула → подстановка",
+          "url": "compact-radial.html#topic-1"
         }
       ]
     },
@@ -108,8 +108,8 @@
           "url": "assembly.html#thermalPanel"
         },
         {
-          "title": "Сценарий B · Объём впуска пара за оборот при целевых оборотах",
-          "url": "calculations.html?scenario=B#formula-steam_volume_per_rev"
+          "title": "Семь цилиндров внутри ЗАЗ.",
+          "url": "compact-radial.html"
         }
       ]
     },
@@ -135,7 +135,7 @@
         },
         {
           "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
-          "url": "literature.html#topic-11"
+          "url": "literature-audit.html#topic-11"
         }
       ]
     },
@@ -152,12 +152,12 @@
           "url": "piping.html#topic-121"
         },
         {
-          "title": "Температуры, теплопотери и физические расчёты",
-          "url": "assembly.html#thermalPanel"
-        },
-        {
           "title": "PIPE_EXHAUST_L · Отработанный пар → левый конденсатор · Теплопотери цилиндрического участка",
           "url": "piping.html#topic-46"
+        },
+        {
+          "title": "Температуры, теплопотери и физические расчёты",
+          "url": "assembly.html#thermalPanel"
         },
         {
           "title": "22. Детальная внутренняя сборка и изолированные трубопроводы",
@@ -182,12 +182,12 @@
           "url": "thermal-reference.json"
         },
         {
-          "title": "Сценарий A · Тепло в парогенератор",
-          "url": "calculations.html?scenario=A#formula-boiler_kW"
-        },
-        {
           "title": "Сценарий B · Тепло в парогенератор",
           "url": "calculations.html?scenario=B#formula-boiler_kW"
+        },
+        {
+          "title": "Сценарий C · Тепло в парогенератор",
+          "url": "calculations.html?scenario=C#formula-boiler_kW"
         }
       ]
     },
@@ -212,7 +212,7 @@
           "url": "calculations.html?scenario=C#formula-s1_kJ_kgK"
         },
         {
-          "title": "Белов · Циклы и изоэнтропная эффективность",
+          "title": "Белов · Теплопроводность, конвекция и излучение",
           "url": "thermal-reference.json"
         }
       ]
@@ -238,8 +238,8 @@
           "url": "report.html#section-25"
         },
         {
-          "title": "Чем нагревать воду.",
-          "url": "heat.html"
+          "title": "Расход пара",
+          "url": "engine-sizing.html#topic-5"
         }
       ]
     },
@@ -275,7 +275,7 @@
       "detail": [
         {
           "title": "Главное ограничение — отвод теплоты",
-          "url": "literature.html#topic-1"
+          "url": "literature-audit.html#topic-1"
         },
         {
           "title": "Теплоотвод конденсатора завышался",
@@ -287,7 +287,7 @@
         },
         {
           "title": "Внутренний конденсатор не подтверждён для прежних 18 кВт",
-          "url": "literature.html#topic-7"
+          "url": "literature-audit.html#topic-7"
         },
         {
           "title": "Внутренний конденсатор не подтверждён для прежних 18 кВт",
@@ -326,12 +326,12 @@
       "pass": true,
       "detail": [
         {
-          "title": "CND · Два внутренних блока конденсации",
-          "url": "physics.html#node-CND"
-        },
-        {
           "title": "Как физически работает замкнутый контур",
           "url": "literature.html#topic-13"
+        },
+        {
+          "title": "CND · Два внутренних блока конденсации",
+          "url": "physics.html#node-CND"
         },
         {
           "title": "Сценарий C · Температура на входе",
@@ -356,20 +356,20 @@
           "url": "physics.html#node-WTR"
         },
         {
-          "title": "25. Пять источников тепла, расход и замкнутый цикл",
-          "url": "report.html#section-25"
-        },
-        {
           "title": "3. Архитектура установки и выбор топлива",
           "url": "report.html#section-3"
         },
         {
-          "title": "FUE · Дизель · запас",
-          "url": "physics.html#node-FUE"
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
         },
         {
           "title": "Сценарий A · Масса холодной воды",
           "url": "calculations.html?scenario=A#formula-water_mass"
+        },
+        {
+          "title": "Сценарий B · Масса холодной воды",
+          "url": "calculations.html?scenario=B#formula-water_mass"
         }
       ]
     },
@@ -386,7 +386,7 @@
           "url": "connection-specs.json"
         },
         {
-          "title": "Стык STM.flueOutlet · патрубок трубы",
+          "title": "Стык RCV.return · патрубок трубы",
           "url": "connection-specs.json"
         },
         {
@@ -417,6 +417,10 @@
     },
     {
       "name": "Full external books are not in the public corpus",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: compact-radial.html",
       "pass": true
     },
     {
@@ -520,10 +524,10 @@
       "pass": true
     }
   ],
-  "max_vector_norm_error": 1.8926784284278853e-7,
-  "manifest_sha256": "02becfc1aeb77ab2bcdb2675f1f69275a28f1bdbfa00a49dc549cd4f3442f985",
+  "max_vector_norm_error": 2.3426797557402068e-7,
+  "manifest_sha256": "9e3825b89fc3c9fc9e6052814d87d5d3f4c3ec4ff993ed6d1862e98e5034bcd7",
   "source_sha256": {
-    "build_knowledge.py": "b08739552792cc4686264585f9781a229921283dfc10d0a14f12597f906f90c7",
+    "build_knowledge.py": "a0c31f4c0fcb23219c3c3416746d273c042cb79f4fea95e8a2795fa7a8f15f2b",
     "web/search-core.js": "bdc30ddf76fc3cb3ab1efbff1d3839d5865a8078586231ee973d8f596d87ecb4",
     "web/search-worker.js": "929817d8b34f9ea21913019ce7a04748c30912b1a68ee2080e3aeba3c33e7c45",
     "verify_knowledge.mjs": "1052f5154fc3aae68861d42c91cc8f7a924ccea63c7b9008ef0bae1be4d5d7d2"

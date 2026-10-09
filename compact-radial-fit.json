@@ -1,0 +1,487 @@
+{
+  "status": "geometry_screen_only",
+  "bounds": {
+    "min_mm": [
+      2950,
+      -246.60508728027344,
+      370
+    ],
+    "max_mm": [
+      3461.046920776367,
+      243.5,
+      789.6000061035156
+    ],
+    "size_mm": [
+      511.0469207763672,
+      490.10508728027344,
+      419.6000061035156
+    ],
+    "inside_reserve": true
+  },
+  "audit": {
+    "status": "Проверка гипотетической геометрии; не подтверждение реальной посадки",
+    "units": "mm",
+    "layout": "Компактная звезда в предоставленном кузове",
+    "geometric_screen_mm": 50,
+    "removed_body_groups": [
+      "source-stock",
+      "rear-seat"
+    ],
+    "body_surface_objects": 29,
+    "parts": [
+      {
+        "id": "COMPACT_ENGINE",
+        "size_mm": [
+          511,
+          490.1,
+          419.6
+        ],
+        "min_xyz_mm": [
+          2950,
+          -246.6,
+          370
+        ],
+        "body_intersections": [],
+        "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+        "clearance_mm": 42,
+        "clearance_is_lower_bound": false,
+        "intentionally_external": false,
+        "route": false,
+        "support": false,
+        "fixed_proxy": false,
+        "stock_intersections": [],
+        "nearest_stock_node": null,
+        "stock_clearance_mm": 50,
+        "stock_clearance_is_lower_bound": true,
+        "stock_mechanical_interfaces_excluded": []
+      },
+      {
+        "id": "POSTS",
+        "size_mm": [
+          432,
+          366,
+          145.8
+        ],
+        "min_xyz_mm": [
+          2994,
+          -183,
+          293.2
+        ],
+        "body_intersections": [],
+        "nearest_body_node": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113",
+        "clearance_mm": 2.6,
+        "clearance_is_lower_bound": false,
+        "intentionally_external": false,
+        "route": false,
+        "support": true,
+        "fixed_proxy": false,
+        "stock_intersections": [],
+        "nearest_stock_node": null,
+        "stock_clearance_mm": 50,
+        "stock_clearance_is_lower_bound": true,
+        "stock_mechanical_interfaces_excluded": []
+      }
+    ],
+    "component_pairs": [
+      {
+        "ids": [
+          "COMPACT_ENGINE",
+          "POSTS"
+        ],
+        "envelope_overlap": true,
+        "gap_mm": 0,
+        "planned_head_interface": false,
+        "housing_collision": false,
+        "mesh_intersection": true,
+        "contact_witness_mm": [
+          2994.3,
+          -178.7,
+          439
+        ],
+        "schematic_interface": true
+      }
+    ],
+    "limitations": [
+      "Проверяются только видимые узлы. Экранный срез не удаляет геометрию.",
+      "Расстояния измерены до сетки реконструкции, её реальная точность не установлена.",
+      "30 мм — правило геометрического просмотра, не тепловой или сервисный допуск.",
+      "Штатная КПП показана грубым габаритом; её пересечение с гипотетическим полом требует реального CAD.",
+      "Цель — оборудование внутри. Наружный габарит служит только первичным фильтром; принадлежность полости кузова и полное вложение в металл этим не доказываются.",
+      "Подвеска — статическая гипотеза по штатной схеме. Ход, поворот колёс, осадка под новой массой и огибающие движения не рассчитаны.",
+      "Подробные формы не заменяют резервные габариты двигателя и КПП; проверяйте их отдельно. Соединения трасс и проектных опор отмечены как схема сопряжения, прочность не доказана."
+    ],
+    "open_issues": [
+      "Игровая геометрия кузова и статическая гипотеза подвески; прочность, точная КПП, ход подвески, тепловые/сервисные зазоры не подтверждены."
+    ],
+    "stock_surface_objects": 48,
+    "equipment_outside_body_aabb": [],
+    "assembly_size_mm": [
+      3640.7,
+      1493.9,
+      1420
+    ],
+    "summary": {
+      "unplanned_mesh_intersections": [],
+      "stock_conflicts": [],
+      "stock_gaps_under_screen": [],
+      "body_conflicts": [],
+      "unplanned_envelope_overlaps": [
+        [
+          "COMPACT_ENGINE",
+          "POSTS"
+        ]
+      ],
+      "body_gaps_under_screen": [
+        {
+          "id": "COMPACT_ENGINE",
+          "gap_mm": 42
+        },
+        {
+          "id": "POSTS",
+          "gap_mm": 2.6
+        }
+      ],
+      "component_gaps_under_screen": []
+    }
+  },
+  "contacts": [
+    {
+      "anchor_mm": [
+        3000,
+        -177,
+        286.5353667979263
+      ],
+      "slopes": [
+        0.0132322107,
+        -0.6028257649
+      ],
+      "pad_half_mm": 6,
+      "top_world_mm": 293.2317146515263,
+      "load_bearing_confirmed": false,
+      "samples": [
+        {
+          "dx_mm": -6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 290.0729281231263,
+          "floor_z_mm": 290.0729284499197,
+          "error_mm": 3.267933834649739e-7
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 286.4559735337263,
+          "floor_z_mm": 286.4559735335385,
+          "error_mm": 1.8781065591610968e-10
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 282.8390189443263,
+          "floor_z_mm": 282.8390189443309,
+          "error_mm": 4.604316927725449e-12
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 290.1523213873263,
+          "floor_z_mm": 290.1523236662568,
+          "error_mm": 0.0000022789304807702138
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 286.5353667979263,
+          "floor_z_mm": 286.5353667979263,
+          "error_mm": 0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 282.9184122085263,
+          "floor_z_mm": 282.9184122087187,
+          "error_mm": 1.9235812942497432e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 290.2317146515263,
+          "floor_z_mm": 290.23171888259395,
+          "error_mm": 0.0000042310676349188725
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 286.6147600621263,
+          "floor_z_mm": 286.6147600623142,
+          "error_mm": 1.878674993349705e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 282.9978054727263,
+          "floor_z_mm": 282.99780547310655,
+          "error_mm": 3.802256287599448e-10
+        }
+      ],
+      "max_error_mm": 0.0000042310676349188725,
+      "geometric_contact_confirmed": true
+    },
+    {
+      "anchor_mm": [
+        3000,
+        177,
+        286.5350932618857
+      ],
+      "slopes": [
+        0.0132321559,
+        0.6028269496
+      ],
+      "pad_half_mm": 6,
+      "top_world_mm": 293.2314478948857,
+      "load_bearing_confirmed": false,
+      "samples": [
+        {
+          "dx_mm": -6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 282.8387386288857,
+          "floor_z_mm": 282.8387412909065,
+          "error_mm": 0.000002662020790467068
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 286.4557003264857,
+          "floor_z_mm": 286.45570032635675,
+          "error_mm": 1.2897771739517339e-10
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 290.07266202408573,
+          "floor_z_mm": 290.07265974325344,
+          "error_mm": 0.00000228083229103504
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 282.9181315642857,
+          "floor_z_mm": 282.9181342264355,
+          "error_mm": 0.000002662149768184463
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 286.5350932618857,
+          "floor_z_mm": 286.5350932618857,
+          "error_mm": 0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 290.1520549594857,
+          "floor_z_mm": 290.15205495959054,
+          "error_mm": 1.0481926437932998e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 282.9975244996857,
+          "floor_z_mm": 282.9975271619644,
+          "error_mm": 0.0000026622786890584393
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 286.6144861972857,
+          "floor_z_mm": 286.61448619741464,
+          "error_mm": 1.2892087397631258e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 290.2314478948857,
+          "floor_z_mm": 290.2314501759277,
+          "error_mm": 0.0000022810419864072173
+        }
+      ],
+      "max_error_mm": 0.0000026622786890584393,
+      "geometric_contact_confirmed": true
+    },
+    {
+      "anchor_mm": [
+        3420,
+        -177,
+        366.4795014104693
+      ],
+      "slopes": [
+        0.074136694,
+        -9.51e-8
+      ],
+      "pad_half_mm": 6,
+      "top_world_mm": 369.9243221450693,
+      "load_bearing_confirmed": false,
+      "samples": [
+        {
+          "dx_mm": -6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 366.03468181706927,
+          "floor_z_mm": 366.03468181702283,
+          "error_mm": 4.644107320928015e-11
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 366.0346812464693,
+          "floor_z_mm": 366.034681246679,
+          "error_mm": 2.0969537217752077e-10
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 366.0346806758693,
+          "floor_z_mm": 366.0346806763351,
+          "error_mm": 4.657749741454609e-10
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 366.4795019810693,
+          "floor_z_mm": 366.4795019808132,
+          "error_mm": 2.560796019679401e-10
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 366.4795014104693,
+          "floor_z_mm": 366.4795014104693,
+          "error_mm": 0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 366.47950083986933,
+          "floor_z_mm": 366.4795008401254,
+          "error_mm": 2.560796019679401e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 366.9243221450693,
+          "floor_z_mm": 366.9243221446036,
+          "error_mm": 4.657181307266001e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 366.92432157446933,
+          "floor_z_mm": 366.9243215742597,
+          "error_mm": 2.0963852875865996e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 366.92432100386935,
+          "floor_z_mm": 366.92432100391585,
+          "error_mm": 4.6497916628140956e-11
+        }
+      ],
+      "max_error_mm": 4.657749741454609e-10,
+      "geometric_contact_confirmed": true
+    },
+    {
+      "anchor_mm": [
+        3420,
+        177,
+        366.4795014104296
+      ],
+      "slopes": [
+        0.074136694,
+        9.51e-8
+      ],
+      "pad_half_mm": 6,
+      "top_world_mm": 369.9243221450296,
+      "load_bearing_confirmed": false,
+      "samples": [
+        {
+          "dx_mm": -6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 366.0346806758296,
+          "floor_z_mm": 366.03468067629535,
+          "error_mm": 4.657749741454609e-10
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 366.03468124642956,
+          "floor_z_mm": 366.0346812466392,
+          "error_mm": 2.0963852875865996e-10
+        },
+        {
+          "dx_mm": -6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 366.03468181702954,
+          "floor_z_mm": 366.0346818169831,
+          "error_mm": 4.644107320928015e-11
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 366.4795008398296,
+          "floor_z_mm": 366.47950084008573,
+          "error_mm": 2.561364453868009e-10
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 366.4795014104296,
+          "floor_z_mm": 366.4795014104296,
+          "error_mm": 0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 366.47950198102956,
+          "floor_z_mm": 366.4795019807734,
+          "error_mm": 2.561364453868009e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": -6,
+          "pad_bottom_z_mm": 366.9243210038296,
+          "floor_z_mm": 366.9243210038762,
+          "error_mm": 4.6554760047001764e-11
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 0,
+          "pad_bottom_z_mm": 366.9243215744296,
+          "floor_z_mm": 366.92432157422,
+          "error_mm": 2.0958168533979915e-10
+        },
+        {
+          "dx_mm": 6,
+          "dy_mm": 6,
+          "pad_bottom_z_mm": 366.9243221450296,
+          "floor_z_mm": 366.92432214456386,
+          "error_mm": 4.657181307266001e-10
+        }
+      ],
+      "max_error_mm": 4.657749741454609e-10,
+      "geometric_contact_confirmed": true
+    }
+  ],
+  "body_source": "https://sketchfab.com/models/db1f3f41624245158f02f24e4108e633/embed",
+  "body_sha256": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+  "gearbox_axis_verified": false,
+  "complete_vehicle_verified": false,
+  "provenance": {
+    "source_sha256": {
+      "web/compact-radial-model.js": "266cd0a28b1a586708ddd41b5bdd17a83f326586e57911c6281c6fe1b7401bba",
+      "web/compact-radial-geometry.js": "491fa729e25c51d9dac5a070ffe796c800c5b0e9ab1c2d092c78685f9caa29c4",
+      "web/compact-radial.js": "3e0c60cd585fcef3c1898cf8a21041b99df20482068babc5f8fe9720d7b5900b",
+      "models/zaz-968m-yatloo.glb": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
+      "models/stock-suspension.glb": "e084e327c5ebcbb873bb6f76326ce3f094ac5b50957d9dc988e3cb3de565367d"
+    }
+  },
+  "publication_summary": "Полная геометрия двигателя: 511 × 490,1 × 419,6 мм. Номинальная геометрия не пересекает кузов и статическую подвеску в предоставленной сетке. Это предварительная посадка в игровой модели, не подтверждение установки в реальный автомобиль."
+}

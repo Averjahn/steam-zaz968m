@@ -148,8 +148,13 @@
         460,
         420
       ],
-      "size_basis": "Аналитическая граница механического ядра; бюджет полной сборки, не проверенная CAD-посадка",
-      "fit_status": "Механическое ядро входит; коллекторы, арматура, изоляция и угловая передача требуют новой трассировки"
+      "size_mm": [
+        511.0469207763672,
+        490.10508728027344,
+        419.6000061035156
+      ],
+      "size_basis": "Габарит новой компактной 3D-сборки с трубками, коллекторами, изоляцией и угловой передачей; стойки до пола отдельно",
+      "fit_status": "Поверхности не пересекают предоставленный кузов и статическую подвеску; реальная посадка, динамические и горячие зазоры не подтверждены"
     }
   ],
   "default_rows": [
@@ -367,7 +372,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": 0,
       "effective_thermal_efficiency": 0.06696600546411213,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -442,7 +447,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": -1.8189894035458565e-12,
       "effective_thermal_efficiency": 0.06696600546411212,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -515,7 +520,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": -3.637978807091713e-12,
       "effective_thermal_efficiency": 0.06696600546411212,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -588,7 +593,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": 0,
       "effective_thermal_efficiency": 0.06696600546411213,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -661,7 +666,7 @@
       "engine_speed_study_ok": false,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": -1.4551915228366852e-11,
       "effective_thermal_efficiency": 0.06696600546411213,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -734,7 +739,7 @@
       "engine_speed_study_ok": false,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": 0,
       "effective_thermal_efficiency": 0.06696600546411212,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -809,7 +814,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": 0,
       "effective_thermal_efficiency": 0.06696600546411213,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -882,7 +887,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": 0,
       "effective_thermal_efficiency": 0.06696600546411213,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -955,7 +960,7 @@
       "engine_speed_study_ok": true,
       "source_power_ok": true,
       "fits_reserve_box": true,
-      "has_current_mesh_bounds": false,
+      "has_current_mesh_bounds": true,
       "energy_residual_W": 0,
       "effective_thermal_efficiency": 0.06696600546411213,
       "ideal_rankine_efficiency": 0.14881334547580471
@@ -1037,8 +1042,8 @@
   "limitations": [
     "Резерв 600×500×500 мм не является обмером реального кузова. Текущий двухцилиндровый GLB имеет габарит 545×385×500 мм, без подтверждённых горячих и сервисных зазоров.",
     "Компактная звезда имеет новое D32/S36, кривошип r18, шатун L57, шток L54/Ø7,68 и модуль шестерён 1,5; это не прежние 100×120, уменьшенные только на экране.",
-    "Граница механического ядра Ø411,25×49,5 мм выведена по прежней геометрии с изменёнными размерами. Бюджет 480×460×420 относится к новой полной компоновке, которая пока не смоделирована и не проверена на пересечения.",
-    "Коллекторы, трубки, изоляция, клапанные проходы и угловая передача не масштабируются вместе с цилиндрами; их ещё нужно пересчитать под полный расход.",
+    "Граница механического ядра Ø411,25×49,5 мм выведена по прежней геометрии с изменёнными размерами. Исходный бюджет 480×460×420 превышен: новая сборка около 511×490×420 мм. Поверхности проверены в предоставленной сетке, результаты в compact-radial-fit.json.",
+    "Коллекторы, трубки, изоляция, клапанные проходы и угловая передача не масштабируются вместе с цилиндрами; в новой сборке они заданы отдельно, но проходы, клапаны и пики расхода ещё требуют проверки.",
     "КПД расширения 50%, механический 90%, электрогенератора 85% — гипотезы. Для малого цилиндра особенно важны утечки и конденсация; требуются индикаторная диаграмма и испытания.",
     "Отсечка 30%, коэффициент заполнения 0,85 и расход через рабочий объём дают только идеализированный подбор оборотов; 2600 об/мин — предел исследования, а не паспорт двигателя.",
     "Вентилятор: 250 Па + Kρu²/2, K=1 и общий КПД 55% — бюджет потерь, не измеренная характеристика каналов. Выход воздуха 45/65/80 °C — сравниваемые допущения, не подтверждённый температурный предел кузова.",
@@ -1065,6 +1070,6 @@
     "simulation-data.json": "59ecd82a03d07aafb2047200d214f0436d657e43041f08fe428421b127a085f0",
     "radial-engine-spec.json": "e995c0495d201ded0ec0d83df50617f4edc63599a02837acab3a8099dedd2bfe",
     "models/steam-internal-assembly.json": "e2e00d0d598c6aebc74d7a314d0e85c2c794f83f92a456be8121bdc8fdd7b559",
-    "web/engine-sizing-model.js": "35211055e23d1c0f7ad98367ffc11d36f6433b88b0d142bd54b4f968dfee6ce3"
+    "web/engine-sizing-model.js": "42fec133fc314b1ebf0d07915140613a52661da190d3613c7cc3807484ce212d"
   }
 }

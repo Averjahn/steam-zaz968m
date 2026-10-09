@@ -18,8 +18,8 @@ test('Generator losses are charged against the shaft',near(v.aux_shaft_kW,v.elec
 test('Seven local crank cycles run twice as fast as common output shaft',near(v.crank_rpm,2*v.output_rpm));
 test('Mean piston speed uses stroke in metres and crank RPM',near(v.mean_piston_m_s,2*.036*v.crank_rpm/60));
 test('Output shaft torque reproduces shaft power independently of volume',near(v.torque_output_Nm*v.output_rpm*2*Math.PI/60,v.shaft_kW*1000));
-test('Geometric core bound excludes piping and leaves room in the reserve',c.core_radius_bound_mm*2<460&&c.core_height_bound_mm<420&&v.fits_reserve_box&&!v.has_current_mesh_bounds);
-test('Current two-cylinder GLB bound is distinguished from an unbuilt budget',two.has_current_mesh_bounds&&two.fits_reserve_box&&!large.fits_reserve_box);
+test('Built compact assembly and analytic core bounds remain inside the reserve',c.core_radius_bound_mm*2<460&&c.core_height_bound_mm<420&&v.fits_reserve_box&&v.has_current_mesh_bounds&&c.size_mm[0]>c.budget_mm[0]);
+test('Current small GLB assemblies are distinguished from the oversized star',two.has_current_mesh_bounds&&two.fits_reserve_box&&!large.fits_reserve_box);
 test('Compact star remains just below provisional 2600 RPM at 50 kW',v.crank_rpm>2580&&v.crank_rpm<2600&&v.engine_speed_study_ok);
 test('The existing 0.85 filling assumption increases required cycle frequency',near(v.crank_rpm/sizeEngine(data.input,c,{filling_factor:1}).crank_rpm,1/.85));
 const eighty=sizeEngine(data.input,c,{heat_kW:80});
@@ -37,5 +37,5 @@ test('High air speed does not produce a false fan or useful-power prediction',!t
 let rejected=0;for(const o of [{heat_kW:NaN},{eta_is:1.1},{air_rise_K:0},{eta_electric:0},{cutoff:0},{air_area_m2:-1}])try{sizeEngine(data.input,c,o);}catch{rejected++;}
 test('Invalid parameters cannot enter the calculation',rejected===6);
 const sources=['web/engine-sizing-model.js','web/engine-sizing.js','web/engine-sizing.html','engine-sizing.json','build_engine_sizing.mjs','engine_sizing_page.py','build_site.py','workspace_ui.py','build_knowledge.py','verify_engine_sizing.mjs'];
-fs.writeFileSync('engine-sizing-checks.json',JSON.stringify({status:'passed',scope:'Preliminary dimensions and approximate mass/energy/power/cooling budgets; no full compact CAD placement, component rating or manufacture validation',checks,source_sha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(p)).digest('hex')]))},null,2)+'\n');
+fs.writeFileSync('engine-sizing-checks.json',JSON.stringify({status:'passed',scope:'Preliminary dimensions and approximate mass/energy/power/cooling budgets; CAD fitting is checked separately; no component rating or manufacture validation',checks,source_sha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(p)).digest('hex')]))},null,2)+'\n');
 console.log(JSON.stringify({status:'passed',checks:checks.length,volume_L:v.geometry.swept_L,shaft_kW:v.shaft_kW,net_kW:v.net_kW,target40_heat_kW:target.heat_kW}));

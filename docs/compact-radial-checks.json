@@ -1,0 +1,287 @@
+{
+  "status": "passed",
+  "scope": "Concept geometry, exact slider-crank kinematics, chamber volumes, nominal body/static suspension screening and floor contact; not manufacture, pressure ratings, self-interference, strength or vehicle feasibility",
+  "checks": [
+    {
+      "name": "Swept volume independently equals seven circular piston areas times stroke",
+      "passed": true
+    },
+    {
+      "name": "Double-acting swept volume subtracts seven rod areas",
+      "passed": true
+    },
+    {
+      "name": "Pitch-circle centres and 2:1 reduction agree",
+      "passed": true
+    },
+    {
+      "name": "All seven slider-cranks preserve 57 mm rod length over a full output revolution",
+      "passed": true
+    },
+    {
+      "name": "All seven pistons travel 36 mm",
+      "passed": true
+    },
+    {
+      "name": "Both chambers retain the intended 0.6 mm dead clearance",
+      "passed": true
+    },
+    {
+      "name": "Seven crank phases are distinct",
+      "passed": true
+    },
+    {
+      "name": "Previous upstream steam pipe retains its full insulation envelope",
+      "passed": true
+    },
+    {
+      "name": "Invalid pipe sections are rejected",
+      "passed": true
+    },
+    {
+      "name": "Actual core mesh fits the 600 × 500 × 500 mm reserve",
+      "passed": true
+    },
+    {
+      "name": "Core and posts do not intersect body or static suspension meshes",
+      "passed": true
+    },
+    {
+      "name": "Core retains a measured positive body gap",
+      "passed": true
+    },
+    {
+      "name": "Four support-pad surfaces match nine samples each on the supplied floor",
+      "passed": true
+    },
+    {
+      "name": "Actual stored engine dimensions match sizing inputs",
+      "passed": true
+    },
+    {
+      "name": "Seven cylinders have four independently specified flow routes each",
+      "passed": true
+    },
+    {
+      "name": "Fourteen chamber connections have matching bore, endpoint and axial direction",
+      "passed": true
+    },
+    {
+      "name": "All 28 valve interfaces match bore, face and through-hole axis",
+      "passed": true
+    },
+    {
+      "name": "Both exports are complete glTF 2 binary files below 100 MB",
+      "passed": true
+    },
+    {
+      "name": "Body audit belongs to the current source and reference meshes",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "web/compact-radial-model.js": "266cd0a28b1a586708ddd41b5bdd17a83f326586e57911c6281c6fe1b7401bba",
+    "web/compact-radial-geometry.js": "491fa729e25c51d9dac5a070ffe796c800c5b0e9ab1c2d092c78685f9caa29c4",
+    "web/compact-radial.js": "3e0c60cd585fcef3c1898cf8a21041b99df20482068babc5f8fe9720d7b5900b",
+    "compact-radial-fit.json": "3cd43d5619b20edd80aa014f4a46cee9e71aed9515f3fc275b7b0feecc2ae056",
+    "models/compact-radial-engine.json": "2625df84c9137e588b232ab6340262159cf8a13be5093db992a87d626b98c69b",
+    "models/compact-radial-engine.glb": "b21f98e89f6f33dc3a760fe03f149e91c0b1bd215066c03a649828feb9217dbd",
+    "models/compact-radial-in-body.glb": "f00d3d036996ceb9b551fced85a64a62d217685201b9e49debe7d2e563ddd5d5"
+  },
+  "browser": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "Provided body, stock context and seven-cylinder engine load",
+        "passed": true
+      },
+      {
+        "name": "Every pipe gets a moving arrow during at least one phase",
+        "passed": true
+      },
+      {
+        "name": "Chamber arrows reverse at exhaust and disappear during closed expansion",
+        "passed": true
+      },
+      {
+        "name": "All 72 animated poses remain within the audited core envelope",
+        "passed": true
+      },
+      {
+        "name": "Body covers are above the four complete-envelope corner rays",
+        "passed": true
+      },
+      {
+        "name": "Seven rerouted B pipes clear both pressure headers and their swept linkages",
+        "passed": true
+      },
+      {
+        "name": "Separate view hides body context and floor-reaching supports",
+        "passed": true
+      },
+      {
+        "name": "Car view restores complete context and supports",
+        "passed": true
+      },
+      {
+        "name": "Opaque skins restore depth writing",
+        "passed": true
+      },
+      {
+        "name": "Body-only section plane leaves engine geometry uncut",
+        "passed": true
+      },
+      {
+        "name": "Playback advances the common shaft",
+        "passed": true
+      },
+      {
+        "name": "Pause holds the common shaft",
+        "passed": true
+      },
+      {
+        "name": "Fullscreen control enters native or fallback fullscreen",
+        "passed": true
+      },
+      {
+        "name": "Standalone GLB reloads with one compact engine and metre units",
+        "passed": true
+      },
+      {
+        "name": "Assembled GLB reloads with correct car scale and removed factory engine",
+        "passed": true
+      },
+      {
+        "name": "Mobile layout has no horizontal page overflow",
+        "passed": true
+      },
+      {
+        "name": "Rendering and UI produce no browser exceptions",
+        "passed": true
+      }
+    ],
+    "probe": {
+      "seen": [
+        "Граничный впуск ID40 / OD48",
+        "Ввод в пленум ID20",
+        "Граничный выпуск ID40 / OD46",
+        "Подача 1",
+        "Выпуск 1",
+        "Камера 1A",
+        "Камера 1B",
+        "Выпуск 2",
+        "Камера 2A",
+        "Выпуск 3",
+        "Камера 3A",
+        "Подача 4",
+        "Выпуск 4",
+        "Камера 4A",
+        "Камера 4B",
+        "Выпуск 5",
+        "Камера 5B",
+        "Выпуск 6",
+        "Камера 6B",
+        "Подача 7",
+        "Выпуск 7",
+        "Камера 7A",
+        "Камера 7B",
+        "Камера 5A",
+        "Подача 5",
+        "Камера 2B",
+        "Подача 2",
+        "Камера 6A",
+        "Подача 6",
+        "Камера 3B",
+        "Подача 3"
+      ],
+      "routeCount": 31,
+      "minMotion": 0.20322530852672227,
+      "maxExcess": 0,
+      "reversed": true,
+      "closed": true,
+      "enclosure": [
+        {
+          "x_mm": 2950,
+          "y_mm": -246.60508728027344,
+          "cover": {
+            "z": 939.8088693225432,
+            "node": "Крыша_и_рамки_стёкол_·_FBX_Plane116"
+          },
+          "bracketed": false
+        },
+        {
+          "x_mm": 2950,
+          "y_mm": 243.5,
+          "cover": {
+            "z": 939.9388654259844,
+            "node": "Крыша_и_рамки_стёкол_·_FBX_Plane116"
+          },
+          "bracketed": false
+        },
+        {
+          "x_mm": 3461.046920776367,
+          "y_mm": -246.60508728027344,
+          "floor": {
+            "z": 337.64917351947696,
+            "node": "Circle034_·_FBX_Circle034"
+          },
+          "cover": {
+            "z": 917.0869022047934,
+            "node": "Крышка_моторного_отсека_·_FBX_Plane123"
+          },
+          "bracketed": true
+        },
+        {
+          "x_mm": 3461.046920776367,
+          "y_mm": 243.5,
+          "cover": {
+            "z": 917.7687315916999,
+            "node": "Крышка_моторного_отсека_·_FBX_Plane123"
+          },
+          "bracketed": false
+        }
+      ]
+    },
+    "internal": {
+      "checked_B_pipes": 7,
+      "pressure_header_surfaces": 12,
+      "poses": 72,
+      "conflicts": []
+    },
+    "exports": [
+      {
+        "name": "compact-radial-engine",
+        "size_m": [
+          0.5110469207763673,
+          0.5067612609863281,
+          0.49010508728027347
+        ],
+        "removed": [],
+        "engineCount": 1,
+        "source_units": "mm/Z-up",
+        "origin": [
+          3210,
+          0,
+          490
+        ]
+      },
+      {
+        "name": "compact-radial-in-body",
+        "size_m": [
+          3.6407313495874405,
+          1.4200059872846928,
+          1.4939361214637756
+        ],
+        "removed": [],
+        "engineCount": 1,
+        "source_units": "mm/Z-up",
+        "origin": [
+          3210,
+          0,
+          490
+        ]
+      }
+    ],
+    "errors": []
+  }
+}

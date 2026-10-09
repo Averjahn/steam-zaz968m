@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "scope": "Preliminary dimensions and approximate mass/energy/power/cooling budgets; no full compact CAD placement, component rating or manufacture validation",
+  "scope": "Preliminary dimensions and approximate mass/energy/power/cooling budgets; CAD fitting is checked separately; no component rating or manufacture validation",
   "checks": [
     {
       "name": "Seven D32/S36 cylinders have 0.202670425 litres of displacement",
@@ -55,11 +55,11 @@
       "pass": true
     },
     {
-      "name": "Geometric core bound excludes piping and leaves room in the reserve",
+      "name": "Built compact assembly and analytic core bounds remain inside the reserve",
       "pass": true
     },
     {
-      "name": "Current two-cylinder GLB bound is distinguished from an unbuilt budget",
+      "name": "Current small GLB assemblies are distinguished from the oversized star",
       "pass": true
     },
     {
@@ -108,18 +108,18 @@
     }
   ],
   "source_sha256": {
-    "web/engine-sizing-model.js": "35211055e23d1c0f7ad98367ffc11d36f6433b88b0d142bd54b4f968dfee6ce3",
-    "web/engine-sizing.js": "95361a037ed2c50d2f0f77875120cba0a8c5e616490270cfdcbbf3c51f39517f",
-    "web/engine-sizing.html": "15720cebc868c653d0094b62b581e20741323a58ed11be2ce17306b71141d1b6",
-    "engine-sizing.json": "e064f97e5d08acbacea896591c632b03283988e17ff5c4f1a9b84a42a114840a",
-    "build_engine_sizing.mjs": "a37ab0723b2d2d6932917c5f79db990ff273dff34fc31f939c09c55a7266cd1d",
+    "web/engine-sizing-model.js": "42fec133fc314b1ebf0d07915140613a52661da190d3613c7cc3807484ce212d",
+    "web/engine-sizing.js": "d88fb4cc2acea7d4c61e4c5b41f7740961a52872a85f815b4bddbad723eb8093",
+    "web/engine-sizing.html": "d58214710cd62a5e5d133141931f890ea4a377d47a2d5058443720e0ffb8f545",
+    "engine-sizing.json": "23e468c4a381ed59ad808be1b295088af216bfb10811ea95e14bd8d2d1e6979f",
+    "build_engine_sizing.mjs": "a62bc6287f53722d0e123840b81bef173a494cfd74213f2e73e0453300ced74c",
     "engine_sizing_page.py": "b902579157c80da6979e16359d178a637b49bf8a336871f8486fe90070374b66",
-    "build_site.py": "fbc6f3de4c5158290a2772d8fb35eb1e2d917419dc8927171cd90526b10e63da",
-    "workspace_ui.py": "6dde8cdc69eb89cb43f812f8f62877d3d816e6d45a28ccb31d3841a9aeb66986",
-    "build_knowledge.py": "bb7f3fd162dd48b5fefdfad1f7dd3f4c5559df40ea42a8bcc6a2aec499783e95",
-    "verify_engine_sizing.mjs": "e1d52deaa5f9753dc8a89f6e264100b99a098f7c12f62da3912e9bac3594414b"
+    "build_site.py": "7d92493b91ebdacef6bc4c0f3f1ae984decbd3c0b9a814db3c1623ecc023b67b",
+    "workspace_ui.py": "0686be48834ebd2d54003f55d8d2853f939b032102b08c3074255d8d62d8c929",
+    "build_knowledge.py": "a0c31f4c0fcb23219c3c3416746d273c042cb79f4fea95e8a2795fa7a8f15f2b",
+    "verify_engine_sizing.mjs": "be7f881d52f402180f505472abb50bfcccd7c82dc8352dcc98a20b56aa8e30b3"
   },
-  "browser": {
+  "previous_browser": {
     "status": "passed",
     "checks": [
       {

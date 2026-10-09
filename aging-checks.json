@@ -138,13 +138,13 @@
     "web/aging.css": "5b0c59790907c55cfbbb89f693bdd2c16d53bdc7e3fbcff445b1b16396ab1ab1",
     "build_aging.mjs": "e167bd5687f30a9c5f1643cfbd94e33c04598f382510d3465583f0251de38778",
     "aging_page.py": "4ebc8e9dc659f6b459c2f2d03b27b576993d87bf5b053be56d9f87dc9b0a1183",
-    "aging-study.json": "5ae7bd79ba0a94bd0cc9be26dee1bfc2f96e9f319c33941bbcdcb8dec6b0b818",
+    "aging-study.json": "52bd21086ae6adb10484a29639f8f158a5ef9cbfdfc95eb66971c5cb5441edf9",
     "verify_aging.mjs": "cb756613f7f71701fbb9ce0639134938b68ed32f9aff219330f33b6a75b2fe60",
-    "build_site.py": "4a721c952c98f3fde31fa5f4a418cb231e038b55cb022ce754df6b5f22863be0",
-    "workspace_ui.py": "a6f0d6b7808988f71a53ff1e695416d60e1fed8bee82406e4407748b7fe9a2ab",
-    "build_knowledge.py": "b08739552792cc4686264585f9781a229921283dfc10d0a14f12597f906f90c7"
+    "build_site.py": "7d92493b91ebdacef6bc4c0f3f1ae984decbd3c0b9a814db3c1623ecc023b67b",
+    "workspace_ui.py": "0686be48834ebd2d54003f55d8d2853f939b032102b08c3074255d8d62d8c929",
+    "build_knowledge.py": "a0c31f4c0fcb23219c3c3416746d273c042cb79f4fea95e8a2795fa7a8f15f2b"
   },
-  "browser": {
+  "previous_browser": {
     "status": "passed",
     "checks": [
       {

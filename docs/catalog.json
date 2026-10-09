@@ -11,7 +11,7 @@
     "title": "Проверки модели старения · физика, границы и интерфейс",
     "category": "Проверки",
     "format": "JSON",
-    "size": 7944
+    "size": 7953
   },
   {
     "path": "aging-fatigue-template.json",
@@ -91,6 +91,13 @@
     "size": 3616
   },
   {
+    "path": "build_compact_drawing.py",
+    "title": "build_compact_drawing.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 7566
+  },
+  {
     "path": "build_connection_specs.py",
     "title": "Воспроизводимый реестр патрубков и трасс",
     "category": "Исходники",
@@ -109,7 +116,7 @@
     "title": "build_engine_sizing.mjs",
     "category": "Исходники",
     "format": "MJS",
-    "size": 5744
+    "size": 5879
   },
   {
     "path": "build_geometry.py",
@@ -144,7 +151,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 14137
+    "size": 14238
   },
   {
     "path": "build_mount_register.py",
@@ -221,7 +228,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 46725
+    "size": 48217
   },
   {
     "path": "build_stock_suspension.py",
@@ -294,6 +301,20 @@
     "size": 1014099
   },
   {
+    "path": "compact-radial-checks.json",
+    "title": "Компактная звезда · кинематика, габариты, порты и браузер",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 8192
+  },
+  {
+    "path": "compact-radial-fit.json",
+    "title": "Компактная звезда · пересечения кузова, подвески и опоры",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 15157
+  },
+  {
     "path": "component-purchases.json",
     "title": "Комплектующие · ссылки на покупку и материалы",
     "category": "Расчёты",
@@ -347,7 +368,7 @@
     "title": "Подбор двигателя · геометрия, масса, энергия и пределы расчёта",
     "category": "Проверки",
     "format": "JSON",
-    "size": 5693
+    "size": 5715
   },
   {
     "path": "engine-sizing-report.pdf",
@@ -361,14 +382,14 @@
     "title": "Подбор двигателя под место · объём, мощность и охлаждение",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 40001
+    "size": 40346
   },
   {
     "path": "engine_sizing_page.py",
     "title": "engine_sizing_page.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 4980
+    "size": 5068
   },
   {
     "path": "geometry-checks.json",
@@ -459,7 +480,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17758
+    "size": 17819
   },
   {
     "path": "layout-internal.json",
@@ -728,6 +749,13 @@
     "size": 6940
   },
   {
+    "path": "verify_compact_radial.mjs",
+    "title": "verify_compact_radial.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 6621
+  },
+  {
     "path": "verify_crank_mechanism.mjs",
     "title": "verify_crank_mechanism.mjs",
     "category": "Исходники",
@@ -746,7 +774,7 @@
     "title": "verify_engine_sizing.mjs",
     "category": "Исходники",
     "format": "MJS",
-    "size": 5149
+    "size": 5190
   },
   {
     "path": "verify_knowledge.mjs",
@@ -823,7 +851,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10377
+    "size": 10471
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -973,6 +1001,27 @@
     "size": 4814
   },
   {
+    "path": "drawings/10-compact-radial.pdf",
+    "title": "Общая компоновка · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 43986
+  },
+  {
+    "path": "drawings/10-compact-radial.svg",
+    "title": "Общая компоновка · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 9641
+  },
+  {
+    "path": "compact-radial.html",
+    "title": "Компактная семицилиндровая звезда в кузове",
+    "category": "3D",
+    "format": "HTML",
+    "size": 16073
+  },
+  {
     "path": "aging.html",
     "title": "Металл за два года · 50 км/день, мороз и тепло",
     "category": "Расчёты",
@@ -984,14 +1033,14 @@
     "title": "Объём и мощность под место в автомобиле",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 21677
+    "size": 22839
   },
   {
     "path": "radial-engine.html",
     "title": "Семицилиндровая звезда · объём и 3D-механизм",
     "category": "3D",
     "format": "HTML",
-    "size": 13126
+    "size": 13267
   },
   {
     "path": "calculations.html",
@@ -1005,7 +1054,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 54153
+    "size": 54294
   },
   {
     "path": "user-model.html",

@@ -14,6 +14,7 @@ NAV = [
     ('Устройство автомобиля', [
         ('heat.html', 'Источники тепла', 'flame'),
         ('physics.html', 'Физика и подвеска', 'activity'),
+        ('compact-radial.html', 'Компактная звезда в кузове', 'star'),
         ('radial-engine.html', 'Семицилиндровая звезда', 'star'),
         ('aging.html', 'Ресурс и зимняя эксплуатация', 'activity'),
         ('engine-sizing.html', 'Подбор объёма и мощности', 'calculator'),

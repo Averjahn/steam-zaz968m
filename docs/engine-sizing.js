@@ -1,4 +1,4 @@
-import {sizeEngine} from './engine-sizing-model.js?v=8c2a22413b70';
+import {sizeEngine} from './engine-sizing-model.js?v=c80f30c2fdf3';
 const $=id=>document.getElementById(id),fmt=(n,p=2)=>n===null?'вне модели':n.toLocaleString('ru-RU',{maximumFractionDigits:p,minimumFractionDigits:p});
 let data,last;
 const card=(name,formula,sub,result)=>`<article class="formula-card"><h3>${name}</h3><p class="formula">${formula}</p><p>${sub}</p><strong>${result}</strong></article>`;
@@ -6,7 +6,7 @@ function update(){
  if(!data)return;try{const heat=$('sizingHeat').valueAsNumber,eta=$('sizingEfficiency').valueAsNumber,rise=$('sizingAirRise').valueAsNumber;if(heat<1||heat>150||eta<.1||eta>1||rise<10||rise>60)throw Error('Задайте тепло 1–150 кВт, КПД 0,1–1 и нагрев воздуха 10–60 К.');
  const c=data.candidates.find(c=>c.id===$('sizingEngine').value),v=sizeEngine(data.input,c,{heat_kW:heat,eta_is:eta,air_rise_K:rise});last=v;
  $('sizingSummary').textContent=`${c.name}: ${fmt(v.geometry.swept_L,3)} л. На валу до потребителей: ${fmt(v.shaft_kW)} кВт / ${fmt(v.shaft_hp)} л.с. Баланс после вспомогательных: ${fmt(v.net_kW)} кВт, до автомобильной трансмиссии. Пар ${fmt(v.mass_kg_h,1)} кг/ч; кривошипы ${fmt(v.crank_rpm,0)} об/мин, выход ${fmt(v.output_rpm,0)} об/мин.`;
- $('sizingWarnings').textContent=[!v.engine_speed_study_ok?'Обороты превышают исследовательский предел 2600 об/мин.':'',!v.source_power_ok?'Превышена максимальная мощность размерного кандидата горелки.':'',!v.air_budget_applicable?'Скорость воздуха превышает область данного бюджета вентилятора: потребление и полезная мощность не оценены.':'',v.net_kW!==null&&v.net_kW<=0?'Вспомогательные потребители превышают мощность вала: стационарный режим с ними не поддерживается.':'',c.id==='compact-seven'?'Показан подбор механического ядра. Полная компактная CAD-сборка и прочность ещё не подтверждены.':c.fit_status].filter(Boolean).join(' ');
+ $('sizingWarnings').textContent=[!v.engine_speed_study_ok?'Обороты превышают исследовательский предел 2600 об/мин.':'',!v.source_power_ok?'Превышена максимальная мощность размерного кандидата горелки.':'',!v.air_budget_applicable?'Скорость воздуха превышает область данного бюджета вентилятора: потребление и полезная мощность не оценены.':'',v.net_kW!==null&&v.net_kW<=0?'Вспомогательные потребители превышают мощность вала: стационарный режим с ними не поддерживается.':'',c.id==='compact-seven'?'Компактная сборка построена и проверена в игровой сетке кузова. Реальная посадка, прочность и КПД не подтверждены.':c.fit_status].filter(Boolean).join(' ');
  const t=data.input.cycle,k=v.assumptions,d=v.geometry,dh=(t.h_in_J_kg-t.h_feed_J_kg)/1000,wp=(t.p_in_Pa-2e5)/(t.rho_feed_kg_m3*k.pump_efficiency)/1000;
  $('sizingFormulas').innerHTML=[
  card('Геометрический рабочий объём','V = NπD²S / 4',`${c.count} × π × (${fmt(c.bore/1000,3)} м)² × ${fmt(c.stroke/1000,3)} м / 4 × 1000`,fmt(d.swept_L,3)+' л'),
@@ -26,4 +26,4 @@ function update(){
 }
 for(const id of ['sizingEngine','sizingHeat','sizingEfficiency','sizingAirRise'])$(id).addEventListener('input',update);
 $('sizingExport').onclick=()=>{if(!last)return;const url=URL.createObjectURL(new Blob([JSON.stringify({status:data.status,inputs:data.input,result:last,limitations:data.limitations},null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='engine-sizing-current.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);};
-fetch('engine-sizing.json?v=e064f97e5d08').then(r=>{if(!r.ok)throw Error('Не удалось загрузить исходные данные');return r.json();}).then(x=>{data=x;update();}).catch(e=>{$('sizingWarnings').textContent=e.message;$('sizingExport').disabled=true;});
+fetch('engine-sizing.json?v=23e468c4a381').then(r=>{if(!r.ok)throw Error('Не удалось загрузить исходные данные');return r.json();}).then(x=>{data=x;update();}).catch(e=>{$('sizingWarnings').textContent=e.message;$('sizingExport').disabled=true;});

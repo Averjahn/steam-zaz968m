@@ -10,7 +10,7 @@ export const sizingCandidates=Object.freeze([
   size_mm:[1492,1448,329],size_basis:'Габарит опубликованной сборки с коллекторами и граничными патрубками',fit_status:'Не входит в резерв 600 × 500 × 500 мм'},
  {id:'compact-seven',name:'Компактная звезда Ø32 × 36',count:7,bore:32,stroke:36,rod:7.68,output_ratio:2,
   core_scale:.3,core_radius_bound_mm:Math.hypot(685,24)*.3,core_height_bound_mm:165*.3,
-  budget_mm:[480,460,420],size_basis:'Аналитическая граница механического ядра; бюджет полной сборки, не проверенная CAD-посадка',fit_status:'Механическое ядро входит; коллекторы, арматура, изоляция и угловая передача требуют новой трассировки'}
+  budget_mm:[480,460,420],size_mm:[511.0469207763672,490.10508728027344,419.6000061035156],size_basis:'Габарит новой компактной 3D-сборки с трубками, коллекторами, изоляцией и угловой передачей; стойки до пола отдельно',fit_status:'Поверхности не пересекают предоставленный кузов и статическую подвеску; реальная посадка, динамические и горячие зазоры не подтверждены'}
 ]);
 const finitePositive=x=>Number.isFinite(x)&&x>0;
 function lmtd(a,b){if(a<=0||b<=0)return null;return Math.abs(a-b)<1e-8?(a+b)/2:(a-b)/Math.log(a/b);}
@@ -48,7 +48,7 @@ export function sizeEngine(data,candidate,options={}){
  crank_rpm:rpm,output_rpm:outputRpm,torque_output_Nm:shaft/(outputRpm*2*Math.PI/60),mean_piston_m_s:2*candidate.stroke/1000*rpm/60,
  fuel_input_kW:input,fuel_kg_h:fuelKgH,fuel_L_h:fuelLH,
  engine_speed_study_ok:rpm<=k.crank_study_limit_rpm,source_power_ok:input<=source.max_input_kW,
- fits_reserve_box:dims.every((x,i)=>x<=reserve[i]),has_current_mesh_bounds:candidate.id==='original-two',
+ fits_reserve_box:dims.every((x,i)=>x<=reserve[i]),has_current_mesh_bounds:['original-two','compact-seven'].includes(candidate.id),
  energy_residual_W:k.heat_kW*1000+pump-indicated-reject,
  effective_thermal_efficiency:shaft/(k.heat_kW*1000),ideal_rankine_efficiency:t.dh_is_J_kg/heatPerKg};
 }
