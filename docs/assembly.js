@@ -8,7 +8,7 @@ import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { auditPackaging } from './packaging-audit.js?v=f6b448b69aac';
 import { heatEquipment } from './heat-geometry.js?v=76b888f56649';
-import { attachSystems } from './assembly-systems.js?v=e3e12fa1a13c';
+import { attachSystems } from './assembly-systems.js?v=5e28d282aecf';
 import { acceleratedRaycast, computeBoundsTree } from './vendor/three-mesh-bvh/build/index.module.js';
 import { loadPurchases, purchaseRecord, renderPurchaseCard } from './component-purchases.js?v=0b8b45f53852';
 import {equipmentPorts} from './pipe-joints.js?v=ed575dd9cba4';

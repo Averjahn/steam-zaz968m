@@ -33,7 +33,7 @@
     {
       "name": "Cosine vectors are normalized",
       "pass": true,
-      "detail": 2.1630070479172758e-7
+      "detail": 2.140858104127119e-7
     },
     {
       "name": "Relevant source retrieved: Как рассчитаны обороты колёс",
@@ -44,6 +44,10 @@
           "url": "physics.html#topic-4"
         },
         {
+          "title": "Сценарий B · Обороты колёс",
+          "url": "calculations.html?scenario=B#formula-wheel_rpm"
+        },
+        {
           "title": "Сценарий A · Обороты колёс",
           "url": "calculations.html?scenario=A#formula-wheel_rpm"
         },
@@ -52,12 +56,8 @@
           "url": "calculations.html?scenario=C#formula-wheel_rpm"
         },
         {
-          "title": "Сценарий B · Обороты колёс",
-          "url": "calculations.html?scenario=B#formula-wheel_rpm"
-        },
-        {
           "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
-          "url": "literature-audit.html#topic-11"
+          "url": "literature.html#topic-11"
         }
       ]
     },
@@ -79,11 +79,11 @@
         },
         {
           "title": "Как физически работает замкнутый контур",
-          "url": "literature-audit.html#topic-13"
+          "url": "literature.html#topic-13"
         },
         {
-          "title": "Как работает каждый узел.",
-          "url": "physics.html"
+          "title": "Сценарий B · Объём впуска пара за оборот при целевых оборотах",
+          "url": "calculations.html?scenario=B#formula-steam_volume_per_rev"
         }
       ]
     },
@@ -200,6 +200,10 @@
           "url": "thermal-reference.json"
         },
         {
+          "title": "Сценарий B · Энтропия входного пара",
+          "url": "calculations.html?scenario=B#formula-s1_kJ_kgK"
+        },
+        {
           "title": "Сценарий A · Энтропия входного пара",
           "url": "calculations.html?scenario=A#formula-s1_kJ_kgK"
         },
@@ -208,11 +212,7 @@
           "url": "calculations.html?scenario=C#formula-s1_kJ_kgK"
         },
         {
-          "title": "Сценарий B · Энтропия входного пара",
-          "url": "calculations.html?scenario=B#formula-s1_kJ_kgK"
-        },
-        {
-          "title": "Белов · Теплоёмкость и теплообменники",
+          "title": "Белов · Циклы и изоэнтропная эффективность",
           "url": "thermal-reference.json"
         }
       ]
@@ -230,12 +230,12 @@
           "url": "assembly.html#simPanel"
         },
         {
-          "title": "25. Пять источников тепла, расход и замкнутый цикл",
-          "url": "report.html#section-25"
-        },
-        {
           "title": "Дрова · прототип газифицирующей топки",
           "url": "heat.html"
+        },
+        {
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
         },
         {
           "title": "Чем нагревать воду.",
@@ -330,8 +330,8 @@
           "url": "physics.html#node-CND"
         },
         {
-          "title": "Как физически работает замкнутый контур",
-          "url": "literature.html#topic-13"
+          "title": "Сценарий B · Температура на входе",
+          "url": "calculations.html?scenario=B#formula-T1"
         },
         {
           "title": "Сценарий C · Температура на входе",
@@ -342,8 +342,8 @@
           "url": "calculations.html?scenario=A#formula-T1"
         },
         {
-          "title": "Сценарий B · Температура на входе",
-          "url": "calculations.html?scenario=B#formula-T1"
+          "title": "Как физически работает замкнутый контур",
+          "url": "literature.html#topic-13"
         }
       ]
     },
@@ -356,20 +356,20 @@
           "url": "physics.html#node-WTR"
         },
         {
-          "title": "3. Архитектура установки и выбор топлива",
-          "url": "report.html#section-3"
-        },
-        {
           "title": "25. Пять источников тепла, расход и замкнутый цикл",
           "url": "report.html#section-25"
         },
         {
-          "title": "Сценарий B · Масса холодной воды",
-          "url": "calculations.html?scenario=B#formula-water_mass"
+          "title": "3. Архитектура установки и выбор топлива",
+          "url": "report.html#section-3"
         },
         {
-          "title": "Сценарий A · Масса холодной воды",
-          "url": "calculations.html?scenario=A#formula-water_mass"
+          "title": "FUE · Дизель · запас",
+          "url": "physics.html#node-FUE"
+        },
+        {
+          "title": "Сценарий B · Масса холодной воды",
+          "url": "calculations.html?scenario=B#formula-water_mass"
         }
       ]
     },
@@ -386,7 +386,7 @@
           "url": "connection-specs.json"
         },
         {
-          "title": "Стык RCV.return · патрубок трубы",
+          "title": "Стык STM.feed · патрубок трубы",
           "url": "connection-specs.json"
         },
         {
@@ -508,8 +508,8 @@
       "pass": true
     }
   ],
-  "max_vector_norm_error": 2.1630070479172758e-7,
-  "manifest_sha256": "02ee8da95cd6aae5c9f0edcfdd8e1c85b65f0f93004872e9aac1c4f0b53b3de7",
+  "max_vector_norm_error": 2.140858104127119e-7,
+  "manifest_sha256": "5b4713380cca9aa8ac7f1838152565b8b1649b39b59fb04e030dd1400d457d93",
   "source_sha256": {
     "build_knowledge.py": "2b7bae83fda83675ef6db91c646e9894021e368f8e585b2a4aee6e3fbd37e312",
     "web/search-core.js": "bdc30ddf76fc3cb3ab1efbff1d3839d5865a8078586231ee973d8f596d87ecb4",

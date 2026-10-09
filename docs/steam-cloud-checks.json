@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "scope": "Deterministic visual tracers and chamber confinement, not CFD, molecular dynamics or cylinder thermodynamics",
+  "checks": [
+    {
+      "name": "All tracer centers remain inside four moving chambers over a full turn",
+      "pass": true
+    },
+    {
+      "name": "Rod-side particles never intersect the piston rod",
+      "pass": true
+    },
+    {
+      "name": "All particle coordinates, sizes and opacities remain finite",
+      "pass": true
+    },
+    {
+      "name": "Minimum chamber height respects the original clearance",
+      "pass": true
+    },
+    {
+      "name": "Identical angle and time reproduce the same cloud",
+      "pass": true
+    },
+    {
+      "name": "A paused clock freezes every particle",
+      "pass": true
+    },
+    {
+      "name": "Playback moves the particles",
+      "pass": true
+    },
+    {
+      "name": "Admission travels away from the upper head",
+      "pass": true
+    },
+    {
+      "name": "Exhaust reverses towards the same upper head",
+      "pass": true
+    },
+    {
+      "name": "A cold simulation can clear all cloud opacity",
+      "pass": true
+    },
+    {
+      "name": "Default quality uses a bounded 384-puff budget",
+      "pass": true
+    }
+  ],
+  "source_sha256": {
+    "web/steam-cloud-model.js": "d4d812dd83c347fc85f9bc08e2576e09ba0dd0c03a630eb435fb6d85a23c9258",
+    "web/steam-cloud.js": "aff3008ba6a2bed5f7925998f7af66b761e5014d5f218f51defb152625a321c9",
+    "web/double-acting-view.js": "8d3f772aef24d4452518564de011050c577e8a2664056f82b6ddbc2207947cbc",
+    "web/assembly-systems.js": "e0f8922af7eeca845c5b2a1acae5b64494b8b16673ec73f2b21c698d560ecf1e",
+    "web/assembly.html": "e9553fe5498a2b5345df1b2159c7a9412935ea2ab94a9f6634a18b00aa7f5419",
+    "verify_steam_cloud.mjs": "38de732df976e4d46d92e5c8868751a5c3532c4ce394153f424689fbaa370ead",
+    "build_site.py": "4e70d3e644d080caa0124ac6f71ebfde235d1bcaf0ade65feeec035b4dc79d69",
+    "web/double-acting.css": "79db9cf4e70a1897042ea73baa7efa42fa0e565fc3b482272c25d76635f6bcae"
+  },
+  "browser_checks": [
+    {
+      "name": "Four default clouds render in actual cylinders",
+      "pass": true
+    },
+    {
+      "name": "Default GPU budget is 384 instanced puffs",
+      "pass": true
+    },
+    {
+      "name": "Shader clips puff edges against both cylinder walls and piston faces",
+      "pass": true
+    },
+    {
+      "name": "Puffs and wisps animate with the explanatory cycle",
+      "pass": true
+    },
+    {
+      "name": "Pause freezes cloud geometry and shader time",
+      "pass": true
+    },
+    {
+      "name": "Cloud boundaries follow both faces of the moving piston",
+      "pass": true
+    },
+    {
+      "name": "The same chamber admits then exhausts",
+      "pass": true
+    },
+    {
+      "name": "Flow tracer mode remains available",
+      "pass": true
+    },
+    {
+      "name": "Steam visibility can be switched off",
+      "pass": true
+    },
+    {
+      "name": "The existing fluid-layer switch also hides steam",
+      "pass": true
+    },
+    {
+      "name": "A cold stopped simulation does not invent steam",
+      "pass": true
+    },
+    {
+      "name": "Simulated steam appears when calculated flow starts",
+      "pass": true
+    },
+    {
+      "name": "Simulation pause freezes the steam clock",
+      "pass": true
+    },
+    {
+      "name": "Cloud shader respects opaque metal depth",
+      "pass": true
+    },
+    {
+      "name": "Existing section planes reach every cloud",
+      "pass": true
+    },
+    {
+      "name": "Temperature view retains the thermodynamic colors",
+      "pass": true
+    },
+    {
+      "name": "Cloud rendering works in fullscreen",
+      "pass": true
+    },
+    {
+      "name": "Mobile initial load uses 192 puffs",
+      "pass": true
+    },
+    {
+      "name": "Steam controls fit a mobile viewport",
+      "pass": true
+    },
+    {
+      "name": "No shader or browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_errors": [],
+  "total_checks": 31,
+  "date": "2026-10-09",
+  "browser_harness_sha256": "56766bd179605ba690c968a739e3f47a2a6af24bf32714801a888082bce5a376"
+}

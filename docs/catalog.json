@@ -172,7 +172,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 41790
+    "size": 42139
   },
   {
     "path": "build_stock_suspension.py",
@@ -375,7 +375,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17574
+    "size": 17626
   },
   {
     "path": "layout-internal.json",
@@ -546,6 +546,13 @@
     "size": 2939
   },
   {
+    "path": "steam-cloud-checks.json",
+    "title": "Анимация пара · границы камер, пауза, клапаны и 3D",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 4106
+  },
+  {
     "path": "thermal-presentation-checks.json",
     "title": "Отдельные компоненты, жидкости, тепловая карта и прежние режимы · проверки браузера",
     "category": "Проверки",
@@ -635,6 +642,13 @@
     "category": "Исходники",
     "format": "MJS",
     "size": 8474
+  },
+  {
+    "path": "verify_steam_cloud.mjs",
+    "title": "verify_steam_cloud.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 2917
   },
   {
     "path": "verify_thermal_view.mjs",
@@ -816,7 +830,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 43632
+    "size": 44683
   },
   {
     "path": "user-model.html",

@@ -4,32 +4,32 @@
   "dimension": 96,
   "passage_count": 850,
   "source_count": 22,
-  "vocabulary_size": 3545,
+  "vocabulary_size": 3555,
   "assets": {
     "passages": {
-      "path": "knowledge/passages-7fcbcb03f7f8.json",
-      "sha256": "7fcbcb03f7f8fdb1ee3354fcff63d8d19e752d50840a7077fc40b519633eb0f2",
-      "bytes": 1446510
+      "path": "knowledge/passages-24d81982e984.json",
+      "sha256": "24d81982e984b5d116b8f254dae9455eb47a329f7aa68ec19fb20e3cc754920e",
+      "bytes": 1447287
     },
     "model": {
-      "path": "knowledge/model-93d4bb9d82a8.json",
-      "sha256": "93d4bb9d82a89bda021c76eecc9a976694112eef8059f32c9c5f15b37f4132dc",
-      "bytes": 120323
+      "path": "knowledge/model-f5b13a8e87fe.json",
+      "sha256": "f5b13a8e87febd0763298d5a169945549c0b1287d3f441f3435ccf17b64fb586",
+      "bytes": 120637
     },
     "basis": {
-      "path": "knowledge/basis-72c8747a2d52.bin",
-      "sha256": "72c8747a2d5256b3ad5fd90a488ead89b28679273998ece4772e0fed8eb90cf3",
-      "bytes": 1361280
+      "path": "knowledge/basis-a91e1cf191cd.bin",
+      "sha256": "a91e1cf191cd88e55fcfa018c53d23c924ed9adbc8cc2ee1de264615690fcedb",
+      "bytes": 1365120
     },
     "vectors": {
-      "path": "knowledge/vectors-e5852fad0624.bin",
-      "sha256": "e5852fad06242cb5bf51698fee10ad6bda05e92a5dec347c5cc2ce9dd27d1a92",
+      "path": "knowledge/vectors-2076550b149a.bin",
+      "sha256": "2076550b149a847d1e93fd1aada9dce129b5fe9beba20c559d0fc7409cec1570",
       "bytes": 326400
     }
   },
   "sources": {
     "assembly.html": {
-      "sha256": "b29fe7b785babac328ca7d20efd02c9f035451b3079bfe64f76454e1421ca4dd",
+      "sha256": "e0991478dfb9d85bae8fd8ef7ed5e603bb537f28f2cb18c814d0b6fa3a63dea5",
       "kind": "HTML",
       "title": "CAD-сборка"
     },
@@ -139,7 +139,7 @@
       "title": "connection-specs.json"
     }
   },
-  "total_bytes": 3254513,
+  "total_bytes": 3259444,
   "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
   "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
   "training_seed": 968,
