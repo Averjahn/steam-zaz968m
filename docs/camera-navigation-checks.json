@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Lock freezes exact eye without an initial jump",
+      "passed": true
+    },
+    {
+      "name": "Lock is accessible and disables the orbit direction selector",
+      "passed": true
+    },
+    {
+      "name": "Dragging changes only viewing direction",
+      "passed": true
+    },
+    {
+      "name": "Dragging right turns the gaze to camera right",
+      "passed": true
+    },
+    {
+      "name": "Right and middle drag cannot move a fixed camera",
+      "passed": true
+    },
+    {
+      "name": "Wheel changes field of view without dolly",
+      "passed": true
+    },
+    {
+      "name": "Arrow keys turn the gaze from the same eye",
+      "passed": true
+    },
+    {
+      "name": "Resize keeps fixed camera position and orientation",
+      "passed": true
+    },
+    {
+      "name": "Fullscreen keeps the lock and eye",
+      "passed": true
+    },
+    {
+      "name": "Unlock restores orbit with no pose jump and keeps direction preference",
+      "passed": true
+    },
+    {
+      "name": "Normal orbit moves the eye again",
+      "passed": true
+    },
+    {
+      "name": "Pending orbit damping cannot move the locked eye",
+      "passed": true
+    },
+    {
+      "name": "Explicit component navigation releases lock",
+      "passed": true
+    },
+    {
+      "name": "Resize of isolated component does not recenter locked eye",
+      "passed": true
+    },
+    {
+      "name": "Preset view releases lock",
+      "passed": true
+    },
+    {
+      "name": "Touch drag rotates fixed-eye gaze",
+      "passed": true
+    },
+    {
+      "name": "Pinch zoom changes FOV without translation",
+      "passed": true
+    },
+    {
+      "name": "Camera toolbar fits a narrow screen",
+      "passed": true
+    },
+    {
+      "name": "No browser exceptions",
+      "passed": true
+    }
+  ],
+  "url": "http://127.0.0.1:8768/docs/",
+  "errors": []
+}

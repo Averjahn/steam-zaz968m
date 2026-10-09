@@ -4,26 +4,26 @@
   "dimension": 96,
   "passage_count": 918,
   "source_count": 27,
-  "vocabulary_size": 3984,
+  "vocabulary_size": 3986,
   "assets": {
     "passages": {
-      "path": "knowledge/passages-03816aa08ab1.json",
-      "sha256": "03816aa08ab10ec873c7c7c55b00163562122e70d48c7b2c6697060461efccfb",
-      "bytes": 1591427
+      "path": "knowledge/passages-66e0f7e0f5e8.json",
+      "sha256": "66e0f7e0f5e89d25113bcc55bf520fb591562ccaac343d1898e1b1b708e1b13d",
+      "bytes": 1591506
     },
     "model": {
-      "path": "knowledge/model-afe2bc78273c.json",
-      "sha256": "afe2bc78273c58230598d6655c2bc061ae458f1b584feb667714f446bcde21f6",
-      "bytes": 136905
+      "path": "knowledge/model-f6d81544742b.json",
+      "sha256": "f6d81544742be6f2dee909e99d8196782e2f5707cb0a742a7bf0933e66763de2",
+      "bytes": 137000
     },
     "basis": {
-      "path": "knowledge/basis-05af24b489b9.bin",
-      "sha256": "05af24b489b9a94e5ab703ad0275590b458db239e24ec3f9626468681a59bef7",
-      "bytes": 1529856
+      "path": "knowledge/basis-7752056dc8b0.bin",
+      "sha256": "7752056dc8b0b8bde466aa42c8afcc4e998005aebc07991807a0aa6e7fcdc1f7",
+      "bytes": 1530624
     },
     "vectors": {
-      "path": "knowledge/vectors-0978a40f4092.bin",
-      "sha256": "0978a40f4092c34d242d28a5e86b2239e93c10533fb7ae33e06dfc1b31499cb8",
+      "path": "knowledge/vectors-d77d997f9ca4.bin",
+      "sha256": "d77d997f9ca466fc43a83452b640a91dbd835154f439d84919b3ec788b6f59dc",
       "bytes": 352512
     }
   },
@@ -54,7 +54,7 @@
       "title": "Семицилиндровая паровая звезда"
     },
     "assembly.html": {
-      "sha256": "16c7e0544802ed35e312802115df51a88f296791e80042002e9c8cb2763a65fd",
+      "sha256": "ad577385f283f03756e6a3493c2ea21916861524e2e54abbe1d7d7073a4685e2",
       "kind": "HTML",
       "title": "CAD-сборка"
     },
@@ -74,7 +74,7 @@
       "title": "Трубопроводы"
     },
     "procurement.html": {
-      "sha256": "1be965579960ffd234d4db06ee7df3b21437f06e2f5d390068a10c0184edfd5d",
+      "sha256": "747413c687b66b68cced484ebe1a2eebde54f8c118cf99793e1a50055e828b6c",
       "kind": "HTML",
       "title": "Комплектующие и материалы"
     },
@@ -164,7 +164,7 @@
       "title": "connection-specs.json"
     }
   },
-  "total_bytes": 3610700,
+  "total_bytes": 3611642,
   "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
   "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
   "training_seed": 968,

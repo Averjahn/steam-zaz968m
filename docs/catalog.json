@@ -256,7 +256,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 50440
+    "size": 50508
   },
   {
     "path": "build_stock_suspension.py",
@@ -327,6 +327,13 @@
     "category": "Документы",
     "format": "PDF",
     "size": 1014099
+  },
+  {
+    "path": "camera-navigation-checks.json",
+    "title": "camera-navigation-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 1897
   },
   {
     "path": "compact-radial-checks.json",
@@ -826,6 +833,13 @@
     "size": 6940
   },
   {
+    "path": "verify_camera_navigation.cjs",
+    "title": "verify_camera_navigation.cjs",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 7304
+  },
+  {
     "path": "verify_compact_radial.mjs",
     "title": "verify_compact_radial.mjs",
     "category": "Исходники",
@@ -1166,7 +1180,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 54579
+    "size": 54995
   },
   {
     "path": "user-model.html",
