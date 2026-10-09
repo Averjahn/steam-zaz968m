@@ -19,8 +19,8 @@ export function jointHalf(g,p,face,sign=1){
   const o=new T.Mesh(new T.CylinderGeometry(2.6,2.6,20,6),material('#48525b'));o.position.copy(c);o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),n);o.name='Крепёж разъёма · условный · '+p.id;o.userData={semantic:true,connectionHardware:true,portId:p.id};g.add(o);
  }
 }
-export function equipmentPorts(g,xyz,id,sourceId='diesel'){
- const offset=V(xyz),ports=Object.values(connectionSpecs.variants[sourceId].ports).filter(p=>p.owner===id);
+export function equipmentPorts(g,xyz,id,sourceId='diesel',overridePorts=null){
+ const offset=V(xyz),ports=overridePorts||Object.values(connectionSpecs.variants[sourceId].ports).filter(p=>p.owner===id);
  for(const p of ports){if(p.kind==='duct'&&id==='BODY')continue;const a=V(p.anchor_mm).sub(offset),b=V(p.face_mm).sub(offset);hollowTube(g,'Полый патрубок · '+p.id,a.toArray(),b.toArray(),p.od_mm,p.bore_mm,{portId:p.id,thread:p.thread,entry_od_mm:p.entry_od_mm,entry_bore_mm:p.entry_bore_mm});jointHalf(g,p,b.toArray(),-1);}
  g.userData.ports=ports;return g;
 }
@@ -33,7 +33,7 @@ export function hollowBox(g,name,pos,size,keyMaterial,ports=[],customPolygon=nul
  for(let i=0;i<polygon.length;i++){const a=polygon[i],b=polygon[(i+1)%polygon.length],u=V([b[0]-a[0],b[1]-a[1],0]).normalize(),v=V([0,0,1]),n=new T.Vector3().crossVectors(u,v),len=Math.hypot(b[0]-a[0],b[1]-a[1]),center=origin.clone().add(V([(a[0]+b[0])/2,(a[1]+b[1])/2,H/2]));const sh=new T.Shape([new T.Vector2(-len/2,-H/2),new T.Vector2(len/2,-H/2),new T.Vector2(len/2,H/2),new T.Vector2(-len/2,H/2)]);for(const p of ports)hole(sh,p,center,u,v,n);add(sh,center,u,v,n);}
  for(const z of [0,H]){const n=V([0,0,z?1:-1]),u=V([1,0,0]),v=V([0,z?1:-1,0]),center=origin.clone().add(V([L/2,B/2,z])),sh=new T.Shape(polygon.map(p=>new T.Vector2(p[0]-L/2,(p[1]-B/2)*(z?1:-1))));for(const p of ports)hole(sh,p,center,u,v,n);add(sh,center,u,v,n);}
 }
-export function localPorts(id,xyz,sourceId='diesel') {return Object.values(connectionSpecs.variants[sourceId].ports).filter(p=>p.owner===id).map(p=>({...p,anchor_mm:p.anchor_mm.map((v,i)=>v-xyz[i])}));}
+export function localPorts(id,xyz,sourceId='diesel',overridePorts=null) {return (overridePorts||Object.values(connectionSpecs.variants[sourceId].ports).filter(p=>p.owner===id)).map(p=>({...p,anchor_mm:p.anchor_mm.map((v,i)=>v-xyz[i])}));}
 class Span extends T.Curve {constructor(curve,start,end){super();Object.assign(this,{curve,start,end,length:curve.getLength()});}getPoint(t,target=new T.Vector3()){return this.curve.getPointAt((this.start+t*(this.end-this.start))/this.length,target);}getPointAt(t,target){return this.getPoint(t,target);}getTangent(t,target){return this.curve.getTangentAt((this.start+t*(this.end-this.start))/this.length,target);}getTangentAt(t,target){return this.getTangent(t,target);}getLength(){return this.end-this.start;}}
 function station(curve,p){let sum=0;const target=V(p);for(const c of curve.curves){const L=c.getLength();if(c.isLineCurve3){const d=c.v2.clone().sub(c.v1),f=T.MathUtils.clamp(target.clone().sub(c.v1).dot(d)/d.lengthSq(),0,1);if(c.getPoint(f).distanceTo(target)<.001)return sum+f*L;}sum+=L;}throw Error('Inline fitting is not on a straight pipe span: '+p);}
 export function physicalPipeSpans(spec,insulated=false){const curve=pipeCurve(spec),L=curve.getLength(),ends=insulated?spec.exposed_end_mm||0:0,intervals=(spec.inline_components||[]).map(p=>[station(curve,p.start_mm),station(curve,p.end_mm)]).sort((a,b)=>a[0]-b[0]);let start=ends;const spans=[];for(const [a,b]of intervals){if(a>start)spans.push(new Span(curve,start,a));start=b;}if(L-ends>start)spans.push(new Span(curve,start,L-ends));return spans;}

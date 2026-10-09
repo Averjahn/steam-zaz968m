@@ -22,7 +22,7 @@ def fmt(n, places=0):
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / '.nojekyll').write_text('')
-    for name in ['compact-radial-model.js', 'compact-radial-geometry.js', 'compact-radial.js', 'aging-model.js', 'aging.js', 'aging.css', 'engine-sizing-model.js', 'engine-sizing.js', 'radial-engine-model.js', 'radial-engine.js', 'radial-engine.css', 'style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'double-acting-cycle.js', 'crank-mechanism-model.js', 'crank-mechanism.js', 'double-acting-hardware.js', 'double-acting-view.js', 'piston-force-model.js', 'piston-force-view.js', 'piston-force-ui.js', 'steam-cloud-model.js', 'steam-cloud.js', 'double-acting.css', 'thermal-model.js', 'thermal-view.js', 'thermal-view.css', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'component-flow.js', 'viewer-fullscreen.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
+    for name in ['fitted-radial-view.js','fitted-installation.js','fitted-radial-geometry.js','compact-radial-model.js', 'compact-radial-geometry.js', 'compact-radial.js', 'aging-model.js', 'aging.js', 'aging.css', 'engine-sizing-model.js', 'engine-sizing.js', 'radial-engine-model.js', 'radial-engine.js', 'radial-engine.css', 'style.css', 'site.js', 'concept.svg', 'favicon.svg', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'double-acting-cycle.js', 'crank-mechanism-model.js', 'crank-mechanism.js', 'double-acting-hardware.js', 'double-acting-view.js', 'piston-force-model.js', 'piston-force-view.js', 'piston-force-ui.js', 'steam-cloud-model.js', 'steam-cloud.js', 'double-acting.css', 'thermal-model.js', 'thermal-view.js', 'thermal-view.css', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'component-flow.js', 'viewer-fullscreen.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js', 'calculation-model.js', 'calculation-render.js']:
         shutil.copy2(WEB / name, OUT / name)
     purchase_digest=hashlib.sha256((ROOT/'component-purchases.json').read_bytes()).hexdigest()[:12]
     p=(OUT/'component-purchases.js').read_text().replace("'component-purchases.json'","'component-purchases.json?v="+purchase_digest+"'")
@@ -34,18 +34,18 @@ def main():
     # Version system data and transitive modules together for existing visitors.
     for module in ['compact-radial.js','aging.js','assembly-systems.js','physics-page.js','heat-page.js','engine-sizing.js','radial-engine.js']:
         p=(OUT/module).read_text()
-        for asset in ['compact-radial-fit.json','aging-study.json','simulation-data.json','pipe-engineering.json','internal-fit-audit.json','heat-fit-audit.json','engine-sizing.json','radial-engine-spec.json']:
+        for asset in ['fitted-engine-fit.json','compact-radial-fit.json','aging-study.json','simulation-data.json','pipe-engineering.json','internal-fit-audit.json','heat-fit-audit.json','engine-sizing.json','radial-engine-spec.json']:
             version=hashlib.sha256((ROOT/asset).read_bytes()).hexdigest()[:12]
             p=p.replace("'"+asset+"'","'"+asset+"?v="+version+"'")
         (OUT/module).write_text(p)
-    for module,dependencies in [('compact-radial-model.js',['radial-engine-model.js']),('aging.js',['aging-model.js']),('engine-sizing-model.js',['radial-engine-model.js']),('engine-sizing.js',['engine-sizing-model.js']),('radial-engine.js',['radial-engine-model.js','pipe-path.js','pipe-arrows.js']),('pipe-joints.js',['connection-data.js','pipe-path.js']),('crank-mechanism-model.js',['double-acting-cycle.js']),('crank-mechanism.js',['double-acting-cycle.js','crank-mechanism-model.js']),('double-acting-hardware.js',['pipe-joints.js','double-acting-cycle.js']),('internal-assembly.js',['pipe-data.js','pipe-path.js','pipe-joints.js','connection-data.js','double-acting-hardware.js','double-acting-cycle.js','crank-mechanism.js']),('thermal-view.js',['thermal-model.js']),('steam-cloud-model.js',['double-acting-cycle.js']),('steam-cloud.js',['steam-cloud-model.js','double-acting-cycle.js']),('piston-force-model.js',['double-acting-cycle.js']),('piston-force-view.js',['double-acting-cycle.js','piston-force-model.js']),('double-acting-view.js',['piston-force-view.js','pipe-arrows.js','double-acting-cycle.js','thermal-model.js','steam-cloud.js','crank-mechanism.js']),('cycle-animation.js',['double-acting-view.js','thermal-model.js']),('heat-geometry.js',['pipe-path.js','pipe-joints.js','connection-data.js','internal-assembly.js']),('heat-page.js',['heat-comparison.js','steam-simulation.js']),('assembly-systems.js',['piston-force-ui.js','thermal-view.js','double-acting-cycle.js','steam-simulation.js','pipe-path.js','pipe-joints.js','pipe-arrows.js','component-flow.js','cycle-animation.js','heat-comparison.js']),('physics-page.js',['wheel-loads.js']),('compact-radial-geometry.js',['compact-radial-model.js','pipe-path.js','pipe-joints.js','pipe-arrows.js']),('compact-radial.js',['compact-radial-geometry.js','compact-radial-model.js','packaging-audit.js']),('assembly.js',['assembly-systems.js','heat-geometry.js','pipe-joints.js','internal-assembly.js','packaging-audit.js','viewer-fullscreen.js'])]:
+    for module,dependencies in [('compact-radial-model.js',['radial-engine-model.js']),('aging.js',['aging-model.js']),('engine-sizing-model.js',['radial-engine-model.js']),('engine-sizing.js',['engine-sizing-model.js']),('radial-engine.js',['radial-engine-model.js','pipe-path.js','pipe-arrows.js']),('pipe-joints.js',['connection-data.js','pipe-path.js']),('crank-mechanism-model.js',['double-acting-cycle.js']),('crank-mechanism.js',['double-acting-cycle.js','crank-mechanism-model.js']),('double-acting-hardware.js',['pipe-joints.js','double-acting-cycle.js']),('fitted-installation.js',['connection-data.js','pipe-data.js','pipe-path.js','pipe-joints.js']),('fitted-radial-geometry.js',['compact-radial-model.js','pipe-path.js','pipe-joints.js','pipe-arrows.js']),('internal-assembly.js',['fitted-radial-geometry.js','fitted-installation.js','pipe-data.js','pipe-path.js','pipe-joints.js','connection-data.js','double-acting-hardware.js','double-acting-cycle.js','crank-mechanism.js']),('thermal-view.js',['thermal-model.js']),('steam-cloud-model.js',['double-acting-cycle.js']),('steam-cloud.js',['steam-cloud-model.js','double-acting-cycle.js']),('piston-force-model.js',['double-acting-cycle.js']),('piston-force-view.js',['double-acting-cycle.js','piston-force-model.js']),('double-acting-view.js',['piston-force-view.js','pipe-arrows.js','double-acting-cycle.js','thermal-model.js','steam-cloud.js','crank-mechanism.js']),('fitted-radial-view.js',['thermal-model.js']),('cycle-animation.js',['fitted-radial-view.js','double-acting-view.js','thermal-model.js']),('heat-geometry.js',['pipe-path.js','pipe-joints.js','connection-data.js','internal-assembly.js']),('heat-page.js',['heat-comparison.js','steam-simulation.js']),('assembly-systems.js',['piston-force-ui.js','thermal-view.js','double-acting-cycle.js','steam-simulation.js','pipe-path.js','pipe-joints.js','pipe-arrows.js','component-flow.js','cycle-animation.js','heat-comparison.js']),('physics-page.js',['wheel-loads.js']),('compact-radial-geometry.js',['compact-radial-model.js','pipe-path.js','pipe-joints.js','pipe-arrows.js']),('compact-radial.js',['compact-radial-geometry.js','compact-radial-model.js','packaging-audit.js']),('assembly.js',['assembly-systems.js','heat-geometry.js','pipe-joints.js','internal-assembly.js','packaging-audit.js','viewer-fullscreen.js'])]:
         p=(OUT/module).read_text()
         for asset in dependencies:
             version=hashlib.sha256((OUT/asset).read_bytes()).hexdigest()[:12]
             p=p.replace("'./"+asset+"'","'./"+asset+"?v="+version+"'")
         (OUT/module).write_text(p)
     s=(OUT/'assembly.js').read_text()
-    for path in ['layout-internal.json']:
+    for path in ['layout-internal.json','layout-fitted.json']:
         version=hashlib.sha256((ROOT/path).read_bytes()).hexdigest()[:12]
         s=s.replace("'"+path+"'","'"+path+"?v="+version+"'")
     registry_digest=hashlib.sha256((ROOT/'models/registry.json').read_bytes()).hexdigest()[:12]
@@ -66,6 +66,7 @@ def main():
     sources = {r['key']: r for r in csv.DictReader((ROOT / 'sources.csv').open())}
     records = []
     drawings = {
+        '11-fitted-radial': ('Звезда по свободному месту в кузове', 'Семь Ø40 × 45, проверенная сетка и размерная схема; не изготовительный чертёж.'),
         '09-radial-engine': ('Семицилиндровая паровая звезда', 'Размерный эскиз сверху, ход, диаметры, объём и резерв; не чертёж для изготовления.'),
         '01-layout': ('Общая компоновка', 'Три проекции и целевые габариты агрегатов.'),
         '02-process': ('Паровой контур', 'Генератор, машина, конденсатор и возврат воды.'),
@@ -79,6 +80,11 @@ def main():
         '05-vw-inspired': ('Архитектура по примеру VW', 'Генератор вместо заднего сиденья, наружный конденсатор.'),
     }
     titles = {
+        'fitted-engine-study.json':'Звезда по кузову · объём, обороты, мощность и ограничения охлаждения',
+        'fitted-engine-fit.json':'Звезда по кузову · аудит полной сборки и контактов пола',
+        'fitted-engine-screen.json':'Сравнение размеров звезды в кузове с дизельным каналом',
+        'layout-fitted.json':'Основная сборка · семицилиндровый двигатель по свободному месту',
+        'build_fitted_engine.mjs':'Воспроизводимый расчёт звезды по свободному месту',
         'compact-radial-fit.json': 'Компактная звезда · пересечения кузова, подвески и опоры',
         'compact-radial-checks.json': 'Компактная звезда · кинематика, габариты, порты и браузер',
         'aging-study.json': 'Металл за два года · девять сценариев, циклы, стенки и зима',
@@ -148,7 +154,7 @@ def main():
         'physics-audit.json': 'Физический аудит: обороты и паспортные ограничения',
         'build_physics_audit.mjs': 'Формирование физического аудита',
     }
-    candidates = sorted(p for p in ROOT.iterdir() if p.is_file() and p.suffix in {'.html', '.pdf', '.json', '.csv', '.scad', '.obj', '.mtl', '.py', '.js', '.mjs', '.txt'})
+    candidates = sorted(p for p in ROOT.iterdir() if p.is_file() and p.suffix in {'.html', '.pdf', '.json', '.csv', '.scad', '.obj', '.mtl', '.py', '.js', '.mjs', '.cjs', '.txt'})
     candidates += sorted((ROOT / 'drawings').iterdir())
     for p in candidates:
         rel = p.relative_to(ROOT)
@@ -176,7 +182,7 @@ def main():
             title = titles.get(p.name, p.name)
         elif 'checks' in p.name or p.name == 'verification.json':
             category = 'Проверки'; title = titles.get(p.name, p.name)
-        elif p.suffix in {'.py', '.js', '.mjs'} or p.name == 'requirements.txt':
+        elif p.suffix in {'.py', '.js', '.mjs', '.cjs'} or p.name == 'requirements.txt':
             category = 'Исходники'; title = titles.get(p.name, p.name)
         elif p.suffix in {'.csv', '.json'}:
             category = 'Расчёты'; title = titles.get(p.name, p.name)
@@ -186,18 +192,22 @@ def main():
                         'format': p.suffix[1:].upper(), 'size': target.stat().st_size})
 
     header = '''<a class="skip" href="#main">К содержимому</a><header class="site-header"><a class="brand" href="index.html" aria-label="ЗАЗ-968М: главная"><span class="brand-icon">S</span><span>ЗАЗ<span class="brand-light"> / STEAM</span></span></a><nav aria-label="Главная навигация"><a href="index.html#concept">Концепция</a><a href="calculations.html">Расчёты</a><a href="assembly.html">3D-модель</a><a href="heat.html">Источники тепла</a><a href="physics.html">Физика узлов</a><a href="library.html">Материалы</a></nav><a class="header-link" href="''' + REPO + '''" target="_blank" rel="noopener">GitHub ↗</a></header>'''
-    footer = '''<footer class="site-footer"><div><a class="brand" href="index.html">ЗАЗ / STEAM</a><p>Исследование парового привода для ЗАЗ-968М.</p></div><div><span>Версия 09.10.2026</span><a href="literature.html">Проверка по литературе →</a><a href="library.html">Библиотека материалов →</a><a href="''' + REPO + '''" target="_blank" rel="noopener">Исходники на GitHub ↗</a></div></footer>'''
+    footer = '''<footer class="site-footer"><div><a class="brand" href="index.html">ЗАЗ / STEAM</a><p>Исследование парового привода для ЗАЗ-968М.</p></div><div><span>Версия 10.10.2026</span><a href="literature.html">Проверка по литературе →</a><a href="library.html">Библиотека материалов →</a><a href="''' + REPO + '''" target="_blank" rel="noopener">Исходники на GitHub ↗</a></div></footer>'''
     def page(template, title, desc, **values):
         text = (WEB / template).read_text()
         vals = {'HEADER': header, 'FOOTER': footer, 'TITLE': title, 'DESCRIPTION': desc, **values}
         for k, v in vals.items(): text = text.replace('@@' + k + '@@', str(v))
         if re.search(r'@@[A-Z_]+@@', text): raise ValueError('Unfilled template field')
         # Existing visitors must receive JS matching the new controls after deployment.
-        for asset in ['compact-radial-model.js', 'compact-radial-geometry.js', 'compact-radial.js', 'aging-model.js', 'aging.js', 'aging.css', 'engine-sizing-model.js', 'engine-sizing.js', 'radial-engine-model.js', 'radial-engine.js', 'radial-engine.css', 'style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'double-acting-cycle.js', 'crank-mechanism-model.js', 'crank-mechanism.js', 'double-acting-hardware.js', 'double-acting-view.js', 'piston-force-model.js', 'piston-force-view.js', 'piston-force-ui.js', 'steam-cloud-model.js', 'steam-cloud.js', 'double-acting.css', 'thermal-model.js', 'thermal-view.js', 'thermal-view.css', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'component-flow.js', 'viewer-fullscreen.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
+        for asset in ['fitted-radial-view.js','fitted-installation.js','fitted-radial-geometry.js','compact-radial-model.js', 'compact-radial-geometry.js', 'compact-radial.js', 'aging-model.js', 'aging.js', 'aging.css', 'engine-sizing-model.js', 'engine-sizing.js', 'radial-engine-model.js', 'radial-engine.js', 'radial-engine.css', 'style.css', 'site.js', 'assembly.css', 'assembly.js', 'component-purchases.js', 'procurement.js', 'assembly-systems.js', 'steam-simulation.js', 'wheel-loads.js', 'physics-page.js', 'systems.css', 'heat-geometry.js', 'cycle-animation.js', 'double-acting-cycle.js', 'crank-mechanism-model.js', 'crank-mechanism.js', 'double-acting-hardware.js', 'double-acting-view.js', 'piston-force-model.js', 'piston-force-view.js', 'piston-force-ui.js', 'steam-cloud-model.js', 'steam-cloud.js', 'double-acting.css', 'thermal-model.js', 'thermal-view.js', 'thermal-view.css', 'connection-data.js', 'pipe-joints.js', 'pipe-arrows.js', 'component-flow.js', 'viewer-fullscreen.js', 'heat-comparison.js', 'heat-page.js', 'internal-assembly.js', 'pipe-data.js', 'pipe-path.js', 'user-body-converter.js', 'packaging-audit.js', 'calculations.css', 'calculations.js']:
             digest = hashlib.sha256((OUT / asset).read_bytes()).hexdigest()[:12]
             text = text.replace('href="'+asset+'"', 'href="'+asset+'?v='+digest+'"').replace('src="'+asset+'"', 'src="'+asset+'?v='+digest+'"')
         return text
 
+    from fitted_engine_page import content as fitted_content
+    fitted=json.loads((ROOT/'fitted-engine-study.json').read_text())
+    fitted_fit=json.loads((ROOT/'fitted-engine-fit.json').read_text())
+    (OUT/'fitted-engine.html').write_text(page('fitted-engine.html','Семь цилиндров под кузов — ЗАЗ / STEAM','Выбор Ø40 × 45 по кузову, подвеске, соседям и газовому каналу; объём, обороты и полезная мощность.',FITTED_CONTENT=fitted_content(fitted,fitted_fit)))
     compact_fit=json.loads((ROOT/'compact-radial-fit.json').read_text())
     fit_summary=compact_fit.get('publication_summary','Двигатель построен; проверка посадки ожидается.')
     (OUT/'compact-radial.html').write_text(page('compact-radial.html','Компактная паровая звезда внутри ЗАЗ — ЗАЗ / STEAM','Семь цилиндров Ø32 × 36 мм: полная геометрия, коллекторы, изоляция, опоры и проверка внутри кузова.',COMPACT_FIT=escape(fit_summary)))
@@ -236,6 +246,7 @@ def main():
     placement_rows=''.join('<tr><td>'+p['id']+' · '+escape(p['name'])+'</td><td>'+' × '.join(fmt(v,2).removesuffix(',00') for v in p['size'])+'</td><td>'+' × '.join(fmt(v,1).removesuffix(',0') for v in actual[p['id']]['size_mm'])+'</td><td>'+' / '.join(fmt(v,0) for v in actual[p['id']]['min_xyz_mm'])+'</td><td>'+escape(p['role'])+'</td></tr>' for p in packing_parts)
     (OUT/'packaging.html').write_text(page('packaging.html','Переработанная компоновка — ЗАЗ / STEAM','Округлый кузов, новая расстановка агрегатов, проверка пересечений и компоновочный чертёж.',USER_CONFLICT_ROWS=user_conflicts,COMPARISON_ROWS=comparison_rows,PLACEMENT_ROWS=placement_rows,OPEN_ISSUES=''.join('<li>'+escape(t)+'</li>' for t in revised['open_issues'])))
     for path, title, cat in [
+        ('fitted-engine.html', 'Семицилиндровый двигатель по свободному месту', '3D'),
         ('compact-radial.html', 'Компактная семицилиндровая звезда в кузове', '3D'),
         ('aging.html', 'Металл за два года · 50 км/день, мороз и тепло', 'Расчёты'),
         ('engine-sizing.html', 'Объём и мощность под место в автомобиле', 'Расчёты'),
@@ -315,7 +326,7 @@ def main():
                     z.write(p, 'steam-zaz968m/' + p.relative_to(ROOT).as_posix())
     (OUT / 'catalog.json').write_text(json.dumps(records, ensure_ascii=False, indent=2))
     (OUT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + SITE + 'sitemap.xml\n')
-    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-09</lastmod></url>' for p in ['', 'library.html', 'knowledge.html', 'lab.html', 'compact-radial.html', 'aging.html', 'engine-sizing.html', 'radial-engine.html', 'assembly.html', 'heat.html', 'physics.html', 'literature.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
+    (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{SITE}{p}</loc><lastmod>2026-10-10</lastmod></url>' for p in ['', 'library.html', 'knowledge.html', 'lab.html', 'fitted-engine.html', 'compact-radial.html', 'aging.html', 'engine-sizing.html', 'radial-engine.html', 'assembly.html', 'heat.html', 'physics.html', 'literature.html', 'procurement.html', 'internal.html', 'piping.html', 'packaging.html', 'reconstruction.html', 'calculations.html', 'report.html']) + '</urlset>')
     (OUT / '404.html').write_text(page('404.html', 'Страница не найдена — ЗАЗ / STEAM', 'Перейти к материалам проекта.'))
     (OUT / 'knowledge.html').write_text(page('knowledge.html', 'Поиск по знаниям — ЗАЗ / STEAM', 'Векторный поиск по документам проекта, формулам и разборам литературы с точными ссылками на источники.'))
     from workspace_ui import prepare_workspace

@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Actual seven bores and strokes give 0.395840674 L",
+      "passed": true
+    },
+    {
+      "name": "Rod area is subtracted only from the rod-side sweep",
+      "passed": true
+    },
+    {
+      "name": "Common shaft runs at half crank RPM",
+      "passed": true
+    },
+    {
+      "name": "Torque and shaft speed independently recover power",
+      "passed": true
+    },
+    {
+      "name": "Increasing volume does not invent extra source-limited power",
+      "passed": true
+    },
+    {
+      "name": "102 kW thermal is limited by 120 kW source at 85 percent",
+      "passed": true
+    },
+    {
+      "name": "Cooling deficit and overspeed are retained",
+      "passed": true
+    },
+    {
+      "name": "40 HP cannot be claimed for the existing source",
+      "passed": true
+    },
+    {
+      "name": "40mm clears the coarse diesel screen and 41mm fails",
+      "passed": true
+    },
+    {
+      "name": "Open valve duty uses crank angle rather than treating stroke cutoff as time",
+      "passed": true
+    },
+    {
+      "name": "diesel seven-cylinder mass and energy balances",
+      "passed": true
+    },
+    {
+      "name": "wood seven-cylinder mass and energy balances",
+      "passed": true
+    },
+    {
+      "name": "pellets seven-cylinder mass and energy balances",
+      "passed": true
+    },
+    {
+      "name": "lpg seven-cylinder mass and energy balances",
+      "passed": true
+    },
+    {
+      "name": "electric seven-cylinder mass and energy balances",
+      "passed": true
+    },
+    {
+      "name": "Seven-cylinder common-shaft angle survives second crank revolution",
+      "passed": true
+    },
+    {
+      "name": "Core clears body and registered static suspension",
+      "passed": true
+    },
+    {
+      "name": "All four floor pads match 36 samples on the source mesh",
+      "passed": true
+    },
+    {
+      "name": "New boundary joints have matching axes, bores and faces",
+      "passed": true
+    },
+    {
+      "name": "New exhaust branches clear body, engine and diesel route",
+      "passed": true
+    },
+    {
+      "name": "Global maximum and road readiness are not implied",
+      "passed": true
+    }
+  ],
+  "scope": "Approximate thermodynamic budget, geometry screen and numerical conservation; not material or manufacturing verification"
+}

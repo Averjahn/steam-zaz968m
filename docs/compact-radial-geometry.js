@@ -1,7 +1,7 @@
 import * as T from 'three';
 import {compactGeometry as K,compactPipes as P,compactPose,compactGearPolygon} from './compact-radial-model.js?v=b7182951d367';
 import {pipeCurve} from './pipe-path.js?v=0b785b2d508c';
-import {hollowTube,hollowBox} from './pipe-joints.js?v=ed575dd9cba4';
+import {hollowTube,hollowBox} from './pipe-joints.js?v=783013dea290';
 import {pipeArrows} from './pipe-arrows.js?v=dd3bd35c3fcf';
 const V=p=>new T.Vector3(...p),Z=new T.Vector3(0,0,1),TAU=2*Math.PI;
 const mat=(color,metal=.7)=>new T.MeshStandardMaterial({color,metalness:metal,roughness:.4,side:T.DoubleSide});

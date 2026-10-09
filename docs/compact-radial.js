@@ -3,7 +3,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {GLTFExporter} from 'three/addons/exporters/GLTFExporter.js';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
-import {createCompactRadial} from './compact-radial-geometry.js?v=9d07420afc9c';
+import {createCompactRadial} from './compact-radial-geometry.js?v=b65491027271';
 import {compactGeometry as K} from './compact-radial-model.js?v=b7182951d367';
 import {auditPackaging} from './packaging-audit.js?v=f6b448b69aac';
 const $=id=>document.getElementById(id),f=(v,d=1)=>v.toLocaleString('ru-RU',{maximumFractionDigits:d});

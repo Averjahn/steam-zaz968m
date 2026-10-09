@@ -36,7 +36,7 @@ export class SteamSimulation{
  // A conservative thermal store: input = delivered heat + change in stored energy.
  const tau=this.source?.tau_s||2,decay=Math.exp(-dt/tau),newStored=this.sourceStored_J*decay+fuelPower*tau*(1-decay),chemical=(fuelPower*dt+this.sourceStored_J-newStored)/dt;this.sourceStored_J=newStored;this.deliveredSource_J+=chemical*dt;
 
- const active=this.phase>=5&&this.phase<10&&!this.trip,motor=this.phase>=7&&this.phase<10&&!this.trip,steamV=k.cylinders*k.acting_sides*Math.PI*k.engine_bore_m**2/4*k.engine_stroke_m;
+ const active=this.phase>=5&&this.phase<10&&!this.trip,motor=this.phase>=7&&this.phase<10&&!this.trip,steamV=k.cylinders*Math.PI/4*(k.acting_sides*k.engine_bore_m**2-(k.acting_sides===2?(k.engine_rod_m||0)**2:0))*k.engine_stroke_m;
  const targetRPM=this.clutch?1800:700,governor=clamp((targetRPM-this.omega*60/(2*Math.PI))/800+.15,0,1),opening=motor?this.throttle*governor:0,props=this.steam(b.p,Math.max(shT,b.T+1),c.p);
  let flow=active&&b.p>c.p?Math.min(b.mv*.6/dt, motor?props.rho*steamV*k.admission*k.volumetric_efficiency*(this.omega/(2*Math.PI)+.2)*opening:.012*clamp((b.p-c.p)/8e5,0,1)):0;
  const maxProps=this.steam(b.p,Math.max(shT,props.Ts),c.p),shQ=flow>0?Math.min(Math.max(0,k.superheater_UA_W_K*(shT-b.T)),flow*Math.max(0,maxProps.h-b.hg)):0,hout=flow>0?b.hg+shQ/flow:b.hg;
@@ -60,8 +60,8 @@ export class SteamSimulation{
  const capturedVent=ventSteam*(k.vent_recovery_fraction||0),recoveredVentH=this.liquid(k.ambient_C).h;
  this.r.E+=dt*(drain*k.return_fraction*c.hf+returnPower+capturedVent*recoveredVentH+makeup*this.liquid(20).h-feed*r.h-lossR);this.r.M+=dt*(drain*k.return_fraction+capturedVent+makeup-feed);this.water-=dt*makeup;this.engE+=dt*(engineHeat+pInd*(1-k.mechanical_efficiency)-lossEngine);this.lostWater+=dt*(ventSteam-capturedVent+drain*(1-k.return_fraction));this.recoveredWater+=dt*(drain*k.return_fraction+capturedVent);this.condensedWater+=dt*drain;this.waterThroughEngine+=dt*flow;this.shaftEnergy_J+=dt*gross;
  this.externalEnergy+=dt*(heatQ+pumpPower+returnPower+capturedVent*recoveredVentH-lossB-lossSH-lossR-lossEngine-cooling-gross-ventEnergy-drain*(1-k.return_fraction)*c.hf+makeup*(this.liquid(20).h-this.liquid(20).u));
- const ratio=[3.8,2.118,1.409,.964][this.gear-1]*4.125*k.adapter,radius=.28,shaftShare=motor?clamp((this.omega-50)/100,0,1):0,tauAux=shaftShare*aux/.8/Math.max(this.omega,20),tauCouple=this.clutch?clamp(3*(this.omega-this.speed*ratio/radius),-180,180):0,friction=this.omega>0?3+.015*this.omega:0;
- this.crankAngle=(this.crankAngle+this.omega*dt)%(2*Math.PI);this.omega=Math.max(0,this.omega+dt*((this.omega>1e-6?pInd/this.omega:tauInd)*k.mechanical_efficiency-tauAux-tauCouple-friction)/k.inertia_kg_m2);
+ const ratio=[3.8,2.118,1.409,.964][this.gear-1]*4.125*k.adapter*(k.engine_output_ratio||1),radius=.28,shaftShare=motor?clamp((this.omega-50)/100,0,1):0,tauAux=shaftShare*aux/.8/Math.max(this.omega,20),tauCouple=this.clutch?clamp(3*(this.omega-this.speed*ratio/radius),-180,180):0,friction=this.omega>0?3+.015*this.omega:0;
+ this.crankAngle=(this.crankAngle+this.omega*dt)%(2*Math.PI*(k.engine_output_ratio||1));this.omega=Math.max(0,this.omega+dt*((this.omega>1e-6?pInd/this.omega:tauInd)*k.mechanical_efficiency-tauAux-tauCouple-friction)/k.inertia_kg_m2);
  const vehicleMass=(k.vehicle_mass_kg||1200)-(this.source?.id==='electric'?0:k.fuel_kg-this.fuel)-this.lostWater,road=this.speed>0?vehicleMass*9.81*.015+.5*1.225*.9*this.speed**2:0;this.speed=Math.max(0,this.speed+dt*(tauCouple*ratio*.85/radius-road)/vehicleMass);
  if(motor&&this.clutch&&this.auto&&this.omega*60/(2*Math.PI)>1400&&this.gear<4)this.gear++;
  this.battery_J-=dt*aux*(1-shaftShare)/.9;if(this.battery_J<0&&!this.trip)this.stop('Исчерпан условный запас электрической энергии пуска');

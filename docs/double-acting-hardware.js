@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {hollowTube} from './pipe-joints.js?v=ed575dd9cba4';
+import {hollowTube} from './pipe-joints.js?v=783013dea290';
 import {engineGeometry as K} from './double-acting-cycle.js?v=02f171f7ae23';
 const V=p=>new T.Vector3(...p);
 // Concept passages in the existing engine envelope. Diameters are visualization

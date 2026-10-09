@@ -1,0 +1,267 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Main assembly defaults to seven D40/S45 double-acting cylinders",
+      "passed": true
+    },
+    {
+      "name": "Manual angle moves native assembly and describes all fourteen chambers",
+      "passed": true
+    },
+    {
+      "name": "Separate engine view hides floor-reaching posts",
+      "passed": true
+    },
+    {
+      "name": "All native pipe arrows move in their active cycle phase",
+      "passed": true
+    },
+    {
+      "name": "Chamber arrows reverse and closed-expansion arrows disappear",
+      "passed": true
+    },
+    {
+      "name": "All seven B chamber pipes clear pressure plenums and swept linkages",
+      "passed": true
+    },
+    {
+      "name": "Playback turns the selected native seven-cylinder engine",
+      "passed": true
+    },
+    {
+      "name": "Pause holds the common shaft",
+      "passed": true
+    },
+    {
+      "name": "Flow-only view retains native chamber volumes and moving arrows",
+      "passed": true
+    },
+    {
+      "name": "Temperature mode keeps cutaway opacity and depth behavior stable",
+      "passed": true
+    },
+    {
+      "name": "Full scene restores fitted floor posts",
+      "passed": true
+    },
+    {
+      "name": "Archived two-cylinder assembly remains selectable",
+      "passed": true
+    },
+    {
+      "name": "Returning to fitted layout reinstalls exactly seven cylinders",
+      "passed": true
+    },
+    {
+      "name": "Heat source changes preserve new geometry and simulation cylinder count",
+      "passed": true
+    },
+    {
+      "name": "Every new boundary joint has coaxial matching bores and coincident faces",
+      "passed": true
+    },
+    {
+      "name": "Native exports stay below GitHub file limit",
+      "passed": true
+    },
+    {
+      "name": "New calculation page contains formula substitutions and cooling deficit",
+      "passed": true
+    },
+    {
+      "name": "New calculation page has no mobile overflow",
+      "passed": true
+    },
+    {
+      "name": "No browser exceptions",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "probe": {
+    "routeCount": 31,
+    "seen": [
+      "Граничный впуск ID40 / OD48",
+      "Ввод в пленум ID20",
+      "Граничный выпуск ID40 / OD46",
+      "Подача 1",
+      "Выпуск 1",
+      "Камера 1A",
+      "Камера 1B",
+      "Выпуск 2",
+      "Камера 2A",
+      "Выпуск 3",
+      "Камера 3A",
+      "Подача 4",
+      "Выпуск 4",
+      "Камера 4A",
+      "Камера 4B",
+      "Выпуск 5",
+      "Камера 5B",
+      "Выпуск 6",
+      "Камера 6B",
+      "Подача 7",
+      "Выпуск 7",
+      "Камера 7A",
+      "Камера 7B",
+      "Камера 5A",
+      "Подача 5",
+      "Камера 2B",
+      "Подача 2",
+      "Камера 6A",
+      "Подача 6",
+      "Камера 3B",
+      "Подача 3"
+    ],
+    "minMotion": 0.06412500000000004,
+    "reverse": true,
+    "closed": true,
+    "conflicts": []
+  },
+  "joints": [
+    {
+      "id": "PIPE_STEAM",
+      "metrics": [
+        {
+          "port": "STM.steam",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "ENG.inlet",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "id": "PIPE_EXHAUST_R",
+      "metrics": [
+        {
+          "port": "EXHAUST_HEADER.right",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.reducerR",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "id": "PIPE_EXHAUST_L",
+      "metrics": [
+        {
+          "port": "EXHAUST_HEADER.left",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "CND.reducerL",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    },
+    {
+      "id": "PIPE_EXHAUST_COMMON",
+      "metrics": [
+        {
+          "port": "ENG.exhaust",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        },
+        {
+          "port": "EXHAUST_HEADER.in",
+          "gap_mm": 0,
+          "axis_error_deg": 0,
+          "pipe_bore_mm": 40,
+          "port_bore_mm": 40,
+          "geometry_ok": true,
+          "pressure_verified": false
+        }
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "name": "fitted-radial-engine",
+      "bytes": 25809896
+    },
+    {
+      "name": "fitted-radial-in-car",
+      "bytes": 61202316
+    }
+  ],
+  "final_smoke": {
+    "status": "passed",
+    "checks": [
+      "Archived force HUD removed from new engine",
+      "Final temperature rendering has no browser exceptions",
+      "Both GLBs reload with exactly one seven-cylinder engine",
+      "Full model scale matches provided body and deleted source engine stays deleted"
+    ],
+    "exports": [
+      {
+        "name": "fitted-radial-engine",
+        "size_m": [
+          0.5891687316894532,
+          0.5152263641357422,
+          0.5888103332519532
+        ],
+        "engineCount": 1,
+        "cylinderCount": 7,
+        "removed": []
+      },
+      {
+        "name": "fitted-radial-in-car",
+        "size_m": [
+          3.6306159425854685,
+          1.2206311677927608,
+          1.4310519695281982
+        ],
+        "engineCount": 1,
+        "cylinderCount": 7,
+        "removed": []
+      }
+    ],
+    "errors": []
+  },
+  "checked_sha256": {
+    "web/fitted-radial-view.js": "e351571c3b9e4e121cd59d903f3650327b8b84cc8fa57e70498651926f7ffef4",
+    "web/assembly-systems.js": "304c6e7043fd621bd48eb1058a943b060bfce8debb05b8f8d1cc657d2a5dbb99",
+    "web/assembly.js": "75282bb04ff70d932006e9ec06a97a4819c59cc1612eaaad4eed59477f398c14",
+    "models/fitted-radial-engine.glb": "4227015095a5e91cdbacb52dcf6107efbb0e0bf699c7e236b7b5cf7dec427bf3",
+    "models/fitted-radial-in-car.glb": "148970e6c73e03ad827ead15268180a1f424ef02ae7542d414d995ac54289528"
+  }
+}

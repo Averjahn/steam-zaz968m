@@ -1,0 +1,15 @@
+Семь цилиндров под кузов: Ø40 × 45, шток9,6, рабочий объём0,396 л.
+Основная сборка: docs/assembly.html. Расчёт: docs/fitted-engine.html.
+
+Для повторения на этой машине: Python3; NumPy и библиотеки прежнего build_site; Chrome; playwright-core; ReportLab для PDF. PLAYWRIGHT_MODULE можно указать как путь к установленному playwright-core.
+
+Подготовить сайт: python3 build_site.py
+Открыть локальный сервер из корня проекта: python3 -m http.server 8768 --bind 127.0.0.1
+Проверить полную геометрию: node build_fitted_fit.cjs
+Пересчитать бюджет: node build_fitted_engine.mjs
+Проверить браузер и экспортировать новые GLB: node verify_fitted_browser.cjs
+Создать размерную схему: python3 build_fitted_drawing.py
+Проверить формулы и балансы: node verify_fitted_engine.mjs
+Обновить публикацию и архив: python3 build_site.py
+
+Размеры вне этой семьи и другое положение требуют нового геометрического прохода. Геометрическая проверка не подтверждает обмеры, прочность или изготовление; у всей установки остаются нерешённые коллизии.

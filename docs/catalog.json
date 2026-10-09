@@ -1,5 +1,12 @@
 [
   {
+    "path": "FITTED-ENGINE.txt",
+    "title": "FITTED-ENGINE.txt",
+    "category": "Документы",
+    "format": "TXT",
+    "size": 1533
+  },
+  {
     "path": "START.txt",
     "title": "Как использовать комплект",
     "category": "Документы",
@@ -119,6 +126,27 @@
     "size": 5879
   },
   {
+    "path": "build_fitted_drawing.py",
+    "title": "build_fitted_drawing.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 6300
+  },
+  {
+    "path": "build_fitted_engine.mjs",
+    "title": "Воспроизводимый расчёт звезды по свободному месту",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5974
+  },
+  {
+    "path": "build_fitted_fit.cjs",
+    "title": "build_fitted_fit.cjs",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 4410
+  },
+  {
     "path": "build_geometry.py",
     "title": "Генерация 3D и компоновочных чертежей",
     "category": "Исходники",
@@ -151,7 +179,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 14238
+    "size": 14342
   },
   {
     "path": "build_mount_register.py",
@@ -193,7 +221,7 @@
     "title": "Генератор реестра комплектующих",
     "category": "Исходники",
     "format": "PY",
-    "size": 21290
+    "size": 21669
   },
   {
     "path": "build_radial_engine.mjs",
@@ -228,7 +256,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 48217
+    "size": 50440
   },
   {
     "path": "build_stock_suspension.py",
@@ -319,7 +347,7 @@
     "title": "Комплектующие · ссылки на покупку и материалы",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 82395
+    "size": 82802
   },
   {
     "path": "connection-checks.json",
@@ -390,6 +418,48 @@
     "category": "Исходники",
     "format": "PY",
     "size": 5068
+  },
+  {
+    "path": "fitted-engine-browser-checks.json",
+    "title": "fitted-engine-browser-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 6865
+  },
+  {
+    "path": "fitted-engine-checks.json",
+    "title": "fitted-engine-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 2344
+  },
+  {
+    "path": "fitted-engine-fit.json",
+    "title": "Звезда по кузову · аудит полной сборки и контактов пола",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 114957
+  },
+  {
+    "path": "fitted-engine-screen.json",
+    "title": "Сравнение размеров звезды в кузове с дизельным каналом",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 3511
+  },
+  {
+    "path": "fitted-engine-study.json",
+    "title": "Звезда по кузову · объём, обороты, мощность и ограничения охлаждения",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 36458
+  },
+  {
+    "path": "fitted_engine_page.py",
+    "title": "fitted_engine_page.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 11637
   },
   {
     "path": "geometry-checks.json",
@@ -480,7 +550,14 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17819
+    "size": 17783
+  },
+  {
+    "path": "layout-fitted.json",
+    "title": "Основная сборка · семицилиндровый двигатель по свободному месту",
+    "category": "3D",
+    "format": "JSON",
+    "size": 31687
   },
   {
     "path": "layout-internal.json",
@@ -777,6 +854,20 @@
     "size": 5190
   },
   {
+    "path": "verify_fitted_browser.cjs",
+    "title": "verify_fitted_browser.cjs",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 11231
+  },
+  {
+    "path": "verify_fitted_engine.mjs",
+    "title": "verify_fitted_engine.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 3958
+  },
+  {
     "path": "verify_knowledge.mjs",
     "title": "Проверка векторного поиска, источников и типовых вопросов",
     "category": "Исходники",
@@ -851,7 +942,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10471
+    "size": 10546
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -1015,6 +1106,27 @@
     "size": 9641
   },
   {
+    "path": "drawings/11-fitted-radial.pdf",
+    "title": "Звезда по свободному месту в кузове · PDF",
+    "category": "Чертежи",
+    "format": "PDF",
+    "size": 48318
+  },
+  {
+    "path": "drawings/11-fitted-radial.svg",
+    "title": "Звезда по свободному месту в кузове · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 16976
+  },
+  {
+    "path": "fitted-engine.html",
+    "title": "Семицилиндровый двигатель по свободному месту",
+    "category": "3D",
+    "format": "HTML",
+    "size": 15579
+  },
+  {
     "path": "compact-radial.html",
     "title": "Компактная семицилиндровая звезда в кузове",
     "category": "3D",
@@ -1054,7 +1166,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 54294
+    "size": 54579
   },
   {
     "path": "user-model.html",
