@@ -1,0 +1,234 @@
+{
+  "status": "passed",
+  "scope": "Analytical volumes, forced slider-crank kinematics, gear phase locking and basic component clearances; not a full interference, strength or roadworthiness check",
+  "checks": [
+    {
+      "name": "Original displacement is 1.884955592 litres",
+      "pass": true
+    },
+    {
+      "name": "Seven-cylinder displacement is 6.597344573 litres",
+      "pass": true
+    },
+    {
+      "name": "Single rod reduces swept capacity on one face of each piston",
+      "pass": true
+    },
+    {
+      "name": "Both geometric displacement and equal-condition admission increase by 7/2",
+      "pass": true
+    },
+    {
+      "name": "Output gearing gives two piston cycles, not one, per output revolution",
+      "pass": true
+    },
+    {
+      "name": "Zero crank RPM gives zero steam-flow and heat estimates",
+      "pass": true
+    },
+    {
+      "name": "Cutoff affects admission, not the geometric displacement",
+      "pass": true
+    },
+    {
+      "name": "All seven rods retain 190 mm pin-to-pin through 5047 sampled poses",
+      "pass": true
+    },
+    {
+      "name": "All seven cylinders achieve exactly 120 mm between their own dead centres",
+      "pass": true
+    },
+    {
+      "name": "Dense sampled extrema remain within 0.005 mm of the exact stroke",
+      "pass": true
+    },
+    {
+      "name": "Gear phases remain meshed for every cylinder over one output revolution",
+      "pass": true
+    },
+    {
+      "name": "Chamber volumes agree with actual cap and piston-face geometry",
+      "pass": true
+    },
+    {
+      "name": "All geometry is finite and both chambers retain clearance",
+      "pass": true
+    },
+    {
+      "name": "Admission, expansion, release and exhaust all occur",
+      "pass": true
+    },
+    {
+      "name": "Seven odd equally-spaced crank phases avoid simultaneous dead centres",
+      "pass": true
+    },
+    {
+      "name": "Neighbouring local gear addendum circles are separated",
+      "pass": true
+    },
+    {
+      "name": "Pitch radii sum exactly to gear-axis separation",
+      "pass": true
+    },
+    {
+      "name": "Crank pin stays outside the core axis, and linkage plane clears journal top",
+      "pass": true
+    },
+    {
+      "name": "Shaft-centred radial cylinder axes have no diametrically opposed pairs",
+      "pass": true
+    },
+    {
+      "name": "Local and central gear polygons contain finite involute outlines",
+      "pass": true
+    },
+    {
+      "name": "Admission and expansion follow increasing chamber volume in actual animation direction",
+      "pass": true
+    },
+    {
+      "name": "Nonphysical geometry and nonfinite poses are rejected",
+      "pass": true
+    },
+    {
+      "name": "Reproducible estimate retains exact table density and enthalpy difference",
+      "pass": true
+    }
+  ],
+  "numerical": {
+    "poses": 5047,
+    "max_rod_error_mm": 1.1368683772161603e-13,
+    "max_mesh_phase_error_rad": 1.2434497875801753e-13,
+    "max_chamber_error_cm3": 6.821210263296962e-13,
+    "min_piston_radius_mm": [
+      520,
+      520.0011484515279,
+      520.000127605595,
+      520.0005104225753,
+      520.0005104225753,
+      520.000127605595,
+      520.0011484515279
+    ],
+    "max_piston_radius_mm": [
+      640,
+      639.9977914588802,
+      639.999754604866,
+      639.9990184219783,
+      639.9990184219783,
+      639.999754604866,
+      639.9977914588802
+    ]
+  },
+  "source_sha256": {
+    "web/radial-engine-model.js": "7f88549d47aebf55bea9f4fff19cbc103881712174fc7ff6a15af4ec999fd417",
+    "web/radial-engine.js": "2db725bf046c6f4bbdf0929aafdb3a5eca592054f3da64470b7a2bcb6466de2a",
+    "web/radial-engine.html": "fbc5fbbc0f04f5e24e61505802f48f65ef09491292f3aa7dca85a41d2286a192",
+    "web/radial-engine.css": "be19e47ac047b4e9c8b4f2d3ddc53ec3fd2728161506180e9d39a72dad7d2580",
+    "build_radial_engine.mjs": "ee7d8959977ed87a06c1d985745c0ebf3162419a38fc6b42c90397fc0018fc30",
+    "verify_radial_engine.mjs": "82d01438bcf1e25d600a86c78abe16d79d4a25a57cc85725161755f98eef24dd",
+    "build_site.py": "59190c0081f5d1c7b3b3c4062f40d3444587a79fd36b7d8d4ae30a6f2769120a",
+    "workspace_ui.py": "1a0266191a59fb155407ed4cf1b88c7a72359dd475495d2fe61191fd8ddb27c6",
+    "build_knowledge.py": "49260bd8e0fb5ea8d1d3025e7aafa80a6af1b7eb85bc53b2b2fe13f6865426f6"
+  },
+  "browser": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "Page renders all seven radial cylinders",
+        "pass": true
+      },
+      {
+        "name": "Seven-cylinder volume and double-acting capacity are shown with substitution",
+        "pass": true
+      },
+      {
+        "name": "Steam-supply limit is disclosed rather than multiplying available power",
+        "pass": true
+      },
+      {
+        "name": "Actual engine bounding size and failed reserve fit are disclosed",
+        "pass": true
+      },
+      {
+        "name": "All seven pistons move in the animation",
+        "pass": true
+      },
+      {
+        "name": "Persistent supply and return arrows travel along their tubes",
+        "pass": true
+      },
+      {
+        "name": "Cylinder chamber pipes each own direction arrows",
+        "pass": true
+      },
+      {
+        "name": "Pause freezes mechanism and explanatory flow",
+        "pass": true
+      },
+      {
+        "name": "A chamber pipe reverses direction after a half crank-turn",
+        "pass": true
+      },
+      {
+        "name": "Rendered pistons occupy their analytically computed positions",
+        "pass": true
+      },
+      {
+        "name": "Individual cylinder selection updates chamber information",
+        "pass": true
+      },
+      {
+        "name": "Opaque shell mode restores depth-writing materials",
+        "pass": true
+      },
+      {
+        "name": "Double-click ray picking selects the actual cylinder",
+        "pass": true
+      },
+      {
+        "name": "Two-module comparison hides the other five assemblies",
+        "pass": true
+      },
+      {
+        "name": "Comparison shows original two-cylinder swept volume",
+        "pass": true
+      },
+      {
+        "name": "Steam estimate doubles with crank RPM",
+        "pass": true
+      },
+      {
+        "name": "Cutoff changes admission and supply estimate",
+        "pass": true
+      },
+      {
+        "name": "Visible concept exports to a valid GLB",
+        "pass": true
+      },
+      {
+        "name": "Export excludes explanatory arrow skins and labels",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen or viewport fallback opens",
+        "pass": true
+      },
+      {
+        "name": "Fullscreen exits",
+        "pass": true
+      },
+      {
+        "name": "Mobile page has no horizontal overflow",
+        "pass": true
+      },
+      {
+        "name": "No uncaught browser errors",
+        "pass": true
+      }
+    ],
+    "errors": [],
+    "glb_bytes": 7045664,
+    "browser": "Google Chrome, SwiftShader",
+    "source": "docs/radial-engine.html"
+  }
+}

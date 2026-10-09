@@ -102,7 +102,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 13893
+    "size": 13973
   },
   {
     "path": "build_mount_register.py",
@@ -147,6 +147,13 @@
     "size": 21290
   },
   {
+    "path": "build_radial_engine.mjs",
+    "title": "build_radial_engine.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5552
+  },
+  {
     "path": "build_reconstruction.py",
     "title": "Генератор кузова по фотографиям",
     "category": "Исходники",
@@ -172,7 +179,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 43201
+    "size": 44402
   },
   {
     "path": "build_stock_suspension.py",
@@ -382,7 +389,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17562
+    "size": 17482
   },
   {
     "path": "layout-internal.json",
@@ -488,6 +495,20 @@
     "category": "Проверки",
     "format": "JSON",
     "size": 15682
+  },
+  {
+    "path": "radial-engine-checks.json",
+    "title": "Семь кривошипов · ходы, фазы, передача, объёмы и браузер",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 6923
+  },
+  {
+    "path": "radial-engine-spec.json",
+    "title": "Семицилиндровая звезда · размеры, объём и потребность в паре",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 3998
   },
   {
     "path": "report.html",
@@ -672,6 +693,13 @@
     "size": 5803
   },
   {
+    "path": "verify_radial_engine.mjs",
+    "title": "verify_radial_engine.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 6179
+  },
+  {
     "path": "verify_simulation.mjs",
     "title": "Проверка физической исследовательской модели",
     "category": "Исходники",
@@ -711,7 +739,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10102
+    "size": 10189
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -854,6 +882,20 @@
     "size": 637
   },
   {
+    "path": "drawings/09-radial-engine.svg",
+    "title": "Семицилиндровая паровая звезда · SVG",
+    "category": "Чертежи",
+    "format": "SVG",
+    "size": 4814
+  },
+  {
+    "path": "radial-engine.html",
+    "title": "Семицилиндровая звезда · объём и 3D-механизм",
+    "category": "3D",
+    "format": "HTML",
+    "size": 12982
+  },
+  {
     "path": "calculations.html",
     "title": "Формулы, подстановки и сверка компонентов",
     "category": "Расчёты",
@@ -865,7 +907,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 53715
+    "size": 53916
   },
   {
     "path": "user-model.html",
