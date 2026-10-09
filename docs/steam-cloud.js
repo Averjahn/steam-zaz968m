@@ -1,6 +1,6 @@
 import * as T from 'three';
-import {engineGeometry as K} from './double-acting-cycle.js?v=6b548e33f0f2';
-import {createChamberCloudState} from './steam-cloud-model.js?v=74b499af5413';
+import {engineGeometry as K} from './double-acting-cycle.js?v=02f171f7ae23';
+import {createChamberCloudState} from './steam-cloud-model.js?v=438a7703a79a';
 
 // Four bounded clouds: instanced camera-facing puffs with procedural wisps.
 // The shader clips every fragment, including billboard edges, to the chamber.

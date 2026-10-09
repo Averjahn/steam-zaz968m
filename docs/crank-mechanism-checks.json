@@ -1,0 +1,276 @@
+{
+  "status": "passed",
+  "scope": "Concept rigid-body kinematics and geometric clearances, not bearing/gear strength, manufacturing tolerances or service life",
+  "geometry": {
+    "cylinderX": [
+      200,
+      415
+    ],
+    "cylinderY": 250,
+    "crankZ": 89,
+    "outputZ": 145,
+    "crankRadius": 60,
+    "connectingRod": 110,
+    "pistonRod": 173,
+    "crossheadBridgeZ": 17,
+    "bore": 100,
+    "rodDiameter": 24,
+    "pistonThickness": 20,
+    "bottomFace": 300,
+    "topFace": 444,
+    "clearance": 2,
+    "phaseOffset": 1.5707963267948966
+  },
+  "crank_layout": {
+    "journalRadius": 18,
+    "pinRadius": 10,
+    "pinHalfWidth": 14,
+    "cheekInner": 14,
+    "cheekOuter": 26,
+    "cheekRadius": 20,
+    "rodHalfWidth": 12,
+    "bigEyeOuter": 22,
+    "bigEyeInner": 11,
+    "smallEyeOuter": 13,
+    "smallEyeInner": 6.5,
+    "guideOffsetX": 36,
+    "guideWidthX": 8,
+    "shoeOuterX": 31.5,
+    "guideMinZ": 130,
+    "guideMaxZ": 283,
+    "gearX": 105,
+    "gearWidth": 12,
+    "module": 2,
+    "teeth": 28,
+    "pressureAngle": 0.3490658503988659,
+    "backlashAngle": 0.003,
+    "journalIntervals": [
+      [
+        85,
+        174
+      ],
+      [
+        226,
+        389
+      ],
+      [
+        441,
+        550
+      ]
+    ]
+  },
+  "checks": [
+    {
+      "name": "The connecting rod remains 110 mm long through both full revolutions",
+      "pass": true
+    },
+    {
+      "name": "No straight journal passes through either connecting-rod plane",
+      "pass": true
+    },
+    {
+      "name": "The big-end bearing fits between cheeks with 2 mm axial gaps",
+      "pass": true
+    },
+    {
+      "name": "Piston-rod attachment stays below the lower cylinder head",
+      "pass": true,
+      "detail": {
+        "minimum_clearance_mm": 5
+      }
+    },
+    {
+      "name": "Crosshead shoes remain inside the guide length at all angles",
+      "pass": true
+    },
+    {
+      "name": "Static guides are outside the crank cheeks",
+      "pass": true
+    },
+    {
+      "name": "Shoes have 0.5 mm visual clearance to the guide faces",
+      "pass": true
+    },
+    {
+      "name": "The raised output is coaxial with the displayed gearbox",
+      "pass": true
+    },
+    {
+      "name": "The gear ratio is 1:1 and preserves output speed",
+      "pass": true
+    },
+    {
+      "name": "Gear center spacing agrees with module and tooth counts",
+      "pass": true
+    },
+    {
+      "name": "The lower shaft starts behind the flywheel thickness",
+      "pass": true
+    },
+    {
+      "name": "Stroke and piston extrema remain 120 mm, 312 mm and 432 mm",
+      "pass": true
+    },
+    {
+      "name": "Involute tooth polygons do not penetrate the opposite gear in 720 poses",
+      "pass": true,
+      "detail": {
+        "badAngle": null
+      }
+    }
+  ],
+  "source_sha256": {
+    "web/double-acting-cycle.js": "02f171f7ae23267bfc40809918deccce1572ebd618aa491a0a5f575f60202ebe",
+    "web/crank-mechanism-model.js": "bdc5e24dafee316f43c6359575c1780a87ca57a81cc9f71a993e6620bbd00a73",
+    "web/crank-mechanism.js": "5f086eb0dc5b81d83018c859c50a11eaeb11a3bb76ffdb256be5812bdcf828df",
+    "web/internal-assembly.js": "433bb3e57d379a6ce8661242817878fcd9faab2cef0c6178e211d9fc0f7f8e2d",
+    "web/double-acting-view.js": "35a970a2f181082a8050a6aeb8962e90c41cd1a8277fa808e99852f73b521e07",
+    "web/assembly.html": "32c9264d07ac2da44793a8f0c63cddb59b0ac9d7aa30ddbed5b46e3401360a31",
+    "web/assembly.js": "6dfc078ec32ec182922c94d2d73e4c2ed5f8a457474f594f7c2b15fcdb2dfd5d",
+    "verify_crank_mechanism.mjs": "ddba98fe94b17f405b6548cc802afeaa87ba6694e25f1cd4fb4930207d179a42",
+    "web/cycle-animation.js": "028fed83b8f37755fb2af26072648218d6d3148244ad0edb20d7666389da6bf1",
+    "web/assembly-systems.js": "bb62eff86e12221b75c3bfa32a5a9d019c50a5b8ad74707b9327c220630564d1",
+    "build_site.py": "526296b2ae4e43a29512339485b5a1c7d850d8e164c2f00bcfe2eb1d53267135",
+    "build_internal_assets.mjs": "986c27ae15a3aac8c461eba3dc3a40194ffe5680400c139ae18fbd8100b282a8",
+    "models/steam-internal-assembly.json": "e2e00d0d598c6aebc74d7a314d0e85c2c794f83f92a456be8121bdc8fdd7b559",
+    "models/steam-internal-assembly.glb": "e18ec8723c07999dbeb6a7c04aac7d03733af05b41fbc785473e998092252f86"
+  },
+  "browser_checks": [
+    {
+      "name": "Three separate journal segments replace the impossible straight shaft",
+      "pass": true
+    },
+    {
+      "name": "Two throws contain paired cheeks and eccentric pins",
+      "pass": true
+    },
+    {
+      "name": "Two transfer gears retain the raised output axis",
+      "pass": true
+    },
+    {
+      "name": "Actual meshes avoid journals, cheeks, guides and heads over a full turn",
+      "pass": true,
+      "detail": {
+        "poses": 72,
+        "broad_phase_pairs": 36288,
+        "tested_mesh_pairs": 0,
+        "gear_mesh_pairs": 72,
+        "dynamic_meshes": 18,
+        "fixed_meshes": 28,
+        "detectsStraightShaft": true,
+        "maxJointError": 8.038873388460929e-14,
+        "clashes": []
+      }
+    },
+    {
+      "name": "The mesh audit catches a deliberately reintroduced straight shaft",
+      "pass": true,
+      "detail": {
+        "poses": 72,
+        "broad_phase_pairs": 36288,
+        "tested_mesh_pairs": 0,
+        "gear_mesh_pairs": 72,
+        "dynamic_meshes": 18,
+        "fixed_meshes": 28,
+        "detectsStraightShaft": true,
+        "maxJointError": 8.038873388460929e-14,
+        "clashes": []
+      }
+    },
+    {
+      "name": "Rendered big-end bearing stays on its eccentric pin",
+      "pass": true,
+      "detail": 8.038873388460929e-14
+    },
+    {
+      "name": "Rigid crank throws rotate with the correct cylinder phase",
+      "pass": true
+    },
+    {
+      "name": "Output gear and flywheel rotate together",
+      "pass": true
+    },
+    {
+      "name": "Playback moves crank throws and gears",
+      "pass": true
+    },
+    {
+      "name": "Pause freezes the complete mechanical drive",
+      "pass": true
+    },
+    {
+      "name": "Interactive GLB export keeps both moving pistons and rods",
+      "pass": true
+    },
+    {
+      "name": "Exported piston positions match the displayed crank pose",
+      "pass": true
+    },
+    {
+      "name": "Close-up supports fullscreen",
+      "pass": true
+    },
+    {
+      "name": "Fluid-only mode still hides the actual mechanical meshes",
+      "pass": true
+    },
+    {
+      "name": "Mobile drive controls fit the screen",
+      "pass": true
+    },
+    {
+      "name": "Steam clouds still follow the corrected pistons",
+      "pass": true
+    },
+    {
+      "name": "No shader or browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_errors": [],
+  "mesh_audit": {
+    "poses": 72,
+    "broad_phase_pairs": 36288,
+    "tested_mesh_pairs": 0,
+    "gear_mesh_pairs": 72,
+    "dynamic_meshes": 18,
+    "fixed_meshes": 28,
+    "detectsStraightShaft": true,
+    "maxJointError": 8.038873388460929e-14,
+    "clashes": []
+  },
+  "total_checks": 30,
+  "browser_harness_sha256": "077763627517ca6e288f56f30b6a4c1e1fb636a0f28a1b48285735117fc8490a",
+  "date": "2026-10-09",
+  "exported_engine_bounds": {
+    "id": "ENG",
+    "min_mm": [
+      2915,
+      -190,
+      300
+    ],
+    "max_mm": [
+      3460,
+      195,
+      800
+    ],
+    "size_mm": [
+      545,
+      385,
+      500
+    ],
+    "name": "Паровая машина · два цилиндра",
+    "source": "Проектный двухцилиндровый агрегат в прежнем резерве 600×500×500. Мощность, рабочий объём, прочность, обороты и смазка не подтверждены изделием.",
+    "reserveSize": [
+      600,
+      500,
+      500
+    ],
+    "route": false,
+    "support": false
+  },
+  "standalone_glb_journals": 3,
+  "export_sha256": "e18ec8723c07999dbeb6a7c04aac7d03733af05b41fbc785473e998092252f86"
+}

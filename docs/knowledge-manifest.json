@@ -2,34 +2,34 @@
   "version": 1,
   "method": "TF-IDF + randomized truncated SVD / LSA; normalized cosine vectors + lexical reranking",
   "dimension": 96,
-  "passage_count": 850,
+  "passage_count": 852,
   "source_count": 22,
-  "vocabulary_size": 3555,
+  "vocabulary_size": 3577,
   "assets": {
     "passages": {
-      "path": "knowledge/passages-24d81982e984.json",
-      "sha256": "24d81982e984b5d116b8f254dae9455eb47a329f7aa68ec19fb20e3cc754920e",
-      "bytes": 1447287
+      "path": "knowledge/passages-ea80efed3efa.json",
+      "sha256": "ea80efed3efae37ba91c7c726493d1feaef5f459c55343447936f24f58d52c7b",
+      "bytes": 1451823
     },
     "model": {
-      "path": "knowledge/model-f5b13a8e87fe.json",
-      "sha256": "f5b13a8e87febd0763298d5a169945549c0b1287d3f441f3435ccf17b64fb586",
-      "bytes": 120637
+      "path": "knowledge/model-6a7dec9cfcdd.json",
+      "sha256": "6a7dec9cfcdd81f56481b59a3be711e3303f6149a0d808aaddb08e42753c9251",
+      "bytes": 122677
     },
     "basis": {
-      "path": "knowledge/basis-a91e1cf191cd.bin",
-      "sha256": "a91e1cf191cd88e55fcfa018c53d23c924ed9adbc8cc2ee1de264615690fcedb",
-      "bytes": 1365120
+      "path": "knowledge/basis-fc5ec96327b0.bin",
+      "sha256": "fc5ec96327b09a65e6c3980c87d8078abfaa69ed8940f6770dad6ada164b8d50",
+      "bytes": 1373568
     },
     "vectors": {
-      "path": "knowledge/vectors-2076550b149a.bin",
-      "sha256": "2076550b149a847d1e93fd1aada9dce129b5fe9beba20c559d0fc7409cec1570",
-      "bytes": 326400
+      "path": "knowledge/vectors-baef3a9814e8.bin",
+      "sha256": "baef3a9814e8f33d8cc82274314cf0ff0c28d14e2d516135673b749e1c29aaa2",
+      "bytes": 327168
     }
   },
   "sources": {
     "assembly.html": {
-      "sha256": "e0991478dfb9d85bae8fd8ef7ed5e603bb537f28f2cb18c814d0b6fa3a63dea5",
+      "sha256": "3fb4076ea0b009478e2d0986597fd146f147cd6d7d8048001253983617c0756e",
       "kind": "HTML",
       "title": "CAD-сборка"
     },
@@ -139,7 +139,7 @@
       "title": "connection-specs.json"
     }
   },
-  "total_bytes": 3259444,
+  "total_bytes": 3275236,
   "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
   "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
   "training_seed": 968,

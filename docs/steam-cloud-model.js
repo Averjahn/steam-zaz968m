@@ -1,5 +1,5 @@
 // Deterministic visual tracers, in millimetres. Not molecular dynamics or CFD.
-import {engineGeometry as K} from './double-acting-cycle.js?v=6b548e33f0f2';
+import {engineGeometry as K} from './double-acting-cycle.js?v=02f171f7ae23';
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),fract=x=>x-Math.floor(x);
 export function createChamberCloudState(cylinder,chamber,count=96){
  let seed=968+(cylinder+1)*7919+(chamber==='A'?31:67);

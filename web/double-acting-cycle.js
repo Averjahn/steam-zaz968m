@@ -1,6 +1,6 @@
 // Illustrative valve timing, not a measured indicator diagram or power model.
-export const engineGeometry=Object.freeze({cylinderX:[200,415],cylinderY:250,crankZ:142,
- crankRadius:60,connectingRod:80,pistonRod:150,bore:100,rodDiameter:24,pistonThickness:20,
+export const engineGeometry=Object.freeze({cylinderX:[200,415],cylinderY:250,crankZ:89,outputZ:145,
+ crankRadius:60,connectingRod:110,pistonRod:173,crossheadBridgeZ:17,bore:100,rodDiameter:24,pistonThickness:20,
  bottomFace:300,topFace:444,clearance:2,phaseOffset:Math.PI/2});
 export function cylinderCycle(angle,{cutoff=.30,releaseDegrees=12}={}){
  const k=engineGeometry,a=((angle%(2*Math.PI))+2*Math.PI)%(2*Math.PI),r=k.crankRadius,l=k.connectingRod;

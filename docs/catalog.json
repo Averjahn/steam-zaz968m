@@ -172,7 +172,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 42139
+    "size": 42572
   },
   {
     "path": "build_stock_suspension.py",
@@ -273,11 +273,18 @@
     "size": 744
   },
   {
+    "path": "crank-mechanism-checks.json",
+    "title": "Коленвал и крейцкопф · полный оборот, пересечения и сопряжение",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 7823
+  },
+  {
     "path": "double-acting-checks.json",
     "title": "Двойное действие · камеры, переключение клапанов и обратимые стрелки",
     "category": "Проверки",
     "format": "JSON",
-    "size": 1565
+    "size": 1613
   },
   {
     "path": "double-acting-view-checks.json",
@@ -375,7 +382,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17626
+    "size": 17466
   },
   {
     "path": "layout-internal.json",
@@ -550,7 +557,7 @@
     "title": "Анимация пара · границы камер, пауза, клапаны и 3D",
     "category": "Проверки",
     "format": "JSON",
-    "size": 4106
+    "size": 1849
   },
   {
     "path": "thermal-presentation-checks.json",
@@ -607,6 +614,13 @@
     "category": "Исходники",
     "format": "MJS",
     "size": 6940
+  },
+  {
+    "path": "verify_crank_mechanism.mjs",
+    "title": "verify_crank_mechanism.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 3576
   },
   {
     "path": "verify_double_acting.mjs",
@@ -830,7 +844,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 44683
+    "size": 47265
   },
   {
     "path": "user-model.html",
@@ -1040,7 +1054,7 @@
     "title": "Полная внутренняя детальная сборка GLB",
     "category": "3D",
     "format": "GLB",
-    "size": 38555840
+    "size": 39580888
   },
   {
     "path": "models/steam-internal-assembly.json",

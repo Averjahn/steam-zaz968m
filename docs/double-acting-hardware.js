@@ -1,6 +1,6 @@
 import * as T from 'three';
 import {hollowTube} from './pipe-joints.js?v=ed575dd9cba4';
-import {engineGeometry as K} from './double-acting-cycle.js?v=6b548e33f0f2';
+import {engineGeometry as K} from './double-acting-cycle.js?v=02f171f7ae23';
 const V=p=>new T.Vector3(...p);
 // Concept passages in the existing engine envelope. Diameters are visualization
 // assumptions; no new valve capacity or rated-pressure claim is made here.
