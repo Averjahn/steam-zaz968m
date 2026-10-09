@@ -70,6 +70,13 @@
     "size": 11508
   },
   {
+    "path": "build_engine_sizing.mjs",
+    "title": "build_engine_sizing.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5744
+  },
+  {
     "path": "build_geometry.py",
     "title": "Генерация 3D и компоновочных чертежей",
     "category": "Исходники",
@@ -102,7 +109,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 13973
+    "size": 14050
   },
   {
     "path": "build_mount_register.py",
@@ -179,7 +186,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 44402
+    "size": 45581
   },
   {
     "path": "build_stock_suspension.py",
@@ -301,6 +308,34 @@
     "size": 17617
   },
   {
+    "path": "engine-sizing-checks.json",
+    "title": "Подбор двигателя · геометрия, масса, энергия и пределы расчёта",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 5693
+  },
+  {
+    "path": "engine-sizing-report.pdf",
+    "title": "engine-sizing-report.pdf",
+    "category": "Документы",
+    "format": "PDF",
+    "size": 376531
+  },
+  {
+    "path": "engine-sizing.json",
+    "title": "Подбор двигателя под место · объём, мощность и охлаждение",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 40001
+  },
+  {
+    "path": "engine_sizing_page.py",
+    "title": "engine_sizing_page.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 4980
+  },
+  {
     "path": "geometry-checks.json",
     "title": "Проверка габаритных пересечений",
     "category": "Проверки",
@@ -389,7 +424,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17482
+    "size": 17670
   },
   {
     "path": "layout-internal.json",
@@ -665,6 +700,13 @@
     "size": 2310
   },
   {
+    "path": "verify_engine_sizing.mjs",
+    "title": "verify_engine_sizing.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5149
+  },
+  {
     "path": "verify_knowledge.mjs",
     "title": "Проверка векторного поиска, источников и типовых вопросов",
     "category": "Исходники",
@@ -739,7 +781,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10189
+    "size": 10284
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -889,11 +931,18 @@
     "size": 4814
   },
   {
+    "path": "engine-sizing.html",
+    "title": "Объём и мощность под место в автомобиле",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 21519
+  },
+  {
     "path": "radial-engine.html",
     "title": "Семицилиндровая звезда · объём и 3D-механизм",
     "category": "3D",
     "format": "HTML",
-    "size": 12982
+    "size": 13126
   },
   {
     "path": "calculations.html",
@@ -907,7 +956,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 53916
+    "size": 54027
   },
   {
     "path": "user-model.html",

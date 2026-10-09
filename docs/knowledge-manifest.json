@@ -2,104 +2,109 @@
   "version": 1,
   "method": "TF-IDF + randomized truncated SVD / LSA; normalized cosine vectors + lexical reranking",
   "dimension": 96,
-  "passage_count": 862,
-  "source_count": 23,
-  "vocabulary_size": 3664,
+  "passage_count": 877,
+  "source_count": 24,
+  "vocabulary_size": 3712,
   "assets": {
     "passages": {
-      "path": "knowledge/passages-d0876f1b473c.json",
-      "sha256": "d0876f1b473c173797e5f18a0857cd3fd8b9a8940d2974763e334fb242852dbd",
-      "bytes": 1477343
+      "path": "knowledge/passages-2698fc6e6d02.json",
+      "sha256": "2698fc6e6d02a8cc1b1f3ac24fbdce0e28f804fc0812a0a8e642eeaa50e74d8c",
+      "bytes": 1509541
     },
     "model": {
-      "path": "knowledge/model-1aae86057dea.json",
-      "sha256": "1aae86057dea878bd20f4b5750515b0ac60fb9a3af40739e8be6deca3d57b170",
-      "bytes": 125286
+      "path": "knowledge/model-e9414a589c43.json",
+      "sha256": "e9414a589c43afa47f16d4f3b250cbffb6c36929192565c938caf4c6300e35a6",
+      "bytes": 127081
     },
     "basis": {
-      "path": "knowledge/basis-e633b6a2c1b2.bin",
-      "sha256": "e633b6a2c1b287475691372d8b946d05e40d4e50cf3d43a9683c59ef69ef96af",
-      "bytes": 1406976
+      "path": "knowledge/basis-5dc3d5d57712.bin",
+      "sha256": "5dc3d5d577127d266f889c160f65c493e590501213d4d84feb58710a7b1feea1",
+      "bytes": 1425408
     },
     "vectors": {
-      "path": "knowledge/vectors-b2b56c2eb29a.bin",
-      "sha256": "b2b56c2eb29a14fa921455278891831cec92b8256c342f16e57cf82c9e82e262",
-      "bytes": 331008
+      "path": "knowledge/vectors-ff9595aa6738.bin",
+      "sha256": "ff9595aa6738fc0179185d79ae1d20fbfe0f6553be573c6eb5633fd4dcecfbf9",
+      "bytes": 336768
     }
   },
   "sources": {
+    "engine-sizing.html": {
+      "sha256": "3d6790327f31d831ce1b6089f60c27c5230cca28c7a676c7027c8523be5a57b5",
+      "kind": "HTML",
+      "title": "Объём и мощность под место в ЗАЗ"
+    },
     "radial-engine.html": {
-      "sha256": "df8324f5f2b749d7c725cf8b236706a805c50c3870675e69450e001f432aaadc",
+      "sha256": "89d2e0dcfc7914f5fbf8497156c0b29189fdce39e5a23fe2ae7f0f1d2d68aa17",
       "kind": "HTML",
       "title": "Семицилиндровая паровая звезда"
     },
     "assembly.html": {
-      "sha256": "899ed6a7e177f1445a40134d7609e66fb18734642856b65e2ebb877623c5ad32",
+      "sha256": "b7206970709d6dd09df5567b5ec94950ceec8957a3a430ae67e271274cc941d6",
       "kind": "HTML",
       "title": "CAD-сборка"
     },
     "heat.html": {
-      "sha256": "d062a4a255f50fed5f053f6e34678104c037511f77aaefa2b76bfdb8eeea5f61",
+      "sha256": "fc17cec839c9c27c1396a1b794c14e22a4280367cdd06f00d13dadb16ee20b01",
       "kind": "HTML",
       "title": "Источники тепла и замкнутый цикл"
     },
     "physics.html": {
-      "sha256": "4ed06b2cb3644c2f50a21bacbd53b6092539aa6b07f797d8716c1db44f6e4596",
+      "sha256": "940e4fb9d288054beaea26931b47cd5c22156e8f0bd503cd5b9b2c90379adbc0",
       "kind": "HTML",
       "title": "Физика узлов и нагрузка на четыре колеса"
     },
     "piping.html": {
-      "sha256": "325402f7a2a45fe1daf528408cc11d1d446bab30b210d2d8b3a9e7b72ff779ea",
+      "sha256": "ccfc97f6824e5adf1b0250b9432b979c0e11a4b505c91c50a2c06f744944eb4c",
       "kind": "HTML",
       "title": "Трубопроводы"
     },
     "procurement.html": {
-      "sha256": "c42c728aee152f07d706eeef4cf5992aadd8040990b8debfb967eb8c6792db33",
+      "sha256": "60da27a4b94e1e0384e2ede5818fabee82dad9cd11464c6d50c3eda42d9d0840",
       "kind": "HTML",
       "title": "Комплектующие и материалы"
     },
     "literature.html": {
-      "sha256": "ca07960d836e90646dadcd8b2bb138e4506700aa3c8b602533749d0d47fdb40b",
+      "sha256": "ef3aebbb5f36edb7f768c73ad69574ce5f72437bd8bf77c346399f136e8c37e6",
       "kind": "HTML",
       "title": "Проверка парового цикла по литературе"
     },
     "report.html": {
-      "sha256": "3aafdd3ebbde58227c1bd9ffcae54c737fe219a72dbce41533e5fe7ffb4d64f6",
+      "sha256": "2fdc1b8e4ecb8f9389a0ee2ebb8c0dd1b43f1ae37d9b27ff651eb1cca6aad10e",
       "kind": "HTML",
       "title": "ЗАЗ-968М с паровым приводом"
     },
     "internal.html": {
-      "sha256": "37fd105a404d4298698203311b0bdd7a8a71885ff22bcb666d24a05ca89221f2",
+      "sha256": "926ce5a210aac5c50c34567dace8ae56a459ee28226d5dab5ad095bc408f520d",
       "kind": "HTML",
       "title": "Внутренняя паровая сборка"
     },
     "packaging.html": {
-      "sha256": "6c211bf596b504b00b8c761d03196463cf866ec1616e400e22eb925e9ced4214",
+      "sha256": "758a20ebc065032014a629318db165f537ac31c8c0af18ba46c0333779e243d0",
       "kind": "HTML",
       "title": "Переработанная компоновка"
     },
     "reconstruction.html": {
-      "sha256": "6b36b5070234b56943225a576c585309c05c720b19780ccdccbbc3a0e74c61a2",
+      "sha256": "659f6410df0180cb230535f6b2f60ab108e18bdb3b8b77b4e52adecf638629c6",
       "kind": "HTML",
       "title": "Кузов по фотографиям"
     },
     "user-model.html": {
-      "sha256": "4367ab86f2d0ade6125b0be1335dd5df384fbe39647b0463c126dfe0e9374973",
+      "sha256": "dfd01e8cafb68479180a774985dfb7cec6a15b61d15a4dd6e5a54fa18c515b08",
       "kind": "HTML",
       "title": "Ваша модель ЗАЗ-968М"
     },
     "calculations.html": {
-      "sha256": "752273ee3bc581712d9ef9a1badd6dda7f0a777582a4884953558de522dbd3c4",
+      "sha256": "c17b681a7cba6a1a0c5cba336d5b5c1e8a9d5931bc68c3f8b7fbe2f80b2031d7",
       "kind": "HTML",
       "title": "Формулы и подстановки"
     },
     "lab.html": {
-      "sha256": "4ef32c759c93c128fea0da300147c92a96fabf6ea1b7c2caaa5a5946768ede55",
+      "sha256": "71f7d8d6dbc50b0edfc7e95830c747afef42f620f906214900b2ac5ce402a6f5",
       "kind": "HTML",
       "title": "ЗАЗ-968М • Паровой привод"
     },
     "literature-audit.html": {
-      "sha256": "f8f5296ebe54a7c26c4ed19e80aad38ae402714a8aa9c0908982fc9562bdd976",
+      "sha256": "50a0aada25a198edf01aa2439f662cc9f4458e7f7643888601f0dbfa27c63ac3",
       "kind": "HTML",
       "title": "Проверка парового ЗАЗ по литературе"
     },
@@ -144,7 +149,7 @@
       "title": "connection-specs.json"
     }
   },
-  "total_bytes": 3340613,
+  "total_bytes": 3398798,
   "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
   "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
   "training_seed": 968,

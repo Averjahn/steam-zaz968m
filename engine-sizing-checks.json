@@ -1,0 +1,185 @@
+{
+  "status": "passed",
+  "scope": "Preliminary dimensions and approximate mass/energy/power/cooling budgets; no full compact CAD placement, component rating or manufacture validation",
+  "checks": [
+    {
+      "name": "Seven D32/S36 cylinders have 0.202670425 litres of displacement",
+      "pass": true
+    },
+    {
+      "name": "Rod-side displacement uses D32 and d7.68, not the old rod",
+      "pass": true
+    },
+    {
+      "name": "Changing cylinder volume alone does not change heater-limited shaft power",
+      "pass": true
+    },
+    {
+      "name": "Smaller cylinder capacity requires proportionately faster cycling",
+      "pass": true
+    },
+    {
+      "name": "Power uses the isentropic enthalpy drop, not boiler heat or swept litres",
+      "pass": true
+    },
+    {
+      "name": "Metric horsepower conversion is explicit",
+      "pass": true
+    },
+    {
+      "name": "Combined water, boiler and pump energy balance closes",
+      "pass": true
+    },
+    {
+      "name": "Closed-cycle cooling includes receiver subcooling",
+      "pass": true
+    },
+    {
+      "name": "Air heat balance and continuity independently reproduce flow and speed",
+      "pass": true
+    },
+    {
+      "name": "Generator losses are charged against the shaft",
+      "pass": true
+    },
+    {
+      "name": "Seven local crank cycles run twice as fast as common output shaft",
+      "pass": true
+    },
+    {
+      "name": "Mean piston speed uses stroke in metres and crank RPM",
+      "pass": true
+    },
+    {
+      "name": "Output shaft torque reproduces shaft power independently of volume",
+      "pass": true
+    },
+    {
+      "name": "Geometric core bound excludes piping and leaves room in the reserve",
+      "pass": true
+    },
+    {
+      "name": "Current two-cylinder GLB bound is distinguished from an unbuilt budget",
+      "pass": true
+    },
+    {
+      "name": "Compact star remains just below provisional 2600 RPM at 50 kW",
+      "pass": true
+    },
+    {
+      "name": "The existing 0.85 filling assumption increases required cycle frequency",
+      "pass": true
+    },
+    {
+      "name": "A larger heater request exposes excessive compact-engine RPM",
+      "pass": true
+    },
+    {
+      "name": "Auxiliary-energy deficit remains visible, rather than being clamped away",
+      "pass": true
+    },
+    {
+      "name": "Allowing hotter exhaust air changes cooling flow, not steam-engine shaft output",
+      "pass": true
+    },
+    {
+      "name": "Increasing expansion efficiency increases work and lowers rejected heat",
+      "pass": true
+    },
+    {
+      "name": "Shaft efficiency stays below the same-state ideal Rankine bound",
+      "pass": true
+    },
+    {
+      "name": "Inverse thermal sizing reproduces 40 metric horsepower",
+      "pass": true
+    },
+    {
+      "name": "Forty horsepower exceeds the current source capacity",
+      "pass": true
+    },
+    {
+      "name": "High air speed does not produce a false fan or useful-power prediction",
+      "pass": true
+    },
+    {
+      "name": "Invalid parameters cannot enter the calculation",
+      "pass": true
+    }
+  ],
+  "source_sha256": {
+    "web/engine-sizing-model.js": "35211055e23d1c0f7ad98367ffc11d36f6433b88b0d142bd54b4f968dfee6ce3",
+    "web/engine-sizing.js": "95361a037ed2c50d2f0f77875120cba0a8c5e616490270cfdcbbf3c51f39517f",
+    "web/engine-sizing.html": "15720cebc868c653d0094b62b581e20741323a58ed11be2ce17306b71141d1b6",
+    "engine-sizing.json": "e064f97e5d08acbacea896591c632b03283988e17ff5c4f1a9b84a42a114840a",
+    "build_engine_sizing.mjs": "a37ab0723b2d2d6932917c5f79db990ff273dff34fc31f939c09c55a7266cd1d",
+    "engine_sizing_page.py": "b902579157c80da6979e16359d178a637b49bf8a336871f8486fe90070374b66",
+    "build_site.py": "fbc6f3de4c5158290a2772d8fb35eb1e2d917419dc8927171cd90526b10e63da",
+    "workspace_ui.py": "6dde8cdc69eb89cb43f812f8f62877d3d816e6d45a28ccb31d3841a9aeb66986",
+    "build_knowledge.py": "bb7f3fd162dd48b5fefdfad1f7dd3f4c5559df40ea42a8bcc6a2aec499783e95",
+    "verify_engine_sizing.mjs": "e1d52deaa5f9753dc8a89f6e264100b99a098f7c12f62da3912e9bac3594414b"
+  },
+  "browser": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "Initial page distinguishes small swept volume from heater-limited shaft power",
+        "pass": true
+      },
+      {
+        "name": "Static report contains current mesh and unbuilt compact-budget distinctions",
+        "pass": true
+      },
+      {
+        "name": "Formulas precede their numerical substitutions",
+        "pass": true
+      },
+      {
+        "name": "Two-cylinder selection changes volume and required RPM",
+        "pass": true
+      },
+      {
+        "name": "Oversized star selection reports lack of fit",
+        "pass": true
+      },
+      {
+        "name": "Increased heating exposes both overspeed and auxiliary deficit",
+        "pass": true
+      },
+      {
+        "name": "Exceeded burner capacity is visible",
+        "pass": true
+      },
+      {
+        "name": "Warmer exit air changes remaining power",
+        "pass": true
+      },
+      {
+        "name": "Efficiency affects the shaft result",
+        "pass": true
+      },
+      {
+        "name": "Invalid efficiencies are rejected and disable download",
+        "pass": true
+      },
+      {
+        "name": "Export retains selected values, inputs and limitations",
+        "pass": true
+      },
+      {
+        "name": "Mobile report has no document overflow",
+        "pass": true
+      },
+      {
+        "name": "Report supports PDF printing",
+        "pass": true
+      },
+      {
+        "name": "No uncaught browser errors",
+        "pass": true
+      }
+    ],
+    "errors": [],
+    "browser": "Google Chrome"
+  }
+}
