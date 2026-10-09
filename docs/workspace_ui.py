@@ -15,6 +15,7 @@ NAV = [
         ('heat.html', 'Источники тепла', 'flame'),
         ('physics.html', 'Физика и подвеска', 'activity'),
         ('radial-engine.html', 'Семицилиндровая звезда', 'star'),
+        ('aging.html', 'Ресурс и зимняя эксплуатация', 'activity'),
         ('engine-sizing.html', 'Подбор объёма и мощности', 'calculator'),
         ('piping.html', 'Трубопроводы', 'route'),
         ('procurement.html', 'Комплектующие', 'box'),

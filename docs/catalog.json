@@ -7,6 +7,34 @@
     "size": 10376
   },
   {
+    "path": "aging-checks.json",
+    "title": "Проверки модели старения · физика, границы и интерфейс",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 7944
+  },
+  {
+    "path": "aging-fatigue-template.json",
+    "title": "Шаблон испытательной кривой S–N · без придуманных точек",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 493
+  },
+  {
+    "path": "aging-study.json",
+    "title": "Металл за два года · девять сценариев, циклы, стенки и зима",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 6097449
+  },
+  {
+    "path": "aging_page.py",
+    "title": "aging_page.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 4056
+  },
+  {
     "path": "assembly-vw-inspired.scad",
     "title": "Компоновка по примеру VW · OpenSCAD",
     "category": "3D",
@@ -47,6 +75,13 @@
     "category": "Проверки",
     "format": "JSON",
     "size": 978
+  },
+  {
+    "path": "build_aging.mjs",
+    "title": "build_aging.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 8651
   },
   {
     "path": "build_cad_assets.py",
@@ -109,7 +144,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 14050
+    "size": 14137
   },
   {
     "path": "build_mount_register.py",
@@ -186,7 +221,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 45581
+    "size": 46725
   },
   {
     "path": "build_stock_suspension.py",
@@ -424,7 +459,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17670
+    "size": 17758
   },
   {
     "path": "layout-internal.json",
@@ -679,6 +714,13 @@
     "size": 3469
   },
   {
+    "path": "verify_aging.mjs",
+    "title": "verify_aging.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 7484
+  },
+  {
     "path": "verify_calculations.mjs",
     "title": "Сверка формул с Python",
     "category": "Исходники",
@@ -781,7 +823,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10284
+    "size": 10377
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -931,11 +973,18 @@
     "size": 4814
   },
   {
+    "path": "aging.html",
+    "title": "Металл за два года · 50 км/день, мороз и тепло",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 24663
+  },
+  {
     "path": "engine-sizing.html",
     "title": "Объём и мощность под место в автомобиле",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 21519
+    "size": 21677
   },
   {
     "path": "radial-engine.html",
@@ -956,7 +1005,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 54027
+    "size": 54153
   },
   {
     "path": "user-model.html",

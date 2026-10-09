@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "scope": "Conditional calendar exposure, straight-wall stress, corrosion sensitivity and pressure-only fatigue interpolation; not manufacturing, road feasibility or validated material service life",
+  "checks": [
+    {
+      "name": "Exactly 730 daily exposures cover 36500 prescribed kilometres",
+      "pass": true
+    },
+    {
+      "name": "Driving and warm-up hours remain separate",
+      "pass": true
+    },
+    {
+      "name": "One daily cold start gives 730 thermal/pressure start cycles",
+      "pass": true
+    },
+    {
+      "name": "RPM is converted through 60 minutes/hour, not treated as seconds",
+      "pass": true
+    },
+    {
+      "name": "Each piston completes two strokes, one full cycle per local crank revolution",
+      "pass": true
+    },
+    {
+      "name": "Local gearing produces two local cycles per common output revolution",
+      "pass": true
+    },
+    {
+      "name": "Slower prescribed travel doubles operating cycle count, not the kilometres",
+      "pass": true
+    },
+    {
+      "name": "Seasonal temperature uses the requested exact analytical endpoints",
+      "pass": true
+    },
+    {
+      "name": "The sampled synthetic season has 328 sub-zero exposures",
+      "pass": true
+    },
+    {
+      "name": "Constant cold/hot extremes distinguish 730 and zero frost exposures",
+      "pass": true
+    },
+    {
+      "name": "Draining/trace heating removes unprotected-water flag only under explicit assumptions",
+      "pass": true
+    },
+    {
+      "name": "Heater energy is charged for actual standing hours and UA",
+      "pass": true
+    },
+    {
+      "name": "Doubling heat leakage doubles heater energy and leaves corrosion unchanged",
+      "pass": true
+    },
+    {
+      "name": "Uniform external corrosion reduces 4 mm wall to 3.8 mm in two years",
+      "pass": true
+    },
+    {
+      "name": "Lamé stress independently matches pressure and remaining radii",
+      "pass": true
+    },
+    {
+      "name": "Corrosion increases stress at fixed pressure; zero loss retains initial dimensions",
+      "pass": true
+    },
+    {
+      "name": "A vanishing wall is reported rather than a finite or negative pressure stress",
+      "pass": true
+    },
+    {
+      "name": "Wall thickness and finite pressure stress change monotonically over exposure",
+      "pass": true
+    },
+    {
+      "name": "Free thermal expansion depends on length and does not cause stress at zero restraint",
+      "pass": true
+    },
+    {
+      "name": "Cold-start elastic restraint estimate gives 66 MPa, not 66 GPa",
+      "pass": true
+    },
+    {
+      "name": "Unknown coil length stays unknown instead of inventing zero expansion",
+      "pass": true
+    },
+    {
+      "name": "No cooling below ambient is silently assigned to uncooled low-temperature lines",
+      "pass": true
+    },
+    {
+      "name": "Missing material data never become zero fatigue/creep or certified life",
+      "pass": true
+    },
+    {
+      "name": "Prescribed mileage is not represented as validated road or freezing simulation",
+      "pass": true
+    },
+    {
+      "name": "Logarithmic S–N interpolation is independently checked at geometric midpoint",
+      "pass": true
+    },
+    {
+      "name": "S–N extrapolation is not performed",
+      "pass": true
+    },
+    {
+      "name": "Miner pressure-start damage uses 730 pressure starts, never 113 million engine turns",
+      "pass": true
+    },
+    {
+      "name": "Supplying a pressure curve does not certify thermal or total service life",
+      "pass": true
+    },
+    {
+      "name": "Incorrect R, missing source, missing points and temperature mismatch are rejected",
+      "pass": true
+    },
+    {
+      "name": "Invalid inputs and impossible daily time budgets are rejected",
+      "pass": true
+    },
+    {
+      "name": "Published default run is exactly reproduced from its inputs",
+      "pass": true
+    },
+    {
+      "name": "Published nine scenario summaries reproduce from the same model",
+      "pass": true
+    }
+  ],
+  "source_sha256": {
+    "web/aging-model.js": "3bf578cf885dde88cb9e82e3237ab20deda095af2b3685feb02e37d76959f8b0",
+    "web/aging.js": "ca503fbbcb3b1c7758e43005ba7eaff91c2518214637385832c50313b84c4c19",
+    "web/aging.html": "f466fb9add79608e8bbc3cdd9314b3795fdb49d05c0b6ccdd7ca3e6f158d14e8",
+    "web/aging.css": "5b0c59790907c55cfbbb89f693bdd2c16d53bdc7e3fbcff445b1b16396ab1ab1",
+    "build_aging.mjs": "e167bd5687f30a9c5f1643cfbd94e33c04598f382510d3465583f0251de38778",
+    "aging_page.py": "4ebc8e9dc659f6b459c2f2d03b27b576993d87bf5b053be56d9f87dc9b0a1183",
+    "aging-study.json": "5ae7bd79ba0a94bd0cc9be26dee1bfc2f96e9f319c33941bbcdcb8dec6b0b818",
+    "verify_aging.mjs": "cb756613f7f71701fbb9ce0639134938b68ed32f9aff219330f33b6a75b2fe60",
+    "build_site.py": "4a721c952c98f3fde31fa5f4a418cb231e038b55cb022ce754df6b5f22863be0",
+    "workspace_ui.py": "a6f0d6b7808988f71a53ff1e695416d60e1fed8bee82406e4407748b7fe9a2ab",
+    "build_knowledge.py": "b08739552792cc4686264585f9781a229921283dfc10d0a14f12597f906f90c7"
+  },
+  "browser": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "Initial exposure keeps mileage, 730 starts and 113 million cycles distinct",
+        "pass": true
+      },
+      {
+        "name": "Seasonal unprotected-water issue is visible rather than a successful winter run",
+        "pass": true
+      },
+      {
+        "name": "All modeled pipes and the generator coil appear in the table",
+        "pass": true
+      },
+      {
+        "name": "Formulas come before substitutions and their rounded results",
+        "pass": true
+      },
+      {
+        "name": "Nine winter/climate combinations are shown",
+        "pass": true
+      },
+      {
+        "name": "Slower prescribed speed doubles exposure hours and cycles",
+        "pass": true
+      },
+      {
+        "name": "Repeated daily starts double startup count without inventing more road cycles",
+        "pass": true
+      },
+      {
+        "name": "Cold endpoint exposes every unprotected standing period",
+        "pass": true
+      },
+      {
+        "name": "Heated storage displays +5 C metal and charges energy",
+        "pass": true
+      },
+      {
+        "name": "Drainage hypothesis changes freezing flag without a claim of qualified lifetime",
+        "pass": true
+      },
+      {
+        "name": "Day slider changes the wall section and daily readout",
+        "pass": true
+      },
+      {
+        "name": "Playback advances physical calendar days and can be paused",
+        "pass": true
+      },
+      {
+        "name": "Pause stops the calendar",
+        "pass": true
+      },
+      {
+        "name": "Zero corrosion restores geometric wall and original nominal stress",
+        "pass": true
+      },
+      {
+        "name": "Vanishing wall does not produce a fictitious finite stress",
+        "pass": true
+      },
+      {
+        "name": "Unknown coil length remains unknown in the display",
+        "pass": true
+      },
+      {
+        "name": "S-N import enables only conditional pressure damage, not total life",
+        "pass": true
+      },
+      {
+        "name": "Clearing calibration restores unknown damage",
+        "pass": true
+      },
+      {
+        "name": "An incompatible fatigue curve is rejected",
+        "pass": true
+      },
+      {
+        "name": "Invalid input clears stale results and disables export",
+        "pass": true
+      },
+      {
+        "name": "Export retains the full 730-day history, physical dimensions and limitations",
+        "pass": true
+      },
+      {
+        "name": "The page fits a narrow screen without document overflow",
+        "pass": true
+      },
+      {
+        "name": "Default study and all nine scenarios are accessible without JavaScript",
+        "pass": true
+      },
+      {
+        "name": "No uncaught browser errors",
+        "pass": true
+      }
+    ],
+    "errors": [],
+    "browser": "Google Chrome"
+  }
+}

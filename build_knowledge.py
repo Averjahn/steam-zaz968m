@@ -82,7 +82,7 @@ def build_knowledge(root,out):
             key=(url,piece)
             if key in seen:continue
             seen.add(key);chunks.append({'id':'k'+str(len(chunks)+1),'title':title,'text':piece,'url':url,'category':category,'source':source,'context':context})
-    categories={'engine-sizing.html':'Размеры и мощность двигателя','radial-engine.html':'Паровая машина и рабочий объём','assembly.html':'3D и симуляция','heat.html':'Источники тепла','physics.html':'Физика','piping.html':'Трубопроводы','procurement.html':'Комплектующие','literature.html':'Литература','report.html':'Отчёт','internal.html':'Компоновка','packaging.html':'Компоновка','reconstruction.html':'Кузов','user-model.html':'Кузов','calculations.html':'Расчёты','lab.html':'Архив сценариев','literature-audit.html':'Литература'}
+    categories={'aging.html':'Старение, ресурс и зимняя эксплуатация','engine-sizing.html':'Размеры и мощность двигателя','radial-engine.html':'Паровая машина и рабочий объём','assembly.html':'3D и симуляция','heat.html':'Источники тепла','physics.html':'Физика','piping.html':'Трубопроводы','procurement.html':'Комплектующие','literature.html':'Литература','report.html':'Отчёт','internal.html':'Компоновка','packaging.html':'Компоновка','reconstruction.html':'Кузов','user-model.html':'Кузов','calculations.html':'Расчёты','lab.html':'Архив сценариев','literature-audit.html':'Литература'}
     for name,category in categories.items():
         path=out/name
         if not path.exists():continue
