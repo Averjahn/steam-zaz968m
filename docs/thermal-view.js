@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id),fmt=(v,d=1)=>Number.isFinite(v)?v.toLoca
 const make=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
 const rgb=Tvalue=>new T.Color().setRGB(...Tvalue,T.SRGBColorSpace);
 export function thermalView(api,data,pipes){
- const materials=new Map(),geometryRecords=new WeakMap(),maps=new Map(),labels=new Map(),profiles=new Map();let revision=-1,lastUpdate=-Infinity,lastState=null;
+ const materials=new Map(),geometryRecords=new WeakMap(),maps=new Map(),labels=new Map(),profiles=new Map();let revision=-1,lastUpdate=-Infinity,lastState=null,lastPresentation='';
  const originalEnvironment=api.scene.environmentIntensity,lights=new Map();api.scene.traverse(o=>{if(o.isLight)lights.set(o,o.intensity);});const heatLight=new T.AmbientLight(0xffffff,Math.PI);heatLight.name='Neutral illumination for quantitative temperature colours';heatLight.visible=false;api.scene.add(heatLight);
  const host=$('thermalLabels'),svg=document.createElementNS('http://www.w3.org/2000/svg','svg');host.append(svg);
  function bounds(m){m.root.updateWorldMatrix(true,true);return new T.Box3().setFromObject(m.root);}
@@ -18,7 +18,7 @@ export function thermalView(api,data,pipes){
   const n=profile.samples.length-1,segments=geo.parameters?.tubularSegments,rings=(geo.parameters?.radialSegments||0)+1;
   const c=new T.Color();for(let i=0;i<p.count;i++){const u=mapping?mapping[i*2]:Math.floor(i/rings)/segments,f=Math.max(0,Math.min(n,u*n)),j=Math.min(n-1,Math.floor(f)),t=f-j,r=mapping?mapping[i*2+1]:0;
    c.copy(colors[j]).lerp(colors[j+1],t);if(r>0)c.lerp(radial[j].clone().lerp(radial[j+1],t),r);attr.setXYZ(i,c.r,c.g,c.b);
-  }attr.needsUpdate=true;for(const mat of [].concat(o.material)){mat.vertexColors=true;mat.color?.set(0xffffff);mat.emissive?.set(0);mat.needsUpdate=true;}
+  }attr.needsUpdate=true;for(const mat of [].concat(o.material)){if(!mat.vertexColors){mat.vertexColors=true;mat.needsUpdate=true;}mat.color?.set(0xffffff);mat.emissive?.set(0);}
  }
  function routeMapping(o,m,curve,route){
   if(maps.has(o))return maps.get(o);o.updateWorldMatrix(true,false);m.root.updateWorldMatrix(true,false);const matrix=m.root.matrixWorld.clone().invert().multiply(o.matrixWorld),points=Array.from({length:97},(_,i)=>curve.getPointAt(i/96)),p=o.geometry.attributes.position,v=new T.Vector3(),values=new Float32Array(p.count*2),ri=route.od/2,ro=ri+(route.insulation_mm||0),layer=o.userData.pipeLayer;
@@ -64,6 +64,8 @@ export function thermalView(api,data,pipes){
  $('thermalExport').onclick=()=>{if(!lastState)return;const payload={scope:'Node control-volume temperatures + independent quasi-steady pipe screening; not CFD/pressure certification',units:'SI, °C, pressure absolute',...lastState};const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));a.href=url;a.download='zaz-thermal-view.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
  return {snapshot:()=>lastState,properties(id,s,cfg,source){const value=componentThermalState(id,s,{...cfg,water:data.water},source);return {...value,extra:value.basis};},frame(s,cfg,source,paths){
   ensureRecords();const mode=$('sceneViewMode').value,field=$('physicalField').value,active=field==='temperature',min=Number($('thermalScaleMin').value)||0,max=Math.max(min+1,Number($('thermalScaleMax').value)||350);heatLight.visible=active;api.scene.environmentIntensity=active?0:originalEnvironment;for(const [light,intensity]of lights)light.intensity=active?0:intensity;
+  // Programmatic scene changes also need an immediate repaint/gradient reset.
+  const presentation=[mode,field,min,max].join('/');if(presentation!==lastPresentation){lastPresentation=presentation;lastUpdate=-Infinity;}
   for(const [mat,r]of materials){mat.visible=mode==='flow'?false:r.visible;if(r.metalness!==undefined){mat.metalness=active?0:r.metalness;mat.roughness=active?1:r.roughness;mat.envMapIntensity=active?0:r.envMapIntensity;}if(r.body){mat.opacity=mode==='ultra'?.08:r.opacity;mat.transparent=mode==='ultra'||r.transparent;mat.depthWrite=mode==='ultra'?false:r.depthWrite;}}
   $('thermalLegend').hidden=!active;$('thermalLegendTicks').textContent='';for(const value of [min,(min+max)/2,max])$('thermalLegendTicks').append(make('span',fmt(value,0)+' °C'));host.hidden=mode!=='ultra'||$('thermalLabelMode').value==='off';
   if(performance.now()-lastUpdate>250){lastUpdate=performance.now();profiles.clear();const material=pipes.materials.aerogel,states=new Map(),entries=[];

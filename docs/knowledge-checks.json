@@ -509,7 +509,7 @@
     }
   ],
   "max_vector_norm_error": 1.9092392011810233e-7,
-  "manifest_sha256": "3c0c53f6e66d11b3b521f0e6eb8e58ebd57d6b74bb59cf825c6c860bdf6b16f0",
+  "manifest_sha256": "5758a72ffc35af18124a11b2fe9a73319b39dcf8a7bd273e0f908cb4f4dbf52d",
   "source_sha256": {
     "build_knowledge.py": "2b7bae83fda83675ef6db91c646e9894021e368f8e585b2a4aee6e3fbd37e312",
     "web/search-core.js": "bdc30ddf76fc3cb3ab1efbff1d3839d5865a8078586231ee973d8f596d87ecb4",

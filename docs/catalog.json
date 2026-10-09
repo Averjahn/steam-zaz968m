@@ -172,7 +172,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 43027
+    "size": 43201
   },
   {
     "path": "build_stock_suspension.py",
@@ -565,6 +565,13 @@
     "category": "Проверки",
     "format": "JSON",
     "size": 1849
+  },
+  {
+    "path": "thermal-flicker-checks.json",
+    "title": "Температурная карта · стабильность кадров и восстановление материалов",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 14710
   },
   {
     "path": "thermal-presentation-checks.json",

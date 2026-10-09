@@ -1,0 +1,566 @@
+{
+  "date": "2026-10-09",
+  "status": "passed",
+  "scope": "Rendered native material colours and paused WebGL framebuffer stability; cold and warm thermal modes, pressure/material restoration, engine forces, gradients, mobile and fullscreen. Not a change to the physical simulation.",
+  "source_sha256": {
+    "web/assembly-systems.js": "6c3e5326358b682d537704756b6579d7ee54022a60b827f248438ee69f07cab7",
+    "web/thermal-view.js": "27bb7e33ca495367b312ec52f113b6f9c20e3a76e38dcaf7749a0dc3398224e2",
+    "web/thermal-model.js": "0d9441707c6d863beed1d42bbab467d69338b1152efc50bb38373459f756ccdf",
+    "web/assembly.js": "ca4fd00685104ae2099d25c87d06980d1f9bfc2304d666298af993dc27f7dcba",
+    "web/assembly.html": "c6010a07d5fc6e1290b96a1f896b35bc6dd4841d0d8291a03a94ee25ba2e22f3",
+    "build_site.py": "3ebe4191c0548ff247810cd869b4104a0c53cb1b2a604574dda49a39804513d9"
+  },
+  "baseline": {
+    "commit": "a768cd8d242f668e0f06ea4da0c3e42e3ce008bb",
+    "frames": 90,
+    "changing_materials": 679,
+    "examples": [
+      {
+        "id": "ENG",
+        "name": "Поддон картера",
+        "variants": [
+          "69b0f6/1b344d/false",
+          "0c67ff/000000/false"
+        ]
+      },
+      {
+        "id": "ENG",
+        "name": "Передняя стенка картера",
+        "variants": [
+          "69b0f6/1b344d/false",
+          "0c67ff/000000/false"
+        ]
+      },
+      {
+        "id": "ENG",
+        "name": "Задняя стенка картера",
+        "variants": [
+          "69b0f6/1b344d/false",
+          "0c67ff/000000/false"
+        ]
+      },
+      {
+        "id": "ENG",
+        "name": "Коренная шейка · отдельный участок",
+        "variants": [
+          "69b0f6/1b344d/false",
+          "0c67ff/000000/false"
+        ]
+      },
+      {
+        "id": "ENG",
+        "name": "Коренная шейка · отдельный участок",
+        "variants": [
+          "69b0f6/1b344d/false",
+          "0c67ff/000000/false"
+        ]
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "Paused vehicle temperature colours do not alternate across 90 rendered frames",
+      "pass": true,
+      "detail": {
+        "frames": 90,
+        "duration_ms": 1966.9000000059605,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 1,
+        "name": "Cold vehicle temperature"
+      }
+    },
+    {
+      "name": "Paused temperature framebuffer is identical across sampled frames",
+      "pass": true,
+      "detail": {
+        "frames": 90,
+        "duration_ms": 1966.9000000059605,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 1,
+        "name": "Cold vehicle temperature"
+      }
+    },
+    {
+      "name": "Opaque temperature materials are not repeatedly invalidated",
+      "pass": true,
+      "detail": {
+        "frames": 90,
+        "duration_ms": 1966.9000000059605,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 1,
+        "name": "Cold vehicle temperature"
+      }
+    },
+    {
+      "name": "Cold engine uses the declared 0…350 °C temperature palette",
+      "pass": true
+    },
+    {
+      "name": "Ultra mode preserves stable colours on body and equipment",
+      "pass": true,
+      "detail": {
+        "frames": 45,
+        "duration_ms": 1163.9000000059605,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Ultra vehicle"
+      }
+    },
+    {
+      "name": "Thermal labels and legend remain visible",
+      "pass": true
+    },
+    {
+      "name": "An isolated engine does not flicker in temperature mode",
+      "pass": true,
+      "detail": {
+        "frames": 45,
+        "duration_ms": 747.5,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Isolated engine"
+      }
+    },
+    {
+      "name": "Piston forces remain available in the thermal engine view",
+      "pass": true
+    },
+    {
+      "name": "Warm fixture has nonzero steam flow for gradient verification",
+      "pass": true,
+      "detail": 0.03357806457446718
+    },
+    {
+      "name": "Warm node colours and pipe gradients do not alternate when paused",
+      "pass": true,
+      "detail": {
+        "frames": 75,
+        "duration_ms": 2312.2999999970198,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Warm vehicle with gradients"
+      }
+    },
+    {
+      "name": "Repeated gradient refresh does not invalidate opaque material variants",
+      "pass": true,
+      "detail": {
+        "frames": 75,
+        "duration_ms": 2312.2999999970198,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Warm vehicle with gradients"
+      }
+    },
+    {
+      "name": "Physical steam pipe retains vertex gradients with a white material multiplier",
+      "pass": true,
+      "detail": [
+        {
+          "layer": "pipe",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "pipe",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "pipe",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "pipe",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "insulation",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "insulation",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "insulation",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "insulation",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "jacket",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "jacket",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "jacket",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        },
+        {
+          "layer": "jacket",
+          "color": true,
+          "vertex": true,
+          "tint": "ffffff"
+        }
+      ]
+    },
+    {
+      "name": "Changing the scale repaints once and remains stable",
+      "pass": true,
+      "detail": {
+        "frames": 45,
+        "duration_ms": 1429.7999999970198,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Changed temperature scale"
+      }
+    },
+    {
+      "name": "Changed scale reaches thermal diagnostics",
+      "pass": true
+    },
+    {
+      "name": "Pressure mode remains stable after leaving thermal colours",
+      "pass": true,
+      "detail": {
+        "frames": 45,
+        "duration_ms": 1398.699999988079,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Pressure after temperature"
+      }
+    },
+    {
+      "name": "Pressure mode removes thermal vertex attributes immediately",
+      "pass": true
+    },
+    {
+      "name": "Material colours and PBR properties are restored",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Original illumination is restored",
+      "pass": true
+    },
+    {
+      "name": "Switching through fluid-only mode retains stable thermal rendering",
+      "pass": true,
+      "detail": {
+        "frames": 45,
+        "duration_ms": 3088.2000000029802,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Thermal after fluid-only"
+      }
+    },
+    {
+      "name": "Fullscreen temperature mode remains stable",
+      "pass": true,
+      "detail": {
+        "frames": 30,
+        "duration_ms": 1678.5999999940395,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Fullscreen thermal"
+      }
+    },
+    {
+      "name": "Mobile temperature mode remains stable without overflow",
+      "pass": true,
+      "detail": {
+        "frames": 30,
+        "duration_ms": 1871.2999999970198,
+        "materials": 701,
+        "changing": [],
+        "shader_version_changes": [],
+        "framebuffer_variants": 0,
+        "name": "Mobile thermal"
+      }
+    },
+    {
+      "name": "No browser or shader errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "render_samples": [
+    {
+      "frames": 90,
+      "duration_ms": 1966.9000000059605,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 1,
+      "name": "Cold vehicle temperature"
+    },
+    {
+      "frames": 45,
+      "duration_ms": 1163.9000000059605,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Ultra vehicle"
+    },
+    {
+      "frames": 45,
+      "duration_ms": 747.5,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Isolated engine"
+    },
+    {
+      "frames": 75,
+      "duration_ms": 2312.2999999970198,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Warm vehicle with gradients"
+    },
+    {
+      "frames": 45,
+      "duration_ms": 1429.7999999970198,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Changed temperature scale"
+    },
+    {
+      "frames": 45,
+      "duration_ms": 1398.699999988079,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Pressure after temperature"
+    },
+    {
+      "frames": 45,
+      "duration_ms": 3088.2000000029802,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Thermal after fluid-only"
+    },
+    {
+      "frames": 30,
+      "duration_ms": 1678.5999999940395,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Fullscreen thermal"
+    },
+    {
+      "frames": 30,
+      "duration_ms": 1871.2999999970198,
+      "materials": 701,
+      "changing": [],
+      "shader_version_changes": [],
+      "framebuffer_variants": 0,
+      "name": "Mobile thermal"
+    }
+  ],
+  "browser_errors": [],
+  "regression_checks": [
+    {
+      "name": "Detailed thermal link opens the requested mode",
+      "pass": true
+    },
+    {
+      "name": "Physics controls initialized",
+      "pass": true
+    },
+    {
+      "name": "All components appear in separate-view selector",
+      "pass": true
+    },
+    {
+      "name": "ENG can be inspected alone",
+      "pass": true
+    },
+    {
+      "name": "CND can be inspected alone",
+      "pass": true
+    },
+    {
+      "name": "STM can be inspected alone",
+      "pass": true
+    },
+    {
+      "name": "PMP can be inspected alone",
+      "pass": true
+    },
+    {
+      "name": "Flow-only mode hides physical material surfaces",
+      "pass": true
+    },
+    {
+      "name": "Engine fluid chambers remain visible",
+      "pass": true
+    },
+    {
+      "name": "Water/steam filter excludes fuel, oil and flue overlays",
+      "pass": true
+    },
+    {
+      "name": "Returning from flow-only restores physical materials",
+      "pass": true
+    },
+    {
+      "name": "Thermal mode shows labels and a common colour scale",
+      "pass": true
+    },
+    {
+      "name": "Temperature illumination avoids metal-reflection colour distortion",
+      "pass": true
+    },
+    {
+      "name": "Label temperatures fit inside their cards",
+      "pass": true
+    },
+    {
+      "name": "Every visible component has a corresponding thermal row",
+      "pass": true
+    },
+    {
+      "name": "Unknown body pressure is displayed as unknown",
+      "pass": true
+    },
+    {
+      "name": "Warm-up uses the actual integrator",
+      "pass": true,
+      "detail": {
+        "T": 158.67163870758262,
+        "flow": 0.033321686664483804,
+        "trip": ""
+      }
+    },
+    {
+      "name": "Warm pipes have spatial fluid/surface profiles",
+      "pass": true
+    },
+    {
+      "name": "Additional losses are explicitly separate from the transient balance",
+      "pass": true
+    },
+    {
+      "name": "Physical pipe geometry receives gradient colours",
+      "pass": true
+    },
+    {
+      "name": "Formula is followed by numerical substitution",
+      "pass": true
+    },
+    {
+      "name": "Selected tube has a calculated heat-loss summary",
+      "pass": true
+    },
+    {
+      "name": "Export includes profiles and numerical node balances",
+      "pass": true
+    },
+    {
+      "name": "Material mode removes transient vertex colour attributes",
+      "pass": true
+    },
+    {
+      "name": "Normal illumination is restored after leaving the temperature view",
+      "pass": true
+    },
+    {
+      "name": "wood updates available isolated components",
+      "pass": true
+    },
+    {
+      "name": "pellets updates available isolated components",
+      "pass": true
+    },
+    {
+      "name": "lpg updates available isolated components",
+      "pass": true
+    },
+    {
+      "name": "electric updates available isolated components",
+      "pass": true
+    },
+    {
+      "name": "diesel updates available isolated components",
+      "pass": true
+    },
+    {
+      "name": "Mobile layout has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Thermal labels and scale survive fullscreen",
+      "pass": true
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "regression_errors": [],
+  "total_checks": 55,
+  "sampled_frames": 450,
+  "harness_sha256": {
+    "flicker": "8ae9350ea06b8c9c53864b92f4b3fb1c4fc9d8c64f444fc2978bb0a2e536aadf",
+    "thermal_regression": "a74a0ae84fa3151f974a2fc70f5a3858021b9d57111d8a5a89292a7ebc9e9200"
+  }
+}
