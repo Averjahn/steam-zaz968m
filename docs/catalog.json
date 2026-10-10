@@ -119,11 +119,25 @@
     "size": 11508
   },
   {
+    "path": "build_engine_bore_fit.cjs",
+    "title": "build_engine_bore_fit.cjs",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 6270
+  },
+  {
     "path": "build_engine_sizing.mjs",
     "title": "build_engine_sizing.mjs",
     "category": "Исходники",
     "format": "MJS",
     "size": 5879
+  },
+  {
+    "path": "build_engine_strength.mjs",
+    "title": "Воспроизводимый расчёт увеличения цилиндров и прочности",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 6755
   },
   {
     "path": "build_fitted_drawing.py",
@@ -179,7 +193,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 14342
+    "size": 14459
   },
   {
     "path": "build_mount_register.py",
@@ -256,7 +270,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 50901
+    "size": 52377
   },
   {
     "path": "build_stock_suspension.py",
@@ -399,6 +413,13 @@
     "size": 17617
   },
   {
+    "path": "engine-bore-fit.json",
+    "title": "Диаметр отдельно от хода · аудит геометрии и труб",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 59669
+  },
+  {
     "path": "engine-sizing-checks.json",
     "title": "Подбор двигателя · геометрия, масса, энергия и пределы расчёта",
     "category": "Проверки",
@@ -420,11 +441,46 @@
     "size": 40346
   },
   {
+    "path": "engine-strength-browser-checks.json",
+    "title": "engine-strength-browser-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 6537
+  },
+  {
+    "path": "engine-strength-checks.json",
+    "title": "Прочностной расчёт · независимые проверки равновесия и формул",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 2280
+  },
+  {
+    "path": "engine-strength-report.pdf",
+    "title": "Увеличение цилиндров и прочность · расчёт PDF",
+    "category": "Документы",
+    "format": "PDF",
+    "size": 215705
+  },
+  {
+    "path": "engine-strength-study.json",
+    "title": "Увеличение цилиндров · силы, инерция и прочностной экран",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 185239
+  },
+  {
     "path": "engine_sizing_page.py",
     "title": "engine_sizing_page.py",
     "category": "Исходники",
     "format": "PY",
     "size": 5068
+  },
+  {
+    "path": "engine_strength_page.py",
+    "title": "engine_strength_page.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 16932
   },
   {
     "path": "fitted-engine-browser-checks.json",
@@ -466,7 +522,7 @@
     "title": "fitted_engine_page.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 12973
+    "size": 13377
   },
   {
     "path": "geometry-checks.json",
@@ -557,7 +613,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17708
+    "size": 17913
   },
   {
     "path": "layout-fitted.json",
@@ -889,6 +945,20 @@
     "size": 5190
   },
   {
+    "path": "verify_engine_strength.mjs",
+    "title": "verify_engine_strength.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 4793
+  },
+  {
+    "path": "verify_engine_strength_browser.cjs",
+    "title": "verify_engine_strength_browser.cjs",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 7025
+  },
+  {
     "path": "verify_fitted_browser.cjs",
     "title": "verify_fitted_browser.cjs",
     "category": "Исходники",
@@ -984,7 +1054,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10546
+    "size": 10636
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -1162,11 +1232,18 @@
     "size": 16426
   },
   {
+    "path": "engine-strength.html",
+    "title": "Увеличение цилиндров и прочность механизма",
+    "category": "Расчёты",
+    "format": "HTML",
+    "size": 125508
+  },
+  {
     "path": "fitted-engine.html",
     "title": "Семицилиндровый двигатель по свободному месту",
     "category": "3D",
     "format": "HTML",
-    "size": 17453
+    "size": 17857
   },
   {
     "path": "compact-radial.html",
@@ -1208,7 +1285,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 55277
+    "size": 55439
   },
   {
     "path": "user-model.html",

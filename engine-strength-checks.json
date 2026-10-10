@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Seven independent bores evaluated at fixed 45mm stroke",
+      "passed": true
+    },
+    {
+      "name": "Displacement increases by square of bore without doubling ordinary volume",
+      "passed": true
+    },
+    {
+      "name": "Same heat/enthalpy flow preserves shaft power",
+      "passed": true
+    },
+    {
+      "name": "Steam consumption invariant and speed declines as displaced admitted volume grows",
+      "passed": true
+    },
+    {
+      "name": "Pressure force uses both areas relative to ambient",
+      "passed": true
+    },
+    {
+      "name": "Increasing bore leaves crosshead, piston stroke and common pin unchanged",
+      "passed": true
+    },
+    {
+      "name": "Master rod moment equilibrium at1440 arbitrary force states",
+      "passed": true
+    },
+    {
+      "name": "Independent virtual work agrees with crank torque at1440 force states",
+      "passed": true
+    },
+    {
+      "name": "Shaft combined stress scales with inverse cube of diameter",
+      "passed": true
+    },
+    {
+      "name": "Euler buckling load scales with inverse square of length",
+      "passed": true
+    },
+    {
+      "name": "Current thin shaft and crosshead pins fail chosen screen for every bore",
+      "passed": true
+    },
+    {
+      "name": "Candidate D60 proposed individual sections pass110MPa static screen in both speed cases",
+      "passed": true
+    },
+    {
+      "name": "No result claims confirmed complete strength or fatigue life",
+      "passed": true
+    },
+    {
+      "name": "Room-temperature strength assumption is550/5, not borrowed hot750MPa",
+      "passed": true
+    },
+    {
+      "name": "Candidate D60 has no unconnected external mesh conflicts or barrel/pipe envelope overlap",
+      "passed": true
+    },
+    {
+      "name": "Candidate body clearance18mm and static suspension50mm retain source precision limits",
+      "passed": true
+    },
+    {
+      "name": "Crankpin sliding bearing overspeed is not accepted by analogy with dry catalogue rating",
+      "passed": true
+    },
+    {
+      "name": "Invalid cylinder parameters rejected",
+      "passed": true
+    }
+  ],
+  "master_moment_error_Nmm": 7.275957614183426e-12,
+  "virtual_work_error_Nm": 5.684341886080802e-14
+}

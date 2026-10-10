@@ -1,0 +1,4911 @@
+{
+  "date": "2026-10-10",
+  "status": "Предварительная оценка цилиндров с неизменным ходом45 мм; прежний механизм не проходит принятый прочностной экран. Усиление не внедрено и не аттестовано.",
+  "assumptions": {
+    "stroke_mm": 45,
+    "rod_mm": 9.6,
+    "pressure_bar_abs": 10,
+    "back_bar_abs": 1.2,
+    "ambient_bar_abs": 1,
+    "structural_pressure_bar_abs": 15,
+    "overspeed_rpm": 2600,
+    "steel_density": 7850,
+    "E_MPa": 210000,
+    "yield_MPa": 550,
+    "allowable_MPa": 110,
+    "load_factor": 1.5,
+    "extra_reciprocating_kg": 0.35,
+    "polytropic_n": 1.15,
+    "cutoff": 0.3
+  },
+  "sources": [
+    {
+      "title": "Ovako · 42CrMo4 +QT, свойства зависят от состояния и сечения",
+      "url": "https://steelnavigator.ovako.com/steel-grades/42crmo4/",
+      "use": "550 MPa room-temperature conservative illustrative yield across +QT sections up to160mm, not hot/welded material property"
+    },
+    {
+      "title": "IIT / NPTEL · изгиб, кручение и комбинированное напряжение",
+      "url": "https://archive.nptel.ac.in/content/storage2/courses/105105104/pdf/m6l16.pdf",
+      "use": "mechanics of elastic stress screening"
+    },
+    {
+      "title": "GGB · DU, допустимая скорость и pV для сухого и масляного режимов",
+      "url": "https://www.ggbearings.com/fr/nos-produits/paliers-metal-polymeres/du",
+      "use": "dry PV1.8 and oil sliding speed5 m/s are distinct; dry PV is not an oil rating"
+    },
+    {
+      "title": "NSK · статистический ресурс подшипников качения",
+      "url": "https://www.nsk.com/am-en/tools-resources/knowledge-center/bearing-abcs/dynamic-load-ratings-and-fatigue-life/",
+      "use": "L10 is statistical rolling fatigue, not a life formula for our sliding bushings"
+    }
+  ],
+  "limitations": [
+    "Кузов — игровая сетка yatloo, подвеска статическая; обмеры, ход подвески и горячие зазоры неизвестны.",
+    "Прочностной экран110 МПа — явно принятая гипотеза550/5 при комнатной температуре. Это не допустимое напряжение для металла при250 °C.",
+    "15 бар абсолютного — отдельный сценарий нагрузки, не разрешённое давление и не настройка защиты.2600 об/мин — исследовательский сценарий, не допустимая частота вращения.",
+    "Масса крейцкопфа и доли шатуна задана гипотезой0,35 кг; инерция вращающейся вилки и собственная распределённая инерция шатунов, дисбаланс, трение, удары и гидроудар не решены.",
+    "Передача усилия решена по кинематике нынешних шарниров24 мм и равновесию главного шатуна. Предлагаемая более крупная головка требует нового радиуса шарниров и пересчёта кинематики.",
+    "Размеры усиления — начальный прочностной подбор отдельных сечений. Новая двухщёчная конструкция, вилки, отверстия и подшипники требуют нового CAD и повторного аудита; в 3D показаны только увеличенные цилиндры на старом механизме.",
+    "Ламе относится к гладкой стенке без портов. Оценка крышки — полосовая модель сплошной пластины; порты, болты, сальник, предварительная затяжка и термические напряжения не рассчитаны.",
+    "Усталость и ресурс за730 дней не подтверждены: отсутствуют S–N при температуре, обработка, коэффициенты надрезов, история нагрузок, сертифицированный материал, смазка и испытания.",
+    "Три прежних конфликта труб общей сборки и ранее найденные проходы через панели кузова этим исследованием не устранены."
+  ],
+  "mass_model": "7850 kg/m3 × (πD²/4 ×7.5mm + πd²/4 ×67.5mm) + .35kg per cylinder",
+  "pressure_model": "Gas force from absolute chamber pressures relative to 1bar crankcase; admission/expansion/exhaust states follow actual articulated kinematics; expansion pV^1.15. This load diagram is illustrative and is NOT a calibrated power prediction.",
+  "bound_model": "180 angle samples ×128 independent chamber-force endpoint combinations, with calculated reciprocating inertia; all extrema ×1.5. Includes arbitrary valve load combinations, not simultaneous sum of seven axial forces.",
+  "proposed_topology": {
+    "main_journal_mm": 45,
+    "piston_rod_mm": 14,
+    "crank_web_width_mm": 80,
+    "crank_web_thickness_mm": 25,
+    "crankpin_mm": 40,
+    "double_cheek_required": true,
+    "crankpin_bearing_length_mm": 24,
+    "crosshead_pin_mm": 16,
+    "slave_pin_mm": 16,
+    "rod_net_width_mm": 36,
+    "rod_thickness_mm": 12,
+    "cylinder_wall_mm": 5,
+    "head_first_guess_mm": 8,
+    "master_fork_cheek_mm": 12,
+    "master_fork_outer_diameter_mm": 120,
+    "new_articulation_radius_mm": 40,
+    "new_articulation_radius_required": true,
+    "not_in_3d": true
+  },
+  "input_sha256": {
+    "web/engine-strength-model.js": "47fb93973438bdf2bd373a02179b6d5d744ed92ec2432230461699325a710c1f",
+    "web/shared-radial-model.js": "ddee074b8af8f711a5bf342630972217ec575df891404e3a324c277b83c78439",
+    "web/shared-radial-geometry.js": "0869d6a508ae053e221f512eddee7416f0c679ae84c2968a0cea033fbd99de78",
+    "web/engine-sizing-model.js": "42fec133fc314b1ebf0d07915140613a52661da190d3613c7cc3807484ce212d",
+    "engine-sizing.json": "23e468c4a381ed59ad808be1b295088af216bfb10811ea95e14bd8d2d1e6979f",
+    "engine-bore-fit.json": "d21aabd7bb64cedba8f1e74b4efd06e589f1ad00a31468436a89217ec507760e",
+    "layout-fitted.json": "6e5cf9cc86991a866e0dbd916af881f55e618b170e029e95d231e50d91203f14"
+  },
+  "rows": [
+    {
+      "geometry": {
+        "bore_mm": 40,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 96.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 119.87118807968696,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 61.76521133307399,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 30.534016821632235,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 30.534016821632235,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 30.534016821632193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 90.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": 0,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-40",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.0012566370614359172,
+          "B_m2": 0.0011842547666972086,
+          "one_L": 0.05654866776461628,
+          "swept_L": 0.39584067435231396,
+          "double_L": 0.7688809258619347,
+          "admitted_L": 0.23066427775858037,
+          "mass_kg_h": 17.84984515819073,
+          "heat_kW": 13.34668058248867,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 1.5377618517238694
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 1322.9328766756994,
+        "output_rpm": 1322.9328766756994,
+        "torque_output_Nm": 24.168960443814694,
+        "mean_piston_m_s": 1.9843993150135488,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 40,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 1322.9328766756994,
+        "mass_reciprocating_each_kg": 0.46233807541671296,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 1107.2882599583816,
+        "working_force_B_N": 1040.6965487987693,
+        "peak": {
+          "reaction_N": 3380.4038904663444,
+          "torque_Nm": 67.94472787897948,
+          "joint_max_N": 1057.735559563731,
+          "slave_max_N": 1057.735559563731,
+          "master_joint_N": 1034.9671984465904,
+          "acceleration_m_s2": 539.7219911378315,
+          "virtual_work_error_Nm": 4.263256414560601e-14,
+          "moment_residual_Nmm": 3.637978807091713e-12
+        },
+        "independent_force_bound": {
+          "reaction_N": 8847.794745746867,
+          "torque_Nm": 177.63693599399798,
+          "joint_max_N": 1961.0053655357535,
+          "slave_max_N": 1940.01086187022,
+          "master_joint_N": 1961.0053655357535
+        },
+        "design_loads": {
+          "crankpin_N": 13271.6921186203,
+          "torque_Nm": 266.45540399099696,
+          "joint_N": 2941.5080483036304,
+          "slave_joint_N": 2910.01629280533
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 81.27700451946465,
+          "proposed_assumed_Kt_stress_MPa": 38.216779267927876,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 3196.102765733842,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 33.25584741794507,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 269.44595303753056,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 28.06728677474276,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 2491.7178626669975,
+          "shaft_torsion_MPa": 694.8076692883883,
+          "shaft_vm_MPa": 2767.116007513902,
+          "shaft_room_yield_margin": 0.19876289917246515,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 258.65244368258016,
+          "crankpin_room_yield_margin": 2.126405581827649,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 55.29871716091792,
+          "shaft_deflection_mm": 0.8201311365121089,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 741.5515694660771,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 1187.8149680691224,
+          "net_section_with_assumed_Kt_MPa": 328.2933089624588,
+          "bearing_MPa": 183.8442530189769,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 1.6701874227926357,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 354.4587695387956,
+          "net_section_with_assumed_Kt_MPa": 324.77860410773775,
+          "bearing_MPa": 121.25067886688875,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 2.8571176447843634,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 22.25256721774796,
+          "shaft_torsion_MPa": 14.892139688108458,
+          "shaft_vm_MPa": 34.06617415047948,
+          "shaft_room_yield_margin": 16.145047505789808,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 19.214559434078613,
+          "crankpin_room_yield_margin": 28.624127546975107,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 13.82467929022948,
+          "shaft_deflection_mm": 0.00035321535266266604,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 35.27131709184135,
+          "net_section_with_assumed_Kt_MPa": 31.26602942499607,
+          "bearing_MPa": 15.320354418248074,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 162.34221749544417,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 34.89370272678806,
+          "net_section_with_assumed_Kt_MPa": 30.931295629308355,
+          "bearing_MPa": 15.156334858361094,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 231.42652922753345,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 6.377777777777779,
+          "wall_vm_MPa": 6.7357531405456355,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 268.8,
+          "head_solid_minimum_mm": 3.908033683673578,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 2.770744137704526,
+          "pv_upper_MPa_m_s": 38.3046490990485,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 40,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.46233807541671296,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 1107.2882599583816,
+        "working_force_B_N": 1040.6965487987693,
+        "peak": {
+          "reaction_N": 3257.1916704380374,
+          "torque_Nm": 68.62596031710994,
+          "joint_max_N": 1105.9292044775036,
+          "slave_max_N": 1105.9292044775036,
+          "master_joint_N": 1025.7432232605843,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 4.263256414560601e-14,
+          "moment_residual_Nmm": 3.637978807091713e-12
+        },
+        "independent_force_bound": {
+          "reaction_N": 10928.217040306352,
+          "torque_Nm": 178.31545871765928,
+          "joint_max_N": 2621.6182065219027,
+          "slave_max_N": 2621.6182065219027,
+          "master_joint_N": 2554.7161115085933
+        },
+        "design_loads": {
+          "crankpin_N": 16392.32556045953,
+          "torque_Nm": 267.4731880764889,
+          "joint_N": 3932.427309782854,
+          "slave_joint_N": 3932.427309782854
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 108.65716053845577,
+          "proposed_assumed_Kt_stress_MPa": 51.09104038379635,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 3290.1760210948028,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 36.4528146661962,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 364.1136397947087,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 37.92850414528215,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 3077.606837514249,
+          "shaft_torsion_MPa": 697.4616375610805,
+          "shaft_vm_MPa": 3306.209620384438,
+          "shaft_room_yield_margin": 0.16635363850161664,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 319.4705713452047,
+          "crankpin_room_yield_margin": 1.7215983233889052,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 68.3013565019147,
+          "shaft_deflection_mm": 1.0129723076618329,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 915.9159689594536,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 1587.959625708871,
+          "net_section_with_assumed_Kt_MPa": 438.886976538265,
+          "bearing_MPa": 245.77670686142838,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 1.2493224564121241,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 478.9950313929849,
+          "net_section_with_assumed_Kt_MPa": 438.886976538265,
+          "bearing_MPa": 163.85113790761892,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 2.114281648919582,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 27.484914744033002,
+          "shaft_torsion_MPa": 14.949023438809164,
+          "shaft_vm_MPa": 37.76030248566555,
+          "shaft_room_yield_margin": 14.565561285129782,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 23.73256634715841,
+          "crankpin_room_yield_margin": 23.174906242950566,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 17.075339125478674,
+          "shaft_deflection_mm": 0.0004362684880005238,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 47.15332690113057,
+          "net_section_with_assumed_Kt_MPa": 41.79875967031094,
+          "bearing_MPa": 20.481392238452365,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 121.43414276325845,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 47.15332690113057,
+          "net_section_with_assumed_Kt_MPa": 41.79875967031094,
+          "bearing_MPa": 20.481392238452365,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 171.25681356248617,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 6.377777777777779,
+          "wall_vm_MPa": 6.7357531405456355,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 268.8,
+          "head_solid_minimum_mm": 3.908033683673578,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 92.98251725387416,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    },
+    {
+      "geometry": {
+        "bore_mm": 50,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 91.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 114.87730699644499,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 56.95707689930157,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": 12.72725760428056,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 25.534016821632235,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": 12.727257604280549,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": 12.727257604280581,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": 12.727257604280613,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 25.534016821632235,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": 12.727257604280592,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 25.534016821632193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": 12.727257604280588,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 85.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": 12.72725760428057,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-50",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.001963495408493621,
+          "B_m2": 0.0018911131137549122,
+          "one_L": 0.08835729338221295,
+          "swept_L": 0.6185010536754906,
+          "double_L": 1.2142016845082881,
+          "admitted_L": 0.36426050535248644,
+          "mass_kg_h": 28.188125534511048,
+          "heat_kW": 21.076816319360464,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 2.4284033690165763
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 837.7338526618236,
+        "output_rpm": 837.7338526618236,
+        "torque_output_Nm": 38.167148509759684,
+        "mean_piston_m_s": 1.2566007789927351,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 50,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 837.7338526618236,
+        "mass_reciprocating_each_kg": 0.5039543605997352,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 1729.3236053691608,
+        "working_force_B_N": 1662.7318942095485,
+        "peak": {
+          "reaction_N": 5852.27016139409,
+          "torque_Nm": 106.92859406163888,
+          "joint_max_N": 1727.9224607574934,
+          "slave_max_N": 1727.9224607574934,
+          "master_joint_N": 1700.938668813738,
+          "acceleration_m_s2": 216.42460133602575,
+          "virtual_work_error_Nm": 5.684341886080802e-14,
+          "moment_residual_Nmm": 9.094947017729282e-12
+        },
+        "independent_force_bound": {
+          "reaction_N": 13132.186309132032,
+          "torque_Nm": 280.42031878289293,
+          "joint_max_N": 2939.523365811635,
+          "slave_max_N": 2854.920862411153,
+          "master_joint_N": 2939.523365811635
+        },
+        "design_loads": {
+          "crankpin_N": 19698.279463698047,
+          "torque_Nm": 420.6304781743394,
+          "joint_N": 4409.285048717453,
+          "slave_joint_N": 4282.38129361673
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 121.83324843829361,
+          "proposed_assumed_Kt_stress_MPa": 57.286490694250716,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 5012.012552891569,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 51.2455653267735,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 396.5167864459935,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 41.30383192145765,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 3698.289137874111,
+          "shaft_torsion_MPa": 1096.8337582744161,
+          "shaft_vm_MPa": 4157.700738050874,
+          "shaft_room_yield_margin": 0.132284653141688,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 383.90041556792465,
+          "crankpin_room_yield_margin": 1.432663205603347,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 82.0761644320752,
+          "shaft_deflection_mm": 1.217265453380279,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 1100.635090200181,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 1780.5202954893832,
+          "net_section_with_assumed_Kt_MPa": 492.10770633007286,
+          "bearing_MPa": 275.5803155448408,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 1.1142100571948876,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 521.6216856875468,
+          "net_section_with_assumed_Kt_MPa": 477.9443408054386,
+          "bearing_MPa": 178.43255390069706,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 1.9415036463888051,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 33.027987985415514,
+          "shaft_torsion_MPa": 23.508954009653976,
+          "shaft_vm_MPa": 52.42957892496209,
+          "shaft_room_yield_margin": 10.490261628596471,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 28.518877481590028,
+          "crankpin_room_yield_margin": 19.285471539160156,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 20.5190411080188,
+          "shaft_deflection_mm": 0.000524253777546278,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 52.87127845572872,
+          "net_section_with_assumed_Kt_MPa": 46.86740060286407,
+          "bearing_MPa": 22.9650262954034,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 108.30121755934307,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 51.349588726243084,
+          "net_section_with_assumed_Kt_MPa": 45.51850864813701,
+          "bearing_MPa": 22.304069237587132,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 157.2617953574932,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 7.763636363636364,
+          "wall_vm_MPa": 7.935941881951948,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 420,
+          "head_solid_minimum_mm": 4.885042104591973,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 1.7545456781239064,
+          "pv_upper_MPa_m_s": 36.001594895321155,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 50,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.5039543605997352,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 1729.3236053691608,
+        "working_force_B_N": 1662.7318942095485,
+        "peak": {
+          "reaction_N": 4792.583761930328,
+          "torque_Nm": 107.82653136444205,
+          "joint_max_N": 1474.3911519993694,
+          "slave_max_N": 1474.3911519993694,
+          "master_joint_N": 1416.4912769665507,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 4.263256414560601e-14,
+          "moment_residual_Nmm": 5.4569682106375694e-12
+        },
+        "independent_force_bound": {
+          "reaction_N": 15855.34428151515,
+          "torque_Nm": 281.01362125768196,
+          "joint_max_N": 3697.981883319071,
+          "slave_max_N": 3697.981883319071,
+          "master_joint_N": 3631.9372720540314
+        },
+        "design_loads": {
+          "crankpin_N": 23783.016422272725,
+          "torque_Nm": 421.52043188652294,
+          "joint_N": 5546.972824978607,
+          "slave_joint_N": 5546.972824978607
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 153.26877505065278,
+          "proposed_assumed_Kt_stress_MPa": 72.0676036156539,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 5130.431711383518,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 55.39704881376194,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 513.6085949054266,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 53.50089530264859,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 4465.185472795621,
+          "shaft_torsion_MPa": 1099.154396757536,
+          "shaft_vm_MPa": 4854.101613089627,
+          "shaft_room_yield_margin": 0.11330623951440645,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 463.50798833956645,
+          "crankpin_room_yield_margin": 1.186603065829082,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 99.09590175946968,
+          "shaft_deflection_mm": 1.46968390418873,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 1328.8684665785681,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 2239.931776757165,
+          "net_section_with_assumed_Kt_MPa": 619.0817885020766,
+          "bearing_MPa": 346.6858015611629,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.8856848413240574,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 675.6570975455305,
+          "net_section_with_assumed_Kt_MPa": 619.0817885020766,
+          "bearing_MPa": 231.12386770744195,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 1.4988822118154428,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 39.8768421424506,
+          "shaft_torsion_MPa": 23.5586933461406,
+          "shaft_vm_MPa": 57.054348088348114,
+          "shaft_room_yield_margin": 9.639931371195939,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 34.432699197887494,
+          "crankpin_room_yield_margin": 15.973188649519043,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 24.77397543986742,
+          "shaft_deflection_mm": 0.0006329657482928667,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 66.51317426191586,
+          "net_section_with_assumed_Kt_MPa": 58.9601703335311,
+          "bearing_MPa": 28.890483463430243,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 86.08856657669837,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 66.51317426191586,
+          "net_section_with_assumed_Kt_MPa": 58.9601703335311,
+          "bearing_MPa": 28.890483463430243,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 121.40945915705088,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 7.763636363636364,
+          "wall_vm_MPa": 7.935941881951948,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 420,
+          "head_solid_minimum_mm": 4.885042104591973,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 134.90488135297588,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    },
+    {
+      "geometry": {
+        "bore_mm": 60,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 86.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 109.88386781315168,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 52.14717013566418,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": 9.443836065677193,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 20.534016821632235,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": 9.443836065677193,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": 9.4438360656772,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": 9.443836065677207,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 20.534016821632235,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": 9.443836065677193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 20.534016821632193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": 9.4438360656772,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 80.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": 9.443836065677171,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-60",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.0028274333882308137,
+          "B_m2": 0.002755051093492105,
+          "one_L": 0.12723450247038662,
+          "swept_L": 0.8906415172927064,
+          "double_L": 1.7584826117427195,
+          "admitted_L": 0.5275447835228158,
+          "mass_kg_h": 40.82380155001363,
+          "heat_kW": 30.524759997759297,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 3.516965223485439
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 578.4406671292271,
+        "output_rpm": 578.4406671292271,
+        "torque_output_Nm": 55.27604503480353,
+        "mean_piston_m_s": 0.8676610006938407,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 60,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 578.4406671292271,
+        "mass_reciprocating_each_kg": 0.5548187091567625,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 2489.58902753789,
+        "working_force_B_N": 2422.997316378278,
+        "peak": {
+          "reaction_N": 8674.323013500929,
+          "torque_Nm": 154.6898541332214,
+          "joint_max_N": 2515.890391244496,
+          "slave_max_N": 2515.890391244496,
+          "master_joint_N": 2478.6856090531323,
+          "acceleration_m_s2": 103.18394586644011,
+          "virtual_work_error_Nm": 8.526512829121202e-14,
+          "moment_residual_Nmm": 1.0913936421275139e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 18720.50800647391,
+          "torque_Nm": 406.07703542989964,
+          "joint_max_N": 4208.683045251258,
+          "slave_max_N": 4063.249097427359,
+          "master_joint_N": 4208.683045251258
+        },
+        "design_loads": {
+          "crankpin_N": 28080.762009710863,
+          "torque_Nm": 609.1155531448494,
+          "joint_N": 6313.024567876886,
+          "slave_joint_N": 6094.873646141039
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 174.43560170801788,
+          "proposed_assumed_Kt_stress_MPa": 82.0203319051578,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 7246.05288713735,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 73.76442849557456,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 564.3401524204666,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 58.785432543798585,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 5272.073498354424,
+          "shaft_torsion_MPa": 1588.326419614218,
+          "shaft_vm_MPa": 5946.688273130231,
+          "shaft_room_yield_margin": 0.09248845319253464,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 547.2668932765854,
+          "crankpin_room_yield_margin": 1.004994102067916,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 117.00317504046193,
+          "shaft_deflection_mm": 1.7352653343155133,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 1569.0036322413753,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 2549.2723298298556,
+          "net_section_with_assumed_Kt_MPa": 704.5786348076882,
+          "bearing_MPa": 394.5640354923054,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.778211726169833,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 742.3949544361219,
+          "net_section_with_assumed_Kt_MPa": 680.2314337210981,
+          "bearing_MPa": 253.95306858920995,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 1.3641396654790787,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 47.08284660024455,
+          "shaft_torsion_MPa": 34.043347471155215,
+          "shaft_vm_MPa": 75.45623211576093,
+          "shaft_room_yield_margin": 7.288993693141467,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 40.654911654618594,
+          "crankpin_room_yield_margin": 13.528500680864655,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 29.25079376011548,
+          "shaft_deflection_mm": 0.0007473467714324533,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 75.69882104201058,
+          "net_section_with_assumed_Kt_MPa": 67.10272712454172,
+          "bearing_MPa": 32.88033629102545,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 75.64217978370776,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 73.0829960270629,
+          "net_section_with_assumed_Kt_MPa": 64.783946068676,
+          "bearing_MPa": 31.744133573651244,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 110.49531290380537,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 9.153846153846155,
+          "wall_vm_MPa": 9.139898876863462,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 604.8,
+          "head_solid_minimum_mm": 5.862050525510367,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 1.211483300260506,
+          "pv_upper_MPa_m_s": 35.43684815974412,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 60,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.5548187091567625,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 2489.58902753789,
+        "working_force_B_N": 2422.997316378278,
+        "peak": {
+          "reaction_N": 6994.695923070443,
+          "torque_Nm": 155.73834042229237,
+          "joint_max_N": 2218.1747229104453,
+          "slave_max_N": 2218.1747229104453,
+          "master_joint_N": 2146.541977122461,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 8.526512829121202e-14,
+          "moment_residual_Nmm": 7.275957614183426e-12
+        },
+        "independent_force_bound": {
+          "reaction_N": 21883.217516815293,
+          "torque_Nm": 406.5335976954876,
+          "joint_max_N": 5013.537488293388,
+          "slave_max_N": 5013.537488293388,
+          "master_joint_N": 4948.784594474078
+        },
+        "design_loads": {
+          "crankpin_N": 32824.82627522294,
+          "torque_Nm": 609.8003965432314,
+          "joint_N": 7520.306232440083,
+          "slave_joint_N": 7520.306232440083
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 207.79408167667137,
+          "proposed_assumed_Kt_stress_MPa": 97.70562534347978,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 7379.866263800413,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 78.5598560159653,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 696.3246511518596,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 72.53381782831869,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 6162.756432102703,
+          "shaft_torsion_MPa": 1590.1122135532048,
+          "shaft_vm_MPa": 6750.180545474059,
+          "shaft_room_yield_margin": 0.08147930211567016,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 639.7241175924148,
+          "crankpin_room_yield_margin": 0.8597456073250932,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 136.77010948009558,
+          "shaft_deflection_mm": 2.028427259937804,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 1834.0767118679496,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 3036.786628038414,
+          "net_section_with_assumed_Kt_MPa": 839.3198920134022,
+          "bearing_MPa": 470.01913952750516,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.6532805439660903,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 916.0218450653086,
+          "net_section_with_assumed_Kt_MPa": 839.3198920134022,
+          "bearing_MPa": 313.3460930183368,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 1.1055745125004566,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 55.03719093027248,
+          "shaft_torsion_MPa": 34.08162323287904,
+          "shaft_vm_MPa": 80.70789002358461,
+          "shaft_room_yield_margin": 6.814699279578217,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 47.5232976881432,
+          "crankpin_room_yield_margin": 11.573270937745171,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 34.192527370023896,
+          "shaft_deflection_mm": 0.0008736062052424203,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 90.1752099250979,
+          "net_section_with_assumed_Kt_MPa": 79.9352278108002,
+          "bearing_MPa": 39.1682616272921,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 63.498868873503966,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 90.1752099250979,
+          "net_section_with_assumed_Kt_MPa": 79.9352278108002,
+          "bearing_MPa": 39.1682616272921,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 89.55153551253699,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 9.153846153846155,
+          "wall_vm_MPa": 9.139898876863462,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 604.8,
+          "head_solid_minimum_mm": 5.862050525510367,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 186.19292084178068,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    },
+    {
+      "geometry": {
+        "bore_mm": 70,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 81.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 104.89092015689386,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 47.33771389640968,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": 6.467253304474941,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 15.534016821632235,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": 6.467253304474934,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": 6.4672533044749905,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": 6.467253304474983,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 15.534016821632235,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": 6.467253304474934,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 15.534016821632193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": 6.467253304474976,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 75.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": 6.467253304474941,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-70",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.003848451000647497,
+          "B_m2": 0.0037760687059087885,
+          "one_L": 0.17318029502913737,
+          "swept_L": 1.2122620652039615,
+          "double_L": 2.40172370756523,
+          "admitted_L": 0.720517112269569,
+          "mass_kg_h": 55.75687320469853,
+          "heat_kW": 41.69051161768522,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 4.80344741513046
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 423.51992940219503,
+        "output_rpm": 423.51992940219503,
+        "torque_output_Nm": 75.49565001894628,
+        "mean_piston_m_s": 0.6352798941032926,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 70,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 423.51992940219503,
+        "mass_reciprocating_each_kg": 0.6149311210877947,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 3388.084526464571,
+        "working_force_B_N": 3321.4928153049586,
+        "peak": {
+          "reaction_N": 11937.013871299298,
+          "torque_Nm": 211.17122828512296,
+          "joint_max_N": 3436.337066381061,
+          "slave_max_N": 3436.337066381061,
+          "master_joint_N": 3386.357041161681,
+          "acceleration_m_s2": 55.314908485819,
+          "virtual_work_error_Nm": 1.1368683772161603e-13,
+          "moment_residual_Nmm": 1.8189894035458565e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 25433.789832288818,
+          "torque_Nm": 554.5907596560156,
+          "joint_max_N": 5720.906669025989,
+          "slave_max_N": 5513.787941266426,
+          "master_joint_N": 5720.906669025989
+        },
+        "design_loads": {
+          "crankpin_N": 38150.684748433225,
+          "torque_Nm": 831.8861394840235,
+          "joint_N": 8581.360003538983,
+          "slave_joint_N": 8270.681911899639
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 237.11212899554056,
+          "proposed_assumed_Kt_stress_MPa": 111.49109085831132,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 9890.803747787802,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 100.54214520973497,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 765.803880731448,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 79.77123757619249,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 7162.669372602262,
+          "shaft_torsion_MPa": 2169.2217948326506,
+          "shaft_vm_MPa": 8088.287960177076,
+          "shaft_room_yield_margin": 0.06799955722495801,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 743.519948334352,
+          "crankpin_room_yield_margin": 0.7397246048772744,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 158.9611864518051,
+          "shaft_deflection_mm": 2.3575414620679442,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 2131.6573575206808,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 3465.2524117592156,
+          "net_section_with_assumed_Kt_MPa": 957.7410718235473,
+          "bearing_MPa": 536.3350002211864,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.5725047946122702,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 1007.4224467357078,
+          "net_section_with_assumed_Kt_MPa": 923.0671776673704,
+          "bearing_MPa": 344.61174632915163,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 1.0052688503014187,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 63.9670261470681,
+          "shaft_torsion_MPa": 46.49395136386853,
+          "shaft_vm_MPa": 102.8437794636944,
+          "shaft_room_yield_margin": 5.347917033661324,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 55.23399676527254,
+          "crankpin_room_yield_margin": 9.957635373325063,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 39.740296612951276,
+          "shaft_deflection_mm": 0.001015349621382033,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 102.89819534528269,
+          "net_section_with_assumed_Kt_MPa": 91.2134354117664,
+          "bearing_MPa": 44.69458335176554,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 55.647466036312665,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 99.17288665880164,
+          "net_section_with_assumed_Kt_MPa": 87.91115977784479,
+          "bearing_MPa": 43.076468291143954,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 81.42677687441491,
+          "pin_screen_ok": true,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 10.546666666666669,
+          "wall_vm_MPa": 10.346116823878095,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 823.2,
+          "head_solid_minimum_mm": 6.839058946428762,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 0.8870180659058692,
+          "pv_upper_MPa_m_s": 35.250361040145606,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 70,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.6149311210877947,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 3388.084526464571,
+        "working_force_B_N": 3321.4928153049586,
+        "peak": {
+          "reaction_N": 9860.513946394885,
+          "torque_Nm": 212.361387490661,
+          "joint_max_N": 3097.1916703508077,
+          "slave_max_N": 3097.1916703508077,
+          "master_joint_N": 3009.3316663268333,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 8.526512829121202e-14,
+          "moment_residual_Nmm": 1.0913936421275139e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 29007.70687212534,
+          "torque_Nm": 554.9299868934273,
+          "joint_max_N": 6568.285021444856,
+          "slave_max_N": 6568.285021444856,
+          "master_joint_N": 6505.869747836998
+        },
+        "design_loads": {
+          "crankpin_N": 43511.56030818801,
+          "torque_Nm": 832.394980340141,
+          "joint_N": 9852.427532167285,
+          "slave_joint_N": 9852.427532167285
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 272.23308041651165,
+          "proposed_assumed_Kt_stress_MPa": 128.00510556727406,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 10039.188065179853,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 105.94118383369859,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 912.2618085340079,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 95.02727172229247,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 8169.156659406847,
+          "shaft_torsion_MPa": 2170.5486454950214,
+          "shaft_vm_MPa": 8992.717319771153,
+          "shaft_room_yield_margin": 0.06116060145588969,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 847.9982282262868,
+          "crankpin_room_yield_margin": 0.6485862607878392,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 181.29816795078338,
+          "shaft_deflection_mm": 2.688819563324768,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 2431.194571729487,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 3978.5241795526176,
+          "net_section_with_assumed_Kt_MPa": 1099.6012870722416,
+          "bearing_MPa": 615.7767207604553,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.4986456109704903,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 1200.0892739523192,
+          "net_section_with_assumed_Kt_MPa": 1099.6012870722416,
+          "bearing_MPa": 410.5178138403035,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.8438792236368942,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 72.95557430454502,
+          "shaft_torsion_MPa": 46.52239037840838,
+          "shaft_vm_MPa": 108.69919154100945,
+          "shaft_room_yield_margin": 5.059835240747848,
+          "shaft_screen_ok": true,
+          "crankpin_vm_MPa": 62.995393062063386,
+          "crankpin_room_yield_margin": 8.730797178424416,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 45.324541987695845,
+          "shaft_deflection_mm": 0.0011580249889610321,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 118.1394338906767,
+          "net_section_with_assumed_Kt_MPa": 104.72393210211824,
+          "bearing_MPa": 51.31472673003794,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 48.46835338633166,
+          "pin_screen_ok": false,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 118.1394338906767,
+          "net_section_with_assumed_Kt_MPa": 104.72393210211824,
+          "bearing_MPa": 51.31472673003794,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 68.35421711458842,
+          "pin_screen_ok": false,
+          "net_screen_ok": true,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 10.546666666666669,
+          "wall_vm_MPa": 10.346116823878095,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 823.2,
+          "head_solid_minimum_mm": 6.839058946428762,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 246.81149676883683,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    },
+    {
+      "geometry": {
+        "bore_mm": 80,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 76.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 99.89852136873628,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 42.534707939915435,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": 3.853072389825531,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 10.534016821632235,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": 3.8530723898255452,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": 3.8530723898255452,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": 3.8530723898255665,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 10.534016821632235,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": 3.8530723898255452,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 10.534016821632193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": 3.853072389825556,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 70.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": 3.8530723898255452,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-80",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.005026548245743669,
+          "B_m2": 0.0049541659510049605,
+          "one_L": 0.2261946710584651,
+          "swept_L": 1.5833626974092558,
+          "double_L": 3.143924971975818,
+          "admitted_L": 0.9431774915927453,
+          "mass_kg_h": 72.9873404985657,
+          "heat_kW": 54.57407117913819,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 6.287849943951636
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 323.5375729823326,
+        "output_rpm": 323.5375729823326,
+        "torque_output_Nm": 98.82596346218791,
+        "mean_piston_m_s": 0.48530635947349887,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 80,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 323.5375729823326,
+        "mass_reciprocating_each_kg": 0.6842915963928319,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 4424.810102149203,
+        "working_force_B_N": 4358.218390989591,
+        "peak": {
+          "reaction_N": 15672.400527793807,
+          "torque_Nm": 276.35623822711045,
+          "joint_max_N": 4494.166682023333,
+          "slave_max_N": 4494.166682023333,
+          "master_joint_N": 4429.173910725951,
+          "acceleration_m_s2": 32.28077417888132,
+          "virtual_work_error_Nm": 1.4210854715202004e-13,
+          "moment_residual_Nmm": 2.1827872842550278e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 33221.237488479695,
+          "torque_Nm": 725.9567947073564,
+          "joint_max_N": 7468.8390291208,
+          "slave_max_N": 7194.403586082093,
+          "master_joint_N": 7468.8390291208
+        },
+        "design_loads": {
+          "crankpin_N": 49831.85623271954,
+          "torque_Nm": 1088.9351920610345,
+          "joint_N": 11203.2585436812,
+          "slave_joint_N": 10791.605379123139
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 309.5579819380854,
+          "proposed_assumed_Kt_stress_MPa": 145.55542660925485,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 12944.15821485689,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 131.5019956372971,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 999.2227202891795,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 104.08570003012285,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 9355.772059443252,
+          "shaft_torsion_MPa": 2839.5015130847,
+          "shaft_vm_MPa": 10569.710372412761,
+          "shaft_room_yield_margin": 0.052035484476047264,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 971.1746831248712,
+          "crankpin_room_yield_margin": 0.5663244826670203,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 207.63273430299807,
+          "shaft_deflection_mm": 3.079385546422465,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 2784.339093199417,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 4524.005364189702,
+          "net_section_with_assumed_Kt_MPa": 1250.3636767501341,
+          "bearing_MPa": 700.203658980075,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.4385215004335471,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 1314.4871984014444,
+          "net_section_with_assumed_Kt_MPa": 1204.4202432057075,
+          "bearing_MPa": 449.65022413013077,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.7704376322792907,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 83.5527768797444,
+          "shaft_torsion_MPa": 60.860371936829125,
+          "shaft_vm_MPa": 134.51030124560677,
+          "shaft_room_yield_margin": 4.088906164857493,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 72.14582396397469,
+          "crankpin_room_yield_margin": 7.623448867596787,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 51.90818357574952,
+          "shaft_deflection_mm": 0.0013262345536467364,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 134.33710806398972,
+          "net_section_with_assumed_Kt_MPa": 119.08225492858418,
+          "bearing_MPa": 58.350304915006255,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 42.624289842140776,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 129.40101777949747,
+          "net_section_with_assumed_Kt_MPa": 114.70668982911499,
+          "bearing_MPa": 56.206278016266346,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 62.40544821462255,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 11.941176470588237,
+          "wall_vm_MPa": 11.55379773990063,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 1075.2,
+          "head_solid_minimum_mm": 7.816067367347156,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 0.6776155082943786,
+          "pv_upper_MPa_m_s": 35.17379019831942,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 80,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.6842915963928319,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 4424.810102149203,
+        "working_force_B_N": 4358.218390989591,
+        "peak": {
+          "reaction_N": 13217.701261765918,
+          "torque_Nm": 277.6956725695479,
+          "joint_max_N": 4111.4419943204575,
+          "slave_max_N": 4111.4419943204575,
+          "master_joint_N": 4004.859420206747,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 1.1368683772161603e-13,
+          "moment_residual_Nmm": 1.4551915228366852e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 37228.92075063709,
+          "torque_Nm": 726.338569355285,
+          "joint_max_N": 8362.224482773472,
+          "slave_max_N": 8362.224482773472,
+          "master_joint_N": 8302.58386734608
+        },
+        "design_loads": {
+          "crankpin_N": 55843.38112595563,
+          "torque_Nm": 1089.5078540329275,
+          "joint_N": 12543.336724160208,
+          "slave_joint_N": 12543.336724160208
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 346.5857712701734,
+          "proposed_assumed_Kt_stress_MPa": 162.96604428703665,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 13110.573939710042,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 137.55647017842517,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 1161.4200670518712,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 120.9812569845699,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 10484.416683238283,
+          "shaft_torsion_MPa": 2840.9947833431424,
+          "shaft_vm_MPa": 11581.741978852493,
+          "shaft_room_yield_margin": 0.047488538512105015,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 1088.3334892512314,
+          "crankpin_room_yield_margin": 0.5053598050891529,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 232.6807546914818,
+          "shaft_deflection_mm": 3.450870862597286,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 3120.2311316538958,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 5065.144431299776,
+          "net_section_with_assumed_Kt_MPa": 1399.9259736785948,
+          "bearing_MPa": 783.958545260013,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.39167167830687083,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 1527.8593842065623,
+          "net_section_with_assumed_Kt_MPa": 1399.9259736785948,
+          "bearing_MPa": 522.639030173342,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.6628426773212324,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 93.63226490374838,
+          "shaft_torsion_MPa": 60.89237790087324,
+          "shaft_vm_MPa": 141.0342018457721,
+          "shaft_room_yield_margin": 3.8997632687810886,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 80.84922073645316,
+          "crankpin_room_yield_margin": 6.8027866563223025,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 58.17018867287045,
+          "shaft_deflection_mm": 0.001486226427043625,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 150.40584615865222,
+          "net_section_with_assumed_Kt_MPa": 133.3262832074852,
+          "bearing_MPa": 65.32987877166775,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 38.07048713142784,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 150.40584615865222,
+          "net_section_with_assumed_Kt_MPa": 133.3262832074852,
+          "bearing_MPa": 65.32987877166775,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 53.690256863019826,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 11.941176470588237,
+          "wall_vm_MPa": 11.55379773990063,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 1075.2,
+          "head_solid_minimum_mm": 7.816067367347156,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 316.7615314805449,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    },
+    {
+      "geometry": {
+        "bore_mm": 90,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 71.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 94.9067380617964,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 37.73112458884157,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": 1.653689846165996,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 5.534016821632235,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": 1.6536898461660066,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": 1.6536898461660456,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": 1.6536898461660314,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 5.534016821632235,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": 1.6536898461660066,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 5.534016821632193,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": 1.6536898461660208,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 65.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": 1.653689846165996,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-90",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.0063617251235193305,
+          "B_m2": 0.006289342828780621,
+          "one_L": 0.28627763055836986,
+          "swept_L": 2.003943413908589,
+          "double_L": 3.985086404974485,
+          "admitted_L": 1.1955259214923455,
+          "mass_kg_h": 92.51520343161519,
+          "heat_kW": 69.17543868211823,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 7.97017280994897
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 255.24612309582199,
+        "output_rpm": 255.24612309582199,
+        "torque_output_Nm": 125.26698536452842,
+        "mean_piston_m_s": 0.38286918464373293,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 90,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 255.24612309582199,
+        "mass_reciprocating_each_kg": 0.762900135071874,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 5599.765754591786,
+        "working_force_B_N": 5533.174043432175,
+        "peak": {
+          "reaction_N": 19892.424531959838,
+          "torque_Nm": 350.2390240076886,
+          "joint_max_N": 5691.123251016992,
+          "slave_max_N": 5691.123251016992,
+          "master_joint_N": 5608.992737651901,
+          "acceleration_m_s2": 20.091520453003852,
+          "virtual_work_error_Nm": 1.7053025658242404e-13,
+          "moment_residual_Nmm": 2.9103830456733704e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 42065.943501707014,
+          "torque_Nm": 920.1734703408598,
+          "joint_max_N": 9451.079209504798,
+          "slave_max_N": 9102.810910045573,
+          "master_joint_N": 9451.079209504798
+        },
+        "design_loads": {
+          "crankpin_N": 63098.91525256052,
+          "torque_Nm": 1380.2602055112898,
+          "joint_N": 14176.618814257197,
+          "slave_joint_N": 13654.21636506836
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 391.71509732961755,
+          "proposed_assumed_Kt_stress_MPa": 184.18603760151814,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 16405.41326552204,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 166.61843066590725,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 1264.279293061885,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 131.69575969394634,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 11846.620072592588,
+          "shaft_torsion_MPa": 3599.159041395214,
+          "shaft_vm_MPa": 13386.718961721888,
+          "shaft_room_yield_margin": 0.04108549686989584,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 1229.736832193141,
+          "crankpin_room_yield_margin": 0.44725016410146656,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 262.91214688566885,
+          "shaft_deflection_mm": 3.8992303781790456,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 3525.631789747061,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 5724.68262797928,
+          "net_section_with_assumed_Kt_MPa": 1582.2119212340624,
+          "bearing_MPa": 886.0386758910748,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.3465473545341603,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 1663.171695548437,
+          "net_section_with_assumed_Kt_MPa": 1523.9080764585224,
+          "bearing_MPa": 568.9256818778483,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.6089151273488308,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 105.79757580833285,
+          "shaft_torsion_MPa": 77.14246916570674,
+          "shaft_vm_MPa": 170.42889629950076,
+          "shaft_room_yield_margin": 3.2271522725434156,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 91.35367566620845,
+          "crankpin_room_yield_margin": 6.020556874028923,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 65.72803672141721,
+          "shaft_deflection_mm": 0.0016793266001322675,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 169.9903618404838,
+          "net_section_with_assumed_Kt_MPa": 150.68684964133925,
+          "bearing_MPa": 73.83655632425624,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 33.684402860720375,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 163.72628840185416,
+          "net_section_with_assumed_Kt_MPa": 145.13410251985925,
+          "bearing_MPa": 71.11571023473104,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 49.32212531525529,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 13.336842105263159,
+          "wall_vm_MPa": 12.762479634718044,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 1360.8,
+          "head_solid_minimum_mm": 8.79307578826555,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 0.5345862301167403,
+          "pv_upper_MPa_m_s": 35.1373033638771,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 90,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.762900135071874,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 5599.765754591786,
+        "working_force_B_N": 5533.174043432175,
+        "peak": {
+          "reaction_N": 17068.93023974162,
+          "torque_Nm": 351.741195658953,
+          "joint_max_N": 5260.9256948193915,
+          "slave_max_N": 5260.9256948193915,
+          "master_joint_N": 5133.124852165753,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 1.1368683772161603e-13,
+          "moment_residual_Nmm": 2.1827872842550278e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 46548.463865114434,
+          "torque_Nm": 920.6016294787235,
+          "joint_max_N": 10395.355872279237,
+          "slave_max_N": 10395.355872279237,
+          "master_joint_N": 10338.925689789028
+        },
+        "design_loads": {
+          "crankpin_N": 69822.69579767165,
+          "torque_Nm": 1380.9024442180853,
+          "joint_N": 15593.033808418855,
+          "slave_joint_N": 15593.033808418855
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 430.85215423765675,
+          "proposed_assumed_Kt_stress_MPa": 202.5884415027676,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 16591.564626264153,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 173.39037911402806,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 1443.7994267054496,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 150.39577361515097,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 13108.988423151337,
+          "shaft_torsion_MPa": 3600.8337395710128,
+          "shaft_vm_MPa": 14517.010309923136,
+          "shaft_room_yield_margin": 0.0378865887850232,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 1360.7768121169054,
+          "crankpin_room_yield_margin": 0.40418090248347727,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 290.9278991569652,
+          "shaft_deflection_mm": 4.314729903848669,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 3901.3208858629355,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 6296.647383279888,
+          "net_section_with_assumed_Kt_MPa": 1740.2939518324615,
+          "bearing_MPa": 974.5646130261784,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.31506824179830367,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 1899.3321758280376,
+          "net_section_with_assumed_Kt_MPa": 1740.2939518324615,
+          "bearing_MPa": 649.7097420174523,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.533203416277795,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 117.07129864639896,
+          "shaft_torsion_MPa": 77.17836375966677,
+          "shaft_vm_MPa": 177.69408674633118,
+          "shaft_room_yield_margin": 3.095207106048259,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 101.08826563039834,
+          "crankpin_room_yield_margin": 5.440789755073303,
+          "crankpin_screen_ok": true,
+          "crankpin_bearing_MPa": 72.7319747892413,
+          "shaft_deflection_mm": 0.0018582745816888725,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 186.97444672902444,
+          "net_section_with_assumed_Kt_MPa": 165.74228112690108,
+          "bearing_MPa": 81.21371775218154,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 30.624633102795116,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 186.97444672902444,
+          "net_section_with_assumed_Kt_MPa": 165.74228112690108,
+          "bearing_MPa": 81.21371775218154,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 43.18947671850139,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 13.336842105263159,
+          "wall_vm_MPa": 12.762479634718044,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 1360.8,
+          "head_solid_minimum_mm": 8.79307578826555,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 396.0566786435282,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    },
+    {
+      "geometry": {
+        "bore_mm": 100,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "origin_mm": [
+          3267.5,
+          0,
+          490
+        ],
+        "size_mm": [
+          589.169189453125,
+          588.8103942871094,
+          374.6000671386719
+        ],
+        "min_mm": [
+          2979.999755859375,
+          -296.81036376953125,
+          414.9999694824219
+        ],
+        "max_mm": [
+          3569.1689453125,
+          292.0000305175781,
+          789.6000366210938
+        ],
+        "gaps": {
+          "BODY": 18.018398795228343,
+          "SUSP": 50
+        },
+        "conflicts": [
+          {
+            "id": "PIPE_STEAM",
+            "node": "",
+            "connected": true
+          },
+          {
+            "id": "PIPE_EXHAUST_COMMON",
+            "node": "",
+            "connected": true
+          }
+        ],
+        "internal_pipe_screen": [
+          {
+            "route": "Граничный впуск ID40 / OD48",
+            "barrel_envelope_clearance_mm": 66.74357883515617,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Ввод в пленум ID20",
+            "barrel_envelope_clearance_mm": 89.91194368747021,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Граничный выпуск ID40 / OD46",
+            "barrel_envelope_clearance_mm": 32.92575856685404,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Подача 1",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 1",
+            "barrel_envelope_clearance_mm": -0.11175723274933702,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 1A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 1B",
+            "barrel_envelope_clearance_mm": 0.5340168216322354,
+            "cylinder": 1,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 2",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 2",
+            "barrel_envelope_clearance_mm": -0.11175723274936544,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 2A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 2B",
+            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "cylinder": 2,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 3",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 3",
+            "barrel_envelope_clearance_mm": -0.11175723274933702,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 3A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 3B",
+            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "cylinder": 3,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 4",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 4",
+            "barrel_envelope_clearance_mm": -0.11175723274933702,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 4A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 4B",
+            "barrel_envelope_clearance_mm": 0.5340168216322354,
+            "cylinder": 4,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 5",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 5",
+            "barrel_envelope_clearance_mm": -0.11175723274936544,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 5A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 5B",
+            "barrel_envelope_clearance_mm": 0.5340168216321928,
+            "cylinder": 5,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 6",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 6",
+            "barrel_envelope_clearance_mm": -0.11175723274931926,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 6A",
+            "barrel_envelope_clearance_mm": 13.972815539846408,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 6B",
+            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "cylinder": 6,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          },
+          {
+            "route": "Подача 7",
+            "barrel_envelope_clearance_mm": 60.67895493125462,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Выпуск 7",
+            "barrel_envelope_clearance_mm": -0.11175723274939386,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 0
+          },
+          {
+            "route": "Камера 7A",
+            "barrel_envelope_clearance_mm": 13.972815539846465,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 24
+          },
+          {
+            "route": "Камера 7B",
+            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "cylinder": 7,
+            "conservative_full_envelope": true,
+            "designed_chamber_tail_excluded_mm": 80
+          }
+        ]
+      },
+      "thermal": {
+        "candidate_id": "independent-bore-100",
+        "geometry": {
+          "count": 7,
+          "A_m2": 0.007853981633974483,
+          "B_m2": 0.007781599339235775,
+          "one_L": 0.3534291735288518,
+          "swept_L": 2.4740042147019623,
+          "double_L": 4.925208006561231,
+          "admitted_L": 1.4775624019683693,
+          "mass_kg_h": 114.34046200384694,
+          "heat_kW": 85.49461412662532,
+          "crank_rpm": 300,
+          "output_rpm": 150,
+          "double_L_per_output_turn": 9.850416013122462
+        },
+        "assumptions": {
+          "heat_kW": 50,
+          "eta_is": 0.5,
+          "eta_mech": 0.9,
+          "eta_electric": 0.85,
+          "cutoff": 0.3,
+          "filling_factor": 0.85,
+          "ambient_C": 20,
+          "air_rise_K": 25,
+          "air_area_m2": 0.05525,
+          "air_rho": 1.18,
+          "air_cp": 1005,
+          "fan_efficiency": 0.55,
+          "pump_efficiency": 0.55,
+          "static_air_Pa": 250,
+          "air_loss_coefficient": 1,
+          "receiver_bar_abs": 2,
+          "crank_study_limit_rpm": 2600,
+          "hp_W": 735.49875
+        },
+        "heat_kW": 50,
+        "mass_kg_h": 66.90674984279968,
+        "indicated_kW": 3.720333636895118,
+        "shaft_kW": 3.3483002732056066,
+        "shaft_hp": 4.552421432674912,
+        "net_kW": 0.6649047325220927,
+        "net_hp": 0.9040188477847075,
+        "electric_kW": 2.280886209580987,
+        "aux_shaft_kW": 2.683395540683514,
+        "air_budget_applicable": true,
+        "pump_kW": 0.02749385501306633,
+        "fan_kW": 2.0490409481496723,
+        "flue_fan_kW": 0.009351406418248321,
+        "reject_kW": 46.30716021811795,
+        "main_reject_kW": 42.812622610905294,
+        "subcool_kW": 3.4945376072126555,
+        "air_m3_s": 1.561924621574094,
+        "air_m_s": 28.27012889726867,
+        "air_Pa": 721.5281108422291,
+        "air_out_C": 45,
+        "UA_main_estimate_W_K": 598.2995517527937,
+        "UA_subcool_estimate_W_K": 70.98239370766765,
+        "crank_rpm": 206.5248520908248,
+        "output_rpm": 206.5248520908248,
+        "torque_output_Nm": 154.81871572596782,
+        "mean_piston_m_s": 0.30978727813623713,
+        "fuel_input_kW": 58.82352941176471,
+        "fuel_kg_h": 4.971002485501243,
+        "fuel_L_h": 5.9532963898218485,
+        "engine_speed_study_ok": true,
+        "source_power_ok": true,
+        "fits_reserve_box": false,
+        "has_current_mesh_bounds": false,
+        "energy_residual_W": 0,
+        "effective_thermal_efficiency": 0.06696600546411213,
+        "ideal_rankine_efficiency": 0.14881334547580471
+      },
+      "working_strength": {
+        "bore_mm": 100,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 206.5248520908248,
+        "mass_reciprocating_each_kg": 0.8507567371249211,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 6912.95148379232,
+        "working_force_B_N": 6846.359772632708,
+        "peak": {
+          "reaction_N": 24602.100988284255,
+          "torque_Nm": 432.81716361229064,
+          "joint_max_N": 7027.927602624843,
+          "slave_max_N": 7027.927602624843,
+          "master_joint_N": 6926.5807963792095,
+          "acceleration_m_s2": 13.153433537179996,
+          "virtual_work_error_Nm": 1.7053025658242404e-13,
+          "moment_residual_Nmm": 2.9103830456733704e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 51960.370830519765,
+          "torque_Nm": 1137.24009621753,
+          "joint_max_N": 11667.045988492888,
+          "slave_max_N": 11236.605450971187,
+          "master_joint_N": 11667.045988492888
+        },
+        "design_loads": {
+          "crankpin_N": 77940.55624577965,
+          "torque_Nm": 1705.860144326295,
+          "joint_N": 17500.568982739333,
+          "slave_joint_N": 16854.90817645678
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 483.5593855075811,
+          "proposed_assumed_Kt_stress_MPa": 227.37159677744225,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 20274.25637270127,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 205.88006707025176,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 1560.6396459682205,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 162.56662978835627,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 14633.090828812885,
+          "shaft_torsion_MPa": 4448.191679577848,
+          "shaft_vm_MPa": 16537.42951184024,
+          "shaft_room_yield_margin": 0.03325788929931454,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 1518.9860610665096,
+          "crankpin_room_yield_margin": 0.3620836386173513,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 324.75231769074855,
+          "shaft_deflection_mm": 4.816377324226412,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 4354.903752478355,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 7066.932147070656,
+          "net_section_with_assumed_Kt_MPa": 1953.1885025378722,
+          "bearing_MPa": 1093.7855614212083,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.2807262867376232,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 2053.036619653016,
+          "net_section_with_assumed_Kt_MPa": 1881.1281446938374,
+          "bearing_MPa": 702.2878406856993,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.4932841407227353,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 130.6824669639925,
+          "shaft_torsion_MPa": 95.34018517613698,
+          "shaft_vm_MPa": 210.587653721806,
+          "shaft_room_yield_margin": 2.611739056300851,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 112.84118384637205,
+          "crankpin_room_yield_margin": 4.874106963897145,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 81.18807942268714,
+          "shaft_deflection_mm": 0.0020743248724443258,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 209.84750262159613,
+          "net_section_with_assumed_Kt_MPa": 186.01795262265446,
+          "bearing_MPa": 91.14879678510069,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 27.28659507089697,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 202.10545104186338,
+          "net_section_with_assumed_Kt_MPa": 179.15506139941306,
+          "bearing_MPa": 87.78598008571241,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 39.95601539854156,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 14.733333333333334,
+          "wall_vm_MPa": 13.971876514388942,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 1680,
+          "head_solid_minimum_mm": 9.770084209183945,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 0.43254463874150256,
+          "pv_upper_MPa_m_s": 35.11746848400263,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      },
+      "overspeed_strength": {
+        "bore_mm": 100,
+        "stroke_mm": 45,
+        "rod_mm": 9.6,
+        "rpm": 2600,
+        "mass_reciprocating_each_kg": 0.8507567371249211,
+        "assumptions": {
+          "stroke_mm": 45,
+          "rod_mm": 9.6,
+          "pressure_bar_abs": 10,
+          "back_bar_abs": 1.2,
+          "ambient_bar_abs": 1,
+          "structural_pressure_bar_abs": 15,
+          "overspeed_rpm": 2600,
+          "steel_density": 7850,
+          "E_MPa": 210000,
+          "yield_MPa": 550,
+          "allowable_MPa": 110,
+          "load_factor": 1.5,
+          "extra_reciprocating_kg": 0.35,
+          "polytropic_n": 1.15,
+          "cutoff": 0.3
+        },
+        "working_force_A_N": 6912.95148379232,
+        "working_force_B_N": 6846.359772632708,
+        "peak": {
+          "reaction_N": 21399.92701898448,
+          "torque_Nm": 434.4979567588762,
+          "joint_max_N": 6545.642771847615,
+          "slave_max_N": 6545.642771847615,
+          "master_joint_N": 6394.127774995889,
+          "acceleration_m_s2": 2084.688597818206,
+          "virtual_work_error_Nm": 2.2737367544323206e-13,
+          "moment_residual_Nmm": 2.9103830456733704e-11
+        },
+        "independent_force_bound": {
+          "reaction_N": 56964.60443771137,
+          "torque_Nm": 1137.7191672637425,
+          "joint_max_N": 12667.679189962144,
+          "slave_max_N": 12667.679189962144,
+          "master_joint_N": 12615.583380740869
+        },
+        "design_loads": {
+          "crankpin_N": 85446.90665656707,
+          "torque_Nm": 1706.5787508956137,
+          "joint_N": 19001.518784943215,
+          "slave_joint_N": 19001.518784943215
+        },
+        "piston_rod": {
+          "current_mm": 9.6,
+          "proposed_mm": 14,
+          "current_assumed_Kt_stress_MPa": 525.0322293189614,
+          "proposed_assumed_Kt_stress_MPa": 246.87229721446676,
+          "proposed_euler_N": 857814.8019190107,
+          "notch_factor_assumed": 2
+        },
+        "crank_web": {
+          "current_width_mm": 15,
+          "current_thickness_mm": 5,
+          "current_assumed_Kt_stress_MPa": 20482.090853728332,
+          "proposed_width_mm": 80,
+          "proposed_thickness_mm": 25,
+          "proposed_assumed_Kt_stress_MPa": 213.44031297373806,
+          "model": "Conservative sum of axial and bending section stress, assumed Kt2; two-cheek 3D geometry and fillets require FEA"
+        },
+        "master_fork": {
+          "current_cheek_mm": 3,
+          "current_outer_diameter_mm": 64,
+          "current_articulation_radius_mm": 24,
+          "current_ligament_mm": 4.5,
+          "current_assumed_Kt_stress_MPa": 1759.399887494742,
+          "proposed_cheek_mm": 12,
+          "proposed_outer_diameter_mm": 120,
+          "proposed_articulation_radius_mm": 40,
+          "proposed_ligament_mm": 10.8,
+          "proposed_assumed_Kt_stress_MPa": 183.2708216140356,
+          "FEA_required": true
+        },
+        "current_dimensions": {
+          "shaft_mm": 12.5,
+          "shaft_overhang_mm": 36,
+          "crankpin_mm": 15,
+          "pin_span_mm": 25,
+          "bearing_length_mm": 16
+        },
+        "current": {
+          "shaft_bending_MPa": 16042.384175495881,
+          "shaft_torsion_MPa": 4450.065514178629,
+          "shaft_vm_MPa": 17797.95885138648,
+          "shaft_room_yield_margin": 0.030902420024257693,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 1665.2775708103131,
+          "crankpin_room_yield_margin": 0.330275270405746,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 356.0287777356961,
+          "shaft_deflection_mm": 5.280236162906073,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever.",
+          "actual_cantilever_crankpin_vm_MPa": 4774.318690553367,
+          "actual_cantilever_crankpin_screen_ok": false
+        },
+        "current_small_joint": {
+          "pin_vm_MPa": 7673.03303549295,
+          "net_section_with_assumed_Kt_MPa": 2120.705221533841,
+          "bearing_MPa": 1187.594924058951,
+          "euler_load_N": 4912.869746320036,
+          "buckling_margin": 0.2585514243320902,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "current_slave_joint": {
+          "pin_vm_MPa": 2314.5076488167438,
+          "net_section_with_assumed_Kt_MPa": 2120.705221533841,
+          "bearing_MPa": 791.729949372634,
+          "euler_load_N": 8314.25889678409,
+          "buckling_margin": 0.4375575968891655,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": false
+        },
+        "proposed_dimensions": {
+          "shaft_mm": 45,
+          "shaft_overhang_mm": 15,
+          "crankpin_mm": 40,
+          "pin_span_mm": 32,
+          "bearing_length_mm": 24
+        },
+        "proposed": {
+          "shaft_bending_MPa": 143.26832004007954,
+          "shaft_torsion_MPa": 95.38034795478886,
+          "shaft_vm_MPa": 218.67337253318348,
+          "shaft_room_yield_margin": 2.515166769637387,
+          "shaft_screen_ok": false,
+          "crankpin_vm_MPa": 123.70876688039509,
+          "crankpin_room_yield_margin": 4.445925813259092,
+          "crankpin_screen_ok": false,
+          "crankpin_bearing_MPa": 89.00719443392403,
+          "shaft_deflection_mm": 0.0022741003180965003,
+          "topology": "Shaft: equivalent overhung load. Crankpin: proposed double-supported pin; current single cheek is checked separately as cantilever."
+        },
+        "proposed_small_joint": {
+          "pin_vm_MPa": 227.84523560179335,
+          "net_section_with_assumed_Kt_MPa": 201.9719258603658,
+          "bearing_MPa": 98.96624367157925,
+          "euler_load_N": 477530.93934230745,
+          "buckling_margin": 25.131198445079164,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "proposed_slave_joint": {
+          "pin_vm_MPa": 227.84523560179335,
+          "net_section_with_assumed_Kt_MPa": 201.9719258603658,
+          "bearing_MPa": 98.96624367157925,
+          "euler_load_N": 673454.9706395112,
+          "buckling_margin": 35.44216534802241,
+          "pin_screen_ok": false,
+          "net_screen_ok": false,
+          "buckling_screen_ok": true
+        },
+        "cylinder": {
+          "wall_mm": 5,
+          "wall_hoop_MPa": 14.733333333333334,
+          "wall_vm_MPa": 13.971876514388942,
+          "head_current_mm": 2.5,
+          "head_solid_strip_MPa": 1680,
+          "head_solid_minimum_mm": 9.770084209183945,
+          "head_proposal_mm": 8,
+          "port_and_bolt_analysis_missing": true
+        },
+        "bearing": {
+          "speed_upper_m_s": 5.445427266222309,
+          "pv_upper_MPa_m_s": 484.6822034604404,
+          "oil_system_not_designed": true
+        },
+        "all_strength_confirmed": false
+      }
+    }
+  ]
+}

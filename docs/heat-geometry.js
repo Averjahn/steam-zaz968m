@@ -1,7 +1,7 @@
 import * as T from 'three';import {pipeCurve} from './pipe-path.js?v=0b785b2d508c';
 import {connectionSpecs} from './connection-data.js?v=f9e176aa78c5';
 import {equipmentPorts,hollowTube,hollowBox,localPorts,physicalPipeSpans,jointHalf} from './pipe-joints.js?v=783013dea290';
-import {generatorAssembly} from './internal-assembly.js?v=9f4e5b6a851e';
+import {generatorAssembly} from './internal-assembly.js?v=4edfecf6e299';
 const mat=(color,opacity=1)=>new T.MeshStandardMaterial({color,metalness:.45,roughness:.5,transparent:opacity<1,opacity,side:T.DoubleSide});
 function box(g,name,p,size,color){const o=new T.Mesh(new T.BoxGeometry(...size),mat(color));o.position.fromArray(p.map((v,i)=>v+size[i]/2));o.name=name;g.add(o);return o;}
 function tube(g,name,a,b,r,color,r2=r){if(/Головка|Патрубок горячих газов/.test(name))return hollowTube(g,name,a,b,2*r,2*r-4,{color});const A=new T.Vector3(...a),B=new T.Vector3(...b),o=new T.Mesh(new T.CylinderGeometry(r2,r,A.distanceTo(B),24),mat(color));o.position.copy(A).add(B).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),B.sub(A).normalize());o.name=name;g.add(o);return o;}

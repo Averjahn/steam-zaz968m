@@ -1,7 +1,7 @@
 /* Project geometry in mm/Z-up. These are concept parts, not rated pressure equipment.
    Original pump CAD and Riello envelope are supplied by assembly.js. */
 import * as T from 'three';
-import {createSharedRadial} from './shared-radial-geometry.js?v=5b6a905194f1';
+import {createSharedRadial} from './shared-radial-geometry.js?v=9b6bf65b529e';
 import {createFittedRadial} from './fitted-radial-geometry.js?v=94f1ab1ee2cf';
 import {fittedRoutes,fittedInterfaces,fittedCondenserPorts} from './fitted-installation.js?v=e01929804b6f';
 import {pipeRoutes} from './pipe-data.js?v=140c14a4b388';

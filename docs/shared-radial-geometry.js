@@ -1,19 +1,21 @@
 import * as T from 'three';
 import {compactGeometry as BASE,compactPipes as P} from './compact-radial-model.js?v=b7182951d367';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
-import {sharedPose,sharedLinkages} from './shared-radial-model.js?v=cc443a230fd0';
+import {sharedPose,sharedLinkages} from './shared-radial-model.js?v=ddee074b8af8';
 import {pipeCurve} from './pipe-path.js?v=0b785b2d508c';
 import {hollowTube,hollowBox} from './pipe-joints.js?v=783013dea290';
 import {pipeArrows} from './pipe-arrows.js?v=dd3bd35c3fcf';
 const V=p=>new T.Vector3(...p),Z=new T.Vector3(0,0,1),TAU=2*Math.PI;
 const mat=(color,metal=.7)=>new T.MeshStandardMaterial({color,metalness:metal,roughness:.4,side:T.DoubleSide});
 // Only the mechanical dimensions change. Pipe bores, insulation and header sections stay full size.
-export function createSharedRadial({bore_mm=40,origin_mm=null,floorAnchors=null,floorSlopes=null,skipSupports=false}={}){
+export function createSharedRadial({bore_mm=40,cylinder_bore_mm=null,origin_mm=null,floorAnchors=null,floorSlopes=null,skipSupports=false}={}){
  const s=bore_mm/32;if(!(s>=1&&s<=2))throw Error('Study range: bore 32–64 mm');
  const K={...BASE,outputZ:-45,bore:bore_mm,stroke:36*s,rod:7.68*s,crank:18*s,link:57*s,pistonRod:54*s,pistonThickness:6*s,clearance:.6*s,axisRadius:63*s,module:1.5*s,innerHead:152.4*s,outerHead:195.6*s,shellRadius:20*s,origin:origin_mm||[2980+230*s,0,490]};
  K.outputRatio=1;K.mechanism='master-articulated';K.link=120*s;K.articulationRadius=19.2*s;K.axisRadius=0;K.centralTeeth=0;K.localTeeth=0;
+ K.kinematicBore=bore_mm;K.bore=cylinder_bore_mm??bore_mm;if(!Number.isFinite(K.bore)||K.bore<32||K.bore>100)throw RangeError('Cylinder study: 32–100 mm');
+ const cylinderRadius=K.bore/2,shellRadius=cylinderRadius+4*s;K.shellRadius=shellRadius;
  const outputReach=K.origin[0]-2980;
- const compactPose=(i,a)=>sharedPose(i,a,bore_mm);
+ const compactPose=(i,a)=>sharedPose(i,a,bore_mm,.3,{bore_mm:K.bore,rod_mm:K.rod});
  const root=new T.Group();root.name=`Звезда под кузов · 7 × Ø${K.bore} / ход ${K.stroke} · миллиметры`;
  const core=new T.Group();core.name='Двигатель, коллекторы, изоляция и угловая передача';root.add(core);
  const mounts=new T.Group();mounts.name='Стойки до пола предоставленного кузова';root.add(mounts);
@@ -116,20 +118,20 @@ export function createSharedRadial({bore_mm=40,origin_mm=null,floorAnchors=null,
   for(const t of [-22,22])beam(g,'Направляющая крейцкопфа',mechanical(94,58,t),mechanical(145,58,t),3,12,dark);
   beam(g,'Радиальная балка',mechanical(69,-26),mechanical(207,-26),16,8,dark);
   for(const r of [158,190]){beam(g,'Лапа цилиндра',mechanical(r,-16,-24),mechanical(r,-16,24),9,12,steel);for(const t of [-20,20])bar(g,'Стойка до цилиндра',mechanical(r,-10,t),mechanical(r,61,t),3,brass);}
-  const barrel=skin(plate(g,'Гильза ID32 / OD40',mechanical(152.4),[...u,0],16*s,20*s,43.2*s,steel));
-  const jacket=skin(plate(g,'Изоляция цилиндра15 мм',mechanical(152.4),[...u,0],20*s,20*s+15,43.2*s,insulation));skin(plate(g,'Защитный кожух цилиндра0,5 мм',mechanical(152.4),[...u,0],20*s+15,20*s+15.5,43.2*s,steel));
+  const barrel=skin(plate(g,'Гильза ID32 / OD40',mechanical(152.4),[...u,0],cylinderRadius,shellRadius,43.2*s,steel));
+  const jacket=skin(plate(g,'Изоляция цилиндра15 мм',mechanical(152.4),[...u,0],shellRadius,shellRadius+15,43.2*s,insulation));skin(plate(g,'Защитный кожух цилиндра0,5 мм',mechanical(152.4),[...u,0],shellRadius+15,shellRadius+15.5,43.2*s,steel));
   const inv=new T.Quaternion().setFromUnitVectors(Z,V([...u,0])).invert(),offB=V([0,0,-12]).applyQuaternion(inv),offA=V([-v[0]*10*s,-v[1]*10*s,0]).applyQuaternion(inv);
-  plate(g,'Штоковая крышка B · проход штока и отдельный порт',mechanical(150.4),[...u,0],3.94*s,24*s,2*s,steel,[[offB.x,offB.y,4]]);
-  plate(g,'Наружная крышка A · отдельный порт',mechanical(195.6),[...u,0],0,24*s,2*s,steel,[[offA.x,offA.y,4]]);
-  const piston=bar(g,'ПоршеньØ32',at(p.pistonRadius-3*s),at(p.pistonRadius+3*s),16*s-.15,orange),pistonRod=bar(g,'ШтокØ7,68',p.crosshead.map((x,j)=>x+(j<2?u[j]*5.25*s:0)),p.piston,3.84*s,brass);
+  plate(g,'Штоковая крышка B · проход штока и отдельный порт',mechanical(150.4),[...u,0],3.94*s,shellRadius+4*s,2*s,steel,[[offB.x,offB.y,4]]);
+  plate(g,'Наружная крышка A · отдельный порт',mechanical(195.6),[...u,0],0,shellRadius+4*s,2*s,steel,[[offA.x,offA.y,4]]);
+  const piston=bar(g,'ПоршеньØ32',at(p.pistonRadius-3*s),at(p.pistonRadius+3*s),cylinderRadius-.15,orange),pistonRod=bar(g,'ШтокØ7,68',p.crosshead.map((x,j)=>x+(j<2?u[j]*5.25*s:0)),p.piston,3.84*s,brass);
   const fluidMat=mat('#fff1d6',0);fluidMat.transparent=true;fluidMat.opacity=.15;fluidMat.depthWrite=false;
-  const fluidA=bar(g,'Пар в камере A',at(p.pistonRadius+3*s),mechanical(195.6),16*s-.2,fluidMat),fluidB=plate(g,'Пар в камере B',mechanical(152.4),[...u,0],3.9*s,16*s-.2,39*s,fluidMat);
+  const fluidA=bar(g,'Пар в камере A',at(p.pistonRadius+3*s),mechanical(195.6),cylinderRadius-.2,fluidMat),fluidB=plate(g,'Пар в камере B',mechanical(152.4),[...u,0],3.9*s,cylinderRadius-.2,39*s,fluidMat);
   const valve=new T.Group();valve.name='Распределитель '+(i+1)+' · проходы A/B';valve.rotation.z=alpha;g.add(valve);
-  const valveR=176*s,loopR=195.6*s+34;
-  const vp=[{id:'A',anchor_mm:[valveR+20,-10,190],outward:[1,0,0],bore_mm:8},{id:'B',anchor_mm:[valveR,14,205],outward:[0,0,1],bore_mm:8},{id:'in',anchor_mm:[valveR,-14,205],outward:[0,0,1],bore_mm:8},{id:'out',anchor_mm:[valveR,0,165],outward:[0,0,-1],bore_mm:12}];
+  const valveR=176*s,loopR=195.6*s+34,studyOutlet=K.bore>bore_mm;
+  const vp=[{id:'A',anchor_mm:[valveR+20,-10,190],outward:[1,0,0],bore_mm:8},{id:'B',anchor_mm:[valveR,14,205],outward:[0,0,1],bore_mm:8},{id:'in',anchor_mm:[valveR,-14,205],outward:[0,0,1],bore_mm:8},{id:'out',anchor_mm:studyOutlet?[valveR-20,0,185]:[valveR,0,165],outward:studyOutlet?[-1,0,0]:[0,0,-1],bore_mm:12}];
   hollowBox(valve,'Коробка парораспределения · не выбранный клапан',[valveR-20,-25,165],[40,50,40],dark,vp);for(const o of valve.children)skin(o);
   tube('Подача '+(i+1),[at(132,260),at(132,278),at(valveR,278,-14),at(valveR,205,-14)],P.supply,18,'inlet',i);
-  tube('Выпуск '+(i+1),[at(valveR,165),at(valveR,120),at(104,120),at(104,145)],P.exhaust,24,'outlet',i);
+  tube('Выпуск '+(i+1),studyOutlet?[at(valveR-20,185),at(174,185),at(174,120),at(104,120),at(104,145)]:[at(valveR,165),at(valveR,120),at(104,120),at(104,145)],P.exhaust,24,'outlet',i);
   tube('Камера '+(i+1)+'A',[at(valveR+20,190,-10),at(loopR,190,-10),at(loopR,61,-10*s),mechanical(197.6,61,-10)],P.chamber,18,'chamber',i,'A',24);
   tube('Камера '+(i+1)+'B',[at(valveR,205,14),at(valveR,278,14),at(loopR,278,14),at(loopR,278,60*s),at(loopR,100,60*s),mechanical(110,100,60),mechanical(110,49,60),mechanical(110,49),mechanical(150.4,49)],P.chamber,18,'chamber',i,'B',80);
   portRecords.push({cylinder:i,A:{face_mm:mechanical(197.6,61,-10),outward:[...u,0],bore_mm:8},B:{face_mm:mechanical(150.4,49),outward:[-u[0],-u[1],0],bore_mm:8},valve_ports:vp});
@@ -156,7 +158,7 @@ export function createSharedRadial({bore_mm=40,origin_mm=null,floorAnchors=null,
  }
  function mechanismOnly(on){for(const g of core.children)if(/пленум|Подача |Выпуск |Камера |Граничный|Ввод в пленум|Впуск ·|Изоляция границы/.test(g.name))g.visible=!on;for(const c of cylinders){for(const g of c.g.children)if(g.name.startsWith('Распределитель'))g.visible=!on;} }
  function cutaway(on){for(const o of skins){o.material.transparent=on;o.material.opacity=on?.14:1;o.material.depthWrite=!on;}}
- root.traverse(o=>{o.name=o.name.replace('m1,5', 'm'+K.module).replace('ID32 / OD40',`ID${K.bore} / OD${40*s}`).replace('ПоршеньØ32',`ПоршеньØ${K.bore}`).replace('ШтокØ7,68',`ШтокØ${K.rod}`).replace('Шатун57 мм',`Шатун${K.link} мм`).replace('r18',`r${K.crank}`);if(o.name.startsWith('Пар в камере'))o.userData.collision=false;});
+ root.traverse(o=>{o.name=o.name.replace('m1,5', 'm'+K.module).replace('ID32 / OD40',`ID${K.bore} / OD${2*shellRadius}`).replace('ПоршеньØ32',`ПоршеньØ${K.bore}`).replace('ШтокØ7,68',`ШтокØ${K.rod}`).replace('Шатун57 мм',`Шатун${K.link} мм`).replace('r18',`r${K.crank}`);if(o.name.startsWith('Пар в камере'))o.userData.collision=false;});
  cutaway(true);update(0,0);
  root.userData={id:'FITTED_ENGINE',mechanism:'master-articulated',units:'mm/Z-up',geometry:`Seven double-acting cylinders D${K.bore} S${K.stroke}; one master and six articulated rods on one crankpin; conceptual distributor and one bevel pair`,not_manufacturing_cad:true};
  return {root,core,mounts,contacts,cylinders,routes,portRecords,anchorData,update,cutaway,config:K,pose:compactPose,commonCrank,masterFork,mechanismOnly};

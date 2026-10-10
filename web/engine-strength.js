@@ -1,0 +1,3 @@
+const bore=document.getElementById('strengthBore'),mode=document.getElementById('strengthCase');
+function update(){for(const panel of document.querySelectorAll('.bore-panel'))panel.hidden=panel.dataset.bore!==bore.value||panel.dataset.case!==mode.value;for(const [id,mechanics] of [['boreModelLink',false],['boreMechanismLink',true]]){const a=document.getElementById(id);a.href='assembly.html?component=ENG&cylinder-bore='+bore.value+(mechanics?'&mechanics=1':'');a.textContent=mechanics?'Посмотреть прежний механизм':'Посмотреть Ø'+bore.value+' в кузове';}}
+bore.addEventListener('change',update);mode.addEventListener('change',update);update();

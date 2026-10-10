@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Initial detail is D60 working speed with formula-first substitutions",
+      "passed": true
+    },
+    {
+      "name": "Bore and speed selectors show exactly one matching calculation",
+      "passed": true
+    },
+    {
+      "name": "3D study link follows chosen bore",
+      "passed": true
+    },
+    {
+      "name": "Formula page has no mobile overflow",
+      "passed": true
+    },
+    {
+      "name": "Standalone PDF exported",
+      "passed": true
+    },
+    {
+      "name": "D60 study has seven actual enlarged bores and unchanged45mm kinematics",
+      "passed": true
+    },
+    {
+      "name": "Simulation uses actual D60 bore and double action",
+      "passed": true
+    },
+    {
+      "name": "Study warns that the mechanical design was not strengthened",
+      "passed": true
+    },
+    {
+      "name": "Seven rerouted exhaust branches terminate at actual side ports",
+      "passed": true
+    },
+    {
+      "name": "Full radius elbows fit all new exhaust segments without backward spans",
+      "passed": true
+    },
+    {
+      "name": "Normal project link still defaults to D40 original mechanism",
+      "passed": true
+    },
+    {
+      "name": "No browser exceptions",
+      "passed": true
+    }
+  ],
+  "state": {
+    "config": {
+      "count": 7,
+      "bore": 60,
+      "stroke": 45,
+      "rod": 9.6,
+      "crank": 22.5,
+      "link": 150,
+      "pistonRod": 67.5,
+      "pistonThickness": 7.5,
+      "clearance": 0.75,
+      "axisRadius": 0,
+      "axisZ": 61,
+      "module": 1.875,
+      "centralTeeth": 0,
+      "localTeeth": 0,
+      "innerHead": 190.5,
+      "outerHead": 244.5,
+      "shellRadius": 35,
+      "cylinderInsulation": 15,
+      "valveRadius": 176,
+      "valveZ": 185,
+      "inletRadius": 132,
+      "inletZ": 245,
+      "inletWidth": 24,
+      "inletHeight": 30,
+      "returnRadius": 104,
+      "returnZ": 170,
+      "returnWidth": 48,
+      "returnHeight": 50,
+      "headerWall": 3,
+      "origin": [
+        3267.5,
+        0,
+        490
+      ],
+      "reserveMin": [
+        2910,
+        -250,
+        300
+      ],
+      "reserveMax": [
+        3510,
+        250,
+        800
+      ],
+      "trayZ": 439,
+      "outputZ": -45,
+      "outputRatio": 1,
+      "mechanism": "master-articulated",
+      "articulationRadius": 24,
+      "kinematicBore": 40
+    },
+    "cylinder_count": 7,
+    "piston_diameter_mm": 59.7,
+    "simulation": {
+      "cylinders": 7,
+      "acting_sides": 2,
+      "engine_bore_m": 0.06,
+      "engine_stroke_m": 0.045,
+      "engine_rod_m": 0.0096,
+      "engine_output_ratio": 1
+    },
+    "route_count": 31,
+    "study_note": "В этом варианте заднее сиденье удаляется. Пол, ниши и перегородки оставлены. Это условие перестановки, а не скрытие мешающих стенок.Исследование Ø60 × 45 · прежний механизм без усиленияСемь цилиндров Ø40 мм, ход45 мм, шток9,6 мм; фазовый сдвиг360/7°; кривошипы вращаются вдвое быстрее общего вала.Поддон460×360 мм; стойки до исходной сетки пола. Новые границы впуска и общего выпуска, делитель и переходы к двум конденсаторам.Двигатель выбран по кузову, штатным узлам, соседним агрегатам и текущему компактному дизельному каналу; Ø41 и крупнее в этой семье задевают дымовой канал.Выбор относится к испытанной семье S/D=1,125 и заданному положению; глобальный максимум двигателя не установлен.Игровая модель кузова и неподвижная схема подвески не заменяют обмеры; нет подтверждения прочности, герметичности, ресурса и дорожного допуска.Полная установка всё ещё имеет пересечения прежних труб и панелей. Посадка двигателя не означает готовность всей машины.Мощность ограничена паром и охлаждением; КПД, теплоёмкость и инерция — гипотезы. На максимуме источника расчётный расход мощности охлаждения может превышать мощность вала.Увеличен только диаметр цилиндров. Пальцы, шатуны, вал и крепления прежние: прочность и реальная сборка не подтверждены. Расчёт — engine-strength.html."
+  },
+  "pipes": [
+    {
+      "name": "Выпуск 1",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        -1.5920408388915585e-15,
+        -26,
+        0
+      ]
+    },
+    {
+      "name": "Выпуск 2",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        20.327618544168786,
+        -16.21073484832708,
+        0
+      ]
+    },
+    {
+      "name": "Выпуск 3",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        25.348125716727424,
+        5.785544282864166,
+        0
+      ]
+    },
+    {
+      "name": "Выпуск 4",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        11.280977217056517,
+        23.425190565462913,
+        0
+      ]
+    },
+    {
+      "name": "Выпуск 5",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        -11.280977217056503,
+        23.425190565462913,
+        0
+      ]
+    },
+    {
+      "name": "Выпуск 6",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        -25.348125716727395,
+        5.785544282864187,
+        0
+      ]
+    },
+    {
+      "name": "Выпуск 7",
+      "endpoint_error_mm": 0,
+      "side_port": true,
+      "bends_fit": true,
+      "direction": [
+        -20.327618544168786,
+        -16.210734848327064,
+        0
+      ]
+    }
+  ],
+  "errors": []
+}

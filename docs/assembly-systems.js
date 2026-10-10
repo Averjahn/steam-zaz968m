@@ -3,7 +3,7 @@ import * as T from 'three';
 import {pipeCurve} from './pipe-path.js?v=0b785b2d508c';
 import {jointMetrics,physicalPipeSpans} from './pipe-joints.js?v=783013dea290';
 import {pipeArrows,visiblePipeRadius} from './pipe-arrows.js?v=dd3bd35c3fcf';
-import {cycleAnimation} from './cycle-animation.js?v=e7488ccce9e6';
+import {cycleAnimation} from './cycle-animation.js?v=5486233cb3c5';
 import {phaseNames} from './double-acting-cycle.js?v=02f171f7ae23';
 import {forceSettings,forceUI} from './piston-force-ui.js?v=14e6a2712040';
 import {heatValue} from './heat-comparison.js?v=deef6854b02e';

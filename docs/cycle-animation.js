@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {fittedRadialView} from './fitted-radial-view.js?v=1657e49141b6';
+import {fittedRadialView} from './fitted-radial-view.js?v=9b0c61100c34';
 import {doubleActingView} from './double-acting-view.js?v=653c3a5dc54f';
 import {temperatureRGB} from './thermal-model.js?v=0d9441707c6d';
 const material=(color,opacity=1)=>new T.MeshBasicMaterial({color,transparent:opacity<1,opacity,depthTest:false,depthWrite:false});

@@ -33,7 +33,7 @@
     {
       "name": "Cosine vectors are normalized",
       "pass": true,
-      "detail": 2.1311645181931738e-7
+      "detail": 1.8697440062886983e-7
     },
     {
       "name": "Relevant source retrieved: Как рассчитаны обороты колёс",
@@ -48,12 +48,12 @@
           "url": "calculations.html?scenario=A#formula-wheel_rpm"
         },
         {
-          "title": "Сценарий C · Обороты колёс",
-          "url": "calculations.html?scenario=C#formula-wheel_rpm"
-        },
-        {
           "title": "Сценарий B · Обороты колёс",
           "url": "calculations.html?scenario=B#formula-wheel_rpm"
+        },
+        {
+          "title": "Сценарий C · Обороты колёс",
+          "url": "calculations.html?scenario=C#formula-wheel_rpm"
         },
         {
           "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
@@ -66,24 +66,24 @@
       "pass": true,
       "detail": [
         {
-          "title": "Двойное действие: камеры, клапаны и направление пара",
-          "url": "assembly.html#doubleActingPanel"
+          "title": "Рабочий объём",
+          "url": "fitted-engine.html#topic-4"
+        },
+        {
+          "title": "Обычный рабочий объём",
+          "url": "engine-strength.html#topic-147"
         },
         {
           "title": "Температуры, теплопотери и физические расчёты",
           "url": "assembly.html#thermalPanel"
         },
         {
-          "title": "Семь цилиндров внутри ЗАЗ.",
-          "url": "compact-radial.html"
+          "title": "Двойное действие: камеры, клапаны и направление пара",
+          "url": "assembly.html#doubleActingPanel"
         },
         {
           "title": "Объём: формула → подстановка",
           "url": "compact-radial.html#topic-1"
-        },
-        {
-          "title": "Почему этот размер",
-          "url": "fitted-engine.html#topic-2"
         }
       ]
     },
@@ -92,24 +92,24 @@
       "pass": true,
       "detail": [
         {
-          "title": "Двойное действие: камеры, клапаны и направление пара",
-          "url": "assembly.html#doubleActingPanel"
-        },
-        {
           "title": "Рабочий объём, обе камеры и потребность в паре",
           "url": "radial-engine.html#topic-3"
+        },
+        {
+          "title": "Двойное действие: камеры, клапаны и направление пара",
+          "url": "assembly.html#doubleActingPanel"
         },
         {
           "title": "Горизонтальная паровая звезда.",
           "url": "radial-engine.html"
         },
         {
-          "title": "Семь цилиндров внутри ЗАЗ.",
-          "url": "compact-radial.html"
-        },
-        {
           "title": "Объём: формула → подстановка",
           "url": "compact-radial.html#topic-1"
+        },
+        {
+          "title": "Рабочий объём",
+          "url": "fitted-engine.html#topic-4"
         }
       ]
     },
@@ -144,12 +144,12 @@
       "pass": true,
       "detail": [
         {
-          "title": "PIPE_FEED · Питательная вода → генератор · Теплопотери цилиндрического участка",
-          "url": "piping.html#topic-121"
-        },
-        {
           "title": "PIPE_STEAM · Пар · генератор → машина · Теплопотери цилиндрического участка",
           "url": "piping.html#topic-16"
+        },
+        {
+          "title": "PIPE_FEED · Питательная вода → генератор · Теплопотери цилиндрического участка",
+          "url": "piping.html#topic-121"
         },
         {
           "title": "PIPE_EXHAUST_L · Отработанный пар → левый конденсатор · Теплопотери цилиндрического участка",
@@ -178,16 +178,16 @@
           "url": "thermal-reference.json"
         },
         {
+          "title": "Белов · Циклы и изоэнтропная эффективность",
+          "url": "thermal-reference.json"
+        },
+        {
           "title": "Сценарий A · Тепло в парогенератор",
           "url": "calculations.html?scenario=A#formula-boiler_kW"
         },
         {
           "title": "Сценарий B · Тепло в парогенератор",
           "url": "calculations.html?scenario=B#formula-boiler_kW"
-        },
-        {
-          "title": "Сценарий C · Тепло в парогенератор",
-          "url": "calculations.html?scenario=C#formula-boiler_kW"
         }
       ]
     },
@@ -200,16 +200,16 @@
           "url": "thermal-reference.json"
         },
         {
+          "title": "Сценарий A · Энтропия входного пара",
+          "url": "calculations.html?scenario=A#formula-s1_kJ_kgK"
+        },
+        {
           "title": "Сценарий B · Энтропия входного пара",
           "url": "calculations.html?scenario=B#formula-s1_kJ_kgK"
         },
         {
           "title": "Сценарий C · Энтропия входного пара",
           "url": "calculations.html?scenario=C#formula-s1_kJ_kgK"
-        },
-        {
-          "title": "Сценарий A · Энтропия входного пара",
-          "url": "calculations.html?scenario=A#formula-s1_kJ_kgK"
         },
         {
           "title": "Белов · Теплопроводность, конвекция и излучение",
@@ -230,16 +230,16 @@
           "url": "assembly.html#simPanel"
         },
         {
-          "title": "25. Пять источников тепла, расход и замкнутый цикл",
-          "url": "report.html#section-25"
-        },
-        {
           "title": "Дрова · прототип газифицирующей топки",
           "url": "heat.html"
         },
         {
-          "title": "Чем нагревать воду.",
-          "url": "heat.html"
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
+        },
+        {
+          "title": "Расход пара",
+          "url": "engine-sizing.html#topic-5"
         }
       ]
     },
@@ -248,12 +248,12 @@
       "pass": true,
       "detail": [
         {
-          "title": "BOOST · Подпорный насос, фильтр и арматура",
-          "url": "procurement.html#part-BOOST"
-        },
-        {
           "title": "Материалы и покупка",
           "url": "assembly.html#purchaseTitle"
+        },
+        {
+          "title": "BOOST · Подпорный насос, фильтр и арматура",
+          "url": "procurement.html#part-BOOST"
         },
         {
           "title": "MOTOR · Привод Cat Pumps · мотор / редуктор",
@@ -275,23 +275,23 @@
       "detail": [
         {
           "title": "Теплоотвод конденсатора завышался",
-          "url": "literature-audit.html#topic-3"
+          "url": "literature.html#topic-3"
         },
         {
           "title": "Главное ограничение — отвод теплоты",
-          "url": "literature.html#topic-1"
+          "url": "literature-audit.html#topic-1"
         },
         {
           "title": "Теплоотвод конденсатора завышался",
           "url": "literature.html"
         },
         {
-          "title": "Внутренний конденсатор не подтверждён для прежних 18 кВт",
-          "url": "literature-audit.html#topic-7"
+          "title": "Подшипник скольжения: давление и скорость",
+          "url": "engine-strength.html#topic-12"
         },
         {
-          "title": "Вывод формулы ε–NTU",
-          "url": "literature.html#topic-2"
+          "title": "Внутренний конденсатор не подтверждён для прежних 18 кВт",
+          "url": "literature.html#topic-7"
         }
       ]
     },
@@ -312,12 +312,12 @@
           "url": "physics.html#node-FUE"
         },
         {
-          "title": "Один двигатель, разные тепловые режимы",
-          "url": "fitted-engine.html#topic-13"
-        },
-        {
           "title": "Дизель · компактная горелка",
           "url": "heat.html"
+        },
+        {
+          "title": "Один двигатель, разные тепловые режимы",
+          "url": "fitted-engine.html#topic-13"
         }
       ]
     },
@@ -331,11 +331,7 @@
         },
         {
           "title": "Как физически работает замкнутый контур",
-          "url": "literature.html#topic-13"
-        },
-        {
-          "title": "Сценарий C · Температура на входе",
-          "url": "calculations.html?scenario=C#formula-T1"
+          "url": "literature-audit.html#topic-13"
         },
         {
           "title": "Сценарий A · Температура на входе",
@@ -344,6 +340,10 @@
         {
           "title": "Сценарий B · Температура на входе",
           "url": "calculations.html?scenario=B#formula-T1"
+        },
+        {
+          "title": "Сценарий C · Температура на входе",
+          "url": "calculations.html?scenario=C#formula-T1"
         }
       ]
     },
@@ -364,12 +364,12 @@
           "url": "report.html#section-25"
         },
         {
-          "title": "FUE · Дизель · запас",
-          "url": "physics.html#node-FUE"
-        },
-        {
           "title": "Сценарий B · Масса холодной воды",
           "url": "calculations.html?scenario=B#formula-water_mass"
+        },
+        {
+          "title": "Сценарий A · Масса холодной воды",
+          "url": "calculations.html?scenario=A#formula-water_mass"
         }
       ]
     },
@@ -386,16 +386,16 @@
           "url": "connection-specs.json"
         },
         {
-          "title": "Стык STM.flueOutlet · патрубок трубы",
+          "title": "Стык CND.drainL · патрубок трубы",
           "url": "connection-specs.json"
+        },
+        {
+          "title": "Температуры, теплопотери и физические расчёты",
+          "url": "assembly.html#thermalPanel"
         },
         {
           "title": "Незапланированные пересечения агрегатов и трасс",
           "url": "internal.html#topic-5"
-        },
-        {
-          "title": "Ламе: давление на прямую трубу",
-          "url": "aging.html#topic-8"
         }
       ]
     },
@@ -417,6 +417,10 @@
     },
     {
       "name": "Full external books are not in the public corpus",
+      "pass": true
+    },
+    {
+      "name": "Indexed source provenance: engine-strength.html",
       "pass": true
     },
     {
@@ -528,10 +532,10 @@
       "pass": true
     }
   ],
-  "max_vector_norm_error": 2.1311645181931738e-7,
-  "manifest_sha256": "385eacfddef75dcc64bbfe3aaaf392c85bc62711d0281968f80f934ae535164a",
+  "max_vector_norm_error": 1.8697440062886983e-7,
+  "manifest_sha256": "8853bf0698bbe9054fcc1442ce2316f2d260051fa014618e120a1988965f47e3",
   "source_sha256": {
-    "build_knowledge.py": "8a1b21e7e947fc108068f322340b5133757b0ba2f5d63e4ee25b4c412a3fd53c",
+    "build_knowledge.py": "bf405f73a4766379e7f45e41eb4dec77baca6357232152753ed20c5bd6f6d177",
     "web/search-core.js": "bdc30ddf76fc3cb3ab1efbff1d3839d5865a8078586231ee973d8f596d87ecb4",
     "web/search-worker.js": "929817d8b34f9ea21913019ce7a04748c30912b1a68ee2080e3aeba3c33e7c45",
     "verify_knowledge.mjs": "1052f5154fc3aae68861d42c91cc8f7a924ccea63c7b9008ef0bae1be4d5d7d2"
