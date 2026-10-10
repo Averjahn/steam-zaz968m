@@ -41,6 +41,7 @@
     }
   ],
   "limitations": [
+    "Клапанные соединения исправлены на функциональном уровне. Прежние оценки оборотов и мощности не учитывают мёртвый объём трубок A/B, внутренние полости клапанов и реальную карту расходов. Они не подтверждены этим расчётом.",
     "Кузов — игровая сетка yatloo, подвеска статическая; обмеры, ход подвески и горячие зазоры неизвестны.",
     "Прочностной экран110 МПа — явно принятая гипотеза550/5 при комнатной температуре. Это не допустимое напряжение для металла при250 °C.",
     "15 бар абсолютного — отдельный сценарий нагрузки, не разрешённое давление и не настройка защиты.2600 об/мин — исследовательский сценарий, не допустимая частота вращения.",
@@ -76,12 +77,12 @@
   },
   "input_sha256": {
     "web/engine-strength-model.js": "47fb93973438bdf2bd373a02179b6d5d744ed92ec2432230461699325a710c1f",
-    "web/shared-radial-model.js": "ddee074b8af8f711a5bf342630972217ec575df891404e3a324c277b83c78439",
-    "web/shared-radial-geometry.js": "0869d6a508ae053e221f512eddee7416f0c679ae84c2968a0cea033fbd99de78",
+    "web/shared-radial-model.js": "5286bb69329239ec76e011941f8ba8a8095547e8b6a450d4c251d48b7d28b682",
+    "web/shared-radial-geometry.js": "3ade5b6e19a988c64e012d91470238e11041922ee5cc66a92c7371a59d8eca90",
     "web/engine-sizing-model.js": "42fec133fc314b1ebf0d07915140613a52661da190d3613c7cc3807484ce212d",
     "engine-sizing.json": "23e468c4a381ed59ad808be1b295088af216bfb10811ea95e14bd8d2d1e6979f",
-    "engine-bore-fit.json": "d21aabd7bb64cedba8f1e74b4efd06e589f1ad00a31468436a89217ec507760e",
-    "layout-fitted.json": "6e5cf9cc86991a866e0dbd916af881f55e618b170e029e95d231e50d91203f14"
+    "engine-bore-fit.json": "e23d37eee3a9631c34dc204829b23127456ce5ca59258f99c046339b86d9f1ba",
+    "layout-fitted.json": "498d1364f4ca598d6d3dd2533830d0ebe70539302dc4231fd4b3567599d7ba77"
   },
   "rows": [
     {
@@ -95,18 +96,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -170,7 +171,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 30.534016821632235,
+            "barrel_envelope_clearance_mm": 24.166840255085255,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -198,7 +199,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "barrel_envelope_clearance_mm": 24.166840255085205,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -226,7 +227,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "barrel_envelope_clearance_mm": 24.166840255085212,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -254,7 +255,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 30.534016821632235,
+            "barrel_envelope_clearance_mm": 24.166840255085226,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -282,7 +283,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 30.534016821632193,
+            "barrel_envelope_clearance_mm": 24.166840255085233,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -310,7 +311,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "barrel_envelope_clearance_mm": 24.166840255085212,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -338,7 +339,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 30.534016821632207,
+            "barrel_envelope_clearance_mm": 24.166840255085205,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -784,18 +785,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -859,7 +860,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 25.534016821632235,
+            "barrel_envelope_clearance_mm": 21.468003254774935,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -887,7 +888,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "barrel_envelope_clearance_mm": 21.468003254774885,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -915,7 +916,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "barrel_envelope_clearance_mm": 21.4680032547749,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -943,7 +944,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 25.534016821632235,
+            "barrel_envelope_clearance_mm": 21.46800325477492,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -971,7 +972,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 25.534016821632193,
+            "barrel_envelope_clearance_mm": 21.468003254774906,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -999,7 +1000,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "barrel_envelope_clearance_mm": 21.4680032547749,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1027,7 +1028,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 25.534016821632207,
+            "barrel_envelope_clearance_mm": 21.468003254774892,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1473,18 +1474,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -1548,7 +1549,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 20.534016821632235,
+            "barrel_envelope_clearance_mm": 19.313589386865154,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1576,7 +1577,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "barrel_envelope_clearance_mm": 19.31358938686511,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1604,7 +1605,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "barrel_envelope_clearance_mm": 19.313589386865132,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1632,7 +1633,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 20.534016821632235,
+            "barrel_envelope_clearance_mm": 19.313589386865146,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1660,7 +1661,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 20.534016821632193,
+            "barrel_envelope_clearance_mm": 19.313589386865125,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1688,7 +1689,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "barrel_envelope_clearance_mm": 19.313589386865132,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -1716,7 +1717,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 20.534016821632207,
+            "barrel_envelope_clearance_mm": 19.313589386865125,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2162,18 +2163,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -2237,7 +2238,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 15.534016821632235,
+            "barrel_envelope_clearance_mm": 17.816162684365217,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2265,7 +2266,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "barrel_envelope_clearance_mm": 17.81616268436518,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2293,7 +2294,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "barrel_envelope_clearance_mm": 17.816162684365207,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2321,7 +2322,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 15.534016821632235,
+            "barrel_envelope_clearance_mm": 17.816162684365228,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2349,7 +2350,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 15.534016821632193,
+            "barrel_envelope_clearance_mm": 17.81616268436519,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2377,7 +2378,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "barrel_envelope_clearance_mm": 17.816162684365207,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2405,7 +2406,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 15.534016821632207,
+            "barrel_envelope_clearance_mm": 17.816162684365207,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2851,18 +2852,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -2926,7 +2927,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 10.534016821632235,
+            "barrel_envelope_clearance_mm": 17.07241308921276,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2954,7 +2955,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "barrel_envelope_clearance_mm": 17.07241308921273,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -2982,7 +2983,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "barrel_envelope_clearance_mm": 17.07241308921276,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3010,7 +3011,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 10.534016821632235,
+            "barrel_envelope_clearance_mm": 17.072413089212787,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3038,7 +3039,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 10.534016821632193,
+            "barrel_envelope_clearance_mm": 17.07241308921273,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3066,7 +3067,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "barrel_envelope_clearance_mm": 17.07241308921276,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3094,7 +3095,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 10.534016821632207,
+            "barrel_envelope_clearance_mm": 17.07241308921276,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3540,18 +3541,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -3615,7 +3616,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 5.534016821632235,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3643,7 +3644,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "barrel_envelope_clearance_mm": 16.99999999999997,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3671,7 +3672,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "barrel_envelope_clearance_mm": 16.99999999999997,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3699,7 +3700,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 5.534016821632235,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3727,7 +3728,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 5.534016821632193,
+            "barrel_envelope_clearance_mm": 16.99999999999997,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3755,7 +3756,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -3783,7 +3784,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 5.534016821632207,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4229,18 +4230,18 @@
           490
         ],
         "size_mm": [
-          589.169189453125,
-          588.8103942871094,
+          569.80859375,
+          561.6167907714844,
           374.6000671386719
         ],
         "min_mm": [
           2979.999755859375,
-          -296.81036376953125,
+          -269.6192932128906,
           414.9999694824219
         ],
         "max_mm": [
-          3569.1689453125,
-          292.0000305175781,
+          3549.808349609375,
+          291.99749755859375,
           789.6000366210938
         ],
         "gaps": {
@@ -4304,7 +4305,7 @@
           },
           {
             "route": "Камера 1B",
-            "barrel_envelope_clearance_mm": 0.5340168216322354,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 1,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4332,7 +4333,7 @@
           },
           {
             "route": "Камера 2B",
-            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "barrel_envelope_clearance_mm": 16.99999999999997,
             "cylinder": 2,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4360,7 +4361,7 @@
           },
           {
             "route": "Камера 3B",
-            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "barrel_envelope_clearance_mm": 16.99999999999997,
             "cylinder": 3,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4388,7 +4389,7 @@
           },
           {
             "route": "Камера 4B",
-            "barrel_envelope_clearance_mm": 0.5340168216322354,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 4,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4416,7 +4417,7 @@
           },
           {
             "route": "Камера 5B",
-            "barrel_envelope_clearance_mm": 0.5340168216321928,
+            "barrel_envelope_clearance_mm": 16.99999999999997,
             "cylinder": 5,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4444,7 +4445,7 @@
           },
           {
             "route": "Камера 6B",
-            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 6,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80
@@ -4472,7 +4473,7 @@
           },
           {
             "route": "Камера 7B",
-            "barrel_envelope_clearance_mm": 0.534016821632207,
+            "barrel_envelope_clearance_mm": 17,
             "cylinder": 7,
             "conservative_full_envelope": true,
             "designed_chamber_tail_excluded_mm": 80

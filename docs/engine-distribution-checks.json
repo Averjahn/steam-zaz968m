@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "sampled_states": 75600,
+  "scope": "Ideal commanded valve states; not actuator dynamics or a pressure-flow solution",
+  "checks": [
+    {
+      "name": "Every cylinder completes admission, expansion and exhaust without a P–T path",
+      "passed": true
+    },
+    {
+      "name": "Fault injection detects simultaneous supply and exhaust, independently on either chamber",
+      "passed": true
+    },
+    {
+      "name": "Closing all four valves isolates both chambers, supply and exhaust",
+      "passed": true
+    },
+    {
+      "name": "Tube volume matches a 1 metre ID8 cylinder and rejects invalid dimensions",
+      "passed": true
+    },
+    {
+      "name": "External connection volume changes clearance, not displacement or phase timing",
+      "passed": true
+    }
+  ]
+}

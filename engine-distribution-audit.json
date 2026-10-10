@@ -1,0 +1,476 @@
+{
+  "date": "2026-10-10",
+  "scope": "Default seven D40/S45 double-acting engine",
+  "status": "Functional distribution corrected; real hardware operation NOT validated",
+  "findings": [
+    "The previous four-hole hollow valve box did not model partitions, valve seats or closures; its literal pressure-volume interpretation joined P,A,B,T.",
+    "Two chamber pipes per cylinder are sufficient when a real distributor alternates admission and exhaust through each pipe. A/B are bidirectional, P/T are separate supply/exhaust.",
+    "The new 3D insert is an explicitly symbolic four-valve functional diagram, not a dimensioned pressure manifold. Channel radii and illustrated gate movements do not specify manufacturing dimensions.",
+    "B pipes now take a shorter route around the plenums and below the crosshead plane. No pipe has been removed without preserving its function.",
+    "External A/B pipe volumes were absent from displayed chamber volumes. They are now included as connected-volume lower bounds.",
+    "The unchanged global simulation and sizing estimates still omit actual valve-flow dynamics, residual filling/compression and this clearance contribution. Their power/rpm are unvalidated scenarios."
+  ],
+  "ports": {
+    "P": "Fresh steam from generator",
+    "T": "Spent steam to condenser, then liquid water returns via pumps",
+    "A": "Outer/non-rod chamber: admission PA, exhaust AT",
+    "B": "Rod-side chamber: admission PB, exhaust BT"
+  },
+  "valves_per_cylinder": 4,
+  "total_commanded_valves": 28,
+  "phases": [
+    {
+      "stage": "A admission",
+      "open": [
+        "PA",
+        "BT"
+      ]
+    },
+    {
+      "stage": "A expansion",
+      "open": [
+        "BT"
+      ]
+    },
+    {
+      "stage": "A early release",
+      "open": [
+        "AT",
+        "BT"
+      ]
+    },
+    {
+      "stage": "B admission",
+      "open": [
+        "PB",
+        "AT"
+      ]
+    },
+    {
+      "stage": "B expansion",
+      "open": [
+        "AT"
+      ]
+    },
+    {
+      "stage": "B early release",
+      "open": [
+        "AT",
+        "BT"
+      ]
+    }
+  ],
+  "rules": [
+    "No chamber inlet and exhaust may overlap in this commanded model.",
+    "P must never be connected to T via an open chamber.",
+    "Timing follows actual articulated-linkage movement, with assumed 30% stroke cutoff and release after 98.5% expansion stroke.",
+    "No cam, valve actuator, lead/lap, compression event, leakage or timing tolerance has yet been designed."
+  ],
+  "formulas": {
+    "pipe": "V_tube [cm³] = π ID[mm]² L[mm] / 4000",
+    "clearance": "V_clearance_connected ≥ V_cylinder_at_dead_centre + V_chamber_pipe",
+    "displacement": "V_swept = area × stroke; adding pipe volume does not increase displacement"
+  },
+  "connections": [
+    {
+      "name": "Граничный впуск ID40 / OD48",
+      "length_mm": 16,
+      "inside_mm": 40,
+      "volume_cm3": 20.106192982974676,
+      "purpose": "Steam generator to fresh-steam plenum."
+    },
+    {
+      "name": "Ввод в пленум ID20",
+      "length_mm": 74,
+      "inside_mm": 20,
+      "volume_cm3": 23.24778563656447,
+      "purpose": "Steam generator to fresh-steam plenum."
+    },
+    {
+      "name": "Граничный выпуск ID40 / OD46",
+      "length_mm": 102,
+      "inside_mm": 40,
+      "volume_cm3": 128.17698026646357,
+      "purpose": "Exhaust plenum to condenser circuit."
+    },
+    {
+      "name": "Подача 1",
+      "length_mm": 164.65534540439836,
+      "inside_mm": 8,
+      "volume_cm3": 8.276480375947965,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 1",
+      "length_mm": 165.39822368615503,
+      "inside_mm": 12,
+      "volume_cm3": 18.706098400172134,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 1A",
+      "length_mm": 183.57289029666637,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868033,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 1B",
+      "length_mm": 421.3716694115407,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866614,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Подача 2",
+      "length_mm": 164.6553454043981,
+      "inside_mm": 8,
+      "volume_cm3": 8.276480375947951,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 2",
+      "length_mm": 165.398223686155,
+      "inside_mm": 12,
+      "volume_cm3": 18.70609840017213,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 2A",
+      "length_mm": 183.5728902966664,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868035,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 2B",
+      "length_mm": 421.37166941154084,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866617,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Подача 3",
+      "length_mm": 164.65534540439828,
+      "inside_mm": 8,
+      "volume_cm3": 8.27648037594796,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 3",
+      "length_mm": 165.39822368615515,
+      "inside_mm": 12,
+      "volume_cm3": 18.70609840017215,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 3A",
+      "length_mm": 183.57289029666634,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868031,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 3B",
+      "length_mm": 421.3716694115407,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866614,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Подача 4",
+      "length_mm": 164.65534540439828,
+      "inside_mm": 8,
+      "volume_cm3": 8.27648037594796,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 4",
+      "length_mm": 165.39822368615492,
+      "inside_mm": 12,
+      "volume_cm3": 18.706098400172124,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 4A",
+      "length_mm": 183.57289029666634,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868031,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 4B",
+      "length_mm": 421.3716694115408,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866614,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Подача 5",
+      "length_mm": 164.65534540439805,
+      "inside_mm": 8,
+      "volume_cm3": 8.27648037594795,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 5",
+      "length_mm": 165.3982236861549,
+      "inside_mm": 12,
+      "volume_cm3": 18.70609840017212,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 5A",
+      "length_mm": 183.57289029666643,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868037,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 5B",
+      "length_mm": 421.3716694115408,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866614,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Подача 6",
+      "length_mm": 164.65534540439805,
+      "inside_mm": 8,
+      "volume_cm3": 8.27648037594795,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 6",
+      "length_mm": 165.39822368615512,
+      "inside_mm": 12,
+      "volume_cm3": 18.706098400172145,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 6A",
+      "length_mm": 183.57289029666634,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868031,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 6B",
+      "length_mm": 421.3716694115407,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866614,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Подача 7",
+      "length_mm": 164.65534540439825,
+      "inside_mm": 8,
+      "volume_cm3": 8.276480375947958,
+      "purpose": "Fresh-steam plenum to P."
+    },
+    {
+      "name": "Выпуск 7",
+      "length_mm": 165.398223686155,
+      "inside_mm": 12,
+      "volume_cm3": 18.70609840017213,
+      "purpose": "T to exhaust plenum."
+    },
+    {
+      "name": "Камера 7A",
+      "length_mm": 183.5728902966664,
+      "inside_mm": 8,
+      "volume_cm3": 9.227379896868035,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    },
+    {
+      "name": "Камера 7B",
+      "length_mm": 421.37166941154084,
+      "inside_mm": 8,
+      "volume_cm3": 21.180450256866617,
+      "purpose": "One bidirectional passage between its cylinder chamber and the distributor."
+    }
+  ],
+  "per_cylinder": [
+    {
+      "cylinder": 1,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.57289029666637,
+          "tube_volume_cm3": 9.227379896868033,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.169857692944971,
+          "clearance_over_swept_lower_bound": 0.17984256915259234,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.3716694115407,
+          "tube_volume_cm3": 21.180450256866614,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.06864133188952,
+          "clearance_over_swept_lower_bound": 0.41411211979960455,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    },
+    {
+      "cylinder": 2,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.5728902966664,
+          "tube_volume_cm3": 9.227379896868035,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.169857692944973,
+          "clearance_over_swept_lower_bound": 0.17984256915259236,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.37166941154084,
+          "tube_volume_cm3": 21.180450256866617,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.068641331889523,
+          "clearance_over_swept_lower_bound": 0.4141121197996046,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    },
+    {
+      "cylinder": 3,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.57289029666634,
+          "tube_volume_cm3": 9.227379896868031,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.16985769294497,
+          "clearance_over_swept_lower_bound": 0.1798425691525923,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.3716694115407,
+          "tube_volume_cm3": 21.180450256866614,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.06864133188952,
+          "clearance_over_swept_lower_bound": 0.41411211979960455,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    },
+    {
+      "cylinder": 4,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.57289029666634,
+          "tube_volume_cm3": 9.227379896868031,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.16985769294497,
+          "clearance_over_swept_lower_bound": 0.1798425691525923,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.3716694115408,
+          "tube_volume_cm3": 21.180450256866614,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.06864133188952,
+          "clearance_over_swept_lower_bound": 0.41411211979960455,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    },
+    {
+      "cylinder": 5,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.57289029666643,
+          "tube_volume_cm3": 9.227379896868037,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.169857692944975,
+          "clearance_over_swept_lower_bound": 0.1798425691525924,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.3716694115408,
+          "tube_volume_cm3": 21.180450256866614,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.06864133188952,
+          "clearance_over_swept_lower_bound": 0.41411211979960455,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    },
+    {
+      "cylinder": 6,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.57289029666634,
+          "tube_volume_cm3": 9.227379896868031,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.16985769294497,
+          "clearance_over_swept_lower_bound": 0.1798425691525923,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.3716694115407,
+          "tube_volume_cm3": 21.180450256866614,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.06864133188952,
+          "clearance_over_swept_lower_bound": 0.41411211979960455,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    },
+    {
+      "cylinder": 7,
+      "chambers": {
+        "A": {
+          "tube_length_mm": 183.5728902966664,
+          "tube_volume_cm3": 9.227379896868035,
+          "cylinder_clearance_cm3": 0.9424777960769379,
+          "swept_cm3": 56.548667764616276,
+          "connected_clearance_lower_bound_cm3": 10.169857692944973,
+          "clearance_over_swept_lower_bound": 0.17984256915259236,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        },
+        "B": {
+          "tube_length_mm": 421.37166941154084,
+          "tube_volume_cm3": 21.180450256866617,
+          "cylinder_clearance_cm3": 0.8881910750229063,
+          "swept_cm3": 53.29146450137438,
+          "connected_clearance_lower_bound_cm3": 22.068641331889523,
+          "clearance_over_swept_lower_bound": 0.4141121197996046,
+          "excluded": "Distributor galleries, valve pockets, fittings. No residual-mass or condensation solution."
+        }
+      }
+    }
+  ],
+  "remaining_engine_work": [
+    "Dimension and select the distributor architecture; a slide valve is an alternative, not a component already designed.",
+    "Design common-shaft-synchronised actuation and stop/failure states.",
+    "Solve transient chamber mass, energy and actual steam properties, with external/internal dead volumes and valve discharge coefficients.",
+    "Provide specified chamber drains, rod glands, oil separation/lubrication, thermal clearances and rated joints.",
+    "Rebuild and verify the stronger mechanical CAD; validate pressure strength, fatigue and hot/cold properties."
+  ],
+  "sources": [
+    {
+      "title": "Science Museum: one slide valve replaced four valves in early double-acting engines",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co51227/representative-sectional-model-of-common-or-locomotive-simple-slide-valve-arranged-with-7-others"
+    }
+  ],
+  "input_sha256": {
+    "models/fitted-radial-engine.json": "6daa8067b4ad64de9b01f4436b0254856c252debd0e5ecc40a4dfa181ba99dc2",
+    "web/shared-radial-geometry.js": "3ade5b6e19a988c64e012d91470238e11041922ee5cc66a92c7371a59d8eca90",
+    "web/shared-radial-model.js": "5286bb69329239ec76e011941f8ba8a8095547e8b6a450d4c251d48b7d28b682",
+    "web/engine-distribution-model.js": "79cc68aec8c01cd68e3b96366f1df7771c12e661bf33a0c996e3a2787086ea48",
+    "web/engine-distributor-geometry.js": "e5aa4ef80c69b129b33ee204a4164a4db043aa3d252cf29311bbc3ab3f6e8692"
+  }
+}

@@ -112,13 +112,13 @@
         "id": "ENG",
         "name": "Паровая звезда · 7 цилиндров · один коленвал",
         "size_mm": [
-          589.2,
-          588.8,
+          569.8,
+          561.6,
           374.6
         ],
         "min_xyz_mm": [
           2980,
-          -296.8,
+          -269.6,
           415
         ],
         "body_intersections": [],
@@ -129,8 +129,8 @@
         "route": false,
         "support": false,
         "reserve_size_mm": [
-          589.2,
-          588.8,
+          569.8,
+          561.6,
           374.6
         ],
         "fixed_proxy": false,
@@ -1073,8 +1073,8 @@
         "housing_collision": false,
         "mesh_intersection": true,
         "contact_witness_mm": [
-          3051.8,
-          -141.7,
+          3051.7,
+          -141.1,
           439
         ],
         "schematic_interface": true
@@ -1186,7 +1186,7 @@
         "mesh_intersection": true,
         "contact_witness_mm": [
           3251.2,
-          -230,
+          -230.1,
           643.7
         ],
         "schematic_interface": true
@@ -4345,13 +4345,13 @@
     "id": "ENG",
     "name": "Паровая звезда · 7 цилиндров · один коленвал",
     "size_mm": [
-      589.2,
-      588.8,
+      569.8,
+      561.6,
       374.6
     ],
     "min_xyz_mm": [
       2980,
-      -296.8,
+      -269.6,
       415
     ],
     "body_intersections": [],
@@ -4362,8 +4362,8 @@
     "route": false,
     "support": false,
     "reserve_size_mm": [
-      589.2,
-      588.8,
+      569.8,
+      561.6,
       374.6
     ],
     "fixed_proxy": false,
@@ -4385,8 +4385,8 @@
       "housing_collision": false,
       "mesh_intersection": true,
       "contact_witness_mm": [
-        3051.8,
-        -141.7,
+        3051.7,
+        -141.1,
         439
       ],
       "schematic_interface": true
@@ -4420,7 +4420,7 @@
       "mesh_intersection": true,
       "contact_witness_mm": [
         3251.2,
-        -230,
+        -230.1,
         643.7
       ],
       "schematic_interface": true

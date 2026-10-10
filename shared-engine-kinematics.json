@@ -174,12 +174,16 @@
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 31.34945106412024,
+        "connection_volume_cm3": 0,
         "volume_cm3": 31.34945106412024
       },
       "B": {
         "phase": "expansion",
         "inlet": false,
         "exhaust": false,
+        "cylinder_volume_cm3": 25.524123968593276,
+        "connection_volume_cm3": 0,
         "volume_cm3": 25.524123968593276
       }
     },
@@ -220,12 +224,16 @@
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 51.95802103328703,
+        "connection_volume_cm3": 0,
         "volume_cm3": 51.95802103328703
       },
       "B": {
         "phase": "admission",
         "inlet": true,
         "exhaust": false,
+        "cylinder_volume_cm3": 6.102607629650495,
+        "connection_volume_cm3": 0,
         "volume_cm3": 6.102607629650495
       }
     },
@@ -266,12 +274,16 @@
         "phase": "release",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 57.08388012902305,
+        "connection_volume_cm3": 0,
         "volume_cm3": 57.08388012902305
       },
       "B": {
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 1.271998017828873,
+        "connection_volume_cm3": 0,
         "volume_cm3": 1.271998017828873
       }
     },
@@ -312,12 +324,16 @@
         "phase": "expansion",
         "inlet": false,
         "exhaust": false,
+        "cylinder_volume_cm3": 44.57882290880513,
+        "connection_volume_cm3": 0,
         "volume_cm3": 44.57882290880513
       },
       "B": {
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 13.056763942162235,
+        "connection_volume_cm3": 0,
         "volume_cm3": 13.056763942162235
       }
     },
@@ -358,12 +374,16 @@
         "phase": "expansion",
         "inlet": false,
         "exhaust": false,
+        "cylinder_volume_cm3": 20.11516621735455,
+        "connection_volume_cm3": 0,
         "volume_cm3": 20.11516621735455
       },
       "B": {
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 36.11131400818526,
+        "connection_volume_cm3": 0,
         "volume_cm3": 36.11131400818526
       }
     },
@@ -404,12 +424,16 @@
         "phase": "admission",
         "inlet": true,
         "exhaust": false,
+        "cylinder_volume_cm3": 1.9948768672108386,
+        "connection_volume_cm3": 0,
         "volume_cm3": 1.9948768672108386
       },
       "B": {
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 53.1878746917607,
+        "connection_volume_cm3": 0,
         "volume_cm3": 53.1878746917607
       }
     },
@@ -450,12 +474,16 @@
         "phase": "exhaust",
         "inlet": false,
         "exhaust": true,
+        "cylinder_volume_cm3": 7.747460579498499,
+        "connection_volume_cm3": 0,
         "volume_cm3": 7.747460579498499
       },
       "B": {
         "phase": "expansion",
         "inlet": false,
         "exhaust": false,
+        "cylinder_volume_cm3": 47.766639801300805,
+        "connection_volume_cm3": 0,
         "volume_cm3": 47.766639801300805
       }
     }

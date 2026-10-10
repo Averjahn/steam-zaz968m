@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Direct link opens the explanatory engine distribution panel",
+      "passed": true
+    },
+    {
+      "name": "All 42 distributor and cylinder pipe endpoints are coaxial and meet their actual port faces",
+      "passed": true
+    },
+    {
+      "name": "All 28 symbolic gates follow actual chamber timing through a whole turn",
+      "passed": true
+    },
+    {
+      "name": "Shorter B pipes, including insulation, clear both plenums and all swept rods/crossheads",
+      "passed": true
+    },
+    {
+      "name": "ID8 connection volumes match measured route lengths and B route is shorter",
+      "passed": true
+    },
+    {
+      "name": "Isolating cylinder three hides the other cylinders and their four external pipes",
+      "passed": true
+    },
+    {
+      "name": "SVG and 3D gate states agree at 0 degrees",
+      "passed": true
+    },
+    {
+      "name": "SVG and 3D gate states agree at 60 degrees",
+      "passed": true
+    },
+    {
+      "name": "SVG and 3D gate states agree at 120 degrees",
+      "passed": true
+    },
+    {
+      "name": "SVG and 3D gate states agree at 180 degrees",
+      "passed": true
+    },
+    {
+      "name": "SVG and 3D gate states agree at 240 degrees",
+      "passed": true
+    },
+    {
+      "name": "SVG and 3D gate states agree at 300 degrees",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes the flow diagram animation as well as shaft motion",
+      "passed": true
+    },
+    {
+      "name": "All-cylinder selection restores every cylinder",
+      "passed": true
+    },
+    {
+      "name": "Large live valve diagram opens in a modal",
+      "passed": true
+    },
+    {
+      "name": "Closing the diagram restores its original panel",
+      "passed": true
+    },
+    {
+      "name": "Distribution panel fits a mobile screen",
+      "passed": true
+    },
+    {
+      "name": "No browser exceptions",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "result": {
+    "connectionError": 0,
+    "axisError": 2.220446049250313e-16,
+    "hits": [],
+    "errors": [],
+    "states": [
+      "0100",
+      "0110",
+      "0101",
+      "0001",
+      "1001"
+    ],
+    "tubeA": 9.227379896868033,
+    "tubeB": 21.180450256866614
+  }
+}

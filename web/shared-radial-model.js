@@ -28,8 +28,10 @@ export function sharedPose(index,angle,bore=40,cutoff=.3,cylinder={}){
  const stroke=45*s,pistonRadius=q+67.5*s,f=Math.max(0,Math.min(1,(172.5*s-q)/stroke));
  const D=cylinder.bore_mm??bore,rod=cylinder.rod_mm??9.6*s;if(!Number.isFinite(D)||D<32||D>100||!Number.isFinite(rod)||rod<=0||rod>=D)throw RangeError('Invalid cylinder section');
  const A=Math.PI*D*D/4,B=Math.PI*(D*D-rod*rod)/4;
- const chamber=(expanding,fraction,volume)=>{const phase=!expanding?'exhaust':fraction>.985?'release':fraction<cutoff?'admission':'expansion';return{phase,inlet:phase==='admission',exhaust:phase==='exhaust'||phase==='release',volume_cm3:volume};};
+ const chamber=(expanding,fraction,volume)=>{const phase=!expanding?'exhaust':fraction>.985?'release':fraction<cutoff?'admission':'expansion';return{phase,inlet:phase==='admission',exhaust:phase==='exhaust'||phase==='release',cylinder_volume_cm3:volume,connection_volume_cm3:0,volume_cm3:volume};};
+ const chambers={A:chamber(dq<0,f,A*(244.5*s-pistonRadius-3.75*s)/1000),B:chamber(dq>=0,1-f,B*(pistonRadius-3.75*s-190.5*s)/1000)};
+ for(const ch of ['A','B']){const extra=cylinder.connection_volumes_cm3?.[ch]??0;if(!Number.isFinite(extra)||extra<0)throw RangeError('Invalid chamber connection volume');chambers[ch].connection_volume_cm3=extra;chambers[ch].volume_cm3+=extra;}
  const at=radius=>[u[0]*radius,u[1]*radius,z];
  return{index,alpha,phase:normalize(alpha-angle),pin:[...pin,z],crankpin:[...C,z],axis:[0,0,0],crosshead:at(q),piston:at(pistonRadius),pistonRadius,crossheadRadius:q,derivative_mm_rad:dq,masterTilt:tilt,
-  A:chamber(dq<0,f,A*(244.5*s-pistonRadius-3.75*s)/1000),B:chamber(dq>=0,1-f,B*(pistonRadius-3.75*s-190.5*s)/1000)};
+  A:chambers.A,B:chambers.B};
 }

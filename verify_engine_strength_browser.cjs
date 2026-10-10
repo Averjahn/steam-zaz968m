@@ -1,6 +1,6 @@
 const {chromium}=require('../tower-battle/node_modules/playwright-core'),fs=require('fs'),path=require('path'),assert=require('assert/strict');
 (async()=>{const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});try{
- const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[],checks=[],report=path.join(__dirname,'../reports/steam-zaz968m-strength-2026-10-10');page.on('pageerror',e=>errors.push(e.message));
+ const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[],checks=[],report=path.join(__dirname,'../reports/steam-zaz968m-strength-2026-10-10');page.on('pageerror',e=>{errors.push(e.message);console.error('BROWSER ERROR',e.stack);});
  const test=(name,ok)=>{assert.ok(ok,name);checks.push({name,passed:true});console.log(name);};
  await page.goto('http://127.0.0.1:8768/docs/engine-strength.html');
  test('Initial detail is D60 working speed with formula-first substitutions',await page.locator('.bore-panel:not([hidden])').textContent().then(s=>s.includes('578')&&s.includes('110 МПа')&&s.includes('0,891')));

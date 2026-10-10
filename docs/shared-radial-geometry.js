@@ -1,7 +1,9 @@
 import * as T from 'three';
 import {compactGeometry as BASE,compactPipes as P} from './compact-radial-model.js?v=b7182951d367';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
-import {sharedPose,sharedLinkages} from './shared-radial-model.js?v=ddee074b8af8';
+import {distributorDiagram} from './engine-distributor-geometry.js?v=b847e3de3bae';
+import {tubeVolumeCm3} from './engine-distribution-model.js?v=79cc68aec8c0';
+import {sharedPose,sharedLinkages} from './shared-radial-model.js?v=5286bb693292';
 import {pipeCurve} from './pipe-path.js?v=0b785b2d508c';
 import {hollowTube,hollowBox} from './pipe-joints.js?v=783013dea290';
 import {pipeArrows} from './pipe-arrows.js?v=dd3bd35c3fcf';
@@ -15,7 +17,8 @@ export function createSharedRadial({bore_mm=40,cylinder_bore_mm=null,origin_mm=n
  K.kinematicBore=bore_mm;K.bore=cylinder_bore_mm??bore_mm;if(!Number.isFinite(K.bore)||K.bore<32||K.bore>100)throw RangeError('Cylinder study: 32–100 mm');
  const cylinderRadius=K.bore/2,shellRadius=cylinderRadius+4*s;K.shellRadius=shellRadius;
  const outputReach=K.origin[0]-2980;
- const compactPose=(i,a)=>sharedPose(i,a,bore_mm,.3,{bore_mm:K.bore,rod_mm:K.rod});
+ const connectionVolumes=Array.from({length:7},()=>({A:0,B:0}));
+ const compactPose=(i,a)=>sharedPose(i,a,bore_mm,.3,{bore_mm:K.bore,rod_mm:K.rod,connection_volumes_cm3:connectionVolumes[i]});
  const root=new T.Group();root.name=`Звезда под кузов · 7 × Ø${K.bore} / ход ${K.stroke} · миллиметры`;
  const core=new T.Group();core.name='Двигатель, коллекторы, изоляция и угловая передача';root.add(core);
  const mounts=new T.Group();mounts.name='Стойки до пола предоставленного кузова';root.add(mounts);
@@ -129,14 +132,18 @@ export function createSharedRadial({bore_mm=40,cylinder_bore_mm=null,origin_mm=n
   const valve=new T.Group();valve.name='Распределитель '+(i+1)+' · проходы A/B';valve.rotation.z=alpha;g.add(valve);
   const valveR=176*s,loopR=195.6*s+34,studyOutlet=K.bore>bore_mm;
   const vp=[{id:'A',anchor_mm:[valveR+20,-10,190],outward:[1,0,0],bore_mm:8},{id:'B',anchor_mm:[valveR,14,205],outward:[0,0,1],bore_mm:8},{id:'in',anchor_mm:[valveR,-14,205],outward:[0,0,1],bore_mm:8},{id:'out',anchor_mm:studyOutlet?[valveR-20,0,185]:[valveR,0,165],outward:studyOutlet?[-1,0,0]:[0,0,-1],bore_mm:12}];
-  hollowBox(valve,'Коробка парораспределения · не выбранный клапан',[valveR-20,-25,165],[40,50,40],dark,vp);for(const o of valve.children)skin(o);
+  hollowBox(valve,'Кожух распределителя · схема внутри, арматура и привод не выбраны',[valveR-20,-25,165],[40,50,40],dark,vp);for(const o of valve.children)skin(o);
+  const distributor=distributorDiagram(valve,valveR,studyOutlet);
   tube('Подача '+(i+1),[at(132,260),at(132,278),at(valveR,278,-14),at(valveR,205,-14)],P.supply,18,'inlet',i);
   tube('Выпуск '+(i+1),studyOutlet?[at(valveR-20,185),at(174,185),at(174,120),at(104,120),at(104,145)]:[at(valveR,165),at(valveR,120),at(104,120),at(104,145)],P.exhaust,24,'outlet',i);
   tube('Камера '+(i+1)+'A',[at(valveR+20,190,-10),at(loopR,190,-10),at(loopR,61,-10*s),mechanical(197.6,61,-10)],P.chamber,18,'chamber',i,'A',24);
-  tube('Камера '+(i+1)+'B',[at(valveR,205,14),at(valveR,278,14),at(loopR,278,14),at(loopR,278,60*s),at(loopR,100,60*s),mechanical(110,100,60),mechanical(110,49,60),mechanical(110,49),mechanical(150.4,49)],P.chamber,18,'chamber',i,'B',80);
+  tube('Камера '+(i+1)+'B',bore_mm===40?[at(valveR,205,14),at(valveR,245,14),at(valveR,245,60*s),at(160,245,60*s),at(160,49,60*s),at(160,49),mechanical(150.4,49)]:[at(valveR,205,14),at(valveR,278,14),at(loopR,278,14),at(loopR,278,60*s),at(loopR,100,60*s),mechanical(110,100,60),mechanical(110,49,60),mechanical(110,49),mechanical(150.4,49)],P.chamber,18,'chamber',i,'B',80);
   portRecords.push({cylinder:i,A:{face_mm:mechanical(197.6,61,-10),outward:[...u,0],bore_mm:8},B:{face_mm:mechanical(150.4,49),outward:[-u[0],-u[1],0],bore_mm:8},valve_ports:vp});
-  cylinders.push({g,at,mechanical,piston,pistonRod,rod,big,small,crosshead,fluidA,fluidB,barrel,jacket});
+  cylinders.push({g,at,mechanical,piston,pistonRod,rod,big,small,crosshead,fluidA,fluidB,barrel,jacket,distributor});
  }
+ for(const r of routes)if(r.chamber)connectionVolumes[r.index][r.chamber]=tubeVolumeCm3(r.length_mm,r.spec.inside_mm);
+ let inspectedCylinder=-1;
+ function inspectCylinder(index=-1){inspectedCylinder=index;for(const [i,c]of cylinders.entries())c.g.visible=index<0||i===index;for(const r of routes)core.children.find(g=>g.name===r.name).visible=index<0||r.index===null||r.index===index;}
  const defaultAnchors=[[3000,-177,286.5353667979263],[3000,177,286.5350932618857],[3420,-177,366.4795014104693],[3420,177,366.4795014104296]];
  // Plane113 is sloped: a flat pad and a cylinder starting at centre height cut
  // into its high side. These wedges follow the actual local plane at all corners.
@@ -151,15 +158,16 @@ export function createSharedRadial({bore_mm=40,cylinder_bore_mm=null,origin_mm=n
  function update(angle,flowTime,camera,arrowsVisible=true){commonCrank.rotation.z=angle;const main=compactPose(0,angle);masterFork.position.set(main.crankpin[0],main.crankpin[1],0);masterFork.rotation.z=main.masterTilt;bevelVertical.rotation.z=angle;bevelHorizontal.rotation.z=-angle;const states=cylinders.map((c,i)=>{
   const p=compactPose(i,angle);c.crosshead.position.fromArray(p.crosshead);const rodStart=i===0?V(p.crankpin).add(V(p.crosshead).sub(V(p.crankpin)).normalize().multiplyScalar(28*jointScale)).toArray():p.pin;const d=V(p.crosshead).sub(V(rodStart));c.rod.position.copy(V(rodStart).add(V(p.crosshead)).multiplyScalar(.5));c.rod.scale.x=d.length()/c.rod.userData.rodLength;c.rod.rotation.z=Math.atan2(d.y,d.x);if(c.big){c.big.position.fromArray(p.pin);c.big.position.z-=2;}
   setBar(c.piston,c.at(p.pistonRadius-3*s),c.at(p.pistonRadius+3*s));setBar(c.pistonRod,c.at(p.crossheadRadius+5.25*s),p.piston);setBar(c.fluidA,c.at(p.pistonRadius+3*s),c.mechanical(195.6));c.fluidB.scale.z=(p.pistonRadius-3*s-152.4*s)/(39*s);
+  c.distributor.update(p,flowTime,camera,arrowsVisible&&(inspectedCylinder<0||inspectedCylinder===i));
   c.fluidA.material.color.set(p.A.exhaust?'#9ac9e4':'#ffe3b0');c.fluidB.material.color.set(p.B.exhaust?'#9ac9e4':'#ffe3b0');return p;
  });
   if(camera)for(const r of routes){const p=r.index===null?null:states[r.index],ch=r.chamber?p[r.chamber]:null,active=ch?ch.inlet||ch.exhaust:r.role==='inlet'?p.A.inlet||p.B.inlet:r.role==='outlet'?p.A.exhaust||p.B.exhaust:true;r.arrows.update({camera,radius:r.spec.outside_mm/2,phase:flowTime*.45,visible:arrowsVisible&&active,direction:ch?.exhaust?-1:1,color:ch?.exhaust||['return','outlet'].includes(r.role)?'#a5d0e6':'#ffe3b0',clippingPlanes:[]});}
   return states;
  }
- function mechanismOnly(on){for(const g of core.children)if(/пленум|Подача |Выпуск |Камера |Граничный|Ввод в пленум|Впуск ·|Изоляция границы/.test(g.name))g.visible=!on;for(const c of cylinders){for(const g of c.g.children)if(g.name.startsWith('Распределитель'))g.visible=!on;} }
+ function mechanismOnly(on){for(const g of core.children)if(/пленум|Подача |Выпуск |Камера |Граничный|Ввод в пленум|Впуск ·|Изоляция границы/.test(g.name))g.visible=!on&&(inspectedCylinder<0||!/^Подача |^Выпуск |^Камера /.test(g.name)||routes.find(r=>r.name===g.name)?.index===inspectedCylinder);for(const c of cylinders){for(const g of c.g.children)if(g.name.startsWith('Распределитель'))g.visible=!on;} }
  function cutaway(on){for(const o of skins){o.material.transparent=on;o.material.opacity=on?.14:1;o.material.depthWrite=!on;}}
  root.traverse(o=>{o.name=o.name.replace('m1,5', 'm'+K.module).replace('ID32 / OD40',`ID${K.bore} / OD${2*shellRadius}`).replace('ПоршеньØ32',`ПоршеньØ${K.bore}`).replace('ШтокØ7,68',`ШтокØ${K.rod}`).replace('Шатун57 мм',`Шатун${K.link} мм`).replace('r18',`r${K.crank}`);if(o.name.startsWith('Пар в камере'))o.userData.collision=false;});
  cutaway(true);update(0,0);
  root.userData={id:'FITTED_ENGINE',mechanism:'master-articulated',units:'mm/Z-up',geometry:`Seven double-acting cylinders D${K.bore} S${K.stroke}; one master and six articulated rods on one crankpin; conceptual distributor and one bevel pair`,not_manufacturing_cad:true};
- return {root,core,mounts,contacts,cylinders,routes,portRecords,anchorData,update,cutaway,config:K,pose:compactPose,commonCrank,masterFork,mechanismOnly};
+ return {root,core,mounts,contacts,cylinders,routes,portRecords,anchorData,update,cutaway,config:K,pose:compactPose,commonCrank,masterFork,mechanismOnly,inspectCylinder,connectionVolumes};
 }

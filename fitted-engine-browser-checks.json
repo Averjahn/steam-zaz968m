@@ -224,53 +224,11 @@
   "exports": [
     {
       "name": "fitted-radial-engine",
-      "bytes": 23632660
+      "bytes": 23469176
     },
     {
       "name": "fitted-radial-in-car",
-      "bytes": 59024964
+      "bytes": 58861740
     }
-  ],
-  "shared_mechanism": {
-    "status": "passed",
-    "mechanism": "master-articulated",
-    "ratio": 1,
-    "hasSharedCrank": true,
-    "spur": 0,
-    "conflicts": [],
-    "errors": [],
-    "bevel_named_nodes": 4,
-    "scope": "144 shaft poses; rod-vs-rod, rod-vs-crosshead and rod-vs-piston-rod checks; not strength or manufacturing verification",
-    "poses_checked": 144,
-    "remaining_bevel_pair": 1,
-    "sha256": {
-      "web/shared-radial-geometry.js": "d40f817717aed47f014b41ba494bbc3b97c3b17703a34497fa1b0601272bdae3",
-      "web/shared-radial-model.js": "cc443a230fd0d52d2c701b87349e944220611b0dd193c05fa57fc20e5c32ec65"
-    }
-  },
-  "checked_sha256": {
-    "web/shared-radial-geometry.js": "d40f817717aed47f014b41ba494bbc3b97c3b17703a34497fa1b0601272bdae3",
-    "web/shared-radial-model.js": "cc443a230fd0d52d2c701b87349e944220611b0dd193c05fa57fc20e5c32ec65",
-    "web/fitted-radial-view.js": "17a95cd9db7c712d0ffcba4881c663e3fa7ce601a31a9836b688f2f3f70dda08",
-    "web/assembly-systems.js": "ed959c482b6be3695639039ee8a34114d2294f42aece1c332b427397022129dd",
-    "web/assembly.js": "c369550651c87e9b20bfad235d80c9bef63e9e6debab10009ddd49f9a37a22b7",
-    "models/fitted-radial-engine.glb": "84fa0fd5ab172e60c8ba69fb2d79cdce3d5fb00b068f700a794fc6e7ea8fb009",
-    "models/fitted-radial-in-car.glb": "c1a53a5467815ba44846ef4fb699257ab52818df05cef2241c96ff257dc9536a"
-  },
-  "final_smoke": {
-    "status": "passed",
-    "url": "http://127.0.0.1:8768/docs/assembly.html?component=ENG&mechanics=1",
-    "state": {
-      "mechanism": "master-articulated",
-      "ratio": 1,
-      "cylinders": 7,
-      "bore": 40,
-      "stroke": 45,
-      "mechanicsOnly": true,
-      "headersHidden": true,
-      "description": "Один главный и шесть прицепных шатунов передают усилие одной общей шатунной шейке. Передача к коленвалу прямая,1:1; угловая пара пока только направляет выход к КПП."
-    },
-    "fixedCamera": true,
-    "errors": []
-  }
+  ]
 }

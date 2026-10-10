@@ -2,39 +2,39 @@
   "version": 1,
   "method": "TF-IDF + randomized truncated SVD / LSA; normalized cosine vectors + lexical reranking",
   "dimension": 96,
-  "passage_count": 1087,
+  "passage_count": 1089,
   "source_count": 28,
-  "vocabulary_size": 4105,
+  "vocabulary_size": 4133,
   "assets": {
     "passages": {
-      "path": "knowledge/passages-6f0be39fc6cf.json",
-      "sha256": "6f0be39fc6cf1c5aca08b4c5e868224257bd82f0fd4d439d82ab9c7f4b748175",
-      "bytes": 1820108
+      "path": "knowledge/passages-9a68ceff8843.json",
+      "sha256": "9a68ceff88431a177ef4d1e0016c41d96740f43eb21351457da1a73d93a74ca3",
+      "bytes": 1831245
     },
     "model": {
-      "path": "knowledge/model-d905eb15b721.json",
-      "sha256": "d905eb15b721d40c08b9b71a4768be63034fd91489debaee4e632b42fbd5559e",
-      "bytes": 140220
+      "path": "knowledge/model-2fefb61a5b95.json",
+      "sha256": "2fefb61a5b95bd1141730517a1433851904af6b661fbd8c64088063983dfbe5c",
+      "bytes": 141618
     },
     "basis": {
-      "path": "knowledge/basis-e34ab53775b6.bin",
-      "sha256": "e34ab53775b695fb1d319462550cb4c3eeaee5076266f28b414d834c7d474e9c",
-      "bytes": 1576320
+      "path": "knowledge/basis-f2344258d4d8.bin",
+      "sha256": "f2344258d4d81a4a2814327b6bd259d3e823d034534778204396747f00df07d3",
+      "bytes": 1587072
     },
     "vectors": {
-      "path": "knowledge/vectors-ee9d8317bf9a.bin",
-      "sha256": "ee9d8317bf9aced7630cb6cc53970826f3db8655b3ea26b264cc69340f3f7f87",
-      "bytes": 417408
+      "path": "knowledge/vectors-d34061c50052.bin",
+      "sha256": "d34061c500526af0f3efb1548ac1d94fdcbd2d6eda89100f5e0a800b4045e34e",
+      "bytes": 418176
     }
   },
   "sources": {
     "engine-strength.html": {
-      "sha256": "80a9a6a722d9be2281e639eaf38780b19b8fd88f23448a3c35e55e364595e2c4",
+      "sha256": "0a6162b38211c13142939f51d1ffb8879e4283b2d2d64fe28729b3ed422289fe",
       "kind": "HTML",
       "title": "Увеличение цилиндров и прочность"
     },
     "fitted-engine.html": {
-      "sha256": "fdac232fb744b91559ace8e6c4f9a79aed3ca519308555acd6eab18e65655842",
+      "sha256": "5d7e508ece09fef2877c270bad049b4e80d8c45973d79446aff2a325ef132859",
       "kind": "HTML",
       "title": "Семь цилиндров под кузов"
     },
@@ -59,7 +59,7 @@
       "title": "Семицилиндровая паровая звезда"
     },
     "assembly.html": {
-      "sha256": "543e5b7aaf7b2abfb384d780923da2db5aa437052f21602cbf2f11712e4ceeed",
+      "sha256": "58047f55c5bd872b329ed04c4a7a41f01914d224090e94d3074e612e2d9da5a7",
       "kind": "HTML",
       "title": "CAD-сборка"
     },
@@ -169,7 +169,7 @@
       "title": "connection-specs.json"
     }
   },
-  "total_bytes": 3954056,
+  "total_bytes": 3978111,
   "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
   "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
   "training_seed": 968,

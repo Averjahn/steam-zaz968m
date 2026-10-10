@@ -126,6 +126,13 @@
     "size": 6270
   },
   {
+    "path": "build_engine_distribution_audit.mjs",
+    "title": "build_engine_distribution_audit.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 5014
+  },
+  {
     "path": "build_engine_sizing.mjs",
     "title": "build_engine_sizing.mjs",
     "category": "Исходники",
@@ -137,21 +144,21 @@
     "title": "Воспроизводимый расчёт увеличения цилиндров и прочности",
     "category": "Исходники",
     "format": "MJS",
-    "size": 6755
+    "size": 7166
   },
   {
     "path": "build_fitted_drawing.py",
     "title": "build_fitted_drawing.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 6538
+    "size": 6539
   },
   {
     "path": "build_fitted_engine.mjs",
     "title": "Воспроизводимый расчёт звезды по свободному месту",
     "category": "Исходники",
     "format": "MJS",
-    "size": 7108
+    "size": 7673
   },
   {
     "path": "build_fitted_fit.cjs",
@@ -270,7 +277,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 52377
+    "size": 53272
   },
   {
     "path": "build_stock_suspension.py",
@@ -417,7 +424,28 @@
     "title": "Диаметр отдельно от хода · аудит геометрии и труб",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 59669
+    "size": 59447
+  },
+  {
+    "path": "engine-distribution-audit.json",
+    "title": "Двигатель · назначение соединений, клапаны и объёмы камерных трубок",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 17910
+  },
+  {
+    "path": "engine-distribution-browser-checks.json",
+    "title": "Двигатель · клапаны, 42 стыка, изоляция и браузер",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 2245
+  },
+  {
+    "path": "engine-distribution-checks.json",
+    "title": "Двигатель · независимые проверки связности и запрещённого P→T",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 807
   },
   {
     "path": "engine-sizing-checks.json",
@@ -459,14 +487,14 @@
     "title": "Увеличение цилиндров и прочность · расчёт PDF",
     "category": "Документы",
     "format": "PDF",
-    "size": 215705
+    "size": 218790
   },
   {
     "path": "engine-strength-study.json",
     "title": "Увеличение цилиндров · силы, инерция и прочностной экран",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 185239
+    "size": 185503
   },
   {
     "path": "engine_sizing_page.py",
@@ -480,14 +508,14 @@
     "title": "engine_strength_page.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 16932
+    "size": 17815
   },
   {
     "path": "fitted-engine-browser-checks.json",
     "title": "fitted-engine-browser-checks.json",
     "category": "Проверки",
     "format": "JSON",
-    "size": 7742
+    "size": 5669
   },
   {
     "path": "fitted-engine-checks.json",
@@ -501,7 +529,7 @@
     "title": "Звезда по кузову · аудит полной сборки и контактов пола",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 114763
+    "size": 114767
   },
   {
     "path": "fitted-engine-screen.json",
@@ -515,14 +543,14 @@
     "title": "Звезда по кузову · объём, обороты, мощность и ограничения охлаждения",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 38165
+    "size": 38749
   },
   {
     "path": "fitted_engine_page.py",
     "title": "fitted_engine_page.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 13377
+    "size": 14593
   },
   {
     "path": "geometry-checks.json",
@@ -613,7 +641,7 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17913
+    "size": 18057
   },
   {
     "path": "layout-fitted.json",
@@ -809,7 +837,7 @@
     "title": "shared-engine-kinematics.json",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 9941
+    "size": 11148
   },
   {
     "path": "simulation-checks.json",
@@ -938,6 +966,20 @@
     "size": 2310
   },
   {
+    "path": "verify_engine_distribution.mjs",
+    "title": "verify_engine_distribution.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 2499
+  },
+  {
+    "path": "verify_engine_distribution_browser.cjs",
+    "title": "verify_engine_distribution_browser.cjs",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 7331
+  },
+  {
     "path": "verify_engine_sizing.mjs",
     "title": "verify_engine_sizing.mjs",
     "category": "Исходники",
@@ -956,14 +998,14 @@
     "title": "verify_engine_strength_browser.cjs",
     "category": "Исходники",
     "format": "CJS",
-    "size": 7025
+    "size": 7067
   },
   {
     "path": "verify_fitted_browser.cjs",
     "title": "verify_fitted_browser.cjs",
     "category": "Исходники",
     "format": "CJS",
-    "size": 12131
+    "size": 12208
   },
   {
     "path": "verify_fitted_engine.mjs",
@@ -1222,28 +1264,28 @@
     "title": "Звезда по свободному месту в кузове · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 47924
+    "size": 48041
   },
   {
     "path": "drawings/11-fitted-radial.svg",
     "title": "Звезда по свободному месту в кузове · SVG",
     "category": "Чертежи",
     "format": "SVG",
-    "size": 16426
+    "size": 15972
   },
   {
     "path": "engine-strength.html",
     "title": "Увеличение цилиндров и прочность механизма",
     "category": "Расчёты",
     "format": "HTML",
-    "size": 125508
+    "size": 126807
   },
   {
     "path": "fitted-engine.html",
     "title": "Семицилиндровый двигатель по свободному месту",
     "category": "3D",
     "format": "HTML",
-    "size": 17857
+    "size": 19454
   },
   {
     "path": "compact-radial.html",
@@ -1285,7 +1327,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 55439
+    "size": 60605
   },
   {
     "path": "user-model.html",
