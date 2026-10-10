@@ -8,7 +8,7 @@ from reportlab.lib.colors import toColor as Color
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 root=Path(__file__).resolve().parent
-d=json.loads((root/'fitted-engine-study.json').read_text());meta=json.loads((root/'models/fitted-radial-engine.json').read_text());b=meta['bounds'];origin=meta['origin'];s=40/32
+d=json.loads((root/'fitted-engine-study.json').read_text());kin=json.loads((root/'shared-engine-kinematics.json').read_text());meta=json.loads((root/'models/fitted-radial-engine.json').read_text());b=meta['bounds'];origin=meta['origin'];s=40/32
 p=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1260 891"><rect width="1260" height="891" fill="white"/><rect x="20" y="20" width="1220" height="851" fill="none" stroke="#172c35"/><style>text{font-family:Arial,sans-serif;fill:#172c35;font-size:16px}.title{font-size:27px;font-weight:bold}.note{font-size:14px}</style>']
 def text(x,y,t,cls=''):p.append(f'<text x="{x}" y="{y}" class="{cls}">{escape(t)}</text>')
 def line(a,b,c='#172c35',w=2,dash=''):p.append(f'<line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}"/>')
@@ -26,7 +26,9 @@ side=lambda x,z:(935+.65*x,565-.65*(z+75))
 text(170,140,'ВИД СВЕРХУ · трубы по осям');text(805,140,'ВИД СБОКУ · проектные уровни')
 for R,z,c in [(132,245,'#ce813e'),(104,170,'#3c93b6')]:circle(*top(0,0),R*.7,c,10);line(side(-R,z),side(R,z),c,16)
 for i in range(7):
- a=math.pi/2+i*2*math.pi/7;u=(math.cos(a),math.sin(a));v=(-u[1],u[0]);pt=lambda r,t=0:top(r*u[0]+t*v[0],r*u[1]+t*v[1]);line(pt(152.4*s),pt(195.6*s),'#8fa3ab',50*s*.7);line(pt(152.4*s),pt(195.6*s),'#cad3d6',40*s*.7);circle(*pt(63*s),21*s*.7);line(pt(63*s),pt(152.4*s),'#b98947',3);text(*pt(212*s),str(i+1))
+ a=math.pi/2+i*2*math.pi/7;u=(math.cos(a),math.sin(a));v=(-u[1],u[0]);pt=lambda r,t=0:top(r*u[0]+t*v[0],r*u[1]+t*v[1]);line(pt(152.4*s),pt(195.6*s),'#8fa3ab',50*s*.7);line(pt(152.4*s),pt(195.6*s),'#cad3d6',40*s*.7);pose=kin['pose_zero'][i];line(top(*pose['pin'][:2]),top(*pose['crosshead'][:2]),'#b98947',4);text(*pt(212*s),str(i+1))
+circle(*top(*kin['pose_zero'][0]['crankpin'][:2]),24*.7,'#b98947',4)
+line(top(0,0),top(*kin['pose_zero'][0]['crankpin'][:2]),'#b98947',5)
 for r in meta['routes']:
  pts=[top(x,y) for x,y,z in r['points']];color='#529db5' if 'Выпуск' in r['name'] or 'выпуск' in r['name'] else '#ce813e';p.append('<polyline points="'+' '.join(f'{x},{y}'for x,y in pts)+f'" fill="none" stroke="{color}" stroke-width="2"/>')
 line(top(-287.5,0),top(0,0),'#ab874b',5)
@@ -39,10 +41,10 @@ dim(top(localmin[0],-350),top(localmax[0],-350),'589,2');dim(top(350,localmin[1]
 text(680,205,'Полная геометрия без стоек: 589,2 × 588,8 × 374,6')
 text(680,236,'Плоскость цилиндров: Z=551; общий выход к КПП: Z=445')
 text(680,267,'Верхний пленум свежего пара: Z=735; выпуск: Z=660')
-text(680,298,'Шестерни: 56 / 28 зубьев; модуль1,875; 2:1')
+text(680,298,'Один кривошип r22,5; главный шатун150; прицепные≈126; 1:1')
 text(45,745,'Начало двигателя в кузове: X=3267,5; Y=0; Z=490. Поддон460×360; опоры по сетке пола.','note')
 text(45,769,'V = 7πD²S/4 = 0,396 л; V обеих сторон = 7π(2D²−d²)S/4 = 0,769 л за оборот кривошипов.','note')
-text(45,793,'При50 кВт тепла в паре:1323 об/мин кривошипов;661 об/мин общего вала;3,35 кВт до вспомогательных нагрузок.','note')
+text(45,793,'При50 кВт тепла в паре:1323 об/мин единого коленвала;3,35 кВт до вспомогательных нагрузок.','note')
 text(45,817,'Зазор двигателя до игровой сетки кузова18 мм. Реальная посадка, тепло и прочность не подтверждены.','note')
 text(45,841,'НЕ ИЗГОТОВИТЕЛЬНЫЙ ЧЕРТЁЖ. Полная установка имеет нерешённые пересечения; гибы и поверхности — в GLB.','note')
 text(1050,864,'10.10.2026 · лист11','note');p.append('</svg>');svg=''.join(p);dest=root/'drawings/11-fitted-radial.svg';dest.write_text(svg)

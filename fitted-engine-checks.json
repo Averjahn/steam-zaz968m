@@ -10,7 +10,7 @@
       "passed": true
     },
     {
-      "name": "Common shaft runs at half crank RPM",
+      "name": "Single crank directly drives common shaft at equal RPM",
       "passed": true
     },
     {
@@ -62,7 +62,7 @@
       "passed": true
     },
     {
-      "name": "Seven-cylinder common-shaft angle survives second crank revolution",
+      "name": "Direct common-shaft angle wraps at exactly one turn",
       "passed": true
     },
     {

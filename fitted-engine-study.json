@@ -1,6 +1,43 @@
 {
   "date": "2026-10-10",
   "status": "Геометрический вариант в предоставленной игровой сетке; не подтверждение сборки реального автомобиля",
+  "mechanism": {
+    "kind": "master-articulated",
+    "common_cranks": 1,
+    "spur_gears": 0,
+    "master_length_mm": 150,
+    "articulation_radius_mm": 24,
+    "slave_linkages": [
+      {
+        "beta": 2.468158215516697,
+        "length": 126.19710828556119
+      },
+      {
+        "beta": 3.3628009239661716,
+        "length": 126.3085620385239
+      },
+      {
+        "beta": 4.260091509051952,
+        "length": 126.061674101906
+      },
+      {
+        "beta": 5.164686451715456,
+        "length": 126.06167410210465
+      },
+      {
+        "beta": 6.061977036803103,
+        "length": 126.30856203935053
+      },
+      {
+        "beta": 6.9566197452526835,
+        "length": 126.19710828557872
+      }
+    ],
+    "output_ratio": 1,
+    "kinematic_dimensions_only": true,
+    "exterior_reduced": false,
+    "remaining_bevel_pair": "Only redirects horizontal star output to provisional gearbox axis; conceptual, unverified"
+  },
   "selected": {
     "id": "fitted-seven",
     "name": "Звезда по месту Ø40 × 45",
@@ -8,7 +45,7 @@
     "bore": 40,
     "stroke": 45,
     "rod": 9.6,
-    "output_ratio": 2,
+    "output_ratio": 1,
     "size_mm": [
       589.169189453125,
       588.8103942871094,
@@ -188,8 +225,8 @@
       "UA_main_estimate_W_K": 598.2995517527937,
       "UA_subcool_estimate_W_K": 70.98239370766765,
       "crank_rpm": 1322.9328766756994,
-      "output_rpm": 661.4664383378497,
-      "torque_output_Nm": 48.33792088762939,
+      "output_rpm": 1322.9328766756994,
+      "torque_output_Nm": 24.168960443814694,
       "mean_piston_m_s": 1.9843993150135488,
       "fuel_input_kW": 58.82352941176471,
       "fuel_kg_h": 4.971002485501243,
@@ -261,8 +298,8 @@
       "UA_main_estimate_W_K": 1220.531085575699,
       "UA_subcool_estimate_W_K": 144.80408316364202,
       "crank_rpm": 2698.7830684184264,
-      "output_rpm": 1349.3915342092132,
-      "torque_output_Nm": 48.33792088762938,
+      "output_rpm": 2698.7830684184264,
+      "torque_output_Nm": 24.16896044381469,
       "mean_piston_m_s": 4.048174602627639,
       "fuel_input_kW": 120,
       "fuel_kg_h": 10.140845070422534,
@@ -334,8 +371,8 @@
       "UA_main_estimate_W_K": 719.8685928447278,
       "UA_subcool_estimate_W_K": 87.6006694864188,
       "crank_rpm": 1322.9328766756994,
-      "output_rpm": 661.4664383378497,
-      "torque_output_Nm": 48.33792088762939,
+      "output_rpm": 1322.9328766756994,
+      "torque_output_Nm": 24.168960443814694,
       "mean_piston_m_s": 1.9843993150135488,
       "fuel_input_kW": 58.82352941176471,
       "fuel_kg_h": 4.971002485501243,
@@ -407,8 +444,8 @@
       "UA_main_estimate_W_K": 1468.5319294032447,
       "UA_subcool_estimate_W_K": 178.7053657522943,
       "crank_rpm": 2698.7830684184264,
-      "output_rpm": 1349.3915342092132,
-      "torque_output_Nm": 48.33792088762938,
+      "output_rpm": 2698.7830684184264,
+      "torque_output_Nm": 24.16896044381469,
       "mean_piston_m_s": 4.048174602627639,
       "fuel_input_kW": 120,
       "fuel_kg_h": 10.140845070422534,
@@ -511,8 +548,8 @@
         "UA_main_estimate_W_K": 598.2995517527937,
         "UA_subcool_estimate_W_K": 70.98239370766765,
         "crank_rpm": 1322.9328766756994,
-        "output_rpm": 661.4664383378497,
-        "torque_output_Nm": 48.33792088762939,
+        "output_rpm": 1322.9328766756994,
+        "torque_output_Nm": 24.168960443814694,
         "mean_piston_m_s": 1.9843993150135488,
         "fuel_input_kW": 58.82352941176471,
         "fuel_kg_h": 4.971002485501243,
@@ -619,8 +656,8 @@
         "UA_main_estimate_W_K": 598.2995517527937,
         "UA_subcool_estimate_W_K": 70.98239370766765,
         "crank_rpm": 1228.474689967423,
-        "output_rpm": 614.2373449837115,
-        "torque_output_Nm": 52.054653835879755,
+        "output_rpm": 1228.474689967423,
+        "torque_output_Nm": 26.027326917939877,
         "mean_piston_m_s": 1.8887798358249128,
         "fuel_input_kW": 58.82352941176471,
         "fuel_kg_h": 4.971002485501243,
@@ -727,8 +764,8 @@
         "UA_main_estimate_W_K": 598.2995517527937,
         "UA_subcool_estimate_W_K": 70.98239370766765,
         "crank_rpm": 1142.7991592058734,
-        "output_rpm": 571.3995796029367,
-        "torque_output_Nm": 55.95718566754197,
+        "output_rpm": 1142.7991592058734,
+        "torque_output_Nm": 27.978592833770985,
         "mean_piston_m_s": 1.7999086757492506,
         "fuel_input_kW": 58.82352941176471,
         "fuel_kg_h": 4.971002485501243,
@@ -835,8 +872,8 @@
         "UA_main_estimate_W_K": 598.2995517527937,
         "UA_subcool_estimate_W_K": 70.98239370766765,
         "crank_rpm": 993.9390508457548,
-        "output_rpm": 496.9695254228774,
-        "torque_output_Nm": 64.3377727014347,
+        "output_rpm": 993.9390508457548,
+        "torque_output_Nm": 32.16888635071735,
         "mean_piston_m_s": 1.6399994338954955,
         "fuel_input_kW": 58.82352941176471,
         "fuel_kg_h": 4.971002485501243,
@@ -943,8 +980,8 @@
         "UA_main_estimate_W_K": 598.2995517527937,
         "UA_subcool_estimate_W_K": 70.98239370766765,
         "crank_rpm": 869.849840832218,
-        "output_rpm": 434.924920416109,
-        "torque_output_Nm": 73.51593542997333,
+        "output_rpm": 869.849840832218,
+        "torque_output_Nm": 36.75796771498666,
         "mean_piston_m_s": 1.500490975435576,
         "fuel_input_kW": 58.82352941176471,
         "fuel_kg_h": 4.971002485501243,
@@ -980,10 +1017,11 @@
     "chamber_envelope_mm": 27,
     "inlet_speed_m_s": 3.440138777312969,
     "average_per_cylinder_inlet_m_s": 12.286209918974887,
-    "admission_duty_A": 0.16338356659076056,
-    "admission_duty_B": 0.21008167938057482,
-    "mean_inlet_open_fraction": 0.37346524597133535,
-    "estimated_open_branch_speed_m_s": 32.89786680691004,
+    "admission_duty_A": 0.1721329365079365,
+    "admission_duty_B": 0.19827380952380952,
+    "mean_inlet_open_fraction": 0.37040674603174606,
+    "estimated_open_branch_speed_m_s": 33.169509061592215,
+    "duty_basis": "Numerical angular integration of actual master/articulated linkage (14400 steps per turn)",
     "scope": "Средние скорости свежего пара. Кратковременные пики в камерах, клапанная характеристика, перепад на арматуре и двухфазный выпуск не решены. Подбор только по средней скорости недостаточен."
   },
   "target_40_hp": {
@@ -996,6 +1034,7 @@
     "КПД0,5/0,9, отсечка30% и наполнение85% — расчётные гипотезы, не характеристики изготовленного двигателя.",
     "Симуляция использует новую геометрию7 цилиндров и штоков, но прежние условные теплоёмкость, инерцию и массу автомобиля.",
     "Вся установка имеет нерешённые пересечения прежних труб и панелей. Положительный геометрический результат двигателя не подтверждает работоспособность всего автомобиля.",
+    "Габарит не уменьшен только за счёт удаления шестерён: внешние цилиндры, теплоизоляция и трубы пока сохранены. Исследование меньшего двигателя требует отдельной переразводки и аудита.",
     "На максимуме102 кВт тепла нужны2699 об/мин кривошипов, выше условного предела2600. При прежней площади воздуха и нагреве воздуха25 К вспомогательная мощность больше мощности двигателя.",
     "Коллекторы, стенки и опоры показаны концептуально; нет расчёта прочности и утверждённых материалов. Делитель выпуска — пока неутеплённый тепловой мост."
   ],
@@ -1013,17 +1052,22 @@
       "url": "https://www.spiraxsarco.com/learn-about-steam/steam-engineering-principles-and-heat-transfer/superheated-steam"
     },
     {
+      "title": "FAA: главный и прицепные шатуны радиального двигателя",
+      "url": "https://www.faa.gov/sites/faa.gov/files/03_amtp_ch1.pdf"
+    },
+    {
       "title": "Spirax Sarco: размер труб определяется также перепадом давления и расходом",
       "url": "https://www.spiraxsarco.com/learn-about-steam/steam-distribution/pipes-and-pipe-sizing?sc_lang=en-GB"
     }
   ],
   "input_sha256": {
     "engine-sizing.json": "23e468c4a381ed59ad808be1b295088af216bfb10811ea95e14bd8d2d1e6979f",
-    "layout-fitted.json": "f31027e48ac489dd41b3feac41bec31a19d70084745fdaa65a5e36bf23a7e0a8",
+    "layout-fitted.json": "6e5cf9cc86991a866e0dbd916af881f55e618b170e029e95d231e50d91203f14",
     "fitted-engine-screen.json": "7f75b38545cbb832f07594664ea93a69280f84268e00baaf02a70ab57c9d7c6d",
     "models/zaz-968m-yatloo.glb": "5db080a3c9b362caf09a03122f3faabfd260c607914dda56adb471f2c19b6cbd",
     "models/stock-suspension.glb": "e084e327c5ebcbb873bb6f76326ce3f094ac5b50957d9dc988e3cb3de565367d",
-    "web/fitted-radial-geometry.js": "9dbf20b1566545e15858f8487cc67eb94db219ad06f3c79982dfa23a130d147f",
+    "web/shared-radial-model.js": "cc443a230fd0d52d2c701b87349e944220611b0dd193c05fa57fc20e5c32ec65",
+    "web/shared-radial-geometry.js": "d40f817717aed47f014b41ba494bbc3b97c3b17703a34497fa1b0601272bdae3",
     "web/fitted-installation.js": "8d76e3079d2f94ad993ebb846a706b79c042f6f0fe43b75849dbb4c68c973145",
     "web/heat-geometry.js": "601295083b8e814b494f8d6323cbe3b96ce1f468db6ed3d33f6efc6a75fd040b",
     "web/pipe-joints.js": "9891b50a1c11f7f05b5d14c6be76f772fedee5a632faf0914db7480e60991ea2"

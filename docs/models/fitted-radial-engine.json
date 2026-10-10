@@ -2,11 +2,11 @@
   "out": [
     {
       "name": "fitted-radial-engine",
-      "bytes": 25809896
+      "bytes": 23632660
     },
     {
       "name": "fitted-radial-in-car",
-      "bytes": 61202316
+      "bytes": 59024964
     }
   ],
   "bounds": {

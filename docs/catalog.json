@@ -4,7 +4,7 @@
     "title": "FITTED-ENGINE.txt",
     "category": "Документы",
     "format": "TXT",
-    "size": 1533
+    "size": 1693
   },
   {
     "path": "START.txt",
@@ -130,21 +130,21 @@
     "title": "build_fitted_drawing.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 6300
+    "size": 6538
   },
   {
     "path": "build_fitted_engine.mjs",
     "title": "Воспроизводимый расчёт звезды по свободному месту",
     "category": "Исходники",
     "format": "MJS",
-    "size": 5974
+    "size": 7108
   },
   {
     "path": "build_fitted_fit.cjs",
     "title": "build_fitted_fit.cjs",
     "category": "Исходники",
     "format": "CJS",
-    "size": 4410
+    "size": 4441
   },
   {
     "path": "build_geometry.py",
@@ -256,7 +256,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 50508
+    "size": 50901
   },
   {
     "path": "build_stock_suspension.py",
@@ -431,21 +431,21 @@
     "title": "fitted-engine-browser-checks.json",
     "category": "Проверки",
     "format": "JSON",
-    "size": 6865
+    "size": 7742
   },
   {
     "path": "fitted-engine-checks.json",
     "title": "fitted-engine-checks.json",
     "category": "Проверки",
     "format": "JSON",
-    "size": 2344
+    "size": 2348
   },
   {
     "path": "fitted-engine-fit.json",
     "title": "Звезда по кузову · аудит полной сборки и контактов пола",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 114957
+    "size": 114763
   },
   {
     "path": "fitted-engine-screen.json",
@@ -459,14 +459,14 @@
     "title": "Звезда по кузову · объём, обороты, мощность и ограничения охлаждения",
     "category": "Расчёты",
     "format": "JSON",
-    "size": 36458
+    "size": 38165
   },
   {
     "path": "fitted_engine_page.py",
     "title": "fitted_engine_page.py",
     "category": "Исходники",
     "format": "PY",
-    "size": 11637
+    "size": 12973
   },
   {
     "path": "geometry-checks.json",
@@ -557,14 +557,21 @@
     "title": "База знаний · релевантность, контрольные суммы и границы поиска",
     "category": "Проверки",
     "format": "JSON",
-    "size": 17783
+    "size": 17708
   },
   {
     "path": "layout-fitted.json",
     "title": "Основная сборка · семицилиндровый двигатель по свободному месту",
     "category": "3D",
     "format": "JSON",
-    "size": 31687
+    "size": 31679
+  },
+  {
+    "path": "layout-geared.json",
+    "title": "layout-geared.json",
+    "category": "3D",
+    "format": "JSON",
+    "size": 31676
   },
   {
     "path": "layout-internal.json",
@@ -735,6 +742,20 @@
     "size": 3897
   },
   {
+    "path": "shared-engine-browser-checks.json",
+    "title": "shared-engine-browser-checks.json",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 587
+  },
+  {
+    "path": "shared-engine-kinematics.json",
+    "title": "shared-engine-kinematics.json",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 9941
+  },
+  {
     "path": "simulation-checks.json",
     "title": "Проверка балансов, остановов и четырёх колёс",
     "category": "Проверки",
@@ -872,14 +893,14 @@
     "title": "verify_fitted_browser.cjs",
     "category": "Исходники",
     "format": "CJS",
-    "size": 11231
+    "size": 12131
   },
   {
     "path": "verify_fitted_engine.mjs",
     "title": "verify_fitted_engine.mjs",
     "category": "Исходники",
     "format": "MJS",
-    "size": 3958
+    "size": 3968
   },
   {
     "path": "verify_knowledge.mjs",
@@ -915,6 +936,13 @@
     "category": "Исходники",
     "format": "MJS",
     "size": 6179
+  },
+  {
+    "path": "verify_shared_engine.mjs",
+    "title": "verify_shared_engine.mjs",
+    "category": "Исходники",
+    "format": "MJS",
+    "size": 3302
   },
   {
     "path": "verify_simulation.mjs",
@@ -1124,21 +1152,21 @@
     "title": "Звезда по свободному месту в кузове · PDF",
     "category": "Чертежи",
     "format": "PDF",
-    "size": 48318
+    "size": 47924
   },
   {
     "path": "drawings/11-fitted-radial.svg",
     "title": "Звезда по свободному месту в кузове · SVG",
     "category": "Чертежи",
     "format": "SVG",
-    "size": 16976
+    "size": 16426
   },
   {
     "path": "fitted-engine.html",
     "title": "Семицилиндровый двигатель по свободному месту",
     "category": "3D",
     "format": "HTML",
-    "size": 15579
+    "size": 17453
   },
   {
     "path": "compact-radial.html",
@@ -1180,7 +1208,7 @@
     "title": "3D-сборка: реконструкция кузова и агрегаты",
     "category": "3D",
     "format": "HTML",
-    "size": 54995
+    "size": 55277
   },
   {
     "path": "user-model.html",

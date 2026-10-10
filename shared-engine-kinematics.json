@@ -1,0 +1,463 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Cylinder 1 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "Cylinder 2 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "Cylinder 3 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "Cylinder 4 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "Cylinder 5 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "Cylinder 6 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "Cylinder 7 has full 45 mm stroke and the retained piston envelope",
+      "passed": true
+    },
+    {
+      "name": "All seven rigid rod lengths remain constant through a turn",
+      "passed": true
+    },
+    {
+      "name": "Analytical velocities agree with independent finite differences",
+      "passed": true
+    },
+    {
+      "name": "Actual double-acting phasing produces positive combined quasi-static torque",
+      "passed": true
+    },
+    {
+      "name": "A whole output turn returns the shared mechanism to its starting pose",
+      "passed": true
+    },
+    {
+      "name": "All force paths use the same crankpin centre",
+      "passed": true
+    }
+  ],
+  "dimensions": {
+    "bore_mm": 40,
+    "stroke_mm": 45,
+    "master_length_mm": 150,
+    "slave_linkages": [
+      {
+        "beta": 2.468158215516697,
+        "length": 126.19710828556119
+      },
+      {
+        "beta": 3.3628009239661716,
+        "length": 126.3085620385239
+      },
+      {
+        "beta": 4.260091509051952,
+        "length": 126.061674101906
+      },
+      {
+        "beta": 5.164686451715456,
+        "length": 126.06167410210465
+      },
+      {
+        "beta": 6.061977036803103,
+        "length": 126.30856203935053
+      },
+      {
+        "beta": 6.9566197452526835,
+        "length": 126.19710828557872
+      }
+    ],
+    "articulation_radius_mm": 24,
+    "crank_radius_mm": 22.5,
+    "output_ratio": 1
+  },
+  "minima_mm": [
+    127.5,
+    127.49999999999116,
+    127.49999999946203,
+    127.49999999999999,
+    127.50000000019475,
+    127.50000000028871,
+    127.50000000000871
+  ],
+  "maxima_mm": [
+    172.5,
+    172.4999999999912,
+    172.4999999994665,
+    172.5,
+    172.5000000002022,
+    172.50000000029377,
+    172.50000000000873
+  ],
+  "max_length_error_mm": 5.684341886080802e-14,
+  "max_derivative_error_mm_rad": 3.963428696351912e-9,
+  "illustrative_min_torque_Nm": 59.171899425064595,
+  "torque_assumptions": "10 bar admission, 1.2 bar exhaust, polytropic expansion n=1.15, no inertia/friction/strength; not rated torque",
+  "duty": [
+    [
+      0.17395833333333333,
+      0.19597222222222221
+    ],
+    [
+      0.174375,
+      0.1959027777777778
+    ],
+    [
+      0.170625,
+      0.20166666666666666
+    ],
+    [
+      0.16631944444444444,
+      0.20770833333333333
+    ],
+    [
+      0.16902777777777778,
+      0.20020833333333332
+    ],
+    [
+      0.1751388888888889,
+      0.19256944444444443
+    ],
+    [
+      0.17548611111111112,
+      0.1938888888888889
+    ]
+  ],
+  "pose_zero": [
+    {
+      "index": 0,
+      "alpha": 1.5707963267948966,
+      "phase": 1.5707963267948966,
+      "pin": [
+        22.5,
+        0,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        9.08093355882522e-15,
+        148.30289949963893,
+        61
+      ],
+      "piston": [
+        1.3214116505947538e-14,
+        215.80289949963893,
+        61
+      ],
+      "pistonRadius": 215.80289949963893,
+      "crossheadRadius": 148.30289949963893,
+      "derivative_mm_rad": 22.5,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 31.34945106412024
+      },
+      "B": {
+        "phase": "expansion",
+        "inlet": false,
+        "exhaust": false,
+        "volume_cm3": 25.524123968593276
+      }
+    },
+    {
+      "index": 1,
+      "alpha": 2.4683942278205517,
+      "phase": 2.4683942278205517,
+      "pin": [
+        1.7066045640725278,
+        11.984769761874881,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        -103.12601231804155,
+        82.24025052519715,
+        61
+      ],
+      "piston": [
+        -155.89963738463356,
+        124.32581215066166,
+        61
+      ],
+      "pistonRadius": 199.4031205963985,
+      "crossheadRadius": 131.9031205963985,
+      "derivative_mm_rad": 12.569062262627913,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 51.95802103328703
+      },
+      "B": {
+        "phase": "admission",
+        "inlet": true,
+        "exhaust": false,
+        "volume_cm3": 6.102607629650495
+      }
+    },
+    {
+      "index": 2,
+      "alpha": 3.365992128846207,
+      "phase": 3.365992128846207,
+      "pin": [
+        0.13959721769082734,
+        -8.718508324988868,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        -124.61927468480972,
+        -28.443536230041413,
+        61
+      ],
+      "piston": [
+        -190.42690875708283,
+        -43.463699272092626,
+        61
+      ],
+      "pistonRadius": 195.3240915330038,
+      "crossheadRadius": 127.82409153300381,
+      "derivative_mm_rad": -3.5217635403974654,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "release",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 57.08388012902305
+      },
+      "B": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 1.271998017828873
+      }
+    },
+    {
+      "index": 3,
+      "alpha": 4.263590029871862,
+      "phase": 4.263590029871862,
+      "pin": [
+        15.3678784681403,
+        -22.915777151447063,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        -59.77846227181139,
+        -124.13125596160846,
+        61
+      ],
+      "piston": [
+        -89.06561466224657,
+        -184.94665454502174,
+        61
+      ],
+      "pistonRadius": 205.2752998842272,
+      "crossheadRadius": 137.7752998842272,
+      "derivative_mm_rad": -18.395861710325203,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "expansion",
+        "inlet": false,
+        "exhaust": false,
+        "volume_cm3": 44.57882290880513
+      },
+      "B": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 13.056763942162235
+      }
+    },
+    {
+      "index": 4,
+      "alpha": 5.161187930897517,
+      "phase": 5.161187930897517,
+      "pin": [
+        36.10812845458139,
+        -19.76913857414157,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        68.22511975431958,
+        -141.67092095355466,
+        61
+      ],
+      "piston": [
+        97.51227214475473,
+        -202.48631953696795,
+        61
+      ],
+      "pistonRadius": 224.7428593269646,
+      "crossheadRadius": 157.2428593269646,
+      "derivative_mm_rad": -22.16131877835019,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "expansion",
+        "inlet": false,
+        "exhaust": false,
+        "volume_cm3": 20.11516621735455
+      },
+      "B": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 36.11131400818526
+      }
+    },
+    {
+      "index": 5,
+      "alpha": 6.058785831923172,
+      "phase": 6.058785831923172,
+      "pin": [
+        46.440144784920264,
+        -1.6939503171743824,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        167.35858946583815,
+        -38.198505928717694,
+        61
+      ],
+      "piston": [
+        233.16622353811124,
+        -53.21866897076893,
+        61
+      ],
+      "pistonRadius": 239.1625274286186,
+      "crossheadRadius": 171.6625274286186,
+      "derivative_mm_rad": -6.518163954647729,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "admission",
+        "inlet": true,
+        "exhaust": false,
+        "volume_cm3": 1.9948768672108386
+      },
+      "B": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 53.1878746917607
+      }
+    },
+    {
+      "index": 6,
+      "alpha": 6.956383732948828,
+      "phase": 0.6731984257692414,
+      "pin": [
+        38.80294043026743,
+        17.61289678977174,
+        61
+      ],
+      "crankpin": [
+        22.5,
+        0,
+        61
+      ],
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "crosshead": [
+        130.63213089521568,
+        104.17564812193739,
+        61
+      ],
+      "piston": [
+        183.4057559618077,
+        146.2612097474019,
+        61
+      ],
+      "pistonRadius": 234.58476676181607,
+      "crossheadRadius": 167.08476676181607,
+      "derivative_mm_rad": 15.486401411787764,
+      "masterTilt": 0.15056827277668616,
+      "A": {
+        "phase": "exhaust",
+        "inlet": false,
+        "exhaust": true,
+        "volume_cm3": 7.747460579498499
+      },
+      "B": {
+        "phase": "expansion",
+        "inlet": false,
+        "exhaust": false,
+        "volume_cm3": 47.766639801300805
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "config": {
+    "mechanism": "master-articulated",
     "bore_mm": 40,
     "origin_mm": [
       3267.5,
@@ -31,19 +32,19 @@
     "floorSlopes": [
       [
         0.013232372985555685,
-        4.526659154180379e-07
+        4.526659154180379e-7
       ],
       [
         0.013232358739173833,
-        -4.3240299874014454e-07
+        -4.3240299874014454e-7
       ],
       [
         0.07413669396504474,
-        -9.505720299785025e-08
+        -9.505720299785025e-8
       ],
       [
         0.07413669396504474,
-        9.505731668468798e-08
+        9.505731668468798e-8
       ]
     ]
   },
@@ -56,7 +57,7 @@
       ],
       "slope": [
         0.013232372985555685,
-        4.526659154180379e-07
+        4.526659154180379e-7
       ],
       "max_error_mm": 6.821210263296962e-13
     },
@@ -68,7 +69,7 @@
       ],
       "slope": [
         0.013232358739173833,
-        -4.3240299874014454e-07
+        -4.3240299874014454e-7
       ],
       "max_error_mm": 9.094947017729282e-13
     },
@@ -80,7 +81,7 @@
       ],
       "slope": [
         0.07413669396504474,
-        -9.505720299785025e-08
+        -9.505720299785025e-8
       ],
       "max_error_mm": 7.389644451905042e-13
     },
@@ -92,7 +93,7 @@
       ],
       "slope": [
         0.07413669396504474,
-        9.505731668468798e-08
+        9.505731668468798e-8
       ],
       "max_error_mm": 2.8421709430404007e-13
     }
@@ -109,7 +110,7 @@
     "parts": [
       {
         "id": "ENG",
-        "name": "Паровая звезда · 7 цилиндров Ø40 × 45",
+        "name": "Паровая звезда · 7 цилиндров · один коленвал",
         "size_mm": [
           589.2,
           588.8,
@@ -1072,8 +1073,8 @@
         "housing_collision": false,
         "mesh_intersection": true,
         "contact_witness_mm": [
-          3051.7,
-          -141.5,
+          3051.8,
+          -141.7,
           439
         ],
         "schematic_interface": true
@@ -1185,7 +1186,7 @@
         "mesh_intersection": true,
         "contact_witness_mm": [
           3251.2,
-          -230.1,
+          -230,
           643.7
         ],
         "schematic_interface": true
@@ -4342,7 +4343,7 @@
   },
   "enginePart": {
     "id": "ENG",
-    "name": "Паровая звезда · 7 цилиндров Ø40 × 45",
+    "name": "Паровая звезда · 7 цилиндров · один коленвал",
     "size_mm": [
       589.2,
       588.8,
@@ -4384,8 +4385,8 @@
       "housing_collision": false,
       "mesh_intersection": true,
       "contact_witness_mm": [
-        3051.7,
-        -141.5,
+        3051.8,
+        -141.7,
         439
       ],
       "schematic_interface": true
@@ -4419,7 +4420,7 @@
       "mesh_intersection": true,
       "contact_witness_mm": [
         3251.2,
-        -230.1,
+        -230,
         643.7
       ],
       "schematic_interface": true
@@ -4724,7 +4725,5 @@
         }
       ]
     }
-  ],
-  "status": "Geometry screen, not real fit or manufacturing approval",
-  "scope": "Full provided body except source-stock/rear-seat; registered static stock; compact diesel; native mating/support metadata. Legacy whole-vehicle conflicts remain reported."
+  ]
 }

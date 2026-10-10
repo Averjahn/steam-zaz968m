@@ -2,7 +2,7 @@
   "status": "passed",
   "checks": [
     {
-      "name": "Main assembly defaults to seven D40/S45 double-acting cylinders",
+      "name": "Main assembly defaults to seven D40/S45 double-acting cylinders on one crank",
       "passed": true
     },
     {
@@ -54,6 +54,14 @@
       "passed": true
     },
     {
+      "name": "Seven geared cranks remain available as an archive",
+      "passed": true
+    },
+    {
+      "name": "Simulation switches back to direct shared-crank ratio",
+      "passed": true
+    },
+    {
       "name": "Heat source changes preserve new geometry and simulation cylinder count",
       "passed": true
     },
@@ -85,34 +93,34 @@
       "Граничный впуск ID40 / OD48",
       "Ввод в пленум ID20",
       "Граничный выпуск ID40 / OD46",
-      "Подача 1",
       "Выпуск 1",
       "Камера 1A",
-      "Камера 1B",
+      "Подача 2",
       "Выпуск 2",
       "Камера 2A",
+      "Камера 2B",
       "Выпуск 3",
       "Камера 3A",
-      "Подача 4",
+      "Камера 3B",
       "Выпуск 4",
-      "Камера 4A",
       "Камера 4B",
       "Выпуск 5",
       "Камера 5B",
+      "Подача 6",
       "Выпуск 6",
+      "Камера 6A",
       "Камера 6B",
-      "Подача 7",
       "Выпуск 7",
       "Камера 7A",
+      "Подача 3",
       "Камера 7B",
+      "Подача 7",
+      "Камера 4A",
+      "Подача 4",
+      "Камера 1B",
+      "Подача 1",
       "Камера 5A",
-      "Подача 5",
-      "Камера 2B",
-      "Подача 2",
-      "Камера 6A",
-      "Подача 6",
-      "Камера 3B",
-      "Подача 3"
+      "Подача 5"
     ],
     "minMotion": 0.06412500000000004,
     "reverse": true,
@@ -216,52 +224,53 @@
   "exports": [
     {
       "name": "fitted-radial-engine",
-      "bytes": 25809896
+      "bytes": 23632660
     },
     {
       "name": "fitted-radial-in-car",
-      "bytes": 61202316
+      "bytes": 59024964
     }
   ],
-  "final_smoke": {
+  "shared_mechanism": {
     "status": "passed",
-    "checks": [
-      "Archived force HUD removed from new engine",
-      "Final temperature rendering has no browser exceptions",
-      "Both GLBs reload with exactly one seven-cylinder engine",
-      "Full model scale matches provided body and deleted source engine stays deleted"
-    ],
-    "exports": [
-      {
-        "name": "fitted-radial-engine",
-        "size_m": [
-          0.5891687316894532,
-          0.5152263641357422,
-          0.5888103332519532
-        ],
-        "engineCount": 1,
-        "cylinderCount": 7,
-        "removed": []
-      },
-      {
-        "name": "fitted-radial-in-car",
-        "size_m": [
-          3.6306159425854685,
-          1.2206311677927608,
-          1.4310519695281982
-        ],
-        "engineCount": 1,
-        "cylinderCount": 7,
-        "removed": []
-      }
-    ],
-    "errors": []
+    "mechanism": "master-articulated",
+    "ratio": 1,
+    "hasSharedCrank": true,
+    "spur": 0,
+    "conflicts": [],
+    "errors": [],
+    "bevel_named_nodes": 4,
+    "scope": "144 shaft poses; rod-vs-rod, rod-vs-crosshead and rod-vs-piston-rod checks; not strength or manufacturing verification",
+    "poses_checked": 144,
+    "remaining_bevel_pair": 1,
+    "sha256": {
+      "web/shared-radial-geometry.js": "d40f817717aed47f014b41ba494bbc3b97c3b17703a34497fa1b0601272bdae3",
+      "web/shared-radial-model.js": "cc443a230fd0d52d2c701b87349e944220611b0dd193c05fa57fc20e5c32ec65"
+    }
   },
   "checked_sha256": {
-    "web/fitted-radial-view.js": "e351571c3b9e4e121cd59d903f3650327b8b84cc8fa57e70498651926f7ffef4",
-    "web/assembly-systems.js": "304c6e7043fd621bd48eb1058a943b060bfce8debb05b8f8d1cc657d2a5dbb99",
-    "web/assembly.js": "75282bb04ff70d932006e9ec06a97a4819c59cc1612eaaad4eed59477f398c14",
-    "models/fitted-radial-engine.glb": "4227015095a5e91cdbacb52dcf6107efbb0e0bf699c7e236b7b5cf7dec427bf3",
-    "models/fitted-radial-in-car.glb": "148970e6c73e03ad827ead15268180a1f424ef02ae7542d414d995ac54289528"
+    "web/shared-radial-geometry.js": "d40f817717aed47f014b41ba494bbc3b97c3b17703a34497fa1b0601272bdae3",
+    "web/shared-radial-model.js": "cc443a230fd0d52d2c701b87349e944220611b0dd193c05fa57fc20e5c32ec65",
+    "web/fitted-radial-view.js": "17a95cd9db7c712d0ffcba4881c663e3fa7ce601a31a9836b688f2f3f70dda08",
+    "web/assembly-systems.js": "ed959c482b6be3695639039ee8a34114d2294f42aece1c332b427397022129dd",
+    "web/assembly.js": "c369550651c87e9b20bfad235d80c9bef63e9e6debab10009ddd49f9a37a22b7",
+    "models/fitted-radial-engine.glb": "84fa0fd5ab172e60c8ba69fb2d79cdce3d5fb00b068f700a794fc6e7ea8fb009",
+    "models/fitted-radial-in-car.glb": "c1a53a5467815ba44846ef4fb699257ab52818df05cef2241c96ff257dc9536a"
+  },
+  "final_smoke": {
+    "status": "passed",
+    "url": "http://127.0.0.1:8768/docs/assembly.html?component=ENG&mechanics=1",
+    "state": {
+      "mechanism": "master-articulated",
+      "ratio": 1,
+      "cylinders": 7,
+      "bore": 40,
+      "stroke": 45,
+      "mechanicsOnly": true,
+      "headersHidden": true,
+      "description": "Один главный и шесть прицепных шатунов передают усилие одной общей шатунной шейке. Передача к коленвалу прямая,1:1; угловая пара пока только направляет выход к КПП."
+    },
+    "fixedCamera": true,
+    "errors": []
   }
 }

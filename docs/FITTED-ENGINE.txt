@@ -1,4 +1,4 @@
-Семь цилиндров под кузов: Ø40 × 45, шток9,6, рабочий объём0,396 л.
+Семь цилиндров на одном коленвале под кузов: Ø40 × 45, шток9,6, рабочий объём0,396 л.
 Основная сборка: docs/assembly.html. Расчёт: docs/fitted-engine.html.
 
 Для повторения на этой машине: Python3; NumPy и библиотеки прежнего build_site; Chrome; playwright-core; ReportLab для PDF. PLAYWRIGHT_MODULE можно указать как путь к установленному playwright-core.
@@ -9,6 +9,7 @@
 Пересчитать бюджет: node build_fitted_engine.mjs
 Проверить браузер и экспортировать новые GLB: node verify_fitted_browser.cjs
 Создать размерную схему: python3 build_fitted_drawing.py
+Проверить кинематику главного и прицепных шатунов: node verify_shared_engine.mjs
 Проверить формулы и балансы: node verify_fitted_engine.mjs
 Обновить публикацию и архив: python3 build_site.py
 

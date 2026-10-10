@@ -33,7 +33,7 @@
     {
       "name": "Cosine vectors are normalized",
       "pass": true,
-      "detail": 2.1270207595236457e-7
+      "detail": 2.1311645181931738e-7
     },
     {
       "name": "Relevant source retrieved: Как рассчитаны обороты колёс",
@@ -57,7 +57,7 @@
         },
         {
           "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
-          "url": "literature-audit.html#topic-11"
+          "url": "literature.html#topic-11"
         }
       ]
     },
@@ -78,12 +78,12 @@
           "url": "compact-radial.html"
         },
         {
-          "title": "Почему этот размер",
-          "url": "fitted-engine.html#topic-1"
-        },
-        {
           "title": "Объём: формула → подстановка",
           "url": "compact-radial.html#topic-1"
+        },
+        {
+          "title": "Почему этот размер",
+          "url": "fitted-engine.html#topic-2"
         }
       ]
     },
@@ -130,12 +130,12 @@
           "url": "physics.html"
         },
         {
-          "title": "Обороты колёс согласуются с геометрией, доступная тяга пока нет",
-          "url": "literature-audit.html#topic-11"
-        },
-        {
           "title": "Проверяем каждое число.",
           "url": "calculations.html"
+        },
+        {
+          "title": "Формулы, подстановка текущих значений и балансы",
+          "url": "assembly.html#topic-4"
         }
       ]
     },
@@ -144,12 +144,12 @@
       "pass": true,
       "detail": [
         {
-          "title": "PIPE_STEAM · Пар · генератор → машина · Теплопотери цилиндрического участка",
-          "url": "piping.html#topic-16"
-        },
-        {
           "title": "PIPE_FEED · Питательная вода → генератор · Теплопотери цилиндрического участка",
           "url": "piping.html#topic-121"
+        },
+        {
+          "title": "PIPE_STEAM · Пар · генератор → машина · Теплопотери цилиндрического участка",
+          "url": "piping.html#topic-16"
         },
         {
           "title": "PIPE_EXHAUST_L · Отработанный пар → левый конденсатор · Теплопотери цилиндрического участка",
@@ -160,8 +160,8 @@
           "url": "assembly.html#thermalPanel"
         },
         {
-          "title": "Детальные агрегаты, трубы и крепления",
-          "url": "assembly.html#topic-14"
+          "title": "22. Детальная внутренняя сборка и изолированные трубопроводы",
+          "url": "report.html#section-22"
         }
       ]
     },
@@ -230,16 +230,16 @@
           "url": "assembly.html#simPanel"
         },
         {
-          "title": "Дрова · прототип газифицирующей топки",
-          "url": "heat.html"
-        },
-        {
           "title": "25. Пять источников тепла, расход и замкнутый цикл",
           "url": "report.html#section-25"
         },
         {
-          "title": "Расход пара",
-          "url": "engine-sizing.html#topic-5"
+          "title": "Дрова · прототип газифицирующей топки",
+          "url": "heat.html"
+        },
+        {
+          "title": "Чем нагревать воду.",
+          "url": "heat.html"
         }
       ]
     },
@@ -248,12 +248,12 @@
       "pass": true,
       "detail": [
         {
-          "title": "Материалы и покупка",
-          "url": "assembly.html#purchaseTitle"
-        },
-        {
           "title": "BOOST · Подпорный насос, фильтр и арматура",
           "url": "procurement.html#part-BOOST"
+        },
+        {
+          "title": "Материалы и покупка",
+          "url": "assembly.html#purchaseTitle"
         },
         {
           "title": "MOTOR · Привод Cat Pumps · мотор / редуктор",
@@ -274,12 +274,12 @@
       "pass": true,
       "detail": [
         {
-          "title": "Главное ограничение — отвод теплоты",
-          "url": "literature.html#topic-1"
+          "title": "Теплоотвод конденсатора завышался",
+          "url": "literature-audit.html#topic-3"
         },
         {
-          "title": "Теплоотвод конденсатора завышался",
-          "url": "literature.html#topic-3"
+          "title": "Главное ограничение — отвод теплоты",
+          "url": "literature.html#topic-1"
         },
         {
           "title": "Теплоотвод конденсатора завышался",
@@ -290,8 +290,8 @@
           "url": "literature-audit.html#topic-7"
         },
         {
-          "title": "Внутренний конденсатор не подтверждён для прежних 18 кВт",
-          "url": "literature.html"
+          "title": "Вывод формулы ε–NTU",
+          "url": "literature.html#topic-2"
         }
       ]
     },
@@ -299,6 +299,10 @@
       "name": "Relevant source retrieved: Дизель расход топлива",
       "pass": true,
       "detail": [
+        {
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
+        },
         {
           "title": "BRN · Дизель · компактная горелка",
           "url": "physics.html#node-BRN"
@@ -308,12 +312,8 @@
           "url": "physics.html#node-FUE"
         },
         {
-          "title": "25. Пять источников тепла, расход и замкнутый цикл",
-          "url": "report.html#section-25"
-        },
-        {
           "title": "Один двигатель, разные тепловые режимы",
-          "url": "fitted-engine.html#topic-12"
+          "url": "fitted-engine.html#topic-13"
         },
         {
           "title": "Дизель · компактная горелка",
@@ -356,12 +356,12 @@
           "url": "physics.html#node-WTR"
         },
         {
-          "title": "25. Пять источников тепла, расход и замкнутый цикл",
-          "url": "report.html#section-25"
-        },
-        {
           "title": "3. Архитектура установки и выбор топлива",
           "url": "report.html#section-3"
+        },
+        {
+          "title": "25. Пять источников тепла, расход и замкнутый цикл",
+          "url": "report.html#section-25"
         },
         {
           "title": "FUE · Дизель · запас",
@@ -386,7 +386,7 @@
           "url": "connection-specs.json"
         },
         {
-          "title": "Стык STM.relief · патрубок трубы",
+          "title": "Стык STM.flueOutlet · патрубок трубы",
           "url": "connection-specs.json"
         },
         {
@@ -394,8 +394,8 @@
           "url": "internal.html#topic-5"
         },
         {
-          "title": "Сценарий B · Смешение воды",
-          "url": "calculations.html?scenario=B#formula-h3_kJ_kg"
+          "title": "Ламе: давление на прямую трубу",
+          "url": "aging.html#topic-8"
         }
       ]
     },
@@ -528,8 +528,8 @@
       "pass": true
     }
   ],
-  "max_vector_norm_error": 2.1270207595236457e-7,
-  "manifest_sha256": "6176268f28228b4db1b75ba0765c602bf5815e9cc7b5cfa1f25883a90557ded1",
+  "max_vector_norm_error": 2.1311645181931738e-7,
+  "manifest_sha256": "385eacfddef75dcc64bbfe3aaaf392c85bc62711d0281968f80f934ae535164a",
   "source_sha256": {
     "build_knowledge.py": "8a1b21e7e947fc108068f322340b5133757b0ba2f5d63e4ee25b4c412a3fd53c",
     "web/search-core.js": "bdc30ddf76fc3cb3ab1efbff1d3839d5865a8078586231ee973d8f596d87ecb4",
