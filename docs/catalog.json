@@ -140,6 +140,20 @@
     "size": 5879
   },
   {
+    "path": "build_engine_space.cjs",
+    "title": "Воспроизводимый поиск размеров и положения двигателя",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 12646
+  },
+  {
+    "path": "build_engine_space_report.py",
+    "title": "Воспроизводимый генератор PDF-отчёта по размещению",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 9238
+  },
+  {
     "path": "build_engine_strength.mjs",
     "title": "Воспроизводимый расчёт увеличения цилиндров и прочности",
     "category": "Исходники",
@@ -200,7 +214,7 @@
     "title": "Воспроизводимый векторный индекс материалов · TF-IDF / LSA",
     "category": "Исходники",
     "format": "PY",
-    "size": 14459
+    "size": 14556
   },
   {
     "path": "build_mount_register.py",
@@ -277,7 +291,7 @@
     "title": "Сборка этого сайта",
     "category": "Исходники",
     "format": "PY",
-    "size": 53272
+    "size": 54899
   },
   {
     "path": "build_stock_suspension.py",
@@ -469,6 +483,27 @@
     "size": 40346
   },
   {
+    "path": "engine-space-checks.json",
+    "title": "Динамический отбор размеров звезды · проверки",
+    "category": "Проверки",
+    "format": "JSON",
+    "size": 2111
+  },
+  {
+    "path": "engine-space-report.pdf",
+    "title": "Размещение двигателя по свободному месту · отчёт PDF",
+    "category": "Документы",
+    "format": "PDF",
+    "size": 81007
+  },
+  {
+    "path": "engine-space-study.json",
+    "title": "Поиск свободного места · диаметры, ход, положение и конфликты",
+    "category": "Расчёты",
+    "format": "JSON",
+    "size": 719166
+  },
+  {
     "path": "engine-strength-browser-checks.json",
     "title": "engine-strength-browser-checks.json",
     "category": "Проверки",
@@ -502,6 +537,13 @@
     "category": "Исходники",
     "format": "PY",
     "size": 5068
+  },
+  {
+    "path": "engine_space_page.py",
+    "title": "engine_space_page.py",
+    "category": "Исходники",
+    "format": "PY",
+    "size": 10097
   },
   {
     "path": "engine_strength_page.py",
@@ -987,6 +1029,13 @@
     "size": 5190
   },
   {
+    "path": "verify_engine_space.cjs",
+    "title": "Проверка трубок B и движения механизма для кандидатов",
+    "category": "Исходники",
+    "format": "CJS",
+    "size": 6856
+  },
+  {
     "path": "verify_engine_strength.mjs",
     "title": "verify_engine_strength.mjs",
     "category": "Исходники",
@@ -1096,7 +1145,7 @@
     "title": "Генератор общего интерфейса, тем и навигации",
     "category": "Исходники",
     "format": "PY",
-    "size": 10636
+    "size": 10736
   },
   {
     "path": "drawings/01-layout-mm.dxf",
@@ -1272,6 +1321,13 @@
     "category": "Чертежи",
     "format": "SVG",
     "size": 15972
+  },
+  {
+    "path": "engine-space.html",
+    "title": "Свободное место: диаметр, ход и положение звезды",
+    "category": "3D",
+    "format": "HTML",
+    "size": 19197
   },
   {
     "path": "engine-strength.html",

@@ -1,0 +1,36 @@
+from html import escape
+import math
+
+def content(d):
+    def f(x,n=1): return f'{x:,.{n}f}'.replace(',', '\u202f').replace('.', ',')
+    b=d['best'];u=d['best_unchanged_equipment'];base=7*math.pi*40**2/4*45/1e6
+    def row(label,r):
+        if not r:return f'<tr><td>{label}</td><td colspan="6">Не найден в проверенной выборке</td></tr>'
+        hits=sorted({h['id'] for h in r['hits'] if not h['connected']})
+        motion=next((x for x in d.get('dynamic_rows',[]) if x['kinematic_bore_mm']==r.get('kinematic_bore_mm') and x['bore_mm']==r['bore_mm']),None)
+        if motion and not motion['passed']: hits.append('Пересечение движущегося механизма')
+        return f'<tr><td>{label}</td><td>Ø{f(r["bore_mm"])} × {f(r["stroke_mm"],3)}</td><td>{f(r["volume_L"],3)}</td><td>{f(r["volume_L"]/base,2)}×</td><td>{f(r["origin_mm"][0])}</td><td>{f(r["gaps"]["BODY"])}</td><td>{escape(", ".join(hits)) if hits else "Нет новых пересечений"}</td></tr>'
+    rs=row('Больше места с переразводкой',b)+row('С фиксированным окружением',u)
+    baseline={'bore_mm':40,'stroke_mm':45,'volume_L':base,'origin_mm':[3267.5,0,490],'gaps':{'BODY':18.0184},'hits':[]}
+    rs=row('Исходная модель',baseline)+rs
+    panels=[]
+    for title,r in [('Наибольший исследованный объём',b),('Вариант с фиксированным окружением',u)]:
+        if not r:continue
+        D,S,rod=r['bore_mm'],r['stroke_mm'],r['rod_mm'];A=math.pi*D**2/4;B=math.pi*(D*D-rod*rod)/4;force=(9*A-.2*B)*.1
+        size=' × '.join(f(v,0) for v in r['size_mm'])
+        panels.append(f'''<article class="thermal-formula"><h3>{title}</h3><p>Габарит двигателя с коллекторами и изоляцией, без стоек: <strong>{size} мм</strong>. Положение центра {', '.join(f(v,1) for v in r['origin_mm'])} мм; выход к КПП на условной оси Z=445 мм. До кузова {f(r['gaps']['BODY'])} мм; до статической подвески ≥{f(r['gaps']['SUSP'])} мм; минимальный проверенный зазор труб до оболочки цилиндра {f(r['pipe_gap_mm'])} мм.</p>
+        <p><code>V = N·πD²·S / 4</code></p><p>7 × π × {f(D)}² × {f(S,3)} / 4 / 10⁶ = <strong>{f(r['volume_L'],3)} л</strong>. Диаметр и ход подставлены в миллиметрах; 10⁶ мм³ = 1 л.</p>
+        <p><code>V₂ = N·π·(2D² − dшт²)·S / 4</code></p><p>7 × π × (2 × {f(D)}² − {f(rod,2)}²) × {f(S,3)} / 4 / 10⁶ = <strong>{f(r['double_volume_L'],3)} л</strong> двух рабочих сторон за оборот. Это вытесняемый объём, а не расход пара с отсечкой.</p>
+        <p><code>FА = (pА−pокр)·А − (pВ−pокр)·(А−Ашт)</code></p><p>[(10−1) × π × {f(D)}² / 4 − (1,2−1) × π × ({f(D)}² − {f(rod,2)}²) / 4] × 0,1 = <strong>{f(force/1000,2)} кН</strong>. Давления абсолютные, 1 бар = 0,1 Н/мм². Это сила газа без инерции, трения и реакции шатуна.</p><p>Увеличение объёма не подтверждает увеличение мощности. Прежний парогенератор ограничивает массовый расход и тепловую мощность; клапанные потери и мёртвые объёмы требуют пересчёта.</p></article>''')
+    stats=d['search'];dyn=d.get('selected_dynamic_check');dhits=len(dyn['hits']) if dyn else None
+    summary=[]
+    for k in sorted(set(r['kinematic_bore_mm'] for r in d['rows'])):
+        rows=[r for r in d['full_rows'] if r['kinematic_bore_mm']==k and r['gaps']['BODY']>=10 and r['pipe_gap_mm']>=10 and any(x['kinematic_bore_mm']==k and x['bore_mm']==r['bore_mm'] and x['passed'] for x in d.get('dynamic_rows',[]))]
+        if not rows:continue
+        r=max(rows,key=lambda r:r['volume_L']);summary.append(row('Ход '+f(r['stroke_mm'],3),r))
+    bounds=d.get('boundaries') or {};shift=bounds.get('fresh_relocation_mm',0)
+    anchors=''.join('<tr><td>'+', '.join(f(v,1) if v is not None else 'нет пола' for v in a['anchor_mm'])+'</td><td>'+f(a['post_height_mm'],1)+'</td></tr>' for a in (d.get('floor_proof') or []) if a['post_height_mm'] is not None)
+    return f'''<section id="space-results"><h2>Что удалось разместить</h2><div class="table-scroll"><table><thead><tr><th>Вариант</th><th>Диаметр × ход, мм</th><th>Объём, л</th><th>К исходному</th><th>Центр X, мм</th><th>До кузова, мм</th><th>Новые конфликты</th></tr></thead><tbody>{rs}</tbody></table></div><p>Вариант большего объёма требует переразводки перечисленных труб. Его вход свежего пара и общий выпуск смещены на {f(shift)} мм относительно исходной звезды. Совпадение внешних стыков здесь не подтверждается. Красные трубы в 3D показывают эти ограничения.</p><p><a href="engine-space-study.json">Все варианты и исходные хеши JSON ↓</a> · <a href="build_engine_space.cjs">Воспроизводимый поиск ↓</a> · <a href="engine-space-report.pdf">Отчёт PDF ↓</a></p></section>
+    <section id="space-formulas"><h2>Формулы и подстановка размеров</h2>{''.join(panels)}</section>
+    <section id="space-method"><h2>Границы поиска</h2><p>Кинематическая семья с главным и шестью прицепными шатунами: ход 36–72 мм с исходным шагом 2,25 мм; диаметры 40–100 мм с шагом 1 мм для ограничения трубами; семь продольных положений от X=3170 до 3360 мм. Дополнительно уточнены ходы 49,5–54 мм с шагом 0,5625 мм и положения X=3310–3345 мм с шагом 5 мм. Y=0 и Z=490 мм сохранены для выбранной оси к КПП.</p><p>Проверено {stats['body_candidates']} положений методом пересечений треугольных сеток с кузовом после предварительного отбора по трубкам. Для {stats['exact_full_candidates']} кандидатов выходной вал перестроен под их положение и проверено фиксированное окружающее оборудование. Радиусы гибов, диаметры труб и изоляция сохранены; траектории трубок A/B существующей семьи масштабируются вместе с механизмом. Проба зазора по длине труб — через 2 мм, исключены только предусмотренные участки у портов камер.</p><p>У наиболее объёмного варианта проверено {dyn['poses'] if dyn else 0} положений вала: трубки B с изоляцией против обоих коллекторов и всех шатунов, штоков и крейцкопфов; пересечений {dhits if dhits is not None else 'проверка не выполнена'}. Это ограниченная проверка движения. Все пары деталей, собственные соседние трубки, реальные клапанные приводы и усиленные шатуны ещё не проверены.</p><p>Статический вариант Ø100 × 54 мм (2,969 л) исключён из отбора: трубки B пересекают крейцкопфы. Для использования такого объёма нужна новая трасса трубок, после чего следует повторить проверку.</p><p>Кузов содержит штатный пол и закрытую крышку отсека; штатный двигатель и заднее сиденье исключены, как в исходной компоновке. Проверка поверхностей не доказывает герметично замкнутую внутреннюю полость. Подвеска статическая. Диаметр 100 мм — граница текущей проверяемой семьи, а не доказанный предел кузова. Вращение звезды, перенос КПП и полная перестановка оборудования не оптимизировались.</p><details><summary>Сравнение по ходу цилиндра</summary><div class="table-scroll"><table><thead><tr><th>Вариант</th><th>Диаметр × ход, мм</th><th>Объём, л</th><th>К исходному</th><th>X, мм</th><th>До кузова, мм</th><th>Конфликты</th></tr></thead><tbody>{''.join(summary)}</tbody></table></div></details></section>
+    <section id="space-supports"><h2>Опоры на предоставленном полу</h2><p>В 3D стойки доведены до поверхности Plane113, площадки следуют её уклону. Показанные точки не подтверждены как силовые точки реального кузова. Несущая способность пола, рамы, крепежа и виброопор требует расчёта.</p><div class="table-scroll"><table><thead><tr><th>Точка X, Y, Z, мм</th><th>До поддона, мм</th></tr></thead><tbody>{anchors}</tbody></table></div></section>'''

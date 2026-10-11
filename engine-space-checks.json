@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "A dynamically screened candidate exists",
+      "passed": true
+    },
+    {
+      "name": "Selected variant has no sampled B/header/mechanism intersections and all 42 local connections meet",
+      "passed": true
+    },
+    {
+      "name": "Higher-volume static candidates with moving collisions are excluded",
+      "passed": true
+    },
+    {
+      "name": "Selected candidate respects declared 10 mm cold geometry reservation",
+      "passed": true
+    },
+    {
+      "name": "Four positive-height supports have actual floor intersections",
+      "passed": true
+    },
+    {
+      "name": "Displacement is recomputed from bore and stroke in mm",
+      "passed": true
+    },
+    {
+      "name": "Fixed-surroundings variant exists and has no unconnected mesh hits",
+      "passed": true
+    }
+  ],
+  "dynamic_shapes": 12,
+  "selected": {
+    "kinematic_bore_mm": 46,
+    "bore_mm": 99,
+    "stroke_mm": 51.75,
+    "rod_mm": 11.04,
+    "origin_mm": [
+      3340,
+      0,
+      490
+    ],
+    "size_mm": [
+      699.927978515625,
+      663.4096069335938,
+      374.6000671386719
+    ],
+    "volume_L": 2.7884872604538016,
+    "double_volume_L": 5.542297927816723,
+    "pipe_gap_mm": 10.407606667398866,
+    "pipe_witness": {
+      "route": "Камера 2B",
+      "cylinder": 2,
+      "point_mm": [
+        -261.63568081456555,
+        98.32960236848992,
+        100
+      ]
+    },
+    "gaps": {
+      "BODY": 24.173550263265742,
+      "SUSP": 40
+    },
+    "nearest": {
+      "BODY": "Пол_заднего_отсека_и_ниши_·_FBX_Plane113"
+    },
+    "hits": [
+      {
+        "id": "PIPE_EXHAUST_R",
+        "node": "",
+        "connected": false
+      },
+      {
+        "id": "PIPE_EXHAUST_L",
+        "node": "",
+        "connected": false
+      },
+      {
+        "id": "PIPE_EXHAUST_COMMON",
+        "node": "",
+        "connected": true
+      },
+      {
+        "id": "PIPE_FLUE",
+        "node": "",
+        "connected": false
+      }
+    ]
+  },
+  "study_sha256": "54e0df3558f1c14e1a23bf84a75136e4e39a905b4a5ba73f701c12ba1dff2412"
+}

@@ -2,129 +2,134 @@
   "version": 1,
   "method": "TF-IDF + randomized truncated SVD / LSA; normalized cosine vectors + lexical reranking",
   "dimension": 96,
-  "passage_count": 1089,
-  "source_count": 28,
-  "vocabulary_size": 4133,
+  "passage_count": 1098,
+  "source_count": 29,
+  "vocabulary_size": 4167,
   "assets": {
     "passages": {
-      "path": "knowledge/passages-9a68ceff8843.json",
-      "sha256": "9a68ceff88431a177ef4d1e0016c41d96740f43eb21351457da1a73d93a74ca3",
-      "bytes": 1831245
+      "path": "knowledge/passages-f3ae861a603d.json",
+      "sha256": "f3ae861a603d84f6914bf72e6472fd58561958b7dcd92bc556f6ac414f2a9d4b",
+      "bytes": 1854291
     },
     "model": {
-      "path": "knowledge/model-2fefb61a5b95.json",
-      "sha256": "2fefb61a5b95bd1141730517a1433851904af6b661fbd8c64088063983dfbe5c",
-      "bytes": 141618
+      "path": "knowledge/model-0eaa6d3c875b.json",
+      "sha256": "0eaa6d3c875b82f4edc345b0728808a4dafac5649e7bd49b4cc8885bfdfd2a0d",
+      "bytes": 143424
     },
     "basis": {
-      "path": "knowledge/basis-f2344258d4d8.bin",
-      "sha256": "f2344258d4d81a4a2814327b6bd259d3e823d034534778204396747f00df07d3",
-      "bytes": 1587072
+      "path": "knowledge/basis-8632c37e946b.bin",
+      "sha256": "8632c37e946becc63aa78d2e8521a76231b56b701be5752d74f91dc4ab91cdd3",
+      "bytes": 1600128
     },
     "vectors": {
-      "path": "knowledge/vectors-d34061c50052.bin",
-      "sha256": "d34061c500526af0f3efb1548ac1d94fdcbd2d6eda89100f5e0a800b4045e34e",
-      "bytes": 418176
+      "path": "knowledge/vectors-dcfc6776e990.bin",
+      "sha256": "dcfc6776e990d2603ad5d735e1f6e7b20af849452313ee66fcec3970d32dc49a",
+      "bytes": 421632
     }
   },
   "sources": {
+    "engine-space.html": {
+      "sha256": "77bd77a4ba9b6d26d409be29eef18617972bc4291701d3f14ee8c30e717bf64d",
+      "kind": "HTML",
+      "title": "Свободное место и увеличение звезды"
+    },
     "engine-strength.html": {
-      "sha256": "0a6162b38211c13142939f51d1ffb8879e4283b2d2d64fe28729b3ed422289fe",
+      "sha256": "308b0f4d755ef0411a5c8f66f5bd38d7591226d1f1a420e0d74042ac305de1c6",
       "kind": "HTML",
       "title": "Увеличение цилиндров и прочность"
     },
     "fitted-engine.html": {
-      "sha256": "5d7e508ece09fef2877c270bad049b4e80d8c45973d79446aff2a325ef132859",
+      "sha256": "657d4967453968892ef70871fd534d191b6012a6f7993affda9d3eb773dc728a",
       "kind": "HTML",
       "title": "Семь цилиндров под кузов"
     },
     "compact-radial.html": {
-      "sha256": "68cea07bf432c952da4be0f03811c1d800c2941664ac853b40f4bcc8ec9a665d",
+      "sha256": "41e4d644a8e3687538c2636e64099b10ffed20c76e3222410d77b7bca4127c09",
       "kind": "HTML",
       "title": "Компактная паровая звезда внутри ЗАЗ"
     },
     "aging.html": {
-      "sha256": "9f4f8dc85b98b3d7291bc57cb4871b329b7564f0edeb23d1b498705e2cc2df83",
+      "sha256": "12e7095ed3347f7cc16421469e0a3a787d74bae5fde5b7974b6db9fa410c0dff",
       "kind": "HTML",
       "title": "Старение металла за два года"
     },
     "engine-sizing.html": {
-      "sha256": "73dbc0ce626cfec7325d8c30e17475c8bc1f00dfa72479b5825e0154f4df3321",
+      "sha256": "d57976d291112c6d062947a64114caee85a01af0a080a0e215d8bb616a4aae3e",
       "kind": "HTML",
       "title": "Объём и мощность под место в ЗАЗ"
     },
     "radial-engine.html": {
-      "sha256": "9a43c45e07fc066dfc333b6e91b874d08fce9a1bad580d53552e8839a41d9390",
+      "sha256": "95edc52f895ac1eb594eed90eeee45bc7d9fc21bb55c6cb3990a0482236a476d",
       "kind": "HTML",
       "title": "Семицилиндровая паровая звезда"
     },
     "assembly.html": {
-      "sha256": "58047f55c5bd872b329ed04c4a7a41f01914d224090e94d3074e612e2d9da5a7",
+      "sha256": "564e6e17d4698f594f34b1cf28b6d0d53e5e1ac2ca7f993ab5a5f1f0a8e119db",
       "kind": "HTML",
       "title": "CAD-сборка"
     },
     "heat.html": {
-      "sha256": "3f852862414f72b7af76f40aa9c655c2071ec3aea8c52b971c8f2ed66cbb9217",
+      "sha256": "b5444a17e2bec68c7bbdff025e954d986d6545172fea7f958dcb511411a535a1",
       "kind": "HTML",
       "title": "Источники тепла и замкнутый цикл"
     },
     "physics.html": {
-      "sha256": "2aea947214302101c430362f00f3ce572fd082072d537a1f103014bb967f2a46",
+      "sha256": "d05e32babc34b7b429104994723af2601c4308e3680f048f093e153b71312ea8",
       "kind": "HTML",
       "title": "Физика узлов и нагрузка на четыре колеса"
     },
     "piping.html": {
-      "sha256": "cc0de33c62461769ccc92af821328d15f8f39059d924a4a352acf47532ecc799",
+      "sha256": "bbc1b5be9c7f9f52e8e7711bc51293654dbf381d137d3c959a7663730a6b5928",
       "kind": "HTML",
       "title": "Трубопроводы"
     },
     "procurement.html": {
-      "sha256": "247f7cd65bf53139b05a84ebf275c09b0d6406de43dcec2946aa10fddc7fbd8c",
+      "sha256": "8c102221e2fb2983b46803f958375d9ce3335e7fa7dbbb0ba90be2fda74b2661",
       "kind": "HTML",
       "title": "Комплектующие и материалы"
     },
     "literature.html": {
-      "sha256": "82fd304a5942291f426d7062ef4ad822c0912dc2568c4af3ac8b08f1934d61a6",
+      "sha256": "7291914131311e50adb661d4e7c9bd50ea4815fa20e1332272b8fbb0fbd70938",
       "kind": "HTML",
       "title": "Проверка парового цикла по литературе"
     },
     "report.html": {
-      "sha256": "08ae1bddb71f3df5286b5e94ed6297f00be525c1c405527e63ccda4e675e8770",
+      "sha256": "4261f4dd5825af079892a234d51f92604bee0d8c2dd0812e23cf19fcbebcd3e8",
       "kind": "HTML",
       "title": "ЗАЗ-968М с паровым приводом"
     },
     "internal.html": {
-      "sha256": "7b08472accbee4bd2818aca30fb72386e8de0d216b5bdf026e94c402120a3d2e",
+      "sha256": "a02c82f7865840b616813f5ea665ecd28c5dda158c5feff8c4e94d5ec6d4618d",
       "kind": "HTML",
       "title": "Внутренняя паровая сборка"
     },
     "packaging.html": {
-      "sha256": "6ec4903899330580ee9976f36b7643c9b8bca494b96a6e78741faebc268c0294",
+      "sha256": "d75b670b031cdca2f7677cf14491123cd318fd294f14d2e3538ae544f2eb1a3b",
       "kind": "HTML",
       "title": "Переработанная компоновка"
     },
     "reconstruction.html": {
-      "sha256": "e5ff44156932a98c45df2ff5fc3526dbda29dfb2aca10d0cfe686582176e6fc8",
+      "sha256": "d365a8e2de024a2aa25210cc2da99926c173986393d989d1064fdd7bae0188f9",
       "kind": "HTML",
       "title": "Кузов по фотографиям"
     },
     "user-model.html": {
-      "sha256": "bbad680922f6d1ab2ab051c4eb6746a74fa553e43709cbc428618d3f8953e43f",
+      "sha256": "f945a939484de88d2c0efb7809ebae7eeb770c24ca303bc748620789939859e2",
       "kind": "HTML",
       "title": "Ваша модель ЗАЗ-968М"
     },
     "calculations.html": {
-      "sha256": "9f1882319086678a6ea7834ec7a6a89a57ffca02f8c6175d2089318804a8a685",
+      "sha256": "bbc961673391596f4bb4567ad1b7ea873eef3127e781cfb463e75b3b3cdb1365",
       "kind": "HTML",
       "title": "Формулы и подстановки"
     },
     "lab.html": {
-      "sha256": "53d56629f368d66e725b9705326c7c808c62cfb2c230f00124a476e19c1a806e",
+      "sha256": "50557a16cf15387c58bfdfb97ac84ff357d5e4838c0ca4f15f17492f84abef18",
       "kind": "HTML",
       "title": "ЗАЗ-968М • Паровой привод"
     },
     "literature-audit.html": {
-      "sha256": "842a6b9ccc848d34f9b493ecdb533d6c4d9cb55cb0fd54875c5f3c2dbd62ca7b",
+      "sha256": "ca5afad32db2bca47e9d62165857fd37ee89fc91966097bc036b64b57013df7f",
       "kind": "HTML",
       "title": "Проверка парового ЗАЗ по литературе"
     },
@@ -169,7 +174,7 @@
       "title": "connection-specs.json"
     }
   },
-  "total_bytes": 3978111,
+  "total_bytes": 4019475,
   "privacy": "Requests are processed locally in a browser worker; no hosted embedding or LLM service.",
   "rag_scope": "Retrieval with source passages, not generated reasoning or a new calculation. Public project documents and our book summaries; no full third-party books.",
   "training_seed": 968,
